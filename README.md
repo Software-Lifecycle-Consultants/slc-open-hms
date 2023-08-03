@@ -1,2 +1,63 @@
-# hotel-management-system
+# Hotel Management System (Next.js)
+
+![Hotel Management System](https://softwareconsultant.info/wp-content/themes/slcc/assets/images/logo.png)
+
 The Hotel Management System is a web application built with Next.js that aims to streamline and optimize hotel operations, including reservations, room management, guest services, and more. This application provides an intuitive and efficient solution for hotel owners and staff to manage various aspects of their hotel business.
+
+## Features
+
+- **User Authentication**: Allow users to sign up, log in, and manage their accounts securely.
+
+- **Room Booking**: Enable guests to view room availability, select room types, and make reservations.
+
+- **Admin Dashboard**: Provide a comprehensive dashboard for hotel administrators to manage room inventory, reservations, and user accounts.
+
+- **Guest Services**: Allow guests to request services, such as room cleaning, room service, and more.
+
+- **Payment Integration**: Facilitate seamless payment processing for room bookings and services.
+
+- **Real-time Updates**: Utilize real-time updates to notify users about reservation status and service requests.
+
+## Getting Started
+
+Follow these instructions to set up the Hotel Management System project locally on your machine:
+
+1. Clone the repository to your local machine:
+ ```bash
+git clone https://github.com/your-username/hotel-management-system.git
+cd hotel-management-system
+ ```
+2. Install the dependencies:
+ ```bash
+npm install
+ ```
+3. Set up the environment variables:
+  - Create a .env.local file in the root directory of the project.
+  - Add the required environment variables, such as database connection strings, API keys, etc.
+    
+4. Run the development server:
+ ```bash
+npm run dev
+ ```
+5. Open your browser and navigate to http://localhost:3000 to see the Hotel Management System in action.
+
+## Contributing
+We welcome contributions from the community! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+
+## Learn More
+To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js GitHub repository](https://github.com/vercel/next.js/) 
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) file for details.
+
+## Acknowledgments
+- Thanks to the Next.js community for creating an amazing framework for building modern web applications.
+- Special thanks to all the contributors and beta testers who helped shape this project.
+
+## Contact
+For any inquiries or feedback, please contact us at hello@softwareconsultant.info  
+Your feedback and contributions are welcome!
+
