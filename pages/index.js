@@ -7,6 +7,7 @@ import CardCarousel from '../components/CardCarousel';
 import MyComponent from '../components/MyComponent';
 //import { Button } from '@mui/material';
 import Button from '../components/Button'; // Import the Button component
+import HomeScreen from './screens/HomeScreen';
 
 
 const cards = [
@@ -36,17 +37,20 @@ const Home = () => {
   return (
     <ThemeProvider theme={theme}>
       <Global styles={globalStyles} />
-      <div>
+      {/* <div>
       <h1>Welcome to HMS !</h1>
       <CardCarousel cards={cards} />
       <MyComponent/>
-    </div>
-      <div>
+    </div> */}
+      {/* <div>
         <h1>Welcome to Next.js with Emotion and MUI</h1>
         <Button variant="contained" color="primary">
           Click Me
         </Button>
-      </div>
+      </div> */}
+      <>
+        <HomeScreen />
+      </>
     </ThemeProvider>
   );
 };

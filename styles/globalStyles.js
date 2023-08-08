@@ -6,7 +6,7 @@ const globalStyles = css`
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: gray; 
+    background-color: white; 
   }
   /* Add more global styles as needed */
 `;
