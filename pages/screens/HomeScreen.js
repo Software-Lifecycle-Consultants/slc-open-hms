@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Banner from "../../components/Banner";
+import NavBar from "../../components/NavBar";
 
 
 const HomeScreen = () => {
@@ -18,7 +19,9 @@ const HomeScreen = () => {
         }}
       >
         <Grid container spacing={2}>
-          <Grid item xs={12}></Grid>
+          <Grid item xs={12}>
+            <NavBar />
+          </Grid>
 
           <Grid item xs={12} md={6}>
             <Box sx={{ margin: "20%", width: "80%" }}>
