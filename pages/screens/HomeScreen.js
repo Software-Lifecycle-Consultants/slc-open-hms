@@ -22,7 +22,14 @@ const HomeScreen = () => {
 
           <Grid item xs={12} md={6}>
             <Box sx={{ margin: "20%", width: "80%" }}>
-              <Banner />
+              <Banner
+                title="The best deals on the world's best destinations"
+                subtitle="Best travel and destinations"
+                description="With travala you can experience new travel and the best tourist
+                            destinations that we have to offer"
+                primaryButtonLabel="Our Destination"
+                secondaryButtonLabel="Our Gallery"
+              />
             </Box>
           </Grid>
           <Grid
