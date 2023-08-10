@@ -12,78 +12,45 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Image from "next/image";
 import logo from "../public/images/logo.png";
-import { loginButtonStyles, logoBox, navBarRoot, registerButtonStyles } from "../styles/theme";
+import {
+  loginButtonStyles,
+  logoBox,
+  navBarRoot,
+  registerButtonStyles,
+} from "../styles/theme";
 
-const pages = ["Home", "About", "Destination", "Contact"]; 
+const pages = ["Home", "About", "Destination", "Contact", "Test"];
 
 const NavBar = () => {
-     const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-     const handleOpenNavMenu = (event) => {
-       setAnchorElNav(event.currentTarget);
-     };
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
 
-     const handleCloseNavMenu = () => {
-       setAnchorElNav(null);
-    };
-    
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
   return (
-    <div>
-      <AppBar
-        position="static"
-              elevation={0}
-              sx={navBarRoot}
-      >
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <Box sx={logoBox}>
-              <Image src={logo} width={142} height={50} alt="logo" />
-            </Box>
+    <AppBar position="static" elevation={0} sx={navBarRoot}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Box sx={logoBox}>
+            <Image src={logo} width={142} height={50} alt="logo" />
+          </Box>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <Box
               sx={{
-                flexGrow: 1,
-                display: { xs: "flex", md: "none" },
-              }}
-            >
-              <IconButton
-                size="large"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            <Box
-              sx={{
-                flexGrow: 1,
                 display: { xs: "none", md: "flex" },
-                marginLeft: { sm: "6%", md: "20%" },
+                marginLeft: "10%",
+                marginRight: "10%",
               }}
             >
               {pages.map((page) => (
@@ -104,15 +71,48 @@ const NavBar = () => {
             <Box
               sx={{
                 display: { xs: "flex", md: "none" },
-                mr: 10,
+                marginRight: "auto", // Pushes the menu to the left corner
               }}
             >
-              <Image src={logo} width={142} height={50} alt="logo" />
+              <IconButton
+                size="large"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+                sx={{
+                  marginLeft: "10px", // Adjust the margin for better spacing
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+              >
+                {pages.map((page) => (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
             </Box>
             <Box
               sx={{
-                display: { xs: "flex", md: "flex" },
-                mr: 10,
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "center",
               }}
             >
               <Button variant="text" sx={registerButtonStyles}>
@@ -122,11 +122,11 @@ const NavBar = () => {
                 Login
               </Button>
             </Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </div>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 };
 
-export default NavBar
+export default NavBar;

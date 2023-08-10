@@ -1,30 +1,20 @@
-// components/Card.js
-import React from 'react';
-import { Button, Card as MuiCard, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
+import React from "react";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 
-const Card = ({ image, text, buttonText, onClick }) => {
+const CustomCard = ({ imageSrc, title, description }) => {
   return (
-    <MuiCard>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="200"
-          image={image}
-          alt={text}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {text}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button variant="contained" color="primary" onClick={onClick}>
-          {buttonText}
-        </Button>
-      </CardActions>
-    </MuiCard>
+    <Card>
+      <CardMedia component="img" height="140" image={imageSrc} alt="Card Image" />
+      <CardContent>
+        <Typography variant="h5" component="div">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {description}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 
-export default Card;
+export default CustomCard;

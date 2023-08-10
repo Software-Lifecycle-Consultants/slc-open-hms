@@ -1,15 +1,32 @@
+'use client'
 import React from "react";
-import { Box, Container, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid";
+import { Box, Container, Typography, Grid } from "@mui/material";
 import Banner from "../../components/Banner";
 import NavBar from "../../components/NavBar";
+import CardCarousel from "../../components/CardCarousel"; // Import the new CardCarousel component
 
+
+  // Define the cards array
+  const cards = [
+    {
+      imageSrc: "/images/bali.jpg",
+      title: "Card Title 1",
+      description: "Description for Card 1",
+    },
+    {
+      imageSrc: "/images/france.jpg",
+      title: "Card Title 2",
+      description: "Description for Card 2",
+    },
+    // Add more cards as needed
+  ];
 
 const HomeScreen = () => {
   return (
     <Box>
+      <NavBar /> 
+      {/* Section 1 */}
       <Box
-        // backgroundColor="primaryBlack"
         sx={{
           backgroundColor: "#0C111F",
           color: "white",
@@ -18,85 +35,63 @@ const HomeScreen = () => {
           flexGrow: 1,
         }}
       >
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <NavBar />
+        <Container>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6}>
+              <Box sx={{ padding: "40px 0" }}>
+                <Banner
+                  title="The best deals on the world's best destinations"
+                  subtitle="Best travel and destinations"
+                  description="With travala you can experience new travel and the best tourist destinations that we have to offer"
+                  primaryButtonLabel="Our Destination"
+                  secondaryButtonLabel="Our Gallery"
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100%",
+                }}
+              >
+                <img
+                  src="https://res.cloudinary.com/de9zkpp0w/image/upload/v1690446713/thilini/Group_48095510_odtoo3.png"
+                  width="100%"
+                  height="auto"
+                  alt="main Image"
+                />
+              </Box>
+            </Grid>
           </Grid>
-
-          <Grid item xs={12} md={6}>
-            <Box sx={{ margin: "20%", width: "80%" }}>
-              <Banner
-                title="The best deals on the world's best destinations"
-                subtitle="Best travel and destinations"
-                description="With travala you can experience new travel and the best tourist
-                            destinations that we have to offer"
-                primaryButtonLabel="Our Destination"
-                secondaryButtonLabel="Our Gallery"
-              />
-            </Box>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{ display: { xs: "none", md: "block" } }}
-          >
-            <Box sx={{ marginLeft: "20%" }}>
-              <img
-                src="https://res.cloudinary.com/de9zkpp0w/image/upload/v1690446713/thilini/Group_48095510_odtoo3.png"
-                width={"617.758px"}
-                height={"616.951px"}
-                alt="main Image"
-              />
-            </Box>
-          </Grid>
-        </Grid>
-      </Box>
-
-      {/* Section 2 */}
-      <Box sx={{ backgroundColor: "white", padding: "40px 0" }}>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item xs={12} md={6}></Grid>
-          <Grid item xs={12} md={6}></Grid>
-          <Grid item xs={12}></Grid>
-        </Grid>
-      </Box>
-
-      {/* Section 3 */}
-      <Box
-        sx={{ backgroundColor: "lightgray", color: "black", padding: "40px 0" }}
-      >
-        <Container>
-          <Typography variant="h1">Section 3</Typography>
-          {/* Add content for section 3 here */}
         </Container>
       </Box>
 
-      {/* Section 4 */}
-      <Box sx={{ backgroundColor: "white", color: "black", padding: "40px 0" }}>
+   {/* Section 2 */}
+   <Box sx={{ backgroundColor: "white", padding: "20px 0" }}>
         <Container>
-          <Typography variant="h1">Section 4</Typography>
-          {/* Add content for section 4 here */}
+          <CardCarousel cards={cards} />
         </Container>
       </Box>
 
-      {/* Section 5 */}
-      <Box
-        sx={{ backgroundColor: "lightgray", color: "black", padding: "40px 0" }}
-      >
-        <Container>
-          <Typography variant="h1">Section 5</Typography>
-          {/* Add content for section 5 here */}
-        </Container>
-      </Box>
-
-      {/* Section 6 */}
-      <Box sx={{ backgroundColor: "white", color: "black", padding: "40px 0" }}>
-        <Container>
-          <Typography variant="h1">Section 6</Typography>
-          {/* Add content for section 6 here */}
-        </Container>
-      </Box>
+      {/* Sections 3-6 */}
+      {[...Array(4)].map((_, index) => (
+        <Box
+          key={`section-${index + 3}`}
+          sx={{
+            backgroundColor: index % 2 === 0 ? "lightgray" : "white",
+            color: index % 2 === 0 ? "black" : "black",
+            padding: "40px 0",
+          }}
+        >
+          <Container>
+            <Typography variant="h1">Section {index + 3}</Typography>
+            {/* Add content for section {index + 3} here */}
+          </Container>
+        </Box>
+      ))}
     </Box>
   );
 };
