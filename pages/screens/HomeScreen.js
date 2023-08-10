@@ -18,6 +18,17 @@ import CardCarousel from "../../components/CardCarousel"; // Import the new Card
       title: "Card Title 2",
       description: "Description for Card 2",
     },
+
+    {
+      imageSrc: "/images/Turkey.png",
+      title: "Card Title 3",
+      description: "Description for Card 1",
+    },
+    {
+      imageSrc: "/images/france.jpg",
+      title: "Card Title 2",
+      description: "Description for Card 2",
+    },
     // Add more cards as needed
   ];
 
@@ -70,7 +81,7 @@ const HomeScreen = () => {
       </Box>
 
    {/* Section 2 */}
-   <Box sx={{ backgroundColor: "white", padding: "20px 0" }}>
+   <Box sx={{ backgroundColor: "red", padding: "20px 0" }}>
         <Container>
           <CardCarousel cards={cards} />
         </Container>
