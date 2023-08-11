@@ -4,6 +4,7 @@ import { Box, Container, Typography, Grid } from "@mui/material";
 import Banner from "../../components/Banner";
 import NavBar from "../../components/NavBar";
 import CardCarousel from "../../components/CardCarousel"; // Import the new CardCarousel component
+import Blog from "../../components/Blog";
 
 
   // Define the cards array
@@ -35,7 +36,7 @@ import CardCarousel from "../../components/CardCarousel"; // Import the new Card
 const HomeScreen = () => {
   return (
     <Box>
-      <NavBar /> 
+      <NavBar />
       {/* Section 1 */}
       <Box
         sx={{
@@ -80,15 +81,23 @@ const HomeScreen = () => {
         </Container>
       </Box>
 
-   {/* Section 2 */}
-   <Box sx={{ backgroundColor: "#FFF", padding: "20px 0" }}>
+      {/* Section 2 */}
+      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0" }}>
         <Container>
           <CardCarousel cards={cards} />
         </Container>
       </Box>
 
+      {/* Sections 3 */}
+      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+        <Container>
+          <Blog />
+        </Container>
+      </Box>
+
       {/* Sections 3-6 */}
-      {[...Array(4)].map((_, index) => (
+      {/* 
+      {[...Array(9)].map((_, index) => (
         <Box
           key={`section-${index + 3}`}
           sx={{
@@ -99,10 +108,11 @@ const HomeScreen = () => {
         >
           <Container>
             <Typography variant="h1">Section {index + 3}</Typography>
-            {/* Add content for section {index + 3} here */}
+            
           </Container>
         </Box>
       ))}
+       */}
     </Box>
   );
 };
