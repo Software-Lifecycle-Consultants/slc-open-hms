@@ -73,8 +73,8 @@ import CustomCard from "./Card";
 const CardCarousel = ({ cards }) => {
   return (
     <CarouselProvider
-      naturalSlideWidth={200}
-      naturalSlideHeight={100}
+      naturalSlideWidth={600}
+      naturalSlideHeight={400}
       totalSlides={cards.length}
       infinite
       isPlaying
@@ -92,7 +92,7 @@ const CardCarousel = ({ cards }) => {
           </Slide>
         ))}
       </Slider>
-      <DotGroup className="my-dots" style={{ position: "relative", bottom: "10px" }} />
+      {/* <DotGroup className="my-dots" style={{ position: "relative", bottom: "10px" }} /> */}
     </CarouselProvider>
   );
 };

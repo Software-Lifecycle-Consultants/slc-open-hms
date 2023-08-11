@@ -81,7 +81,7 @@ const HomeScreen = () => {
       </Box>
 
    {/* Section 2 */}
-   <Box sx={{ backgroundColor: "red", padding: "20px 0" }}>
+   <Box sx={{ backgroundColor: "#FFF", padding: "20px 0" }}>
         <Container>
           <CardCarousel cards={cards} />
         </Container>
