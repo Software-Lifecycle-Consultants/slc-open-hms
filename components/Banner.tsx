@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Typography } from '@mui/material';
+import { Button, Typography, Box } from '@mui/material';
 
 interface BannerProps {
   title: string;
@@ -20,28 +20,28 @@ const titleStyle = {
 const subtitleStyle = {
   color: '#FFF',
   fontFamily: 'Volkhov',
-  fontSize: '80px',
+  fontSize: '36px', // Adjust font size for responsiveness
   fontWeight: 700,
-  lineHeight: '100px',
-  letterSpacing: '-3.2px',
+  lineHeight: '42px', // Adjust line height for responsiveness
+  letterSpacing: '-1.8px', // Adjust letter spacing for responsiveness
 };
 
 const descriptionStyle = {
   color: 'rgba(255, 255, 255, 0.70)',
   fontFamily: 'Inter, sans-serif',
-  fontSize: '24px',
+  fontSize: '18px', // Adjust font size for responsiveness
   fontWeight: 400,
-  lineHeight: '35px',
-  letterSpacing: '-0.96px',
+  lineHeight: '26px', // Adjust line height for responsiveness
+  letterSpacing: '-0.72px', // Adjust letter spacing for responsiveness
   width: '100%',
 };
 
 const primaryButtonStyle = {
   display: 'inline-flex',
-  padding: '16px 24px',
+  padding: '12px 18px', // Adjust padding for responsiveness
   justifyContent: 'center',
   alignItems: 'center',
-  gap: '14px',
+  gap: '10px', // Adjust gap for responsiveness
   borderRadius: '100px',
   textTransform: 'none',
   fontWeight: 'bold',
@@ -52,7 +52,7 @@ const primaryButtonStyle = {
 const secondaryButtonStyle = {
   color: '#FFF',
   fontFamily: 'Inter, sans-serif',
-  fontSize: '14px',
+  fontSize: '14px', // Adjust font size for responsiveness
   fontWeight: 400,
   lineHeight: '180%',
   letterSpacing: '0.36px',
@@ -66,9 +66,9 @@ function Banner({
   description,
   primaryButtonLabel,
   secondaryButtonLabel,
-}:BannerProps) {
+}: BannerProps) {
   return (
-    <div>
+    <Box>
       <Typography variant="h5" sx={titleStyle}>
         {title}
       </Typography>
@@ -86,7 +86,7 @@ function Banner({
       <Button variant="text" sx={secondaryButtonStyle}>
         {secondaryButtonLabel}
       </Button>
-    </div>
+    </Box>
   );
 }
 
