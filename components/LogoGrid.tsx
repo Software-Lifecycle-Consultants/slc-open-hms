@@ -163,8 +163,8 @@ const LogoGrid = () => {
                 <Image
                   src={axon}
                   alt="test"
-                  width={"162px"}
-                  height={"32px"}
+                  width={162}
+                  height={32}
                   style={{
                     mixBlendMode: "luminosity",
                     flexShrink: 0,
@@ -182,8 +182,8 @@ const LogoGrid = () => {
                 <Image
                   src={jetstar}
                   alt="test"
-                  width={"162px"}
-                  height={"32px"}
+                  width={162}
+                  height={32}
                   style={{
                     mixBlendMode: "luminosity",
                     flexShrink: 0,
@@ -195,8 +195,8 @@ const LogoGrid = () => {
                 <Image
                   src={expedia}
                   alt="test"
-                  width={"162px"}
-                  height={"32px"}
+                  width={162}
+                  height={32}
                   style={{
                     mixBlendMode: "luminosity",
                     flexShrink: 0,
@@ -208,8 +208,8 @@ const LogoGrid = () => {
                 <Image
                   src={qantas}
                   alt="test"
-                  width={"162px"}
-                  height={"32px"}
+                  width={162}
+                  height={32}
                   style={{
                     mixBlendMode: "luminosity",
                     flexShrink: 0,
@@ -221,8 +221,8 @@ const LogoGrid = () => {
                 <Image
                   src={alitalia}
                   alt="test"
-                  width={"162px"}
-                  height={"32px"}
+                  width={162}
+                  height={32}
                   style={{
                     mixBlendMode: "luminosity",
                     flexShrink: 0,
