@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Testimonials from "../components/Testimonials";
 import Blog from "../components/Blog";
 import CustomCard from "../components/Card";
+import LogoGrid from '@/components/LogoGrid';
 
 export default function Home() {
   return (
@@ -15,9 +16,9 @@ export default function Home() {
       {/* Banner Section */}
       <Box
         sx={{
-          backgroundColor: '#0C111F',
-          color: 'white',
-          padding: '40px 0',
+          backgroundColor: "#0C111F",
+          color: "white",
+          padding: "40px 0",
           flexGrow: 1,
         }}
       >
@@ -37,10 +38,10 @@ export default function Home() {
             <Grid item xs={12} md={6}>
               <Box
                 sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  height: '100%',
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100%",
                 }}
               >
                 <img
@@ -55,12 +56,19 @@ export default function Home() {
         </Container>
       </Box>
 
-        {/* Destination Card */}
-         <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
-          <Container>
-            <CustomCard/>
-          </Container>
-        </Box>
+      {/* Destination Card */}
+      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+        <Container>
+          <CustomCard />
+        </Container>
+      </Box>
+
+      {/* Blog */}
+      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+        <Container>
+          <LogoGrid />
+        </Container>
+      </Box>
 
       {/* Blog */}
       <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
@@ -70,7 +78,9 @@ export default function Home() {
       </Box>
 
       {/* Testimonials */}
-      <Box sx={{ backgroundColor: "#F7F7F7", padding: "20px 0", width: "100%" }}>
+      <Box
+        sx={{ backgroundColor: "#F7F7F7", padding: "20px 0", width: "100%" }}
+      >
         <Container>
           <Testimonials />
         </Container>
@@ -91,12 +101,13 @@ export default function Home() {
             backgroundColor: index % 2 === 0 ? "lightgray" : "white",
             color: index % 2 === 0 ? "black" : "black",
             padding: "40px 0",
-          }}>
+          }}
+        >
           <Container>
             <Typography variant="h1">Section {index + 3}</Typography>
           </Container>
         </Box>
       ))}
     </>
-  )
+  );
 }
