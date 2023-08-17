@@ -1,3 +1,4 @@
+"use client"
 import { Box,Grid } from "@mui/material";
 import React from "react";
 import Image from "next/image";
@@ -7,8 +8,10 @@ import expedia from "../public/images/expedia.png";
 import qantas from "../public/images/qantas.png";
 import alitalia from "../public/images/alitalia.png";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+
 const settings = {
   dots: true,
   infinite: true,
