@@ -32,7 +32,7 @@ const Heading = () => {
         Book Now
       </Typography>
       <Typography
-        // variant="body2"
+        variant="body2"
         style={{
           color: "var(--light-text-color-body-1, #515151);",
           fontFamily: "Mulish",

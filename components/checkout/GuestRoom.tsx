@@ -40,8 +40,6 @@ const GuestRoom = () => {
             style={{
               width: "100%",
               height: "318px",
-              // width: "auto",
-              // borderRadius: "20px 20px 0px 0px",
               flexShrink: 0,
             }}
           />
@@ -58,8 +56,6 @@ const GuestRoom = () => {
                 fontStyle: "normal",
                 letterSpacing: "0.12px",
                 fontWeight: "700",
-                // marginTop: "14px",
-                // marginLeft: "20px",
               }}
             >
               President Luxury Double Room View NY City
@@ -75,7 +71,6 @@ const GuestRoom = () => {
                 letterSpacing: "0.08px",
                 fontWeight: "600",
                 marginTop: "22px",
-                // marginLeft: "20px",
               }}
             >
               14 February 2021
@@ -174,7 +169,6 @@ const GuestRoom = () => {
                 letterSpacing: "0.112px",
                 fontWeight: "600",
                 marginTop: "14px",
-                // marginLeft: "18px",
               }}
             >
               Total Price
@@ -190,7 +184,6 @@ const GuestRoom = () => {
                 letterSpacing: "0.195px",
                 fontWeight: "700",
                 marginTop: "4px",
-                // marginLeft: "18px",
               }}
             >
               $59

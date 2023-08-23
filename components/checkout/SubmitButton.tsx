@@ -38,7 +38,6 @@ const SubmitButton = () => {
       <Button
         variant="contained"
         sx={{
-          //   backgroundColor: "var(--light-secondary-color-50, #C7923E)",
           borderRadius: "8px",
           display: "flex",
           justifyContent: "center",

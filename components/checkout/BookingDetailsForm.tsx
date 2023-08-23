@@ -1,10 +1,7 @@
 import {
   Grid,
-  Box,
   Typography,
   TextField,
-  FormControl,
-  FormLabel,
   Card,
   CardContent,
 } from "@mui/material";
@@ -13,7 +10,6 @@ import React from 'react'
 const BookingDetailsForm = () => {
   return (
     <>
-      {/* <FormControl> */}
       <Card
         elevation={0}
         sx={{
@@ -189,10 +185,6 @@ const BookingDetailsForm = () => {
                 />
               </Grid>
             </Grid>
-            {/* </FormControl> */}
-            {/* <Box sx={{backgroundColor: "red"}}>
-          gyugyhgvgu    
-    </Box> */}
           </form>
         </CardContent>
       </Card>
