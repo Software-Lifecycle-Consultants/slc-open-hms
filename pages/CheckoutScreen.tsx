@@ -6,8 +6,6 @@ import GuestRoom from '@/components/checkout/GuestRoom';
 import Heading from '@/components/checkout/Heading';
 import ServicesCard from '@/components/checkout/ServicesCard';
 import SubmitButton from '@/components/checkout/SubmitButton';
-import TestList from "@/components/checkout/CheckList";
-// import TestCalender from '@/components/checkout/TestCalender';
 import { Grid, Box, Container } from "@mui/material";
 import React from "react";
 
