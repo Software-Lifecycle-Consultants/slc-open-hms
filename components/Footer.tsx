@@ -5,9 +5,6 @@ import logoDark from "../public/images/logoDark.png";
 import fb from "../public/images/facebook.png";
 import tw from "../public/images/twitter.png";
 import ig from "../public/images/instagram.png";
-// import {
-//   logoBox,
-// } from "../styles/theme";
 
 const Footer = () => {
   return (
@@ -41,11 +38,9 @@ const Footer = () => {
           xs={12}
           md={5}
           sx={{
-            // backgroundColor: "blue",
             display: "flex",
             justifyContent: { xs: "none", md: "flex-end" },
             marginTop: { xs: "24px", md: "0" },
-            // marginLeft:"10%"
           }}
         >
           <Box>
@@ -59,7 +54,6 @@ const Footer = () => {
                 fontStyle: "normal",
                 fontWeight: "700",
                 letterSpacing: "-0.232px",
-                //   marginTop: "5px",
               }}
             >
               Destination
@@ -205,12 +199,11 @@ const Footer = () => {
             </Typography>
             <Box
               sx={{ display: "flex", paddingLeft: "5px" }}
-              // mr={{ xs: "16px", md: "32px" }}
             >
               <Image
                 src={fb}
-                width={"9.923px"}
-                height={"19.845px"}
+                width={9.923}
+                height={19.845}
                 alt="fb"
                 style={{
                   flexShrink: 0,
@@ -239,8 +232,8 @@ const Footer = () => {
             >
               <Image
                 src={tw}
-                width={"9.923px"}
-                height={"19.845px"}
+                width={9.923}
+                height={19.845}
                 alt="fb"
                 style={{
                   flexShrink: 0,
@@ -269,8 +262,8 @@ const Footer = () => {
             >
               <Image
                 src={ig}
-                width={"9.923px"}
-                height={"19.845px"}
+                width={9.923}
+                height={19.845}
                 alt="fb"
                 style={{
                   flexShrink: 0,

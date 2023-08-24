@@ -82,21 +82,6 @@ export default function Home() {
           <Footer />
         </Container>
       </Box>
-
-      {/* Sections 3-6 */}
-      {[...Array(4)].map((_, index) => (
-        <Box
-          key={`section-${index + 3}`}
-          sx={{
-            backgroundColor: index % 2 === 0 ? "lightgray" : "white",
-            color: index % 2 === 0 ? "black" : "black",
-            padding: "40px 0",
-          }}>
-          <Container>
-            <Typography variant="h1">Section {index + 3}</Typography>
-          </Container>
-        </Box>
-      ))}
     </>
   )
 }

@@ -89,7 +89,7 @@ const CustomCard = ({}) => {
             <Image
               src={turkey}
               alt="test"
-              width={"518px"}
+              width={518}
               height={301}
               style={{
                 width: "100%",
@@ -137,8 +137,8 @@ const CustomCard = ({}) => {
                     >
                       <Image
                         src={wallet}
-                        width={"38px"}
-                        height={"38px"}
+                        width={38}
+                        height={38}
                         alt="wallet"
                         style={{
                           flexShrink: 0,
@@ -222,8 +222,8 @@ const CustomCard = ({}) => {
                     >
                       <Image
                         src={user}
-                        width={"38px"}
-                        height={"38px"}
+                        width={38}
+                        height={38}
                         alt="wallet"
                         style={{
                           flexShrink: 0,
@@ -308,8 +308,8 @@ const CustomCard = ({}) => {
                     >
                       <Image
                         src={heart}
-                        width={"38px"}
-                        height={"38px"}
+                        width={38}
+                        height={38}
                         alt="wallet"
                         style={{
                           flexShrink: 0,

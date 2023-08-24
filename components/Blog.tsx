@@ -78,7 +78,7 @@ const Blog = () => {
               <Image
                 src={turkey2}
                 alt="test"
-                width={"400px"}
+                width={400}
                 height={284}
                 style={{
                   width: "100%",
@@ -87,50 +87,7 @@ const Blog = () => {
                   flexShrink: 0,
                 }}
               />
-              {/* <Box
-                variant="body2"
-                style={{
-                  position: "absolute",
-                  top: "12px",
-                  left: "14px",
-                  padding: "10px",
-                  background: "rgba(0, 0, 0, 0.5)",
-                  color: "#fff",
-                  borderRadius: "5px",
-                }}
-              >
-                Top Left Text
-              </Box> */}
-              {/* <Box
-                variant="body2"
-                style={{
-                  position: "absolute",
-                  top: "12px",
-                  right: "14px",
-                  padding: "10px",
-                  background: "rgba(0, 0, 0, 0.5)",
-                  color: "#fff",
-                  borderRadius: "5px",
-                }}
-              >
-                Top Right Text
-              </Box> */}
-              {/* <Box
-                variant="body2"
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  padding: "10px",
-                  background: "rgba(0, 0, 0, 0.5)",
-                  color: "#fff",
-                  borderRadius: "5px",
-                }}
-              >
-                Center Text
-              </Box> */}
-            </Box>
+              </Box>
             <CardContent
               sx={{
                 borderRadius: "0px 0px 30px 30px",
@@ -272,7 +229,7 @@ const Blog = () => {
               <Image
                 src={namibia2}
                 alt="test"
-                width={"400px"}
+                width={400}
                 height={284}
                 style={{
                   width: "100%",
@@ -467,7 +424,7 @@ const Blog = () => {
               <Image
                 src={newMexico2}
                 alt="test"
-                width={"400px"}
+                width={400}
                 height={284}
                 style={{
                   width: "100%",

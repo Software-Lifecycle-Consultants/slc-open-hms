@@ -13,20 +13,11 @@ import profile from "../public/images/Profile.png";
 
 const Testimonials = () => {
   const [value, setValue] = React.useState(4);
-  const userAvatarStyle = {
-    borderRadius: "50%",
-    width: "63.364px",
-    height: "63.364px",
-    objectFit: "cover",
-  };
-
+  
   const accountStatsStyle = {
-    // textAlign: "center",
     marginTop: "31.682px", // Half of the userAvatar height
     width: "90%",
     height: "auto",
-    // background: "#e0e0e0",
-    // boxShadow: "9px 9px 10px rgba(0, 0, 0, 0.25)",
     borderRadius: "18px",
     paddingTop: "36px",
     marginLeft: "5%",
@@ -50,9 +41,9 @@ const Testimonials = () => {
     <>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
-          <Box style={accountContainerStyle}>
-            <Box style={userAvatarContainerStyle}>
-              <Image src={profile} alt="Avatar" style={userAvatarStyle} />
+          <Box sx={accountContainerStyle}>
+            <Box sx={userAvatarContainerStyle}>
+              <Image src={profile} alt="Avatar" width={64} height={64}  />
             </Box>
             <Card elevation={0} style={accountStatsStyle}>
               <CardContent>
