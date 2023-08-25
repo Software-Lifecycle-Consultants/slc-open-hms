@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import img from "../../public/images/ImagePlaceholder2.png";
+import img from "../../public/images/Room3.jpg";
 
 const HeroBanner = () => {
   return (
@@ -182,19 +182,20 @@ const HeroBanner = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Box
-            style={{
+            sx={{
               position: "relative",
               maxWidth: "520px",
+              paddingTop: "24px"
             }}
           >
             <Image
               src={img}
               alt="test"
               width={520}
-              height={517}
+              height={475}
               style={{
                 width: "100%",
-                height: "517px",
+                height: "auto",
                 flexShrink: 0,
               }}
             />
