@@ -39,13 +39,25 @@ const SimilarRooms = () => {
       </Typography>
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
-          <RoomCard />
+          <RoomCard
+            image={"/images/Room2.jpg"}
+            roomName={"Deluxe Double with New York City View"}
+            price={59}
+          />
         </Grid>
         <Grid item xs={12} md={4}>
-          <RoomCard />
+          <RoomCard
+            image={"/images/Room2.jpg"}
+            roomName={"Deluxe Double with New York City View"}
+            price={59}
+          />
         </Grid>
         <Grid item xs={12} md={4}>
-          <RoomCard />
+          <RoomCard
+            image={"/images/Room2.jpg"}
+            roomName={"Deluxe Double with New York City View"}
+            price={59}
+          />
         </Grid>
       </Grid>
     </>

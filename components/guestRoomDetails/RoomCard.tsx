@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
 import Image from "next/image";
-import img from "../../public/images/ImagePlaceholder.png";
-import { Box, Button, Card, CardContent, Checkbox, Typography } from '@mui/material';
+// import img from "../../public/images/ImagePlaceholder.png";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Checkbox,
+  Typography,
+} from "@mui/material";
 
-const RoomCard = () => {
+interface RoomCardProps {
+  image: string;
+  roomName: string;
+  price: number;
+}
+
+const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
   return (
     <>
       <Card
@@ -24,7 +37,7 @@ const RoomCard = () => {
           }}
         >
           <Image
-            src={img}
+            src={image}
             alt="test"
             width={400}
             height={310}
@@ -49,7 +62,7 @@ const RoomCard = () => {
                 fontWeight: "700",
               }}
             >
-              Deluxe Double with New York City View
+              {roomName}
             </Typography>
             <Box
               sx={{
@@ -68,7 +81,6 @@ const RoomCard = () => {
                     "&.Mui-checked": {
                       color: "#9A9AB0",
                     },
-                    // marginTop: "26px",
                   }}
                 />
                 <Typography
@@ -81,7 +93,6 @@ const RoomCard = () => {
                     fontStyle: "normal",
                     letterSpacing: "0.08px",
                     fontWeight: "400",
-                    // marginTop: "42px",
                   }}
                 >
                   2 Guest
@@ -95,7 +106,6 @@ const RoomCard = () => {
                     "&.Mui-checked": {
                       color: "#9A9AB0",
                     },
-                    // marginTop: "26px",
                   }}
                 />
                 <Typography
@@ -108,7 +118,6 @@ const RoomCard = () => {
                     fontStyle: "normal",
                     letterSpacing: "0.08px",
                     fontWeight: "400",
-                    // marginTop: "42px",
                   }}
                 >
                   2 Bed
@@ -122,7 +131,6 @@ const RoomCard = () => {
                     "&.Mui-checked": {
                       color: "#9A9AB0",
                     },
-                    // marginTop: "26px",
                   }}
                 />
                 <Typography
@@ -135,7 +143,6 @@ const RoomCard = () => {
                     fontStyle: "normal",
                     letterSpacing: "0.08px",
                     fontWeight: "400",
-                    // marginTop: "42px",
                   }}
                 >
                   1 Bathroom
@@ -194,7 +201,7 @@ const RoomCard = () => {
                       marginTop: "2px",
                     }}
                   >
-                    $59
+                    ${price}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -220,6 +227,6 @@ const RoomCard = () => {
       </Card>
     </>
   );
-}
+};
 
-export default RoomCard
+export default RoomCard;
