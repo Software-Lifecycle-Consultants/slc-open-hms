@@ -77,201 +77,207 @@ const AdditionalInfo = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Accordion
-            elevation={0}
-            sx={{
-              border: "1px solid",
-              borderRadius: "8px",
-              borderColor: "var(--light-separators-colors-secondary, #E1E1E1)",
-              marginTop: { xs: "25px", md: "68px" },
-              marginLeft: { xs: "none", md: "50px" },
-              flexShrink: "0",
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "#9A9AB0" }} />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
+          <Box sx={{ paddingTop: "67px", paddingLeft: { xs: "none", md:"24px"} }}>
+            <Accordion
+              elevation={0}
+              sx={{
+                border: "1px solid",
+                borderRadius: "8px",
+                borderColor:
+                  "var(--light-separators-colors-secondary, #E1E1E1)",
+                // marginLeft: { xs: "none", md: "50px" },
+                flexShrink: "0",
+              }}
             >
-              <Typography
-                variant="body1"
-                sx={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "125%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "400",
-                }}
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: "#9A9AB0" }} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
               >
-                What is the address of Best Western Hotel
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            elevation={0}
-            sx={{
-              border: "1px solid",
-              borderRadius: "8px",
-              borderColor: "var(--light-separators-colors-secondary, #E1E1E1)",
-              marginTop: "10px",
-              marginLeft: { xs: "none", md: "50px" },
-              flexShrink: "0",
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "#9A9AB0" }} />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "var(--light-text-color-body-2, #9A9AB0)",
+                    fontFamily: "Mulish, sans-serif",
+                    fontSize: "16px",
+                    lineHeight: "125%",
+                    fontStyle: "normal",
+                    letterSpacing: "0.08px",
+                    fontWeight: "400",
+                  }}
+                >
+                  What is the address of Best Western Hotel
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              elevation={0}
+              sx={{
+                border: "1px solid",
+                borderRadius: "8px",
+                borderColor:
+                  "var(--light-separators-colors-secondary, #E1E1E1)",
+                marginTop: "10px",
+                // marginLeft: { xs: "none", md: "50px" },
+                flexShrink: "0",
+              }}
             >
-              <Typography
-                variant="body1"
-                sx={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "125%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "400",
-                }}
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: "#9A9AB0" }} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
               >
-                What are the facilities available in Best Western Hotel?
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            elevation={0}
-            sx={{
-              border: "1px solid",
-              borderRadius: "8px",
-              borderColor: "var(--light-separators-colors-secondary, #E1E1E1)",
-              marginTop: "10px",
-              marginLeft: { xs: "none", md: "50px" },
-              flexShrink: "0",
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "#9A9AB0" }} />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "var(--light-text-color-body-2, #9A9AB0)",
+                    fontFamily: "Mulish, sans-serif",
+                    fontSize: "16px",
+                    lineHeight: "125%",
+                    fontStyle: "normal",
+                    letterSpacing: "0.08px",
+                    fontWeight: "400",
+                  }}
+                >
+                  What are the facilities available in Best Western Hotel?
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              elevation={0}
+              sx={{
+                border: "1px solid",
+                borderRadius: "8px",
+                borderColor:
+                  "var(--light-separators-colors-secondary, #E1E1E1)",
+                marginTop: "10px",
+                // marginLeft: { xs: "none", md: "50px" },
+                flexShrink: "0",
+              }}
             >
-              <Typography
-                variant="body1"
-                sx={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "125%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "400",
-                }}
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: "#9A9AB0" }} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
               >
-                Does Best Western have a swimming pool?
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            elevation={0}
-            sx={{
-              border: "1px solid",
-              borderRadius: "8px",
-              borderColor: "var(--light-separators-colors-secondary, #E1E1E1)",
-              marginTop: "10px",
-              marginLeft: { xs: "none", md: "50px" },
-              flexShrink: "0",
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "#9A9AB0" }} />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "var(--light-text-color-body-2, #9A9AB0)",
+                    fontFamily: "Mulish, sans-serif",
+                    fontSize: "16px",
+                    lineHeight: "125%",
+                    fontStyle: "normal",
+                    letterSpacing: "0.08px",
+                    fontWeight: "400",
+                  }}
+                >
+                  Does Best Western have a swimming pool?
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              elevation={0}
+              sx={{
+                border: "1px solid",
+                borderRadius: "8px",
+                borderColor:
+                  "var(--light-separators-colors-secondary, #E1E1E1)",
+                marginTop: "10px",
+                // marginLeft: { xs: "none", md: "50px" },
+                flexShrink: "0",
+              }}
             >
-              <Typography
-                variant="body1"
-                sx={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "125%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "400",
-                }}
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: "#9A9AB0" }} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
               >
-                Itaems that are not allowed
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            elevation={0}
-            sx={{
-              border: "1px solid",
-              borderRadius: "8px",
-              borderColor: "var(--light-separators-colors-secondary, #E1E1E1)",
-              marginTop: "10px",
-              marginLeft: { xs: "none", md: "50px" },
-              flexShrink: "0",
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "#9A9AB0" }} />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "var(--light-text-color-body-2, #9A9AB0)",
+                    fontFamily: "Mulish, sans-serif",
+                    fontSize: "16px",
+                    lineHeight: "125%",
+                    fontStyle: "normal",
+                    letterSpacing: "0.08px",
+                    fontWeight: "400",
+                  }}
+                >
+                  Itaems that are not allowed
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
+              elevation={0}
+              sx={{
+                border: "1px solid",
+                borderRadius: "8px",
+                borderColor:
+                  "var(--light-separators-colors-secondary, #E1E1E1)",
+                marginTop: "10px",
+                // marginLeft: { xs: "none", md: "50px" },
+                flexShrink: "0",
+              }}
             >
-              <Typography
-                variant="body1"
-                sx={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "125%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "400",
-                }}
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: "#9A9AB0" }} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
               >
-                Does Best Western have a swimming pool?
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "var(--light-text-color-body-2, #9A9AB0)",
+                    fontFamily: "Mulish, sans-serif",
+                    fontSize: "16px",
+                    lineHeight: "125%",
+                    fontStyle: "normal",
+                    letterSpacing: "0.08px",
+                    fontWeight: "400",
+                  }}
+                >
+                  Does Best Western have a swimming pool?
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          </Box>
         </Grid>
       </Grid>
     </>

@@ -51,111 +51,119 @@ const RoomCard = () => {
             >
               Deluxe Double with New York City View
             </Typography>
-            <Box sx={{ display: "flex" }}>
-              <Checkbox
-                disabled
-                checked
-                sx={{
-                  "& .MuiSvgIcon-root": { fontSize: 34 },
-                  color: "#9A9AB0",
-                  "&.Mui-checked": {
-                    color: "#9A9AB0",
-                  },
-                  marginTop: "26px",
-                }}
-              />
-              <Typography
-                variant="body1"
-                style={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "125%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "400",
-                  marginTop: "42px",
-                }}
-              >
-                2 Guest
-              </Typography>
-              <Checkbox
-                disabled
-                checked
-                sx={{
-                  "& .MuiSvgIcon-root": { fontSize: 34 },
-                  color: "#9A9AB0",
-                  "&.Mui-checked": {
-                    color: "#9A9AB0",
-                  },
-                  marginTop: "26px",
-                }}
-              />
-              <Typography
-                variant="body1"
-                style={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "125%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "400",
-                  marginTop: "42px",
-                }}
-              >
-                2 Bed
-              </Typography>
-              <Checkbox
-                disabled
-                checked
-                sx={{
-                  "& .MuiSvgIcon-root": { fontSize: 34 },
-                  color: "#9A9AB0",
-                  "&.Mui-checked": {
-                    color: "#9A9AB0",
-                  },
-                  marginTop: "26px",
-                }}
-              />
-              <Typography
-                variant="body1"
-                style={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "125%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "400",
-                  marginTop: "42px",
-                }}
-              >
-                1 Bathroom
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex" }}>
-                <Button
-                  variant="contained"
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                paddingTop: "15px",
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Checkbox
+                  disabled
+                  checked
                   sx={{
-                    borderRadius: "8px",
-                    display: "inline-flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    padding: "18px 24px",
-                    gap: "10px",
-                    textTransform: "none",
-                    width: "100%",
-                    height: "56px",
-                    marginTop: "20px",
-                    backgroundColor: "#C7923E",
-                    "&:hover": {
-                      backgroundColor: "#c7833e",
+                    "& .MuiSvgIcon-root": { fontSize: 30 },
+                    color: "#9A9AB0",
+                    "&.Mui-checked": {
+                      color: "#9A9AB0",
                     },
+                    // marginTop: "26px",
+                  }}
+                />
+                <Typography
+                  variant="body1"
+                  style={{
+                    color: "var(--light-text-color-body-2, #9A9AB0)",
+                    fontFamily: "Mulish, sans-serif",
+                    fontSize: "16px",
+                    lineHeight: "125%",
+                    fontStyle: "normal",
+                    letterSpacing: "0.08px",
+                    fontWeight: "400",
+                    // marginTop: "42px",
                   }}
                 >
-                  Learn More
-                </Button>
+                  2 Guest
+                </Typography>
+                <Checkbox
+                  disabled
+                  checked
+                  sx={{
+                    "& .MuiSvgIcon-root": { fontSize: 30 },
+                    color: "#9A9AB0",
+                    "&.Mui-checked": {
+                      color: "#9A9AB0",
+                    },
+                    // marginTop: "26px",
+                  }}
+                />
+                <Typography
+                  variant="body1"
+                  style={{
+                    color: "var(--light-text-color-body-2, #9A9AB0)",
+                    fontFamily: "Mulish, sans-serif",
+                    fontSize: "16px",
+                    lineHeight: "125%",
+                    fontStyle: "normal",
+                    letterSpacing: "0.08px",
+                    fontWeight: "400",
+                    // marginTop: "42px",
+                  }}
+                >
+                  2 Bed
+                </Typography>
+                <Checkbox
+                  disabled
+                  checked
+                  sx={{
+                    "& .MuiSvgIcon-root": { fontSize: 30 },
+                    color: "#9A9AB0",
+                    "&.Mui-checked": {
+                      color: "#9A9AB0",
+                    },
+                    // marginTop: "26px",
+                  }}
+                />
+                <Typography
+                  variant="body1"
+                  style={{
+                    color: "var(--light-text-color-body-2, #9A9AB0)",
+                    fontFamily: "Mulish, sans-serif",
+                    fontSize: "16px",
+                    lineHeight: "125%",
+                    fontStyle: "normal",
+                    letterSpacing: "0.08px",
+                    fontWeight: "400",
+                    // marginTop: "42px",
+                  }}
+                >
+                  1 Bathroom
+                </Typography>
+              </Box>
+            </Box>
+            <Box sx={{ display: "flex" }}>
+              <Button
+                variant="contained"
+                sx={{
+                  borderRadius: "8px",
+                  display: "inline-flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "18px 24px",
+                  gap: "10px",
+                  textTransform: "none",
+                  width: "100%",
+                  height: "56px",
+                  marginTop: "20px",
+                  backgroundColor: "#C7923E",
+                  "&:hover": {
+                    backgroundColor: "#c7833e",
+                  },
+                }}
+              >
+                Learn More
+              </Button>
               <Box sx={{ marginLeft: "120px" }}>
                 <Typography
                   variant="body2"
