@@ -1,5 +1,6 @@
 import { Box, Checkbox, Grid, Typography } from '@mui/material';
 import React from 'react'
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
 const data = [
   { id: 1, name: "Insurance" },
@@ -44,7 +45,7 @@ const Facilities = () => {
           letterSpacing: "0.08px",
           fontWeight: "400",
           marginTop: "15px",
-          marginBottom: "35px"
+          marginBottom: "35px",
         }}
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elit
@@ -54,17 +55,7 @@ const Facilities = () => {
         {data.map((item) => (
           <Grid key={item.id} item xs={6} md={4}>
             <Box sx={{ display: "flex" }}>
-              <Checkbox
-                disabled
-                checked
-                sx={{
-                  "& .MuiSvgIcon-root": { fontSize: 34 },
-                  color: "#9A9AB0",
-                  "&.Mui-checked": {
-                    color: "#9A9AB0",
-                  },
-                }}
-              />
+              <CheckBoxIcon sx={{ fontSize: 34, color: "#9A9AB0" }} />
               <Typography
                 variant="body1"
                 style={{
@@ -75,7 +66,8 @@ const Facilities = () => {
                   fontStyle: "normal",
                   letterSpacing: "0.08px",
                   fontWeight: "400",
-                  marginTop: "17px",
+                  marginTop: "7px",
+                  marginLeft: "10px"
                 }}
               >
                 {item.name}
