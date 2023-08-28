@@ -1,10 +1,10 @@
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
-import BookingDetailsForm from '@/components/checkout/BookingDetailsForm';
+import BookingDetailsForm from '@/components/checkout/BillingDetails';
 import Calender from '@/components/checkout/Calender';
-import GuestRoom from '@/components/checkout/GuestRoom';
+import GuestRoom from '@/components/checkout/BookingInfo';
 import Heading from '@/components/checkout/Heading';
-import ServicesCard from '@/components/checkout/ServicesCard';
+import ServicesCard from '@/components/checkout/ExtraFacilitation';
 import SubmitButton from '@/components/checkout/SubmitButton';
 import { Grid, Box, Container } from "@mui/material";
 import React from "react";

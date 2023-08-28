@@ -8,7 +8,7 @@ import {
 import React from "react";
 import CheckList from "./CheckList";
 
-const ServicesCard = () => {
+const ExtraFacilitation = () => {
   return (
     <>
       <Card
@@ -102,4 +102,4 @@ const ServicesCard = () => {
   );
 };
 
-export default ServicesCard;
+export default ExtraFacilitation;
