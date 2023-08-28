@@ -2,6 +2,27 @@ import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
 import RoomCard from './RoomCard';
 
+const data = [
+  {
+    id: 1,
+    image: "/images/Room2.jpg",
+    roomName: "Deluxe Double with New York City View 1",
+    price: 59,
+  },
+  {
+    id: 2,
+    image: "/images/Room2.jpg",
+    roomName: "Deluxe Double with New York City View 2",
+    price: 59,
+  },
+  {
+    id: 3,
+    image: "/images/Room2.jpg",
+    roomName: "Deluxe Double with New York City View 3",
+    price: 59,
+  },
+];
+
 const SimilarRooms = () => {
   return (
     <>
@@ -38,27 +59,15 @@ const SimilarRooms = () => {
         sed pretium, egestas sed sit.
       </Typography>
       <Grid container spacing={2}>
-        <Grid item xs={12} md={4}>
-          <RoomCard
-            image={"/images/Room2.jpg"}
-            roomName={"Deluxe Double with New York City View"}
-            price={59}
-          />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <RoomCard
-            image={"/images/Room2.jpg"}
-            roomName={"Deluxe Double with New York City View"}
-            price={59}
-          />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <RoomCard
-            image={"/images/Room2.jpg"}
-            roomName={"Deluxe Double with New York City View"}
-            price={59}
-          />
-        </Grid>
+        {data.map((item) => (
+          <Grid key={item.id} item xs={12} sm={6} md={4}>
+            <RoomCard
+              image={item.image}
+              roomName={item.roomName}
+              price={item.price}
+            />
+          </Grid>
+        ))}
       </Grid>
     </>
   );

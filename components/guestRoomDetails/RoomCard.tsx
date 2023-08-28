@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-// import img from "../../public/images/ImagePlaceholder.png";
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import {
   Box,
   Button,
@@ -15,6 +15,21 @@ interface RoomCardProps {
   roomName: string;
   price: number;
 }
+
+const checkBoxTypographyStyle = {
+  color: "var(--light-text-color-body-2, #9A9AB0)",
+  fontFamily: "Mulish, sans-serif",
+  fontSize: "16px",
+  lineHeight: "125%",
+  fontStyle: "normal",
+  letterSpacing: "0.08px",
+  fontWeight: "400",
+};
+
+// const checkBoxStyle = {
+//   fontSize: 32,
+//   color: "#9A9AB0",
+// };
 
 const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
   return (
@@ -72,79 +87,20 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
-                <Checkbox
-                  disabled
-                  checked
-                  sx={{
-                    "& .MuiSvgIcon-root": { fontSize: 30 },
-                    color: "#9A9AB0",
-                    "&.Mui-checked": {
-                      color: "#9A9AB0",
-                    },
-                  }}
-                />
-                <Typography
-                  variant="body1"
-                  style={{
-                    color: "var(--light-text-color-body-2, #9A9AB0)",
-                    fontFamily: "Mulish, sans-serif",
-                    fontSize: "16px",
-                    lineHeight: "125%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.08px",
-                    fontWeight: "400",
-                  }}
-                >
+                <CheckBoxIcon sx={{ fontSize: 32, color: "#9A9AB0" }} />
+                <Typography variant="body1" style={checkBoxTypographyStyle}>
                   2 Guest
                 </Typography>
-                <Checkbox
-                  disabled
-                  checked
-                  sx={{
-                    "& .MuiSvgIcon-root": { fontSize: 30 },
-                    color: "#9A9AB0",
-                    "&.Mui-checked": {
-                      color: "#9A9AB0",
-                    },
-                  }}
+                <CheckBoxIcon
+                  sx={{ fontSize: 32, color: "#9A9AB0", marginLeft: "22px" }}
                 />
-                <Typography
-                  variant="body1"
-                  style={{
-                    color: "var(--light-text-color-body-2, #9A9AB0)",
-                    fontFamily: "Mulish, sans-serif",
-                    fontSize: "16px",
-                    lineHeight: "125%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.08px",
-                    fontWeight: "400",
-                  }}
-                >
+                <Typography variant="body1" style={checkBoxTypographyStyle}>
                   2 Bed
                 </Typography>
-                <Checkbox
-                  disabled
-                  checked
-                  sx={{
-                    "& .MuiSvgIcon-root": { fontSize: 30 },
-                    color: "#9A9AB0",
-                    "&.Mui-checked": {
-                      color: "#9A9AB0",
-                    },
-                  }}
+                <CheckBoxIcon
+                  sx={{ fontSize: 32, color: "#9A9AB0", marginLeft: "22px" }}
                 />
-                <Typography
-                  variant="body1"
-                  style={{
-                    color: "var(--light-text-color-body-2, #9A9AB0)",
-                    fontFamily: "Mulish, sans-serif",
-                    fontSize: "16px",
-                    lineHeight: "125%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.08px",
-                    fontWeight: "400",
-                  }}
-                >
+                <Typography variant="body1" style={checkBoxTypographyStyle}>
                   1 Bathroom
                 </Typography>
               </Box>
