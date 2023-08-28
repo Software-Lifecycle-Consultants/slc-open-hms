@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import Hero from '@/components/explore/Hero';
 import HotelRooms from '@/components/explore/HotelRooms';
 import { Box, Container } from '@mui/material';
 import React from 'react'
@@ -6,6 +7,18 @@ import React from 'react'
 const ExploreScreen = () => {
   return (
     <>
+      <Box
+        sx={{
+          backgroundColor: "#0C111F",
+          color: "white",
+          padding: "40px 0",
+          height: "722px",
+        }}
+      >
+        <Container>
+          <Hero />
+        </Container>
+      </Box>
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
           <HotelRooms />
