@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import React from 'react'
 
-const BookingDetailsForm = () => {
+const BillingDetails = () => {
   return (
     <>
       <Card
@@ -192,4 +192,4 @@ const BookingDetailsForm = () => {
   );
 }
 
-export default BookingDetailsForm
+export default BillingDetails;

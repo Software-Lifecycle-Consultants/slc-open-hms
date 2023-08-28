@@ -9,10 +9,20 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import img from "../../public/images/ImagePlaceholder.png";
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
+const checkBoxTypographyStyle = {
+  color: "var(--light-text-color-body-2, #9A9AB0)",
+  fontFamily: "Mulish, sans-serif",
+  fontSize: "16px",
+  lineHeight: "125%",
+  fontStyle: "normal",
+  letterSpacing: "0.08px",
+  fontWeight: "400",
+  marginTop: "18px",
+};
 
-const GuestRoom = () => {
+const BookingInfo = () => {
   return (
     <>
       <Card
@@ -75,86 +85,33 @@ const GuestRoom = () => {
             >
               14 February 2021
             </Typography>
-            <Box sx={{ display: "flex" }}>
-              <Checkbox
-                {...label}
-                defaultChecked
-                sx={{
-                  "& .MuiSvgIcon-root": { fontSize: 34 },
-                  color: "#9A9AB0",
-                  "&.Mui-checked": {
-                    color: "#9A9AB0",
-                  },
-                  marginTop: "10px",
-                }}
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <CheckBoxIcon
+                sx={{ fontSize: 34, color: "#9A9AB0", marginTop: "18px" }}
               />
-              <Typography
-                variant="body1"
-                style={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "125%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "400",
-                  marginTop: "26px",
-                }}
-              >
+              <Typography variant="body1" style={checkBoxTypographyStyle}>
                 1 Room
               </Typography>
-              <Checkbox
-                {...label}
-                defaultChecked
+              <CheckBoxIcon
                 sx={{
-                  "& .MuiSvgIcon-root": { fontSize: 34 },
+                  fontSize: 34,
                   color: "#9A9AB0",
-                  "&.Mui-checked": {
-                    color: "#9A9AB0",
-                  },
-                  marginTop: "10px",
+                  marginTop: "18px",
+                  marginLeft: "25px",
                 }}
               />
-              <Typography
-                variant="body1"
-                style={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "125%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "400",
-                  marginTop: "26px",
-                }}
-              >
+              <Typography variant="body1" style={checkBoxTypographyStyle}>
                 2 Guest
               </Typography>
-              <Checkbox
-                {...label}
-                defaultChecked
+              <CheckBoxIcon
                 sx={{
-                  "& .MuiSvgIcon-root": { fontSize: 34 },
+                  fontSize: 34,
                   color: "#9A9AB0",
-                  "&.Mui-checked": {
-                    color: "#9A9AB0",
-                  },
-                  marginTop: "10px",
+                  marginTop: "18px",
+                  marginLeft: "25px",
                 }}
               />
-              <Typography
-                variant="body1"
-                style={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "16px",
-                  lineHeight: "125%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "400",
-                  marginTop: "26px",
-                }}
-              >
+              <Typography variant="body1" style={checkBoxTypographyStyle}>
                 1 Night
               </Typography>
             </Box>
@@ -195,4 +152,4 @@ const GuestRoom = () => {
   );
 };
 
-export default GuestRoom;
+export default BookingInfo;
