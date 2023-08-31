@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Testimonials from "../components/Testimonials";
 import Blog from "../components/Blog";
 import CustomCard from "../components/Card";
+import LogoImageSlider from "../components/LogoImageSlider";
 
 export default function Home() {
   return (
@@ -52,6 +53,13 @@ export default function Home() {
               </Box>
             </Grid>
           </Grid>
+        </Container>
+      </Box>
+
+      {/* Logo Image Slider */}
+      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+        <Container>
+          <LogoImageSlider />
         </Container>
       </Box>
 
