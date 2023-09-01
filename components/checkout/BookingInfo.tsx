@@ -8,7 +8,7 @@ import {
   CardContent,
 } from "@mui/material";
 import Image from "next/image";
-import img from "../../public/images/ImagePlaceholder.png";
+import img from "../../public/images/Room2.jpg";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
 const checkBoxTypographyStyle = {
@@ -46,10 +46,10 @@ const BookingInfo = () => {
             src={img}
             alt="test"
             width={400}
-            height={318}
+            height={330}
             style={{
               width: "100%",
-              height: "318px",
+              height: "330px",
               flexShrink: 0,
             }}
           />

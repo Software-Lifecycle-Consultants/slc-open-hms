@@ -6,10 +6,10 @@ const Hero = () => {
     <>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Box sx={{ paddingTop: { xs: "180px", sm: "260px", md: "250px"} }}>
+          <Box sx={{ paddingTop: { xs: "112px", sm: "260px", md: "250px"} }}>
             <Typography
               variant="h1"
-              style={{
+              sx={{
                 color: "#FFFFFF",
                 fontFamily: "Lora",
                 fontSize: "62px",

@@ -17,15 +17,15 @@ const SearchBar = () => {
       setSearchTerm(event.target.value);
   };
   
-  const InputLabelStyle = {
-    color: "#11142D",
-    fontFamily: "Mulish, sans-serif",
-    fontSize: "16px",
-    lineHeight: "120%",
-    fontStyle: "normal",
-    letterSpacing: "0.08px",
-    fontWeight: "700",
-  };
+  // const InputLabelStyle = {
+  //   color: "#11142D",
+  //   fontFamily: "Mulish, sans-serif",
+  //   fontSize: "16px",
+  //   lineHeight: "120%",
+  //   fontStyle: "normal",
+  //   letterSpacing: "0.08px",
+  //   fontWeight: "700",
+  // };
 
   return (
     <>
@@ -63,20 +63,20 @@ const SearchBar = () => {
             <Box
               sx={{
                 display: "flex",
-                marginLeft: { xs: "4%", sm: "4%", md: "-8px" },
+                marginLeft: { xs: "4%", sm: "4%", md: "4%" },
               }}
             >
               <Grid
                 container
-                rowSpacing={1}
-                columnSpacing={{ xs: 6, sm: 4, md: 2 }}
+                rowSpacing={{ xs: 1, md: 1 }}
+                columnSpacing={{ xs: 6, sm: 4, md: 1 }}
               >
                 <Grid item xs={6} sm={3}>
-                  <FormControl variant="standard" sx={{ m: 1, minWidth: 100 }}>
-                    <InputLabel
-                      id="demo-simple-select-standard-label"
-                      sx={InputLabelStyle}
-                    >
+                  <FormControl
+                    variant="standard"
+                    sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
+                  >
+                    <InputLabel id="demo-simple-select-standard-label">
                       Room Type
                     </InputLabel>
                     <Select
@@ -93,7 +93,10 @@ const SearchBar = () => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                  <FormControl variant="standard" sx={{ m: 1, minWidth: 100 }}>
+                  <FormControl
+                    variant="standard"
+                    sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
+                  >
                     <InputLabel id="demo-simple-select-standard-label">
                       Guest
                     </InputLabel>
@@ -114,7 +117,10 @@ const SearchBar = () => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                  <FormControl variant="standard" sx={{ m: 1, minWidth: 100 }}>
+                  <FormControl
+                    variant="standard"
+                    sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
+                  >
                     <InputLabel id="demo-simple-select-standard-label">
                       Beds
                     </InputLabel>
@@ -132,7 +138,10 @@ const SearchBar = () => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                  <FormControl variant="standard" sx={{ m: 1, minWidth: 100 }}>
+                  <FormControl
+                    variant="standard"
+                    sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
+                  >
                     <InputLabel id="demo-simple-select-standard-label">
                       Sort By
                     </InputLabel>

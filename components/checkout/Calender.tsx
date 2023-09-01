@@ -42,14 +42,15 @@ const Calender = () => {
           >
             Select your check-in and check-out dates
           </Typography>
-          {/* <Box sx={{ backgroundColor: "", padding: "10px" }}> */}
-          <DateRange
-            editableDateInputs={true}
-            onChange={(item) => setState([item.selection])}
-            moveRangeOnFirstSelection={false}
-            ranges={state}
-            style={{ backgroundColor: "" }}
-          />
+          <Box sx={{ backgroundColor: "", }}>
+            <DateRange
+              editableDateInputs={true}
+              onChange={(item) => setState([item.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={state}
+            />
+            
+          </Box>
           <Typography
             variant="h5"
             style={{
