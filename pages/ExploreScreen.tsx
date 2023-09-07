@@ -1,13 +1,17 @@
-import Footer from '@/components/Footer';
-import Hero from '@/components/explore/Hero';
-import HotelRooms from '@/components/explore/HotelRooms';
+import Footer from "@/components/homePage/Footer";
+import Hero from "@/components/explore/Hero";
+import HotelRooms from "@/components/explore/HotelRooms";
 import SearchBar from "@/components/explore/SearchBar";
 import { Box, Container } from "@mui/material";
 import React from "react";
+import NavBar from "@/components/homePage/NavBar";
 
 const ExploreScreen = () => {
   return (
     <>
+      {/* <NavBar /> */}
+      <NavBar />
+
       <Box
         sx={{
           backgroundColor: "#0C111F",
@@ -55,4 +59,4 @@ const ExploreScreen = () => {
 
 // slidesToShow: isMobile ? 1 : isTablet ? 2 : isWeb ? 3 : 5,
 
-export default ExploreScreen
+export default ExploreScreen;

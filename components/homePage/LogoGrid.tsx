@@ -2,11 +2,11 @@
 import { Box,Grid } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import axon from "../public/images/axon.png";
-import jetstar from "../public/images/jetstar.png";
-import expedia from "../public/images/expedia.png";
-import qantas from "../public/images/qantas.png";
-import alitalia from "../public/images/alitalia.png";
+import axon from "../../public/images/clientLogos/axon.png";
+import jetstar from "../../public/images/clientLogos/jetstar.png";
+import expedia from "../../public/images/clientLogos/expedia.png";
+import quantas from "../../public/images/clientLogos/quantas.png";
+import alitalia from "../../public/images/clientLogos/alitalia.png";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -112,7 +112,7 @@ const LogoGrid = () => {
                 }}
               >
                 <Image
-                  src={qantas}
+                  src={quantas}
                   alt="test"
                   width={162}
                   height={32}
@@ -206,7 +206,7 @@ const LogoGrid = () => {
               </Box>
               <Box sx={{ backgroundColor: "", width: "20%" }}>
                 <Image
-                  src={qantas}
+                  src={quantas}
                   alt="test"
                   width={162}
                   height={32}

@@ -1,10 +1,10 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import logoDark from "../public/images/logoDark.png";
-import fb from "../public/images/facebook.png";
-import tw from "../public/images/twitter.png";
-import ig from "../public/images/instagram.png";
+import logoDark from "../../public/images/logoDark.png";
+import fb from "../../public/images/facebook.png";
+import tw from "../../public/images/twitter.png";
+import ig from "../../public/images/instagram.png";
 
 const Footer = () => {
   return (

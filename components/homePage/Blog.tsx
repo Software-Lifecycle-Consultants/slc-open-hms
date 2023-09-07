@@ -10,9 +10,9 @@ import {
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import turkey2 from "../public/images/Turkey2.png";
-import namibia2 from "../public/images/Namibia2.png";
-import newMexico2 from "../public/images/New Mexico2.png";
+import turkey2 from "../../public/images/Turkey2.png";
+import namibia2 from "../../public/images/Namibia2.png";
+import newMexico2 from "../../public/images/New Mexico2.png";
 
 const Blog = () => {
   return (

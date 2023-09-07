@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Box, Container, Grid, Typography, Button } from "@mui/material";
-import Banner from "../components/Banner";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
-import Testimonials from "../components/Testimonials";
-import Blog from "../components/Blog";
-import CustomCard from "../components/Card";
-import LogoGrid from "@/components/LogoGrid";
+import Banner from "../components/homePage/Banner";
+import NavBar from "../components/homePage/NavBar";
+import Footer from "../components/homePage/Footer";
+import Testimonials from "../components/homePage/Testimonials";
+import Blog from "../components/homePage/Blog";
+import CustomCard from "../components/homePage/CustomCard";
+import LogoGrid from "@/components/homePage/LogoGrid";
+import LogoCarousel from "@/components/homePage/LogoCarousel";
 
 export default function HomeScreen() {
   return (
@@ -23,36 +24,7 @@ export default function HomeScreen() {
         }}
       >
         <Container>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-              <Box>
-                <Banner
-                  title="The best deals on the world's best destinations"
-                  subtitle="Best travel and destinations"
-                  description="With travala you can experience new travel and the best tourist destinations that we have to offer"
-                  primaryButtonLabel="Our Destination"
-                  secondaryButtonLabel="Our Gallery"
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "100%",
-                }}
-              >
-                <img
-                  src="https://res.cloudinary.com/de9zkpp0w/image/upload/v1690446713/thilini/Group_48095510_odtoo3.png"
-                  width="100%"
-                  height="auto"
-                  alt="main Image"
-                />
-              </Box>
-            </Grid>
-          </Grid>
+          <Banner />
         </Container>
       </Box>
 
@@ -66,7 +38,7 @@ export default function HomeScreen() {
       {/* Blog */}
       <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
         <Container>
-          <LogoGrid />
+          <LogoCarousel />
         </Container>
       </Box>
 
@@ -92,22 +64,6 @@ export default function HomeScreen() {
           <Footer />
         </Container>
       </Box>
-
-      {/* Sections 3-6 */}
-      {[...Array(4)].map((_, index) => (
-        <Box
-          key={`section-${index + 3}`}
-          sx={{
-            backgroundColor: index % 2 === 0 ? "lightgray" : "white",
-            color: index % 2 === 0 ? "black" : "black",
-            padding: "40px 0",
-          }}
-        >
-          <Container>
-            <Typography variant="h1">Section {index + 3}</Typography>
-          </Container>
-        </Box>
-      ))}
     </>
   );
 }

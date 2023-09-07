@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import profile from "../public/images/Profile.png";
+import profile from "../../public/images/Profile.png";
 
 const Testimonials = () => {
   const [value, setValue] = React.useState(4);

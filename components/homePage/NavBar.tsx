@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   AppBar,
   Box,
@@ -11,23 +11,35 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import React from 'react'
+import React from "react";
 import Image from "next/image";
-import logo from "../public/images/logo.png";
-import DrawerComponent from './DrawerComponent';
+import logo from "../../public/images/logo.png";
+import DrawerComponent from "./DrawerComponent";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-const pages = ["Home", "Explore", "Book Now", "Contact"]
+const pages = ["Home", "Explore", "Book Now", "Contact"];
 
 const NavBar = () => {
-
   const [value, setValue] = React.useState("one");
-
+  const router = useRouter();
   const theme = useTheme();
-  const isMatch = useMediaQuery(theme.breakpoints.down('md'));
+  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
+
+  const navigationToExploreScreen = (id: string) => {
+    if (id === "Explore") {
+      router.push("/ExploreScreen");
+    } else if (id === "Book Now") {
+      router.push("/CheckoutScreen");
+    } else {
+      router.push("/");
+    }  
+  };
+  
   return (
     <>
       <AppBar
@@ -62,7 +74,11 @@ const NavBar = () => {
                   }}
                 >
                   {pages.map((page, index) => (
-                    <Tab key={index} label={page} />
+                    <Tab
+                      key={index}
+                      label={page}
+                      onClick={(e)=>navigationToExploreScreen(page)}
+                    />
                   ))}
                 </Tabs>
 
@@ -105,6 +121,6 @@ const NavBar = () => {
       </AppBar>
     </>
   );
-}
+};
 
-export default NavBar
+export default NavBar;

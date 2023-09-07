@@ -6,10 +6,10 @@ import {
 } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Image from "next/image";
-import turkey from "../public/images/Turkey.png";
-import wallet from "../public/images/Wallet.png";
-import user from "../public/images/3 User.png";
-import heart from "../public/images/Heart.png";
+import turkey from "../../public/images/Turkey.png";
+import wallet from "../../public/images/Wallet.png";
+import user from "../../public/images/3 User.png";
+import heart from "../../public/images/Heart.png";
 
 const typographyh1Style = {
   color: "#0C111F",
