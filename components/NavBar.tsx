@@ -16,7 +16,7 @@ import Image from "next/image";
 import logo from "../public/images/logo.png";
 import DrawerComponent from './DrawerComponent';
 
-const pages = ["Home", "About", "Destination", "Contact"]
+const pages = ["Home", "Explore", "Book Now", "Contact"]
 
 const NavBar = () => {
 
