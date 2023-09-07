@@ -3,12 +3,11 @@ import ExploreScreen from "@/pages/ExploreScreen";
 import HomeScreen from "@/pages/HomeScreen";
 import RoomDetailsScreen from "@/pages/RoomDetailsScreen";
 
-
 export default function Home() {
   return (
     <>
-     {/* <HomeScreen /> */}
-     {/* <CheckoutScreen /> */}
+      {/* <HomeScreen /> */}
+      {/* <CheckoutScreen /> */}
       {/* <RoomDetailsScreen /> */}
       <ExploreScreen />
     </>
