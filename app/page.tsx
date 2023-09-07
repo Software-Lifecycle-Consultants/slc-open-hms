@@ -1,20 +1,71 @@
-import Image from 'next/image'
-import { Box, Typography, Button } from '@mui/material'
+import { Box, Container, Grid, Typography, Button } from '@mui/material'
+import Banner from "../components/Banner";
+import Footer from "../components/Footer";
+import Testimonials from "../components/Testimonials";
+import Blog from "../components/Blog";
+import CustomCard from "../components/CustomCard";
+// import LogoImageSlider from "../components/LogoImageSlider";
+import NavBar from '@/components/NavBar';
+import LogoCarousel from '@/components/LogoCarousel';
 
 export default function Home() {
   return (
     <>
-    <Box>
-      <Typography variant='h4' component='h1'>Hello</Typography>
-      <Typography variant='body1' component='p'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci sint odit repellat dignissimos asperiores quidem repudiandae necessitatibus dicta facere nulla non quaerat obcaecati, qui vero fuga assumenda sed iure amet in voluptate earum? Ipsa adipisci quam ab perspiciatis excepturi totam quisquam voluptatum fuga, corrupti suscipit id, consequatur eligendi soluta quasi. Nulla sit porro rem in inventore, ullam facilis repellat ut ipsum et nihil beatae, velit commodi! Expedita laborum cumque dolore autem blanditiis non perferendis molestiae doloribus ipsum sed enim placeat qui vitae voluptates dolores, cum deleniti iusto magnam iure illo at, inventore laudantium. Itaque ex, aut tenetur molestiae distinctio maxime.</Typography>
-    </Box>
-    <Box>
-      <Typography variant='h4' component='h1'>Second section</Typography>
-      <Typography variant='body1' component='p'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci sint odit repellat dignissimos asperiores quidem repudiandae necessitatibus dicta facere nulla non quaerat obcaecati, qui vero fuga assumenda sed iure amet in voluptate earum? Ipsa adipisci quam ab perspiciatis excepturi totam quisquam voluptatum fuga, corrupti suscipit id, consequatur eligendi soluta quasi. Nulla sit porro rem in inventore, ullam facilis repellat ut ipsum et nihil beatae, velit commodi! Expedita laborum cumque dolore autem blanditiis non perferendis molestiae doloribus ipsum sed enim placeat qui vitae voluptates dolores, cum deleniti iusto magnam iure illo at, inventore laudantium. Itaque ex, aut tenetur molestiae distinctio maxime.</Typography>
-    </Box>
-    <Button variant='contained' color='warning'>Im a button</Button>
-    <Button variant='outlined'>Im a button</Button>
-    <Button variant='text'>Im a button</Button>
-  </>
-  )
+      {/* Navigation Bar*/}
+          <NavBar />
+
+
+      {/* Banner Section */}
+      <Box
+        sx={{
+          backgroundColor: "#0C111F",
+          padding: "40px 0",
+          width: "100%",
+          height: "auto",
+          display: "inline-block",
+        }}
+      >
+        <Container>
+          <Banner />
+        </Container>
+      </Box>
+
+      {/* Logo Image Slider */}
+      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+        <Container>
+          <LogoCarousel />
+        </Container>
+      </Box>
+
+      {/* Destination Card */}
+      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+        <Container>
+          <CustomCard />
+        </Container>
+      </Box>
+
+      {/* Blog */}
+      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+        <Container>
+          <Blog />
+        </Container>
+      </Box>
+
+      {/* Testimonials */}
+      <Box
+        sx={{ backgroundColor: "#F7F7F7", padding: "20px 0", width: "100%" }}
+      >
+        <Container>
+          <Testimonials />
+        </Container>
+      </Box>
+
+      {/* Footer*/}
+      <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
+        <Container>
+          <Footer />
+        </Container>
+      </Box>
+    </>
+  );
 }
