@@ -256,7 +256,6 @@ const CustomCard = ({}) => {
                 xs={10}
                 md={10}
                 sx={{
-                  // backgroundColor: "#cbcae6",
                   width: "100%",
                   padding: "24px",
                   display: "flex",
@@ -284,21 +283,3 @@ const CustomCard = ({}) => {
 };
 
 export default CustomCard;
-
-
-{/* <Grid item xs={12} md={6} paddingRight={{ xs: "16px", md: "32px" }}>
-        <Grid container spacing={1}>
-          <Grid item xs={12} md={12}>
-            <Grid
-              container
-              spacing={0}
-              sx={{
-                // backgroundColor: "#cccaca",
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "row", // Use row direction
-              }}
-            ></Grid> */}
