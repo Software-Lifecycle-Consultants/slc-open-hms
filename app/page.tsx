@@ -1,74 +1,48 @@
 import Image from 'next/image'
 import { Box, Container, Grid, Typography, Button } from '@mui/material'
 import Banner from "../components/Banner";
-import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Testimonials from "../components/Testimonials";
 import Blog from "../components/Blog";
-import CustomCard from "../components/Card";
+import CustomCard from "../components/CustomCard";
 import LogoImageSlider from "../components/LogoImageSlider";
+import NavBar from '@/components/NavBar';
 
 export default function Home() {
   return (
     <>
-      {/* Navigation Bar */}
-      <NavBar />
+      {/* Navigation Bar*/}
+          <NavBar />
+
+
       {/* Banner Section */}
       <Box
         sx={{
-          backgroundColor: '#0C111F',
-          color: 'white',
-          padding: '40px 0',
-          flexGrow: 1,
+          backgroundColor: "#0C111F",
+          padding: "40px 0",
+          width: "100%",
+          height: "auto",
+          display: "inline-block",
         }}
       >
         <Container>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-              <Box>
-                <Banner
-                  title="The best deals on the world's best destinations"
-                  subtitle="Best travel and destinations"
-                  description="With travala you can experience new travel and the best tourist destinations that we have to offer"
-                  primaryButtonLabel="Our Destination"
-                  secondaryButtonLabel="Our Gallery"
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  height: '100%',
-                }}
-              >
-                <img
-                  src="https://res.cloudinary.com/de9zkpp0w/image/upload/v1690446713/thilini/Group_48095510_odtoo3.png"
-                  width="100%"
-                  height="auto"
-                  alt="main Image"
-                />
-              </Box>
-            </Grid>
-          </Grid>
+          <Banner />
         </Container>
       </Box>
 
       {/* Logo Image Slider */}
-      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+      {/* <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
         <Container>
           <LogoImageSlider />
         </Container>
-      </Box>
+      </Box> */}
 
-        {/* Destination Card */}
-         <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
-          <Container>
-            <CustomCard/>
-          </Container>
-        </Box>
+      {/* Destination Card */}
+      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+        <Container>
+          <CustomCard />
+        </Container>
+      </Box>
 
       {/* Blog */}
       <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
@@ -78,7 +52,9 @@ export default function Home() {
       </Box>
 
       {/* Testimonials */}
-      <Box sx={{ backgroundColor: "#F7F7F7", padding: "20px 0", width: "100%" }}>
+      <Box
+        sx={{ backgroundColor: "#F7F7F7", padding: "20px 0", width: "100%" }}
+      >
         <Container>
           <Testimonials />
         </Container>
@@ -91,5 +67,5 @@ export default function Home() {
         </Container>
       </Box>
     </>
-  )
+  );
 }
