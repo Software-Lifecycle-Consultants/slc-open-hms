@@ -10,6 +10,7 @@ import {
   Toolbar,
   useTheme,
   useMediaQuery,
+  Link as MuiLink,
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
@@ -18,7 +19,13 @@ import DrawerComponent from "./DrawerComponent";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const pages = ["Home", "Explore", "Book Now", "Contact"];
+
+const pages = [
+  { label: "Home", route: "/" },
+  { label: "Explore", route: "/ExploreScreen" },
+  { label: "Book Now", route: "/CheckoutScreen" },
+  { label: "Contact", route: "/ContactScreen" },
+];
 
 const NavBar = () => {
   const [value, setValue] = React.useState("one");
@@ -30,14 +37,8 @@ const NavBar = () => {
     setValue(newValue);
   };
 
-  const navigationToExploreScreen = (id: string) => {
-    if (id === "Explore") {
-      router.push("/ExploreScreen");
-    } else if (id === "Book Now") {
-      router.push("/CheckoutScreen");
-    } else {
-      router.push("/");
-    }  
+  const navigationToScreens = (route: string) => {
+    router.push(route);
   };
   
   return (
@@ -63,24 +64,24 @@ const NavBar = () => {
               </>
             ) : (
               <>
-                <Tabs
-                  sx={{ marginLeft: "auto" }}
-                  value={value}
-                  onChange={handleChange}
-                  textColor="inherit"
-                  indicatorColor="secondary"
-                  TabIndicatorProps={{
-                    style: { backgroundColor: "#FFF" },
-                  }}
-                >
-                  {pages.map((page, index) => (
-                    <Tab
-                      key={index}
-                      label={page}
-                      onClick={(e)=>navigationToExploreScreen(page)}
-                    />
-                  ))}
-                </Tabs>
+                  <Tabs
+                    sx={{ marginLeft: "auto" }}
+                    value={value}
+                    onChange={handleChange}
+                    textColor="inherit"
+                    indicatorColor="secondary"
+                    TabIndicatorProps={{
+                      style: { backgroundColor: "#FFF" },
+                    }}
+                  >
+                    {pages.map((page, index) => (
+                      <Tab
+                        key={index}
+                        label={page.label}
+                        onClick={() => navigationToScreens(page.route)}
+                      />
+                    ))}
+                  </Tabs>
 
                 <Button
                   variant="text"
