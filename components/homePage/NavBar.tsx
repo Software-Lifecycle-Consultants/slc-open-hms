@@ -64,24 +64,24 @@ const NavBar = () => {
               </>
             ) : (
               <>
-                 <Tabs
-      sx={{ marginLeft: "auto" }}
-      value={value}
-      onChange={handleChange}
-      textColor="inherit"
-      indicatorColor="secondary"
-      TabIndicatorProps={{
-        style: { backgroundColor: "#FFF" },
-      }}
-    >
-      {pages.map((page, index) => (
-        <Tab
-          key={index}
-          label={page.label}
-          onClick={() => navigationToScreens(page.route)}
-        />
-      ))}
-    </Tabs>
+                  <Tabs
+                    sx={{ marginLeft: "auto" }}
+                    value={value}
+                    onChange={handleChange}
+                    textColor="inherit"
+                    indicatorColor="secondary"
+                    TabIndicatorProps={{
+                      style: { backgroundColor: "#FFF" },
+                    }}
+                  >
+                    {pages.map((page, index) => (
+                      <Tab
+                        key={index}
+                        label={page.label}
+                        onClick={() => navigationToScreens(page.route)}
+                      />
+                    ))}
+                  </Tabs>
 
                 <Button
                   variant="text"
