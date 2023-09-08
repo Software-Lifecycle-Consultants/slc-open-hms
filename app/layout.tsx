@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* Add the CssBaseline component to override the 8px margin */}
-        <CssBaseline />
+        {/* <CssBaseline /> */}
         {children}
       </body>
     </html>
