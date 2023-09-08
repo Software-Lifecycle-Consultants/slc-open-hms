@@ -4,10 +4,14 @@ import HotelRooms from "@/components/explore/HotelRooms";
 import SearchBar from "@/components/explore/SearchBar";
 import { Box, Container } from "@mui/material";
 import React from "react";
+import PageLayout from "../app/page"
 
 const ExploreScreen = () => {
   return (
     <>
+      {/* Wrap the HomeScreen content with PageLayout */}
+      <PageLayout>
+
       <Box
         sx={{
           backgroundColor: "#0C111F",
@@ -45,6 +49,8 @@ const ExploreScreen = () => {
           <Footer />
         </Container>
       </Box>
+      
+      </PageLayout>
     </>
   );
 };

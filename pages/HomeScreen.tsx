@@ -7,10 +7,14 @@ import Blog from "../components/homePage/Blog";
 import CustomCard from "../components/homePage/CustomCard";
 import LogoGrid from "@/components/homePage/LogoGrid";
 import LogoCarousel from "@/components/homePage/LogoCarousel";
+import PageLayout from "../app/page"
 
 export default function HomeScreen() {
   return (
     <>
+     {/* Wrap the HomeScreen content with PageLayout */}
+      <PageLayout>
+
       {/* Banner Section */}
       <Box
         sx={{
@@ -61,6 +65,8 @@ export default function HomeScreen() {
           <Footer />
         </Container>
       </Box>
+      
+      </PageLayout>
     </>
   );
 }

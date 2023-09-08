@@ -7,10 +7,14 @@ import AdditionalInfo from '@/components/guestRoomDetails/AdditionalInfo';
 import Footer from "@/components/homePage/Footer";
 import SimilarRooms from '@/components/guestRoomDetails/SimilarRooms';
 import Gallery from '@/components/guestRoomDetails/Gallery';
+import PageLayout from "../app/page"
 
 const RoomDetailsScreen = () => {
   return (
     <>
+      {/* Wrap the HomeScreen content with PageLayout */}
+      <PageLayout>
+
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
           <HeroBanner />
@@ -52,6 +56,8 @@ const RoomDetailsScreen = () => {
           <Footer />
         </Container>
       </Box>
+
+      </PageLayout>
     </>
   );
 }

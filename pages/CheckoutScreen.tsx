@@ -7,10 +7,14 @@ import ServicesCard from "@/components/checkout/ExtraFacilitation";
 import SubmitButton from "@/components/checkout/SubmitButton";
 import { Grid, Box, Container } from "@mui/material";
 import React from "react";
+import PageLayout from "../app/page"
 
 const CheckoutScreen = () => {
   return (
     <>
+      {/* Wrap the HomeScreen content with PageLayout */}
+      <PageLayout>
+
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
           <Heading />
@@ -58,6 +62,8 @@ const CheckoutScreen = () => {
           <Footer />
         </Container>
       </Box>
+      
+      </PageLayout>
     </>
   );
 };
