@@ -28,13 +28,13 @@ const pages = [
 ];
 
 const NavBar = () => {
-  const [value, setValue] = React.useState("one");
+  const [value, setValue] = React.useState(0);
   const router = useRouter();
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
+    setValue(Number(newValue));
   };
 
   const navigationToScreens = (route: string) => {
