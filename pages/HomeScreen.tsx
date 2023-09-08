@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { Box, Container, Grid, Typography, Button } from "@mui/material";
-import Banner from "../../components/homePage/Banner";
-import NavBar from "../../components/homePage/NavBar";
-import Footer from "../../components/homePage/Footer";
-import Testimonials from "../../components/homePage/Testimonials";
-import Blog from "../../components/homePage/Blog";
-import CustomCard from "../../components/homePage/CustomCard";
+import Banner from "@/components/homePage/Banner";
+import NavBar from "@/components/homePage/NavBar";
+import Footer from "@/components/homePage/Footer";
+import Testimonials from "@/components/homePage/Testimonials";
+import Blog from "@/components/homePage/Blog";
+import CustomCard from "@/components/homePage/CustomCard";
 import LogoGrid from "@/components/homePage/LogoGrid";
 import LogoCarousel from "@/components/homePage/LogoCarousel";
 
