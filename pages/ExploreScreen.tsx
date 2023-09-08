@@ -6,7 +6,9 @@ import { Box, Container } from "@mui/material";
 import React from "react";
 import NavBar from "@/components/homePage/NavBar";
 
+
 const ExploreScreen = () => {
+  
   return (
     <>
       {/* <NavBar /> */}
@@ -52,11 +54,5 @@ const ExploreScreen = () => {
     </>
   );
 };
-
-// const isMobile = useMediaQuery("(max-width:767px)");
-// const isTablet = useMediaQuery("(min-width:768px) and (max-width:1023px)");
-// const isWeb = useMediaQuery("(min-width:1024px)");
-
-// slidesToShow: isMobile ? 1 : isTablet ? 2 : isWeb ? 3 : 5,
 
 export default ExploreScreen;
