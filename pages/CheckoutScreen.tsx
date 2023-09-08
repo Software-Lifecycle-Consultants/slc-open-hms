@@ -1,5 +1,4 @@
 import Footer from "@/components/homePage/Footer";
-import NavBar from "@/components/homePage/NavBar";
 import BookingDetailsForm from "@/components/checkout/BillingDetails";
 import Calender from "@/components/checkout/Calender";
 import GuestRoom from "@/components/checkout/BookingInfo";
@@ -12,9 +11,6 @@ import React from "react";
 const CheckoutScreen = () => {
   return (
     <>
-      {/* <NavBar /> */}
-      <NavBar />
-
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
           <Heading />

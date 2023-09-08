@@ -4,14 +4,10 @@ import HotelRooms from "@/components/explore/HotelRooms";
 import SearchBar from "@/components/explore/SearchBar";
 import { Box, Container } from "@mui/material";
 import React from "react";
-import NavBar from "@/components/homePage/NavBar";
 
 const ExploreScreen = () => {
   return (
     <>
-      {/* <NavBar /> */}
-      <NavBar />
-
       <Box
         sx={{
           backgroundColor: "#0C111F",

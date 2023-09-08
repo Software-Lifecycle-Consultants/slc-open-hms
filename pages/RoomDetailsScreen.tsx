@@ -7,14 +7,10 @@ import AdditionalInfo from '@/components/guestRoomDetails/AdditionalInfo';
 import Footer from "@/components/homePage/Footer";
 import SimilarRooms from '@/components/guestRoomDetails/SimilarRooms';
 import Gallery from '@/components/guestRoomDetails/Gallery';
-import NavBar from '@/components/homePage/NavBar';
 
 const RoomDetailsScreen = () => {
   return (
     <>
-      {/* <NavBar /> */}
-      <NavBar />
-
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
           <HeroBanner />
