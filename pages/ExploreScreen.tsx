@@ -4,20 +4,17 @@ import HotelRooms from "@/components/explore/HotelRooms";
 import SearchBar from "@/components/explore/SearchBar";
 import { Box, Container } from "@mui/material";
 import React from "react";
-import PageLayout from "../app/page"
 
 const ExploreScreen = () => {
   return (
     <>
-      {/* Wrap the HomeScreen content with PageLayout */}
-      <PageLayout>
 
       <Box
         sx={{
           backgroundColor: "#0C111F",
           color: "white",
-          padding: "40px 0",
-          height: "722px",
+          // padding: "40px 0",
+          height: "600px",
           width: "100%",
           display: "inline-block",
         }}
@@ -50,7 +47,6 @@ const ExploreScreen = () => {
         </Container>
       </Box>
       
-      </PageLayout>
     </>
   );
 };
