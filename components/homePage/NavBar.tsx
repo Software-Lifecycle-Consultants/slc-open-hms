@@ -24,7 +24,7 @@ const pages = [
   { label: "Home", route: "/" },
   { label: "Explore", route: "/ExploreScreen" },
   { label: "Book Now", route: "/CheckoutScreen" },
-  { label: "Contact", route: "/ContactScreen" },
+  { label: "Contact", route: "/contact_us" },
 ];
 
 const NavBar = () => {
