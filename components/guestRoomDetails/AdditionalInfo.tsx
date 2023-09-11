@@ -1,8 +1,24 @@
-import { Accordion, AccordionDetails, AccordionSummary, Box, Grid, Typography } from '@mui/material';
-import React from 'react'
+"use client";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  Button,
+  Grid,
+  Typography,
+} from "@mui/material";
+import React from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useRouter } from "next/navigation";
 
 const AdditionalInfo = () => {
+  const router = useRouter();
+
+  const navigationToCheckoutScreen = () => {
+    router.push("/CheckoutScreen");
+  };
+
   return (
     <>
       <Grid container spacing={1}>
@@ -75,9 +91,39 @@ const AdditionalInfo = () => {
           >
             Check Out 12:00
           </Typography>
+          <Button
+            variant="contained"
+            onClick={navigationToCheckoutScreen}
+            sx={{
+              borderRadius: "8px",
+              display: "inline-flex",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "11px 24px",
+              gap: "10px",
+              textTransform: "none",
+              width: "45%",
+              height: "56px",
+              marginTop: "40px",
+              fontFamily: "Mulish, sans-serif",
+              fontSize: "16px",
+              fontStyle: "normal",
+              fontWeight: "600",
+              lineHeight: "120%",
+              letterSpacing: "0.08px",
+              backgroundColor: "#C7923E",
+              "&:hover": {
+                backgroundColor: "#c7833e",
+              },
+            }}
+          >
+            Book Now
+          </Button>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Box sx={{ paddingTop: "67px", paddingLeft: { xs: "none", md:"24px"} }}>
+          <Box
+            sx={{ paddingTop: "67px", paddingLeft: { xs: "none", md: "24px" } }}
+          >
             <Accordion
               elevation={0}
               sx={{
@@ -85,7 +131,6 @@ const AdditionalInfo = () => {
                 borderRadius: "8px",
                 borderColor:
                   "var(--light-separators-colors-secondary, #E1E1E1)",
-                // marginLeft: { xs: "none", md: "50px" },
                 flexShrink: "0",
               }}
             >
@@ -125,7 +170,6 @@ const AdditionalInfo = () => {
                 borderColor:
                   "var(--light-separators-colors-secondary, #E1E1E1)",
                 marginTop: "10px",
-                // marginLeft: { xs: "none", md: "50px" },
                 flexShrink: "0",
               }}
             >
@@ -165,7 +209,6 @@ const AdditionalInfo = () => {
                 borderColor:
                   "var(--light-separators-colors-secondary, #E1E1E1)",
                 marginTop: "10px",
-                // marginLeft: { xs: "none", md: "50px" },
                 flexShrink: "0",
               }}
             >
@@ -205,7 +248,6 @@ const AdditionalInfo = () => {
                 borderColor:
                   "var(--light-separators-colors-secondary, #E1E1E1)",
                 marginTop: "10px",
-                // marginLeft: { xs: "none", md: "50px" },
                 flexShrink: "0",
               }}
             >
@@ -226,7 +268,7 @@ const AdditionalInfo = () => {
                     fontWeight: "400",
                   }}
                 >
-                  Itaems that are not allowed
+                  Items that are not allowed
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
@@ -282,6 +324,6 @@ const AdditionalInfo = () => {
       </Grid>
     </>
   );
-}
+};
 
-export default AdditionalInfo
+export default AdditionalInfo;

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
@@ -6,9 +7,9 @@ import {
   Button,
   Card,
   CardContent,
-  Checkbox,
   Typography,
 } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 interface RoomCardProps {
   image: string;
@@ -32,6 +33,12 @@ const checkBoxTypographyStyle = {
 // };
 
 const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
+  const router = useRouter();
+
+  const navigationToRoomDetailsScreen = () => {
+    router.push("/RoomDetailsScreen");
+  };
+
   return (
     <>
       <Card
@@ -108,6 +115,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
             <Box sx={{ display: "flex" }}>
               <Button
                 variant="contained"
+                onClick={navigationToRoomDetailsScreen}
                 sx={{
                   borderRadius: "8px",
                   display: "inline-flex",
