@@ -10,9 +10,6 @@ const Gallery: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // xs or sm breakpoint
   const isTablet = useMediaQuery(theme.breakpoints.up("md")); // md breakpoint
-  // const isLaptop = useMediaQuery(theme.breakpoints.up("lg"));
-  // const isMobile = useMediaQuery('(max-width:767px)');
-  // const isTablet = useMediaQuery('(min-width:768px)');
 
   const settings: SliderSettings = {
     dots: true,

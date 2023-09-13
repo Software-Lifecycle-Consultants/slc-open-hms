@@ -27,11 +27,6 @@ const checkBoxTypographyStyle = {
   fontWeight: "400",
 };
 
-// const checkBoxStyle = {
-//   fontSize: 32,
-//   color: "#9A9AB0",
-// };
-
 const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
   const router = useRouter();
 

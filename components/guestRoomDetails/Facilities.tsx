@@ -1,4 +1,4 @@
-import { Box, Checkbox, Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
