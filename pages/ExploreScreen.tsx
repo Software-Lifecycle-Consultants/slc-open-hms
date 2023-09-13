@@ -15,7 +15,6 @@ const ExploreScreen = () => {
         sx={{
           backgroundColor: "#0C111F",
           color: "white",
-          // padding: "40px 0",
           height: "600px",
           width: "100%",
           display: "inline-block",
@@ -43,12 +42,6 @@ const ExploreScreen = () => {
         </Container>
       </Box>
 
-      <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
-        <Container>
-          <Footer />
-        </Container>
-      </Box>
-      
     </>
   );
 };

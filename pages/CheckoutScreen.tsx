@@ -54,12 +54,7 @@ const CheckoutScreen = () => {
           </Grid>
         </Container>
       </Box>
-      <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
-        <Container>
-          <Footer />
-        </Container>
-      </Box>
-      
+  
     </>
   );
 };

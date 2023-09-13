@@ -5,7 +5,6 @@ import Footer from "../components/homePage/Footer";
 import Testimonials from "../components/homePage/Testimonials";
 import Blog from "../components/homePage/Blog";
 import CustomCard from "../components/homePage/CustomCard";
-import LogoGrid from "@/components/homePage/LogoGrid";
 import LogoCarousel from "@/components/homePage/LogoCarousel";
 
 /**
@@ -13,10 +12,16 @@ import LogoCarousel from "@/components/homePage/LogoCarousel";
  * It includes sections like Banner, Destination Card, Blog, Testimonials, and Footer.
  */
 
+const screenStyle = {
+  backgroundColor: "#FFF",
+  padding: "20px 0",
+  width: "100%",
+};
+
+
 export default function HomeScreen() {
   return (
     <>
-
       {/* Banner Section */}
       <Box
         sx={{
@@ -32,21 +37,21 @@ export default function HomeScreen() {
       </Box>
 
       {/* Destination Card */}
-      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+      <Box sx={screenStyle}>
         <Container>
           <CustomCard />
         </Container>
       </Box>
 
       {/* Blog */}
-      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+      <Box sx={screenStyle}>
         <Container>
           <LogoCarousel />
         </Container>
       </Box>
 
       {/* Blog */}
-      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+      <Box sx={screenStyle}>
         <Container>
           <Blog />
         </Container>
@@ -54,20 +59,19 @@ export default function HomeScreen() {
 
       {/* Testimonials */}
       <Box
-        sx={{ backgroundColor: "#F7F7F7", padding: "20px 0", width: "100%" }}
+        sx={{
+          backgroundColor: "#F7F7F7",
+          padding: "20px 0",
+          width: "100%",
+        }}
       >
         <Container>
           <Testimonials />
         </Container>
       </Box>
 
-      {/* Footer*/}
-      <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
-        <Container>
-          <Footer />
-        </Container>
-      </Box>
-      
     </>
   );
 }
+
+//backgroundColor: "#F7F7F7",
