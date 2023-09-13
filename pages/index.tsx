@@ -8,6 +8,11 @@ import CustomCard from "../components/homePage/CustomCard";
 import LogoGrid from "@/components/homePage/LogoGrid";
 import LogoCarousel from "@/components/homePage/LogoCarousel";
 
+/**
+ * HomeScreen component represents the main screen of the website.
+ * It includes sections like Banner, Destination Card, Blog, Testimonials, and Footer.
+ */
+
 export default function HomeScreen() {
   return (
     <>
