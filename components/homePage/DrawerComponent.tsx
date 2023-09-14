@@ -47,7 +47,7 @@ const DrawerComponent = () => {
               key={index}
               sx={{
                 "&:hover": {
-                  backgroundColor: "#3C404B", // Define your desired hover color
+                  backgroundColor: "#c7833e", // Define your desired hover color
                 },
               }}
             >

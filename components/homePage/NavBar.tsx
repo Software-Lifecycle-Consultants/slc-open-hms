@@ -78,7 +78,7 @@ const NavBar = () => {
                   textColor="inherit"
                   indicatorColor="secondary"
                   TabIndicatorProps={{
-                    style: { backgroundColor: "#FFF" },
+                    style: { backgroundColor: "#c7833e" },
                   }}
                 >
                   {pages.map((page, index) => (
@@ -98,6 +98,9 @@ const NavBar = () => {
                     margin: "5px",
                     fontSize: "16px",
                     marginLeft: "auto",
+                    "&:hover": {
+                      backgroundColor: "#c7833e",
+                    },
                   }}
                 >
                   Register
@@ -119,6 +122,9 @@ const NavBar = () => {
                     fontSize: "16px",
                     fontWeight: "bold",
                     marginLeft: "10px",
+                    "&:hover": {
+                      backgroundColor: "#c7833e",
+                    },
                   }}
                 >
                   Login
