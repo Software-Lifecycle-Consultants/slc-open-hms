@@ -11,21 +11,34 @@ import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useRouter } from "next/navigation";
 
-const pages = ["Home", "Explore", "Book Now", "Contact", "Register", "Login"];
+// const pages = ["Home", "Explore", "Book Now", "Contact", "Register", "Login"];
+
+const pages = [
+  { label: "Home", route: "/" },
+  { label: "Explore", route: "/ExploreScreen" },
+  { label: "Book Now", route: "/CheckoutScreen" },
+  { label: "Contact", route: "/contact_us" },
+  { label: "Register", route: "/Register" },
+  { label: "Login", route: "/Login" },
+];
 
 const DrawerComponent = () => {
   const router = useRouter();
   const [openDrawer, setOpenDrawer] = useState(false);
 
-const navigationToExploreScreen = (id: string) => {
-  if (id === "Explore") {
-    router.push("/ExploreScreen");
-  } else if (id === "Book Now") {
-    router.push("/CheckoutScreen");
-  } else {
-    router.push("/");
-  }
-};
+  const navigationToScreens = (route: string) => {
+    router.push(route);
+  };
+
+// const navigationToExploreScreen = (id: string) => {
+//   if (id === "Explore") {
+//     router.push("/ExploreScreen");
+//   } else if (id === "Book Now") {
+//     router.push("/CheckoutScreen");
+//   } else {
+//     router.push("/");
+//   }
+// };
   return (
     <>
       <Drawer
@@ -44,10 +57,9 @@ const navigationToExploreScreen = (id: string) => {
               <ListItemIcon>
                 <ListItemText
                   sx={{ color: "#FFF" }}
-                  onClick={(e) => navigationToExploreScreen(page)}
-                  >
-                  {page}
-                </ListItemText>
+                  primary={page.label} // Use primary prop to set the text content
+                  onClick={() => navigationToScreens(page.route)}
+                ></ListItemText>
               </ListItemIcon>
             </ListItemButton>
           ))}
