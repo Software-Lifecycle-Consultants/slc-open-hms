@@ -15,7 +15,6 @@ import React from "react";
 import Image from "next/image";
 import logo from "../../public/images/logo.png";
 import DrawerComponent from "./DrawerComponent";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 
@@ -72,14 +71,14 @@ const NavBar = () => {
             ) : (
               <>
                 <Tabs
-                  sx={{ marginLeft: "auto" }}
+                  sx={{ marginLeft: "auto"}}
                   value={value}
                   onChange={handleChange}
                   textColor="inherit"
                   indicatorColor="secondary"
                   TabIndicatorProps={{
                     style: { backgroundColor: "#c7833e" },
-                  }}
+                    }}
                 >
                   {pages.map((page, index) => (
                     <Tab
