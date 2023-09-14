@@ -11,8 +11,6 @@ import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useRouter } from "next/navigation";
 
-// const pages = ["Home", "Explore", "Book Now", "Contact", "Register", "Login"];
-
 const pages = [
   { label: "Home", route: "/" },
   { label: "Explore", route: "/ExploreScreen" },
@@ -30,15 +28,6 @@ const DrawerComponent = () => {
     router.push(route);
   };
 
-// const navigationToExploreScreen = (id: string) => {
-//   if (id === "Explore") {
-//     router.push("/ExploreScreen");
-//   } else if (id === "Book Now") {
-//     router.push("/CheckoutScreen");
-//   } else {
-//     router.push("/");
-//   }
-// };
   return (
     <>
       <Drawer
@@ -53,7 +42,15 @@ const DrawerComponent = () => {
       >
         <List>
           {pages.map((page, index) => (
-            <ListItemButton onClick={() => setOpenDrawer(false)} key={index}>
+            <ListItemButton
+              onClick={() => setOpenDrawer(false)}
+              key={index}
+              sx={{
+                "&:hover": {
+                  backgroundColor: "#3C404B", // Define your desired hover color
+                },
+              }}
+            >
               <ListItemIcon>
                 <ListItemText
                   sx={{ color: "#FFF" }}
