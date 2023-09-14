@@ -39,6 +39,14 @@ const NavBar = () => {
   const navigationToScreens = (route: string) => {
     router.push(route);
   };
+
+  const navigationToRegisterPage = () => {
+    router.push("/Register");
+  };
+
+  const navigationToLoginPage = () => {
+    router.push("/Login");
+  };
   
   return (
     <>
@@ -63,27 +71,27 @@ const NavBar = () => {
               </>
             ) : (
               <>
-                  <Tabs
-                    sx={{ marginLeft: "auto" }}
-                    value={value}
-                    onChange={handleChange}
-                    textColor="inherit"
-                    indicatorColor="secondary"
-                    TabIndicatorProps={{
-                      style: { backgroundColor: "#FFF" },
-                    }}
-                  >
-                    {pages.map((page, index) => (
-                      <Tab
-                        key={index}
-                        label={page.label}
-                        onClick={() => navigationToScreens(page.route)}
-                      />
-                    ))}
-                  </Tabs>
-
+                <Tabs
+                  sx={{ marginLeft: "auto" }}
+                  value={value}
+                  onChange={handleChange}
+                  textColor="inherit"
+                  indicatorColor="secondary"
+                  TabIndicatorProps={{
+                    style: { backgroundColor: "#FFF" },
+                  }}
+                >
+                  {pages.map((page, index) => (
+                    <Tab
+                      key={index}
+                      label={page.label}
+                      onClick={() => navigationToScreens(page.route)}
+                    />
+                  ))}
+                </Tabs>
                 <Button
                   variant="text"
+                  onClick={navigationToRegisterPage}
                   sx={{
                     color: "#FFF",
                     textTransform: "none",
@@ -96,6 +104,7 @@ const NavBar = () => {
                 </Button>
                 <Button
                   variant="contained"
+                  onClick={navigationToLoginPage}
                   sx={{
                     width: "121px",
                     height: "47px",
