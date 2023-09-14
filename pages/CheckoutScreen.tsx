@@ -1,4 +1,3 @@
-import Footer from "@/components/homePage/Footer";
 import BookingDetailsForm from "@/components/checkout/BillingDetails";
 import Calender from "@/components/checkout/Calender";
 import GuestRoom from "@/components/checkout/BookingInfo";

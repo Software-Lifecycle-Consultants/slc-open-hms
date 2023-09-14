@@ -4,7 +4,6 @@ import HeroBanner from '@/components/guestRoomDetails/HeroBanner';
 import AboutRoom from '@/components/guestRoomDetails/AboutRoom';
 import Facilities from '@/components/guestRoomDetails/Facilities';
 import AdditionalInfo from '@/components/guestRoomDetails/AdditionalInfo';
-import Footer from "@/components/homePage/Footer";
 import SimilarRooms from '@/components/guestRoomDetails/SimilarRooms';
 import Gallery from '@/components/guestRoomDetails/Gallery';
 

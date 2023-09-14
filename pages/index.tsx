@@ -1,7 +1,5 @@
-import Image from "next/image";
-import { Box, Container, Grid, Typography, Button } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import Banner from "../components/homePage/Banner";
-import Footer from "../components/homePage/Footer";
 import Testimonials from "../components/homePage/Testimonials";
 import Blog from "../components/homePage/Blog";
 import CustomCard from "../components/homePage/CustomCard";
