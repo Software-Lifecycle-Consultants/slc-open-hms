@@ -12,7 +12,7 @@ import LogoCarousel from "@/components/homePage/LogoCarousel";
  * It includes sections like Banner, Destination Card, Blog, Testimonials, and Footer.
  */
 
-const screenStyle = {
+const sectionStyle = {
   backgroundColor: "#FFF",
   padding: "20px 0",
   width: "100%",
@@ -37,21 +37,21 @@ export default function HomeScreen() {
       </Box>
 
       {/* Destination Card */}
-      <Box sx={screenStyle}>
+      <Box sx={sectionStyle}>
         <Container>
           <CustomCard />
         </Container>
       </Box>
 
       {/* Blog */}
-      <Box sx={screenStyle}>
+      <Box sx={sectionStyle}>
         <Container>
           <LogoCarousel />
         </Container>
       </Box>
 
       {/* Blog */}
-      <Box sx={screenStyle}>
+      <Box sx={sectionStyle}>
         <Container>
           <Blog />
         </Container>
@@ -59,11 +59,7 @@ export default function HomeScreen() {
 
       {/* Testimonials */}
       <Box
-        sx={{
-          backgroundColor: "#F7F7F7",
-          padding: "20px 0",
-          width: "100%",
-        }}
+        sx={{sectionStyle,backgroundColor: "#F7F7F7",}}
       >
         <Container>
           <Testimonials />
@@ -74,4 +70,3 @@ export default function HomeScreen() {
   );
 }
 
-//backgroundColor: "#F7F7F7",
