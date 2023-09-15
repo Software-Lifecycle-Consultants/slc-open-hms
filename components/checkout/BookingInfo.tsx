@@ -4,12 +4,23 @@ import {
   Box,
   Typography,
   Card,
-  Checkbox,
   CardContent,
 } from "@mui/material";
 import Image from "next/image";
 import img from "../../public/images/Room2.jpg";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
+
+const bookingInfoCard = 
+  {
+    roomTitle: "President Luxury Double Room View NY City",
+    date: "14 February 2021",
+    checkIcon1: "1 Room",
+    checkIcon2: "2 Guest",
+    checkIcon3: "1 Night",
+    priceTitle: "Total Price",
+    price: "$59",
+  }
+;
 
 const checkBoxTypographyStyle = {
   color: "var(--light-text-color-body-2, #9A9AB0)",
@@ -68,7 +79,7 @@ const BookingInfo = () => {
                 fontWeight: "700",
               }}
             >
-              President Luxury Double Room View NY City
+              {bookingInfoCard.roomTitle}
             </Typography>
             <Typography
               variant="body1"
@@ -83,14 +94,14 @@ const BookingInfo = () => {
                 marginTop: "22px",
               }}
             >
-              14 February 2021
+              {bookingInfoCard.date}
             </Typography>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <CheckBoxIcon
                 sx={{ fontSize: 34, color: "#9A9AB0", marginTop: "18px" }}
               />
               <Typography variant="body1" style={checkBoxTypographyStyle}>
-                1 Room
+                {bookingInfoCard.checkIcon1}
               </Typography>
               <CheckBoxIcon
                 sx={{
@@ -101,7 +112,7 @@ const BookingInfo = () => {
                 }}
               />
               <Typography variant="body1" style={checkBoxTypographyStyle}>
-                2 Guest
+                {bookingInfoCard.checkIcon2}
               </Typography>
               <CheckBoxIcon
                 sx={{
@@ -112,7 +123,7 @@ const BookingInfo = () => {
                 }}
               />
               <Typography variant="body1" style={checkBoxTypographyStyle}>
-                1 Night
+                {bookingInfoCard.checkIcon3}
               </Typography>
             </Box>
             <Typography
@@ -128,7 +139,7 @@ const BookingInfo = () => {
                 marginTop: "14px",
               }}
             >
-              Total Price
+              {bookingInfoCard.priceTitle}
             </Typography>
             <Typography
               variant="body2"
@@ -143,7 +154,7 @@ const BookingInfo = () => {
                 marginTop: "4px",
               }}
             >
-              $59
+              {bookingInfoCard.price}
             </Typography>
           </Box>
         </CardContent>

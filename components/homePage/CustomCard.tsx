@@ -6,10 +6,34 @@ import {
 } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Image from "next/image";
-import turkey from "../../public/images/Turkey.png";
 import wallet from "../../public/images/Wallet.png";
 import user from "../../public/images/3 User.png";
 import heart from "../../public/images/Heart.png";
+
+const cardDetails1 = {
+    title: "Get Experience Which are fun",
+    description:"With travala you can get the best experience on holiday travel, and we always update the latest and best destinations in the world",
+    image: "/images/Turkey.png",
+  };
+
+const cardDetails2 = [
+  {
+    id: "1",
+    title: "Affordable prices",
+    description: "We provide some very affordable prices compared to others.",
+  },
+  {
+    id: "2",
+    title: "Unforgettable experience",
+    description: "We provide a vacation experience that will be unforgettable.",
+  },
+  {
+    id: "3",
+    title: "Very Friendly Service",
+    description:
+      "We will provide excellent and friendly service for the sake of our customers.",
+  },
+];
 
 const typographyh1Style = {
   color: "#0C111F",
@@ -65,14 +89,13 @@ const CustomCard = ({}) => {
     >
       <Grid item xs={12} md={6}>
         <Typography variant="h1" sx={typographyh1Style}>
-          Get Experience Which are fun
+          {cardDetails1.title}
         </Typography>
         <Typography variant="body1" sx={typographyBody1Style}>
-          With travala you can get the best experience on holiday travel, and we
-          always update the latest and best destinations in the world
+          {cardDetails1.description}
         </Typography>
         <Image
-          src={turkey}
+          src={cardDetails1.image}
           alt="test"
           width={518}
           height={301}
@@ -93,7 +116,120 @@ const CustomCard = ({}) => {
           alignItems="center"
           spacing={2}
         >
-          <Grid item xs={12}>
+          {cardDetails2.map((item) => (
+            <>
+              <Grid item xs={12}>
+                <Grid
+                  container
+                  spacing={0}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexDirection: "row", // Use row direction
+                  }}
+                >
+                  <Grid item xs={2} md={2}>
+                    {item.id === "1" && (
+                      <Box
+                        sx={{
+                          backgroundColor: "#F4F0FF",
+                          width: { xs: "80px", sm: "90px", md: "90px" }, // Adjust size for mobile and desktop
+                          height: { xs: "80px", sm: "90px", md: "90px" },
+                          borderRadius: "80px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Image
+                          src={wallet}
+                          width={38}
+                          height={38}
+                          alt="wallet"
+                          style={{
+                            flexShrink: 0,
+                          }}
+                        />
+                      </Box>
+                    )}
+                    {item.id === "2" && (
+                      <Box
+                        sx={{
+                          backgroundColor: "#FEFAEE",
+                          width: { xs: "80px", sm: "90px", md: "90px" }, // Adjust size for mobile and desktop
+                          height: { xs: "80px", sm: "90px", md: "90px" },
+                          borderRadius: "80px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                        mr={{ xs: "16px", md: "32px" }}
+                      >
+                        <Image
+                          src={user}
+                          width={38}
+                          height={38}
+                          alt="wallet"
+                          style={{
+                            flexShrink: 0,
+                          }}
+                        />
+                      </Box>
+                    )}
+                    {item.id === "3" && (
+                      <Box
+                        sx={{
+                          backgroundColor: "#F4F0FF",
+                          width: { xs: "80px", sm: "90px", md: "90px" }, // Adjust size for mobile and desktop
+                          height: { xs: "80px", sm: "90px", md: "90px" },
+                          borderRadius: "80px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                        mr={{ xs: "16px", md: "32px" }}
+                      >
+                        <Image
+                          src={heart}
+                          width={38}
+                          height={38}
+                          alt="wallet"
+                          style={{
+                            flexShrink: 0,
+                          }}
+                        />
+                      </Box>
+                    )}
+                  </Grid>
+                  <Grid
+                    item
+                    xs={10}
+                    md={10}
+                    sx={{
+                      width: "100%",
+                      padding: "24px",
+                      display: "flex",
+                      flexDirection: "column", // Use column direction
+                    }}
+                  >
+                    <Typography variant="h5" sx={typographyh5Style}>
+                      {item.title}
+                    </Typography>
+                    <Typography variant="body2" sx={typographyBody2Style}>
+                      {item.description}
+                    </Typography>
+                    <Divider
+                      style={{ marginTop: "24px", borderColor: "#F7F7F7" }}
+                    />
+                  </Grid>
+                </Grid>
+              </Grid>
+            </>
+          ))}
+          {/* <Grid item xs={12}>
             <Grid
               container
               spacing={0}
@@ -275,7 +411,7 @@ const CustomCard = ({}) => {
                 />
               </Grid>
             </Grid>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Grid>
     </Grid>

@@ -2,6 +2,13 @@ import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
+const facilities =
+{
+  title: "Hotels Facilities",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elit sed pretium, egestas sed sit.",
+};
+
 const data = [
   { id: 1, name: "Insurance" },
   { id: 2, name: "Cleaning Services" },
@@ -32,7 +39,7 @@ const Facilities = () => {
           letterSpacing: "0.195px",
         }}
       >
-        Hotels Facilities
+        {facilities.title}
       </Typography>
       <Typography
         variant="body1"
@@ -48,9 +55,9 @@ const Facilities = () => {
           marginBottom: "35px",
         }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elit
-        sed pretium, egestas sed sit.
+        {facilities.description}
       </Typography>
+
       <Grid container spacing={2}>
         {data.map((item) => (
           <Grid key={item.id} item xs={6} md={4}>
@@ -67,7 +74,7 @@ const Facilities = () => {
                   letterSpacing: "0.08px",
                   fontWeight: "400",
                   marginTop: "7px",
-                  marginLeft: "10px"
+                  marginLeft: "10px",
                 }}
               >
                 {item.name}

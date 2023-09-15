@@ -8,6 +8,13 @@ import {
 import React from "react";
 import CheckList from "./CheckList";
 
+const extraFacilitation = 
+  {
+    title: "Request meals and other services",
+    facility1: "Meals",
+    facility2: "Services",
+  };
+
 const ExtraFacilitation = () => {
   return (
     <>
@@ -35,7 +42,7 @@ const ExtraFacilitation = () => {
               marginTop: "10px",
             }}
           >
-            Request meals and other services
+            {extraFacilitation.title}
           </Typography>
           <Typography
             variant="h5"
@@ -50,7 +57,7 @@ const ExtraFacilitation = () => {
               marginTop: "25px",
             }}
           >
-            Meals
+            {extraFacilitation.facility1}
           </Typography>
           <Box sx={{ bgcolor: "#668557" }}>
             <CheckList />
@@ -68,7 +75,7 @@ const ExtraFacilitation = () => {
               marginTop: "25px",
             }}
           >
-            Services
+            {extraFacilitation.facility2}
           </Typography>
           <Box sx={{ bgcolor: "#578580" }}>
             <CheckList />

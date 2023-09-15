@@ -17,6 +17,12 @@ interface RoomCardProps {
   price: number;
 }
 
+const roomCard = {
+    checkIcon1: "2 Guest",
+    checkIcon2: "2 Bed",
+    checkIcon3: "1 bathroom",
+};
+
 const checkBoxTypographyStyle = {
   color: "var(--light-text-color-body-2, #9A9AB0)",
   fontFamily: "Mulish, sans-serif",
@@ -26,6 +32,24 @@ const checkBoxTypographyStyle = {
   letterSpacing: "0.08px",
   fontWeight: "400",
 };
+
+const buttonStyle = {
+  borderRadius: "8px",
+  display: "inline-flex",
+  justifyContent: "center",
+  alignItems: "center",
+  padding: "18px 24px",
+  gap: "10px",
+  textTransform: "none",
+  width: "100%",
+  height: "56px",
+  marginTop: "20px",
+  backgroundColor: "#C7923E",
+  "&:hover": {
+    backgroundColor: "#c7833e",
+  },
+};
+
 
 const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
   const router = useRouter();
@@ -91,19 +115,27 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <CheckBoxIcon sx={{ fontSize: 32, color: "#9A9AB0" }} />
                 <Typography variant="body1" style={checkBoxTypographyStyle}>
-                  2 Guest
+                  {roomCard.checkIcon1}
                 </Typography>
                 <CheckBoxIcon
-                  sx={{ fontSize: 32, color: "#9A9AB0", marginLeft: "22px" }}
+                  sx={{
+                    fontSize: 32,
+                    color: "#9A9AB0",
+                    marginLeft: "22px",
+                  }}
                 />
                 <Typography variant="body1" style={checkBoxTypographyStyle}>
-                  2 Bed
+                  {roomCard.checkIcon2}
                 </Typography>
                 <CheckBoxIcon
-                  sx={{ fontSize: 32, color: "#9A9AB0", marginLeft: "22px" }}
+                  sx={{
+                    fontSize: 32,
+                    color: "#9A9AB0",
+                    marginLeft: "22px",
+                  }}
                 />
                 <Typography variant="body1" style={checkBoxTypographyStyle}>
-                  1 Bathroom
+                  {roomCard.checkIcon3}
                 </Typography>
               </Box>
             </Box>
@@ -111,22 +143,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
               <Button
                 variant="contained"
                 onClick={navigationToRoomDetailsScreen}
-                sx={{
-                  borderRadius: "8px",
-                  display: "inline-flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: "18px 24px",
-                  gap: "10px",
-                  textTransform: "none",
-                  width: "100%",
-                  height: "56px",
-                  marginTop: "20px",
-                  backgroundColor: "#C7923E",
-                  "&:hover": {
-                    backgroundColor: "#c7833e",
-                  },
-                }}
+                sx={buttonStyle}
               >
                 Learn More
               </Button>

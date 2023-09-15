@@ -7,6 +7,8 @@ import {
 } from "@mui/material";
 import React from 'react'
 
+const billingDetailsFormTitle = "Booking Details";
+
 const BillingDetails = () => {
   return (
     <>
@@ -38,7 +40,7 @@ const BillingDetails = () => {
                     marginTop: "10px",
                   }}
                 >
-                  Booking Details
+                  {billingDetailsFormTitle}
                 </Typography>
               </Grid>
               <Grid item xs={12} md={6}>

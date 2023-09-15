@@ -6,6 +6,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const title = "Room Gallery";
+
 const Gallery: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // xs or sm breakpoint
@@ -21,6 +23,18 @@ const Gallery: React.FC = () => {
     autoplaySpeed: 1000,
   };
 
+  const titleStyle = [
+    {
+      color: "var(--light-text-color-title, #11142D)",
+      fontFamily: "Lora",
+      fontSize: "39px",
+      fontStyle: "normal",
+      fontWeight: 700,
+      lineHeight: "120%",
+      letterSpacing: "0.195px",
+    },
+  ];
+
   const cardStyles: React.CSSProperties = {
     display: "flex",
     justifyContent: "center",
@@ -34,19 +48,8 @@ const Gallery: React.FC = () => {
   };
   return (
     <>
-      <Typography
-        variant="h3"
-        style={{
-          color: "var(--light-text-color-title, #11142D)",
-          fontFamily: "Lora",
-          fontSize: "39px",
-          fontStyle: "normal",
-          fontWeight: 700,
-          lineHeight: "120%",
-          letterSpacing: "0.195px",
-        }}
-      >
-        Room Gallery
+      <Typography variant="h3" sx={titleStyle}>
+        {title}
       </Typography>
       <Slider {...settings}>
         <Box>

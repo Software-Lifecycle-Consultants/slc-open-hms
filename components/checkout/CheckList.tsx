@@ -5,7 +5,6 @@ import ListItem from "@mui/material/ListItem";
 import Checkbox from "@mui/material/Checkbox";
 import { Box, Typography } from "@mui/material";
 
-
 const CheckList = () => {
     const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -25,7 +24,6 @@ return (
 
       return (
         <ListItem key={value} disablePadding>
-
           <Box
             sx={{
               display: "flex",

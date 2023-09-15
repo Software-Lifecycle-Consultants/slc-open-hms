@@ -1,10 +1,15 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import logoDark from "../../public/images/logoDark.png";
 import fb from "../../public/images/facebook.png";
 import tw from "../../public/images/twitter.png";
 import ig from "../../public/images/instagram.png";
+
+
+const footerDetails = {
+  logoImage: "/images/logoDark.png",
+  description: "With travala you can experience new travel and the best tourist destinations that we have to offer"
+};
 
 const Footer = () => {
   return (
@@ -12,7 +17,7 @@ const Footer = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} md={3}>
           <Box>
-            <Image src={logoDark} width={142} height={50} alt="logo" />
+            <Image src={footerDetails.logoImage} width={142} height={50} alt="logo" />
           </Box>
           <Box>
             <Typography
@@ -28,8 +33,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              With travala you can experience new travel and the best tourist
-              destinations that we have to offer
+              {footerDetails.description}
             </Typography>
           </Box>
         </Grid>
@@ -123,7 +127,6 @@ const Footer = () => {
                 fontStyle: "normal",
                 fontWeight: "700",
                 letterSpacing: "-0.232px",
-                //   marginTop: "5px",
               }}
             >
               About
@@ -228,7 +231,6 @@ const Footer = () => {
             </Box>
             <Box
               sx={{ display: "flex" }}
-              // mr={{ xs: "16px", md: "32px" }}
             >
               <Image
                 src={tw}
@@ -258,7 +260,6 @@ const Footer = () => {
             </Box>
             <Box
               sx={{ display: "flex" }}
-              // mr={{ xs: "16px", md: "32px" }}
             >
               <Image
                 src={ig}
@@ -292,13 +293,11 @@ const Footer = () => {
           <Box
             style={{
               display: "flex",
-              //   backgroundColor: "red",
               width: "100%",
             }}
           >
             <Box
               style={{
-                // backgroundColor: "gray",
                 width: "50%",
               }}
             >
@@ -321,7 +320,6 @@ const Footer = () => {
             <Box
               style={{
                 display: "flex",
-                // backgroundColor: "gray",
                 width: "100%",
                 alignItems: "flex-end",
               }}

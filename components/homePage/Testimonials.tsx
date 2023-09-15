@@ -9,7 +9,17 @@ import {
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import profile from "../../public/images/Profile.png";
+
+const testimonialDetails = {
+  profileImage: "/images/Profile.png",
+  name: "Jhone Lown",
+  description: "“A very pleasant experience, plus the service is very friendly, recommended for those who want to try!”",
+};
+
+const testimonialSectionDetails = {
+  title: "Testimonials Travala Customers",
+  description: "What our customers have to say about our service, check below!",
+};
 
 const Testimonials = () => {
   const [value, setValue] = React.useState(4);
@@ -92,17 +102,21 @@ const Testimonials = () => {
         <Grid item xs={12} md={6}>
           <Box sx={accountContainerStyle}>
             <Box sx={userAvatarContainerStyle}>
-              <Image src={profile} alt="Avatar" width={64} height={64} />
+              <Image
+                src={testimonialDetails.profileImage}
+                alt="Avatar"
+                width={64}
+                height={64}
+              />
             </Box>
             <Card elevation={0} sx={accountStatsStyle}>
               <CardContent>
                 <Typography gutterBottom variant="h5" style={typographyh5Style}>
-                  Jhone Lown
+                  {testimonialDetails.name}
                 </Typography>
                 <Rating name="read-only" value={value} readOnly />
                 <Typography variant="body2" style={typographyCardStyle}>
-                  “A very pleasant experience, plus the service is very
-                  friendly, recommended for those who want to try!”
+                  {testimonialDetails.description}
                 </Typography>
               </CardContent>
             </Card>
@@ -111,10 +125,10 @@ const Testimonials = () => {
         <Grid item xs={12} md={6} paddingRight={{ xs: "16px", md: "32px" }}>
           <Box>
             <Typography variant="h1" sx={typographyh1Style}>
-              Testimonials Travala Customers
+              {testimonialSectionDetails.title}
             </Typography>
             <Typography variant="body2" sx={typographyParagraphStyle}>
-              What our customers have to say about our service, check below!
+              {testimonialSectionDetails.description}
             </Typography>
           </Box>
         </Grid>

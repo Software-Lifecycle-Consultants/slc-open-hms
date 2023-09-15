@@ -17,6 +17,10 @@ import logo from "../../public/images/logo.png";
 import DrawerComponent from "./DrawerComponent";
 import { useRouter } from "next/navigation";
 
+const navBarButtons = {
+  button1: "Register",
+  button2: "Login",
+}
 
 const pages = [
   { label: "Home", route: "/" },
@@ -24,6 +28,36 @@ const pages = [
   { label: "Book Now", route: "/CheckoutScreen" },
   { label: "Contact", route: "/contact_us" },
 ];
+
+const textButtonStyles = {
+  color: "#FFF",
+  textTransform: "none",
+  margin: "5px",
+  fontSize: "16px",
+  marginLeft: "auto",
+  "&:hover": {
+    backgroundColor: "#c7833e",
+  },
+};
+
+const containedButtonStyles = {
+  width: "121px",
+  height: "47px",
+  padding: "10px 25px",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "10px",
+  borderRadius: "100px",
+  background: "#FFF",
+  color: "#0D0E25",
+  textTransform: "none",
+  fontSize: "16px",
+  fontWeight: "bold",
+  marginLeft: "10px",
+  "&:hover": {
+    backgroundColor: "#c7833e",
+  },
+};
 
 const NavBar = () => {
   const [value, setValue] = React.useState(0);
@@ -71,14 +105,14 @@ const NavBar = () => {
             ) : (
               <>
                 <Tabs
-                  sx={{ marginLeft: "auto"}}
+                  sx={{ marginLeft: "auto" }}
                   value={value}
                   onChange={handleChange}
                   textColor="inherit"
                   indicatorColor="secondary"
                   TabIndicatorProps={{
                     style: { backgroundColor: "#c7833e" },
-                    }}
+                  }}
                 >
                   {pages.map((page, index) => (
                     <Tab
@@ -91,42 +125,16 @@ const NavBar = () => {
                 <Button
                   variant="text"
                   onClick={navigationToRegisterPage}
-                  sx={{
-                    color: "#FFF",
-                    textTransform: "none",
-                    margin: "5px",
-                    fontSize: "16px",
-                    marginLeft: "auto",
-                    "&:hover": {
-                      backgroundColor: "#c7833e",
-                    },
-                  }}
+                  sx={textButtonStyles}
                 >
-                  Register
+                  {navBarButtons.button1}
                 </Button>
                 <Button
                   variant="contained"
                   onClick={navigationToLoginPage}
-                  sx={{
-                    width: "121px",
-                    height: "47px",
-                    padding: "10px 25px",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: "10px",
-                    borderRadius: "100px",
-                    background: "#FFF",
-                    color: "#0D0E25",
-                    textTransform: "none",
-                    fontSize: "16px",
-                    fontWeight: "bold",
-                    marginLeft: "10px",
-                    "&:hover": {
-                      backgroundColor: "#c7833e",
-                    },
-                  }}
+                  sx={containedButtonStyles}
                 >
-                  Login
+                  {navBarButtons.button2}
                 </Button>
               </>
             )}

@@ -23,41 +23,45 @@ const data = [
   },
 ];
 
+const similarRooms = 
+  {
+    title: "Similar Rooms",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elitsed pretium, egestas sed sit.",
+  };
+
+const titleStyle = {
+  color: "var(--light-text-color-title, #11142D)",
+  fontFamily: "Lora",
+  fontSize: "39px",
+  fontStyle: "normal",
+  fontWeight: 700,
+  lineHeight: "120%",
+  letterSpacing: "0.195px",
+};
+
+const descriptionStyle = {
+  color: "var(--light-text-color-body-1, #515151)",
+  fontFamily: "Mulish, sans-serif",
+  fontSize: "16px",
+  lineHeight: "125%",
+  fontStyle: "normal",
+  letterSpacing: "0.08px",
+  fontWeight: "400",
+  marginTop: "15px",
+  marginBottom: "35px",
+  width: { xs: "none", sm: "504px", md: "504px" },
+};
+
 const SimilarRooms = () => {
   return (
     <>
-      <Typography
-        variant="h3"
-        style={{
-          color: "var(--light-text-color-title, #11142D)",
-          fontFamily: "Lora",
-          fontSize: "39px",
-          fontStyle: "normal",
-          fontWeight: 700,
-          lineHeight: "120%",
-          letterSpacing: "0.195px",
-        }}
-      >
-        Similar Rooms
-      </Typography>
-      <Typography
-        variant="body1"
-        sx={{
-          color: "var(--light-text-color-body-1, #515151)",
-          fontFamily: "Mulish, sans-serif",
-          fontSize: "16px",
-          lineHeight: "125%",
-          fontStyle: "normal",
-          letterSpacing: "0.08px",
-          fontWeight: "400",
-          marginTop: "15px",
-          marginBottom: "35px",
-          width: { xs: "none", sm: "504px", md: "504px" },
-        }}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elit
-        sed pretium, egestas sed sit.
-      </Typography>
+          <Typography variant="h3" sx={titleStyle}>
+            {similarRooms.title}
+          </Typography>
+          <Typography variant="body1" sx={descriptionStyle}>
+            {similarRooms.description}
+          </Typography>
+
       <Grid container spacing={2}>
         {data.map((item) => (
           <Grid key={item.id} item xs={12} sm={6} md={4}>
