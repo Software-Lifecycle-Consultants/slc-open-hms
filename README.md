@@ -30,6 +30,12 @@ git clone https://github.com/your-username/hotel-management-system.git
 cd hotel-management-system
  ```
 2. Install the dependencies:
+
+Node Modules
+ ```bash
+npm install
+ ```
+Node Modules
  ```bash
 npm install
  ```
