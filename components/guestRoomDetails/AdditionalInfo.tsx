@@ -182,9 +182,8 @@ const AdditionalInfo = () => {
             }}
           >
             {accordion.map((item) => (
-              <>
-                {item.id === "1" ? (
                   <Accordion
+                    key={item.id} // Add a unique key prop based on the item.id
                     elevation={0}
                     sx={{
                       border: "1px solid",
@@ -192,6 +191,7 @@ const AdditionalInfo = () => {
                       borderColor:
                         "var(--light-separators-colors-secondary, #E1E1E1)",
                       flexShrink: "0",
+                      marginTop: item.id !== "1" ? "10px" : "0", // Adjust the marginTop conditionally
                     }}
                   >
                     <AccordionSummary
@@ -207,33 +207,6 @@ const AdditionalInfo = () => {
                       <Typography>{item.accordionDescription}</Typography>
                     </AccordionDetails>
                   </Accordion>
-                ) : (
-                  <Accordion
-                    elevation={0}
-                    sx={{
-                      border: "1px solid",
-                      borderRadius: "8px",
-                      borderColor:
-                        "var(--light-separators-colors-secondary, #E1E1E1)",
-                      flexShrink: "0",
-                      marginTop: "10px",
-                    }}
-                  >
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon sx={{ color: "#9A9AB0" }} />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
-                      <Typography variant="body1" sx={accordionTypographyStyle}>
-                        {item.accordion}
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>{item.accordionDescription}</Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                )}
-              </>
             ))}
           </Box>
         </Grid>
