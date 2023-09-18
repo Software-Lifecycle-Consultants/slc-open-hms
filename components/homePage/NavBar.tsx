@@ -132,7 +132,7 @@ const NavBar = () => {
                   onClick={navigationToRegisterPage}
                   sx={textButtonStyles}
                 >
-                  {navBarButtons.navBarcta1}
+                  {navBarButtons.navBarcta1Caption}
                 </Button>
                 {/* Button for Login */}
                 <Button
@@ -140,7 +140,7 @@ const NavBar = () => {
                   onClick={navigationToLoginPage}
                   sx={containedButtonStyles}
                 >
-                  {navBarButtons.navBarcta2}
+                  {navBarButtons.navBarcta2Caption}
                 </Button>
               </>
             )}

@@ -8,8 +8,8 @@ export const pages = [
 
 /* Assign button labels to the navigation bar component of the website */
 export const navBarButtons = {
-  navBarcta1: "Register",
-  navBarcta2: "Login",
+  navBarcta1Caption: "Register",
+  navBarcta2Caption: "Login",
 };
 
 /* Assign array of pages and their corresponding routes to the navigation drawer component of the website */
