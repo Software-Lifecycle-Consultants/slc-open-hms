@@ -1,33 +1,8 @@
 import { Grid, Typography } from '@mui/material';
 import React from 'react'
 import RoomCard from './RoomCard';
-
-const data = [
-  {
-    id: 1,
-    image: "/images/hotelRooms/Room2.jpg",
-    roomName: "Deluxe Double with New York City View 1",
-    price: 59,
-  },
-  {
-    id: 2,
-    image: "/images/hotelRooms/Room2.jpg",
-    roomName: "Deluxe Double with New York City View 2",
-    price: 59,
-  },
-  {
-    id: 3,
-    image: "/images/hotelRooms/Room2.jpg",
-    roomName: "Deluxe Double with New York City View 3",
-    price: 59,
-  },
-];
-
-const similarRooms = 
-  {
-    title: "Similar Rooms",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elitsed pretium, egestas sed sit.",
-  };
+import { roomsData } from '@/data/roomDetailsPage';
+import { similarRoomsDetails } from '@/data/roomDetailsPage';
 
 const titleStyle = {
   color: "var(--light-text-color-title, #11142D)",
@@ -55,18 +30,18 @@ const descriptionStyle = {
 const SimilarRooms = () => {
   return (
     <>
-          <Typography variant="h3" sx={titleStyle}>
-            {similarRooms.title}
-          </Typography>
-          <Typography variant="body1" sx={descriptionStyle}>
-            {similarRooms.description}
-          </Typography>
+      <Typography variant="h3" sx={titleStyle}>
+        {similarRoomsDetails.similarRoomsDetailsTitle}
+      </Typography>
+      <Typography variant="body1" sx={descriptionStyle}>
+        {similarRoomsDetails.similarRoomsDetailsDescription}
+      </Typography>
 
       <Grid container spacing={2}>
-        {data.map((item) => (
+        {roomsData.map((item) => (
           <Grid key={item.id} item xs={12} sm={6} md={4}>
             <RoomCard
-              image={item.image}
+              image={item.roomImage}
               roomName={item.roomName}
               price={item.price}
             />

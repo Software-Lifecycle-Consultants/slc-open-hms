@@ -5,8 +5,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const title = "Room Gallery";
+import { galleryTitle } from "@/data/roomDetailsPage";
 
 const Gallery: React.FC = () => {
   const theme = useTheme();
@@ -49,7 +48,7 @@ const Gallery: React.FC = () => {
   return (
     <>
       <Typography variant="h3" sx={titleStyle}>
-        {title}
+        {galleryTitle}
       </Typography>
       <Slider {...settings}>
         <Box>

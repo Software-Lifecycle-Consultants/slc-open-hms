@@ -8,17 +8,7 @@ import React from "react";
 import Image from "next/image";
 import img from "../../public/images/hotelRooms/Room3.jpg";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
-
-const heroSection = 
-  {
-    title: "President Luxury Double Room View NY City",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elit sed pretium, egestas sed sit orem ipsum dolor sit amet.",
-    checkIcon1: "2 Guest",
-    checkIcon2: "2 Bed",
-    checkIcon3: "1 Bathroom",
-    price: "$59"
-  };
+import { roomDetailsHeroSection } from "@/data/roomDetailsPage";
 
 const titleStyle = {
   color: "var(--light-text-color-title, #11142D)",
@@ -57,94 +47,94 @@ const HeroBanner = () => {
     <>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-              <Typography variant="h1" style={titleStyle}>
-                {heroSection.title}
-              </Typography>
-              <Typography variant="body1" sx={descriptionStyle}>
-                {heroSection.description}
-              </Typography>
-              <Box sx={{ display: "flex" }}>
-                <CheckBoxIcon
-                  sx={{
-                    fontSize: 34,
-                    color: "#9A9AB0",
-                    marginTop: "35px",
-                  }}
-                />
-                <Typography variant="body1" style={checkBoxTypographyStyle}>
-                  {heroSection.checkIcon1}
-                </Typography>
-                <CheckBoxIcon
-                  sx={{
-                    fontSize: 34,
-                    color: "#9A9AB0",
-                    marginTop: "35px",
-                    marginLeft: "20px",
-                  }}
-                />
-                <Typography variant="body1" style={checkBoxTypographyStyle}>
-                  {heroSection.checkIcon2}
-                </Typography>
-                <CheckBoxIcon
-                  sx={{
-                    fontSize: 34,
-                    color: "#9A9AB0",
-                    marginTop: "35px",
-                    marginLeft: "20px",
-                  }}
-                />
-                <Typography variant="body1" style={checkBoxTypographyStyle}>
-                  {heroSection.checkIcon3}
-                </Typography>
-              </Box>
-              <Typography
-                variant="body2"
-                style={{
-                  color: "var(--light-text-color-body-1, #515151)",
-                  fontFamily: "Mulish, sans-serif",
-                  fontSize: "14px",
-                  lineHeight: "130%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.112px",
-                  fontWeight: "600",
-                  marginTop: "40px",
-                }}
-              >
-                Start From
-              </Typography>
-              <Box sx={{ display: "flex" }}>
-                <Typography
-                  variant="body2"
-                  style={{
-                    color: "var(--light-primary-color-70, #27343F)",
-                    fontFamily: "Lora",
-                    fontSize: "39px",
-                    lineHeight: "120%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.195px",
-                    fontWeight: "700",
-                    marginTop: "4px",
-                  }}
-                >
-                  {heroSection.price}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  style={{
-                    color: "var(--light-text-color-body-2, #9A9AB0)",
-                    fontFamily: "Mulish, sans-serif",
-                    fontSize: "12px",
-                    lineHeight: "120%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.096px",
-                    fontWeight: "400",
-                    marginTop: "22px",
-                    marginLeft: "4px",
-                  }}
-                >
-                  /Night
-                </Typography>
-              </Box>
+          <Typography variant="h1" style={titleStyle}>
+            {roomDetailsHeroSection.roomDetailsTitle}
+          </Typography>
+          <Typography variant="body1" sx={descriptionStyle}>
+            {roomDetailsHeroSection.roomDetailsDescription}
+          </Typography>
+          <Box sx={{ display: "flex" }}>
+            <CheckBoxIcon
+              sx={{
+                fontSize: 34,
+                color: "#9A9AB0",
+                marginTop: "35px",
+              }}
+            />
+            <Typography variant="body1" style={checkBoxTypographyStyle}>
+              {roomDetailsHeroSection.checkIcon1}
+            </Typography>
+            <CheckBoxIcon
+              sx={{
+                fontSize: 34,
+                color: "#9A9AB0",
+                marginTop: "35px",
+                marginLeft: "20px",
+              }}
+            />
+            <Typography variant="body1" style={checkBoxTypographyStyle}>
+              {roomDetailsHeroSection.checkIcon2}
+            </Typography>
+            <CheckBoxIcon
+              sx={{
+                fontSize: 34,
+                color: "#9A9AB0",
+                marginTop: "35px",
+                marginLeft: "20px",
+              }}
+            />
+            <Typography variant="body1" style={checkBoxTypographyStyle}>
+              {roomDetailsHeroSection.checkIcon3}
+            </Typography>
+          </Box>
+          <Typography
+            variant="body2"
+            style={{
+              color: "var(--light-text-color-body-1, #515151)",
+              fontFamily: "Mulish, sans-serif",
+              fontSize: "14px",
+              lineHeight: "130%",
+              fontStyle: "normal",
+              letterSpacing: "0.112px",
+              fontWeight: "600",
+              marginTop: "40px",
+            }}
+          >
+            Start From
+          </Typography>
+          <Box sx={{ display: "flex" }}>
+            <Typography
+              variant="body2"
+              style={{
+                color: "var(--light-primary-color-70, #27343F)",
+                fontFamily: "Lora",
+                fontSize: "39px",
+                lineHeight: "120%",
+                fontStyle: "normal",
+                letterSpacing: "0.195px",
+                fontWeight: "700",
+                marginTop: "4px",
+              }}
+            >
+              {roomDetailsHeroSection.price}
+            </Typography>
+            <Typography
+              variant="body2"
+              style={{
+                color: "var(--light-text-color-body-2, #9A9AB0)",
+                fontFamily: "Mulish, sans-serif",
+                fontSize: "12px",
+                lineHeight: "120%",
+                fontStyle: "normal",
+                letterSpacing: "0.096px",
+                fontWeight: "400",
+                marginTop: "22px",
+                marginLeft: "4px",
+              }}
+            >
+              /Night
+            </Typography>
+          </Box>
         </Grid>
         <Grid item xs={12} md={6}>
           <Box

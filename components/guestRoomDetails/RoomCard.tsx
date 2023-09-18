@@ -10,18 +10,13 @@ import {
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
+import { roomCardCheckIconContent } from "@/data/roomDetailsPage";
 
 interface RoomCardProps {
   image: string;
   roomName: string;
   price: number;
 }
-
-const roomCard = {
-    checkIcon1: "2 Guest",
-    checkIcon2: "2 Bed",
-    checkIcon3: "1 bathroom",
-};
 
 const checkBoxTypographyStyle = {
   color: "var(--light-text-color-body-2, #9A9AB0)",
@@ -115,7 +110,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <CheckBoxIcon sx={{ fontSize: 32, color: "#9A9AB0" }} />
                 <Typography variant="body1" style={checkBoxTypographyStyle}>
-                  {roomCard.checkIcon1}
+                  {roomCardCheckIconContent.checkIcon1Caption}
                 </Typography>
                 <CheckBoxIcon
                   sx={{
@@ -125,7 +120,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                   }}
                 />
                 <Typography variant="body1" style={checkBoxTypographyStyle}>
-                  {roomCard.checkIcon2}
+                  {roomCardCheckIconContent.checkIcon2Caption}
                 </Typography>
                 <CheckBoxIcon
                   sx={{
@@ -135,7 +130,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                   }}
                 />
                 <Typography variant="body1" style={checkBoxTypographyStyle}>
-                  {roomCard.checkIcon3}
+                  {roomCardCheckIconContent.checkIcon3Caption}
                 </Typography>
               </Box>
             </Box>
