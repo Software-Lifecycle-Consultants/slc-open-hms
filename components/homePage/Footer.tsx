@@ -8,7 +8,7 @@ import ig from "../../public/images/homePage/footerImages/instagram.png";
 
 /* Footer details including logo image and description */
 const footerDetails = {
-  logoImage: "/images/logoDark.png",
+  logoImage: "/images/homePage/footerImages/logoDark.png",
   description:
     "With travala you can experience new travel and the best tourist destinations that we have to offer",
 };

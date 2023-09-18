@@ -37,7 +37,7 @@ const LogoCarousel: React.FC = () => {
       <Box>
         <Card style={cardStyles}>
           <Image
-            src="/images/clientLogos/alitalia.png"
+            src="/images/homePage/clientLogos/alitalia.png"
             alt="Image 1"
             width={162}
             height={32}
@@ -47,7 +47,7 @@ const LogoCarousel: React.FC = () => {
       <Box>
         <Card style={cardStyles}>
           <Image
-            src="/images/clientLogos/axon.png"
+            src="/images/homePage/clientLogos/axon.png"
             alt="Image 2"
             width={162}
             height={32}
@@ -57,7 +57,7 @@ const LogoCarousel: React.FC = () => {
       <Box>
         <Card style={cardStyles}>
           <Image
-            src="/images/clientLogos/expedia.png"
+            src="/images/homePage/clientLogos/expedia.png"
             alt="Image 3"
             width={162}
             height={32}
@@ -67,7 +67,7 @@ const LogoCarousel: React.FC = () => {
       <Box>
         <Card style={cardStyles}>
           <Image
-            src="/images/clientLogos/jetstar.png"
+            src="/images/homePage/clientLogos/jetstar.png"
             alt="Image 4"
             width={162}
             height={32}
@@ -77,7 +77,7 @@ const LogoCarousel: React.FC = () => {
       <Box>
         <Card style={cardStyles}>
           <Image
-            src="/images/clientLogos/quantas.png"
+            src="/images/homePage/clientLogos/quantas.png"
             alt="Image 5"
             width={162}
             height={32}

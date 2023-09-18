@@ -12,7 +12,7 @@ import Image from "next/image";
 
 /* Testimonial details for the user. */
 const testimonialDetails = {
-  profileImage: "/images/Profile.png",
+  profileImage: "/images/homePage/testimonialsImage/Profile.png",
   name: "Jhone Lown",
   description: "“A very pleasant experience, plus the service is very friendly, recommended for those who want to try!”",
 };

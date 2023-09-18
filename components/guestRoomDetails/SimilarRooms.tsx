@@ -5,19 +5,19 @@ import RoomCard from './RoomCard';
 const data = [
   {
     id: 1,
-    image: "/images/Room2.jpg",
+    image: "/images/hotelRooms/Room2.jpg",
     roomName: "Deluxe Double with New York City View 1",
     price: 59,
   },
   {
     id: 2,
-    image: "/images/Room2.jpg",
+    image: "/images/hotelRooms/Room2.jpg",
     roomName: "Deluxe Double with New York City View 2",
     price: 59,
   },
   {
     id: 3,
-    image: "/images/Room2.jpg",
+    image: "/images/hotelRooms/Room2.jpg",
     roomName: "Deluxe Double with New York City View 3",
     price: 59,
   },

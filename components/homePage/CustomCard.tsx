@@ -14,7 +14,7 @@ import heart from "../../public/images/homePage/customCardImages/Heart.png";
 const cardDetails1 = {
     title: "Get Experience Which are fun",
     description:"With travala you can get the best experience on holiday travel, and we always update the latest and best destinations in the world",
-    image: "/images/Turkey.png",
+    image: "/images/homePage/customCardImages/Turkey.png",
   };
 
 /* Details for the first card */

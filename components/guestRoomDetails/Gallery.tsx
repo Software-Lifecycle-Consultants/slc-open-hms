@@ -55,7 +55,7 @@ const Gallery: React.FC = () => {
         <Box>
           <Card style={cardStyles}>
             <Image
-              src="/images/Room1.jpg"
+              src="/images/hotelRooms/Room1.jpg"
               alt="Image 1"
               width={712}
               height={460}
@@ -69,7 +69,7 @@ const Gallery: React.FC = () => {
         <Box>
           <Card style={cardStyles}>
             <Image
-              src="/images/Room2.jpg"
+              src="/images/hotelRooms/Room2.jpg"
               alt="Image 2"
               width={712}
               height={460}

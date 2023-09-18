@@ -9,7 +9,7 @@ import DestinationCardDetails from "./DestinationCardDetails";
 const destinationCardData = [
   {
     id: 1,
-    image: "/images/Turkey2.png",
+    image: "/images/homePage/blogImages/Turkey2.png",
     city: "Cappadocia",
     description:
       "The red and orange sand of the desert are very beautiful, let's take a trip here",
@@ -17,7 +17,7 @@ const destinationCardData = [
   },
   {
     id: 2,
-    image: "/images/Namibia2.png",
+    image: "/images/homePage/blogImages/Namibia2.png",
     city: "Sossusvlei",
     description:
       "Famous for its hot air balloons and we can see its natural beauty from above",
@@ -25,7 +25,7 @@ const destinationCardData = [
   },
   {
     id: 3,
-    image: "/images/New Mexico2.png",
+    image: "/images/homePage/blogImages/New Mexico2.png",
     city: "Albuquerque",
     description:
       "A cool trip because the various scenery around will be very eye-catching",
