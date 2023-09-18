@@ -102,7 +102,7 @@ const CustomCard = ({}) => {
           spacing={2}
         >
           {cardDetails2.map((item) => (
-            <>
+            <React.Fragment key={item.id}>
               <Grid item xs={12}>
                 <Grid
                   container
@@ -219,7 +219,7 @@ const CustomCard = ({}) => {
                   </Grid>
                 </Grid>
               </Grid>
-            </>
+            </React.Fragment>
           ))}
         </Grid>
       </Grid>
