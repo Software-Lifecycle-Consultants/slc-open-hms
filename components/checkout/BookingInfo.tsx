@@ -10,6 +10,10 @@ import Image from "next/image";
 import img from "../../public/images/hotelRooms/Room2.jpg";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
+/**
+ * BookingInfo component is the card used in checkout page to display details of each room.
+ */
+
 /* Booking information */
 const bookingInfoCard = 
   {

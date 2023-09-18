@@ -7,6 +7,10 @@ import {
 } from "@mui/material";
 import React from 'react'
 
+/**
+ * BillingDetails component is the form used in checkout page to input users billing details.
+ */
+
 /* Title for the billing details form */
 const billingDetailsFormTitle = "Booking Details";
 
