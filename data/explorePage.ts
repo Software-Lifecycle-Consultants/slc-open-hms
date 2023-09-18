@@ -1,3 +1,10 @@
+/* Assign data to the hero section of explore page */
+export const heroSection = {
+  exploreSectionTitle: "Our Premium Room and Suites",
+  exploreSectionDescription:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elit sed pretium, egestas sed sit orem ipsum dolor sit amet,",
+};
+
 /* Assign data to room details component in explore page */
 export const roomDetails = [
   {
