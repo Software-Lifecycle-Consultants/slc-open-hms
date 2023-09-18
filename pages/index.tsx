@@ -10,6 +10,7 @@ import LogoCarousel from "@/components/homePage/LogoCarousel";
  * It includes sections like Banner, Destination Card, Blog, Testimonials, and Footer.
  */
 
+/* Style class for the box component of each section component */
 const sectionStyle = {
   backgroundColor: "#FFF",
   padding: "20px 0",
