@@ -10,16 +10,7 @@ import {
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useRouter } from "next/navigation";
-
-/* Array containing pages and their corresponding routes */
-const pages = [
-  { label: "Home", route: "/" },
-  { label: "Explore", route: "/ExploreScreen" },
-  { label: "Book Now", route: "/CheckoutScreen" },
-  { label: "Contact", route: "/contact_us" },
-  { label: "Register", route: "/Register" },
-  { label: "Login", route: "/Login" },
-];
+import { drawerPages } from "@/data/homePage";
 
 /* DrawerComponent displays a drawer with navigation links. */
 const DrawerComponent = () => {
@@ -46,7 +37,7 @@ const DrawerComponent = () => {
       >
         <List>
           {/* Mapping through pages to create navigation links */}
-          {pages.map((page, index) => (
+          {drawerPages.map((page, index) => (
             <ListItemButton
               onClick={() => setOpenDrawer(false)}
               key={index}

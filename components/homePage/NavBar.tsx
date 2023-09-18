@@ -16,20 +16,8 @@ import Image from "next/image";
 import logo from "../../public/images/homePage/navbarImages/logo.png";
 import DrawerComponent from "./DrawerComponent";
 import { useRouter } from "next/navigation";
-
-/* Button labels for navigation */
-const navBarButtons = {
-  button1: "Register",
-  button2: "Login",
-}
-
-/* Page routes and labels for navigation */
-const pages = [
-  { label: "Home", route: "/" },
-  { label: "Explore", route: "/ExploreScreen" },
-  { label: "Book Now", route: "/CheckoutScreen" },
-  { label: "Contact", route: "/contact_us" },
-];
+import { pages } from "@/data/homePage";
+import { navBarButtons } from "@/data/homePage";
 
 /* Styles for a text button */
 const textButtonStyles = {
@@ -144,7 +132,7 @@ const NavBar = () => {
                   onClick={navigationToRegisterPage}
                   sx={textButtonStyles}
                 >
-                  {navBarButtons.button1}
+                  {navBarButtons.navBarcta1}
                 </Button>
                 {/* Button for Login */}
                 <Button
@@ -152,7 +140,7 @@ const NavBar = () => {
                   onClick={navigationToLoginPage}
                   sx={containedButtonStyles}
                 >
-                  {navBarButtons.button2}
+                  {navBarButtons.navBarcta2}
                 </Button>
               </>
             )}

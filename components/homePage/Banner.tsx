@@ -5,16 +5,7 @@ import Image from "next/image";
 import image from "../../public/images/homePage/heroSectionImage/mainImage.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-
-/* Details for the banner section */
-const bannerDetails = 
-  {
-    title1: "the best deals on the world's best destinations",
-    title2: "Best travel and destinations",
-    description: "With travala you can experience new travel and the best tourist destinations that we have to offer",
-    button1Title: "Our Destination",
-    button2Title: "Our Gallery"
-  };
+import { bannerDetails } from "../../data/homePage";
 
 /* Typography style for heading 5 */
 const typographyh5Style = {
@@ -107,15 +98,15 @@ const Banner = () => {
         <Grid item xs={12} md={6}>
           {/* Heading 5 */}
           <Typography variant="h5" sx={typographyh5Style}>
-            {bannerDetails.title1}
+            {bannerDetails.bannerTitle}
           </Typography>
           {/* Heading 1 */}
           <Typography variant="h1" sx={typographyh1Style}>
-            {bannerDetails.title2}
+            {bannerDetails.bannerSubTitle}
           </Typography>
           {/* Body text */}
           <Typography variant="body1" sx={typographyBody1Style}>
-            {bannerDetails.description}
+            {bannerDetails.bannerDescription}
           </Typography>
           <Box
             sx={{
@@ -126,7 +117,7 @@ const Banner = () => {
           >
             {/* Button with icon for web and tablet view */}
             <Button variant="contained" sx={buttonContainedStyle}>
-              {bannerDetails.button1Title}
+              {bannerDetails.bannercta1Caption}
               {/* Arrow icon */}
               <Box
                 sx={{
@@ -172,7 +163,7 @@ const Banner = () => {
                   <ArrowRightIcon sx={{ color: "#F5B100" }} />
                 </Box>
               </Box>
-              {bannerDetails.button2Title}
+              {bannerDetails.bannercta2Caption}
             </Button>
           </Box>
         </Grid>

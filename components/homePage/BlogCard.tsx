@@ -4,14 +4,14 @@ import React from 'react'
 
 /* DestinationCardDetails component displays details of a destination in a card. */
 
-interface DestinationCardDetailsProps {
+interface BlogCardProps {
   image: string; // The image URL of the destination.
   city: string; // The name of the city.
   description: string; // A brief description of the destination.
   price: number; // The price per person for the destination.
 }
 
-const DestinationCardDetails: React.FC<DestinationCardDetailsProps> = ({
+const BlogCard: React.FC<BlogCardProps> = ({
   image,
   city,
   description,
@@ -167,4 +167,4 @@ const DestinationCardDetails: React.FC<DestinationCardDetailsProps> = ({
   );
 };
 
-export default DestinationCardDetails;
+export default BlogCard;

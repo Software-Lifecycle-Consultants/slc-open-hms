@@ -9,19 +9,8 @@ import {
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-
-/* Testimonial details for the user. */
-const testimonialDetails = {
-  profileImage: "/images/homePage/testimonialsImage/Profile.png",
-  name: "Jhone Lown",
-  description: "“A very pleasant experience, plus the service is very friendly, recommended for those who want to try!”",
-};
-
-/* Details for the testimonial section. */
-const testimonialSectionDetails = {
-  title: "Testimonials Travala Customers",
-  description: "What our customers have to say about our service, check below!",
-};
+import { userTestimonial } from "@/data/homePage";
+import { testimonialSectionDetails } from "@/data/homePage";
 
 const Testimonials = () => {
   const [value, setValue] = React.useState(4); // Rating value
@@ -111,7 +100,7 @@ const Testimonials = () => {
             <Box sx={userAvatarContainerStyle}>
               {/* User profile image */}
               <Image
-                src={testimonialDetails.profileImage}
+                src={userTestimonial.userProfileImage}
                 alt="Avatar"
                 width={64}
                 height={64}
@@ -122,13 +111,13 @@ const Testimonials = () => {
               <CardContent>
                 {/* User's name */}
                 <Typography gutterBottom variant="h5" style={typographyh5Style}>
-                  {testimonialDetails.name}
+                  {userTestimonial.userProfileImage}
                 </Typography>
                 {/* User's rating */}
                 <Rating name="read-only" value={value} readOnly />
                 {/* User's testimonial description */}
                 <Typography variant="body2" style={typographyCardStyle}>
-                  {testimonialDetails.description}
+                  {userTestimonial.testimonial}
                 </Typography>
               </CardContent>
             </Card>
@@ -139,11 +128,11 @@ const Testimonials = () => {
           <Box>
             {/* Title for the testimonial section */}
             <Typography variant="h1" sx={typographyh1Style}>
-              {testimonialSectionDetails.title}
+              {testimonialSectionDetails.testimonialsSectionTitle}
             </Typography>
             {/* Description for the testimonial section */}
             <Typography variant="body2" sx={typographyParagraphStyle}>
-              {testimonialSectionDetails.description}
+              {testimonialSectionDetails.testimonialsSectionDescription}
             </Typography>
           </Box>
         </Grid>

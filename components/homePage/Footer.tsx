@@ -5,13 +5,8 @@ import Image from "next/image";
 import fb from "../../public/images/homePage/footerImages/facebook.png";
 import tw from "../../public/images/homePage/footerImages/twitter.png";
 import ig from "../../public/images/homePage/footerImages/instagram.png";
+import { footerContent } from "@/data/homePage";
 
-/* Footer details including logo image and description */
-const footerDetails = {
-  logoImage: "/images/homePage/footerImages/logoDark.png",
-  description:
-    "With travala you can experience new travel and the best tourist destinations that we have to offer",
-};
 
 /* Footer component displays the website footer. */
 const Footer = () => {
@@ -22,7 +17,7 @@ const Footer = () => {
         <Grid item xs={12} md={3}>
           <Box>
             <Image
-              src={footerDetails.logoImage}
+              src={footerContent.footerSectionLogoImage}
               width={142}
               height={50}
               alt="logo"
@@ -42,7 +37,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              {footerDetails.description}
+              {footerContent.footerSectionDescription}
             </Typography>
           </Box>
         </Grid>

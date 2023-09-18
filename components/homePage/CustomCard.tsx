@@ -9,33 +9,8 @@ import Image from "next/image";
 import wallet from "../../public/images/homePage/customCardImages/Wallet.png";
 import user from "../../public/images/homePage/customCardImages/3 User.png";
 import heart from "../../public/images/homePage/customCardImages/Heart.png";
-
-/* Details for the first card */
-const cardDetails1 = {
-    title: "Get Experience Which are fun",
-    description:"With travala you can get the best experience on holiday travel, and we always update the latest and best destinations in the world",
-    image: "/images/homePage/customCardImages/Turkey.png",
-  };
-
-/* Details for the first card */
-const cardDetails2 = [
-  {
-    id: "1",
-    title: "Affordable prices",
-    description: "We provide some very affordable prices compared to others.",
-  },
-  {
-    id: "2",
-    title: "Unforgettable experience",
-    description: "We provide a vacation experience that will be unforgettable.",
-  },
-  {
-    id: "3",
-    title: "Very Friendly Service",
-    description:
-      "We will provide excellent and friendly service for the sake of our customers.",
-  },
-];
+import { cardDetails1 } from "../../data/homePage";
+import { cardDetails2 } from "../../data/homePage";
 
 /* Typography styles for heading 1 */
 const typographyh1Style = {
@@ -97,15 +72,15 @@ const CustomCard = ({}) => {
       <Grid item xs={12} md={6}>
         {/* Heading 1 */}
         <Typography variant="h1" sx={typographyh1Style}>
-          {cardDetails1.title}
+          {cardDetails1.customCardTitle}
         </Typography>
         {/* Body 1 */}
         <Typography variant="body1" sx={typographyBody1Style}>
-          {cardDetails1.description}
+          {cardDetails1.customCardDescription}
         </Typography>
         {/* Image */}
         <Image
-          src={cardDetails1.image}
+          src={cardDetails1.customCardImage}
           alt="test"
           width={518}
           height={301}
