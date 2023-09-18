@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useRouter } from "next/navigation";
 
+/* Array containing pages and their corresponding routes */
 const pages = [
   { label: "Home", route: "/" },
   { label: "Explore", route: "/ExploreScreen" },
@@ -20,16 +21,19 @@ const pages = [
   { label: "Login", route: "/Login" },
 ];
 
+/* DrawerComponent displays a drawer with navigation links. */
 const DrawerComponent = () => {
   const router = useRouter();
   const [openDrawer, setOpenDrawer] = useState(false);
 
+  /* Function to navigate to a specific route. */
   const navigationToScreens = (route: string) => {
     router.push(route);
   };
 
   return (
     <>
+      {/* Drawer component for navigation */}
       <Drawer
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
@@ -41,6 +45,7 @@ const DrawerComponent = () => {
         }}
       >
         <List>
+          {/* Mapping through pages to create navigation links */}
           {pages.map((page, index) => (
             <ListItemButton
               onClick={() => setOpenDrawer(false)}
@@ -62,6 +67,7 @@ const DrawerComponent = () => {
           ))}
         </List>
       </Drawer>
+      {/* IconButton for opening the drawer */}
       <IconButton
         sx={{ color: "#FFF", marginLeft: "auto" }}
         onClick={() => setOpenDrawer(!openDrawer)}

@@ -3,8 +3,9 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";;
-import DestinationCard from "./destinationCard";
+import DestinationCardDetails from "./DestinationCardDetails";
 
+/* Data for destination cards */
 const destinationCardData = [
   {
     id: 1,
@@ -32,11 +33,13 @@ const destinationCardData = [
   },
 ];
 
+/* Section details for destination cards */
 const destinationCardSection = {
   title: "Destinations Most Popular",
   description: "Some of the most popular destinations for you visit with a view the beautiful one.",
 };
 
+/* Styles for typography - Heading 1 */
 const typographyh1Styles = {
   color: "#0C111F",
   fontFamily: "Inter",
@@ -47,6 +50,7 @@ const typographyh1Styles = {
   fontWeight: "700",
 };
 
+/* Styles for typography - Body 2 */
 const typographybody2Styles = {
   color: "#0C111F",
   fontFamily: "Inter",
@@ -57,23 +61,20 @@ const typographybody2Styles = {
   marginTop: "5px",
 };
 
+/* Blog functional component */
 const Blog = () => {
   return (
     <>
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
-          <Typography
-            variant="h1"
-            style={typographyh1Styles}
-          >
+          {/* Heading 1 */}
+          <Typography variant="h1" style={typographyh1Styles}>
             {destinationCardSection.title}
           </Typography>
         </Grid>
         <Grid item xs={12} md={4}>
-          <Typography
-            variant="body2"
-            style={typographybody2Styles}
-          >
+          {/* Body 2 */}
+          <Typography variant="body2" style={typographybody2Styles}>
             {destinationCardSection.description}
           </Typography>
         </Grid>
@@ -81,7 +82,8 @@ const Blog = () => {
         {destinationCardData.map((item) => (
           <Grid key={item.id} item xs={12} sm={6} md={4}>
             <>
-              <DestinationCard
+              {/* Destination card details component */}
+              <DestinationCardDetails
                 image={item.image}
                 city={item.city}
                 description={item.description}

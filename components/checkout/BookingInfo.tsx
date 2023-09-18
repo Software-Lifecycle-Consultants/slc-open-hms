@@ -10,6 +10,7 @@ import Image from "next/image";
 import img from "../../public/images/Room2.jpg";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
+/* Booking information */
 const bookingInfoCard = 
   {
     roomTitle: "President Luxury Double Room View NY City",
@@ -22,6 +23,7 @@ const bookingInfoCard =
   }
 ;
 
+/* Styles for checkbox typography */
 const checkBoxTypographyStyle = {
   color: "var(--light-text-color-body-2, #9A9AB0)",
   fontFamily: "Mulish, sans-serif",
@@ -36,6 +38,7 @@ const checkBoxTypographyStyle = {
 const BookingInfo = () => {
   return (
     <>
+      {/* Card for booking information */}
       <Card
         elevation={0}
         sx={{
@@ -53,6 +56,7 @@ const BookingInfo = () => {
             margin: "0 auto",
           }}
         >
+          {/* Image of the room */}
           <Image
             src={img}
             alt="test"
@@ -67,6 +71,7 @@ const BookingInfo = () => {
         </Box>
         <CardContent>
           <Box sx={{ paddingTop: "10px", marginBottom: "10%" }}>
+            {/* Room title */}
             <Typography
               variant="h5"
               style={{
@@ -81,6 +86,7 @@ const BookingInfo = () => {
             >
               {bookingInfoCard.roomTitle}
             </Typography>
+            {/* Booking date */}
             <Typography
               variant="body1"
               style={{
@@ -96,6 +102,7 @@ const BookingInfo = () => {
             >
               {bookingInfoCard.date}
             </Typography>
+            {/* Check icons */}
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <CheckBoxIcon
                 sx={{ fontSize: 34, color: "#9A9AB0", marginTop: "18px" }}
@@ -126,6 +133,7 @@ const BookingInfo = () => {
                 {bookingInfoCard.checkIcon3}
               </Typography>
             </Box>
+            {/* Price title */}
             <Typography
               variant="body2"
               style={{
@@ -141,6 +149,7 @@ const BookingInfo = () => {
             >
               {bookingInfoCard.priceTitle}
             </Typography>
+            {/* Total price */}
             <Typography
               variant="body2"
               style={{

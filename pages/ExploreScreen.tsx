@@ -5,6 +5,11 @@ import { Box, Container } from "@mui/material";
 import React from "react";
 
 
+/**
+ * ExploreScreen component represents the explore screen of the website.
+ * It includes sections like Hero section, Search bar, and Hotel rooms.
+ */
+
 const ExploreScreen = () => {
   
   return (

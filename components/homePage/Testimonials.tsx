@@ -10,20 +10,23 @@ import {
 import React from "react";
 import Image from "next/image";
 
+/* Testimonial details for the user. */
 const testimonialDetails = {
   profileImage: "/images/Profile.png",
   name: "Jhone Lown",
   description: "“A very pleasant experience, plus the service is very friendly, recommended for those who want to try!”",
 };
 
+/* Details for the testimonial section. */
 const testimonialSectionDetails = {
   title: "Testimonials Travala Customers",
   description: "What our customers have to say about our service, check below!",
 };
 
 const Testimonials = () => {
-  const [value, setValue] = React.useState(4);
-  
+  const [value, setValue] = React.useState(4); // Rating value
+
+  /* Styles for various elements */
   const accountStatsStyle = {
     marginTop: "31.682px", // Half of the userAvatar height
     width: "90%",
@@ -47,6 +50,7 @@ const Testimonials = () => {
     backgroundColor: "#fff",
   };
 
+  /* Typography style for heading 5 */
   const typographyh5Style = {
     color: "#0C111F",
     fontFamily: "Montserrat, sans-serif",
@@ -56,6 +60,7 @@ const Testimonials = () => {
     fontWeight: "700",
   };
 
+  /* Typography style for heading 1 */
   const typographyh1Style = {
     color: "#0C111F",
     fontFamily: "Inter",
@@ -78,6 +83,7 @@ const Testimonials = () => {
     letterSpacing: "-0.18px",
   };
 
+  /* Typography style for paragraph */
   const typographyParagraphStyle = {
     color: "#0C111F",
     fontFamily: "Inter",
@@ -99,9 +105,11 @@ const Testimonials = () => {
         alignItems="center"
         spacing={2}
       >
+        {/* Left grid item displaying user's testimonial */}
         <Grid item xs={12} md={6}>
           <Box sx={accountContainerStyle}>
             <Box sx={userAvatarContainerStyle}>
+              {/* User profile image */}
               <Image
                 src={testimonialDetails.profileImage}
                 alt="Avatar"
@@ -109,12 +117,16 @@ const Testimonials = () => {
                 height={64}
               />
             </Box>
+            {/* Card displaying user's testimonial details */}
             <Card elevation={0} sx={accountStatsStyle}>
               <CardContent>
+                {/* User's name */}
                 <Typography gutterBottom variant="h5" style={typographyh5Style}>
                   {testimonialDetails.name}
                 </Typography>
+                {/* User's rating */}
                 <Rating name="read-only" value={value} readOnly />
+                {/* User's testimonial description */}
                 <Typography variant="body2" style={typographyCardStyle}>
                   {testimonialDetails.description}
                 </Typography>
@@ -122,11 +134,14 @@ const Testimonials = () => {
             </Card>
           </Box>
         </Grid>
+        {/* Right grid item displaying testimonial section details */}
         <Grid item xs={12} md={6} paddingRight={{ xs: "16px", md: "32px" }}>
           <Box>
+            {/* Title for the testimonial section */}
             <Typography variant="h1" sx={typographyh1Style}>
               {testimonialSectionDetails.title}
             </Typography>
+            {/* Description for the testimonial section */}
             <Typography variant="body2" sx={typographyParagraphStyle}>
               {testimonialSectionDetails.description}
             </Typography>

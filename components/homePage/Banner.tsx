@@ -6,6 +6,7 @@ import image from "../../public/images/mainImage.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
+/* Details for the banner section */
 const bannerDetails = 
   {
     title1: "the best deals on the world's best destinations",
@@ -15,6 +16,7 @@ const bannerDetails =
     button2Title: "Our Gallery"
   };
 
+/* Typography style for heading 5 */
 const typographyh5Style = {
   color: "#E97458",
   fontFamily: "Inter",
@@ -26,6 +28,7 @@ const typographyh5Style = {
   marginTop: { xs:"14px", md: "5px" },
 };
 
+/* Typography style for heading 1 */
 const typographyh1Style = {
   color: "#FFFFFF",
   fontFamily: "Volkhov",
@@ -37,6 +40,7 @@ const typographyh1Style = {
   marginTop: "5px",
 };
 
+/* Typography style for body text */
 const typographyBody1Style = {
   color: "rgba(255, 255, 255, 0.70)",
   fontFamily: "Inter",
@@ -47,6 +51,7 @@ const typographyBody1Style = {
   fontWeight: "400",
 };
 
+/* Button style for contained variant */
 const buttonContainedStyle = {
   display: "inline-flex",
   justifyContent: "center",
@@ -69,6 +74,7 @@ const buttonContainedStyle = {
   },
 };
 
+/* Button style for text variant */
 const buttonTextStyle = {
   color: "#FFF",
   fontFamily: "Inter",
@@ -86,6 +92,7 @@ const buttonTextStyle = {
   },
 };
 
+/* Banner functional component */
 const Banner = () => {
   return (
     <>
@@ -96,74 +103,80 @@ const Banner = () => {
         alignItems="center"
         spacing={2}
       >
+        {/* Left side of the banner */}
         <Grid item xs={12} md={6}>
-              <Typography variant="h5" sx={typographyh5Style}>
-                {bannerDetails.title1}
-              </Typography>
-              <Typography variant="h1" sx={typographyh1Style}>
-                {bannerDetails.title2}
-              </Typography>
-              <Typography variant="body1" sx={typographyBody1Style}>
-                {bannerDetails.description}
-              </Typography>
+          {/* Heading 5 */}
+          <Typography variant="h5" sx={typographyh5Style}>
+            {bannerDetails.title1}
+          </Typography>
+          {/* Heading 1 */}
+          <Typography variant="h1" sx={typographyh1Style}>
+            {bannerDetails.title2}
+          </Typography>
+          {/* Body text */}
+          <Typography variant="body1" sx={typographyBody1Style}>
+            {bannerDetails.description}
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row", // Adjust the layout for different screen sizes
+              alignItems: "center",
+            }}
+          >
+            {/* Button with icon for web and tablet view */}
+            <Button variant="contained" sx={buttonContainedStyle}>
+              {bannerDetails.button1Title}
+              {/* Arrow icon */}
               <Box
                 sx={{
+                  backgroundColor: "#0C111F",
+                  width: "32px",
+                  height: "32px",
+                  borderRadius: "58px",
                   display: "flex",
-                  flexDirection: "row", // Adjust the layout for different screen sizes
                   alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
-                {/* Web and Tablet View */}
-                <Button variant="contained" sx={buttonContainedStyle}>
-                  {bannerDetails.button1Title}
-                  <Box
-                    sx={{
-                      backgroundColor: "#0C111F",
-                      width: "32px",
-                      height: "32px",
-                      borderRadius: "58px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <KeyboardArrowRightIcon sx={{ color: "#FFFFFF" }} />
-                  </Box>
-                </Button>
-
-                {/* Mobile View */}
-                <Button variant="text" sx={buttonTextStyle}>
-                  <Box
-                    sx={{
-                      backgroundColor: "rgba(255, 255, 255, 0.18)",
-                      width: "46px",
-                      height: "46px",
-                      borderRadius: "100px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      marginLeft: "15px",
-                      marginRight: "8px",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        backgroundColor: "#FFFFFF",
-                        width: "30px",
-                        height: "30px",
-                        borderRadius: "58px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <ArrowRightIcon sx={{ color: "#F5B100" }} />
-                    </Box>
-                  </Box>
-                  {bannerDetails.button2Title}
-                </Button>
+                <KeyboardArrowRightIcon sx={{ color: "#FFFFFF" }} />
               </Box>
+            </Button>
+
+            {/* Button with arrow icon for mobile view */}
+            <Button variant="text" sx={buttonTextStyle}>
+              <Box
+                sx={{
+                  backgroundColor: "rgba(255, 255, 255, 0.18)",
+                  width: "46px",
+                  height: "46px",
+                  borderRadius: "100px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginLeft: "15px",
+                  marginRight: "8px",
+                }}
+              >
+                <Box
+                  sx={{
+                    backgroundColor: "#FFFFFF",
+                    width: "30px",
+                    height: "30px",
+                    borderRadius: "58px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <ArrowRightIcon sx={{ color: "#F5B100" }} />
+                </Box>
+              </Box>
+              {bannerDetails.button2Title}
+            </Button>
+          </Box>
         </Grid>
+        {/* Right side of the banner - image */}
         <Grid item xs={12} md={6}>
           <Image
             src={image}

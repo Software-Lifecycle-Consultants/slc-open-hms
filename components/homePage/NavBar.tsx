@@ -17,11 +17,13 @@ import logo from "../../public/images/logo.png";
 import DrawerComponent from "./DrawerComponent";
 import { useRouter } from "next/navigation";
 
+/* Button labels for navigation */
 const navBarButtons = {
   button1: "Register",
   button2: "Login",
 }
 
+/* Page routes and labels for navigation */
 const pages = [
   { label: "Home", route: "/" },
   { label: "Explore", route: "/ExploreScreen" },
@@ -29,6 +31,7 @@ const pages = [
   { label: "Contact", route: "/contact_us" },
 ];
 
+/* Styles for a text button */
 const textButtonStyles = {
   color: "#FFF",
   textTransform: "none",
@@ -40,6 +43,7 @@ const textButtonStyles = {
   },
 };
 
+/* Styles for a contained button */
 const containedButtonStyles = {
   width: "121px",
   height: "47px",
@@ -59,28 +63,33 @@ const containedButtonStyles = {
   },
 };
 
+/*  Navbar component for the website header. */
 const NavBar = () => {
   const [value, setValue] = React.useState(0);
   const router = useRouter();
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
+  /* Handle tab change in the navbar */
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(Number(newValue));
   };
 
+  /* Navigate to specified route */
   const navigationToScreens = (route: string) => {
     router.push(route);
   };
 
+  /* Navigate to the register page */
   const navigationToRegisterPage = () => {
     router.push("/Register");
   };
 
+  /* Navigate to the login page */
   const navigationToLoginPage = () => {
     router.push("/Login");
   };
-  
+
   return (
     <>
       <AppBar
@@ -91,19 +100,25 @@ const NavBar = () => {
           paddingTop: "20px",
         }}
       >
+        {/* Container to hold the content and align it */}
         <Container>
+          {/* Toolbar holds the content within the AppBar */}
           <Toolbar disableGutters>
+            {/* Display the logo image on larger screens */}
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               <Image src={logo} width={142} height={50} alt="logo" />
             </Box>
 
+            {/* Conditionally render either DrawerComponent or Tabs/Button based on screen size */}
             {isMatch ? (
               <>
+                {/* Display the logo image and DrawerComponent on smaller screens */}
                 <Image src={logo} width={142} height={50} alt="logo" />
                 <DrawerComponent />
               </>
             ) : (
               <>
+                {/* Display Tabs and Buttons on larger screens */}
                 <Tabs
                   sx={{ marginLeft: "auto" }}
                   value={value}
@@ -114,6 +129,7 @@ const NavBar = () => {
                     style: { backgroundColor: "#c7833e" },
                   }}
                 >
+                  {/* Map through pages to create Tabs for navigation */}
                   {pages.map((page, index) => (
                     <Tab
                       key={index}
@@ -122,6 +138,7 @@ const NavBar = () => {
                     />
                   ))}
                 </Tabs>
+                {/* Button for Register */}
                 <Button
                   variant="text"
                   onClick={navigationToRegisterPage}
@@ -129,6 +146,7 @@ const NavBar = () => {
                 >
                   {navBarButtons.button1}
                 </Button>
+                {/* Button for Login */}
                 <Button
                   variant="contained"
                   onClick={navigationToLoginPage}

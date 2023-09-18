@@ -2,11 +2,13 @@ import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/ma
 import Image from 'next/image';
 import React from 'react'
 
+/* DestinationCardDetails component displays details of a destination in a card. */
+
 interface DestinationCardDetailsProps {
-  image: string;
-  city: string;
-  description: string;
-  price: number;
+  image: string; // The image URL of the destination.
+  city: string; // The name of the city.
+  description: string; // A brief description of the destination.
+  price: number; // The price per person for the destination.
 }
 
 const DestinationCardDetails: React.FC<DestinationCardDetailsProps> = ({
@@ -17,6 +19,7 @@ const DestinationCardDetails: React.FC<DestinationCardDetailsProps> = ({
 }) => {
   return (
     <>
+      {/* Card component */}
       <Card
         elevation={0}
         sx={{
@@ -32,6 +35,7 @@ const DestinationCardDetails: React.FC<DestinationCardDetailsProps> = ({
             margin: "0 auto",
           }}
         >
+          {/* Image component */}
           <Image
             src={image}
             alt="test"
@@ -51,6 +55,7 @@ const DestinationCardDetails: React.FC<DestinationCardDetailsProps> = ({
             backgroundColor: "#FFFFFF",
           }}
         >
+          {/* Destination city */}
           <Typography
             gutterBottom
             variant="h5"
@@ -65,6 +70,7 @@ const DestinationCardDetails: React.FC<DestinationCardDetailsProps> = ({
           >
             {city}
           </Typography>
+          {/* Destination description */}
           <Typography
             variant="body2"
             style={{
@@ -86,6 +92,7 @@ const DestinationCardDetails: React.FC<DestinationCardDetailsProps> = ({
           }}
         >
           <Box>
+            {/* Price label */}
             <Typography
               gutterBottom
               variant="body2"
@@ -102,6 +109,7 @@ const DestinationCardDetails: React.FC<DestinationCardDetailsProps> = ({
               price
             </Typography>
             <Box style={{ display: "flex" }}>
+              {/* Price per person */}
               <Typography
                 style={{
                   color: "#0C111F",
@@ -114,7 +122,7 @@ const DestinationCardDetails: React.FC<DestinationCardDetailsProps> = ({
               >
                 ${price}
               </Typography>
-
+              {/* Price per person label */}
               <Typography
                 style={{
                   color: "rgba(12, 17, 31, 0.60)",
@@ -135,6 +143,7 @@ const DestinationCardDetails: React.FC<DestinationCardDetailsProps> = ({
               marginLeft: "60px",
             }}
           >
+            {/* Button for ticket booking */}
             <Button
               variant="contained"
               style={{
