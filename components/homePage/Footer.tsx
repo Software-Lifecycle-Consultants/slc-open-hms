@@ -2,9 +2,9 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import fb from "../../public/images/facebook.png";
-import tw from "../../public/images/twitter.png";
-import ig from "../../public/images/instagram.png";
+import fb from "../../public/images/homePage/footerImages/facebook.png";
+import tw from "../../public/images/homePage/footerImages/twitter.png";
+import ig from "../../public/images/homePage/footerImages/instagram.png";
 
 /* Footer details including logo image and description */
 const footerDetails = {

@@ -6,9 +6,9 @@ import {
 } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Image from "next/image";
-import wallet from "../../public/images/Wallet.png";
-import user from "../../public/images/3 User.png";
-import heart from "../../public/images/Heart.png";
+import wallet from "../../public/images/homePage/customCardImages/Wallet.png";
+import user from "../../public/images/homePage/customCardImages/3 User.png";
+import heart from "../../public/images/homePage/customCardImages/Heart.png";
 
 /* Details for the first card */
 const cardDetails1 = {

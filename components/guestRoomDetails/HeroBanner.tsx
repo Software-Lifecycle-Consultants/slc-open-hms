@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import img from "../../public/images/Room3.jpg";
+import img from "../../public/images/hotelRooms/Room3.jpg";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
 const heroSection = 

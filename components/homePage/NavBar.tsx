@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import logo from "../../public/images/logo.png";
+import logo from "../../public/images/homePage/navbarImages/logo.png";
 import DrawerComponent from "./DrawerComponent";
 import { useRouter } from "next/navigation";
 
