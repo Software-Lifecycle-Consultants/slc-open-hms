@@ -3,12 +3,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-
-const heading = 
-  {
-    title: "Book Now",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elitsed pretium, egestas sed sit orem ipsum dolor sit amet,",
-  };
+import { heading } from '@/data/checkoutPage';
 
 const Heading = () => {
   return (
@@ -28,7 +23,7 @@ const Heading = () => {
               marginTop: "25px",
             }}
           >
-            {heading.title}
+            {heading.checkoutPageMainTitle}
           </Typography>
           <Typography
             variant="body2"
@@ -43,7 +38,7 @@ const Heading = () => {
               marginTop: "10px",
             }}
           >
-            {heading.description}
+            {heading.checkoutPageDescription}
           </Typography>
         </Grid>
       </Grid>

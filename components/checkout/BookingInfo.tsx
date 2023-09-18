@@ -9,23 +9,11 @@ import {
 import Image from "next/image";
 import img from "../../public/images/hotelRooms/Room2.jpg";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import { bookingInfoCard } from "@/data/checkoutPage";
 
 /**
  * BookingInfo component is the card used in checkout page to display details of each room.
  */
-
-/* Booking information */
-const bookingInfoCard = 
-  {
-    roomTitle: "President Luxury Double Room View NY City",
-    date: "14 February 2021",
-    checkIcon1: "1 Room",
-    checkIcon2: "2 Guest",
-    checkIcon3: "1 Night",
-    priceTitle: "Total Price",
-    price: "$59",
-  }
-;
 
 /* Styles for checkbox typography */
 const checkBoxTypographyStyle = {

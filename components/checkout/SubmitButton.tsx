@@ -1,11 +1,6 @@
 import { Button, Checkbox, Typography, Box } from '@mui/material';
 import React from 'react'
-
-const submit = 
-  {
-    condition: "I have agree to the rules, Terms and Conditions.",
-    buttonTitle: "Submit Booking Request",
-  };
+import { submitContent } from '@/data/checkoutPage';
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -37,7 +32,7 @@ const SubmitButton = () => {
             marginTop: "24px",
           }}
         >
-          {submit.condition}
+          {submitContent.condition}
         </Typography>
       </Box>
       <Button
@@ -65,7 +60,7 @@ const SubmitButton = () => {
           },
         }}
       >
-        {submit.buttonTitle}
+        {submitContent.submitctaCaption}
       </Button>
     </>
   );

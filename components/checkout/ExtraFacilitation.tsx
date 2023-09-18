@@ -7,13 +7,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import CheckList from "./CheckList";
-
-const extraFacilitation = 
-  {
-    title: "Request meals and other services",
-    facility1: "Meals",
-    facility2: "Services",
-  };
+import { extraFacilitationSection } from "@/data/checkoutPage";
 
 /* Functional component for ExtraFacilitation */
 const ExtraFacilitation = () => {
@@ -44,7 +38,7 @@ const ExtraFacilitation = () => {
               marginTop: "10px",
             }}
           >
-            {extraFacilitation.title}
+            {extraFacilitationSection.extraFacilitationSectionTitle}
           </Typography>
           {/* Facility 1 */}
           <Typography
@@ -60,7 +54,7 @@ const ExtraFacilitation = () => {
               marginTop: "25px",
             }}
           >
-            {extraFacilitation.facility1}
+            {extraFacilitationSection.facility1}
           </Typography>
           {/* CheckList for Facility 1 */}
           <Box sx={{ bgcolor: "#668557" }}>
@@ -80,7 +74,7 @@ const ExtraFacilitation = () => {
               marginTop: "25px",
             }}
           >
-            {extraFacilitation.facility2}
+            {extraFacilitationSection.facility2}
           </Typography>
           {/* CheckList for Facility 2 */}
           <Box sx={{ bgcolor: "#578580" }}>

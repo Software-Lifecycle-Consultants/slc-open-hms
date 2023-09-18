@@ -4,9 +4,7 @@ import { Box, Typography, Card, CardContent } from "@mui/material";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // Import the styles
 import "react-date-range/dist/theme/default.css";
-
-/* Title for the calendar */
-const calenderTitle = "Select your check-in and check-out dates";
+import { calenderTitle } from "@/data/checkoutPage";
 
 const Calender = () => {
   /* State for managing the selected date range */
