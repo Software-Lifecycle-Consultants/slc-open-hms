@@ -1,12 +1,13 @@
 import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
+import { heroSection } from '@/data/explorePage';
 
 const Hero = () => {
   return (
     <>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Box sx={{ paddingTop: { xs: "112px", sm: "150px", md: "150px"} }}>
+          <Box sx={{ paddingTop: { xs: "112px", sm: "150px", md: "150px" } }}>
             <Typography
               variant="h1"
               sx={{
@@ -19,7 +20,7 @@ const Hero = () => {
                 letterSpacing: "0.186px",
               }}
             >
-              Our Premium Room and Suites
+              {heroSection.exploreSectionTitle}
             </Typography>
             <Typography
               variant="body1"
@@ -34,8 +35,7 @@ const Hero = () => {
                 marginTop: "22px",
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
-              elit sed pretium, egestas sed sit orem ipsum dolor sit amet,
+              {heroSection.exploreSectionDescription}
             </Typography>
           </Box>
         </Grid>

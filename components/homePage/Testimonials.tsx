@@ -9,11 +9,13 @@ import {
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import profile from "../../public/images/Profile.png";
+import { userTestimonial } from "@/data/homePage";
+import { testimonialSectionDetails } from "@/data/homePage";
 
 const Testimonials = () => {
-  const [value, setValue] = React.useState(4);
-  
+  const [value, setValue] = React.useState(4); // Rating value
+
+  /* Styles for various elements */
   const accountStatsStyle = {
     marginTop: "31.682px", // Half of the userAvatar height
     width: "90%",
@@ -37,6 +39,7 @@ const Testimonials = () => {
     backgroundColor: "#fff",
   };
 
+  /* Typography style for heading 5 */
   const typographyh5Style = {
     color: "#0C111F",
     fontFamily: "Montserrat, sans-serif",
@@ -46,6 +49,7 @@ const Testimonials = () => {
     fontWeight: "700",
   };
 
+  /* Typography style for heading 1 */
   const typographyh1Style = {
     color: "#0C111F",
     fontFamily: "Inter",
@@ -68,6 +72,7 @@ const Testimonials = () => {
     letterSpacing: "-0.18px",
   };
 
+  /* Typography style for paragraph */
   const typographyParagraphStyle = {
     color: "#0C111F",
     fontFamily: "Inter",
@@ -89,32 +94,45 @@ const Testimonials = () => {
         alignItems="center"
         spacing={2}
       >
+        {/* Left grid item displaying user's testimonial */}
         <Grid item xs={12} md={6}>
           <Box sx={accountContainerStyle}>
             <Box sx={userAvatarContainerStyle}>
-              <Image src={profile} alt="Avatar" width={64} height={64} />
+              {/* User profile image */}
+              <Image
+                src={userTestimonial.userProfileImage}
+                alt="Avatar"
+                width={64}
+                height={64}
+              />
             </Box>
+            {/* Card displaying user's testimonial details */}
             <Card elevation={0} sx={accountStatsStyle}>
               <CardContent>
+                {/* User's name */}
                 <Typography gutterBottom variant="h5" style={typographyh5Style}>
-                  Jhone Lown
+                  {userTestimonial.userProfileImage}
                 </Typography>
+                {/* User's rating */}
                 <Rating name="read-only" value={value} readOnly />
+                {/* User's testimonial description */}
                 <Typography variant="body2" style={typographyCardStyle}>
-                  “A very pleasant experience, plus the service is very
-                  friendly, recommended for those who want to try!”
+                  {userTestimonial.testimonial}
                 </Typography>
               </CardContent>
             </Card>
           </Box>
         </Grid>
+        {/* Right grid item displaying testimonial section details */}
         <Grid item xs={12} md={6} paddingRight={{ xs: "16px", md: "32px" }}>
           <Box>
+            {/* Title for the testimonial section */}
             <Typography variant="h1" sx={typographyh1Style}>
-              Testimonials Travala Customers
+              {testimonialSectionDetails.testimonialsSectionTitle}
             </Typography>
+            {/* Description for the testimonial section */}
             <Typography variant="body2" sx={typographyParagraphStyle}>
-              What our customers have to say about our service, check below!
+              {testimonialSectionDetails.testimonialsSectionDescription}
             </Typography>
           </Box>
         </Grid>

@@ -1,18 +1,27 @@
+// Importing required components and images
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import logoDark from "../../public/images/logoDark.png";
-import fb from "../../public/images/facebook.png";
-import tw from "../../public/images/twitter.png";
-import ig from "../../public/images/instagram.png";
+import fb from "../../public/images/homePage/footerImages/facebook.png";
+import tw from "../../public/images/homePage/footerImages/twitter.png";
+import ig from "../../public/images/homePage/footerImages/instagram.png";
+import { footerContent } from "@/data/homePage";
 
+
+/* Footer component displays the website footer. */
 const Footer = () => {
   return (
     <>
       <Grid container spacing={2}>
+        {/* Grid item for logo and description */}
         <Grid item xs={12} md={3}>
           <Box>
-            <Image src={logoDark} width={142} height={50} alt="logo" />
+            <Image
+              src={footerContent.footerSectionLogoImage}
+              width={142}
+              height={50}
+              alt="logo"
+            />
           </Box>
           <Box>
             <Typography
@@ -28,11 +37,11 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              With travala you can experience new travel and the best tourist
-              destinations that we have to offer
+              {footerContent.footerSectionDescription}
             </Typography>
           </Box>
         </Grid>
+        {/* Grid item for destination links */}
         <Grid
           item
           xs={12}
@@ -43,6 +52,7 @@ const Footer = () => {
             marginTop: { xs: "24px", md: "0" },
           }}
         >
+          {/* Content for destination links */}
           <Box>
             <Typography
               variant="body2"
@@ -102,6 +112,7 @@ const Footer = () => {
             </Typography>
           </Box>
         </Grid>
+        {/* Grid item for about links */}
         <Grid
           item
           xs={12}
@@ -112,6 +123,7 @@ const Footer = () => {
             marginTop: { xs: "24px", md: "0" },
           }}
         >
+          {/* Content for about links */}
           <Box>
             <Typography
               variant="body2"
@@ -123,7 +135,6 @@ const Footer = () => {
                 fontStyle: "normal",
                 fontWeight: "700",
                 letterSpacing: "-0.232px",
-                //   marginTop: "5px",
               }}
             >
               About
@@ -172,6 +183,7 @@ const Footer = () => {
             </Typography>
           </Box>
         </Grid>
+        {/* Grid item for social media links */}
         <Grid
           item
           xs={12}
@@ -182,6 +194,7 @@ const Footer = () => {
             marginTop: { xs: "24px", md: "0" },
           }}
         >
+          {/* Content for social media links */}
           <Box>
             <Typography
               variant="body2"
@@ -197,9 +210,7 @@ const Footer = () => {
             >
               Follow Us
             </Typography>
-            <Box
-              sx={{ display: "flex", paddingLeft: "5px" }}
-            >
+            <Box sx={{ display: "flex", paddingLeft: "5px" }}>
               <Image
                 src={fb}
                 width={9.923}
@@ -226,10 +237,7 @@ const Footer = () => {
                 Facebook
               </Typography>
             </Box>
-            <Box
-              sx={{ display: "flex" }}
-              // mr={{ xs: "16px", md: "32px" }}
-            >
+            <Box sx={{ display: "flex" }}>
               <Image
                 src={tw}
                 width={9.923}
@@ -256,10 +264,7 @@ const Footer = () => {
                 Twitter
               </Typography>
             </Box>
-            <Box
-              sx={{ display: "flex" }}
-              // mr={{ xs: "16px", md: "32px" }}
-            >
+            <Box sx={{ display: "flex" }}>
               <Image
                 src={ig}
                 width={9.923}
@@ -288,17 +293,16 @@ const Footer = () => {
             </Box>
           </Box>
         </Grid>
+        {/* Grid item for copyright and policy links */}
         <Grid item xs={12} md={12}>
           <Box
             style={{
               display: "flex",
-              //   backgroundColor: "red",
               width: "100%",
             }}
           >
             <Box
               style={{
-                // backgroundColor: "gray",
                 width: "50%",
               }}
             >
@@ -321,7 +325,6 @@ const Footer = () => {
             <Box
               style={{
                 display: "flex",
-                // backgroundColor: "gray",
                 width: "100%",
                 alignItems: "flex-end",
               }}

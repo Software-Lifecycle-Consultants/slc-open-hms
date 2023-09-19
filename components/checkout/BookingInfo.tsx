@@ -4,13 +4,18 @@ import {
   Box,
   Typography,
   Card,
-  Checkbox,
   CardContent,
 } from "@mui/material";
 import Image from "next/image";
-import img from "../../public/images/Room2.jpg";
+import img from "../../public/images/hotelRooms/Room2.jpg";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import { bookingInfoCard } from "@/data/checkoutPage";
 
+/**
+ * BookingInfo component is the card used in checkout page to display details of each room.
+ */
+
+/* Styles for checkbox typography */
 const checkBoxTypographyStyle = {
   color: "var(--light-text-color-body-2, #9A9AB0)",
   fontFamily: "Mulish, sans-serif",
@@ -25,6 +30,7 @@ const checkBoxTypographyStyle = {
 const BookingInfo = () => {
   return (
     <>
+      {/* Card for booking information */}
       <Card
         elevation={0}
         sx={{
@@ -42,6 +48,7 @@ const BookingInfo = () => {
             margin: "0 auto",
           }}
         >
+          {/* Image of the room */}
           <Image
             src={img}
             alt="test"
@@ -56,6 +63,7 @@ const BookingInfo = () => {
         </Box>
         <CardContent>
           <Box sx={{ paddingTop: "10px", marginBottom: "10%" }}>
+            {/* Room title */}
             <Typography
               variant="h5"
               style={{
@@ -68,8 +76,9 @@ const BookingInfo = () => {
                 fontWeight: "700",
               }}
             >
-              President Luxury Double Room View NY City
+              {bookingInfoCard.roomTitle}
             </Typography>
+            {/* Booking date */}
             <Typography
               variant="body1"
               style={{
@@ -83,14 +92,15 @@ const BookingInfo = () => {
                 marginTop: "22px",
               }}
             >
-              14 February 2021
+              {bookingInfoCard.date}
             </Typography>
+            {/* Check icons */}
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <CheckBoxIcon
                 sx={{ fontSize: 34, color: "#9A9AB0", marginTop: "18px" }}
               />
               <Typography variant="body1" style={checkBoxTypographyStyle}>
-                1 Room
+                {bookingInfoCard.checkIcon1}
               </Typography>
               <CheckBoxIcon
                 sx={{
@@ -101,7 +111,7 @@ const BookingInfo = () => {
                 }}
               />
               <Typography variant="body1" style={checkBoxTypographyStyle}>
-                2 Guest
+                {bookingInfoCard.checkIcon2}
               </Typography>
               <CheckBoxIcon
                 sx={{
@@ -112,9 +122,10 @@ const BookingInfo = () => {
                 }}
               />
               <Typography variant="body1" style={checkBoxTypographyStyle}>
-                1 Night
+                {bookingInfoCard.checkIcon3}
               </Typography>
             </Box>
+            {/* Price title */}
             <Typography
               variant="body2"
               style={{
@@ -128,8 +139,9 @@ const BookingInfo = () => {
                 marginTop: "14px",
               }}
             >
-              Total Price
+              {bookingInfoCard.priceTitle}
             </Typography>
+            {/* Total price */}
             <Typography
               variant="body2"
               style={{
@@ -143,7 +155,7 @@ const BookingInfo = () => {
                 marginTop: "4px",
               }}
             >
-              $59
+              {bookingInfoCard.price}
             </Typography>
           </Box>
         </CardContent>
