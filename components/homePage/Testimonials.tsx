@@ -111,7 +111,7 @@ const Testimonials = () => {
               <CardContent>
                 {/* User's name */}
                 <Typography gutterBottom variant="h5" style={typographyh5Style}>
-                  {userTestimonial.userProfileImage}
+                  {userTestimonial.userName}
                 </Typography>
                 {/* User's rating */}
                 <Rating name="read-only" value={value} readOnly />
