@@ -27,7 +27,7 @@ Follow these instructions to set up the Hotel Management System project locally 
 1. Clone the repository to your local machine:
  ```bash
 git https://github.com/Software-Lifecycle-Consultants/slc-open-hms.git
-cd slc-open-hms
+cd  slc-open-hms
  ```
 2. Install the Node Modules:
 
