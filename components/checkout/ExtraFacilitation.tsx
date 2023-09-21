@@ -7,7 +7,9 @@ import {
 } from "@mui/material";
 import React from "react";
 import CheckList from "./CheckList";
+import { extraFacilitationSection } from "@/data/checkoutPage";
 
+/* Functional component for ExtraFacilitation */
 const ExtraFacilitation = () => {
   return (
     <>
@@ -22,6 +24,7 @@ const ExtraFacilitation = () => {
         }}
       >
         <CardContent>
+          {/* Title */}
           <Typography
             variant="h1"
             style={{
@@ -35,8 +38,9 @@ const ExtraFacilitation = () => {
               marginTop: "10px",
             }}
           >
-            Request meals and other services
+            {extraFacilitationSection.extraFacilitationSectionTitle}
           </Typography>
+          {/* Facility 1 */}
           <Typography
             variant="h5"
             style={{
@@ -50,11 +54,13 @@ const ExtraFacilitation = () => {
               marginTop: "25px",
             }}
           >
-            Meals
+            {extraFacilitationSection.facility1}
           </Typography>
+          {/* CheckList for Facility 1 */}
           <Box sx={{ bgcolor: "#668557" }}>
             <CheckList />
           </Box>
+          {/* Facility 2 */}
           <Typography
             variant="h5"
             style={{
@@ -68,11 +74,13 @@ const ExtraFacilitation = () => {
               marginTop: "25px",
             }}
           >
-            Services
+            {extraFacilitationSection.facility2}
           </Typography>
+          {/* CheckList for Facility 2 */}
           <Box sx={{ bgcolor: "#578580" }}>
             <CheckList />
           </Box>
+          {/* Special Request */}
           <Typography
             variant="body1"
             style={{
@@ -88,6 +96,7 @@ const ExtraFacilitation = () => {
           >
             Special Request
           </Typography>
+          {/* TextField for Special Request */}
           <TextField
             id="outlined-basic"
             placeholder="Input your Special Request in Here"

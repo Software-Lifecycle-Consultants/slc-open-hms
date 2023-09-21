@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useMediaQuery, Card, Box, useTheme } from "@mui/material";
 import Image from "next/image";
+import { clientLogos } from "@/data/homePage";
 
 const LogoCarousel: React.FC = () => {
   const theme = useTheme();
@@ -34,56 +35,18 @@ const LogoCarousel: React.FC = () => {
 
   return (
     <Slider {...settings}>
-      <Box>
-        <Card style={cardStyles}>
-          <Image
-            src="/images/clientLogos/alitalia.png"
-            alt="Image 1"
-            width={162}
-            height={32}
-          />
-        </Card>
-      </Box>
-      <Box>
-        <Card style={cardStyles}>
-          <Image
-            src="/images/clientLogos/axon.png"
-            alt="Image 2"
-            width={162}
-            height={32}
-          />
-        </Card>
-      </Box>
-      <Box>
-        <Card style={cardStyles}>
-          <Image
-            src="/images/clientLogos/expedia.png"
-            alt="Image 3"
-            width={162}
-            height={32}
-          />
-        </Card>
-      </Box>
-      <Box>
-        <Card style={cardStyles}>
-          <Image
-            src="/images/clientLogos/jetstar.png"
-            alt="Image 4"
-            width={162}
-            height={32}
-          />
-        </Card>
-      </Box>
-      <Box>
-        <Card style={cardStyles}>
-          <Image
-            src="/images/clientLogos/quantas.png"
-            alt="Image 5"
-            width={162}
-            height={32}
-          />
-        </Card>
-      </Box>
+      {clientLogos.map((item) => (
+        <Box key={item.id}>
+          <Card style={cardStyles}>
+            <Image
+              src={item.logoImage}
+              alt={`Logo ${item.id}`}
+              width={162}
+              height={32}
+            />
+          </Card>
+        </Box>
+      ))}
     </Slider>
   );
 };

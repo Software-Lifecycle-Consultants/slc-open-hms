@@ -1,10 +1,14 @@
-import Footer from "@/components/homePage/Footer";
 import Hero from "@/components/explore/Hero";
 import HotelRooms from "@/components/explore/HotelRooms";
 import SearchBar from "@/components/explore/SearchBar";
 import { Box, Container } from "@mui/material";
 import React from "react";
 
+
+/**
+ * ExploreScreen component represents the explore screen of the website.
+ * It includes sections like Hero section, Search bar, and Hotel rooms.
+ */
 
 const ExploreScreen = () => {
   
@@ -15,7 +19,6 @@ const ExploreScreen = () => {
         sx={{
           backgroundColor: "#0C111F",
           color: "white",
-          // padding: "40px 0",
           height: "600px",
           width: "100%",
           display: "inline-block",
@@ -43,12 +46,6 @@ const ExploreScreen = () => {
         </Container>
       </Box>
 
-      <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
-        <Container>
-          <Footer />
-        </Container>
-      </Box>
-      
     </>
   );
 };

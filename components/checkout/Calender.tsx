@@ -1,11 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import { Box, Typography, Card, Checkbox, CardContent } from "@mui/material";
-import { DateRange, DateRangePicker } from "react-date-range";
+import { Box, Typography, Card, CardContent } from "@mui/material";
+import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // Import the styles
 import "react-date-range/dist/theme/default.css";
+import { calenderTitle } from "@/data/checkoutPage";
 
 const Calender = () => {
+  /* State for managing the selected date range */
   const [state, setState] = useState([
     {
       startDate: new Date(),
@@ -27,6 +29,7 @@ const Calender = () => {
         }}
       >
         <CardContent>
+          {/* Calendar title */}
           <Typography
             variant="h5"
             style={{
@@ -40,17 +43,18 @@ const Calender = () => {
               marginTop: "14px",
             }}
           >
-            Select your check-in and check-out dates
+            {calenderTitle}
           </Typography>
-          <Box sx={{ backgroundColor: "", }}>
+          <Box sx={{ backgroundColor: "" }}>
+            {/* Calendar component */}
             <DateRange
               editableDateInputs={true}
               onChange={(item) => setState([item.selection])}
               moveRangeOnFirstSelection={false}
               ranges={state}
             />
-            
           </Box>
+          {/* Terms and Conditions */}
           <Typography
             variant="h5"
             style={{
@@ -66,6 +70,7 @@ const Calender = () => {
           >
             Terms and Conditions
           </Typography>
+          {/* Special Request */}
           <Typography
             variant="body1"
             style={{

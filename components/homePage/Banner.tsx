@@ -2,10 +2,12 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import image from "../../public/images/mainImage.png";
+import image from "../../public/images/homePage/heroSectionImage/mainImage.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { bannerDetails } from "../../data/homePage";
 
+/* Typography style for heading 5 */
 const typographyh5Style = {
   color: "#E97458",
   fontFamily: "Inter",
@@ -17,6 +19,7 @@ const typographyh5Style = {
   marginTop: { xs:"14px", md: "5px" },
 };
 
+/* Typography style for heading 1 */
 const typographyh1Style = {
   color: "#FFFFFF",
   fontFamily: "Volkhov",
@@ -28,6 +31,7 @@ const typographyh1Style = {
   marginTop: "5px",
 };
 
+/* Typography style for body text */
 const typographyBody1Style = {
   color: "rgba(255, 255, 255, 0.70)",
   fontFamily: "Inter",
@@ -38,6 +42,7 @@ const typographyBody1Style = {
   fontWeight: "400",
 };
 
+/* Button style for contained variant */
 const buttonContainedStyle = {
   display: "inline-flex",
   justifyContent: "center",
@@ -60,6 +65,7 @@ const buttonContainedStyle = {
   },
 };
 
+/* Button style for text variant */
 const buttonTextStyle = {
   color: "#FFF",
   fontFamily: "Inter",
@@ -77,6 +83,7 @@ const buttonTextStyle = {
   },
 };
 
+/* Banner functional component */
 const Banner = () => {
   return (
     <>
@@ -87,16 +94,19 @@ const Banner = () => {
         alignItems="center"
         spacing={2}
       >
+        {/* Left side of the banner */}
         <Grid item xs={12} md={6}>
+          {/* Heading 5 */}
           <Typography variant="h5" sx={typographyh5Style}>
-            the best deals on the world's best destinations
+            {bannerDetails.bannerTitle}
           </Typography>
+          {/* Heading 1 */}
           <Typography variant="h1" sx={typographyh1Style}>
-            Best travel and destinations
+            {bannerDetails.bannerSubTitle}
           </Typography>
+          {/* Body text */}
           <Typography variant="body1" sx={typographyBody1Style}>
-            With travala you can experience new travel and the best tourist
-            destinations that we have to offer
+            {bannerDetails.bannerDescription}
           </Typography>
           <Box
             sx={{
@@ -105,9 +115,10 @@ const Banner = () => {
               alignItems: "center",
             }}
           >
-            {/* Web and Tablet View */}
+            {/* Button with icon for web and tablet view */}
             <Button variant="contained" sx={buttonContainedStyle}>
-              Our Destination
+              {bannerDetails.bannercta1Caption}
+              {/* Arrow icon */}
               <Box
                 sx={{
                   backgroundColor: "#0C111F",
@@ -123,7 +134,7 @@ const Banner = () => {
               </Box>
             </Button>
 
-            {/* Mobile View */}
+            {/* Button with arrow icon for mobile view */}
             <Button variant="text" sx={buttonTextStyle}>
               <Box
                 sx={{
@@ -152,10 +163,11 @@ const Banner = () => {
                   <ArrowRightIcon sx={{ color: "#F5B100" }} />
                 </Box>
               </Box>
-              Our Gallery
+              {bannerDetails.bannercta2Caption}
             </Button>
           </Box>
         </Grid>
+        {/* Right side of the banner - image */}
         <Grid item xs={12} md={6}>
           <Image
             src={image}
