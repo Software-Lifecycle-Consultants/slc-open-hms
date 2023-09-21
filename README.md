@@ -37,6 +37,19 @@ npm install
  
 3. Install the Other NPM packages that are used in this project:
 
+- [@mui/material](https://mui.com/material-ui/getting-started/installation/) - Version 5.14.4
+  - Material UI is a comprehensive library of components that features our implementation of Google's Material Design system.
+  - Install the package in your project directory using the following commands.
+ ```bash
+npm install @mui/material @emotion/react @emotion/styled
+ ```
+
+- [@mui/icons-material](https://mui.com/material-ui/icons/) - Version 5.14.3
+  - This package provides the Google Material Icons converted to SvgIcon components.
+  - Install the package in your project directory using the following commands.
+ ```bash
+npm install @mui/icons-material
+
 - [react-date-range](https://www.npmjs.com/package/react-date-range) - Version 1.4.4
   - A date library agnostic React component for choosing dates and date ranges. 
   - Uses date-fns for date operations.
