@@ -38,10 +38,9 @@ npm install
 Other NPM packages that are used in this project:
 
 - [react-date-range](https://www.npmjs.com/package/react-date-range) - Version 1.4.4
-  - Description: A date library agnostic React component for choosing dates and date ranges. Uses date-fns for date operations
+  - Description: A date library agnostic React component for choosing dates and date ranges. Uses date-fns for date operations.
   - Usage: Install the pkg/s using the following command and import skeleton and theme styles.
-
-   ```bash
+ ```bash
 npm install --save react-date-range
  ```
     ```bash
@@ -49,11 +48,10 @@ npm install --save react date-fns
  ```
 
 - [react-slick](https://www.npmjs.com/package/react-slick) - Version 0.23.10
-  - Description: Carousel component built with React. It is a react port of slick carousel
+  - Description: Carousel component built with React. It is a react port of slick carousel.
   - Usage: Install the pkg/s using the following command and import skeleton and theme styles.
-
-   ```bash
-npm install react-slick --save
+```bash
+npm install --save react date-fns
  ```
 
 3. Set up the environment variables:
