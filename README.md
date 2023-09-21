@@ -2,7 +2,7 @@
 
 ![Hotel Management System](https://softwareconsultant.info/wp-content/themes/slcc/assets/images/logo.png)
 
-The Hotel Management System is a web application built with Next.js that aims to streamline and optimize hotel operations, including reservations, room management, guest services, and more. This application provides an intuitive and efficient solution for hotel owners and staff to manage various aspects of their hotel business.
+The SLC-Open-HMS is a web application built with Next.js that aims to streamline and optimize hotel operations, including reservations, room management, guest services, and more. This application provides an intuitive and efficient solution for hotel owners and staff to manage various aspects of their hotel business.
 
 ## Features
 
@@ -35,10 +35,19 @@ Node Modules
  ```bash
 npm install
  ```
-Node Modules
- ```bash
-npm install
+List the NPM packages and their versions that are used in this project:
+
+- [react-date-range](https://www.npmjs.com/package/package-name) - Version 1.4.4
+  - Description: A date library agnostic React component for choosing dates and date ranges. Uses date-fns for date operations
+  - Usage: Install the pkg/s using the following command and import skeleton and theme styles.
+
+   ```bash
+npm install --save react-date-range
  ```
+    ```bash
+npm install --save react date-fns
+ ```
+
 3. Set up the environment variables:
   - Create a .env.local file in the root directory of the project.
   - Add the required environment variables, such as database connection strings, API keys, etc.
@@ -54,7 +63,17 @@ pnpm dev
 5. Open your browser and navigate to http://localhost:3000 to see the Hotel Management System in action.
 
 ## Contributing
-We welcome contributions from the community! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+We welcome contributions from the community! 
+
+If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+
+If you'd like to contribute to this project, please follow these guidelines:
+
+1. Fork the project.
+2. Create a new branch for your feature or bugfix: git checkout -b feature-name
+3. Make your changes and commit them: git commit -m 'Description of your changes'
+4. Push your changes to your fork: git push origin feature-name
+5. Create a pull request on the original repository, explaining your changes.
 
 ## Learn More
 To learn more about Next.js, take a look at the following resources:
