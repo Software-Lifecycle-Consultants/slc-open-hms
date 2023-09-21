@@ -49,6 +49,7 @@ npm install @mui/material @emotion/react @emotion/styled
   - Install the package in your project directory using the following commands.
  ```bash
 npm install @mui/icons-material
+ ```
 
 - [react-date-range](https://www.npmjs.com/package/react-date-range) - Version 1.4.4
   - A date library agnostic React component for choosing dates and date ranges. 
