@@ -1,4 +1,4 @@
-# Hotel Management System (Next.js)
+# SLC Open HMS (Next.js)
 
 ![Hotel Management System](https://softwareconsultant.info/wp-content/themes/slcc/assets/images/logo.png)
 
@@ -26,8 +26,8 @@ Follow these instructions to set up the Hotel Management System project locally 
 
 1. Clone the repository to your local machine:
  ```bash
-git clone https://github.com/your-username/hotel-management-system.gitgg
-cd hotel-management-system
+git https://github.com/Software-Lifecycle-Consultants/slc-open-hms.git
+cd slc-open-hms
  ```
 2. Install the Node Modules:
 
