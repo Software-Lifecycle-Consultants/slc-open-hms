@@ -46,6 +46,15 @@ npm install --save react-date-range
 npm install --save react date-fns
  ```
 
+- [react-slick](https://www.npmjs.com/package/react-slick) - Version 0.23.10
+  - Carousel component built with React. It is a react port of slick carousel.
+  - Also install slick-carousel for css and font
+  - Install the pkg/s using the following commands and import skeleton and theme styles.
+```bash
+npm install react-slick --save
+npm install slick-carousel
+ ```
+
 4. Set up the environment variables:
   - Create a .env.local file in the root directory of the project.
   - Add the required environment variables, such as database connection strings, API keys, etc.
