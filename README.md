@@ -31,7 +31,7 @@ cd hotel-management-system
  ```
 2. Install the Node Modules:
 
- ```bash
+```bash
 npm install
  ```
  
@@ -43,8 +43,6 @@ npm install
   - Install the pkg/s using the following commands and import skeleton and theme styles.
  ```bash
 npm install --save react-date-range
- ```
-    ```bash
 npm install --save react date-fns
  ```
 
