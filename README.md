@@ -26,7 +26,7 @@ Follow these instructions to set up the Hotel Management System project locally 
 
 1. Clone the repository to your local machine:
  ```bash
-git clone https://github.com/your-username/hotel-management-system.git
+git clone https://github.com/your-username/hotel-management-system.gitgg
 cd hotel-management-system
  ```
 2. Install the dependencies:
@@ -35,7 +35,7 @@ Node Modules
  ```bash
 npm install
  ```
-List the NPM packages and their versions that are used in this project:
+Other NPM packages that are used in this project:
 
 - [react-date-range](https://www.npmjs.com/package/package-name) - Version 1.4.4
   - Description: A date library agnostic React component for choosing dates and date ranges. Uses date-fns for date operations
@@ -46,6 +46,14 @@ npm install --save react-date-range
  ```
     ```bash
 npm install --save react date-fns
+ ```bash
+
+- [react-fe-range](https://www.npmjs.com/package/package-name) - Version 1.4.4
+  - Description: Carousel component built with React. It is a react port of slick carousel
+  - Usage: Install the pkg/s using the following command and import skeleton and theme styles.
+
+   ```bash
+npm install react-slick --save
  ```
 
 3. Set up the environment variables:
