@@ -1,9 +1,9 @@
 /* Assign Page routes and labels for navigation bar component of the website */
 export const pages = [
   { label: "Home", route: "/" },
-  { label: "Explore", route: "/ExploreScreen" },
-  { label: "Book Now", route: "/CheckoutScreen" },
-  { label: "Contact", route: "/contact_us" },
+  { label: "Explore", route: "/explore" },
+  { label: "Book Now", route: "/checkout" },
+  { label: "Contact", route: "/contact-us" },
 ];
 
 /* Assign button labels to the navigation bar component of the website */

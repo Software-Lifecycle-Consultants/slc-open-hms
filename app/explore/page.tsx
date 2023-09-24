@@ -1,3 +1,4 @@
+"use client"
 import Hero from "@/components/explore/Hero";
 import HotelRooms from "@/components/explore/HotelRooms";
 import SearchBar from "@/components/explore/SearchBar";
