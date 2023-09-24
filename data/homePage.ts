@@ -17,7 +17,7 @@ export const drawerPages = [
   { label: "Home", route: "/" },
   { label: "Explore", route: "/explore" },
   { label: "Book Now", route: "/checkout" },
-  { label: "Contact", route: "/contact" },
+  { label: "Contact", route: "/contact-us" },
   { label: "Register", route: "/register" },
   { label: "Login", route: "/login" },
 ];
