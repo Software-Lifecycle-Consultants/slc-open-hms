@@ -11,9 +11,6 @@ import {
   user,
   heart,
 } from "../../public/images/homePage/customCardImages";
-// import wallet from "../../public/images/homePage/customCardImages/Wallet.png";
-// import user from "../../public/images/homePage/customCardImages/3 User.png";
-// import heart from "../../public/images/homePage/customCardImages/Heart.png";
 import { cardDetails1, cardDetails2 } from "../../data/homePage";
 
 /* Typography styles for heading 1 */
