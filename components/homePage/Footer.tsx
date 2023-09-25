@@ -2,9 +2,10 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import fb from "../../public/images/homePage/footerImages/facebook.png";
-import tw from "../../public/images/homePage/footerImages/twitter.png";
-import ig from "../../public/images/homePage/footerImages/instagram.png";
+import { fb, tw, ig } from "../../public/images/homePage/footerImages";
+// import fb from "../../public/images/homePage/footerImages/facebook.png";
+// import tw from "../../public/images/homePage/footerImages/twitter.png";
+// import ig from "../../public/images/homePage/footerImages/instagram.png";
 import { footerContent } from "@/data/homePage";
 
 

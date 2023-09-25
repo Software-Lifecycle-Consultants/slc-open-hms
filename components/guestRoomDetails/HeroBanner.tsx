@@ -100,7 +100,7 @@ const HeroBanner = () => {
               marginTop: "40px",
             }}
           >
-            Start From
+            {roomDetailsHeroSection.customText1}
           </Typography>
           <Box sx={{ display: "flex" }}>
             <Typography
@@ -132,7 +132,7 @@ const HeroBanner = () => {
                 marginLeft: "4px",
               }}
             >
-              /Night
+              {roomDetailsHeroSection.customText2}
             </Typography>
           </Box>
         </Grid>

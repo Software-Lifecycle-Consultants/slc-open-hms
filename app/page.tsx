@@ -36,36 +36,33 @@ export default function HomeScreen() {
         </Container>
       </Box>
 
-      {/* Destination Card */}
+      {/* Custom Card Section*/}
       <Box sx={sectionStyle}>
         <Container>
           <CustomCard />
         </Container>
       </Box>
 
-      {/* Blog */}
+      {/* Logo Carousel Section */}
       <Box sx={sectionStyle}>
         <Container>
           <LogoCarousel />
         </Container>
       </Box>
 
-      {/* Blog */}
+      {/* Blog Section */}
       <Box sx={sectionStyle}>
         <Container>
           <Blog />
         </Container>
       </Box>
 
-      {/* Testimonials */}
-      <Box
-        sx={{sectionStyle,backgroundColor: "#F7F7F7",}}
-      >
+      {/* Testimonials Section */}
+      <Box sx={{ sectionStyle, backgroundColor: "#F7F7F7" }}>
         <Container>
           <Testimonials />
         </Container>
       </Box>
-
     </>
   );
 }
