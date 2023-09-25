@@ -1,11 +1,11 @@
-import Calender from "@/components/checkout/Calender";
-import Heading from "@/components/checkout/Heading";
-import SubmitButton from "@/components/checkout/SubmitButton";
-import { Grid, Box, Container } from "@mui/material";
 import React from "react";
-import BillingDetails from "@/components/checkout/BillingDetails";
-import BookingInfo from "@/components/checkout/BookingInfo";
-import ExtraFacilitation from "@/components/checkout/ExtraFacilitation";
+import { Grid, Box, Container } from "@mui/material";
+import Calender from "@/components/checkout/Calender"; // Importing Calender component from the 'checkout' folder
+import Heading from "@/components/checkout/Heading"; // Importing Heading component from the 'checkout' folder
+import SubmitButton from "@/components/checkout/SubmitButton"; // Importing SubmitButton component from the 'checkout' folder
+import BillingDetails from "@/components/checkout/BillingDetails"; // Importing BillingDetails component from the 'checkout' folder
+import BookingInfo from "@/components/checkout/BookingInfo"; // Importing BookingInfo component from the 'checkout' folder
+import ExtraFacilitation from "@/components/checkout/ExtraFacilitation"; // Importing ExtraFacilitation component from the 'checkout' folder
 
 /**
  * CheckoutScreen component represents the checkout screen of the website.
@@ -15,13 +15,14 @@ import ExtraFacilitation from "@/components/checkout/ExtraFacilitation";
 const CheckoutScreen = () => {
   return (
     <>
-
+      {/* Heading Section */}
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
           <Heading />
         </Container>
       </Box>
 
+      {/* Main Content Section */}
       <Box
         sx={{
           display: "grid",
@@ -32,22 +33,23 @@ const CheckoutScreen = () => {
         <Container>
           <Grid container spacing={2}>
             <Grid item xs={12} md={8}>
+              {/* Billing Details Section */}
               <BillingDetails />
-              {/* <BookingDetailsForm /> */}
             </Grid>
             <Grid item xs={12} md={4}>
+              {/* Booking Info Section */}
               <BookingInfo />
-              {/* <GuestRoom /> */}
             </Grid>
           </Grid>
         </Container>
         <Container>
           <Grid container spacing={2}>
             <Grid item xs={12} md={8}>
+              {/* Extra Facilitation Section */}
               <ExtraFacilitation />
-              {/* <ServicesCard /> */}
             </Grid>
             <Grid item xs={12} md={4}>
+              {/* Calendar Section */}
               <Calender />
             </Grid>
           </Grid>
@@ -56,12 +58,12 @@ const CheckoutScreen = () => {
         <Container>
           <Grid container spacing={2}>
             <Grid item xs={12} md={8}>
+              {/* Submit Button Section */}
               <SubmitButton />
             </Grid>
           </Grid>
         </Container>
       </Box>
-  
     </>
   );
 };

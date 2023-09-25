@@ -6,7 +6,9 @@ export const roomDetailsHeroSection = {
   checkIcon1: "2 Guest",
   checkIcon2: "2 Bed",
   checkIcon3: "1 Bathroom",
-    price: "$59",
+  customText1: "Start From",
+  price: "$59",
+  customText2: "/Night",
 };
 
 /* Assign title and descripton to the about room component of the guest room details page */

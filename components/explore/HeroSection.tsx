@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
 import { heroSection } from '@/data/explorePage';
 
-const Hero = () => {
+const HeroSection = () => {
   return (
     <>
       <Grid container spacing={2}>
@@ -44,4 +44,4 @@ const Hero = () => {
   );
 }
 
-export default Hero
+export default HeroSection

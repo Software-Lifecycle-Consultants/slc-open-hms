@@ -1,26 +1,28 @@
-"use client";
+"use client"; // Indicating that this is client-side code
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { useMediaQuery, Card, Box, useTheme } from "@mui/material";
-import Image from "next/image";
-import { clientLogos } from "@/data/homePage";
+import Slider from "react-slick"; // Importing the Slider component from react-slick
+import "slick-carousel/slick/slick.css"; // Importing the slick carousel CSS
+import "slick-carousel/slick/slick-theme.css"; // Importing the slick carousel theme CSS
+import { useMediaQuery, Card, Box, useTheme } from "@mui/material"; // Importing components and hooks from MUI
+import Image from "next/image"; // Importing the Image component from Next.js
+import { clientLogos } from "@/data/homePage"; // Importing client logos from the specified data file
 
 const LogoCarousel: React.FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+  const theme = useTheme(); // Accessing the MUI theme
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Checking if the screen is mobile
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md")); // Checking if the screen is tablet
 
   const settings: SliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: isMobile ? 1 : isTablet ? 2 : 5,
-    slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 1000,
+    dots: true, // Displaying dots for navigation
+    infinite: true, // Allowing infinite loop of slides
+    speed: 500, // Transition speed in milliseconds
+    slidesToShow: isMobile ? 1 : isTablet ? 2 : 5, // Setting the number of slides to show based on the screen size
+    slidesToScroll: 1, // Number of slides to scroll at a time
+    autoplay: false, // Autoplay is disabled
+    autoplaySpeed: 1000, // Autoplay speed in milliseconds
   };
+
+  // Custom styles for the Card component
   const cardStyles: React.CSSProperties = {
     display: "flex",
     justifyContent: "center",
@@ -35,6 +37,7 @@ const LogoCarousel: React.FC = () => {
 
   return (
     <Slider {...settings}>
+      {/* Mapping through clientLogos and rendering each logo */}
       {clientLogos.map((item) => (
         <Box key={item.id}>
           <Card style={cardStyles}>
@@ -51,6 +54,7 @@ const LogoCarousel: React.FC = () => {
   );
 };
 
+// Interface to define SliderSettings type
 interface SliderSettings {
   dots: boolean;
   infinite: boolean;
@@ -61,4 +65,4 @@ interface SliderSettings {
   autoplaySpeed: number;
 }
 
-export default LogoCarousel;
+export default LogoCarousel; // Exporting the LogoCarousel component as the default export

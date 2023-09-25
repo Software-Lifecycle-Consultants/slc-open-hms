@@ -22,36 +22,42 @@ const sectionStyles = {
 const RoomDetailsScreen = () => {
   return (
     <>
+      {/* Banner Section */}
       <Box sx={sectionStyles}>
         <Container>
           <HeroBanner />
         </Container>
       </Box>
 
+      {/* About Room Section */}
       <Box sx={sectionStyles}>
         <Container>
           <AboutRoom />
         </Container>
       </Box>
 
+      {/* Facilities Section */}
       <Box sx={sectionStyles}>
         <Container>
           <Facilities />
         </Container>
       </Box>
 
+      {/* Room Gallery Section */}
       <Box sx={sectionStyles}>
         <Container>
           <Gallery />
         </Container>
       </Box>
 
+      {/* Additional Info Section */}
       <Box sx={sectionStyles}>
         <Container>
           <AdditionalInfo />
         </Container>
       </Box>
 
+      {/* Similar Rooms Section */}
       <Box sx={sectionStyles}>
         <Container>
           <SimilarRooms />
