@@ -28,7 +28,7 @@ const Heading = () => {
           <Typography
             variant="body2"
             style={{
-              color: "var(--light-text-color-body-1, #515151);",
+              color: "var(--light-text-color-body-1, #515151)",
               fontFamily: "Mulish",
               fontSize: "16px",
               lineHeight: "125%",
