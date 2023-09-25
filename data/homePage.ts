@@ -104,6 +104,13 @@ export const blogCardData = [
   },
 ];
 
+/* Assign custom texts and button label to the blog card */
+export const blogCardText = {
+  customTag1: "price",
+  customTag2: "/Person",
+  blogctaCaption: "Ticket booking",
+};
+
 /* Assign profile image, user name and testimonial of the user to the testimonials section of the home page */
 export const userTestimonial = {
   userProfileImage: "/images/homePage/testimonialsImage/Profile.png",

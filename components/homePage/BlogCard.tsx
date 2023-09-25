@@ -1,3 +1,4 @@
+import { blogCardText } from '@/data/homePage';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react'
@@ -106,7 +107,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
                 letterSpacing: "-0.18px",
               }}
             >
-              price
+              {blogCardText.customTag1}
             </Typography>
             <Box style={{ display: "flex" }}>
               {/* Price per person */}
@@ -134,7 +135,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
                   letterSpacing: "-0.18px",
                 }}
               >
-                /Person
+                {blogCardText.customTag2}
               </Typography>
             </Box>
           </Box>
@@ -158,7 +159,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
                 fontWeight: "500",
               }}
             >
-              Ticket booking
+              {blogCardText.blogctaCaption}
             </Button>
           </Box>
         </CardActions>
