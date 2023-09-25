@@ -1,8 +1,10 @@
+"use client"
+import Hero from "@/components/explore/Hero";
+import HotelRooms from "@/components/explore/HotelRooms";
+import SearchBar from "@/components/explore/SearchBar";
 import { Box, Container } from "@mui/material";
 import React from "react";
-import HeroSection from "@/components/explore/HeroSection"; // Importing HeroSection component from the 'explore' folder
-import HotelRooms from "@/components/explore/HotelRooms"; // Importing HotelRooms component from the 'explore' folder
-import SearchBar from "@/components/explore/SearchBar"; // Importing SearchBar component from the 'explore' folder
+
 
 /**
  * ExploreScreen component represents the explore screen of the website.
@@ -13,7 +15,7 @@ const ExploreScreen = () => {
   
   return (
     <>
-      {/* Hero Section */}
+
       <Box
         sx={{
           backgroundColor: "#0C111F",
@@ -24,11 +26,10 @@ const ExploreScreen = () => {
         }}
       >
         <Container>
-          <HeroSection />
+          <Hero />
         </Container>
       </Box>
 
-      {/* Search Bar Section */}
       <Box
         sx={{
           backgroundColor: "#FFF",
@@ -40,12 +41,12 @@ const ExploreScreen = () => {
         </Container>
       </Box>
 
-      {/* Hotel Rooms Section */}
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
           <HotelRooms />
         </Container>
       </Box>
+
     </>
   );
 };

@@ -70,12 +70,12 @@ const NavBar = () => {
 
   /* Navigate to the register page */
   const navigationToRegisterPage = () => {
-    router.push("/Register");
+    router.push("/register");
   };
 
   /* Navigate to the login page */
   const navigationToLoginPage = () => {
-    router.push("/Login");
+    router.push("/login");
   };
 
   return (

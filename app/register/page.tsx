@@ -1,8 +1,10 @@
+"use client";
 import React, { useState } from "react";
 import { Button, TextField, Typography, Container, Grid } from "@mui/material";
 
-const Login = () => {
+const Register: React.FC = () => {
   const [formData, setFormData] = useState({
+    username: "",
     email: "",
     password: "",
   });
@@ -19,7 +21,7 @@ const Login = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    // Handle login logic here, e.g., send data to the server
+    // Handle form submission here, e.g., send data to the server
     console.log(formData);
   };
 
@@ -29,8 +31,18 @@ const Login = () => {
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Typography variant="h4" align="center">
-              Login
+              Register
             </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth
+              label="Username"
+              variant="outlined"
+              value={formData.username}
+              onChange={(e) => handleChange(e, "username")}
+              required
+            />
           </Grid>
           <Grid item xs={12}>
             <TextField
@@ -56,7 +68,7 @@ const Login = () => {
           </Grid>
           <Grid item xs={12}>
             <Button type="submit" variant="contained" color="primary" fullWidth>
-              Login
+              Register
             </Button>
           </Grid>
         </Grid>
@@ -65,4 +77,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

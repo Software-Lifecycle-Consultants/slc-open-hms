@@ -1,3 +1,4 @@
+"use client"
 import { Box, Container } from "@mui/material";
 import Banner from "../components/homePage/Banner";
 import Testimonials from "../components/homePage/Testimonials";
@@ -65,4 +66,3 @@ export default function HomeScreen() {
     </>
   );
 }
-

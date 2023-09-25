@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import { Box, Container } from "@mui/material";
 import HeroBanner from '@/components/guestRoomDetails/HeroBanner';
