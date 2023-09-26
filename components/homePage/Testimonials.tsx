@@ -11,7 +11,7 @@ import React from "react";
 import Image from "next/image";
 import { userTestimonial } from "@/data/homePage";
 import { testimonialSectionDetails } from "@/data/homePage";
-
+import { montserrat } from "../../app/fonts";
 const Testimonials = () => {
   const [value, setValue] = React.useState(4); // Rating value
 
@@ -42,7 +42,6 @@ const Testimonials = () => {
   /* Typography style for heading 5 */
   const typographyh5Style = {
     color: "#0C111F",
-    fontFamily: "Montserrat, sans-serif",
     fontSize: "24px",
     lineHeight: "28px",
     fontStyle: "normal",
@@ -52,7 +51,7 @@ const Testimonials = () => {
   /* Typography style for heading 1 */
   const typographyh1Style = {
     color: "#0C111F",
-    fontFamily: "Inter",
+    // fontFamily: "Inter",
     fontSize: "48px",
     lineHeight: "130%",
     fontStyle: "normal",
@@ -64,7 +63,7 @@ const Testimonials = () => {
 
   const typographyCardStyle = {
     color: "#0C111F",
-    fontFamily: "Inter",
+    // fontFamily: "Inter",
     fontSize: "18px",
     lineHeight: "180%",
     fontStyle: "normal",
@@ -75,7 +74,7 @@ const Testimonials = () => {
   /* Typography style for paragraph */
   const typographyParagraphStyle = {
     color: "#0C111F",
-    fontFamily: "Inter",
+    // fontFamily: "Inter",
     fontSize: "20px",
     lineHeight: "180%",
     fontStyle: "normal",
@@ -110,7 +109,12 @@ const Testimonials = () => {
             <Card elevation={0} sx={accountStatsStyle}>
               <CardContent>
                 {/* User's name */}
-                <Typography gutterBottom variant="h5" style={typographyh5Style}>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  className={montserrat.className}
+                  style={typographyh5Style}
+                >
                   {userTestimonial.userName}
                 </Typography>
                 {/* User's rating */}

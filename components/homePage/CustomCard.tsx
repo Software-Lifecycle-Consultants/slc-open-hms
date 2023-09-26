@@ -12,11 +12,12 @@ import {
   heart,
 } from "../../public/images/homePage/customCardImages";
 import { cardDetails1, cardDetails2 } from "../../data/homePage";
+import { montserrat } from "../../app/fonts";
 
 /* Typography styles for heading 1 */
 const typographyh1Style = {
   color: "#0C111F",
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "48px",
   lineHeight: "130%",
   fontStyle: "normal",
@@ -27,7 +28,7 @@ const typographyh1Style = {
 /* Typography styles for body 1 */
 const typographyBody1Style = {
   color: "#0C111F",
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "20px",
   lineHeight: "36px",
   letterSpacing: "-0.96px",
@@ -38,7 +39,6 @@ const typographyBody1Style = {
 /* Typography styles for heading 5 */
 const typographyh5Style = {
   color: "#0C111F",
-  fontFamily: "Montserrat, sans-serif",
   fontSize: "24px",
   fontStyle: "normal",
   lineHeight: "28px",
@@ -50,7 +50,7 @@ const typographyh5Style = {
 /* Typography styles for body 2 */
 const typographyBody2Style = {
   color: "#0C111F",
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "20px",
   fontStyle: "normal",
   lineHeight: "36px",
@@ -206,7 +206,11 @@ const CustomCard = ({}) => {
                     }}
                   >
                     {/* Heading 5 */}
-                    <Typography variant="h5" sx={typographyh5Style}>
+                    <Typography
+                      variant="h5"
+                      className={montserrat.className}
+                      sx={typographyh5Style}
+                    >
                       {item.title}
                     </Typography>
                     {/* Body 2 */}

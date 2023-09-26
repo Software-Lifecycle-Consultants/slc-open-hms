@@ -5,6 +5,7 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // Import the styles
 import "react-date-range/dist/theme/default.css";
 import { calenderTitle } from "@/data/checkoutPage";
+import { lora, mulish } from "../../app/fonts";
 
 const Calender = () => {
   /* State for managing the selected date range */
@@ -32,9 +33,9 @@ const Calender = () => {
           {/* Calendar title */}
           <Typography
             variant="h5"
+            className={lora.className}
             style={{
-              color: "var(--light-text-color-title, #11142D)",
-              fontFamily: "Lora",
+              color: "#11142D",
               fontSize: "24px",
               lineHeight: "120%",
               fontStyle: "normal",
@@ -57,9 +58,9 @@ const Calender = () => {
           {/* Terms and Conditions */}
           <Typography
             variant="h5"
+            className={mulish.className}
             style={{
-              color: "var(--light-text-color-title, #11142D)",
-              fontFamily: "Mulish, sans-serif",
+              color: "#11142D",
               fontSize: "16px",
               lineHeight: "120%",
               fontStyle: "normal",
@@ -73,9 +74,9 @@ const Calender = () => {
           {/* Special Request */}
           <Typography
             variant="body1"
+            className={mulish.className}
             style={{
-              color: "var(--light-text-color-body-2, #9A9AB0)",
-              fontFamily: "Mulish, sans-serif",
+              color: "#9A9AB0",
               fontSize: "16px",
               lineHeight: "125%",
               fontStyle: "normal",
@@ -88,9 +89,9 @@ const Calender = () => {
           </Typography>
           <Typography
             variant="body1"
+            className={mulish.className}
             style={{
-              color: "var(--light-text-color-body-2, #9A9AB0)",
-              fontFamily: "Mulish, sans-serif",
+              color: "#9A9AB0",
               fontSize: "16px",
               lineHeight: "125%",
               fontStyle: "normal",
@@ -103,9 +104,9 @@ const Calender = () => {
           </Typography>
           <Typography
             variant="body1"
+            className={mulish.className}
             style={{
-              color: "var(--light-text-color-body-2, #9A9AB0)",
-              fontFamily: "Mulish, sans-serif",
+              color: "#9A9AB0",
               fontSize: "16px",
               lineHeight: "125%",
               fontStyle: "normal",

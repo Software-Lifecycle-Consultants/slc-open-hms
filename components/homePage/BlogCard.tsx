@@ -2,7 +2,7 @@ import { blogCardText } from '@/data/homePage';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react'
-
+import { montserrat } from "../../app/fonts";
 /* DestinationCardDetails component displays details of a destination in a card. */
 
 interface BlogCardProps {
@@ -60,9 +60,9 @@ const BlogCard: React.FC<BlogCardProps> = ({
           <Typography
             gutterBottom
             variant="h5"
+            className={montserrat.className}
             style={{
               color: "#0C111F",
-              fontFamily: "Montserrat, sans-serif",
               fontSize: "24px",
               lineHeight: "26px",
               fontStyle: "normal",
@@ -76,7 +76,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             variant="body2"
             style={{
               color: "rgba(12, 17, 31, 0.60)",
-              fontFamily: "Inter",
+              // fontFamily: "Inter",
               fontSize: "18px",
               lineHeight: "180%",
               fontStyle: "normal",
@@ -99,7 +99,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
               variant="body2"
               style={{
                 color: "rgba(12, 17, 31, 0.60)",
-                fontFamily: "Inter",
+                // fontFamily: "Inter",
                 fontSize: "18px",
                 lineHeight: "155%",
                 fontStyle: "normal",
@@ -127,7 +127,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
               <Typography
                 style={{
                   color: "rgba(12, 17, 31, 0.60)",
-                  fontFamily: "Inter",
+                  // fontFamily: "Inter",
                   fontSize: "18px",
                   lineHeight: "155%",
                   fontStyle: "normal",
@@ -151,7 +151,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
                 backgroundColor: "#7C46FE",
                 borderRadius: "45px",
                 color: "#FFF",
-                fontFamily: "Inter",
+                // fontFamily: "Inter",
                 fontSize: "14px",
                 lineHeight: "180%",
                 fontStyle: "normal",

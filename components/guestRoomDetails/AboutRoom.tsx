@@ -1,15 +1,16 @@
 import { Typography } from '@mui/material';
 import React from 'react'
 import { aboutRoom } from '@/data/roomDetailsPage';
+import { lora, mulish } from "../../app/fonts";
 
 const AboutRoom = () => {
   return (
     <>
       <Typography
         variant="h3"
+        className={lora.className}
         style={{
-          color: "var(--light-text-color-title, #11142D)",
-          fontFamily: "Lora",
+          color: "#11142D",
           fontSize: "39px",
           fontStyle: "normal",
           fontWeight: 700,
@@ -21,9 +22,9 @@ const AboutRoom = () => {
       </Typography>
       <Typography
         variant="body1"
+        className={mulish.className}
         sx={{
-          color: "var(--light-text-color-body-1, #515151)",
-          fontFamily: "Mulish, sans-serif",
+          color: "#515151",
           fontSize: "16px",
           lineHeight: "120%",
           fontStyle: "normal",

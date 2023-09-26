@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { galleryTitle } from "@/data/roomDetailsPage";
-
+import { lora } from "../../app/fonts";
 const Gallery: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // xs or sm breakpoint
@@ -24,8 +24,7 @@ const Gallery: React.FC = () => {
 
   const titleStyle = [
     {
-      color: "var(--light-text-color-title, #11142D)",
-      fontFamily: "Lora",
+      color: "#11142D",
       fontSize: "39px",
       fontStyle: "normal",
       fontWeight: 700,
@@ -47,7 +46,7 @@ const Gallery: React.FC = () => {
   };
   return (
     <>
-      <Typography variant="h3" sx={titleStyle}>
+      <Typography variant="h3" className={lora.className} sx={titleStyle}>
         {galleryTitle}
       </Typography>
       <Slider {...settings}>

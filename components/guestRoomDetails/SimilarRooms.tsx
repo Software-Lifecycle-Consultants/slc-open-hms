@@ -3,10 +3,10 @@ import React from 'react'
 import RoomCard from './RoomCard';
 import { roomsData } from '@/data/roomDetailsPage';
 import { similarRoomsDetails } from '@/data/roomDetailsPage';
+import { lora, mulish } from "../../app/fonts";
 
 const titleStyle = {
-  color: "var(--light-text-color-title, #11142D)",
-  fontFamily: "Lora",
+  color: "#11142D",
   fontSize: "39px",
   fontStyle: "normal",
   fontWeight: 700,
@@ -15,8 +15,7 @@ const titleStyle = {
 };
 
 const descriptionStyle = {
-  color: "var(--light-text-color-body-1, #515151)",
-  fontFamily: "Mulish, sans-serif",
+  color: "var(#515151",
   fontSize: "16px",
   lineHeight: "125%",
   fontStyle: "normal",
@@ -30,10 +29,14 @@ const descriptionStyle = {
 const SimilarRooms = () => {
   return (
     <>
-      <Typography variant="h3" sx={titleStyle}>
+      <Typography variant="h3" className={lora.className} sx={titleStyle}>
         {similarRoomsDetails.similarRoomsDetailsTitle}
       </Typography>
-      <Typography variant="body1" sx={descriptionStyle}>
+      <Typography
+        variant="body1"
+        className={mulish.className}
+        sx={descriptionStyle}
+      >
         {similarRoomsDetails.similarRoomsDetailsDescription}
       </Typography>
 

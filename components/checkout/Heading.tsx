@@ -4,6 +4,7 @@ import {
   Typography,
 } from "@mui/material";
 import { heading } from '@/data/checkoutPage';
+import { lora, mulish } from "../../app/fonts";
 
 const Heading = () => {
   return (
@@ -12,9 +13,9 @@ const Heading = () => {
         <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
           <Typography
             variant="h1"
+            className={lora.className}
             style={{
               color: "var(--light-text-color-title, #11142D)",
-              fontFamily: "Lora",
               fontSize: "62px",
               lineHeight: "120%",
               fontStyle: "normal",
@@ -27,9 +28,9 @@ const Heading = () => {
           </Typography>
           <Typography
             variant="body2"
+            className={mulish.className}
             style={{
               color: "var(--light-text-color-body-1, #515151)",
-              fontFamily: "Mulish",
               fontSize: "16px",
               lineHeight: "125%",
               fontStyle: "normal",

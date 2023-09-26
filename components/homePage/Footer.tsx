@@ -3,7 +3,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import { footerContent } from "@/data/homePage";
-
+import { montserrat } from "../../app/fonts";
 
 /* Footer component displays the website footer. */
 const Footer = () => {
@@ -25,7 +25,7 @@ const Footer = () => {
               variant="body2"
               style={{
                 color: "#0C111F",
-                fontFamily: "Inter",
+                // fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "30px",
                 fontStyle: "normal",
@@ -55,7 +55,7 @@ const Footer = () => {
               variant="body2"
               style={{
                 color: "#0C111F",
-                fontFamily: "Inter",
+                // fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -67,9 +67,9 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: "#0C111F",
-                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -81,9 +81,9 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: "#0C111F",
-                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -95,9 +95,9 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: "#0C111F",
-                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -126,7 +126,7 @@ const Footer = () => {
               variant="body2"
               style={{
                 color: "#0C111F",
-                fontFamily: "Inter",
+                // fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -138,9 +138,9 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: "#0C111F",
-                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -152,9 +152,9 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: "#0C111F",
-                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -166,9 +166,9 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: "#0C111F",
-                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -197,7 +197,7 @@ const Footer = () => {
               variant="body2"
               style={{
                 color: "#0C111F",
-                fontFamily: "Inter",
+                // fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -220,9 +220,9 @@ const Footer = () => {
               />
               <Typography
                 variant="body2"
+                className={montserrat.className}
                 style={{
                   color: "#0C111F",
-                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
                   fontStyle: "normal",
@@ -247,9 +247,9 @@ const Footer = () => {
               />
               <Typography
                 variant="body2"
+                className={montserrat.className}
                 style={{
                   color: "#0C111F",
-                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
                   fontStyle: "normal",
@@ -274,9 +274,9 @@ const Footer = () => {
               />
               <Typography
                 variant="body2"
+                className={montserrat.className}
                 style={{
                   color: "#0C111F",
-                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
                   fontStyle: "normal",
@@ -307,7 +307,7 @@ const Footer = () => {
                 variant="body2"
                 style={{
                   color: "#0C111F",
-                  fontFamily: "Inter",
+                  // fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",
@@ -330,7 +330,7 @@ const Footer = () => {
                 variant="body2"
                 style={{
                   color: "#0C111F",
-                  fontFamily: "Inter",
+                  // fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",
@@ -346,7 +346,7 @@ const Footer = () => {
                 variant="body2"
                 style={{
                   color: "#0C111F",
-                  fontFamily: "Inter",
+                  // fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",

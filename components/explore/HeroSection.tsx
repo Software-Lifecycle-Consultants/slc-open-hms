@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
 import { heroSection } from '@/data/explorePage';
+import { lora, mulish } from "../../app/fonts";
 
 const HeroSection = () => {
   return (
@@ -10,9 +11,9 @@ const HeroSection = () => {
           <Box sx={{ paddingTop: { xs: "112px", sm: "150px", md: "150px" } }}>
             <Typography
               variant="h1"
+              className={lora.className}
               sx={{
                 color: "#FFFFFF",
-                fontFamily: "Lora",
                 fontSize: "62px",
                 fontStyle: "normal",
                 fontWeight: 700,
@@ -24,9 +25,9 @@ const HeroSection = () => {
             </Typography>
             <Typography
               variant="body1"
+              className={mulish.className}
               sx={{
                 color: "#FFFFFF",
-                fontFamily: "Mulish, sans-serif",
                 fontSize: "16px",
                 lineHeight: "125%",
                 fontStyle: "normal",
