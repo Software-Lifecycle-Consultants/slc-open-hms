@@ -95,6 +95,12 @@ export const roomCardCheckIconContent = {
   checkIcon3Caption: "1 bathroom",
 };
 
+export const roomCardTexts = {
+  custonText1: "Learn More",
+  custonText2: "Start From",
+  custonText3: "Night",
+};
+
 /* Assign array of rooms data to the similar rooms component of the guest room details page */
 export const roomsData = [
   {

@@ -2,10 +2,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import { fb, tw, ig } from "../../public/images/homePage/footerImages";
-// import fb from "../../public/images/homePage/footerImages/facebook.png";
-// import tw from "../../public/images/homePage/footerImages/twitter.png";
-// import ig from "../../public/images/homePage/footerImages/instagram.png";
 import { footerContent } from "@/data/homePage";
 
 
@@ -67,7 +63,7 @@ const Footer = () => {
                 letterSpacing: "-0.232px",
               }}
             >
-              Destination
+              {footerContent.footerSectionText1}
             </Typography>
             <Typography
               variant="body2"
@@ -81,7 +77,7 @@ const Footer = () => {
                 marginTop: "15px",
               }}
             >
-              Cappadocia
+              {footerContent.destination1}
             </Typography>
             <Typography
               variant="body2"
@@ -95,7 +91,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              Sossusvlei
+              {footerContent.destination2}
             </Typography>
             <Typography
               variant="body2"
@@ -109,7 +105,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              Albuquera
+              {footerContent.destination3}
             </Typography>
           </Box>
         </Grid>
@@ -138,7 +134,7 @@ const Footer = () => {
                 letterSpacing: "-0.232px",
               }}
             >
-              About
+              {footerContent.footerSectionText2}
             </Typography>
             <Typography
               variant="body2"
@@ -152,7 +148,7 @@ const Footer = () => {
                 marginTop: "15px",
               }}
             >
-              Contact Us
+              {footerContent.customText1}
             </Typography>
             <Typography
               variant="body2"
@@ -166,7 +162,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              Testimoni
+              {footerContent.customText2}
             </Typography>
             <Typography
               variant="body2"
@@ -180,7 +176,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              Rating
+              {footerContent.customText3}
             </Typography>
           </Box>
         </Grid>
@@ -209,17 +205,17 @@ const Footer = () => {
                 letterSpacing: "-0.232px",
               }}
             >
-              Follow Us
+              {footerContent.footerSectionText3}
             </Typography>
             <Box sx={{ display: "flex", paddingLeft: "5px" }}>
               <Image
-                src={fb}
-                width={9.923}
-                height={19.845}
+                src={footerContent.socialMediaIcon1}
+                width={9.92}
+                height={19.84}
                 alt="fb"
                 style={{
                   flexShrink: 0,
-                  marginTop: "15px",
+                  marginTop: "17px",
                 }}
               />
               <Typography
@@ -235,14 +231,14 @@ const Footer = () => {
                   marginTop: "15px",
                 }}
               >
-                Facebook
+                {footerContent.socialMediaText1}
               </Typography>
             </Box>
             <Box sx={{ display: "flex" }}>
               <Image
-                src={tw}
-                width={9.923}
-                height={19.845}
+                src={footerContent.socialMediaIcon2}
+                width={19}
+                height={19}
                 alt="fb"
                 style={{
                   flexShrink: 0,
@@ -262,14 +258,14 @@ const Footer = () => {
                   marginTop: "5px",
                 }}
               >
-                Twitter
+                {footerContent.socialMediaText2}
               </Typography>
             </Box>
             <Box sx={{ display: "flex" }}>
               <Image
-                src={ig}
-                width={9.923}
-                height={19.845}
+                src={footerContent.socialMediaIcon3}
+                width={19}
+                height={19}
                 alt="fb"
                 style={{
                   flexShrink: 0,
@@ -289,7 +285,7 @@ const Footer = () => {
                   marginTop: "5px",
                 }}
               >
-                Instagram
+                {footerContent.socialMediaText3}
               </Typography>
             </Box>
           </Box>

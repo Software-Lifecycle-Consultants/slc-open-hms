@@ -104,6 +104,13 @@ export const blogCardData = [
   },
 ];
 
+/* Assign custom texts and button label to the blog card */
+export const blogCardText = {
+  customTag1: "price",
+  customTag2: "/Person",
+  blogctaCaption: "Ticket booking",
+};
+
 /* Assign profile image, user name and testimonial of the user to the testimonials section of the home page */
 export const userTestimonial = {
   userProfileImage: "/images/homePage/testimonialsImage/Profile.png",
@@ -119,9 +126,24 @@ export const testimonialSectionDetails = {
     "What our customers have to say about our service, check below!",
 };
 
-/* Assign logo and description to the footer section of the website */
+/* Assign logo, description, other texts and social media icons to the footer section of the website */
 export const footerContent = {
   footerSectionLogoImage: "/images/homePage/footerImages/logoDark.png",
   footerSectionDescription:
     "With travala you can experience new travel and the best tourist destinations that we have to offer",
+  footerSectionText1: "Destination",
+  destination1: "Cappadocia",
+  destination2: "Sossusvlei",
+  destination3: "Albuquera",
+  footerSectionText2: "About",
+  customText1: "Contact Us",
+  customText2: "Testimoni",
+  customText3: "Rating",
+  footerSectionText3: "Follow Us",
+  socialMediaIcon1: "/images/homePage/footerImages/facebook.png",
+  socialMediaText1: "Facebook",
+  socialMediaIcon2: "/images/homePage/footerImages/twitter.png",
+  socialMediaText2: "Twitter",
+  socialMediaIcon3: "/images/homePage/footerImages/instagram.png",
+  socialMediaText3: "Instagram",
 };
