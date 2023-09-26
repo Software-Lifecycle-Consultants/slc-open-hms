@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
-import { roomCardCheckIconContent } from "@/data/roomDetailsPage";
+import { roomCardCheckIconContent, roomCardTexts } from "@/data/roomDetailsPage";
 
 interface RoomCardProps {
   image: string;
@@ -140,7 +140,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                 onClick={navigationToRoomDetailsScreen}
                 sx={buttonStyle}
               >
-                Learn More
+                {roomCardTexts.custonText1}
               </Button>
               <Box sx={{ marginLeft: "120px" }}>
                 <Typography
@@ -156,7 +156,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                     marginTop: "20px",
                   }}
                 >
-                  Start From
+                  {roomCardTexts.custonText2}
                 </Typography>
                 <Box sx={{ display: "flex" }}>
                   <Typography
@@ -188,7 +188,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                       marginLeft: "4px",
                     }}
                   >
-                    /Night
+                    /{roomCardTexts.custonText3}
                   </Typography>
                 </Box>
               </Box>
