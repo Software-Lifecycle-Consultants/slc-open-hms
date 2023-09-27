@@ -6,11 +6,14 @@ import {
 } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Image from "next/image";
-import turkey from "../../public/images/Turkey.png";
-import wallet from "../../public/images/Wallet.png";
-import user from "../../public/images/3 User.png";
-import heart from "../../public/images/Heart.png";
+import {
+  wallet,
+  user,
+  heart,
+} from "../../public/images/homePage/customCardImages";
+import { cardDetails1, cardDetails2 } from "../../data/homePage";
 
+/* Typography styles for heading 1 */
 const typographyh1Style = {
   color: "#0C111F",
   fontFamily: "Inter",
@@ -21,6 +24,7 @@ const typographyh1Style = {
   fontWeight: "700",
 };
 
+/* Typography styles for body 1 */
 const typographyBody1Style = {
   color: "#0C111F",
   fontFamily: "Inter",
@@ -31,6 +35,7 @@ const typographyBody1Style = {
   marginTop: "4%",
 };
 
+/* Typography styles for heading 5 */
 const typographyh5Style = {
   color: "#0C111F",
   fontFamily: "Montserrat, sans-serif",
@@ -42,6 +47,7 @@ const typographyh5Style = {
   marginLeft: { xs: "26px", sm: "4px", md: "25px" },
 };
 
+/* Typography styles for body 2 */
 const typographyBody2Style = {
   color: "#0C111F",
   fontFamily: "Inter",
@@ -53,6 +59,7 @@ const typographyBody2Style = {
   marginLeft: { xs: "26px", sm: "4px", md: "25px" },
 };
 
+/* CustomCard functional component */
 const CustomCard = ({}) => {
 
   return (
@@ -64,15 +71,17 @@ const CustomCard = ({}) => {
       columnSpacing={{ xs: 1, md: 15 }}
     >
       <Grid item xs={12} md={6}>
+        {/* Heading 1 */}
         <Typography variant="h1" sx={typographyh1Style}>
-          Get Experience Which are fun
+          {cardDetails1.customCardTitle}
         </Typography>
+        {/* Body 1 */}
         <Typography variant="body1" sx={typographyBody1Style}>
-          With travala you can get the best experience on holiday travel, and we
-          always update the latest and best destinations in the world
+          {cardDetails1.customCardDescription}
         </Typography>
+        {/* Image */}
         <Image
-          src={turkey}
+          src={cardDetails1.customCardImage}
           alt="test"
           width={518}
           height={301}
@@ -93,189 +102,126 @@ const CustomCard = ({}) => {
           alignItems="center"
           spacing={2}
         >
-          <Grid item xs={12}>
-            <Grid
-              container
-              spacing={0}
-              sx={{
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "row", // Use row direction
-              }}
-            >
-              <Grid item xs={2} md={2}>
-                <Box
+          {cardDetails2.map((item) => (
+            <React.Fragment key={item.id}>
+              <Grid item xs={12}>
+                <Grid
+                  container
+                  spacing={0}
                   sx={{
-                    backgroundColor: "#F4F0FF",
-                    width: { xs: "80px", sm: "90px", md: "90px" }, // Adjust size for mobile and desktop
-                    height: { xs: "80px", sm: "90px", md: "90px" },
-                    borderRadius: "80px",
+                    width: "100%",
+                    height: "100%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    flexDirection: "row", // Use row direction
                   }}
                 >
-                  <Image
-                    src={wallet}
-                    width={38}
-                    height={38}
-                    alt="wallet"
-                    style={{
-                      flexShrink: 0,
+                  <Grid item xs={2} md={2}>
+                    {/* Card icon */}
+                    {item.id === "1" && (
+                      <Box
+                        sx={{
+                          backgroundColor: "#F4F0FF",
+                          width: { xs: "80px", sm: "90px", md: "90px" }, // Adjust size for mobile and desktop
+                          height: { xs: "80px", sm: "90px", md: "90px" },
+                          borderRadius: "80px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        {/* Wallet icon */}
+                        <Image
+                          src={wallet}
+                          width={38}
+                          height={38}
+                          alt="wallet"
+                          style={{
+                            flexShrink: 0,
+                          }}
+                        />
+                      </Box>
+                    )}
+                    {item.id === "2" && (
+                      <Box
+                        sx={{
+                          backgroundColor: "#FEFAEE",
+                          width: { xs: "80px", sm: "90px", md: "90px" }, // Adjust size for mobile and desktop
+                          height: { xs: "80px", sm: "90px", md: "90px" },
+                          borderRadius: "80px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                        mr={{ xs: "16px", md: "32px" }}
+                      >
+                        {/* User icon */}
+                        <Image
+                          src={user}
+                          width={38}
+                          height={38}
+                          alt="wallet"
+                          style={{
+                            flexShrink: 0,
+                          }}
+                        />
+                      </Box>
+                    )}
+                    {item.id === "3" && (
+                      <Box
+                        sx={{
+                          backgroundColor: "#F4F0FF",
+                          width: { xs: "80px", sm: "90px", md: "90px" }, // Adjust size for mobile and desktop
+                          height: { xs: "80px", sm: "90px", md: "90px" },
+                          borderRadius: "80px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                        mr={{ xs: "16px", md: "32px" }}
+                      >
+                        {/* Heart icon */}
+                        <Image
+                          src={heart}
+                          width={38}
+                          height={38}
+                          alt="wallet"
+                          style={{
+                            flexShrink: 0,
+                          }}
+                        />
+                      </Box>
+                    )}
+                  </Grid>
+                  <Grid
+                    item
+                    xs={10}
+                    md={10}
+                    sx={{
+                      width: "100%",
+                      padding: "24px",
+                      display: "flex",
+                      flexDirection: "column", // Use column direction
                     }}
-                  />
-                </Box>
+                  >
+                    {/* Heading 5 */}
+                    <Typography variant="h5" sx={typographyh5Style}>
+                      {item.title}
+                    </Typography>
+                    {/* Body 2 */}
+                    <Typography variant="body2" sx={typographyBody2Style}>
+                      {item.description}
+                    </Typography>
+                    {/* Divider */}
+                    <Divider
+                      style={{ marginTop: "24px", borderColor: "#F7F7F7" }}
+                    />
+                  </Grid>
+                </Grid>
               </Grid>
-              <Grid
-                item
-                xs={10}
-                md={10}
-                sx={{
-                  width: "100%",
-                  padding: "24px",
-                  display: "flex",
-                  flexDirection: "column", // Use column direction
-                }}
-              >
-                <Typography variant="h5" sx={typographyh5Style}>
-                  Affordable prices
-                </Typography>
-                <Typography variant="body2" sx={typographyBody2Style}>
-                  We provide some very affordable prices compared to others.
-                </Typography>
-                <Divider
-                  style={{ marginTop: "24px", borderColor: "#F7F7F7" }}
-                />
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} md={12}>
-            <Grid
-              container
-              spacing={0}
-              sx={{
-                // backgroundColor: "#cccaca",
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "row", // Use row direction
-              }}
-            >
-              <Grid item xs={2} md={2}>
-                <Box
-                  sx={{
-                    backgroundColor: "#FEFAEE",
-                    width: { xs: "80px", sm: "90px", md: "90px" }, // Adjust size for mobile and desktop
-                    height: { xs: "80px", sm: "90px", md: "90px" },
-                    borderRadius: "80px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                  mr={{ xs: "16px", md: "32px" }}
-                >
-                  <Image
-                    src={user}
-                    width={38}
-                    height={38}
-                    alt="wallet"
-                    style={{
-                      flexShrink: 0,
-                    }}
-                  />
-                </Box>
-              </Grid>
-              <Grid
-                item
-                xs={10}
-                md={10}
-                sx={{
-                  width: "100%",
-                  padding: "24px",
-                  display: "flex",
-                  flexDirection: "column", // Use column direction
-                  paddingTop: "5%",
-                }}
-              >
-                <Typography variant="h5" sx={typographyh5Style}>
-                  Unforgettable experience
-                </Typography>
-                <Typography variant="body2" sx={typographyBody2Style}>
-                  We provide a vacation experience that will be unforgettable.
-                </Typography>
-                <Divider
-                  style={{ marginTop: "24px", borderColor: "#F7F7F7" }}
-                />
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} md={12}>
-            <Grid
-              container
-              spacing={0}
-              sx={{
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "row", // Use row direction
-              }}
-            >
-              <Grid item xs={2} md={2}>
-                <Box
-                  sx={{
-                    backgroundColor: "#F4F0FF",
-                    width: { xs: "80px", sm: "90px", md: "90px" }, // Adjust size for mobile and desktop
-                    height: { xs: "80px", sm: "90px", md: "90px" },
-                    borderRadius: "80px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                  mr={{ xs: "16px", md: "32px" }}
-                >
-                  <Image
-                    src={heart}
-                    width={38}
-                    height={38}
-                    alt="wallet"
-                    style={{
-                      flexShrink: 0,
-                    }}
-                  />
-                </Box>
-              </Grid>
-              <Grid
-                item
-                xs={10}
-                md={10}
-                sx={{
-                  width: "100%",
-                  padding: "24px",
-                  display: "flex",
-                  flexDirection: "column", // Use column direction
-                  paddingTop: "5%",
-                }}
-              >
-                <Typography variant="h5" sx={typographyh5Style}>
-                  Very Friendly Service
-                </Typography>
-                <Typography variant="body2" sx={typographyBody2Style}>
-                  We will provide excellent and friendly service for the sake of
-                  our customers.
-                </Typography>
-                <Divider
-                  style={{ marginTop: "24px", borderColor: "#F7F7F7" }}
-                />
-              </Grid>
-            </Grid>
-          </Grid>
+            </React.Fragment>
+          ))}
         </Grid>
       </Grid>
     </Grid>

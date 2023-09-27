@@ -1,8 +1,8 @@
-# Hotel Management System (Next.js)
+# SLC Open HMS (Next.js)
 
 ![Hotel Management System](https://softwareconsultant.info/wp-content/themes/slcc/assets/images/logo.png)
 
-The Hotel Management System is a web application built with Next.js that aims to streamline and optimize hotel operations, including reservations, room management, guest services, and more. This application provides an intuitive and efficient solution for hotel owners and staff to manage various aspects of their hotel business.
+The SLC-Open-HMS is a web application built with Next.js that aims to streamline and optimize hotel operations, including reservations, room management, guest services, and more. This application provides an intuitive and efficient solution for hotel owners and staff to manage various aspects of their hotel business.
 
 ## Features
 
@@ -26,24 +26,54 @@ Follow these instructions to set up the Hotel Management System project locally 
 
 1. Clone the repository to your local machine:
  ```bash
-git clone https://github.com/your-username/hotel-management-system.git
-cd hotel-management-system
+git https://github.com/Software-Lifecycle-Consultants/slc-open-hms.git
+cd  slc-open-hms
  ```
-2. Install the dependencies:
+2. Install the Node Modules:
 
-Node Modules
- ```bash
+```bash
 npm install
  ```
-Node Modules
+ 
+3. Install the Other NPM packages that are used in this project:
+
+- [@mui/material](https://mui.com/material-ui/getting-started/installation/) - Version 5.14.4
+  - Material UI is a comprehensive library of components that features our implementation of Google's Material Design system.
+  - Install the package in your project directory using the following commands.
  ```bash
-npm install
+npm install @mui/material @emotion/react @emotion/styled
  ```
-3. Set up the environment variables:
+
+- [@mui/icons-material](https://mui.com/material-ui/icons/) - Version 5.14.3
+  - This package provides the Google Material Icons converted to SvgIcon components.
+  - Install the package in your project directory using the following commands.
+ ```bash
+npm install @mui/icons-material
+ ```
+
+- [react-date-range](https://www.npmjs.com/package/react-date-range) - Version 1.4.4
+  - A date library agnostic React component for choosing dates and date ranges. 
+  - Uses date-fns for date operations.
+  - Install the pkg/s using the following commands and import skeleton and theme styles.
+ ```bash
+npm install --save react-date-range
+npm install --save react date-fns
+ ```
+
+- [react-slick](https://www.npmjs.com/package/react-slick) - Version 0.23.10
+  - Carousel component built with React. It is a react port of slick carousel.
+  - Also install slick-carousel for css and font
+  - Install the pkg/s using the following commands and import skeleton and theme styles.
+```bash
+npm install react-slick --save
+npm install slick-carousel
+ ```
+
+4. Set up the environment variables:
   - Create a .env.local file in the root directory of the project.
   - Add the required environment variables, such as database connection strings, API keys, etc.
     
-4. Run the development server:
+5. Run the development server:
  ```bash
 npm run dev
 # or
@@ -51,10 +81,20 @@ yarn dev
 # or
 pnpm dev
  ```
-5. Open your browser and navigate to http://localhost:3000 to see the Hotel Management System in action.
+6. Open your browser and navigate to http://localhost:3000 to see the Hotel Management System in action.
 
 ## Contributing
-We welcome contributions from the community! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+We welcome contributions from the community! 
+
+If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+
+If you'd like to contribute to this project, please follow these guidelines:
+
+1. Fork the project.
+2. Create a new branch for your feature or bugfix: git checkout -b feature-name
+3. Make your changes and commit them: git commit -m 'Description of your changes'
+4. Push your changes to your fork: git push origin feature-name
+5. Create a pull request on the original repository, explaining your changes.
 
 ## Learn More
 To learn more about Next.js, take a look at the following resources:

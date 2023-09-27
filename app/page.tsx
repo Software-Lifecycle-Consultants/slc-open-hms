@@ -1,17 +1,27 @@
-import Image from "next/image";
-import { Box, Container, Grid, Typography, Button } from "@mui/material";
+"use client"
+import { Box, Container } from "@mui/material";
 import Banner from "../components/homePage/Banner";
-import Footer from "../components/homePage/Footer";
 import Testimonials from "../components/homePage/Testimonials";
 import Blog from "../components/homePage/Blog";
 import CustomCard from "../components/homePage/CustomCard";
-import LogoGrid from "@/components/homePage/LogoGrid";
 import LogoCarousel from "@/components/homePage/LogoCarousel";
+
+/**
+ * HomeScreen component represents the main screen of the website.
+ * It includes sections like Banner, Destination Card, Blog, Testimonials, and Footer.
+ */
+
+/* Style class for the box component of each section component */
+const sectionStyle = {
+  backgroundColor: "#FFF",
+  padding: "20px 0",
+  width: "100%",
+};
+
 
 export default function HomeScreen() {
   return (
     <>
-
       {/* Banner Section */}
       <Box
         sx={{
@@ -26,43 +36,33 @@ export default function HomeScreen() {
         </Container>
       </Box>
 
-      {/* Destination Card */}
-      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+      {/* Custom Card Section*/}
+      <Box sx={sectionStyle}>
         <Container>
           <CustomCard />
         </Container>
       </Box>
 
-      {/* Blog */}
-      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+      {/* Logo Carousel Section */}
+      <Box sx={sectionStyle}>
         <Container>
           <LogoCarousel />
         </Container>
       </Box>
 
-      {/* Blog */}
-      <Box sx={{ backgroundColor: "#FFF", padding: "20px 0", width: "100%" }}>
+      {/* Blog Section */}
+      <Box sx={sectionStyle}>
         <Container>
           <Blog />
         </Container>
       </Box>
 
-      {/* Testimonials */}
-      <Box
-        sx={{ backgroundColor: "#F7F7F7", padding: "20px 0", width: "100%" }}
-      >
+      {/* Testimonials Section */}
+      <Box sx={{ sectionStyle, backgroundColor: "#F7F7F7" }}>
         <Container>
           <Testimonials />
         </Container>
       </Box>
-
-      {/* Footer*/}
-      <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
-        <Container>
-          <Footer />
-        </Container>
-      </Box>
-      
     </>
   );
 }

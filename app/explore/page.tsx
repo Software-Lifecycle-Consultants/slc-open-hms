@@ -1,31 +1,37 @@
-import Footer from "@/components/homePage/Footer";
-import Hero from "@/components/explore/Hero";
-import HotelRooms from "@/components/explore/HotelRooms";
-import SearchBar from "@/components/explore/SearchBar";
-import { Box, Container } from "@mui/material";
+"use client"
 import React from "react";
+import { Box, Container } from "@mui/material";
+import HotelRooms from "@/components/explore/HotelRooms"; // Importing HotelRooms component from the 'explore' folder
+import SearchBar from "@/components/explore/SearchBar"; // Importing SearchBar component from the 'explore' folder
+import HeroSection from "@/components/explore/HeroSection"; // Importing HeroSection component from the 'explore' folder
 
+
+
+/**
+ * ExploreScreen component represents the explore screen of the website.
+ * It includes sections like Hero section, Search bar, and Hotel rooms.
+ */
 
 const ExploreScreen = () => {
   
   return (
     <>
-
+      {/* Hero Section */}
       <Box
         sx={{
           backgroundColor: "#0C111F",
           color: "white",
-          // padding: "40px 0",
           height: "600px",
           width: "100%",
           display: "inline-block",
         }}
       >
         <Container>
-          <Hero />
+          <HeroSection />
         </Container>
       </Box>
 
+      {/* Search Bar Section */}
       <Box
         sx={{
           backgroundColor: "#FFF",
@@ -37,18 +43,12 @@ const ExploreScreen = () => {
         </Container>
       </Box>
 
+      {/* Hotel Rooms Section */}
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
           <HotelRooms />
         </Container>
       </Box>
-
-      <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
-        <Container>
-          <Footer />
-        </Container>
-      </Box>
-      
     </>
   );
 };

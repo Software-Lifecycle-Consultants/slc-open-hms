@@ -10,24 +10,21 @@ import {
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useRouter } from "next/navigation";
+import { drawerPages } from "@/data/homePage";
 
-const pages = ["Home", "Explore", "Book Now", "Contact", "Register", "Login"];
-
+/* DrawerComponent displays a drawer with navigation links. */
 const DrawerComponent = () => {
   const router = useRouter();
   const [openDrawer, setOpenDrawer] = useState(false);
 
-const navigationToExploreScreen = (id: string) => {
-  if (id === "Explore") {
-    router.push("/ExploreScreen");
-  } else if (id === "Book Now") {
-    router.push("/CheckoutScreen");
-  } else {
-    router.push("/");
-  }
-};
+  /* Function to navigate to a specific route. */
+  const navigationToScreens = (route: string) => {
+    router.push(route);
+  };
+
   return (
     <>
+      {/* Drawer component for navigation */}
       <Drawer
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
@@ -39,20 +36,29 @@ const navigationToExploreScreen = (id: string) => {
         }}
       >
         <List>
-          {pages.map((page, index) => (
-            <ListItemButton onClick={() => setOpenDrawer(false)} key={index}>
+          {/* Mapping through pages to create navigation links */}
+          {drawerPages.map((page, index) => (
+            <ListItemButton
+              onClick={() => setOpenDrawer(false)}
+              key={index}
+              sx={{
+                "&:hover": {
+                  backgroundColor: "#c7833e", // Define your desired hover color
+                },
+              }}
+            >
               <ListItemIcon>
                 <ListItemText
                   sx={{ color: "#FFF" }}
-                  onClick={(e) => navigationToExploreScreen(page)}
-                  >
-                  {page}
-                </ListItemText>
+                  primary={page.label} // Use primary prop to set the text content
+                  onClick={() => navigationToScreens(page.route)}
+                ></ListItemText>
               </ListItemIcon>
             </ListItemButton>
           ))}
         </List>
       </Drawer>
+      {/* IconButton for opening the drawer */}
       <IconButton
         sx={{ color: "#FFF", marginLeft: "auto" }}
         onClick={() => setOpenDrawer(!openDrawer)}

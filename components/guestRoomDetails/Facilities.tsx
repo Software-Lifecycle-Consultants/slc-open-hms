@@ -1,21 +1,8 @@
-import { Box, Checkbox, Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
-
-const data = [
-  { id: 1, name: "Insurance" },
-  { id: 2, name: "Cleaning Services" },
-  { id: 3, name: "Swimming Pool" },
-  { id: 4, name: "Wifi" },
-  { id: 5, name: "Parking Area" },
-  { id: 6, name: "Restaurant" },
-  { id: 7, name: "24 Hours Front Desk" },
-  { id: 8, name: "Spa" },
-  { id: 9, name: "Elevator" },
-  { id: 10, name: "AC" },
-  { id: 11, name: "Wheelchair Access" },
-  { id: 12, name: "Meeting Facilities" },
-];
+import { facilitiesSection } from '@/data/roomDetailsPage';
+import { facilitiesData } from '@/data/roomDetailsPage';
 
 const Facilities = () => {
   return (
@@ -32,7 +19,7 @@ const Facilities = () => {
           letterSpacing: "0.195px",
         }}
       >
-        Hotels Facilities
+        {facilitiesSection.facilitiesSectionTitle}
       </Typography>
       <Typography
         variant="body1"
@@ -48,11 +35,11 @@ const Facilities = () => {
           marginBottom: "35px",
         }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elit
-        sed pretium, egestas sed sit.
+        {facilitiesSection.facilitiesSectionDescription}
       </Typography>
+
       <Grid container spacing={2}>
-        {data.map((item) => (
+        {facilitiesData.map((item) => (
           <Grid key={item.id} item xs={6} md={4}>
             <Box sx={{ display: "flex" }}>
               <CheckBoxIcon sx={{ fontSize: 34, color: "#9A9AB0" }} />
@@ -67,10 +54,10 @@ const Facilities = () => {
                   letterSpacing: "0.08px",
                   fontWeight: "400",
                   marginTop: "7px",
-                  marginLeft: "10px"
+                  marginLeft: "10px",
                 }}
               >
-                {item.name}
+                {item.facilityName}
               </Typography>
             </Box>
           </Grid>

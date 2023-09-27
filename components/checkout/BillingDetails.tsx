@@ -6,10 +6,16 @@ import {
   CardContent,
 } from "@mui/material";
 import React from 'react'
+import { billingDetailsFormTitle } from "@/data/checkoutPage";
+
+/**
+ * BillingDetails component is the form used in checkout page to input users billing details.
+ */
 
 const BillingDetails = () => {
   return (
     <>
+      {/* Card for the billing details form */}
       <Card
         elevation={0}
         sx={{
@@ -23,7 +29,9 @@ const BillingDetails = () => {
       >
         <CardContent>
           <form>
+            {/* Grid container for form layout */}
             <Grid container spacing={2} sx={{ padding: "15px 32px 15px 32px" }}>
+              {/* Title for the billing details form */}
               <Grid item xs={12}>
                 <Typography
                   variant="h1"
@@ -38,9 +46,10 @@ const BillingDetails = () => {
                     marginTop: "10px",
                   }}
                 >
-                  Booking Details
+                  {billingDetailsFormTitle}
                 </Typography>
               </Grid>
+              {/* First Name */}
               <Grid item xs={12} md={6}>
                 <Typography
                   variant="h1"
@@ -64,6 +73,7 @@ const BillingDetails = () => {
                   sx={{ width: "100%", height: "48px", marginTop: "10px" }}
                 />
               </Grid>
+              {/* Last Name */}
               <Grid item xs={12} md={6}>
                 <Typography
                   variant="h1"
@@ -87,6 +97,7 @@ const BillingDetails = () => {
                   sx={{ width: "100%", height: "48px", marginTop: "10px" }}
                 />
               </Grid>
+              {/* Email Address */}
               <Grid item xs={12}>
                 <Typography
                   variant="h1"
@@ -110,6 +121,7 @@ const BillingDetails = () => {
                   sx={{ width: "100%", height: "48px", marginTop: "10px" }}
                 />
               </Grid>
+              {/* Phone Number */}
               <Grid item xs={12}>
                 <Typography
                   variant="h1"
@@ -133,6 +145,7 @@ const BillingDetails = () => {
                   sx={{ width: "100%", height: "48px", marginTop: "10px" }}
                 />
               </Grid>
+              {/* Passport Number */}
               <Grid item xs={12}>
                 <Typography
                   variant="h1"
@@ -156,6 +169,7 @@ const BillingDetails = () => {
                   sx={{ width: "100%", height: "48px", marginTop: "10px" }}
                 />
               </Grid>
+              {/* Address */}
               <Grid item xs={12}>
                 <Typography
                   variant="h1"

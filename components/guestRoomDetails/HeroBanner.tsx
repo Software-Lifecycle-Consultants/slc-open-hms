@@ -1,16 +1,35 @@
 "use client";
 import {
   Box,
-  Card,
-  CardContent,
-  Checkbox,
   Grid,
   Typography,
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import img from "../../public/images/Room3.jpg";
+import img from "../../public/images/hotelRooms/Room3.jpg";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import { roomDetailsHeroSection } from "@/data/roomDetailsPage";
+
+const titleStyle = {
+  color: "var(--light-text-color-title, #11142D)",
+  fontFamily: "Lora",
+  fontSize: "62px",
+  fontStyle: "normal",
+  fontWeight: 700,
+  lineHeight: "120%",
+  letterSpacing: "0.186px",
+};
+
+const descriptionStyle = {
+  color: "var(--light-text-color-body-1, #515151)",
+  fontFamily: "Mulish, sans-serif",
+  fontSize: "16px",
+  lineHeight: "120%",
+  fontStyle: "normal",
+  letterSpacing: "0.08px",
+  fontWeight: "600",
+  marginTop: "22px",
+};
 
 const checkBoxTypographyStyle = {
   color: "var(--light-text-color-body-2, #9A9AB0)",
@@ -28,35 +47,11 @@ const HeroBanner = () => {
     <>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Typography
-            variant="h1"
-            style={{
-              color: "var(--light-text-color-title, #11142D)",
-              fontFamily: "Lora",
-              fontSize: "62px",
-              fontStyle: "normal",
-              fontWeight: 700,
-              lineHeight: "120%",
-              letterSpacing: "0.186px",
-            }}
-          >
-            President Luxury Double Room View NY City
+          <Typography variant="h1" style={titleStyle}>
+            {roomDetailsHeroSection.roomDetailsTitle}
           </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: "var(--light-text-color-body-1, #515151)",
-              fontFamily: "Mulish, sans-serif",
-              fontSize: "16px",
-              lineHeight: "120%",
-              fontStyle: "normal",
-              letterSpacing: "0.08px",
-              fontWeight: "600",
-              marginTop: "22px",
-            }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
-            elit sed pretium, egestas sed sit orem ipsum dolor sit amet,
+          <Typography variant="body1" sx={descriptionStyle}>
+            {roomDetailsHeroSection.roomDetailsDescription}
           </Typography>
           <Box sx={{ display: "flex" }}>
             <CheckBoxIcon
@@ -67,7 +62,7 @@ const HeroBanner = () => {
               }}
             />
             <Typography variant="body1" style={checkBoxTypographyStyle}>
-              2 Guest
+              {roomDetailsHeroSection.checkIcon1}
             </Typography>
             <CheckBoxIcon
               sx={{
@@ -78,7 +73,7 @@ const HeroBanner = () => {
               }}
             />
             <Typography variant="body1" style={checkBoxTypographyStyle}>
-              2 Bed
+              {roomDetailsHeroSection.checkIcon2}
             </Typography>
             <CheckBoxIcon
               sx={{
@@ -89,7 +84,7 @@ const HeroBanner = () => {
               }}
             />
             <Typography variant="body1" style={checkBoxTypographyStyle}>
-              1 Bathroom
+              {roomDetailsHeroSection.checkIcon3}
             </Typography>
           </Box>
           <Typography
@@ -105,7 +100,7 @@ const HeroBanner = () => {
               marginTop: "40px",
             }}
           >
-            Start From
+            {roomDetailsHeroSection.customText1}
           </Typography>
           <Box sx={{ display: "flex" }}>
             <Typography
@@ -121,7 +116,7 @@ const HeroBanner = () => {
                 marginTop: "4px",
               }}
             >
-              $59
+              {roomDetailsHeroSection.price}
             </Typography>
             <Typography
               variant="body2"
@@ -137,7 +132,7 @@ const HeroBanner = () => {
                 marginLeft: "4px",
               }}
             >
-              /Night
+              {roomDetailsHeroSection.customText2}
             </Typography>
           </Box>
         </Grid>

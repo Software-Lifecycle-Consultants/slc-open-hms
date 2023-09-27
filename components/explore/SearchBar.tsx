@@ -16,16 +16,6 @@ const SearchBar = () => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       setSearchTerm(event.target.value);
   };
-  
-  // const InputLabelStyle = {
-  //   color: "#11142D",
-  //   fontFamily: "Mulish, sans-serif",
-  //   fontSize: "16px",
-  //   lineHeight: "120%",
-  //   fontStyle: "normal",
-  //   letterSpacing: "0.08px",
-  //   fontWeight: "700",
-  // };
 
   return (
     <>
@@ -33,7 +23,6 @@ const SearchBar = () => {
         sx={{
           borderRadius: "8px",
           padding: "16px 0px 16px 0px",
-          // backgroundColor: "#cacaca",
           backgroundColor: "#FFF",
           marginTop: { xs: "-120px", sm: "-85px", md: "-50px" },
           position: "relative",
@@ -107,9 +96,6 @@ const SearchBar = () => {
                       onChange={handleSelect}
                       label="Guest"
                     >
-                      {/* <MenuItem value="">
-                        <em>None</em>
-                      </MenuItem> */}
                       <MenuItem value={1}>2 Adults</MenuItem>
                       <MenuItem value={2}>1 Adult</MenuItem>
                       <MenuItem value={3}>2 Adults & 1 child</MenuItem>
