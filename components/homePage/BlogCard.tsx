@@ -76,7 +76,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
             variant="body2"
             style={{
               color: "rgba(12, 17, 31, 0.60)",
-              // fontFamily: "Inter",
               fontSize: "18px",
               lineHeight: "180%",
               fontStyle: "normal",
@@ -99,7 +98,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
               variant="body2"
               style={{
                 color: "rgba(12, 17, 31, 0.60)",
-                // fontFamily: "Inter",
                 fontSize: "18px",
                 lineHeight: "155%",
                 fontStyle: "normal",
@@ -127,7 +125,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
               <Typography
                 style={{
                   color: "rgba(12, 17, 31, 0.60)",
-                  // fontFamily: "Inter",
                   fontSize: "18px",
                   lineHeight: "155%",
                   fontStyle: "normal",
@@ -151,7 +148,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
                 backgroundColor: "#7C46FE",
                 borderRadius: "45px",
                 color: "#FFF",
-                // fontFamily: "Inter",
                 fontSize: "14px",
                 lineHeight: "180%",
                 fontStyle: "normal",

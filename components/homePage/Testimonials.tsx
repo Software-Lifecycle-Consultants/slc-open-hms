@@ -51,7 +51,6 @@ const Testimonials = () => {
   /* Typography style for heading 1 */
   const typographyh1Style = {
     color: "#0C111F",
-    // fontFamily: "Inter",
     fontSize: "48px",
     lineHeight: "130%",
     fontStyle: "normal",
@@ -63,7 +62,6 @@ const Testimonials = () => {
 
   const typographyCardStyle = {
     color: "#0C111F",
-    // fontFamily: "Inter",
     fontSize: "18px",
     lineHeight: "180%",
     fontStyle: "normal",
@@ -74,7 +72,6 @@ const Testimonials = () => {
   /* Typography style for paragraph */
   const typographyParagraphStyle = {
     color: "#0C111F",
-    // fontFamily: "Inter",
     fontSize: "20px",
     lineHeight: "180%",
     fontStyle: "normal",

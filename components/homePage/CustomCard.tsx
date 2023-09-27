@@ -17,7 +17,6 @@ import { montserrat } from "../../app/fonts";
 /* Typography styles for heading 1 */
 const typographyh1Style = {
   color: "#0C111F",
-  // fontFamily: "Inter",
   fontSize: "48px",
   lineHeight: "130%",
   fontStyle: "normal",
@@ -28,7 +27,6 @@ const typographyh1Style = {
 /* Typography styles for body 1 */
 const typographyBody1Style = {
   color: "#0C111F",
-  // fontFamily: "Inter",
   fontSize: "20px",
   lineHeight: "36px",
   letterSpacing: "-0.96px",
@@ -50,7 +48,6 @@ const typographyh5Style = {
 /* Typography styles for body 2 */
 const typographyBody2Style = {
   color: "#0C111F",
-  // fontFamily: "Inter",
   fontSize: "20px",
   fontStyle: "normal",
   lineHeight: "36px",
