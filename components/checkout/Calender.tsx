@@ -1,17 +1,17 @@
 "use client";
 import React, { useState } from "react";
 import { Box, Typography, Card, CardContent } from "@mui/material";
-import { DateRange } from "react-date-range";
+import { DateRange,Range} from "react-date-range";
 import "react-date-range/dist/styles.css"; // Import the styles
 import "react-date-range/dist/theme/default.css";
 import { calenderTitle } from "@/data/checkoutPage";
 
 const Calender = () => {
   /* State for managing the selected date range */
-  const [state, setState] = useState([
+  const [state, setState] = useState<Range[]>([
     {
       startDate: new Date(),
-      endDate: null,
+      endDate: new Date(),
       key: "selection",
     },
   ]);
