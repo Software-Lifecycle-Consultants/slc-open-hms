@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { roomCardCheckIconContent, roomCardTexts } from "@/data/roomDetailsPage";
+import { lora, mulish } from "../../app/fonts";
 
 interface RoomCardProps {
   image: string;
@@ -19,8 +20,7 @@ interface RoomCardProps {
 }
 
 const checkBoxTypographyStyle = {
-  color: "var(--light-text-color-body-2, #9A9AB0)",
-  fontFamily: "Mulish, sans-serif",
+  color: "#9A9AB0",
   fontSize: "16px",
   lineHeight: "125%",
   fontStyle: "normal",
@@ -50,7 +50,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
   const router = useRouter();
 
   const navigationToRoomDetailsScreen = () => {
-    router.push("/RoomDetailsScreen");
+    router.push("/room-details");
   };
 
   return (
@@ -88,9 +88,9 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
           <Box sx={{ paddingTop: "10px", marginBottom: "10%" }}>
             <Typography
               variant="h5"
+              className={lora.className}
               style={{
-                color: "var(--light-text-color-title, #11142D)",
-                fontFamily: "Lora",
+                color: "#11142D",
                 fontSize: "24px",
                 lineHeight: "120%",
                 fontStyle: "normal",
@@ -109,7 +109,11 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <CheckBoxIcon sx={{ fontSize: 32, color: "#9A9AB0" }} />
-                <Typography variant="body1" style={checkBoxTypographyStyle}>
+                <Typography
+                  variant="body1"
+                  className={mulish.className}
+                  style={checkBoxTypographyStyle}
+                >
                   {roomCardCheckIconContent.checkIcon1Caption}
                 </Typography>
                 <CheckBoxIcon
@@ -119,7 +123,11 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                     marginLeft: "22px",
                   }}
                 />
-                <Typography variant="body1" style={checkBoxTypographyStyle}>
+                <Typography
+                  variant="body1"
+                  className={mulish.className}
+                  style={checkBoxTypographyStyle}
+                >
                   {roomCardCheckIconContent.checkIcon2Caption}
                 </Typography>
                 <CheckBoxIcon
@@ -129,7 +137,11 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                     marginLeft: "22px",
                   }}
                 />
-                <Typography variant="body1" style={checkBoxTypographyStyle}>
+                <Typography
+                  variant="body1"
+                  className={mulish.className}
+                  style={checkBoxTypographyStyle}
+                >
                   {roomCardCheckIconContent.checkIcon3Caption}
                 </Typography>
               </Box>
@@ -145,9 +157,9 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
               <Box sx={{ marginLeft: "120px" }}>
                 <Typography
                   variant="body2"
+                  className={mulish.className}
                   style={{
-                    color: "var(--light-text-color-body-1, #515151)",
-                    fontFamily: "Mulish, sans-serif",
+                    color: "#515151",
                     fontSize: "14px",
                     lineHeight: "130%",
                     fontStyle: "normal",
@@ -161,9 +173,9 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                 <Box sx={{ display: "flex" }}>
                   <Typography
                     variant="body2"
+                    className={lora.className}
                     style={{
-                      color: "var(--light-primary-color-70, #27343F)",
-                      fontFamily: "Lora",
+                      color: "#27343F",
                       fontSize: "39px",
                       lineHeight: "120%",
                       fontStyle: "normal",
@@ -176,9 +188,9 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                   </Typography>
                   <Typography
                     variant="body2"
+                    className={mulish.className}
                     style={{
-                      color: "var(--light-text-color-body-2, #9A9AB0)",
-                      fontFamily: "Mulish, sans-serif",
+                      color: "#9A9AB0",
                       fontSize: "12px",
                       lineHeight: "120%",
                       fontStyle: "normal",

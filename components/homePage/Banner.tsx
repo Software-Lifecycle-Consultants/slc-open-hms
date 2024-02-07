@@ -6,11 +6,11 @@ import image from "../../public/images/homePage/heroSectionImage/mainImage.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { bannerDetails } from "../../data/homePage";
+import { lora } from "../../app/fonts";
 
 /* Typography style for heading 5 */
 const typographyh5Style = {
   color: "#E97458",
-  fontFamily: "Inter",
   fontSize: { xs: "18px", sm: "22px", md: "18px" },
   fontStyle: "normal",
   fontWeight: "700",
@@ -22,7 +22,7 @@ const typographyh5Style = {
 /* Typography style for heading 1 */
 const typographyh1Style = {
   color: "#FFFFFF",
-  fontFamily: "Volkhov",
+  // fontFamily: "Volkhov",
   fontSize: { xs: "45px", sm: "70px", md: "80px" }, // Adjust font size for different screen sizes
   lineHeight: "125%",
   fontStyle: "normal",
@@ -34,7 +34,6 @@ const typographyh1Style = {
 /* Typography style for body text */
 const typographyBody1Style = {
   color: "rgba(255, 255, 255, 0.70)",
-  fontFamily: "Inter",
   fontSize: { xs: "16px", sm: "22px", md: "24px" }, // Adjust font size for different screen sizes
   lineHeight: "35px",
   fontStyle: "normal",
@@ -68,7 +67,6 @@ const buttonContainedStyle = {
 /* Button style for text variant */
 const buttonTextStyle = {
   color: "#FFF",
-  fontFamily: "Inter",
   fontSize: "14px",
   fontWeight: "400",
   lineHeight: "180%",
@@ -101,7 +99,11 @@ const Banner = () => {
             {bannerDetails.bannerTitle}
           </Typography>
           {/* Heading 1 */}
-          <Typography variant="h1" sx={typographyh1Style}>
+          <Typography
+            variant="h1"
+            className={lora.className}
+            sx={typographyh1Style}
+          >
             {bannerDetails.bannerSubTitle}
           </Typography>
           {/* Body text */}

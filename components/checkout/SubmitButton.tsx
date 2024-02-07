@@ -1,6 +1,7 @@
 import { Button, Checkbox, Typography, Box } from '@mui/material';
 import React from 'react'
 import { submitContent } from '@/data/checkoutPage';
+import { mulish } from "../../app/fonts";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -21,9 +22,9 @@ const SubmitButton = () => {
         />
         <Typography
           variant="body1"
+          className={mulish.className}
           style={{
-            color: "color: var(--light-text-color-body-1, #515151)",
-            fontFamily: "Mulish, sans-serif",
+            color: "#515151",
             fontSize: "16px",
             lineHeight: "120%",
             fontStyle: "normal",
@@ -37,6 +38,7 @@ const SubmitButton = () => {
       </Box>
       <Button
         variant="contained"
+        className={mulish.className}
         sx={{
           borderRadius: "8px",
           display: "flex",
@@ -48,7 +50,6 @@ const SubmitButton = () => {
           width: "100%",
           height: "56px",
           marginTop: "20px",
-          fontFamily: "Mulish, sans-serif",
           fontSize: "16px",
           fontStyle: "normal",
           fontWeight: "600",
