@@ -13,12 +13,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useRouter } from "next/navigation";
 import { additionalInfoSection } from "@/data/roomDetailsPage";
 import { accordionData } from "@/data/roomDetailsPage";
-
+import { lora, mulish } from "../../app/fonts";
 
 const accordionTypographyStyle = [
   {
-    color: "var(--light-text-color-body-2, #9A9AB0)",
-    fontFamily: "Mulish, sans-serif",
+    color: "#9A9AB0",
     fontSize: "16px",
     lineHeight: "125%",
     fontStyle: "normal",
@@ -29,8 +28,7 @@ const accordionTypographyStyle = [
 
 const titleStyle = [
   {
-    color: "var(--light-text-color-title, #11142D)",
-    fontFamily: "Lora",
+    color: "#11142D",
     fontSize: "39px",
     fontStyle: "normal",
     fontWeight: 700,
@@ -41,8 +39,7 @@ const titleStyle = [
 
 const descriptinStyle = [
   {
-    color: "var(--light-text-color-body-1, #515151)",
-    fontFamily: "Mulish, sans-serif",
+    color: "#515151",
     fontSize: "16px",
     lineHeight: "125%",
     fontStyle: "normal",
@@ -54,8 +51,7 @@ const descriptinStyle = [
 
 const checkInStyle = [
   {
-    color: "var(--light-text-color-title, #11142D)",
-    fontFamily: "Lora",
+    color: "#11142D",
     fontSize: "16px",
     fontStyle: "normal",
     fontWeight: 700,
@@ -67,8 +63,7 @@ const checkInStyle = [
 
 const checkoutStyle = [
   {
-    color: "var(--light-text-color-title, #11142D)",
-    fontFamily: "Lora",
+    color: "#11142D",
     fontSize: "16px",
     fontStyle: "normal",
     fontWeight: 700,
@@ -90,7 +85,6 @@ const buttonStyle = [
     width: "45%",
     height: "56px",
     marginTop: "40px",
-    fontFamily: "Mulish, sans-serif",
     fontSize: "16px",
     fontStyle: "normal",
     fontWeight: "600",
@@ -114,20 +108,29 @@ const AdditionalInfo = () => {
     <>
       <Grid container spacing={1}>
         <Grid item xs={12} md={6}>
-          <Typography variant="h3" sx={titleStyle}>
+          <Typography variant="h3" className={lora.className} sx={titleStyle}>
             {additionalInfoSection.additionalInfoSectionTitle}
           </Typography>
-          <Typography variant="body1" sx={descriptinStyle}>
+          <Typography
+            variant="body1"
+            className={mulish.className}
+            sx={descriptinStyle}
+          >
             {additionalInfoSection.additionalInfoSectionDescription}
           </Typography>
-          <Typography variant="h6" sx={checkInStyle}>
+          <Typography variant="h6" className={lora.className} sx={checkInStyle}>
             Check in {additionalInfoSection.checkinTime}
           </Typography>
-          <Typography variant="h6" sx={checkoutStyle}>
+          <Typography
+            variant="h6"
+            className={lora.className}
+            sx={checkoutStyle}
+          >
             Check Out {additionalInfoSection.checkoutTime}
           </Typography>
           <Button
             variant="contained"
+            className={mulish.className}
             onClick={navigationToCheckoutScreen}
             sx={buttonStyle}
           >
@@ -159,7 +162,11 @@ const AdditionalInfo = () => {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography variant="body1" sx={accordionTypographyStyle}>
+                  <Typography
+                    variant="body1"
+                    className={mulish.className}
+                    sx={accordionTypographyStyle}
+                  >
                     {item.accordion}
                   </Typography>
                 </AccordionSummary>
