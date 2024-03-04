@@ -9,10 +9,10 @@ import Image from "next/image";
 import img from "../../public/images/hotelRooms/Room3.jpg";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { roomDetailsHeroSection } from "@/data/roomDetailsPage";
+import { lora, mulish } from "../../app/fonts";
 
 const titleStyle = {
-  color: "var(--light-text-color-title, #11142D)",
-  fontFamily: "Lora",
+  color: "#11142D",
   fontSize: "62px",
   fontStyle: "normal",
   fontWeight: 700,
@@ -21,8 +21,7 @@ const titleStyle = {
 };
 
 const descriptionStyle = {
-  color: "var(--light-text-color-body-1, #515151)",
-  fontFamily: "Mulish, sans-serif",
+  color: "#515151",
   fontSize: "16px",
   lineHeight: "120%",
   fontStyle: "normal",
@@ -32,14 +31,13 @@ const descriptionStyle = {
 };
 
 const checkBoxTypographyStyle = {
-  color: "var(--light-text-color-body-2, #9A9AB0)",
-  fontFamily: "Mulish, sans-serif",
+  color: "#9A9AB0",
   fontSize: "16px",
   lineHeight: "125%",
   fontStyle: "normal",
   letterSpacing: "0.08px",
   fontWeight: "400",
-  marginTop: "42px",
+  marginTop: "39px",
 };
 
 const HeroBanner = () => {
@@ -47,57 +45,77 @@ const HeroBanner = () => {
     <>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Typography variant="h1" style={titleStyle}>
+          <Typography
+            variant="h1"
+            className={lora.className}
+            style={titleStyle}
+          >
             {roomDetailsHeroSection.roomDetailsTitle}
           </Typography>
-          <Typography variant="body1" sx={descriptionStyle}>
+          <Typography
+            variant="body1"
+            className={mulish.className}
+            sx={descriptionStyle}
+          >
             {roomDetailsHeroSection.roomDetailsDescription}
           </Typography>
           <Box sx={{ display: "flex" }}>
             <CheckBoxIcon
               sx={{
-                fontSize: 34,
+                fontSize: 30,
                 color: "#9A9AB0",
                 marginTop: "35px",
               }}
             />
-            <Typography variant="body1" style={checkBoxTypographyStyle}>
+            <Typography
+              variant="body1"
+              className={mulish.className}
+              style={checkBoxTypographyStyle}
+            >
               {roomDetailsHeroSection.checkIcon1}
             </Typography>
             <CheckBoxIcon
               sx={{
-                fontSize: 34,
+                fontSize: 30,
                 color: "#9A9AB0",
                 marginTop: "35px",
                 marginLeft: "20px",
               }}
             />
-            <Typography variant="body1" style={checkBoxTypographyStyle}>
+            <Typography
+              variant="body1"
+              className={mulish.className}
+              style={checkBoxTypographyStyle}
+            >
               {roomDetailsHeroSection.checkIcon2}
             </Typography>
             <CheckBoxIcon
               sx={{
-                fontSize: 34,
+                fontSize: 30,
                 color: "#9A9AB0",
                 marginTop: "35px",
                 marginLeft: "20px",
               }}
             />
-            <Typography variant="body1" style={checkBoxTypographyStyle}>
+            <Typography
+              variant="body1"
+              className={mulish.className}
+              style={checkBoxTypographyStyle}
+            >
               {roomDetailsHeroSection.checkIcon3}
             </Typography>
           </Box>
           <Typography
             variant="body2"
+            className={mulish.className}
             style={{
-              color: "var(--light-text-color-body-1, #515151)",
-              fontFamily: "Mulish, sans-serif",
+              color: "#515151",
               fontSize: "14px",
               lineHeight: "130%",
               fontStyle: "normal",
               letterSpacing: "0.112px",
               fontWeight: "600",
-              marginTop: "40px",
+              marginTop: "36px",
             }}
           >
             {roomDetailsHeroSection.customText1}
@@ -105,9 +123,9 @@ const HeroBanner = () => {
           <Box sx={{ display: "flex" }}>
             <Typography
               variant="body2"
+              className={lora.className}
               style={{
-                color: "var(--light-primary-color-70, #27343F)",
-                fontFamily: "Lora",
+                color: "#27343F",
                 fontSize: "39px",
                 lineHeight: "120%",
                 fontStyle: "normal",
@@ -120,9 +138,9 @@ const HeroBanner = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={mulish.className}
               style={{
-                color: "var(--light-text-color-body-2, #9A9AB0)",
-                fontFamily: "Mulish, sans-serif",
+                color: "#9A9AB0",
                 fontSize: "12px",
                 lineHeight: "120%",
                 fontStyle: "normal",

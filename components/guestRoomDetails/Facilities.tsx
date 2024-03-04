@@ -3,15 +3,16 @@ import React from 'react'
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { facilitiesSection } from '@/data/roomDetailsPage';
 import { facilitiesData } from '@/data/roomDetailsPage';
+import { lora, mulish } from "../../app/fonts";
 
 const Facilities = () => {
   return (
     <>
       <Typography
         variant="h3"
+        className={lora.className}
         style={{
-          color: "var(--light-text-color-title, #11142D)",
-          fontFamily: "Lora",
+          color: "#11142D",
           fontSize: "39px",
           fontStyle: "normal",
           fontWeight: 700,
@@ -23,9 +24,9 @@ const Facilities = () => {
       </Typography>
       <Typography
         variant="body1"
+        className={mulish.className}
         sx={{
-          color: "var(--light-text-color-body-1, #515151)",
-          fontFamily: "Mulish, sans-serif",
+          color: "#515151",
           fontSize: "16px",
           lineHeight: "125%",
           fontStyle: "normal",
@@ -42,18 +43,18 @@ const Facilities = () => {
         {facilitiesData.map((item) => (
           <Grid key={item.id} item xs={6} md={4}>
             <Box sx={{ display: "flex" }}>
-              <CheckBoxIcon sx={{ fontSize: 34, color: "#9A9AB0" }} />
+              <CheckBoxIcon sx={{ fontSize: 30, color: "#9A9AB0" }} />
               <Typography
                 variant="body1"
+                className={mulish.className}
                 style={{
-                  color: "var(--light-text-color-body-2, #9A9AB0)",
-                  fontFamily: "Mulish, sans-serif",
+                  color: "#9A9AB0",
                   fontSize: "16px",
                   lineHeight: "125%",
                   fontStyle: "normal",
                   letterSpacing: "0.08px",
                   fontWeight: "400",
-                  marginTop: "7px",
+                  marginTop: "5px",
                   marginLeft: "10px",
                 }}
               >
