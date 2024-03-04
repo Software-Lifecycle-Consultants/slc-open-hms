@@ -50,7 +50,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
   const router = useRouter();
 
   const navigationToRoomDetailsScreen = () => {
-    router.push("/RoomDetailsScreen");
+    router.push("/room-details");
   };
 
   return (
