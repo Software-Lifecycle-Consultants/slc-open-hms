@@ -105,19 +105,19 @@ export const roomCardTexts = {
 export const roomsData = [
   {
     id: 1,
-    roomImage: "/images/hotelRooms/Room2.jpg",
+    roomImage: "/images/hotelRooms/Room2.webp",
     roomName: "Deluxe Double with New York City View 1",
     price: 59,
   },
   {
     id: 2,
-    roomImage: "/images/hotelRooms/Room2.jpg",
+    roomImage: "/images/hotelRooms/Room2.webp",
     roomName: "Deluxe Double with New York City View 2",
     price: 59,
   },
   {
     id: 3,
-    roomImage: "/images/hotelRooms/Room2.jpg",
+    roomImage: "/images/hotelRooms/Room2.webp",
     roomName: "Deluxe Double with New York City View 3",
     price: 59,
   },
