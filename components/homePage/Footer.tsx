@@ -24,7 +24,7 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
                 fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "30px",
@@ -54,7 +54,7 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
                 fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
@@ -68,7 +68,7 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
@@ -82,7 +82,7 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
@@ -96,7 +96,7 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
@@ -125,7 +125,7 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
                 fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
@@ -139,7 +139,7 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
@@ -153,7 +153,7 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
@@ -167,7 +167,7 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
@@ -196,7 +196,7 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
                 fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
@@ -221,7 +221,7 @@ const Footer = () => {
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
+                  color: '#FFFFFF',
                   fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
@@ -248,7 +248,7 @@ const Footer = () => {
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
+                  color: '#FFFFFF',
                   fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
@@ -275,7 +275,7 @@ const Footer = () => {
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
+                  color: '#FFFFFF',
                   fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
@@ -306,7 +306,7 @@ const Footer = () => {
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
+                  color: '#FFFFFF',
                   fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
@@ -329,7 +329,7 @@ const Footer = () => {
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
+                  color: '#FFFFFF',
                   fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
@@ -345,7 +345,7 @@ const Footer = () => {
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
+                  color: '#FFFFFF',
                   fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
