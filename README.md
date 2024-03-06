@@ -1,6 +1,6 @@
 # SLC Open HMS (Next.js)
 
-![Hotel Management System](https://softwareconsultant.info/wp-content/themes/slcc/assets/images/logo.png)
+![Hotel Management System](/public/images/logo.png)
 
 The SLC-Open-HMS is a web application built with Next.js that aims to streamline and optimize hotel operations, including reservations, room management, guest services, and more. This application provides an intuitive and efficient solution for hotel owners and staff to manage various aspects of their hotel business.
 
