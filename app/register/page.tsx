@@ -1,28 +1,70 @@
 "use client";
 import React, { useState } from "react";
 import { Button, TextField, Typography, Container, Grid } from "@mui/material";
+import { postData, postRegsiterData } from "@/services/api";
+
+interface RegisterData {
+  username: string;
+  email: string;
+  password: string;
+}
 
 const Register: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<RegisterData>({
     username: "",
     email: "",
     password: "",
   });
+  const [registrationMessage, setRegistrationMessage] = useState("");
+  const [errorMessages, setErrorMessages] = useState<string[]>([]);
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    field: string
+    name: string
   ) => {
     setFormData({
       ...formData,
-      [field]: event.target.value,
+      [name]: event.target.value,
     });
   };
 
+  const PostApiData = async () => {
+    try {
+      const result = await postRegsiterData(
+        "https://slc-open-hms-api.azurewebsites.net/register",formData)
+        .then((response) => {
+        console.log(response);
+        if (!response.ok) {
+          console.log("Post Request Unsucceeful", response);
+          setRegistrationMessage(response.title);
+          setErrorMessages(Object.values(response.errors));
+        } else  {        
+           console.log("Post Request Successfull", response);
+          setRegistrationMessage('Registration successful!');
+          setErrorMessages([]);
+          clearFormData();
+        }
+      });
+    } catch (error) {
+      console.error("Error making POST request:", error);
+    }
+  };
+
+  const clearFormData = () => {
+    setFormData({
+      username: "",
+      email: "",
+      password: "",
+    });
+
+    setRegistrationMessage("");
+    setErrorMessages([]);
+  };
+
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    // Handle form submission here, e.g., send data to the server
-    console.log(formData);
+    event.preventDefault();    
+    PostApiData();
+    console.log("Register Data:", formData);
   };
 
   return (
@@ -39,6 +81,7 @@ const Register: React.FC = () => {
               fullWidth
               label="Username"
               variant="outlined"
+              name="username"
               value={formData.username}
               onChange={(e) => handleChange(e, "username")}
               required
@@ -50,6 +93,7 @@ const Register: React.FC = () => {
               label="Email"
               variant="outlined"
               type="email"
+              name="email"
               value={formData.email}
               onChange={(e) => handleChange(e, "email")}
               required
@@ -61,6 +105,7 @@ const Register: React.FC = () => {
               label="Password"
               variant="outlined"
               type="password"
+              name="password"
               value={formData.password}
               onChange={(e) => handleChange(e, "password")}
               required
@@ -70,9 +115,18 @@ const Register: React.FC = () => {
             <Button type="submit" variant="contained" color="primary" fullWidth>
               Register
             </Button>
+            <p>{registrationMessage}</p>
+          
           </Grid>
         </Grid>
       </form>
+      {errorMessages.length > 0 && (
+              <ul>
+                {errorMessages.map((errorMessage, index) => (
+                  <li key={index}>{errorMessage}</li>
+                ))}
+              </ul>
+            )}
     </Container>
   );
 };

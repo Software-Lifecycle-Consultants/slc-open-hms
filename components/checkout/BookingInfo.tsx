@@ -10,6 +10,7 @@ import Image from "next/image";
 import img from "../../public/images/hotelRooms/Room2.jpg";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { bookingInfoCard } from "@/data/checkoutPage";
+import { lora, mulish } from "../../app/fonts";
 
 /**
  * BookingInfo component is the card used in checkout page to display details of each room.
@@ -17,8 +18,7 @@ import { bookingInfoCard } from "@/data/checkoutPage";
 
 /* Styles for checkbox typography */
 const checkBoxTypographyStyle = {
-  color: "var(--light-text-color-body-2, #9A9AB0)",
-  fontFamily: "Mulish, sans-serif",
+  color: "#9A9AB0",
   fontSize: "16px",
   lineHeight: "125%",
   fontStyle: "normal",
@@ -36,7 +36,7 @@ const BookingInfo = () => {
         sx={{
           borderRadius: "8px",
           border: "1px solid",
-          borderColor: "var(--light-separators-colors-secondary, #E1E1E1)",
+          borderColor: "#E1E1E1",
           maxWidth: "400px",
           height: "auto",
         }}
@@ -66,9 +66,9 @@ const BookingInfo = () => {
             {/* Room title */}
             <Typography
               variant="h5"
+              className={lora.className}
               style={{
-                color: "var(--light-text-color-title, #11142D)",
-                fontFamily: "Lora",
+                color: "#11142D",
                 fontSize: "24px",
                 lineHeight: "120%",
                 fontStyle: "normal",
@@ -81,9 +81,9 @@ const BookingInfo = () => {
             {/* Booking date */}
             <Typography
               variant="body1"
+              className={mulish.className}
               style={{
-                color: "var(--light-text-color-body-1, #515151)",
-                fontFamily: "Mulish, sans-serif",
+                color: "#515151",
                 fontSize: "16px",
                 lineHeight: "120%",
                 fontStyle: "normal",
@@ -99,7 +99,11 @@ const BookingInfo = () => {
               <CheckBoxIcon
                 sx={{ fontSize: 34, color: "#9A9AB0", marginTop: "18px" }}
               />
-              <Typography variant="body1" style={checkBoxTypographyStyle}>
+              <Typography
+                variant="body1"
+                className={mulish.className}
+                style={checkBoxTypographyStyle}
+              >
                 {bookingInfoCard.checkIcon1}
               </Typography>
               <CheckBoxIcon
@@ -110,7 +114,11 @@ const BookingInfo = () => {
                   marginLeft: "25px",
                 }}
               />
-              <Typography variant="body1" style={checkBoxTypographyStyle}>
+              <Typography
+                variant="body1"
+                className={mulish.className}
+                style={checkBoxTypographyStyle}
+              >
                 {bookingInfoCard.checkIcon2}
               </Typography>
               <CheckBoxIcon
@@ -121,16 +129,20 @@ const BookingInfo = () => {
                   marginLeft: "25px",
                 }}
               />
-              <Typography variant="body1" style={checkBoxTypographyStyle}>
+              <Typography
+                variant="body1"
+                className={mulish.className}
+                style={checkBoxTypographyStyle}
+              >
                 {bookingInfoCard.checkIcon3}
               </Typography>
             </Box>
             {/* Price title */}
             <Typography
               variant="body2"
+              className={mulish.className}
               style={{
-                color: "var(--light-text-color-body-1, #515151)",
-                fontFamily: "Mulish, sans-serif",
+                color: "#515151",
                 fontSize: "14px",
                 lineHeight: "130%",
                 fontStyle: "normal",
@@ -144,9 +156,9 @@ const BookingInfo = () => {
             {/* Total price */}
             <Typography
               variant="body2"
+              className={lora.className}
               style={{
-                color: "var(--light-primary-color-70, #27343F)",
-                fontFamily: "Lora",
+                color: "#27343F",
                 fontSize: "39px",
                 lineHeight: "120%",
                 fontStyle: "normal",

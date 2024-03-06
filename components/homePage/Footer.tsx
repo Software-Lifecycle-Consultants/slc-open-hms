@@ -3,7 +3,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import { footerContent } from "@/data/homePage";
-
+import { montserrat } from "../../app/fonts";
 
 /* Footer component displays the website footer. */
 const Footer = () => {
@@ -67,6 +67,7 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
@@ -81,6 +82,7 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
@@ -95,6 +97,7 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
@@ -138,6 +141,7 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
@@ -152,6 +156,7 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
@@ -166,6 +171,7 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="body2"
+              className={montserrat.className}
               style={{
                 color: '#FFFFFF',
                 fontFamily: "Montserrat, sans-serif",
@@ -220,6 +226,7 @@ const Footer = () => {
               />
               <Typography
                 variant="body2"
+                className={montserrat.className}
                 style={{
                   color: '#FFFFFF',
                   fontFamily: "Montserrat, sans-serif",
@@ -247,6 +254,7 @@ const Footer = () => {
               />
               <Typography
                 variant="body2"
+                className={montserrat.className}
                 style={{
                   color: '#FFFFFF',
                   fontFamily: "Montserrat, sans-serif",
@@ -274,6 +282,7 @@ const Footer = () => {
               />
               <Typography
                 variant="body2"
+                className={montserrat.className}
                 style={{
                   color: '#FFFFFF',
                   fontFamily: "Montserrat, sans-serif",
