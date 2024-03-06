@@ -24,7 +24,8 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "30px",
                 fontStyle: "normal",
@@ -53,7 +54,8 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -67,7 +69,8 @@ const Footer = () => {
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -81,7 +84,8 @@ const Footer = () => {
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -95,7 +99,8 @@ const Footer = () => {
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -123,7 +128,8 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -137,7 +143,8 @@ const Footer = () => {
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -151,7 +158,8 @@ const Footer = () => {
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -165,7 +173,8 @@ const Footer = () => {
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -193,7 +202,8 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -218,7 +228,8 @@ const Footer = () => {
                 variant="body2"
                 className={montserrat.className}
                 style={{
-                  color: "#0C111F",
+                  color: '#FFFFFF',
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
                   fontStyle: "normal",
@@ -245,7 +256,8 @@ const Footer = () => {
                 variant="body2"
                 className={montserrat.className}
                 style={{
-                  color: "#0C111F",
+                  color: '#FFFFFF',
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
                   fontStyle: "normal",
@@ -272,7 +284,8 @@ const Footer = () => {
                 variant="body2"
                 className={montserrat.className}
                 style={{
-                  color: "#0C111F",
+                  color: '#FFFFFF',
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
                   fontStyle: "normal",
@@ -302,8 +315,8 @@ const Footer = () => {
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
-
+                  color: '#FFFFFF',
+                  fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",
@@ -325,8 +338,8 @@ const Footer = () => {
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
-
+                  color: '#FFFFFF',
+                  fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",
@@ -341,8 +354,8 @@ const Footer = () => {
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
-
+                  color: '#FFFFFF',
+                  fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",

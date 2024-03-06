@@ -13,7 +13,7 @@ import LogoCarousel from "@/components/homePage/LogoCarousel";
 
 /* Style class for the box component of each section component */
 const sectionStyle = {
-  backgroundColor: "#FFF",
+  backgroundColor: '#FFFFF',
   padding: "20px 0",
   width: "100%",
 };
