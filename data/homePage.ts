@@ -128,7 +128,7 @@ export const testimonialSectionDetails = {
 
 /* Assign logo, description, other texts and social media icons to the footer section of the website */
 export const footerContent = {
-  footerSectionLogoImage: "/images/homePage/footerImages/logoDark.png",
+  footerSectionLogoImage: "/images/homePage/footerImages/logoDark.webp",
   footerSectionDescription:
     "With travala you can experience new travel and the best tourist destinations that we have to offer",
   footerSectionText1: "Destination",
@@ -140,10 +140,10 @@ export const footerContent = {
   customText2: "Testimoni",
   customText3: "Rating",
   footerSectionText3: "Follow Us",
-  socialMediaIcon1: "/images/homePage/footerImages/facebook.png",
+  socialMediaIcon1: "/images/homePage/footerImages/facebook.webp",
   socialMediaText1: "Facebook",
-  socialMediaIcon2: "/images/homePage/footerImages/twitter.png",
+  socialMediaIcon2: "/images/homePage/footerImages/twitter.webp",
   socialMediaText2: "Twitter",
-  socialMediaIcon3: "/images/homePage/footerImages/instagram.png",
+  socialMediaIcon3: "/images/homePage/footerImages/instagram.webp",
   socialMediaText3: "Instagram",
 };
