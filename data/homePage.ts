@@ -37,7 +37,7 @@ export const cardDetails1 = {
   customCardTitle: "Get Experience Which are fun",
   customCardDescription:
     "With travala you can get the best experience on holiday travel, and we always update the latest and best destinations in the world",
-  customCardImage: "/images/homePage/customCardImages/Turkey.png",
+  customCardImage: "/images/homePage/customCardImages/Turkey.webp",
 };
 
 /* Assign other details to the custom card of the home page */
@@ -80,7 +80,7 @@ export const blogSection = {
 export const blogCardData = [
   {
     id: 1,
-    image: "/images/homePage/blogImages/Turkey2.png",
+    image: "/images/homePage/blogImages/Turkey2.webp",
     city: "Cappadocia",
     description:
       "The red and orange sand of the desert are very beautiful, let's take a trip here",
@@ -88,7 +88,7 @@ export const blogCardData = [
   },
   {
     id: 2,
-    image: "/images/homePage/blogImages/Namibia2.png",
+    image: "/images/homePage/blogImages/Namibia2.webp",
     city: "Sossusvlei",
     description:
       "Famous for its hot air balloons and we can see its natural beauty from above",
@@ -96,7 +96,7 @@ export const blogCardData = [
   },
   {
     id: 3,
-    image: "/images/homePage/blogImages/New Mexico2.png",
+    image: "/images/homePage/blogImages/New Mexico2.webp",
     city: "Albuquerque",
     description:
       "A cool trip because the various scenery around will be very eye-catching",
@@ -113,7 +113,7 @@ export const blogCardText = {
 
 /* Assign profile image, user name and testimonial of the user to the testimonials section of the home page */
 export const userTestimonial = {
-  userProfileImage: "/images/homePage/testimonialsImage/Profile.png",
+  userProfileImage: "/images/homePage/testimonialsImage/Profile.webp",
   userName: "Jhone Lown",
   testimonial:
     "“A very pleasant experience, plus the service is very friendly, recommended for those who want to try!”",
