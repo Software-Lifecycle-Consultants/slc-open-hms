@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { footerContent } from "@/data/homePage";
 import { montserrat } from "../../app/fonts";
+import Link from "next/link"; 
 
 /* Footer component displays the website footer. */
 const Footer = () => {
@@ -49,7 +50,7 @@ const Footer = () => {
             marginTop: { xs: "24px", md: "0" },
           }}
         >
-          {/* Content for destination links */}
+          {/* Content for products links */}
           <Box>
             <Typography
               variant="body2"
@@ -78,7 +79,7 @@ const Footer = () => {
                 marginTop: "15px",
               }}
             >
-              {footerContent.destination1}
+             <Link href="/product/product-1" style={{ color: "white", textDecoration:"none"}}>{footerContent.destination1}</Link>
             </Typography>
             <Typography
               variant="body2"
@@ -93,7 +94,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              {footerContent.destination2}
+              <Link href="/product/product-2" style={{ color: "white", textDecoration:"none"}}>{footerContent.destination2}</Link>
             </Typography>
             <Typography
               variant="body2"
@@ -108,7 +109,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              {footerContent.destination3}
+              <Link href="/product/product-3" style={{ color: "white", textDecoration:"none"}}>{footerContent.destination3}</Link>
             </Typography>
           </Box>
         </Grid>
@@ -152,7 +153,7 @@ const Footer = () => {
                 marginTop: "15px",
               }}
             >
-              {footerContent.customText1}
+             <Link href="/contact-us" style={{ color: "white", textDecoration:"none"}}> {footerContent.customText1}</Link>
             </Typography>
             <Typography
               variant="body2"
@@ -167,7 +168,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              {footerContent.customText2}
+              <Link href="/"style={{ color: "white", textDecoration:"none"}}>{footerContent.customText2}</Link>
             </Typography>
             <Typography
               variant="body2"
@@ -182,7 +183,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              {footerContent.customText3}
+              <Link href="/"style={{ color: "white", textDecoration:"none"}}>{footerContent.customText3}</Link>
             </Typography>
           </Box>
         </Grid>
@@ -228,6 +229,7 @@ const Footer = () => {
                 variant="body2"
                 className={montserrat.className}
                 style={{
+                  
                   color: '#FFFFFF',
                   fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
@@ -238,7 +240,7 @@ const Footer = () => {
                   marginTop: "15px",
                 }}
               >
-                {footerContent.socialMediaText1}
+               <a href="https://web.facebook.com/profile.php?id=100095424093550" target="_blank" style={{ color: "white", textDecoration:"none"}}> {footerContent.socialMediaText1}</a>
               </Typography>
             </Box>
             <Box sx={{ display: "flex" }}>
@@ -266,7 +268,8 @@ const Footer = () => {
                   marginTop: "5px",
                 }}
               >
-                {footerContent.socialMediaText2}
+              {/* creates the link to the socila media <twitter> */}
+                <a href="https://web.facebook.com/profile.php?id=100095424093550"target="_blank"style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText2}</a>
               </Typography>
             </Box>
             <Box sx={{ display: "flex" }}>
@@ -294,7 +297,7 @@ const Footer = () => {
                   marginTop: "5px",
                 }}
               >
-                {footerContent.socialMediaText3}
+                <a href="https://web.facebook.com/profile.php?id=100095424093550" target="_blank" style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText3}</a>
               </Typography>
             </Box>
           </Box>
@@ -349,7 +352,7 @@ const Footer = () => {
                   marginLeft: "auto",
                 }}
               >
-                Terms & Conditions
+                <Link href="/terms-condition"style={{ color: "white", textDecoration:"none"}}>Terms & Conditions</Link>
               </Typography>
               <Typography
                 variant="body2"
@@ -365,7 +368,7 @@ const Footer = () => {
                   marginLeft: "4%",
                 }}
               >
-                Privacy Policy
+                <Link href="/privacy-policy"style={{ color: "white", textDecoration:"none"}}>Privacy Policy</Link>
               </Typography>
             </Box>
           </Box>

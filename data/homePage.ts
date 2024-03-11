@@ -1,3 +1,4 @@
+import Link from "next/link";
 /* Assign Page routes and labels for navigation bar component of the website */
 export const pages = [
   { label: "Home", route: "/" },
@@ -131,10 +132,10 @@ export const footerContent = {
   footerSectionLogoImage: "/images/homePage/footerImages/logoDark.webp",
   footerSectionDescription:
     "With travala you can experience new travel and the best tourist destinations that we have to offer",
-  footerSectionText1: "Destination",
-  destination1: "Cappadocia",
-  destination2: "Sossusvlei",
-  destination3: "Albuquera",
+  footerSectionText1: "Products",
+  destination1: "Product 1",
+  destination2: "Product 2",
+  destination3: "Product 3",
   footerSectionText2: "About",
   customText1: "Contact Us",
   customText2: "Testimoni",
