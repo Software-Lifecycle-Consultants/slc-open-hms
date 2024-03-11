@@ -2,7 +2,7 @@ import Link from "next/link";
 /* Assign Page routes and labels for navigation bar component of the website */
 export const pages = [
   { label: "Home", route: "/" },
-  { label: "Explore", route: "./explore" },
+  { label: "Explore", route: "/.explore" },
   { label: "Book Now", route: "./checkout" },
   { label: "Contact", route: "./contact-us" },
 ];
@@ -143,8 +143,16 @@ export const footerContent = {
   footerSectionText3: "Follow Us",
   socialMediaIcon1: "/images/homePage/footerImages/facebook.webp",
   socialMediaText1: "Facebook",
+  socialMediaLink1: "https://web.facebook.com/profile.php?id=100095424093550",
   socialMediaIcon2: "/images/homePage/footerImages/twitter.webp",
   socialMediaText2: "Twitter",
+  socialMediaLink2: "https://twitter.com/softwareCnslt",
   socialMediaIcon3: "/images/homePage/footerImages/instagram.webp",
   socialMediaText3: "Instagram",
+  socialMediaLink3: "https://www.linkedin.com/company/software-lifecycle-consultants/",
+  
 };
+
+
+export const currentYear = new Date().getFullYear();
+

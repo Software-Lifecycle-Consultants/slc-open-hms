@@ -1,10 +1,10 @@
 // Importing required components and images
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, Link } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import { footerContent } from "@/data/homePage";
+import { currentYear, footerContent } from "@/data/homePage";
 import { montserrat } from "../../app/fonts";
-import Link from "next/link"; 
+// import Link from "next/link"; 
 
 /* Footer component displays the website footer. */
 const Footer = () => {
@@ -14,12 +14,12 @@ const Footer = () => {
         {/* Grid item for logo and description */}
         <Grid item xs={12} md={3}>
           <Box>
-            <Image
+            <Link href ="/"><Image
               src={footerContent.footerSectionLogoImage}
               width={142}
               height={50}
               alt="logo"
-            />
+            /></Link>
           </Box>
           <Box>
             <Typography
@@ -240,7 +240,7 @@ const Footer = () => {
                   marginTop: "15px",
                 }}
               >
-               <a href="https://web.facebook.com/profile.php?id=100095424093550" target="_blank" style={{ color: "white", textDecoration:"none"}}> {footerContent.socialMediaText1}</a>
+               <a href={footerContent.socialMediaLink1} target="_blank" style={{ color: "white", textDecoration:"none"}}> {footerContent.socialMediaText1}</a>
               </Typography>
             </Box>
             <Box sx={{ display: "flex" }}>
@@ -269,7 +269,7 @@ const Footer = () => {
                 }}
               >
               {/* creates the link to the socila media <twitter> */}
-                <a href="https://web.facebook.com/profile.php?id=100095424093550"target="_blank"style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText2}</a>
+                <a href={footerContent.socialMediaLink2} target="_blank" style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText2}</a>
               </Typography>
             </Box>
             <Box sx={{ display: "flex" }}>
@@ -297,7 +297,7 @@ const Footer = () => {
                   marginTop: "5px",
                 }}
               >
-                <a href="https://web.facebook.com/profile.php?id=100095424093550" target="_blank" style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText3}</a>
+                <a href={footerContent.socialMediaLink3} target="_blank" style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText3}</a>
               </Typography>
             </Box>
           </Box>
@@ -328,7 +328,7 @@ const Footer = () => {
                   marginTop: "70px",
                 }}
               >
-                Copyright © Travala 2021
+                Copyright © Travala {currentYear}
               </Typography>
             </Box>
             <Box
