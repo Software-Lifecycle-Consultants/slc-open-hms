@@ -150,7 +150,11 @@ export const footerContent = {
   socialMediaIcon3: "/images/homePage/footerImages/instagram.webp",
   socialMediaText3: "Instagram",
   socialMediaLink3: "https://www.linkedin.com/company/software-lifecycle-consultants/",
-  
+  TermsConditionText: "Terms and Conditions",
+  TermsConditionLink: "/terms-condition",
+  CompanyNameText: "Travala",
+  PrivacyPolicyText: "Privacy Policy",
+  PrivacyPolicyLink: "/privacy-policy",
 };
 
 

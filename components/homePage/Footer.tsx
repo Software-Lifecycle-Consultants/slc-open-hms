@@ -328,7 +328,7 @@ const Footer = () => {
                   marginTop: "70px",
                 }}
               >
-                Copyright © Travala {currentYear}
+                Copyright © {footerContent.CompanyNameText} {currentYear}
               </Typography>
             </Box>
             <Box
@@ -352,7 +352,7 @@ const Footer = () => {
                   marginLeft: "auto",
                 }}
               >
-                <Link href="/terms-condition"style={{ color: "white", textDecoration:"none"}}>Terms & Conditions</Link>
+                <Link href={footerContent.TermsConditionLink} style={{ color: "white", textDecoration:"none"}}>{footerContent.TermsConditionText}</Link>
               </Typography>
               <Typography
                 variant="body2"
@@ -368,7 +368,7 @@ const Footer = () => {
                   marginLeft: "4%",
                 }}
               >
-                <Link href="/privacy-policy"style={{ color: "white", textDecoration:"none"}}>Privacy Policy</Link>
+                <Link href={footerContent.PrivacyPolicyLink}style={{ color: "white", textDecoration:"none"}}>{footerContent.PrivacyPolicyText}</Link>
               </Typography>
             </Box>
           </Box>
