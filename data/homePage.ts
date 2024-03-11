@@ -2,9 +2,9 @@ import Link from "next/link";
 /* Assign Page routes and labels for navigation bar component of the website */
 export const pages = [
   { label: "Home", route: "/" },
-  { label: "Explore", route: "/.explore" },
-  { label: "Book Now", route: "./checkout" },
-  { label: "Contact", route: "./contact-us" },
+  { label: "Explore", route: "/explore" },
+  { label: "Book Now", route: "/checkout" },
+  { label: "Contact", route: "/contact-us" },
 ];
 
 /* Assign button labels to the navigation bar component of the website */
