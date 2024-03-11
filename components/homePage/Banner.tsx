@@ -2,7 +2,7 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import image from "../../public/images/homePage/heroSectionImage/mainImage.png";
+import image from "../../public/images/homePage/heroSectionImage/mainImage.webp";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { bannerDetails } from "../../data/homePage";
