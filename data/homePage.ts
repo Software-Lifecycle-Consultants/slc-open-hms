@@ -96,7 +96,7 @@ export const blogCardData = [
   },
   {
     id: 3,
-    image: "/images/homePage/blogImages/New Mexico2.webp",
+    image: "/images/homePage/blogImages/NewMexico2.webp",
     city: "Albuquerque",
     description:
       "A cool trip because the various scenery around will be very eye-catching",
