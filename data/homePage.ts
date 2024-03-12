@@ -1,9 +1,10 @@
+import Link from "next/link";
 /* Assign Page routes and labels for navigation bar component of the website */
 export const pages = [
   { label: "Home", route: "/" },
-  { label: "Explore", route: "./explore" },
-  { label: "Book Now", route: "./checkout" },
-  { label: "Contact", route: "./contact-us" },
+  { label: "Explore", route: "/explore" },
+  { label: "Book Now", route: "/checkout" },
+  { label: "Contact", route: "/contact-us" },
 ];
 
 /* Assign button labels to the navigation bar component of the website */
@@ -131,10 +132,10 @@ export const footerContent = {
   footerSectionLogoImage: "/images/homePage/footerImages/logoDark.webp",
   footerSectionDescription:
     "With travala you can experience new travel and the best tourist destinations that we have to offer",
-  footerSectionText1: "Destination",
-  destination1: "Cappadocia",
-  destination2: "Sossusvlei",
-  destination3: "Albuquera",
+  footerSectionText1: "Products",
+  destination1: "Product 1",
+  destination2: "Product 2",
+  destination3: "Product 3",
   footerSectionText2: "About",
   customText1: "Contact Us",
   customText2: "Testimoni",
@@ -142,8 +143,20 @@ export const footerContent = {
   footerSectionText3: "Follow Us",
   socialMediaIcon1: "/images/homePage/footerImages/facebook.webp",
   socialMediaText1: "Facebook",
+  socialMediaLink1: "https://web.facebook.com/profile.php?id=100095424093550",
   socialMediaIcon2: "/images/homePage/footerImages/twitter.webp",
   socialMediaText2: "Twitter",
+  socialMediaLink2: "https://twitter.com/softwareCnslt",
   socialMediaIcon3: "/images/homePage/footerImages/instagram.webp",
   socialMediaText3: "Instagram",
+  socialMediaLink3: "https://www.linkedin.com/company/software-lifecycle-consultants/",
+  TermsConditionText: "Terms and Conditions",
+  TermsConditionLink: "/terms-condition",
+  CompanyNameText: "Travala",
+  PrivacyPolicyText: "Privacy Policy",
+  PrivacyPolicyLink: "/privacy-policy",
 };
+
+
+export const currentYear = new Date().getFullYear();
+
