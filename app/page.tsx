@@ -58,7 +58,7 @@ export default function HomeScreen() {
         </Container>
       </Box>
 
-        {/* Banner Section */}
+        {/* contactNow Banner Section */}
       <Box
         sx={{
           backgroundColor: "#0C111F",
