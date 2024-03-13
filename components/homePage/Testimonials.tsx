@@ -17,6 +17,7 @@ import { blogCardData, userTestimonial } from "@/data/homePage";
 import { montserrat } from "../../app/fonts";
 import BlogCard from "./BlogCard";
 import LaunchIcon from '@mui/icons-material/Launch';
+import Link from "next/link";
 const Testimonials = () => {
   const [value, setValue] = React.useState(4); // Rating value
 
@@ -204,7 +205,7 @@ const Testimonials = () => {
         </Grid>
         
     <Stack spacing={2} direction="row" justifyContent="flex-end">
-      
+    <Link href={userTestimonial.testimonialButtonLink} target="_blank">
       <Button 
             
             variant="contained"
@@ -226,6 +227,7 @@ const Testimonials = () => {
             {userTestimonial.testimonialButtonText}
             <LaunchIcon sx={{ color: "#FFFFFF" }} />
           </Button>
+          </Link>
     </Stack>
     </>
   );

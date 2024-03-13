@@ -111,14 +111,6 @@ export const blogCardText = {
   blogctaCaption: "Ticket booking",
 };
 
-/* Assign data to the contact details(banner before testimonial) section of home page */
-export const Blog2 = {
-  contactSubTitle: "We are ready to provide the best trip for you ",
-  contactDescription:
-    "We have a variety of the world's best destinations that you can choose as your trip destination ",
-  contactCaption: "Contact Now",
-  contactVedioLink: "https://www.youtube.com/embed/KCn5Gc38oO4?si=UD6Gf0jR2eZBSTaY",
-};
 
 /* Assign profile image, user name and testimonial of the user to the testimonials section of the home page */
 export const userTestimonial = {
@@ -137,6 +129,7 @@ export const userTestimonial = {
   testimonial2:
   "“Travala exceeded my expectations! Easy to use, great deals, and excellent customer service. Will definitely be using them for all my future hotel bookings!”",
   testimonialButtonText: "Read More",
+  testimonialButtonLink: "https://business.google.com/reviews",
   };
 
 /* Assign logo, description, other texts and social media icons to the footer section of the website */
