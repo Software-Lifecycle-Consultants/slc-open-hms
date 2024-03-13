@@ -12,9 +12,13 @@ const Footer = () => {
     <>
       <Grid container spacing={2}>
         {/* Grid item for logo and description */}
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={3}
+        sx={{
+          marginTop: { xs: "24px", md: "20px" },
+        }}>
           <Box>
             <Link href ="/"><Image
+            
               src={footerContent.footerSectionLogoImage}
               width={142}
               height={50}
@@ -47,7 +51,7 @@ const Footer = () => {
           sx={{
             display: "flex",
             justifyContent: { xs: "none", md: "flex-end" },
-            marginTop: { xs: "24px", md: "0" },
+            marginTop: { xs: "24px", md: "20px" },
           }}
         >
           {/* Content for products links */}
@@ -121,7 +125,7 @@ const Footer = () => {
           sx={{
             display: "flex",
             justifyContent: { xs: "none", md: "flex-end" },
-            marginTop: { xs: "24px", md: "0" },
+            marginTop: { xs: "24px", md: "20px" },
           }}
         >
           {/* Content for about links */}
@@ -195,7 +199,7 @@ const Footer = () => {
           sx={{
             display: "flex",
             justifyContent: { xs: "none", md: "flex-end" },
-            marginTop: { xs: "24px", md: "0" },
+            marginTop: { xs: "24px", md: "20px" },
           }}
         >
           {/* Content for social media links */}
@@ -325,7 +329,7 @@ const Footer = () => {
                   fontStyle: "normal",
                   fontWeight: "400",
                   letterSpacing: "-0.205px",
-                  marginTop: "70px",
+                  marginTop: "90px",
                 }}
               >
                 Copyright © {footerContent.CompanyNameText} {currentYear}
@@ -348,7 +352,7 @@ const Footer = () => {
                   fontStyle: "normal",
                   fontWeight: "400",
                   letterSpacing: "-0.205px",
-                  marginTop: "70px",
+                  marginTop: "90px",
                   marginLeft: "auto",
                 }}
               >
@@ -364,7 +368,7 @@ const Footer = () => {
                   fontStyle: "normal",
                   fontWeight: "400",
                   letterSpacing: "-0.205px",
-                  marginTop: "70px",
+                  marginTop: "90px",
                   marginLeft: "4%",
                 }}
               >
