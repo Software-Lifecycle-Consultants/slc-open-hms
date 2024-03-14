@@ -5,15 +5,13 @@ import HotelRooms from "@/components/explore/HotelRooms"; // Importing HotelRoom
 import SearchBar from "@/components/explore/SearchBar"; // Importing SearchBar component from the 'explore' folder
 import HeroSection from "@/components/explore/HeroSection"; // Importing HeroSection component from the 'explore' folder
 
-
-
 /**
  * ExploreScreen component represents the explore screen of the website.
  * It includes sections like Hero section, Search bar, and Hotel rooms.
  */
 
 const ExploreScreen = () => {
-  
+
   return (
     <>
       {/* Hero Section */}
