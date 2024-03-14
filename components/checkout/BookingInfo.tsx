@@ -7,7 +7,7 @@ import {
   CardContent,
 } from "@mui/material";
 import Image from "next/image";
-import img from "../../public/images/hotelRooms/Room2.jpg";
+import img from "../../public/images/hotelRooms/Room2.webp";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { bookingInfoCard } from "@/data/checkoutPage";
 import { lora, mulish } from "../../app/fonts";

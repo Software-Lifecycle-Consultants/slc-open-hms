@@ -31,7 +31,7 @@ export default function RootLayout({
           {/* Footer*/}
           <Box
             sx={{
-              backgroundColor: "#FFF",
+              backgroundColor: '#1A242D',
               padding: "20px 0",
               width: "100%",
             }}

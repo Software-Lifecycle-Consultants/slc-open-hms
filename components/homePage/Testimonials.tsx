@@ -6,12 +6,18 @@ import {
   Grid,
   Rating,
   Typography,
+  Button,
+  Stack,
+
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import { userTestimonial } from "@/data/homePage";
-import { testimonialSectionDetails } from "@/data/homePage";
+import { blogCardData, userTestimonial } from "@/data/homePage";
+//import { testimonialSectionDetails } from "@/data/homePage";
 import { montserrat } from "../../app/fonts";
+import BlogCard from "./BlogCard";
+import LaunchIcon from '@mui/icons-material/Launch';
+import Link from "next/link";
 const Testimonials = () => {
   const [value, setValue] = React.useState(4); // Rating value
 
@@ -19,11 +25,13 @@ const Testimonials = () => {
   const accountStatsStyle = {
     marginTop: "31.682px", // Half of the userAvatar height
     width: "90%",
-    height: "auto",
+    height: "250px",
     borderRadius: "18px",
     paddingTop: "36px",
     marginLeft: { xs: "5%", md: "none" },
   };
+
+  
 
   const accountContainerStyle = {
     position: "relative",
@@ -84,6 +92,7 @@ const Testimonials = () => {
   return (
     <>
       <Grid
+        marginTop="25px"
         container
         direction="row"
         justifyContent="center"
@@ -91,7 +100,7 @@ const Testimonials = () => {
         spacing={2}
       >
         {/* Left grid item displaying user's testimonial */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={4}>
           <Box sx={accountContainerStyle}>
             <Box sx={userAvatarContainerStyle}>
               {/* User profile image */}
@@ -124,20 +133,102 @@ const Testimonials = () => {
             </Card>
           </Box>
         </Grid>
-        {/* Right grid item displaying testimonial section details */}
-        <Grid item xs={12} md={6} paddingRight={{ xs: "16px", md: "32px" }}>
-          <Box>
-            {/* Title for the testimonial section */}
-            <Typography variant="h1" sx={typographyh1Style}>
-              {testimonialSectionDetails.testimonialsSectionTitle}
-            </Typography>
-            {/* Description for the testimonial section */}
-            <Typography variant="body2" sx={typographyParagraphStyle}>
-              {testimonialSectionDetails.testimonialsSectionDescription}
-            </Typography>
+        <Grid item xs={12} md={4}>
+          <Box sx={accountContainerStyle}>
+            <Box sx={userAvatarContainerStyle}>
+              {/* User profile image */}
+              <Image
+                src={userTestimonial.userProfileImage1}
+                alt="Profile1"
+                width={64}
+                height={64}
+              />
+            </Box>
+            {/* Card displaying user's testimonial details */}
+            <Card elevation={0} sx={accountStatsStyle}>
+              <CardContent>
+                {/* User's name */}
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  className={montserrat.className}
+                  style={typographyh5Style}
+                >
+                  {userTestimonial.userName1}
+                </Typography>
+                {/* User's rating */}
+                <Rating name="read-only" value={value} readOnly />
+                {/* User's testimonial description */}
+                <Typography variant="body2" style={typographyCardStyle}>
+                  {userTestimonial.testimonial1}
+                </Typography>
+              </CardContent>
+            </Card>
           </Box>
         </Grid>
-      </Grid>
+        <Grid item xs={12} md={4}>
+          <Box sx={accountContainerStyle}>
+            <Box sx={userAvatarContainerStyle}>
+              {/* User profile image */}
+              <Image
+                src={userTestimonial.userProfileImage2}
+                alt="Profile2"
+                width={64}
+                height={64}
+              />
+            </Box>
+            {/* Card displaying user's testimonial details */}
+            <Card elevation={0} sx={accountStatsStyle}>
+              <CardContent>
+                {/* User's name */}
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  className={montserrat.className}
+                  style={typographyh5Style}
+                >
+                  {userTestimonial.userName2}
+                </Typography>
+                {/* User's rating */}
+                <Rating name="read-only" value={value} readOnly />
+                {/* User's testimonial description */}
+                <Typography variant="body2" style={typographyCardStyle}>
+                  {userTestimonial.testimonial2}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+          
+          
+        </Grid>
+        
+        </Grid>
+        
+    <Stack spacing={2} direction="row" justifyContent="flex-end">
+    <Link href={userTestimonial.testimonialButtonLink} target="_blank">
+      <Button 
+            
+            variant="contained"
+            style={{
+              backgroundColor: "#7C46FE",
+              borderRadius: "45px",
+              color: "#FFF",
+              fontSize: "15px",
+              lineHeight: "180%",
+              fontStyle: "normal",
+              letterSpacing: "-0.1px",
+              padding:"15px",
+              marginBottom: "25px",
+              marginTop: "25px",
+              gap:"10px",
+              
+            }}
+          >
+            {userTestimonial.testimonialButtonText}
+            <LaunchIcon sx={{ color: "#FFFFFF" }} />
+          </Button>
+          </Link>
+    </Stack>
     </>
   );
 };

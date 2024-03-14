@@ -1,9 +1,10 @@
 // Importing required components and images
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, Link } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import { footerContent } from "@/data/homePage";
+import { currentYear, footerContent } from "@/data/homePage";
 import { montserrat } from "../../app/fonts";
+// import Link from "next/link"; 
 
 /* Footer component displays the website footer. */
 const Footer = () => {
@@ -11,20 +12,25 @@ const Footer = () => {
     <>
       <Grid container spacing={2}>
         {/* Grid item for logo and description */}
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={3}
+        sx={{
+          marginTop: { xs: "24px", md: "20px" },
+        }}>
           <Box>
-            <Image
+            <Link href ="/"><Image
+            
               src={footerContent.footerSectionLogoImage}
               width={142}
               height={50}
               alt="logo"
-            />
+            /></Link>
           </Box>
           <Box>
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "30px",
                 fontStyle: "normal",
@@ -45,15 +51,16 @@ const Footer = () => {
           sx={{
             display: "flex",
             justifyContent: { xs: "none", md: "flex-end" },
-            marginTop: { xs: "24px", md: "0" },
+            marginTop: { xs: "24px", md: "20px" },
           }}
         >
-          {/* Content for destination links */}
+          {/* Content for products links */}
           <Box>
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -67,7 +74,8 @@ const Footer = () => {
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -75,13 +83,14 @@ const Footer = () => {
                 marginTop: "15px",
               }}
             >
-              {footerContent.destination1}
+             <Link href="/product/product-1" style={{ color: "white", textDecoration:"none"}}>{footerContent.destination1}</Link>
             </Typography>
             <Typography
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -89,13 +98,14 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              {footerContent.destination2}
+              <Link href="/product/product-2" style={{ color: "white", textDecoration:"none"}}>{footerContent.destination2}</Link>
             </Typography>
             <Typography
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -103,7 +113,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              {footerContent.destination3}
+              <Link href="/product/product-3" style={{ color: "white", textDecoration:"none"}}>{footerContent.destination3}</Link>
             </Typography>
           </Box>
         </Grid>
@@ -115,7 +125,7 @@ const Footer = () => {
           sx={{
             display: "flex",
             justifyContent: { xs: "none", md: "flex-end" },
-            marginTop: { xs: "24px", md: "0" },
+            marginTop: { xs: "24px", md: "20px" },
           }}
         >
           {/* Content for about links */}
@@ -123,7 +133,8 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -137,7 +148,8 @@ const Footer = () => {
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -145,13 +157,14 @@ const Footer = () => {
                 marginTop: "15px",
               }}
             >
-              {footerContent.customText1}
+             <Link href="/contact-us" style={{ color: "white", textDecoration:"none"}}> {footerContent.customText1}</Link>
             </Typography>
             <Typography
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -159,13 +172,14 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              {footerContent.customText2}
+              <Link href="/"style={{ color: "white", textDecoration:"none"}}>{footerContent.customText2}</Link>
             </Typography>
             <Typography
               variant="body2"
               className={montserrat.className}
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Montserrat, sans-serif",
                 fontSize: "14px",
                 lineHeight: "28px",
                 fontStyle: "normal",
@@ -173,7 +187,7 @@ const Footer = () => {
                 marginTop: "5px",
               }}
             >
-              {footerContent.customText3}
+              <Link href="/"style={{ color: "white", textDecoration:"none"}}>{footerContent.customText3}</Link>
             </Typography>
           </Box>
         </Grid>
@@ -185,7 +199,7 @@ const Footer = () => {
           sx={{
             display: "flex",
             justifyContent: { xs: "none", md: "flex-end" },
-            marginTop: { xs: "24px", md: "0" },
+            marginTop: { xs: "24px", md: "20px" },
           }}
         >
           {/* Content for social media links */}
@@ -193,7 +207,8 @@ const Footer = () => {
             <Typography
               variant="body2"
               style={{
-                color: "#0C111F",
+                color: '#FFFFFF',
+                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -218,7 +233,9 @@ const Footer = () => {
                 variant="body2"
                 className={montserrat.className}
                 style={{
-                  color: "#0C111F",
+                  
+                  color: '#FFFFFF',
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
                   fontStyle: "normal",
@@ -227,7 +244,7 @@ const Footer = () => {
                   marginTop: "15px",
                 }}
               >
-                {footerContent.socialMediaText1}
+               <a href={footerContent.socialMediaLink1} target="_blank" style={{ color: "white", textDecoration:"none"}}> {footerContent.socialMediaText1}</a>
               </Typography>
             </Box>
             <Box sx={{ display: "flex" }}>
@@ -245,7 +262,8 @@ const Footer = () => {
                 variant="body2"
                 className={montserrat.className}
                 style={{
-                  color: "#0C111F",
+                  color: '#FFFFFF',
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
                   fontStyle: "normal",
@@ -254,7 +272,8 @@ const Footer = () => {
                   marginTop: "5px",
                 }}
               >
-                {footerContent.socialMediaText2}
+              {/* creates the link to the socila media <twitter> */}
+                <a href={footerContent.socialMediaLink2} target="_blank" style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText2}</a>
               </Typography>
             </Box>
             <Box sx={{ display: "flex" }}>
@@ -272,7 +291,8 @@ const Footer = () => {
                 variant="body2"
                 className={montserrat.className}
                 style={{
-                  color: "#0C111F",
+                  color: '#FFFFFF',
+                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "14px",
                   lineHeight: "28px",
                   fontStyle: "normal",
@@ -281,7 +301,7 @@ const Footer = () => {
                   marginTop: "5px",
                 }}
               >
-                {footerContent.socialMediaText3}
+                <a href={footerContent.socialMediaLink3} target="_blank" style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText3}</a>
               </Typography>
             </Box>
           </Box>
@@ -302,17 +322,17 @@ const Footer = () => {
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
-
+                  color: '#FFFFFF',
+                  fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",
                   fontWeight: "400",
                   letterSpacing: "-0.205px",
-                  marginTop: "70px",
+                  marginTop: "90px",
                 }}
               >
-                Copyright © Travala 2021
+                Copyright © {footerContent.CompanyNameText} {currentYear}
               </Typography>
             </Box>
             <Box
@@ -325,34 +345,34 @@ const Footer = () => {
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
-
+                  color: '#FFFFFF',
+                  fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",
                   fontWeight: "400",
                   letterSpacing: "-0.205px",
-                  marginTop: "70px",
+                  marginTop: "90px",
                   marginLeft: "auto",
                 }}
               >
-                Terms & Conditions
+                <Link href={footerContent.TermsConditionLink} style={{ color: "white", textDecoration:"none"}}>{footerContent.TermsConditionText}</Link>
               </Typography>
               <Typography
                 variant="body2"
                 style={{
-                  color: "#0C111F",
-
+                  color: '#FFFFFF',
+                  fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",
                   fontWeight: "400",
                   letterSpacing: "-0.205px",
-                  marginTop: "70px",
+                  marginTop: "90px",
                   marginLeft: "4%",
                 }}
               >
-                Privacy Policy
+                <Link href={footerContent.PrivacyPolicyLink}style={{ color: "white", textDecoration:"none"}}>{footerContent.PrivacyPolicyText}</Link>
               </Typography>
             </Box>
           </Box>

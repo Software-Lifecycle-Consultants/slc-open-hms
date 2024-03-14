@@ -1,9 +1,10 @@
+import Link from "next/link";
 /* Assign Page routes and labels for navigation bar component of the website */
 export const pages = [
   { label: "Home", route: "/" },
-  { label: "Explore", route: "./explore" },
-  { label: "Book Now", route: "./checkout" },
-  { label: "Contact", route: "./contact-us" },
+  { label: "Explore", route: "/explore" },
+  { label: "Book Now", route: "/checkout" },
+  { label: "Contact", route: "/contact-us" },
 ];
 
 /* Assign button labels to the navigation bar component of the website */
@@ -37,7 +38,7 @@ export const cardDetails1 = {
   customCardTitle: "Get Experience Which are fun",
   customCardDescription:
     "With travala you can get the best experience on holiday travel, and we always update the latest and best destinations in the world",
-  customCardImage: "/images/homePage/customCardImages/Turkey.png",
+  customCardImage: "/images/homePage/customCardImages/Turkey.webp",
 };
 
 /* Assign other details to the custom card of the home page */
@@ -80,7 +81,7 @@ export const blogSection = {
 export const blogCardData = [
   {
     id: 1,
-    image: "/images/homePage/blogImages/Turkey2.png",
+    image: "/images/homePage/blogImages/Turkey2.webp",
     city: "Cappadocia",
     description:
       "The red and orange sand of the desert are very beautiful, let's take a trip here",
@@ -88,7 +89,7 @@ export const blogCardData = [
   },
   {
     id: 2,
-    image: "/images/homePage/blogImages/Namibia2.png",
+    image: "/images/homePage/blogImages/Namibia2.webp",
     city: "Sossusvlei",
     description:
       "Famous for its hot air balloons and we can see its natural beauty from above",
@@ -96,7 +97,7 @@ export const blogCardData = [
   },
   {
     id: 3,
-    image: "/images/homePage/blogImages/New Mexico2.png",
+    image: "/images/homePage/blogImages/NewMexico2.webp",
     city: "Albuquerque",
     description:
       "A cool trip because the various scenery around will be very eye-catching",
@@ -111,39 +112,57 @@ export const blogCardText = {
   blogctaCaption: "Ticket booking",
 };
 
+
 /* Assign profile image, user name and testimonial of the user to the testimonials section of the home page */
 export const userTestimonial = {
-  userProfileImage: "/images/homePage/testimonialsImage/Profile.png",
+  userProfileImage: "/images/homePage/testimonialsImage/Profile.webp",
   userName: "Jhone Lown",
   testimonial:
     "“A very pleasant experience, plus the service is very friendly, recommended for those who want to try!”",
-};
-
-/* Details for the testimonial section. */
-export const testimonialSectionDetails = {
-  testimonialsSectionTitle: "Testimonials Travala Customers",
-  testimonialsSectionDescription:
-    "What our customers have to say about our service, check below!",
-};
+    
+  userProfileImage1: "/images/homePage/testimonialsImage/profile1.webp",
+  userName1: "Kane Braen",
+  testimonial1:
+  "“Travala makes booking hotels a breeze! Love the variety of accommodations and the straightforward booking process. Great prices too!”",
+      
+  userProfileImage2: "/images/homePage/testimonialsImage/profile2.webp",
+  userName2: "Adam lauvis",
+  testimonial2:
+  "“Travala exceeded my expectations! Easy to use, great deals, and excellent customer service. Will definitely be using them for all my future hotel bookings!”",
+  testimonialButtonText: "Read More",
+  testimonialButtonLink: "https://business.google.com/reviews",
+  };
 
 /* Assign logo, description, other texts and social media icons to the footer section of the website */
 export const footerContent = {
-  footerSectionLogoImage: "/images/homePage/footerImages/logoDark.png",
+  footerSectionLogoImage: "/images/homePage/footerImages/logoDark.webp",
   footerSectionDescription:
     "With travala you can experience new travel and the best tourist destinations that we have to offer",
-  footerSectionText1: "Destination",
-  destination1: "Cappadocia",
-  destination2: "Sossusvlei",
-  destination3: "Albuquera",
+  footerSectionText1: "Products",
+  destination1: "Product 1",
+  destination2: "Product 2",
+  destination3: "Product 3",
   footerSectionText2: "About",
   customText1: "Contact Us",
   customText2: "Testimoni",
   customText3: "Rating",
   footerSectionText3: "Follow Us",
-  socialMediaIcon1: "/images/homePage/footerImages/facebook.png",
+  socialMediaIcon1: "/images/homePage/footerImages/facebook.webp",
   socialMediaText1: "Facebook",
-  socialMediaIcon2: "/images/homePage/footerImages/twitter.png",
+  socialMediaLink1: "https://web.facebook.com/profile.php?id=100095424093550",
+  socialMediaIcon2: "/images/homePage/footerImages/twitter.webp",
   socialMediaText2: "Twitter",
-  socialMediaIcon3: "/images/homePage/footerImages/instagram.png",
+  socialMediaLink2: "https://twitter.com/softwareCnslt",
+  socialMediaIcon3: "/images/homePage/footerImages/instagram.webp",
   socialMediaText3: "Instagram",
+  socialMediaLink3: "https://www.linkedin.com/company/software-lifecycle-consultants/",
+  TermsConditionText: "Terms and Conditions",
+  TermsConditionLink: "/terms-condition",
+  CompanyNameText: "Travala",
+  PrivacyPolicyText: "Privacy Policy",
+  PrivacyPolicyLink: "/privacy-policy",
 };
+
+
+export const currentYear = new Date().getFullYear();
+
