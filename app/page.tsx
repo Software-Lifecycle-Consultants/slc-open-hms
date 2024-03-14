@@ -5,6 +5,7 @@ import Testimonials from "../components/homePage/Testimonials";
 import Blog from "../components/homePage/Blog";
 import CustomCard from "../components/homePage/CustomCard";
 import LogoCarousel from "@/components/homePage/LogoCarousel";
+import ContactNow from "@/components/homePage/contactNow";
 
 /**
  * HomeScreen component represents the main screen of the website.
@@ -57,6 +58,19 @@ export default function HomeScreen() {
         </Container>
       </Box>
 
+      {/* Contact Now Banner  */}
+      <Box
+        sx={{
+          backgroundColor: "#0C111F",
+          color: "white",
+          padding: "40px 0",
+          flexGrow: 1,
+        }}
+      >
+        <Container>
+          <ContactNow />
+        </Container>
+      </Box>
       
 
         
