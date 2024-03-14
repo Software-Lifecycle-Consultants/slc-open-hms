@@ -7,7 +7,7 @@ import CustomCard from "../components/homePage/CustomCard";
 import LogoCarousel from "@/components/homePage/LogoCarousel";
 
 /**
- * HomeScreen component represents the main screen of the website.
+ * HomeScreen represents the main screen of the website.
  * It includes sections like Banner, Destination Card, Blog, Testimonials, and Footer.
  */
 
@@ -17,7 +17,6 @@ const sectionStyle = {
   padding: "20px 0",
   width: "100%",
 };
-
 
 export default function HomeScreen() {
   return (
@@ -35,31 +34,24 @@ export default function HomeScreen() {
           <Banner />
         </Container>
       </Box>
-
       {/* Custom Card Section*/}
       <Box sx={sectionStyle}>
         <Container>
           <CustomCard />
         </Container>
       </Box>
-
       {/* Logo Carousel Section */}
       <Box sx={sectionStyle}>
         <Container>
           <LogoCarousel />
         </Container>
       </Box>
-
       {/* Blog Section */}
       <Box sx={sectionStyle}>
         <Container>
           <Blog />
         </Container>
       </Box>
-
-      
-
-        
       {/* Testimonials Section */}
       <Box sx={{ sectionStyle, backgroundColor: "#F7F7F7" }}>
         <Container>
