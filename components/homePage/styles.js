@@ -1,4 +1,7 @@
 // styles.js
+//this style js use for both banner and contactNowBanner componants
+
+/* Typography style for heading 5 */
 export const typographyh5Style = {
     color: "#E97458",
     fontSize: { xs: "18px", sm: "22px", md: "18px" },
@@ -8,7 +11,9 @@ export const typographyh5Style = {
     textTransform: "uppercase",
     marginTop: { xs: "14px", md: "5px" },
   };
+
   
+/* Typography style for heading 1 */
   export const typographyh1Style = {
     color: "#FFFFFF",
     fontSize: { xs: "45px", sm: "70px", md: "80px" },
@@ -18,7 +23,8 @@ export const typographyh5Style = {
     fontWeight: "700",
     marginTop: "5px",
   };
-  
+
+ /* Typography style for body text */ 
   export const typographyBody1Style = {
     color: "rgba(255, 255, 255, 0.70)",
     fontSize: { xs: "16px", sm: "22px", md: "24px" },
@@ -28,6 +34,7 @@ export const typographyh5Style = {
     fontWeight: "400",
   };
   
+/* Button style for contained variant */
   export const buttonContainedStyle = {
     display: "inline-flex",
     justifyContent: "center",
@@ -38,16 +45,20 @@ export const typographyh5Style = {
     fontWeight: "bold",
     color: "#0C111F",
     background: "var(--l-2, linear-gradient(135deg, #F9EC7D 0%, #F5B100 100%))",
-    "@media (max-width: 1024px)": {
+    
+ // Customize sizes for web and tablet view
+   "@media (max-width: 1024px)": {
       padding: "10px 16px",
     },
+    // Customize sizes for mobile view
     "@media (max-width: 767px)": {
       fontSize: "12px",
       padding: "8px 12px",
       margin: "3px",
     },
   };
-  
+
+/* Button style for text variant */
   export const buttonTextStyle = {
     color: "#FFF",
     fontSize: "14px",
@@ -56,6 +67,8 @@ export const typographyh5Style = {
     letterSpacing: "0.36px",
     margin: "5px",
     textTransform: "none",
+
+  // Customize sizes for mobile view
     "@media (max-width: 767px)": {
       fontSize: "12px",
       padding: "8px 12px",
