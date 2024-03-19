@@ -31,6 +31,8 @@ export const bannerDetails = {
     "With travala you can experience new travel and the best tourist destinations that we have to offer",
   bannercta1Caption: "Our Destination",
   bannercta2Caption: "Our Gallery",
+  modalTitle: "Booking request has been sent successfully  !",
+  modalContentText: "We will get back to you with confirmation/ request update after checking availability.",
 };
 
 /* Assign title, description and image to the custom card of the home page*/
@@ -165,4 +167,3 @@ export const footerContent = {
 
 
 export const currentYear = new Date().getFullYear();
-
