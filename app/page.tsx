@@ -6,6 +6,7 @@ import Blog from "../components/homePage/Blog";
 import CustomCard from "../components/homePage/CustomCard";
 import LogoCarousel from "@/components/homePage/LogoCarousel";
 import ContactNow from "@/components/homePage/contactNow";
+import ContactNowBanner from "@/components/homePage/contactNow";
 
 /**
  * HomeScreen represents the main screen of the website.
@@ -64,7 +65,7 @@ export default function HomeScreen() {
         }}
       >
         <Container>
-          <ContactNow />
+          <ContactNowBanner />
         </Container>
       </Box>
       

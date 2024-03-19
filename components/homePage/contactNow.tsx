@@ -9,7 +9,7 @@ import { typographyh1Style, typographyBody1Style, buttonContainedStyle } from '.
 
 
 /* contactNow Banner functional component */
-const ContactNow = () => {
+const ContactNowBanner = () => {
   return (
     <>
       <Grid
@@ -82,6 +82,6 @@ const ContactNow = () => {
   );
 };
 
-export default ContactNow;
+export default ContactNowBanner;
 
 
