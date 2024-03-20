@@ -4,17 +4,29 @@ import React from 'react'
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
 const SearchBar = () => {
-    const [searchTerm, setSearchTerm] = useState("");
+      const searchParams = new URLSearchParams();
+      const pathname = usePathname();
+      const {replace} = useRouter();
+
+    
     const [age, setAge] = useState("");
 
     const handleSelect = (event: SelectChangeEvent) => {
       setAge(event.target.value);
     };
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      setSearchTerm(event.target.value);
+    const handleSearch = (searchTerm: string) => {
+      const params = new URLSearchParams(searchParams);
+      if(searchTerm){
+        params.set("query", searchTerm);
+      }else{
+        params.delete("query");
+      }
+      replace(`${pathname}?${params.toString()}`);
+      
   };
 
   return (
@@ -35,8 +47,8 @@ const SearchBar = () => {
                 id="search"
                 type="search"
                 label="Search"
-                value={searchTerm}
-                onChange={handleChange}
+                value={searchParams.get("query")?.toString()}
+                onChange={(e) => handleSearch(e.target.value)}
                 sx={{ width: "100%" }}
                 InputProps={{
                   endAdornment: (
