@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import img from "../../public/images/hotelRooms/Room3.jpg";
+import img from "../../public/images/hotelRooms/Room3.webp";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { roomDetailsHeroSection } from "@/data/roomDetailsPage";
 import { lora, mulish } from "../../app/fonts";
