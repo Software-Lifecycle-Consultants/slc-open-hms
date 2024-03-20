@@ -111,6 +111,13 @@ export const blogCardText = {
   customTag2: "/Person",
   blogctaCaption: "Ticket booking",
 };
+export const Blog2 = {
+  contactNowTitle: "Best travel and destinations",
+  contactNowDescription:
+    "With travala you can experience new travel and the best tourist destinations that we have to offer",
+    contactNowCaption: "Our Destination",
+    contactNowVedioLink: "https://www.youtube.com/embed/KCn5Gc38oO4?si=NbdIRYqi4ppm_64d"
+};
 
 
 /* Assign profile image, user name and testimonial of the user to the testimonials section of the home page */
