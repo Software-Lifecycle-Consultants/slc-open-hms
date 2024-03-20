@@ -10,8 +10,18 @@ import HeroSection from "@/components/explore/HeroSection"; // Importing HeroSec
  * It includes sections like Hero section, Search bar, and Hotel rooms.
  */
 
-const ExploreScreen = () => {
+const ExploreScreen = ({
+  searchParams,
+}:{
+  searchParams?:{
+    query: string;//declear the query as a prop
+  
+  }
 
+  } ) => {
+
+    const query = searchParams?.query || " ";
+  
   return (
     <>
       {/* Hero Section */}
@@ -44,7 +54,7 @@ const ExploreScreen = () => {
       {/* Hotel Rooms Section */}
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
-          <HotelRooms />
+          <HotelRooms query={query}/>  {/* pass the query to Hotel room component*/ }
         </Container>
       </Box>
     </>
