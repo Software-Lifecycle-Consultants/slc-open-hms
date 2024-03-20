@@ -102,13 +102,14 @@ export const roomCardTexts = {
 };
 
 /* Assign array of rooms data to the similar rooms component of the guest room details page */
+//updated data structure 
 export const roomsData = [
   {
     id: 1,
-    roomCoverImage: "/images/hotelRooms/Room2.webp",                                      //return with filter response
-    roomName: "Deluxe Double with New York City View 1",                                  //return with filter response
-    roomShortDescription: "A scenic view of Hanthana mountain", //150 characters only     //return with filter response
-    price: 59,                                                                            //return with filter response
+    roomCoverImage: "/images/hotelRooms/Room2.webp",                                      
+    roomName: "Deluxe Double with New York City View 1",                                  
+    roomShortDescription: "A scenic view of Hanthana mountain", //150 characters only     
+    price: 59,                                                                           
     taxes:0,
     otherCharges: 0,
     terms: "",
