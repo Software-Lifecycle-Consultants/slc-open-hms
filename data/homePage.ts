@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 /* Assign Page routes and labels for navigation bar component of the website */
 export const pages = [
   { label: "Home", route: "/" },
