@@ -34,8 +34,9 @@ cd  slc-open-hms
 ```bash
 npm install
  ```
- 
-3. Install the Other NPM packages that are used in this project:
+Note : When you run npm install, it automatically installs all the dependencies listed in the package.json.
+  
+3. Below are the NPM packages (dependencies) used in this project. If any of the dependencies are not installed automatically, you can install them separately by executing the provided `npm install` commands.
 
 - [@mui/material](https://mui.com/material-ui/getting-started/installation/) - Version 5.14.4
   - Material UI is a comprehensive library of components that features our implementation of Google's Material Design system.
