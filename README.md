@@ -116,6 +116,6 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 - Special thanks to all the contributors and beta testers who helped shape this project.
 
 ## Contact
-For any inquiries or feedback, please contact us at hello@softwareconsultant.info  
+For any inquiries or feedback, please contact us at hello@softwareconsultant.org  
 Your feedback and contributions are welcome!
 
