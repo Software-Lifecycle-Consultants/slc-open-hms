@@ -34,6 +34,7 @@ export const bannerDetails = {
   modalTitle: "Booking request has been sent successfully  !",
   modalContentText: "We will get back to you with confirmation/ request update after checking availability.",
   captionButton: "ok",
+  
 };
 
 /* Assign title, description and image to the custom card of the home page*/
@@ -171,6 +172,12 @@ export const footerContent = {
   CompanyNameText: "Travala",
   PrivacyPolicyText: "Privacy Policy",
   PrivacyPolicyLink: "/privacy-policy",
+};
+
+export const dialogBox ={
+  errormodalTitle: "Please Try Again !",
+  errorContentText: "We seem to be facing a problem while sending your request .",
+  errorcaptionButton: "Try again",
 };
 
 
