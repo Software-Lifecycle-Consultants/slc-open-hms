@@ -29,14 +29,13 @@ Follow these instructions to set up the Hotel Management System project locally 
 git https://github.com/Software-Lifecycle-Consultants/slc-open-hms.git
 cd  slc-open-hms
  ```
-2. Install the Node Modules:
+2. Instal Node modules and dependencies : 
 
 ```bash
 npm install
  ```
 Note : When you run npm install, it automatically installs all the dependencies listed in the package.json.
-  
-3. Below are the NPM packages (dependencies) used in this project. If any of the dependencies are not installed automatically, you can install them separately by executing the provided `npm install` commands.
+Below are the NPM packages (dependencies) used in this project. If any of the dependencies are not installed automatically, you can install them separately by executing the provided `npm install` commands.
 
 - [@mui/material](https://mui.com/material-ui/getting-started/installation/) - Version 5.14.4
   - Material UI is a comprehensive library of components that features our implementation of Google's Material Design system.
@@ -70,11 +69,11 @@ npm install react-slick --save
 npm install slick-carousel
  ```
 
-4. Set up the environment variables:
+3. Set up the environment variables:
   - Create a .env.local file in the root directory of the project.
   - Add the required environment variables, such as database connection strings, API keys, etc.
     
-5. Run the development server:
+4. Run the development server:
  ```bash
 npm run dev
 # or
@@ -82,7 +81,7 @@ yarn dev
 # or
 pnpm dev
  ```
-6. Open your browser and navigate to http://localhost:3000 to see the Hotel Management System in action.
+5. Open your browser and navigate to http://localhost:3000 to see the Hotel Management System in action.
 
 ## Contributing
 We welcome contributions from the community! 
