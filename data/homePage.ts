@@ -33,6 +33,7 @@ export const bannerDetails = {
   bannercta2Caption: "Our Gallery",
   modalTitle: "Booking request has been sent successfully  !",
   modalContentText: "We will get back to you with confirmation/ request update after checking availability.",
+  captionButton: "ok",
 };
 
 /* Assign title, description and image to the custom card of the home page*/

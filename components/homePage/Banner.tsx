@@ -1,13 +1,13 @@
 "use client";
 import { Box, Button, Grid, Typography, Modal, DialogContent } from "@mui/material";
 import Image from "next/image";
-import image from "../../public/images/homePage/heroSectionImage/mainImage.webp";
+import mainImage from "../../public/images/homePage/heroSectionImage/mainImage.webp";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { bannerDetails } from "../../data/homePage";
 import { lora } from "../../app/fonts";
 import * as React from 'react';
-import image1 from "../../public/images/homePage/dialogBox/thumbUp.webp"
+import modalImage from "../../public/images/homePage/dialogBox/thumbUp.webp"
 
 import { typographyh5Style, typographyh1Style, typographyBody1Style, buttonContainedStyle, buttonTextStyle } from './styles';
 
@@ -141,7 +141,7 @@ const Banner = () => {
           }}
         >
           <Image 
-          src={image1} alt="test" style={{ maxWidth: '25%', height: 'auto',}} />
+          src={modalImage} alt="test" style={{ maxWidth: '25%', height: 'auto',}} />
         </DialogContent>       
           
         <DialogContent
@@ -178,7 +178,7 @@ const Banner = () => {
               }}
 
             >
-              Ok
+              {bannerDetails.captionButton}
             </Button>
             </DialogContent>
         </Box>
@@ -188,7 +188,7 @@ const Banner = () => {
         {/* Right side of the banner - image */}
         <Grid item xs={12} md={6}>
           <Image
-            src={image}
+            src={mainImage}
             alt="test"
             width={617.758}
             height={616.951}
