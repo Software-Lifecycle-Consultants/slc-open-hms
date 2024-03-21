@@ -179,6 +179,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             >
               {blogCardText.blogctaCaption}
             </Button>
+            {/* modal for display the error message */}
             <Modal
           keepMounted
           open={open}
@@ -199,6 +200,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             borderRadius:"10px",
           }}
         >
+          {/* image of modal */}
           <Image 
           src={erroimg} alt="test" style={{ maxWidth: '25%', height: 'auto',}} />
         </DialogContent>       
@@ -213,13 +215,17 @@ const BlogCard: React.FC<BlogCardProps> = ({
             textAlign: 'center',
           }}
         >
+          {/* modal title */}
           <Typography id="keep-mounted-modal-title" variant="h6" component="h2" sx={{color: "#EF6161",}}>
           {dialogBox.errormodalTitle}
           </Typography>
           
+          {/* modal description */}
           <Typography id="keep-mounted-modal-description" sx={{ mt: 2, }}>
           {dialogBox.errorContentText}
           </Typography>
+
+          {/* button in modal */}
           <Button
               variant="contained"
               color="error"

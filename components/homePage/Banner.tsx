@@ -140,6 +140,7 @@ const Banner = () => {
             borderRadius:"10px",
           }}
         >
+          {/* modal image */}
           <Image 
           src={modalImage} alt="test" style={{ maxWidth: '25%', height: 'auto',}} />
         </DialogContent>       
@@ -154,13 +155,15 @@ const Banner = () => {
             textAlign: 'center',
           }}
         >
+          {/* modal title */}
           <Typography id="keep-mounted-modal-title" variant="h6" component="h2" sx={{color: "#54BC2F",}}>
           {bannerDetails.modalTitle}
           </Typography>
-          
+          {/* modal text */}
           <Typography id="keep-mounted-modal-description" sx={{ mt: 2, }}>
           {bannerDetails.modalContentText}
           </Typography>
+          {/* modal button */}
           <Button
               variant="contained"
               color="success"

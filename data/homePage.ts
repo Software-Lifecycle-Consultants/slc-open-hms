@@ -174,6 +174,7 @@ export const footerContent = {
   PrivacyPolicyLink: "/privacy-policy",
 };
 
+// error modal variable
 export const dialogBox ={
   errormodalTitle: "Please Try Again !",
   errorContentText: "We seem to be facing a problem while sending your request .",
