@@ -14,23 +14,23 @@ export const header1Details = {
   };
 
 /* Assign Details to the Privacy Policy page */
-export const section1 = [
-    {
-      section1head: "1. Information We Collect",
-      subsections1: [
-        {
-          title1: "1.1 Personal Information",
-          content1: [
+export const bodysection1 = {
+
+      title: "1. Information We Collect",
+      subtitle: "1.1 Personal Information",
+      content: 
+          [
             "We may collect personal information directly from you when you interact with our website, subscribe to our newsletter, or use our 'Contact Us' form. The types of personal information we may collect include:",
             "- Contact information (such as name, email address, phone number)",
             "- Company information (such as company name, job title)",
             "- Communication preferences"
           ]
-        },
+    };
 
-        {
-          title2: "1.2 Automatically Collected Information",
-          content2: [
+export const bodysection102 = {
+
+      subtitle: "1.2 Automatically Collected Information",
+      content: [
             "When you visit our website, we may automatically collect certain information about your device, browsing activities, and usage patterns, including:",
             "- IP address",
             "- Browser type and version",
@@ -38,18 +38,13 @@ export const section1 = [
             "- Referral source",
             "- Pages visited and time spent on our website"
           ]
-        }
-      ]
-    },
-]
+    };
 
-export const section2 = [
-    {
-      section2head: "2. Use of Information",
-      content2: [
-        {
-          title1: "2.1 Providing and Improving Services",
-          content1: [
+export const bodysection2 = {
+
+      title: "2. Use of Information",
+      subtitle: "2.1 Providing and Improving Services",
+      content: [
             "We use the collected information to provide you with our software consultancy services and improve your experience with our website. This includes:",
             "- Responding to your inquiries and providing requested information",
             "- Sending newsletters and marketing communications (with your consent)",
@@ -57,63 +52,53 @@ export const section2 = [
             "- Enhancing our services and tailoring them to your needs",
             "- Managing and administering our business operations"
           ]
-        },
-        {
-          title2: "2.2 Legal Compliance",
-          content2: [
+
+    };
+
+export const bodysection202 = {
+
+      subtitle: "2.2 Legal Compliance",
+      content:
             "We may use your personal information to comply with legal obligations, enforce our terms and conditions, and protect our rights, property, or safety, as required by applicable laws and regulations."
-          ]
-        }
-      ]
-    },
-]
+    };
 
-export const section3 = [
-    {
-      section3head: "3. Data Retention and Security",
-      content3: [
-        {
-          title1: "3.1 Data Retention",
-          content1: [
+ export const bodysection3 = {
+
+      title: "3. Data Retention and Security",
+      subtitle: "3.1 Data Retention",
+      content:
             "We retain your personal information only as long as necessary for the purposes outlined in this Privacy Policy, or as required by law. We will securely delete or anonymize your personal information when it is no longer needed."
-          ]
-        },
-        {
-          title2: "3.2 Data Security",
-          content2: [
+    };
+
+export const bodysection302 = {
+
+      subtitle: "3.2 Data Security",
+      content: 
             "We take appropriate technical and organizational measures to protect your personal information from unauthorized access, loss, misuse, alteration, or disclosure. However, please be aware that no security measures are foolproof, and we cannot guarantee the absolute security of your information."
-          ]
-        }
-      ]
-    },
-]
+          
+    };
 
-export const section4 = [
-    {
-      section4Title: "4. Disclosure of Information",
-      content4: [
-        {
-          title1: "4.1 Third-Party Service Providers",
-          content1: [
+export const bodysection4 = {
+
+      title: "4. Disclosure of Information:",
+      subtitle: "4.1 Third-Party Service Providers:",
+      content: 
             "We may engage trusted third-party service providers to assist us in delivering our services and managing our website. These providers are obligated to maintain the confidentiality and security of your personal information and may only use it in accordance with our instructions."
-          ]
-        },
-        {
-          title2: "4.2 Legal Requirements",
-          content2: [
-            "We may disclose your personal information if required to do so by law or if we believe that such action is necessary to (a) comply with a legal obligation, (b) protect and defend our rights or property, (c) prevent or investigate possible wrongdoing, or (d) protect the personal safety of users or the public."
-          ]
-        }
-      ]
-    },
-]
+          
+    };
 
-export const section5 = [
-    {
-      section5Title: "5. Your Rights",
-      content5: [
-        {
-          content1: [
+export const bodysection402 = {
+
+      subtitle: "4.2 Legal Requirements:",
+      content: 
+            "We may disclose your personal information if required to do so by law or if we believe that such action is necessary to (a) comply with a legal obligation, (b) protect and defend our rights or property, (c) prevent or investigate possible wrongdoing, or (d) protect the personal safety of users or the public."
+          
+    };
+
+export const bodysectio5 = {
+
+      title: "5. Your Rights",
+      content: [
             "You have certain rights regarding the personal information we hold about you. These rights may include:",
             "- The right to access and obtain a copy of your personal information",
             "- The right to rectify any inaccurate or incomplete personal information",
@@ -122,31 +107,26 @@ export const section5 = [
             "- The right to object to the processing of your personal information",
             "- The right to data portability"
           ]
-        },
-        {
-          content2: [
-            "To exercise your rights or make any privacy-related requests, please contact us using the information provided in the 'Contact Us' section below."
-          ]
-        }
-      ]
-    },
-]
+    };
 
-export const section6 = {
-      section6Title: "6. International Data Transfers",
-      content6:
+export const bodysection501 = {
+
+      content: 
+            "To exercise your rights or make any privacy-related requests, please contact us using the information provided in the 'Contact Us' section below."      
+    };
+
+export const bodysection6 = {
+
+      Title: "6. International Data Transfers",
+      content:
             "Your personal information may be transferred to and processed in countries outside your jurisdiction, including countries that may have different data protection laws. We will take appropriate measures to ensure that any international transfers comply with applicable data protection laws."
     };
 
-export const section7 = {
-      section7Title: "7. Contact Us",
-      content7: [
-        {
-          content1: [
+export const bodysection7 = {
+
+      Title: "7. Contact Us",
+      content: [
             "If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:",
             "Email: hello@softwareconsultant.org"
           ]
-        }
-      ]
     };
-
