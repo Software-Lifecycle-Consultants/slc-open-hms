@@ -31,6 +31,10 @@ export const bannerDetails = {
     "With travala you can experience new travel and the best tourist destinations that we have to offer",
   bannercta1Caption: "Our Destination",
   bannercta2Caption: "Our Gallery",
+  modalTitle: "Booking request has been sent successfully  !",
+  modalContentText: "We will get back to you with confirmation/ request update after checking availability.",
+  captionButton: "ok",
+  
 };
 
 /* Assign title, description and image to the custom card of the home page*/
@@ -170,6 +174,12 @@ export const footerContent = {
   PrivacyPolicyLink: "/privacy-policy",
 };
 
+// error modal variable
+export const dialogBox ={
+  errormodalTitle: "Please Try Again !",
+  errorContentText: "We seem to be facing a problem while sending your request .",
+  errorcaptionButton: "Try again",
+};
+
 
 export const currentYear = new Date().getFullYear();
-
