@@ -1,3 +1,5 @@
+import { pageDetails, headerDetails, headsection1, headsection2, subsection2, subsection4, headsection3, subsection6, headsection4, subsection8, headsection5, headsection6, headsection7 } from "@/data/termscondition";
+import Typography from '@mui/material/Typography';
 import { Metadata } from "next"
 export const metadata: Metadata = {
     title: 'HMS Dev | T&C',
@@ -11,52 +13,133 @@ export default function TermsCondition(){
       margin: '0 auto',
       padding: '25px'
     }}>
-     <center> <h1> <b> Terms & Conditions </b> </h1> </center> 
-     <center> <p> Our friendly team would love to hear from you. </p> </center>
-
-      <h1> Terms and Conditions </h1>
-      <h2> Effective Date: <b> May 8, 2023 </b></h2>
-      <p> These Terms and Conditions (“Terms”) govern your use of the SLC website and the services provided by SLC (“we,” “us,” or “our”). By accessing our website or using our services, you agree to be bound by these Terms. If you do not agree with these Terms, please refrain from using our website and services.</p>
       
-      <h1> 1. Acceptance of Terms </h1>
-      <h3> 1.1 Agreement to Terms: </h3>
-      <p> By accessing our website or using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree to these Terms, you may not use our website or services. </p>
+     <center> <Typography variant="h4"> 
+          <b> { pageDetails.title } </b> 
+          </Typography> 
+     </center> 
+     
+     <center> 
+      <Typography variant="h6"> 
+           { pageDetails.subtitle } 
+           </Typography> 
+      </center>
+<br />
+       <Typography variant="h4"> 
+       {headerDetails.title} 
+       </Typography>
+       
+      <Typography variant="h5"> Effective Date: 
+      {headerDetails.effectiveDate} 
+      </Typography>
 
-      <h3> 1.2 Changes to Terms: </h3>
-      <p> We reserve the right to modify, update, or change these Terms at any time without prior notice. It is your responsibility to review these Terms periodically to stay informed of any updates. Your continued use of our website or services after any changes to the Terms constitutes your acceptance of the revised Terms.</p>
+      <Typography variant="body1"> 
+      {headerDetails.description} 
+      </Typography>
+<br />      
+      <Typography variant="h4"> 
+      { headsection1.subsection1} 
+      </Typography>
 
-      <h1> 2. Intellectual Property </h1>
-      <h3> 2.1 Ownership: </h3>
-      <p> The content, design, logos, trademarks, and other intellectual property displayed on our website are owned by SLC or licensed to us. You may not use, reproduce, distribute, or modify any of our intellectual property without our prior written consent. </p>
+      <Typography variant="body1"> 
+        { headsection1.title1 }
+        <br />
+       { headsection1.content1} 
+       </Typography>
+<br />
+      <Typography variant="body1"> 
+      { subsection2.title2} 
+        <br />
+       { subsection2.content2 }
+       </Typography>
+<br />
+      <Typography variant="h4"> 
+      {headsection2.subsection3} 
+      </Typography>
 
-      <h3> 2.2 User Content: </h3>
-      <p> Any content you submit or contribute to our website, such as comments, reviews, or feedback, remains your intellectual property. However, by submitting such content, you grant us a worldwide, royalty-free, non-exclusive license to use, reproduce, modify, adapt, publish, and distribute your content for the purposes of operating and promoting our website and services. </p> 
+      <Typography variant="body1"> 
+      { headsection2.title1 } 
+        <br />
+       { headsection2.content1 } 
+       </Typography>
+<br />
+      <Typography variant="body1"> 
+      { subsection4.title2 } 
+        <br />
+       { subsection4.content2 } 
+       </Typography> 
+<br />
+      <Typography variant="h4"> 
+      { headsection3.subsection5 } 
+      </Typography>
 
-      <h1> 3. Limitations of Liability </h1>
-      <h3> 3.1 Disclaimer of Warranties: </h3>
-      <p> Our website and services are provided on an “as is” and “as available” basis without warranties of any kind, either express or implied. We do not guarantee the accuracy, reliability, or completeness of any information or content on our website. </p>
-  
-      <h3> 3.2 Limitation of Liability: </h3>
-      <p> To the extent permitted by law, we shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of or in connection with your use of our website or services. This includes, but is not limited to, any errors, omissions, or interruptions in the availability of our website or services. </p>
+      <Typography variant="body1"> 
+      { headsection3.title1 } 
+        <br />
+      { headsection3.content1 } 
+      </Typography>
+<br /> 
+      <Typography variant="body1"> 
+      { subsection6.title2 }
+        <br />
+       { subsection6.content2 } 
+       </Typography>
+<br />
+      <Typography variant="h4"> 
+      { headsection4.subsection7 } 
+      </Typography>
 
-      <h1> 4. User Responsibilities </h1>
-      <h3> 4.1 Compliance with Laws: </h3>
-      <p> You agree to comply with all applicable laws, regulations, and third-party rights while using our website and services. You are solely responsible for any content you submit, post, or transmit on our website. </p>
- 
-      <h3> 4.2 Security: </h3>
-      <p> You are responsible for maintaining the confidentiality of your account information and for any activities that occur under your account. You must notify us immediately of any unauthorized use or security breaches. </p>
+      <Typography variant="body1"> 
+      { headsection4.title1 } 
+        < br />
+      { headsection4.content1 } 
+      </Typography>
 
-      <h1> 5. Termination </h1>
-      <p> We reserve the right to suspend, restrict, or terminate your access to our website or services at any time without prior notice or liability. Upon termination, all provisions of these Terms that by their nature should survive termination will continue to apply. </p>
+<br />
+      <Typography variant="body1"> 
+      { subsection8.title2 } 
+<br />
+      { subsection8.content2 } 
+      </Typography>
+<br />
+      <Typography variant="h4"> 
+      { headsection5.subsection9 } 
+      </Typography>
 
-      <h1> 6. Governing Law </h1>
-      <p> These Terms shall be governed by and construed in accordance with the laws of [Your Country/State]. Any disputes arising out of or relating to these Terms shall be resolved in the courts located in [Your Jurisdiction]. </p>
+      <Typography variant="body1"> 
+      { headsection5.content } 
+      </Typography>
+<br />
+      <Typography variant="h4"> 
+      { headsection6.subsection10 } 
+      </Typography>
 
-      <h1> 7. Contact Us </h1>
-      <p> If you have any questions or concerns regarding these Terms and Conditions, please contact us at: hello@softwareconsultant.org </p>
+      <Typography variant="body1"> 
+      { headsection6.content1 } 
+      </Typography>
+<br />
+      <Typography variant="h4"> 
+        { headsection7.subsection11 } 
+      </Typography>
 
-      <center> <h2> <b> We'd love to hear from you </b> </h2> </center> 
-      <center> <p> Chat to our friendly team. </p> </center>
+      <Typography variant="body1"> 
+        { headsection7.content2 } 
+      </Typography>
+
+<br />
+
+      <center> 
+        <Typography variant="h4"> 
+          <b> We'd love to hear from you </b> 
+        </Typography> 
+      </center> 
+
+      <center> 
+        <Typography variant="h6"> 
+          Chat to our friendly team. 
+        </Typography> 
+      </center>
+
 </div>
     </>
     );   

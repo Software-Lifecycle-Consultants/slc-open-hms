@@ -44,7 +44,7 @@ const SimilarRooms = () => {
         {roomsData.map((item) => (
           <Grid key={item.id} item xs={12} sm={6} md={4}>
             <RoomCard
-              image={item.roomImage}
+              image={item.roomCoverImage}
               roomName={item.roomName}
               price={item.price}
             />
