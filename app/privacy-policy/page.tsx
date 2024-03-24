@@ -1,103 +1,118 @@
-import { bodysectio5, bodysection1, bodysection102, bodysection2, bodysection202, bodysection3, bodysection302, bodysection4, bodysection402, bodysection501, bodysection6, bodysection7, header1Details } from "@/data/privacypolicyPage";
+import React from "react";
 import { Metadata } from "next";
+import {
+  sectio5,
+  section1,
+  section102,
+  section2,
+  section202,
+  section3,
+  section302,
+  section4,
+  section402,
+  section501,
+  section6,
+  section7,
+  header1Details,
+} from "@/data/privacypolicyPage";
+import Typography from "@mui/material/Typography";
+
 export const metadata: Metadata = {
   title: "HMS Dev | Privacy Policy",
   description: "HMS System under development",
 };
 
-export default function PrivacyPolicy() {
+function PrivacyPolicy() {
   return (
-    <>
-      <div
-        style={{
-          maxWidth: "1220px" /* Adjust max-width as needed */,
-          margin: "0 auto" /* Center the container */,
-          padding: "40px" /* Add padding */,
-        }}>
-        <h1>{header1Details.title}</h1>
-        <h4>
-          Effective Date: <b>{header1Details.effectiveDate}</b>
-        </h4>
-        <p>{header1Details.description}</p>
-
-        <h2>{bodysection1.title}</h2>
-        <p>
-          {bodysection1.subtitle}
-          <br />
-        </p>
-
-        {bodysection1.content.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
+    <div
+      style={{
+        maxWidth: "1320x", /* Adjust max-width as needed */
+        margin: "0 auto", /* Center the container */
+        padding: "120px", /* Add padding */
+      }}>
         
-        <p>
-          {bodysection102.subtitle}
-        </p>
+      <Typography variant="h3"><b>{header1Details.title}</b></Typography><br/>
+      <Typography variant="subtitle1">
+        <b>{header1Details.effectiveDate}</b>
+      </Typography>
+      <Typography variant="body1">{header1Details.description}</Typography>
+      <br/>
 
-        {bodysection102.content.map((item, index) => (
-          <p key={index}>{item}</p>
+      <Typography variant="h5">{section1.title}</Typography><br/>
+      <Typography variant="subtitle1">{section1.subtitle}</Typography>
+
+      <ul style={{ listStyleType: "none", padding: 0 }}>
+        {section1.content.map((item, index) => (
+          <li key={index}>
+            <Typography variant="body1">{item}</Typography>
+          </li>
         ))}
+      </ul>
+      
 
-        <h2>{bodysection2.title}</h2>
-        <p>
-          {bodysection2.subtitle}
-        </p>
-        {bodysection2.content.map((item, index) => (
-          <p key={index}>{item}</p>
+      <Typography variant="subtitle1">{section102.subtitle}</Typography>
+      <ul style={{ listStyleType: "none", padding: 0 }}>
+        {section102.content.map((item, index) => (
+          <li key={index}>
+            <Typography variant="body1">{item}</Typography>
+          </li>
         ))}
+      </ul>
+      <br/>
 
-        <p>
-          {bodysection202.subtitle}
-          <br />
-          {bodysection202.content}
-        </p>
-
-        <h2>{bodysection3.title}</h2>
-        <p>
-          {bodysection3.subtitle}
-          <br />
-          {bodysection3.content}
-        </p>
-
-        <p>
-          {bodysection302.subtitle}
-          <br />
-          {bodysection302.content}
-        </p>
-
-        <h2>{bodysection4.title}</h2>
-        <p>
-          {bodysection4.subtitle}
-          <br />
-          {bodysection4.content}
-        </p>
-
-        <p>
-          {bodysection402.subtitle}
-          <br />
-          {bodysection402.content}
-        </p>
-
-        <h2> {bodysectio5.title} </h2>
-
-        {bodysectio5.content .map((item, index) => (
-          <p key={index}>{item}</p>
+      <Typography variant="h5">{section2.title}</Typography><br/>
+      <Typography variant="subtitle1">{section2.subtitle}</Typography>
+      <ul style={{ listStyleType: "none", padding: 0 }}>
+        {section2.content.map((item, index) => (
+          <li key={index}>
+            <Typography variant="body1">{item}</Typography>
+          </li>
         ))}
+      </ul>
 
-        <p>
-          {bodysection501.content}
-        </p>
+      <Typography variant="subtitle1">{section202.subtitle}</Typography>
+      <Typography variant="body1">{section202.content}</Typography>
+      <br/>
 
-        <h2>{bodysection6.Title}</h2>
-        <p>
-          {bodysection6.content}
-        </p>
+      <Typography variant="h5">{section3.title}</Typography><br/>
+      <Typography variant="subtitle1">{section3.subtitle}</Typography>
+      <Typography variant="body1">{section3.content}</Typography>
+      <br/>
 
-        <h2>{bodysection7.Title}</h2>
-        <p>
-          {bodysection7.content}
-        </p>
-      </div>
-    </>
+      <Typography variant="subtitle1">{section302.subtitle}</Typography>
+      <Typography variant="body1">{section302.content}</Typography>
+      <br/>
+
+      <Typography variant="h5">{section4.title}</Typography><br/>
+      <Typography variant="subtitle1">{section4.subtitle}</Typography>
+      <Typography variant="body1">{section4.content}</Typography>
+      <br/>
+
+      <Typography variant="subtitle1">{section402.subtitle}</Typography>
+      <Typography variant="body1">{section402.content}</Typography>
+      <br/>
+
+      <Typography variant="h5">{sectio5.title}</Typography>
+      <ul style={{ listStyleType: "none", padding: 0 }}>
+        {sectio5.content.map((item, index) => (
+          <li key={index}>
+            <Typography variant="body1">{item}</Typography>
+          </li>
+        ))}
+      </ul>
+
+      <Typography variant="body1">{section501.content}</Typography>
+      <br/>
+
+      <Typography variant="h5">{section6.Title}</Typography>
+      <Typography variant="body1">{section6.content}</Typography>
+      <br/>
+
+      <Typography variant="h5">{section7.Title}</Typography>
+      <Typography variant="body1">{section7.content}</Typography>
+      <br/>
+    </div>
   );
 }
+
+export default PrivacyPolicy;
