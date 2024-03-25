@@ -5,8 +5,8 @@ import Testimonials from "../components/homePage/Testimonials";
 import Blog from "../components/homePage/Blog";
 import CustomCard from "../components/homePage/CustomCard";
 import LogoCarousel from "@/components/homePage/LogoCarousel";
-import ContactNow from "@/components/homePage/contactNow";
 import ContactNowBanner from "@/components/homePage/contactNow";
+import Cookie from "../components/cookie/Cookie";
 
 /**
  * HomeScreen represents the main screen of the website.
@@ -76,6 +76,9 @@ export default function HomeScreen() {
         <Container>
           <Testimonials />
         </Container>
+      </Box>
+      <Box>
+      <Cookie/>
       </Box>
     </>
   );
