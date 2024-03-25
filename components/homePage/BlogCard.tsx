@@ -59,7 +59,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             margin: "0 auto",
           }}
         >
-          {/* Image component */} 
+          {/* video component */} 
           <iframe
         
             src={vedioURL}
