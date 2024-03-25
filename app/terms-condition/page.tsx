@@ -1,4 +1,4 @@
-import { pageDetails, headerDetails, headsection1, headsection2, subsection2, subsection4, headsection3, subsection6, headsection4, subsection8, headsection5, headsection6, headsection7 } from "@/data/termscondition";
+import { pageDetails, headerDetails, headsection1, headsection2, subsection2, subsection4, headsection3, subsection6, headsection4, subsection8, headsection5, headsection6, headsection7, pageEnd } from "@/data/termscondition";
 import Typography from '@mui/material/Typography';
 import { Metadata } from "next"
 export const metadata: Metadata = {
@@ -13,134 +13,173 @@ export default function TermsCondition(){
       margin: '0 auto',
       padding: '25px'
     }}>
+      <Typography variant="h4" sx={{
+                  textAlign: "center",
+                  marginTop:"10px",
+                  fontWeight: "bold"
+                }}> 
+           { pageDetails.title } 
+      </Typography> 
       
-     <center> <Typography variant="h4"> 
-          <b> { pageDetails.title } </b> 
-          </Typography> 
-     </center> 
-     
-     <center> 
-      <Typography variant="h6"> 
+      <Typography variant="h6" sx={{
+                  textAlign: "center"
+                }}> 
            { pageDetails.subtitle } 
-           </Typography> 
-      </center>
-<br />
-       <Typography variant="h4"> 
+      </Typography> 
+
+       <Typography variant="h4" sx={{
+                  marginTop:"10px"
+                }}> 
        {headerDetails.title} 
        </Typography>
        
-      <Typography variant="h5"> Effective Date: 
+      <Typography variant="h5" sx={{
+                  marginTop:"10px"
+                }}> 
+      Effective Date: 
       {headerDetails.effectiveDate} 
       </Typography>
 
-      <Typography variant="body1"> 
+      <Typography variant="body1" sx={{
+                  marginTop:"10px"
+                }}> 
       {headerDetails.description} 
       </Typography>
-<br />      
-      <Typography variant="h4"> 
+     
+      <Typography variant="h4" sx={{
+                  marginTop:"15px"
+                }}>  
       { headsection1.subsection1} 
       </Typography>
 
-      <Typography variant="body1"> 
+      <Typography variant="body1" sx={{
+                  marginTop:"8px"
+                }}>  
         { headsection1.title1 }
-        <br />
        { headsection1.content1} 
        </Typography>
-<br />
-      <Typography variant="body1"> 
+
+      <Typography variant="body1" sx={{
+                  marginTop:"12px"
+                }}> 
       { subsection2.title2} 
-        <br />
        { subsection2.content2 }
        </Typography>
-<br />
-      <Typography variant="h4"> 
+
+      <Typography variant="h4" sx={{
+                  marginTop:"15px"
+                }}>   
       {headsection2.subsection3} 
       </Typography>
 
-      <Typography variant="body1"> 
+      <Typography variant="body1" sx={{
+                  marginTop:"8px"
+                }}>   
       { headsection2.title1 } 
-        <br />
        { headsection2.content1 } 
        </Typography>
-<br />
-      <Typography variant="body1"> 
+
+      <Typography variant="body1" sx={{
+                  marginTop:"12px"
+                }}> 
       { subsection4.title2 } 
-        <br />
        { subsection4.content2 } 
        </Typography> 
-<br />
-      <Typography variant="h4"> 
+
+      <Typography variant="h4" sx={{
+                  marginTop:"15px"
+                }}>   
       { headsection3.subsection5 } 
       </Typography>
 
-      <Typography variant="body1"> 
+      <Typography variant="body1" sx={{
+                  marginTop:"8px"
+                }}>   
       { headsection3.title1 } 
-        <br />
       { headsection3.content1 } 
       </Typography>
-<br /> 
-      <Typography variant="body1"> 
+ 
+      <Typography variant="body1" sx={{
+                  marginTop:"12px"
+                }}> 
       { subsection6.title2 }
-        <br />
        { subsection6.content2 } 
        </Typography>
-<br />
-      <Typography variant="h4"> 
+
+      <Typography variant="h4" sx={{
+                  marginTop:"15px"
+                }}>  
       { headsection4.subsection7 } 
       </Typography>
 
-      <Typography variant="body1"> 
+      <Typography variant="body1" sx={{
+                  marginTop:"8px"
+                }}>   
       { headsection4.title1 } 
-        < br />
       { headsection4.content1 } 
       </Typography>
 
-<br />
-      <Typography variant="body1"> 
+
+      <Typography variant="body1" sx={{
+                  marginTop:"12px"
+                }}> 
       { subsection8.title2 } 
-<br />
       { subsection8.content2 } 
       </Typography>
-<br />
-      <Typography variant="h4"> 
+
+      <Typography variant="h4" sx={{
+                  marginTop:"15px"
+                }}>   
       { headsection5.subsection9 } 
       </Typography>
 
-      <Typography variant="body1"> 
+      <Typography variant="body1" sx={{
+                  marginTop:"8px"
+                }}>   
       { headsection5.content } 
       </Typography>
-<br />
-      <Typography variant="h4"> 
+
+      <Typography variant="h4" sx={{
+                  marginTop:"15px"
+                }}>  
       { headsection6.subsection10 } 
       </Typography>
 
-      <Typography variant="body1"> 
+      <Typography variant="body1" sx={{
+                  marginTop:"8px"
+                }}>   
       { headsection6.content1 } 
       </Typography>
-<br />
-      <Typography variant="h4"> 
+
+      <Typography variant="h4" sx={{
+                  marginTop:"15px"
+                }}>   
         { headsection7.subsection11 } 
       </Typography>
 
-      <Typography variant="body1"> 
+      <Typography variant="body1" sx={{
+                  marginTop:"8px"
+                }}>  
         { headsection7.content2 } 
       </Typography>
-
-<br />
-
-      <center> 
-        <Typography variant="h4"> 
-          <b> We'd love to hear from you </b> 
+ 
+        <Typography variant="h4" sx={{
+                  textAlign: "center",
+                  marginTop:"30px",
+                  fontWeight: "bold"
+                }}>  
+           {pageEnd.subtitle} 
         </Typography> 
-      </center> 
 
       <center> 
-        <Typography variant="h6"> 
-          Chat to our friendly team. 
+        <Typography variant="h6" sx={{
+                  textAlign: "center"
+                }}> 
+          {pageEnd.title}
         </Typography> 
       </center>
 
-</div>
+  </div>
     </>
     );   
 }

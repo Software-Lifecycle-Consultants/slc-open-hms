@@ -1,7 +1,9 @@
 /* Assign to the Page Details of the Terms and Conditions page */
 export const pageDetails = {
     title: "Terms & Conditions",
-    subtitle: "Our friendly team would love to hear from you."
+    subtitle: "Our friendly team would love to hear from you.",
+    alignItems: "center",
+    justifyContent: "center"
 };
 
 /* Assign header section of the Terms and Conditions page */
@@ -105,7 +107,6 @@ export const headerDetails = {
                 "If you have any questions or concerns regarding these Terms and Conditions, please contact us at: hello@softwareconsultant.org"
             ]
         };
-
 
 /* Assign to the Page End Details of the Terms and Conditions page */
 export const pageEnd = {
