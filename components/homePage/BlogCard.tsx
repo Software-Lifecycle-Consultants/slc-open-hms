@@ -8,11 +8,12 @@ import erroimg from "../../public/images/homePage/dialogBox/thumbDown.webp"
 /* DestinationCardDetails component displays details of a destination in a card. */
 
 interface BlogCardProps {
-  image: string; // The image URL of the destination.
+  vedioURL: string; // The image URL of the destination.
   city: string; // The name of the city.
   description: string; // A brief description of the destination.
   price: number; // The price per person for the destination.
 }
+
 const style = {
   position: 'absolute' as 'absolute',
   top: '50%',
@@ -30,7 +31,7 @@ const style = {
 };
 
 const BlogCard: React.FC<BlogCardProps> = ({
-  image,
+  vedioURL,
   city,
   description,
   price,
@@ -38,8 +39,9 @@ const BlogCard: React.FC<BlogCardProps> = ({
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  
   return (
+    
     <>
       {/* Card component */}
       <Card
@@ -57,19 +59,21 @@ const BlogCard: React.FC<BlogCardProps> = ({
             margin: "0 auto",
           }}
         >
-          {/* Image component */}
-          <Image
-            src={image}
-            alt="test"
-            width={400}
-            height={284}
+          {/* video component */} 
+          <iframe
+        
+            src={vedioURL}
+            width="400"
+            height="284"
+            frameBorder="0"
+            
             style={{
               width: "100%",
               height: "auto",
               borderRadius: "20px 20px 0px 0px",
               flexShrink: 0,
             }}
-          />
+            />
         </Box>
         <CardContent
           sx={{
