@@ -2,7 +2,7 @@
 export const today = new Date();
 
 export const header1Details = {
-    title: "Privacy Policy",
+    title: "Privacy & Policy",
     effectiveDate:"Effective Date:"+ today.toISOString().split('T')[0], // Format today's date as YYYY-MM-DD
     description:"This Privacy Policy outlines how SLC (“we,” “us,” or “our”) collects, uses, and safeguards the personal information of visitors (“you” or “your”) to our website. We are committed to protecting your privacy and complying with applicable data protection regulations, including the General Data Protection Regulation (GDPR) and other relevant laws. By accessing our website or using our services, you consent to the practices described in this Privacy Policy."
   };
