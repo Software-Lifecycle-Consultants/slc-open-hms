@@ -21,6 +21,7 @@ const SearchBar = () => {
   const { replace } = useRouter();
 
   const handleSelect = (key: string, selector: string) => {
+    //key = field name, selector = selected value
     const params = new URLSearchParams(searchParams);
 
     if (selector) {
@@ -28,11 +29,12 @@ const SearchBar = () => {
     } else {
       params.delete(key);
     }
-
+    //replace the current url with the new url
     replace(`${pathname}?${params.toString()}`);
   };
 
   const handleSearch = (searchTerm: string) => {
+    //searchTerm = search query
     const params = new URLSearchParams(searchParams);
     console.log(searchTerm);
     if (searchTerm) {
@@ -40,6 +42,7 @@ const SearchBar = () => {
     } else {
       params.delete("query");
     }
+    //replace the current url with the new url
     replace(`${pathname}?${params.toString()}`);
   };
 

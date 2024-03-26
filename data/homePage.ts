@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 /* Assign Page routes and labels for navigation bar component of the website */
 export const pages = [
   { label: "Home", route: "/" },
@@ -31,6 +31,10 @@ export const bannerDetails = {
     "With travala you can experience new travel and the best tourist destinations that we have to offer",
   bannercta1Caption: "Our Destination",
   bannercta2Caption: "Our Gallery",
+  modalTitle: "Booking request has been sent successfully  !",
+  modalContentText: "We will get back to you with confirmation/ request update after checking availability.",
+  captionButton: "ok",
+  
 };
 
 /* Assign title, description and image to the custom card of the home page*/
@@ -111,6 +115,13 @@ export const blogCardText = {
   customTag2: "/Person",
   blogctaCaption: "Ticket booking",
 };
+export const Blog2 = {
+  contactNowTitle: "Best travel and destinations",
+  contactNowDescription:
+    "With travala you can experience new travel and the best tourist destinations that we have to offer",
+    contactNowCaption: "Our Destination",
+    contactNowVedioLink: "https://www.youtube.com/embed/KCn5Gc38oO4?si=NbdIRYqi4ppm_64d"
+};
 
 
 /* Assign profile image, user name and testimonial of the user to the testimonials section of the home page */
@@ -163,6 +174,12 @@ export const footerContent = {
   PrivacyPolicyLink: "/privacy-policy",
 };
 
+// error modal variable
+export const dialogBox ={
+  errormodalTitle: "Please Try Again !",
+  errorContentText: "We seem to be facing a problem while sending your request .",
+  errorcaptionButton: "Try again",
+};
+
 
 export const currentYear = new Date().getFullYear();
-

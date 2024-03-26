@@ -2,15 +2,15 @@ import { Grid } from "@mui/material";
 import React, { useState } from "react";
 import RoomCard from "../guestRoomDetails/RoomCard";
 import { roomDetails } from "../../data/explorePage";
-import Pagination from "../explore/Panigation";
+import Pagination from "./Pagination";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 
 const HotelRooms = ({
   query,
   value,
 }: {
-  query: string;
-  value: string;
+  query: string; //type declaration for query
+  value: string; //type declaration for value
   page: number;
 }) => {
   const searchParams = useSearchParams();
@@ -26,13 +26,15 @@ const HotelRooms = ({
   });
 
   const filteredResults = roomDetails.filter((room) => {
-    //filterd the rooms based on search query by room type
-    const filterbyType = room.roomType
-      .toLowerCase()
-      .includes(value.toLowerCase());
+    //filterd the rooms based on selected value from drop down list by room type, guest,bed sizes
+    return (
+      room.roomType.toLowerCase() === value.toLowerCase() ||
+      room.guest.toLowerCase() === value.toLowerCase() ||
+      room.bedSizes.toLowerCase() === value.toLowerCase()
+    );
   });
 
-  const totalItems = filteredRooms.length; // Total number of items after filtering
+  const totalItems = filteredRooms.length + filteredResults.length; // Total number of items after filtering
   const totalPages = Math.ceil(totalItems / itemsPerPage); // Calculate total pages
 
   // Paginated rooms based on current page

@@ -14,13 +14,13 @@ const ExploreScreen = ({
   searchParams,
 }: {
   searchParams?: {
-    query: string; //declear the query as a prop
-    selector: string;
+    query: string; //declear the query as a prop related to search bar query
+    selector: string; //declear the value as a prop related to drop down list value
     page: number;
   };
 }) => {
-  const query = searchParams?.query || " ";
-  const value = searchParams?.selector || " ";
+  const query = searchParams?.query || " "; //destructuring the query from searchParams
+  const value = searchParams?.selector || " "; //destructuring the value from searchParams
   console.log("value", value);
   const page = searchParams?.page || 1;
 
