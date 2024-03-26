@@ -1,17 +1,40 @@
 "use client";
-import { Box, Button, Grid, Typography } from "@mui/material";
-import React, {Component} from "react";
+import { Box, Button, Grid, Typography, Modal, DialogContent } from "@mui/material";
 import Image from "next/image";
-import image from "../../public/images/homePage/heroSectionImage/mainImage.webp";
+import mainImage from "../../public/images/homePage/heroSectionImage/mainImage.webp";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { bannerDetails } from "../../data/homePage";
 import { lora } from "../../app/fonts";
+import * as React from 'react';
+import modalImage from "../../public/images/homePage/dialogBox/thumbUp.webp"
+
 import { typographyh5Style, typographyh1Style, typographyBody1Style, buttonContainedStyle, buttonTextStyle } from './styles';
+
+// modal styles
+const style = {
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '40%',
+  height: 'auto',
+  bgcolor: 'background.paper',
+  boxShadow: 50,
+  p: 4,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+};
 
 
 /* Banner functional component */
 const Banner = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
       <Grid
@@ -66,7 +89,7 @@ const Banner = () => {
             </Button>
 
             {/* Button with arrow icon for mobile view */}
-            <Button variant="text" sx={buttonTextStyle}>
+            <Button variant="text" onClick={handleOpen} sx={buttonTextStyle}>
               <Box
                 sx={{
                   backgroundColor: "rgba(255, 255, 255, 0.18)",
@@ -96,12 +119,79 @@ const Banner = () => {
               </Box>
               {bannerDetails.bannercta2Caption}
             </Button>
+      {/* modal display the success */}
+          <Modal
+          keepMounted
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="keep-mounted-modal-title"
+          aria-describedby="keep-mounted-modal-description"
+
+      >
+          <Box sx={style}> 
+          <DialogContent
+          dividers
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'lightgreen',
+            borderRadius:"10px",
+          }}
+        >
+          {/* modal image */}
+          <Image 
+          src={modalImage} alt="test" style={{ maxWidth: '25%', height: 'auto',}} />
+        </DialogContent>       
+          
+        <DialogContent
+          dividers
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+          }}
+        >
+          {/* modal title */}
+          <Typography id="keep-mounted-modal-title" variant="h6" component="h2" sx={{color: "#54BC2F",}}>
+          {bannerDetails.modalTitle}
+          </Typography>
+          {/* modal text */}
+          <Typography id="keep-mounted-modal-description" sx={{ mt: 2, }}>
+          {bannerDetails.modalContentText}
+          </Typography>
+          {/* modal button */}
+          <Button
+              variant="contained"
+              color="success"
+              autoFocus
+              onClick={handleClose}
+              sx={{
+                backgroundColor: "#52AA44",
+                width: "30px",
+                height: "30px",
+                borderRadius: "58px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+
+            >
+              {bannerDetails.captionButton}
+            </Button>
+            </DialogContent>
+        </Box>
+        </Modal>
           </Box>
         </Grid>
         {/* Right side of the banner - image */}
         <Grid item xs={12} md={6}>
           <Image
-            src={image}
+            src={mainImage}
             alt="test"
             width={617.758}
             height={616.951}
@@ -113,6 +203,7 @@ const Banner = () => {
           />
         </Grid>
       </Grid>
+      
     </>
   );
 };
