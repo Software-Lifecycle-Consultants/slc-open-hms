@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 /* Assign Page routes and labels for navigation bar component of the website */
 export const pages = [
   { label: "Home", route: "/" },
@@ -31,6 +31,10 @@ export const bannerDetails = {
     "With travala you can experience new travel and the best tourist destinations that we have to offer",
   bannercta1Caption: "Our Destination",
   bannercta2Caption: "Our Gallery",
+  modalTitle: "Booking request has been sent successfully  !",
+  modalContentText: "We will get back to you with confirmation/ request update after checking availability.",
+  captionButton: "ok",
+  
 };
 
 /* Assign title, description and image to the custom card of the home page*/
@@ -81,7 +85,7 @@ export const blogSection = {
 export const blogCardData = [
   {
     id: 1,
-    image: "/images/homePage/blogImages/Turkey2.webp",
+    vedioURL: "https://www.youtube.com/embed/-s0vUJamgEw?si=SJ7ZVsD7GUGlhAEq&amp;start=20",
     city: "Cappadocia",
     description:
       "The red and orange sand of the desert are very beautiful, let's take a trip here",
@@ -89,7 +93,7 @@ export const blogCardData = [
   },
   {
     id: 2,
-    image: "/images/homePage/blogImages/Namibia2.webp",
+    vedioURL: "https://www.youtube.com/embed/1IDGPPmSgF0?si=WptgaXyV8TvIl8co;start=20",
     city: "Sossusvlei",
     description:
       "Famous for its hot air balloons and we can see its natural beauty from above",
@@ -97,7 +101,7 @@ export const blogCardData = [
   },
   {
     id: 3,
-    image: "/images/homePage/blogImages/NewMexico2.webp",
+    vedioURL: "https://www.youtube.com/embed/dTFxqgwQ0d8?si=94d-MYnNQqCAVv1C;start=20",
     city: "Albuquerque",
     description:
       "A cool trip because the various scenery around will be very eye-catching",
@@ -110,6 +114,13 @@ export const blogCardText = {
   customTag1: "price",
   customTag2: "/Person",
   blogctaCaption: "Ticket booking",
+};
+export const Blog2 = {
+  contactNowTitle: "Best travel and destinations",
+  contactNowDescription:
+    "With travala you can experience new travel and the best tourist destinations that we have to offer",
+    contactNowCaption: "Our Destination",
+    contactNowVedioLink: "https://www.youtube.com/embed/KCn5Gc38oO4?si=NbdIRYqi4ppm_64d"
 };
 
 
@@ -163,6 +174,12 @@ export const footerContent = {
   PrivacyPolicyLink: "/privacy-policy",
 };
 
+// error modal variable
+export const dialogBox ={
+  errormodalTitle: "Please Try Again !",
+  errorContentText: "We seem to be facing a problem while sending your request .",
+  errorcaptionButton: "Try again",
+};
+
 
 export const currentYear = new Date().getFullYear();
-

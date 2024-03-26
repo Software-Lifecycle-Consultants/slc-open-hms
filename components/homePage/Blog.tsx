@@ -50,7 +50,7 @@ const Blog = () => {
             <>
               {/* Destination card details component */}
               <BlogCard
-                image={item.image}
+                vedioURL={item.vedioURL}
                 city={item.city}
                 description={item.description}
                 price={item.price}

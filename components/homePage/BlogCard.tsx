@@ -1,24 +1,47 @@
-import { blogCardText } from '@/data/homePage';
-import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
+import { blogCardText, dialogBox } from '@/data/homePage';
+import { Box, Button, Card, CardActions, CardContent, Typography, Modal, DialogContent } from '@mui/material';
 import Image from 'next/image';
-import React from 'react'
+import * as  React from 'react'
 import { montserrat } from "../../app/fonts";
+import erroimg from "../../public/images/homePage/dialogBox/thumbDown.webp"
+
 /* DestinationCardDetails component displays details of a destination in a card. */
 
 interface BlogCardProps {
-  image: string; // The image URL of the destination.
+  vedioURL: string; // The image URL of the destination.
   city: string; // The name of the city.
   description: string; // A brief description of the destination.
   price: number; // The price per person for the destination.
 }
 
+const style = {
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '40%',
+  height: 'auto',
+  bgcolor: 'background.paper',
+  boxShadow: 50,
+  p: 4,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+};
+
 const BlogCard: React.FC<BlogCardProps> = ({
-  image,
+  vedioURL,
   city,
   description,
   price,
 }) => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  
   return (
+    
     <>
       {/* Card component */}
       <Card
@@ -36,19 +59,21 @@ const BlogCard: React.FC<BlogCardProps> = ({
             margin: "0 auto",
           }}
         >
-          {/* Image component */}
-          <Image
-            src={image}
-            alt="test"
-            width={400}
-            height={284}
+          {/* video component */} 
+          <iframe
+        
+            src={vedioURL}
+            width="400"
+            height="284"
+            frameBorder="0"
+            
             style={{
               width: "100%",
               height: "auto",
               borderRadius: "20px 20px 0px 0px",
               flexShrink: 0,
             }}
-          />
+            />
         </Box>
         <CardContent
           sx={{
@@ -144,6 +169,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             {/* Button for ticket booking */}
             <Button
               variant="contained"
+              onClick={handleOpen}
               style={{
                 backgroundColor: "#7C46FE",
                 borderRadius: "45px",
@@ -157,6 +183,75 @@ const BlogCard: React.FC<BlogCardProps> = ({
             >
               {blogCardText.blogctaCaption}
             </Button>
+            {/* modal for display the error message */}
+            <Modal
+          keepMounted
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="keep-mounted-modal-title"
+          aria-describedby="keep-mounted-modal-description"
+
+      >
+          <Box sx={style}> 
+          <DialogContent
+          dividers
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#FFD8D0',
+            borderRadius:"10px",
+          }}
+        >
+          {/* image of modal */}
+          <Image 
+          src={erroimg} alt="test" style={{ maxWidth: '25%', height: 'auto',}} />
+        </DialogContent>       
+          
+        <DialogContent
+          dividers
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+          }}
+        >
+          {/* modal title */}
+          <Typography id="keep-mounted-modal-title" variant="h6" component="h2" sx={{color: "#EF6161",}}>
+          {dialogBox.errormodalTitle}
+          </Typography>
+          
+          {/* modal description */}
+          <Typography id="keep-mounted-modal-description" sx={{ mt: 2, }}>
+          {dialogBox.errorContentText}
+          </Typography>
+
+          {/* button in modal */}
+          <Button
+              variant="contained"
+              color="error"
+              autoFocus
+              onClick={handleClose}
+              sx={{
+                backgroundColor: "#E83B3B",
+                width: "30%",
+                height: "30px",
+                borderRadius: "58px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+
+            >
+              {dialogBox.errorcaptionButton}
+            </Button>
+            </DialogContent>
+        </Box>
+        </Modal>
           </Box>
         </CardActions>
       </Card>

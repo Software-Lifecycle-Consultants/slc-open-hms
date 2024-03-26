@@ -1,6 +1,6 @@
 # SLC Open HMS (Next.js)
 
-![Hotel Management System](https://softwareconsultant.info/wp-content/themes/slcc/assets/images/logo.png)
+![Hotel Management System](public/hms-cover.png)
 
 The SLC-Open-HMS is a web application built with Next.js that aims to streamline and optimize hotel operations, including reservations, room management, guest services, and more. This application provides an intuitive and efficient solution for hotel owners and staff to manage various aspects of their hotel business.
 
@@ -29,13 +29,13 @@ Follow these instructions to set up the Hotel Management System project locally 
 git https://github.com/Software-Lifecycle-Consultants/slc-open-hms.git
 cd  slc-open-hms
  ```
-2. Install the Node Modules:
+2. Instal Node modules and dependencies : 
 
 ```bash
 npm install
  ```
- 
-3. Install the Other NPM packages that are used in this project:
+Note : When you run npm install, it automatically installs all the dependencies listed in the package.json.
+Below are the NPM packages (dependencies) used in this project. If any of the dependencies are not installed automatically, you can install them separately by executing the provided `npm install` commands.
 
 - [@mui/material](https://mui.com/material-ui/getting-started/installation/) - Version 5.14.4
   - Material UI is a comprehensive library of components that features our implementation of Google's Material Design system.
@@ -69,11 +69,11 @@ npm install react-slick --save
 npm install slick-carousel
  ```
 
-4. Set up the environment variables:
+3. Set up the environment variables:
   - Create a .env.local file in the root directory of the project.
   - Add the required environment variables, such as database connection strings, API keys, etc.
     
-5. Run the development server:
+4. Run the development server:
  ```bash
 npm run dev
 # or
@@ -81,7 +81,7 @@ yarn dev
 # or
 pnpm dev
  ```
-6. Open your browser and navigate to http://localhost:3000 to see the Hotel Management System in action.
+5. Open your browser and navigate to http://localhost:3000 to see the Hotel Management System in action.
 
 ## Contributing
 We welcome contributions from the community! 
@@ -116,6 +116,6 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 - Special thanks to all the contributors and beta testers who helped shape this project.
 
 ## Contact
-For any inquiries or feedback, please contact us at hello@softwareconsultant.info  
+For any inquiries or feedback, please contact us at hello@softwareconsultant.org  
 Your feedback and contributions are welcome!
 
