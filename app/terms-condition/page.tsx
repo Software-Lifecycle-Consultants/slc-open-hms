@@ -178,7 +178,6 @@ export default function TermsCondition() {
             {pageEnd.title}
           </Typography>
         </center>
-
       </div>
     </>
   );

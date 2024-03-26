@@ -22,12 +22,10 @@ export const headsection1 = {
         "By accessing our website or using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree to these Terms, you may not use our website or services."
     ]
 };
-
 export const subsection2 = {
     title2: "1.2 Changes to Terms:",
     content2: [
         "We reserve the right to modify, update, or change these Terms at any time without prior notice. It is your responsibility to review these Terms periodically to stay informed of any updates. Your continued use of our website or services after any changes to the Terms constitutes your acceptance of the revised Terms."
-
     ]
 };
 
@@ -39,7 +37,6 @@ export const headsection2 = {
         "The content, design, logos, trademarks, and other intellectual property displayed on our website are owned by SLC or licensed to us. You may not use, reproduce, distribute, or modify any of our intellectual property without our prior written consent."
     ]
 };
-
 export const subsection4 = {
     title2: "2.2 User Content:",
     content2: [
@@ -55,7 +52,6 @@ export const headsection3 = {
         "Our website and services are provided on an “as is” and “as available” basis without warranties of any kind, either express or implied. We do not guarantee the accuracy, reliability, or completeness of any information or content on our website."
     ]
 };
-
 export const subsection6 = {
     title2: "3.2 Limitation of Liability:",
     content2: [
@@ -71,7 +67,6 @@ export const headsection4 = {
         "You agree to comply with all applicable laws, regulations, and third-party rights while using our website and services. You are solely responsible for any content you submit, post, or transmit on our website."
     ]
 };
-
 export const subsection8 = {
     title2: "4.2 Security:",
     content2: [
