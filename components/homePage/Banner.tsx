@@ -17,7 +17,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '40%',
+  width: { xs: "85%", sm: "60%", md: "35%" },
   height: 'auto',
   bgcolor: 'background.paper',
   boxShadow: 50,
@@ -26,6 +26,7 @@ const style = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
+  borderRadius:"10px",
 };
 
 
@@ -120,7 +121,7 @@ const Banner = () => {
               {bannerDetails.bannercta2Caption}
             </Button>
       {/* modal display the success */}
-          <Modal
+          <Modal 
           keepMounted
           open={open}
           onClose={handleClose}
@@ -128,7 +129,7 @@ const Banner = () => {
           aria-describedby="keep-mounted-modal-description"
 
       >
-          <Box sx={style}> 
+          <Box  sx={style}> 
           <DialogContent
           dividers
           style={{
@@ -156,11 +157,11 @@ const Banner = () => {
           }}
         >
           {/* modal title */}
-          <Typography id="keep-mounted-modal-title" variant="h6" component="h2" sx={{color: "#54BC2F",}}>
+          <Typography id="keep-mounted-modal-title" variant="h6" component="h2" sx={{color: "#54BC2F",fontSize: { xs: "15px", sm: "20px", md: "22px" },}}>
           {bannerDetails.modalTitle}
           </Typography>
           {/* modal text */}
-          <Typography id="keep-mounted-modal-description" sx={{ mt: 2, }}>
+          <Typography id="keep-mounted-modal-description" sx={{ mt: 2, fontSize: { xs: "12px", sm: "18px", md: "20px" }, }}>
           {bannerDetails.modalContentText}
           </Typography>
           {/* modal button */}
@@ -171,8 +172,8 @@ const Banner = () => {
               onClick={handleClose}
               sx={{
                 backgroundColor: "#52AA44",
-                width: "30px",
-                height: "30px",
+                width: "50%",
+                height: "5%",
                 borderRadius: "58px",
                 display: "flex",
                 alignItems: "center",
@@ -181,7 +182,7 @@ const Banner = () => {
               }}
 
             >
-              {bannerDetails.captionButton}
+              <Typography sx={{color: "#FFFFFF",fontSize: { xs: "12px", sm: "18px", md: "15px" },}}>{bannerDetails.captionButton}</Typography>
             </Button>
             </DialogContent>
         </Box>
