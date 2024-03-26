@@ -19,7 +19,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '40%',
+  width: { xs: "85%", sm: "60%", md: "35%" },
   height: 'auto',
   bgcolor: 'background.paper',
   boxShadow: 50,
@@ -220,12 +220,12 @@ const BlogCard: React.FC<BlogCardProps> = ({
           }}
         >
           {/* modal title */}
-          <Typography id="keep-mounted-modal-title" variant="h6" component="h2" sx={{color: "#EF6161",}}>
+          <Typography id="keep-mounted-modal-title" variant="h6" component="h2" sx={{color: "#EF6161",fontSize: { xs: "15px", sm: "20px", md: "22px" },}}>
           {dialogBox.errormodalTitle}
           </Typography>
           
           {/* modal description */}
-          <Typography id="keep-mounted-modal-description" sx={{ mt: 2, }}>
+          <Typography id="keep-mounted-modal-description" sx={{ mt: 2, fontSize: { xs: "12px", sm: "18px", md: "20px" },}}>
           {dialogBox.errorContentText}
           </Typography>
 
@@ -237,8 +237,8 @@ const BlogCard: React.FC<BlogCardProps> = ({
               onClick={handleClose}
               sx={{
                 backgroundColor: "#E83B3B",
-                width: "30%",
-                height: "30px",
+                width: "40%",
+                height: "5%",
                 borderRadius: "58px",
                 display: "flex",
                 alignItems: "center",
@@ -247,7 +247,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
               }}
 
             >
-              {dialogBox.errorcaptionButton}
+              <Typography sx={{color: "#FFFFFF",fontSize: { xs: "8px", sm: "18px", md: "15px" },}}>{dialogBox.errorcaptionButton}</Typography>
             </Button>
             </DialogContent>
         </Box>
