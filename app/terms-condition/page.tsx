@@ -11,7 +11,8 @@ export default function TermsCondition() {
       <div style={{
         maxWidth: '1220px',
         margin: '0 auto',
-        padding: '25px'
+        padding: '25px',
+        color: '#11142D'
       }}>
         <Typography variant="h4" sx={{
           textAlign: "center",
