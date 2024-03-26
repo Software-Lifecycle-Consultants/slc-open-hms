@@ -12,7 +12,7 @@ export const roomDetails = [
     roomCoverImage: "/images/hotelRooms/Room1.webp",
     roomName: "Luxury Suite with Ocean View",
     roomShortDescription: "Experience luxury with breathtaking ocean views",
-    roomType: "King Suite",
+    roomType: "King Suite", //added a new field
     price: 199,
     taxes: 20,
     otherCharges: 10,
@@ -23,7 +23,7 @@ export const roomDetails = [
     bedSizes: "1 single Queen",
     maxAdultsCapacity: 2,
     children: 1,
-    guest: "1 Adult",
+    guest: "1 Adult", //added a new field
     fascilities: ["swimming pool", "gym", "spa"],
     bookingLinks: [{ expedia: "url3" }, { hotelscom: "url4" }],
   },
