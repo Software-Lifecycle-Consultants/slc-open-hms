@@ -102,27 +102,26 @@ export const roomCardTexts = {
 };
 
 /* Assign array of rooms data to the similar rooms component of the guest room details page */
-//updated data structure 
+//updated data structure
 export const roomsData = [
   {
     id: 1,
-    roomCoverImage: "/images/hotelRooms/Room2.webp",                                      
-    roomName: "Deluxe Double with New York City View 1",                                  
-    roomShortDescription: "A scenic view of Hanthana mountain", //150 characters only     
-    price: 59,                                                                           
-    taxes:0,
+    roomCoverImage: "/images/hotelRooms/Room2.webp",
+    roomName: "Deluxe Double with New York City View 1",
+    roomShortDescription: "A scenic view of Hanthana mountain", //150 characters only
+    price: 59,
+    taxes: 0,
     otherCharges: 0,
     terms: "",
     images: "['path1/image1','path2/image2']",
     description: "A glamourous stay in the wild experience of a lifetime",
-    accommodationType : 'Delux Room',
+    accommodationType: "Delux Room",
     bedSizes1: "King Size",
     bedSizes2: "Single bed",
     maxAdultsCapacity: 3,
     children: 1,
-    fascilities: ['iron', 'kettle'],
-    bookingLinks: [{'airbnb': 'url1'}, {'bookingcom' : 'url2'}]
-
+    fascilities: ["iron", "kettle"],
+    bookingLinks: [{ airbnb: "url1" }, { bookingcom: "url2" }],
   },
   {
     id: 2,
@@ -135,13 +134,13 @@ export const roomsData = [
     terms: "Cancellation policy: 24 hours prior to arrival",
     images: "['path3/image3','path4/image4']",
     description: "Indulge in the ultimate luxury with our ocean view suite",
-    accommodationType: 'Suite',
+    accommodationType: "Suite",
     bedSizes1: "King Size",
     bedSizes2: "Queen Size",
     maxAdultsCapacity: 2,
     children: 0,
-    fascilities: ['swimming pool', 'gym', 'spa'],
-    bookingLinks: [{'expedia': 'url3'}, {'hotelscom': 'url4'}]
+    fascilities: ["swimming pool", "gym", "spa"],
+    bookingLinks: [{ expedia: "url3" }, { hotelscom: "url4" }],
   },
   {
     id: 3,
@@ -154,13 +153,13 @@ export const roomsData = [
     terms: "Cancellation policy: 48 hours prior to arrival",
     images: "['path5/image5','path6/image6']",
     description: "Enjoy a cozy stay in our standard double room",
-    accommodationType: 'Standard Room',
+    accommodationType: "Standard Room",
     bedSizes1: "Queen Size",
     bedSizes2: "Single bed",
     maxAdultsCapacity: 2,
     children: 1,
-    fascilities: ['wifi', 'tv', 'mini fridge'],
-    bookingLinks: [{'agoda': 'url5'}, {'orbitz': 'url6'}]
+    fascilities: ["wifi", "tv", "mini fridge"],
+    bookingLinks: [{ agoda: "url5" }, { orbitz: "url6" }],
   },
   {
     id: 4,
@@ -173,13 +172,13 @@ export const roomsData = [
     terms: "Cancellation policy: 72 hours prior to arrival",
     images: "['path7/image7','path8/image8']",
     description: "Indulge in the ultimate luxury with our city view suite",
-    accommodationType: 'Suite',
+    accommodationType: "Suite",
     bedSizes1: "King Size",
     bedSizes2: "King Size",
     maxAdultsCapacity: 2,
     children: 0,
-    fascilities: ['restaurant', 'bar', 'spa'],
-    bookingLinks: [{'expedia': 'url7'}, {'hotelscom': 'url8'}]
+    fascilities: ["restaurant", "bar", "spa"],
+    bookingLinks: [{ expedia: "url7" }, { hotelscom: "url8" }],
   },
   {
     id: 5,
@@ -191,16 +190,17 @@ export const roomsData = [
     otherCharges: 10,
     terms: "Cancellation policy: 48 hours prior to arrival",
     images: "['path9/image9','path10/image10']",
-    description: "Enjoy a comfortable stay with your family in our garden view room",
-    accommodationType: 'Family Room',
+    description:
+      "Enjoy a comfortable stay with your family in our garden view room",
+    accommodationType: "Family Room",
     bedSizes1: "King Size",
     bedSizes2: "Single bed",
     maxAdultsCapacity: 4,
     children: 2,
-    fascilities: ['playground', 'swimming pool', 'restaurant'],
-    bookingLinks: [{'agoda': 'url9'}, {'orbitz': 'url10'}]
-  }
-]
+    fascilities: ["playground", "swimming pool", "restaurant"],
+    bookingLinks: [{ agoda: "url9" }, { orbitz: "url10" }],
+  },
+];
 
 /* Assign title and descripton to the similar rooms component of the guest room details page */
 export const similarRoomsDetails = {
