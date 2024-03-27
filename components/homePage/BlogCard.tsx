@@ -145,14 +145,16 @@ const BlogCard: React.FC<BlogCardProps> = ({
             <Button
               variant="contained"
               style={{
-                backgroundColor: "#7C46FE",
+                background: "var(--l-2, linear-gradient(135deg, #8482FF 0%, #7723FE 100%))",
                 borderRadius: "45px",
                 color: "#FFF",
                 fontSize: "14px",
                 lineHeight: "180%",
-                fontStyle: "normal",
+                fontStyle: "medium",
                 letterSpacing: "-0.14px",
                 fontWeight: "500",
+                fontFamily: "__Inter_e66fe9",
+                textTransform: "none",
               }}
             >
               {blogCardText.blogctaCaption}
