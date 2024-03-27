@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Box, Container } from "@mui/material";
 import Banner from "../components/homePage/Banner";
 import Testimonials from "../components/homePage/Testimonials";
@@ -15,7 +15,7 @@ import Cookie from "../components/cookie/Cookie";
 
 /* Style class for the box component of each section component */
 const sectionStyle = {
-  backgroundColor: '#FFFFF',
+  backgroundColor: "#FFFFF",
   padding: "20px 0",
   width: "100%",
 };
@@ -24,7 +24,14 @@ export default function HomeScreen() {
   return (
     <>
       {/* Banner Section */}
-      <Box sx={{backgroundColor: "#0C111F", color: "white", padding: "40px 0", flexGrow: 1,}}>
+      <Box
+        sx={{
+          backgroundColor: "#0C111F",
+          color: "white",
+          padding: "40px 0",
+          flexGrow: 1,
+        }}
+      >
         <Container>
           <Banner />
         </Container>
@@ -48,13 +55,17 @@ export default function HomeScreen() {
         </Container>
       </Box>
       {/* Contact Now Banner  */}
-      <Box sx={{backgroundColor: "#0C111F", color: "white", padding: "40px 0",}}>
+      <Box
+        sx={{ backgroundColor: "#0C111F", color: "white", padding: "40px 0" }}
+      >
         <Container>
           <ContactNowBanner />
         </Container>
-      </Box>  
+      </Box>
       {/* Testimonials Section */}
-      <Box sx={{ backgroundColor: "#F7F7F7", padding: "20px 0", width: "100%", }}>
+      <Box
+        sx={{ backgroundColor: "#F7F7F7", padding: "20px 0", width: "100%" }}
+      >
         <Container>
           <Testimonials />
         </Container>
@@ -66,6 +77,3 @@ export default function HomeScreen() {
     </>
   );
 }
-
-
-

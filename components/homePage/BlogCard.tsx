@@ -1,9 +1,18 @@
-import { blogCardText, dialogBox } from '@/data/homePage';
-import { Box, Button, Card, CardActions, CardContent, Typography, Modal, DialogContent } from '@mui/material';
-import Image from 'next/image';
-import * as  React from 'react'
+import { blogCardText, dialogBox } from "@/data/homePage";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+  Modal,
+  DialogContent,
+} from "@mui/material";
+import Image from "next/image";
+import * as React from "react";
 import { montserrat } from "../../app/fonts";
-import erroimg from "../../public/images/homePage/dialogBox/thumbDown.webp"
+import erroimg from "../../public/images/homePage/dialogBox/thumbDown.webp";
 
 /* DestinationCardDetails component displays details of a destination in a card. */
 
@@ -15,19 +24,19 @@ interface BlogCardProps {
 }
 
 const style = {
-  position: 'absolute' as 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: { xs: "85%", sm: "60%", md: "35%" },
-  height: 'auto',
-  bgcolor: 'background.paper',
+  height: "auto",
+  bgcolor: "background.paper",
   boxShadow: 50,
   p: 4,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
 };
 
 const BlogCard: React.FC<BlogCardProps> = ({
@@ -39,9 +48,8 @@ const BlogCard: React.FC<BlogCardProps> = ({
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  
+
   return (
-    
     <>
       {/* Card component */}
       <Card
@@ -59,21 +67,19 @@ const BlogCard: React.FC<BlogCardProps> = ({
             margin: "0 auto",
           }}
         >
-          {/* video component */} 
+          {/* video component */}
           <iframe
-        
             src={vedioURL}
             width="400"
             height="284"
             frameBorder="0"
-            
             style={{
               width: "100%",
               height: "auto",
               borderRadius: "20px 20px 0px 0px",
               flexShrink: 0,
             }}
-            />
+          />
         </Box>
         <CardContent
           sx={{
@@ -185,73 +191,95 @@ const BlogCard: React.FC<BlogCardProps> = ({
             </Button>
             {/* modal for display the error message */}
             <Modal
-          keepMounted
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="keep-mounted-modal-title"
-          aria-describedby="keep-mounted-modal-description"
-
-      >
-          <Box sx={style}> 
-          <DialogContent
-          dividers
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#FFD8D0',
-            borderRadius:"10px",
-          }}
-        >
-          {/* image of modal */}
-          <Image 
-          src={erroimg} alt="test" style={{ maxWidth: '25%', height: 'auto',}} />
-        </DialogContent>       
-          
-        <DialogContent
-          dividers
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-          }}
-        >
-          {/* modal title */}
-          <Typography id="keep-mounted-modal-title" variant="h6" component="h2" sx={{color: "#EF6161",fontSize: { xs: "15px", sm: "20px", md: "22px" },}}>
-          {dialogBox.errormodalTitle}
-          </Typography>
-          
-          {/* modal description */}
-          <Typography id="keep-mounted-modal-description" sx={{ mt: 2, fontSize: { xs: "12px", sm: "18px", md: "20px" },}}>
-          {dialogBox.errorContentText}
-          </Typography>
-
-          {/* button in modal */}
-          <Button
-              variant="contained"
-              color="error"
-              autoFocus
-              onClick={handleClose}
-              sx={{
-                backgroundColor: "#E83B3B",
-                width: "40%",
-                height: "5%",
-                borderRadius: "58px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                marginTop: "20px",
-              }}
-
+              keepMounted
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="keep-mounted-modal-title"
+              aria-describedby="keep-mounted-modal-description"
             >
-              <Typography sx={{color: "#FFFFFF",fontSize: { xs: "8px", sm: "18px", md: "15px" },}}>{dialogBox.errorcaptionButton}</Typography>
-            </Button>
-            </DialogContent>
-        </Box>
-        </Modal>
+              <Box sx={style}>
+                <DialogContent
+                  dividers
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: "#FFD8D0",
+                    borderRadius: "10px",
+                  }}
+                >
+                  {/* image of modal */}
+                  <Image
+                    src={erroimg}
+                    alt="test"
+                    style={{ maxWidth: "25%", height: "auto" }}
+                  />
+                </DialogContent>
+
+                <DialogContent
+                  dividers
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
+                  }}
+                >
+                  {/* modal title */}
+                  <Typography
+                    id="keep-mounted-modal-title"
+                    variant="h6"
+                    component="h2"
+                    sx={{
+                      color: "#EF6161",
+                      fontSize: { xs: "15px", sm: "20px", md: "22px" },
+                    }}
+                  >
+                    {dialogBox.errormodalTitle}
+                  </Typography>
+
+                  {/* modal description */}
+                  <Typography
+                    id="keep-mounted-modal-description"
+                    sx={{
+                      mt: 2,
+                      fontSize: { xs: "12px", sm: "18px", md: "20px" },
+                    }}
+                  >
+                    {dialogBox.errorContentText}
+                  </Typography>
+
+                  {/* button in modal */}
+                  <Button
+                    variant="contained"
+                    color="error"
+                    autoFocus
+                    onClick={handleClose}
+                    sx={{
+                      backgroundColor: "#E83B3B",
+                      width: "40%",
+                      height: "5%",
+                      borderRadius: "58px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: "#FFFFFF",
+                        fontSize: { xs: "8px", sm: "18px", md: "15px" },
+                      }}
+                    >
+                      {dialogBox.errorcaptionButton}
+                    </Typography>
+                  </Button>
+                </DialogContent>
+              </Box>
+            </Modal>
           </Box>
         </CardActions>
       </Card>
