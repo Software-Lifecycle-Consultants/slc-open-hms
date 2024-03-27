@@ -183,3 +183,9 @@ export const dialogBox ={
 
 
 export const currentYear = new Date().getFullYear();
+
+export const cookieData ={
+  cookieDescription: "We collect your data in order to improve your experience in the form of cookies.",
+  cookieButtonCaption: "Accept",
+  cookieButtonCaptionReject: "Reject",
+}
