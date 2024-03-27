@@ -12,7 +12,6 @@ export const typographyh5Style = {
     marginTop: { xs: "14px", md: "5px" },
   };
 
-  
 /* Typography style for heading 1 */
   export const typographyh1Style = {
     color: "#FFFFFF",
@@ -50,7 +49,8 @@ export const typographyh5Style = {
    "@media (max-width: 1024px)": {
       padding: "10px 16px",
     },
-    // Customize sizes for mobile view
+
+// Customize sizes for mobile view
     "@media (max-width: 767px)": {
       fontSize: "12px",
       padding: "8px 12px",
@@ -74,5 +74,8 @@ export const typographyh5Style = {
       padding: "8px 12px",
       margin: "3px",
     },
+
   };
+
+
   
