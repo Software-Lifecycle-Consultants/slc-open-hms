@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 /* Assign Page routes and labels for navigation bar component of the website */
 export const pages = [
   { label: "Home", route: "/" },
@@ -85,7 +85,7 @@ export const blogSection = {
 export const blogCardData = [
   {
     id: 1,
-    image: "/images/homePage/blogImages/Turkey2.webp",
+    vedioURL: "https://www.youtube.com/embed/-s0vUJamgEw?si=SJ7ZVsD7GUGlhAEq&amp;start=20",
     city: "Cappadocia",
     description:
       "The red and orange sand of the desert are very beautiful, let's take a trip here",
@@ -93,7 +93,7 @@ export const blogCardData = [
   },
   {
     id: 2,
-    image: "/images/homePage/blogImages/Namibia2.webp",
+    vedioURL: "https://www.youtube.com/embed/1IDGPPmSgF0?si=WptgaXyV8TvIl8co;start=20",
     city: "Sossusvlei",
     description:
       "Famous for its hot air balloons and we can see its natural beauty from above",
@@ -101,7 +101,7 @@ export const blogCardData = [
   },
   {
     id: 3,
-    image: "/images/homePage/blogImages/NewMexico2.webp",
+    vedioURL: "https://www.youtube.com/embed/dTFxqgwQ0d8?si=94d-MYnNQqCAVv1C;start=20",
     city: "Albuquerque",
     description:
       "A cool trip because the various scenery around will be very eye-catching",
