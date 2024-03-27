@@ -3,6 +3,7 @@ import "./Cookie.css";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import CookieIcon from '@mui/icons-material/Cookie';
 import { ToggleButtonGroup, Box, ToggleButton   } from "@mui/material";
+import { cookieData } from "../../data/homePage";
 
 
 export default function Cookie() {
@@ -72,15 +73,15 @@ export default function Cookie() {
             <div className="description">
               {/* icon on the cookie */}
               <CookieIcon sx={{ color: "#C7923E", marginRight: "10px" }} />
-              We collect your data in order to improve your experience in the form of cookies.
+              {cookieData.cookieDescription}
               {/* accept reject ButtonGroup */}
               <ToggleButtonGroup color="success" sx={{ height: "30px", marginLeft: "10px" }}>
                 <ToggleButton value="accept" onClick={checkCookie} color="success" sx={{ background: "#C7923E", borderRadius: "12px", color: "white" }}>
-                  Accept
+                {cookieData.cookieButtonCaption}
                   <ArrowRightAltIcon sx={{ color: "#FFFFFF", gap: "15px" }} />
                 </ToggleButton>
                 <ToggleButton value="reject" onClick={rejectCookie} color="error" sx={{ borderRadius: "12px", color: "black", background: "white", }} >
-                  Reject
+                {cookieData.cookieButtonCaptionReject}
                 </ToggleButton>
               </ToggleButtonGroup>
             </div>
