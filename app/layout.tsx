@@ -10,7 +10,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Navbar from "../components/homePage/NavBar";
 import Footer from "../components/homePage/Footer";
-// import Cookie from "../components/cookie/Cookie";
 
 export const metadata: Metadata = {
   title: 'HMS Dev',
@@ -43,7 +42,6 @@ export default function RootLayout({
             </Container>
           </Box>
         </ThemeProvider>
-      {/* <Cookie/>       */}
       </body>
     </html>
   );
