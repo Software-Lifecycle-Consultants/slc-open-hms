@@ -4,6 +4,8 @@ import Image from 'next/image';
 import * as  React from 'react'
 import { montserrat } from "../../app/fonts";
 import erroimg from "../../public/images/homePage/dialogBox/thumbDown.webp"
+import { useRouter } from "next/navigation";
+
 
 /* DestinationCardDetails component displays details of a destination in a card. */
 
@@ -38,7 +40,12 @@ const BlogCard: React.FC<BlogCardProps> = ({
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const router = useRouter();
 
+
+  const navigationToBookNow = () => {
+    router.push("/checkout");
+  };
   return (
     <>
       {/* Card component */}
@@ -165,7 +172,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             {/* Button for ticket booking */}
             <Button
               variant="contained"
-              onClick={handleOpen}
+              onClick={navigationToBookNow}
               style={{
                 backgroundColor: "#7C46FE",
                 borderRadius: "45px",

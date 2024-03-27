@@ -8,6 +8,7 @@ import { bannerDetails } from "../../data/homePage";
 import { lora } from "../../app/fonts";
 import * as React from 'react';
 import modalImage from "../../public/images/homePage/dialogBox/thumbUp.webp"
+import { useRouter } from "next/navigation";
 
 import { typographyh5Style, typographyh1Style, typographyBody1Style, buttonContainedStyle, buttonTextStyle } from './styles';
 
@@ -35,6 +36,12 @@ const Banner = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const router = useRouter();
+
+  // 
+  const navigationToExplorePage = () => {
+    router.push("/explore");
+  };
 
   return (
     <>
@@ -90,7 +97,7 @@ const Banner = () => {
             </Button>
 
             {/* Button with arrow icon for mobile view */}
-            <Button variant="text" onClick={handleOpen} sx={buttonTextStyle}>
+            <Button variant="text" onClick={navigationToExplorePage} sx={buttonTextStyle}>
               <Box
                 sx={{
                   backgroundColor: "rgba(255, 255, 255, 0.18)",
