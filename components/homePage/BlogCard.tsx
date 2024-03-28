@@ -6,13 +6,11 @@ import {
   CardActions,
   CardContent,
   Typography,
-  Modal,
-  DialogContent,
+ 
 } from "@mui/material";
-import Image from "next/image";
 import * as React from "react";
 import { montserrat } from "../../app/fonts";
-import erroimg from "../../public/images/homePage/dialogBox/thumbDown.webp";
+import MessageBox from "./MessageBox";
 import { useRouter } from "next/navigation";
 
 
@@ -47,12 +45,11 @@ const BlogCard: React.FC<BlogCardProps> = ({
   description,
   price,
 }) => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
+  
+
+  // set route to checkout page
   const router = useRouter();
-
-
   const navigationToBookNow = () => {
     router.push("/checkout");
   };
@@ -198,97 +195,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
             >
               {blogCardText.blogctaCaption}
             </Button>
-            {/* modal for display the error message */}
-            <Modal
-              keepMounted
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="keep-mounted-modal-title"
-              aria-describedby="keep-mounted-modal-description"
-            >
-              <Box sx={style}>
-                <DialogContent
-                  dividers
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    backgroundColor: "#FFD8D0",
-                    borderRadius: "10px",
-                  }}
-                >
-                  {/* image of modal */}
-                  <Image
-                    src={erroimg}
-                    alt="test"
-                    style={{ maxWidth: "25%", height: "auto" }}
-                  />
-                </DialogContent>
-
-                <DialogContent
-                  dividers
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    textAlign: "center",
-                  }}
-                >
-                  {/* modal title */}
-                  <Typography
-                    id="keep-mounted-modal-title"
-                    variant="h6"
-                    component="h2"
-                    sx={{
-                      color: "#EF6161",
-                      fontSize: { xs: "15px", sm: "20px", md: "22px" },
-                    }}
-                  >
-                    {dialogBox.errormodalTitle}
-                  </Typography>
-
-                  {/* modal description */}
-                  <Typography
-                    id="keep-mounted-modal-description"
-                    sx={{
-                      mt: 2,
-                      fontSize: { xs: "12px", sm: "18px", md: "20px" },
-                    }}
-                  >
-                    {dialogBox.errorContentText}
-                  </Typography>
-
-                  {/* button in modal */}
-                  <Button
-                    variant="contained"
-                    color="error"
-                    autoFocus
-                    onClick={handleClose}
-                    sx={{
-                      backgroundColor: "#E83B3B",
-                      width: "40%",
-                      height: "5%",
-                      borderRadius: "58px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      marginTop: "20px",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#FFFFFF",
-                        fontSize: { xs: "8px", sm: "18px", md: "15px" },
-                      }}
-                    >
-                      {dialogBox.errorcaptionButton}
-                    </Typography>
-                  </Button>
-                </DialogContent>
-              </Box>
-            </Modal>
           </Box>
         </CardActions>
       </Card>
