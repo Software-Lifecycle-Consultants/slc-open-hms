@@ -100,10 +100,11 @@ const SearchBar = () => {
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="roomType"
-                      defaultValue={searchParams.get("roomType")?.toString()}
+                      value={searchParams.get("roomType")?.toString() || ''}
                       onChange={(e) => handleSelect("roomType", e.target.value)}
                       label="Room Type"
                     >
+                      <MenuItem value="">Select Room Type</MenuItem>
                       <MenuItem value="Executive Suite">
                         Executive Suite
                       </MenuItem>
@@ -123,10 +124,11 @@ const SearchBar = () => {
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="guest"
-                      defaultValue={searchParams.get("Guest")?.toString()}
+                      value={searchParams.get("Guest")?.toString() || ''}
                       onChange={(e) => handleSelect("Guest", e.target.value)}
                       label="Guest"
-                    >
+                    >  
+                      <MenuItem value="">Select Number of Guests</MenuItem>
                       <MenuItem value="1 Adult">1 Adult</MenuItem>
                       <MenuItem value="2 Adults">2 Adults</MenuItem>
                       <MenuItem value="2 Adults & 1 child">
@@ -146,10 +148,11 @@ const SearchBar = () => {
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="beds"
-                      defaultValue={searchParams.get("Beds")?.toString()}
+                      value={searchParams.get("Beds")?.toString() || ''}
                       onChange={(e) => handleSelect("Beds", e.target.value)}
                       label="Beds"
                     >
+                      <MenuItem value="">Select Bed Type</MenuItem>
                       <MenuItem value="1 single Queen">1 single Queen</MenuItem>
                       <MenuItem value="King size">King size</MenuItem>
                       <MenuItem value="Double bed">Double bed</MenuItem>
@@ -167,13 +170,13 @@ const SearchBar = () => {
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="sortBy"
-                      defaultValue={searchParams.get("sortBy")?.toString()}
+                      value={searchParams.get("sortBy")?.toString() || ''}
                       onChange={(e) => handleSelect("sortBy", e.target.value)}
                       label="Sort By"
                     >
-                      <MenuItem value={1}>All</MenuItem>
-                      <MenuItem value={2}>Twenty</MenuItem>
-                      <MenuItem value={3}>Thirty</MenuItem>
+                      <MenuItem value="">All</MenuItem>
+                      <MenuItem value="20">Twenty</MenuItem>
+                      <MenuItem value="30">Thirty</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
