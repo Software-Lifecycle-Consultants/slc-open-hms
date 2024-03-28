@@ -16,13 +16,11 @@ import ExtraFacilitation from "@/components/checkout/ExtraFacilitation";
 const CheckoutScreen = () => {
   return (
     <>
-
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
           <Heading />
         </Container>
       </Box>
-
       <Box
         sx={{
           display: "grid",
@@ -62,7 +60,6 @@ const CheckoutScreen = () => {
           </Grid>
         </Container>
       </Box>
-  
     </>
   );
 };

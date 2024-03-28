@@ -1,88 +1,60 @@
 "use client";
-import { Box, Button, Grid, Typography } from "@mui/material";
-import React from "react";
+import {
+  Box,
+  Button,
+  Grid,
+  Typography,
+  Modal,
+  DialogContent,
+} from "@mui/material";
 import Image from "next/image";
-import image from "../../public/images/homePage/heroSectionImage/mainImage.webp";
+import mainImage from "../../public/images/homePage/heroSectionImage/mainImage.webp";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { bannerDetails } from "../../data/homePage";
 import { lora } from "../../app/fonts";
+import * as React from "react";
+import modalImage from "../../public/images/homePage/dialogBox/thumbUp.webp";
+import { useRouter } from "next/navigation";
 
-/* Typography style for heading 5 */
-const typographyh5Style = {
-  color: "#E97458",
-  fontSize: { xs: "18px", sm: "22px", md: "18px" },
-  fontStyle: "normal",
-  fontWeight: "700",
-  lineHeight: "normal",
-  textTransform: "uppercase",
-  marginTop: { xs:"14px", md: "5px" },
-};
+import {
+  typographyh5Style,
+  typographyh1Style,
+  typographyBody1Style,
+  buttonContainedStyle,
+  buttonTextStyle,
+} from "./styles";
 
-/* Typography style for heading 1 */
-const typographyh1Style = {
-  color: "#FFFFFF",
-  // fontFamily: "Volkhov",
-  fontSize: { xs: "45px", sm: "70px", md: "80px" }, // Adjust font size for different screen sizes
-  lineHeight: "125%",
-  fontStyle: "normal",
-  letterSpacing: "-3.2px",
-  fontWeight: "700",
-  marginTop: "5px",
-};
-
-/* Typography style for body text */
-const typographyBody1Style = {
-  color: "rgba(255, 255, 255, 0.70)",
-  fontSize: { xs: "16px", sm: "22px", md: "24px" }, // Adjust font size for different screen sizes
-  lineHeight: "35px",
-  fontStyle: "normal",
-  letterSpacing: "-0.96px",
-  fontWeight: "400",
-};
-
-/* Button style for contained variant */
-const buttonContainedStyle = {
-  display: "inline-flex",
-  justifyContent: "center",
+// modal styles
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: { xs: "85%", sm: "60%", md: "35%" },
+  height: "auto",
+  bgcolor: "background.paper",
+  boxShadow: 50,
+  p: 4,
+  display: "flex",
+  flexDirection: "column",
   alignItems: "center",
-  gap: "10px",
-  borderRadius: "100px",
-  textTransform: "none",
-  fontWeight: "bold",
-  color: "#0C111F",
-  background: "var(--l-2, linear-gradient(135deg, #F9EC7D 0%, #F5B100 100%))",
-  // Customize sizes for web and tablet view
-  "@media (max-width: 1024px)": {
-    padding: "10px 16px",
-  },
-  // Customize sizes for mobile view
-  "@media (max-width: 767px)": {
-    fontSize: "12px",
-    padding: "8px 12px",
-    margin: "3px",
-  },
-};
-
-/* Button style for text variant */
-const buttonTextStyle = {
-  color: "#FFF",
-  fontSize: "14px",
-  fontWeight: "400",
-  lineHeight: "180%",
-  letterSpacing: "0.36px",
-  margin: "5px",
-  textTransform: "none",
-  // Customize sizes for mobile view
-  "@media (max-width: 767px)": {
-    fontSize: "12px",
-    padding: "8px 12px",
-    margin: "3px",
-  },
+  justifyContent: "center",
+  borderRadius: "10px",
 };
 
 /* Banner functional component */
 const Banner = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const router = useRouter();
+
+
+  const navigationToExplore = () => {
+    router.push("/explore");
+  };
+
   return (
     <>
       <Grid
@@ -137,7 +109,7 @@ const Banner = () => {
             </Button>
 
             {/* Button with arrow icon for mobile view */}
-            <Button variant="text" sx={buttonTextStyle}>
+            <Button variant="text" onClick={navigationToExplore} sx={buttonTextStyle}>
               <Box
                 sx={{
                   backgroundColor: "rgba(255, 255, 255, 0.18)",
@@ -167,12 +139,101 @@ const Banner = () => {
               </Box>
               {bannerDetails.bannercta2Caption}
             </Button>
+            {/* modal display the success */}
+            <Modal
+              keepMounted
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="keep-mounted-modal-title"
+              aria-describedby="keep-mounted-modal-description"
+            >
+              <Box sx={style}>
+                <DialogContent
+                  dividers
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: "lightgreen",
+                    borderRadius: "10px",
+                  }}
+                >
+                  {/* modal image */}
+                  <Image
+                    src={modalImage}
+                    alt="test"
+                    style={{ maxWidth: "25%", height: "auto" }}
+                  />
+                </DialogContent>
+
+                <DialogContent
+                  dividers
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
+                  }}
+                >
+                  {/* modal title */}
+                  <Typography
+                    id="keep-mounted-modal-title"
+                    variant="h6"
+                    component="h2"
+                    sx={{
+                      color: "#54BC2F",
+                      fontSize: { xs: "15px", sm: "20px", md: "22px" },
+                    }}
+                  >
+                    {bannerDetails.modalTitle}
+                  </Typography>
+                  {/* modal text */}
+                  <Typography
+                    id="keep-mounted-modal-description"
+                    sx={{
+                      mt: 2,
+                      fontSize: { xs: "12px", sm: "18px", md: "20px" },
+                    }}
+                  >
+                    {bannerDetails.modalContentText}
+                  </Typography>
+                  {/* modal button */}
+                  <Button
+                    variant="contained"
+                    color="success"
+                    autoFocus
+                    onClick={handleClose}
+                    sx={{
+                      backgroundColor: "#52AA44",
+                      width: "50%",
+                      height: "5%",
+                      borderRadius: "58px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: "#FFFFFF",
+                        fontSize: { xs: "12px", sm: "18px", md: "15px" },
+                      }}
+                    >
+                      {bannerDetails.captionButton}
+                    </Typography>
+                  </Button>
+                </DialogContent>
+              </Box>
+            </Modal>
           </Box>
         </Grid>
         {/* Right side of the banner - image */}
         <Grid item xs={12} md={6}>
           <Image
-            src={image}
+            src={mainImage}
             alt="test"
             width={617.758}
             height={616.951}
@@ -189,5 +250,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
-
