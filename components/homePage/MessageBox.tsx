@@ -29,8 +29,9 @@ const style = {
   };
 
   
-//logic to open modal and functionalities
+// message box componant
 const MessageBox = () => {
+  //function to open and close the modal
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
