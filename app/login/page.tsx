@@ -13,21 +13,12 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import Box from "@mui/material/Box";
-import {
-  bannerDetails,
-  button,
-  section1,
-  section2,
-  section3,
-  section4,
-  section5,
-  section6,
-  section7,
-} from "@/data/loginPage";
+import { loginPageData } from "@/data/loginPage";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 // Functional component for Login
 const Login = () => {
-  const [formData, setFormData] = useState({ // State variables to hold form data and toggle password visibility
+  const [formData, setFormData] = useState({
+    // State variables to hold form data and toggle password visibility
     email: "",
     password: "",
     showPassword: false, // State to toggle password visibility
@@ -42,7 +33,7 @@ const Login = () => {
       [field]: event.target.value,
     });
   };
-   // Function to toggle password visibility
+  // Function to toggle password visibility
   const handleTogglePasswordVisibility = () => {
     setFormData({
       ...formData,
@@ -67,13 +58,16 @@ const Login = () => {
         <Box padding={0}>
           <form onSubmit={handleSubmit}>
             <Grid container spacing={2}>
-              <Grid item xs={12}> {/* Banner Section */}
+              <Grid item xs={12}>
+                {" "}
+                {/* Banner Section */}
                 <Typography
                   variant="h4"
                   align="center"
                   fontSize="48px"
                   style={{ fontFamily: "Lora" }}>
-                  <b>{bannerDetails.title}</b> {/* Render the title from bannerDetails */}
+                  <b>{loginPageData.loginPageTitle}</b>{" "}
+                  {/* Render the title from loginPageData */}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
@@ -82,18 +76,24 @@ const Login = () => {
                     align="center"
                     fontSize="20px"
                     style={{ fontFamily: "Mulish" }}>
-                    {bannerDetails.subtitle}{/* Render the subtitle from bannerDetails */}
+                    {loginPageData.loginPageDescription}
+                    {/* Render the subtitle from loginPageData */}
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={8} marginTop={6}>{/* Email Section */}
-                <Typography>{section1.title}</Typography>{/* Render the title from section1 */}
+              <Grid item xs={8} marginTop={6}>
+                {/* Email Section */}
+                <Typography>
+                  {loginPageData.loginPageEmailtxtCaption}
+                </Typography>
+                {/* Render the title from loginPageData */}
               </Grid>
               <Grid
                 item
                 xs={12}
                 marginTop={-1.3}
-                style={{ textAlign: "center" }}>{/* Email TextField */}
+                style={{ textAlign: "center" }}>
+                {/* Email TextField */}
                 <TextField
                   fullWidth
                   label="Email"
@@ -104,10 +104,15 @@ const Login = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12} marginTop={2.5}>{/* Password Section */}
-                <Typography>{section2.title}</Typography>{/* Render the title from section2 */}
+              <Grid item xs={12} marginTop={2.5}>
+                {/* Password Section */}
+                <Typography>
+                  {loginPageData.loginPagePasswordtxtCaption}
+                </Typography>
+                {/* Render the title from loginPageData */}
               </Grid>
-              <Grid item xs={12} marginTop={-1.3}>{/* Password TextField */}
+              <Grid item xs={12} marginTop={-1.3}>
+                {/* Password TextField */}
                 <TextField
                   fullWidth
                   label="Password"
@@ -123,14 +128,20 @@ const Login = () => {
                           onClick={handleTogglePasswordVisibility}
                           edge="end">
                           {formData.showPassword ? (
-                            <VisibilityOff />) : ( <Visibility />)}{" "}{/* Toggle visibility icon */}
+                            <VisibilityOff />
+                          ) : (
+                            <Visibility />
+                          )}{" "}
+                          {/* Toggle visibility icon */}
                         </IconButton>
                       </InputAdornment>
                     ),
                   }}
                 />
               </Grid>
-              <Grid container>  {/* Remember me and Forgot password Section */}
+              <Grid container>
+                {" "}
+                {/* Remember me and Forgot password Section */}
                 <Grid item xs={6} marginTop={1}>
                   <FormControlLabel
                     control={
@@ -145,13 +156,19 @@ const Login = () => {
                         }}
                       />
                     }
-                    label={section3.title} /* Render the title from section3 */
+                    label={
+                      loginPageData.loginPageCheckBoxCaption
+                    } /* Render the title from loginPageData */
                   />
                 </Grid>
                 <Grid item xs={6} marginTop={2} textAlign="right">
                   <Typography>
                     {" "}
-                    <a href="/"> {section4.title} </a>{/* Render the title from section4 & link the Forgot Password page */}
+                    <a href="/">
+                      {" "}
+                      {loginPageData.loginPageForgotPasswordCaption}{" "}
+                    </a>
+                    {/* Render the title from loginPageData & link the Forgot Password page */}
                   </Typography>
                 </Grid>
                 <Grid item xs={6}>
@@ -161,7 +178,8 @@ const Login = () => {
                   {/* Placeholder for the bottom right corner */}
                 </Grid>
               </Grid>
-              <Grid item xs={12} marginTop={4}>{/* Login Button Section */}
+              <Grid item xs={12} marginTop={4}>
+                {/* Login Button Section */}
                 <Button
                   type="submit"
                   variant="contained"
@@ -178,12 +196,16 @@ const Login = () => {
                       backgroundColor: "#c7833e",
                     },
                   }}>
-                  {button.title}{/* Render the title from button */}
+                  {loginPageData.loginPageButtonCaption}
+                  {/* Render the title from loginPageData */}
                 </Button>
               </Grid>
-              <Grid item xs={12}>{/* Register and Forgot password Section */}
+              <Grid item xs={12}>
+                {/* Register and Forgot password Section */}
                 <Typography align="center">
-                  {section5.title} <a href="/"> {section6.title} </a> {/* Render the title from section5 & section6 & link the Register page to section6 */}
+                  {loginPageData.loginPageNoAccountCaption}{" "}
+                  <a href="/"> {loginPageData.loginPageRegisterCaption} </a>{" "}
+                  {/* Render the title from loginPageData & loginPageData6 & link the Register page to loginPageData */}
                 </Typography>
               </Grid>
               <Grid
@@ -201,11 +223,13 @@ const Login = () => {
                     alignItems="center" // Center vertically
                     justifyContent="center" // Center horizontally
                     marginRight="10px">
-                    <ArrowBack style={{ fontSize: "20px", color: "#000000" }} />{" "}{/* Icon color */}
+                    <ArrowBack style={{ fontSize: "20px", color: "#000000" }} />{" "}
+                    {/* Icon color */}
                   </Box>
                 </a>
                 <Typography style={{ textAlign: "center", marginTop: "0px" }}>
-                  <a href="/"> {section7.title} </a>{/* Render the title from section7 & link the home page */}
+                  <a href="/"> {loginPageData.loginPageBackArrowCaption} </a>
+                  {/* Render the title from loginPageData & link the home page */}
                 </Typography>
               </Grid>
             </Grid>
