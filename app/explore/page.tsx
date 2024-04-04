@@ -1,5 +1,4 @@
-"use client"
-import React from "react";
+"use client";
 import { Box, Container } from "@mui/material";
 import HotelRooms from "@/components/explore/HotelRooms"; // Importing HotelRooms component from the 'explore' folder
 import SearchBar from "@/components/explore/SearchBar"; // Importing SearchBar component from the 'explore' folder
@@ -12,16 +11,21 @@ import HeroSection from "@/components/explore/HeroSection"; // Importing HeroSec
 
 const ExploreScreen = ({
   searchParams,
-}:{
-  searchParams?:{
-    query: string;//declear the query as a prop
-  
-  }
+}: {
+  searchParams?: {
+    query: string; //declear the query as a prop related to search bar query
+    roomType: string; //declear the value as a prop related to drop down list value
+    beds: string;
+    guest: string;
+  };
+}) => {
+  const query = searchParams?.query || " "; //destructuring the query from searchParams
+  const roomType = searchParams?.roomType || ""; //destructuring the value from searchParams
+  const bedSizes = searchParams?.beds || " "; //destructuring the bedSize from searchParams
+  const guest = searchParams?.guest || " "; //destructuring the guest from searchParams
 
-  } ) => {
+  console.log("Search Params:", searchParams);
 
-    const query = searchParams?.query || " ";
-  
   return (
     <>
       {/* Hero Section */}
@@ -54,7 +58,13 @@ const ExploreScreen = ({
       {/* Hotel Rooms Section */}
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
-          <HotelRooms query={query}/>  {/* pass the query to Hotel room component*/ }
+          <HotelRooms
+            query={query}
+            roomType={roomType}
+            bedSizes={bedSizes}
+            guest={guest}
+          />
+          {/* pass the query to Hotel room component*/}
         </Container>
       </Box>
     </>

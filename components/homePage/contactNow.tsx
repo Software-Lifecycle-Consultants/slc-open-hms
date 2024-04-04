@@ -26,6 +26,7 @@ const ContactNowBanner = () => {
             variant="h3"
             className={lora.className}
             sx={typographyh1Style}
+            style={{fontFamily:"__Inter_e66fe9",}}
           >
             {Blog2.contactNowTitle}
           </Typography>
@@ -41,7 +42,7 @@ const ContactNowBanner = () => {
             }}
           >
             {/* Button with icon for web and tablet view */}
-            <Button href="/contact-us" variant="contained" sx={buttonContainedStyle}>
+            <Button href="/contact-us" variant="contained" sx={buttonContainedStyle} style={{marginTop:"25px",}}>
               {Blog2.contactNowCaption}
               {/* Arrow icon */}
               <Box
