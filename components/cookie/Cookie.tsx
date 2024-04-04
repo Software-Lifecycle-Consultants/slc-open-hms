@@ -2,13 +2,17 @@ import { useState, useEffect } from "react";
 import "./Cookie.css";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import CookieIcon from '@mui/icons-material/Cookie';
-import { ToggleButtonGroup, Box, ToggleButton   } from "@mui/material";
+import { ToggleButtonGroup, Box, ToggleButton, Typography   } from "@mui/material";
 import { cookieData } from "../../data/homePage";
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 export default function Cookie() {
    // State variable to track if the user has consented to cookies
   const [isConsented, setIsConsented] = useState<boolean>(false);
+
+   
 
   const setCookie = (cname: string, cvalue: string, exdays: number) => {
     const d = new Date();
@@ -38,6 +42,7 @@ export default function Cookie() {
   };
 // alert box
   const checkCookie = () => {
+    
     let user = getCookie("username");
     if (user !== "") {
       console.log("Welcome again " + user);
@@ -52,6 +57,7 @@ export default function Cookie() {
       console.log(isConsented);
     }
   };
+ 
 // cookie reject function 
   const rejectCookie = () => {
     document.cookie = "username=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
@@ -62,7 +68,8 @@ export default function Cookie() {
   useEffect(() => {
     setIsConsented(false);
   }, []);
-
+ 
+  
   return (
     <>
     {/* cookie bar */}
@@ -72,7 +79,7 @@ export default function Cookie() {
             {/* cookie description */}
             <div className="description">
               {/* icon on the cookie */}
-              <CookieIcon sx={{ color: "#C7923E", marginRight: "10px" }} />
+              <CookieIcon sx={{ color: "#C7923E", marginRight: "20px", fontSize:"30px" }} />
               {cookieData.cookieDescription}
               {/* accept reject ButtonGroup */}
               <ToggleButtonGroup color="success" sx={{ height: "30px", marginLeft: "10px" }}>
@@ -81,9 +88,19 @@ export default function Cookie() {
                   <ArrowRightAltIcon sx={{ color: "#FFFFFF", gap: "15px" }} />
                 </ToggleButton>
                 <ToggleButton value="reject" onClick={rejectCookie} color="error" sx={{ borderRadius: "8px", color: "black", background: "white", borderColor: "#C7923E" }} >
-                {cookieData.cookieButtonCaptionReject}
+                <Typography sx={{fontSize: "14px"}}>{cookieData.cookieButtonCaptionReject}</Typography>
                 </ToggleButton>
               </ToggleButtonGroup>
+              <IconButton
+              edge="start"
+              color="inherit"
+              onClick={rejectCookie}
+              aria-label="close"
+              sx={{marginLeft:"50px"}}
+
+            >
+              <CloseIcon sx={{color:"#C7923E"}}/>
+            </IconButton>
             </div>
           </div>
         </Box>
