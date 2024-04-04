@@ -76,11 +76,11 @@ export default function Cookie() {
               {cookieData.cookieDescription}
               {/* accept reject ButtonGroup */}
               <ToggleButtonGroup color="success" sx={{ height: "30px", marginLeft: "10px" }}>
-                <ToggleButton value="accept" onClick={checkCookie} color="success" sx={{ background: "#C7923E", borderRadius: "12px", color: "white" }}>
+                <ToggleButton value="accept" onClick={checkCookie} color="success" sx={{ background: "#C7923E", borderRadius: "8px", color: "white" }}>
                 {cookieData.cookieButtonCaption}
                   <ArrowRightAltIcon sx={{ color: "#FFFFFF", gap: "15px" }} />
                 </ToggleButton>
-                <ToggleButton value="reject" onClick={rejectCookie} color="error" sx={{ borderRadius: "12px", color: "black", background: "white", }} >
+                <ToggleButton value="reject" onClick={rejectCookie} color="error" sx={{ borderRadius: "8px", color: "black", background: "white", borderColor: "#C7923E" }} >
                 {cookieData.cookieButtonCaptionReject}
                 </ToggleButton>
               </ToggleButtonGroup>
