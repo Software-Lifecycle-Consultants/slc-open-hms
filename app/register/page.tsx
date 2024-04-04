@@ -10,20 +10,7 @@ import {
   Checkbox
 } from "@mui/material";
 import { postData, postRegsiterData } from "@/services/api";
-import {
-  button,
-  headerDetails,
-  section1,
-  section2,
-  section3,
-  section4,
-  section5,
-  section6,
-  section7,
-  section8,
-  section9,
-  section10
-} from "@/data/registerPage";
+import {registerPageDetails} from "@/data/registerPage";
 import Box from "@mui/material/Box";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 
@@ -105,20 +92,20 @@ const Register: React.FC = () => {
               fontWeight: "bold",
               color: '#11142D'
             }}>
-              {headerDetails.title}
+              {registerPageDetails.registerPageTitle}
             </Typography>
             <Typography variant="body1" sx={{
               marginTop: "8px",
               color: '#9A9AB0'
             }}>
-              {headerDetails.subtitle}
+              {registerPageDetails.registerPageSubtitle}
             </Typography>
           </Grid>
           {/* First Name Section */}
           <Grid item xs={5} sx={{
             color: '#11142D'
           }}>
-            {section1.title}
+            {registerPageDetails.registerPageFirstNameSection}
             <TextField
               fullWidth
               label=""
@@ -133,7 +120,7 @@ const Register: React.FC = () => {
           <Grid item xs={6} sx={{
             color: '#11142D'
           }}>
-            {section2.title}
+            {registerPageDetails.registerPageLastNameSection}
             <TextField
               fullWidth
               label=""
@@ -148,7 +135,7 @@ const Register: React.FC = () => {
           <Grid item xs={11} sx={{
             color: '#11142D'
           }}>
-            {section3.title}
+            {registerPageDetails.registerPageEmailSection}
             <TextField
               fullWidth
               label=""
@@ -164,7 +151,7 @@ const Register: React.FC = () => {
           <Grid item xs={11} sx={{
             color: '#11142D'
           }}>
-            {section4.title}
+            {registerPageDetails.registerPagePhoneNumSection}
             <TextField
               fullWidth
               label=""
@@ -180,7 +167,7 @@ const Register: React.FC = () => {
           <Grid item xs={11} sx={{
             color: '#11142D'
           }}>
-            {section5.title}
+            {registerPageDetails.registerPagePasswordSection}
             <TextField
               fullWidth
               label=""
@@ -196,7 +183,7 @@ const Register: React.FC = () => {
           <Grid item xs={11} sx={{
             color: '#11142D'
           }}>
-            {section6.title}
+            {registerPageDetails.registerPageConfirmPwdSection}
             <TextField 
               fullWidth
               label=""
@@ -225,7 +212,7 @@ const Register: React.FC = () => {
                   }}
                 />
               }
-              label={section7.title}
+              label={registerPageDetails.registerPageAgreeRulesSection}
             />
           </Grid>
           {/* Sign Up Section */}
@@ -251,7 +238,7 @@ const Register: React.FC = () => {
                 textAlign: "center"
               }}
             >
-              {button.title}
+              {registerPageDetails.registerPageButtonSection}
             </Button>
             <Typography>{registrationMessage}</Typography>
           </Grid>
@@ -260,7 +247,7 @@ const Register: React.FC = () => {
             color: '#11142D'
           }}>
             <Typography align="center">
-              {section8.title} <a href="/login"> {section9.title} </a>
+              {registerPageDetails.registerPageHaveAccountSection} <a href="/login"> {registerPageDetails.registerPageLoginSection} </a>
             </Typography>
           </Grid>
           {/* Render to Back to the Home page */}
@@ -281,7 +268,7 @@ const Register: React.FC = () => {
               </Box>
             </a>
             <Typography style={{ textAlign: "center", marginTop: "0px" }}>
-              {section10.title}
+              {registerPageDetails.registerPageBackArroSection}
             </Typography>
           </Grid>
         </Grid>
