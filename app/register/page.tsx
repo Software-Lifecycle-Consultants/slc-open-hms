@@ -17,8 +17,9 @@ import ArrowBack from "@mui/icons-material/ArrowBack";
 interface RegisterData {
   firstname: string;
   lastname: string;
-  email: string;
   phone: string;
+  email: string;
+  username: string;
   password: string;
   confirm_pwd: string;
 }
@@ -26,8 +27,9 @@ const Register: React.FC = () => {
   const [formData, setFormData] = useState<RegisterData>({
     firstname: "",
     lastname: "",
-    email: "",
     phone: "",
+    email: "",
+    username: "",
     password: "",
     confirm_pwd: ""
   });
@@ -68,8 +70,9 @@ const Register: React.FC = () => {
     setFormData({
       firstname: "",
       lastname: "",
-      email: "",
       phone: "",
+      email: "",
+      username: "",
       password: "",
       confirm_pwd: ""
     });
@@ -86,7 +89,7 @@ const Register: React.FC = () => {
       <form onSubmit={handleSubmit}>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 0, md: 3 }}>
       { /* Assign to the Header Details */ }
-          <Grid item xs={10}>
+          <Grid item xs={12}>
             <Typography variant="h4" sx={{
               marginTop: "18px",
               fontWeight: "bold",
@@ -108,7 +111,7 @@ const Register: React.FC = () => {
             {registerPageDetails.registerPageFirstNameSection}
             <TextField
               fullWidth
-              label=""
+              label="john"
               variant="outlined"
               type="firstname"
               value={formData.firstname}
@@ -117,13 +120,13 @@ const Register: React.FC = () => {
             />
           </Grid>
           {/* Last Name Section */}
-          <Grid item xs={6} sx={{
+          <Grid item xs={7} sx={{
             color: '#11142D'
           }}>
             {registerPageDetails.registerPageLastNameSection}
             <TextField
               fullWidth
-              label=""
+              label="Doe"
               variant="outlined"
               type="lastname"
               value={formData.lastname}
@@ -131,30 +134,14 @@ const Register: React.FC = () => {
               required
             />
           </Grid>
-          {/* Email Section */}
-          <Grid item xs={11} sx={{
-            color: '#11142D'
-          }}>
-            {registerPageDetails.registerPageEmailSection}
-            <TextField
-              fullWidth
-              label=""
-              variant="outlined"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={(e) => handleChange(e, "email")}
-              required
-            />
-          </Grid>
           {/* Phone Number Section */}
-          <Grid item xs={11} sx={{
+          <Grid item xs={12} sx={{
             color: '#11142D'
           }}>
             {registerPageDetails.registerPagePhoneNumSection}
             <TextField
               fullWidth
-              label=""
+              label="0754436874"
               variant="outlined"
               type="phone"
               name="phone"
@@ -163,14 +150,43 @@ const Register: React.FC = () => {
               required
             />
           </Grid>
+          {/* Email Section */}
+          <Grid item xs={12} sx={{
+            color: '#11142D'
+          }}>
+            {registerPageDetails.registerPageEmailSection}
+            <TextField
+              fullWidth
+              label="john23@gmail.com"
+              variant="outlined"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={(e) => handleChange(e, "email")}
+              required
+            />
+          </Grid>
+          {/* User Name Section */}
+          <Grid item xs={12}>
+          {registerPageDetails.registerPageUserNameSection}
+            <TextField
+              fullWidth
+              label="john23@gmail.com"
+              variant="outlined"
+              name="username"
+              value={formData.username}
+              onChange={(e) => handleChange(e, "username")}
+              required
+            />
+          </Grid>
           {/* Password Section */}
-          <Grid item xs={11} sx={{
+          <Grid item xs={12} sx={{
             color: '#11142D'
           }}>
             {registerPageDetails.registerPagePasswordSection}
             <TextField
               fullWidth
-              label=""
+              label="*********"
               variant="outlined"
               type="password"
               name="password"
@@ -180,13 +196,13 @@ const Register: React.FC = () => {
             />
           </Grid>
           {/* Confirm Password Section */}
-          <Grid item xs={11} sx={{
+          <Grid item xs={12} sx={{
             color: '#11142D'
           }}>
             {registerPageDetails.registerPageConfirmPwdSection}
             <TextField 
               fullWidth
-              label=""
+              label="*********"
               variant="outlined"
               type="password"
               name="password"
@@ -196,7 +212,7 @@ const Register: React.FC = () => {
             />
           </Grid>
           {/* Agree to the Ruls Section */}
-          <Grid item xs={11} marginTop={1}>
+          <Grid item xs={12} marginTop={1}>
             <FormControlLabel sx={{
               marginTop: "5px",
               color: '#11142D'
@@ -216,7 +232,7 @@ const Register: React.FC = () => {
             />
           </Grid>
           {/* Sign Up Section */}
-          <Grid item xs={4} sx={{
+          <Grid item xs={12} sx={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -243,7 +259,7 @@ const Register: React.FC = () => {
             <Typography>{registrationMessage}</Typography>
           </Grid>
           {/* Render to Have an account the Login page */}
-          <Grid item xs={11} sx={{
+          <Grid item xs={12} sx={{
             color: '#11142D'
           }}>
             <Typography align="center">
