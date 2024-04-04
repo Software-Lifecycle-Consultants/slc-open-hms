@@ -10,9 +10,8 @@ import {
   TextField,
 } from "@mui/material";
 import React from "react";
-import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 const SearchBar = () => {
@@ -100,7 +99,7 @@ const SearchBar = () => {
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="roomType"
-                      value={searchParams.get("roomType")?.toString() || ''}
+                      value={searchParams.get("roomType")?.toString() || ""}
                       onChange={(e) => handleSelect("roomType", e.target.value)}
                       label="Room Type"
                     >
@@ -124,10 +123,10 @@ const SearchBar = () => {
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="guest"
-                      value={searchParams.get("Guest")?.toString() || ''}
-                      onChange={(e) => handleSelect("Guest", e.target.value)}
+                      value={searchParams.get("guest")?.toString() || ""}
+                      onChange={(e) => handleSelect("guest", e.target.value)}
                       label="Guest"
-                    >  
+                    >
                       <MenuItem value="">Select Number of Guests</MenuItem>
                       <MenuItem value="1 Adult">1 Adult</MenuItem>
                       <MenuItem value="2 Adults">2 Adults</MenuItem>
@@ -148,8 +147,8 @@ const SearchBar = () => {
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="beds"
-                      value={searchParams.get("Beds")?.toString() || ''}
-                      onChange={(e) => handleSelect("Beds", e.target.value)}
+                      value={searchParams.get("beds")?.toString() || ""}
+                      onChange={(e) => handleSelect("beds", e.target.value)}
                       label="Beds"
                     >
                       <MenuItem value="">Select Bed Type</MenuItem>
@@ -170,7 +169,7 @@ const SearchBar = () => {
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="sortBy"
-                      value={searchParams.get("sortBy")?.toString() || ''}
+                      value={searchParams.get("sortBy")?.toString() || ""}
                       onChange={(e) => handleSelect("sortBy", e.target.value)}
                       label="Sort By"
                     >

@@ -1,61 +1,78 @@
+import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
-import React, { useState } from "react";
 import RoomCard from "../guestRoomDetails/RoomCard";
 import { roomDetails } from "../../data/explorePage";
-import Pagination from "./Pagination";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+
+interface RoomDetail {
+  id: number;
+  roomCoverImage: string;
+  roomName: string;
+  roomType: string;
+  bedSizes: string;
+  guest: string;
+  price: number;
+  // Add other properties as needed
+}
 
 const HotelRooms = ({
   query,
-  value,
+  roomType,
+  bedSizes,
+  guest,
 }: {
-  query: string; //type declaration for query
-  value: string; //type declaration for value
-  page: number;
+  query: string;
+  roomType: string;
+  bedSizes: string;
+  guest: string;
 }) => {
   const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6; // Number of items per page
+  // State to hold filtered rooms
+  const [filteredRooms, setFilteredRooms] = useState<RoomDetail[]>(roomDetails);
 
-  const filteredRooms = roomDetails.filter((room) => {
-    //filterd the rooms based on search query by room name
-    return room.roomName.toLowerCase().includes(query.toLowerCase());
-  });
+  useEffect(() => {
+    const query = searchParams.get("query") || "";
+    const roomType = searchParams.get("roomType") || "";
+    const bedSizes = searchParams.get("beds") || "";
+    const guest = searchParams.get("guest") || "";
 
-  const filteredResults = roomDetails.filter((room) => {
-    //filterd the rooms based on selected value from drop down list by room type, guest,bed sizes
-    return (
-      room.roomType.toLowerCase() === value.toLowerCase() ||
-      room.guest.toLowerCase() === value.toLowerCase() ||
-      room.bedSizes.toLowerCase() === value.toLowerCase()
-    );
-  });
+    // Filter rooms based on query and selected values
+    let filteredResults = roomDetails;
 
-  const totalItems = filteredRooms.length + filteredResults.length; // Total number of items after filtering
-  const totalPages = Math.ceil(totalItems / itemsPerPage); // Calculate total pages
+    if (query) {
+      filteredResults = filteredResults.filter((room) =>
+        room.roomName.toLowerCase().includes(query.toLowerCase())
+      );
+    }
 
-  // Paginated rooms based on current page
-  const paginatedRooms = filteredRooms.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+    if (roomType) {
+      filteredResults = filteredResults.filter(
+        (room) => room.roomType.toLowerCase() === roomType.toLowerCase()
+      );
+    }
 
-  const handlePageChange = (page: number) => {
-    const params = new URLSearchParams(searchParams);
-    setCurrentPage(page);
-    params.set("page", page.toString());
-    replace(`${pathname}?${params.toString()}`);
-  };
+    if (bedSizes) {
+      filteredResults = filteredResults.filter(
+        (room) => room.bedSizes.toLowerCase() === bedSizes.toLowerCase()
+      );
+    }
 
+    if (guest) {
+      filteredResults = filteredResults.filter(
+        (room) => room.guest.toLowerCase() === guest.toLowerCase()
+      );
+    }
+
+    setFilteredRooms(filteredResults);
+  }, [searchParams]); // Update when search params change
+
+  console.log("Filtered Rooms:", filteredRooms);
   return (
     <>
       <Grid container spacing={2}>
-        {roomDetails &&
-          filteredResults &&
-          paginatedRooms.map((item) => (
+        {filteredRooms.length > 0 ? (
+          filteredRooms.map((item) => (
             <Grid key={item.id} item xs={12} sm={6} md={4}>
               <RoomCard
                 image={item.roomCoverImage ? item.roomCoverImage : ""}
@@ -63,13 +80,13 @@ const HotelRooms = ({
                 price={item.price}
               />
             </Grid>
-          ))}
+          ))
+        ) : (
+          <Grid item xs={12}>
+            <p>No rooms match the criteria.</p>
+          </Grid>
+        )}
       </Grid>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
     </>
   );
 };
