@@ -111,7 +111,7 @@ const Register: React.FC = () => {
             {registerPageDetails.registerPageFirstNameSection}
             <TextField
               fullWidth
-              label="john"
+              placeholder="john"
               variant="outlined"
               type="firstname"
               value={formData.firstname}
@@ -126,7 +126,7 @@ const Register: React.FC = () => {
             {registerPageDetails.registerPageLastNameSection}
             <TextField
               fullWidth
-              label="Doe"
+              placeholder="Doe"
               variant="outlined"
               type="lastname"
               value={formData.lastname}
@@ -141,7 +141,7 @@ const Register: React.FC = () => {
             {registerPageDetails.registerPagePhoneNumSection}
             <TextField
               fullWidth
-              label="0754436874"
+              placeholder="0754436874"
               variant="outlined"
               type="phone"
               name="phone"
@@ -157,7 +157,7 @@ const Register: React.FC = () => {
             {registerPageDetails.registerPageEmailSection}
             <TextField
               fullWidth
-              label="john23@gmail.com"
+              placeholder="john23@gmail.com"
               variant="outlined"
               type="email"
               name="email"
@@ -171,7 +171,7 @@ const Register: React.FC = () => {
           {registerPageDetails.registerPageUserNameSection}
             <TextField
               fullWidth
-              label="john23@gmail.com"
+              placeholder="john23@gmail.com"
               variant="outlined"
               name="username"
               value={formData.username}
@@ -186,7 +186,7 @@ const Register: React.FC = () => {
             {registerPageDetails.registerPagePasswordSection}
             <TextField
               fullWidth
-              label="*********"
+              placeholder="*********"
               variant="outlined"
               type="password"
               name="password"
@@ -202,7 +202,7 @@ const Register: React.FC = () => {
             {registerPageDetails.registerPageConfirmPwdSection}
             <TextField 
               fullWidth
-              label="*********"
+              placeholder="*********"
               variant="outlined"
               type="password"
               name="password"
