@@ -14,6 +14,10 @@ import {registerPageDetails} from "@/data/registerPage";
 import Box from "@mui/material/Box";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 
+/**
+ * This page represents the registration page.
+*/
+
 interface RegisterData {
   firstname: string;
   lastname: string;
@@ -45,6 +49,7 @@ const Register: React.FC = () => {
       [name]: event.target.value,
     });
   };
+  // Function to Post Api Data
   const PostApiData = async () => {
     try {
       const result = await postRegsiterData(
@@ -66,6 +71,7 @@ const Register: React.FC = () => {
       console.error("Error making POST request:", error);
     }
   };
+  // Function to Clear Form Data
   const clearFormData = () => {
     setFormData({
       firstname: "",
