@@ -30,7 +30,6 @@ const Footer = () => {
               variant="body2"
               style={{
                 color: '#FFFFFF',
-                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "30px",
                 fontStyle: "normal",
@@ -60,7 +59,6 @@ const Footer = () => {
               variant="body2"
               style={{
                 color: '#FFFFFF',
-                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -134,7 +132,6 @@ const Footer = () => {
               variant="body2"
               style={{
                 color: '#FFFFFF',
-                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -208,7 +205,6 @@ const Footer = () => {
               variant="body2"
               style={{
                 color: '#FFFFFF',
-                fontFamily: "Inter",
                 fontSize: "16px",
                 lineHeight: "normal",
                 fontStyle: "normal",
@@ -323,7 +319,6 @@ const Footer = () => {
                 variant="body2"
                 style={{
                   color: '#FFFFFF',
-                  fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",
@@ -346,7 +341,6 @@ const Footer = () => {
                 variant="body2"
                 style={{
                   color: '#FFFFFF',
-                  fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",
@@ -362,7 +356,6 @@ const Footer = () => {
                 variant="body2"
                 style={{
                   color: '#FFFFFF',
-                  fontFamily: "Inter",
                   fontSize: "15px",
                   lineHeight: "normal",
                   fontStyle: "normal",
