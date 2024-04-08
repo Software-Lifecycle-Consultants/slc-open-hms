@@ -1,6 +1,7 @@
 // Import necessary modules
 "use client"
 import { createTheme } from "@mui/material/styles";
+import { Inter } from 'next/font/google'
 
 // Create a Material-UI theme
 const theme = createTheme({
@@ -16,7 +17,7 @@ const theme = createTheme({
 
   // Define typography settings for the theme
   typography: {
-    fontFamily: "__Inter_e66fe9", // Define the font family for text
+    fontFamily: "var(--font-inter)", // Define the font family for text
     // fontSize: 14,
     // fontWeightLight: 300,
     // fontWeightRegular: 400,
