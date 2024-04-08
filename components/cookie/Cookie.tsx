@@ -88,7 +88,7 @@ export default function Cookie() {
                   <ArrowRightAltIcon sx={{ color: "#FFFFFF", gap: "15px" }} />
                 </ToggleButton>
                 <ToggleButton value="reject" onClick={rejectCookie} color="error" sx={{ borderRadius: "8px", color: "black", background: "white", borderColor: "#C7923E" }} >
-                <Typography sx={{fontSize: "14px"}}>{cookieData.cookieButtonCaptionReject}</Typography>
+                <Typography sx={{fontSize: "14px", fontFamily: "var(--font-inter)"}}>{cookieData.cookieButtonCaptionReject}</Typography>
                 </ToggleButton>
               </ToggleButtonGroup>
               <IconButton
