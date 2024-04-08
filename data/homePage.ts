@@ -116,11 +116,11 @@ export const blogCardText = {
   blogctaCaption: "Ticket booking",
 };
 export const Blog2 = {
-  contactNowTitle: "Best travel and destinations",
+  contactNowTitle: "We are ready to provide the best trip for you",
   contactNowDescription:
-    "With travala you can experience new travel and the best tourist destinations that we have to offer",
-    contactNowCaption: "Our Destination",
-    contactNowVedioLink: "https://www.youtube.com/embed/KCn5Gc38oO4?si=NbdIRYqi4ppm_64d"
+    "We have a variety of the world's best destinations that you can choose as your trip destination",
+  contactNowCaption: "Contact Now",
+  contactNowVedioLink: "https://www.youtube.com/embed/KCn5Gc38oO4?si=NbdIRYqi4ppm_64d"
 };
 
 

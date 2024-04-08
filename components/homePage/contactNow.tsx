@@ -26,7 +26,7 @@ const ContactNowBanner = () => {
             variant="h3"
             className={lora.className}
             sx={typographyh1Style}
-            style={{fontFamily:"__Inter_e66fe9",}}
+            style={{fontFamily:"var(--font-inter)", fontSize: "64px",}}
           >
             {Blog2.contactNowTitle}
           </Typography>
