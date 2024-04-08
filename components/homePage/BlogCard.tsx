@@ -188,7 +188,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
                 fontStyle: "medium",
                 letterSpacing: "-0.14px",
                 fontWeight: "500",
-                fontFamily: "__Inter_e66fe9",
+                fontFamily: "var(--font-inter)",
                 textTransform: "none",
               }}
             >
