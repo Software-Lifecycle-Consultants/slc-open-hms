@@ -67,7 +67,6 @@ const HotelRooms = ({
     setFilteredRooms(filteredResults);
   }, [searchParams]); // Update when search params change
 
-  console.log("Filtered Rooms:", filteredRooms);
   return (
     <>
       <Grid container spacing={2}>

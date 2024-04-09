@@ -24,8 +24,6 @@ const ExploreScreen = ({
   const bedSizes = searchParams?.beds || " "; //destructuring the bedSize from searchParams
   const guest = searchParams?.guest || " "; //destructuring the guest from searchParams
 
-  console.log("Search Params:", searchParams);
-
   return (
     <>
       {/* Hero Section */}
@@ -33,7 +31,7 @@ const ExploreScreen = ({
         sx={{
           backgroundColor: "#0C111F",
           color: "white",
-          height: "600px",
+          height: { xs: "450px", sm: "370px", md: "390px", lg: "350px" },
           width: "100%",
           display: "inline-block",
         }}
