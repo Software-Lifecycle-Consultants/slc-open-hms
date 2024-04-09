@@ -35,7 +35,7 @@ const SearchBar = () => {
   const handleSearch = (searchTerm: string) => {
     //searchTerm = search query
     const params = new URLSearchParams(searchParams);
-    console.log(searchTerm);
+
     if (searchTerm) {
       params.set("query", searchTerm);
     } else {
