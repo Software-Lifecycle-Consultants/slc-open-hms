@@ -37,10 +37,7 @@ export const extraFacilitationSection = {
 /* Assign title to the calendar component of the checkout page */
 export const calenderData = {
   calenderTitle: "Select your check-in and check-out dates",
-  termTitle: "Terms and Conditions",
-  term1: "Input your Special term-1 in Here",
-  term2: "Input your Special term-2 in Here",
-  term3: "Input your Special term-3 in Here",
+  
 }
 
 /* Assign condition and button caption to the submit button component of the checkout page */
@@ -53,3 +50,10 @@ export const checkListText= {
   activityTitle: "Activity",
   activityPrice: "+ Rp. 230.000",
 };
+/* Assign data to the terms and condition content */
+export const termsText={
+termTitle: "Terms and Conditions",
+term1: "Input your Special term-1 in Here",
+term2: "Input your Special term-2 in Here",
+term3: "Input your Special term-3 in Here",
+}
