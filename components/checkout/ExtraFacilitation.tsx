@@ -100,7 +100,7 @@ const ExtraFacilitation = () => {
               marginTop: "28px",
             }}
           >
-            Special Request
+            {extraFacilitationSection.requestText}
           </Typography>
           {/* TextField for Special Request */}
           <TextField

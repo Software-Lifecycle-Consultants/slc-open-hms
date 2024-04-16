@@ -4,7 +4,7 @@ import { Box, Typography, Card, CardContent } from "@mui/material";
 import { DateRange,Range} from "react-date-range";
 import "react-date-range/dist/styles.css"; // Import the styles
 import "react-date-range/dist/theme/default.css";
-import { calenderTitle } from "@/data/checkoutPage";
+import { calenderData, termsText } from "@/data/checkoutPage";
 import { lora, mulish } from "../../app/fonts";
 
 const Calender = () => {
@@ -44,7 +44,7 @@ const Calender = () => {
               marginTop: "14px",
             }}
           >
-            {calenderTitle}
+            {calenderData.calenderTitle}
           </Typography>
           <Box sx={{ backgroundColor: "" }}>
             {/* Calendar component */}
@@ -69,7 +69,7 @@ const Calender = () => {
               marginTop: "8px",
             }}
           >
-            Terms and Conditions
+            {termsText.termTitle}
           </Typography>
           {/* Special Request */}
           <Typography
@@ -85,7 +85,7 @@ const Calender = () => {
               marginTop: "16px",
             }}
           >
-            Input your Special Request in Here
+           {termsText.term1}
           </Typography>
           <Typography
             variant="body1"
@@ -100,7 +100,7 @@ const Calender = () => {
               marginTop: "16px",
             }}
           >
-            Input your Special Request in Here
+            {termsText.term2}
           </Typography>
           <Typography
             variant="body1"
@@ -115,7 +115,7 @@ const Calender = () => {
               marginTop: "16px",
             }}
           >
-            Input your Special Request in Here
+            {termsText.term3}
           </Typography>
         </CardContent>
       </Card>
