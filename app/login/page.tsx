@@ -52,10 +52,10 @@ const Login = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      minHeight="110vh" /* Set minimum height to occupy the full viewport */
+      minHeight="70vh" /* Set minimum height to occupy the full viewport */
     >
       <Container maxWidth="sm">
-        <Box padding={0}>
+        <Box padding={5}>
           <form onSubmit={handleSubmit}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
@@ -65,7 +65,7 @@ const Login = () => {
                   variant="h4"
                   align="center"
                   fontSize="48px"
-                  style={{ fontFamily: "Lora" }}>
+                  style={{ fontFamily: "Lora", color: "rgba(17, 20, 45, 1)" }}>
                   <b>{loginPageData.loginPageTitle}</b>{" "}
                   {/* Render the title from loginPageData */}
                 </Typography>
@@ -75,7 +75,10 @@ const Login = () => {
                   <Typography
                     align="center"
                     fontSize="20px"
-                    style={{ fontFamily: "Mulish" }}>
+                    style={{
+                      fontFamily: "Mulish",
+                      color: "rgba(81, 81, 81, 1)",
+                    }}>
                     {loginPageData.loginPageDescription}
                     {/* Render the subtitle from loginPageData */}
                   </Typography>
@@ -83,7 +86,7 @@ const Login = () => {
               </Grid>
               <Grid item xs={8} marginTop={6}>
                 {/* Email Section */}
-                <Typography>
+                <Typography style={{ color: "rgba(17, 20, 45, 1)" }}>
                   {loginPageData.loginPageEmailtxtCaption}
                 </Typography>
                 {/* Render the title from loginPageData */}
@@ -106,7 +109,7 @@ const Login = () => {
               </Grid>
               <Grid item xs={12} marginTop={2.5}>
                 {/* Password Section */}
-                <Typography>
+                <Typography style={{ color: "rgba(17, 20, 45, 1)" }}>
                   {loginPageData.loginPagePasswordtxtCaption}
                 </Typography>
                 {/* Render the title from loginPageData */}
@@ -159,10 +162,11 @@ const Login = () => {
                     label={
                       loginPageData.loginPageCheckBoxCaption
                     } /* Render the title from loginPageData */
+                    style={{ color: "rgba(17, 20, 45, 1)" }}
                   />
                 </Grid>
                 <Grid item xs={6} marginTop={2} textAlign="right">
-                  <Typography>
+                  <Typography style={{ color: "rgba(17, 20, 45, 1)" }}>
                     {" "}
                     <a href="/">
                       {" "}
@@ -202,9 +206,14 @@ const Login = () => {
               </Grid>
               <Grid item xs={12}>
                 {/* Register and Forgot password Section */}
-                <Typography align="center">
+                <Typography
+                  align="center"
+                  style={{ color: "rgba(17, 20, 45, 1)" }}>
                   {loginPageData.loginPageNoAccountCaption}{" "}
-                  <a href="/"> {loginPageData.loginPageRegisterCaption} </a>{" "}
+                  <a href="/" style={{ color: "rgba(0, 60, 112, 1)" }}>
+                    {" "}
+                    {loginPageData.loginPageRegisterCaption}{" "}
+                  </a>{" "}
                   {/* Render the title from loginPageData & loginPageData6 & link the Register page to loginPageData */}
                 </Typography>
               </Grid>
@@ -227,8 +236,16 @@ const Login = () => {
                     {/* Icon color */}
                   </Box>
                 </a>
-                <Typography style={{ textAlign: "center", marginTop: "0px" }}>
-                  <a href="/"> {loginPageData.loginPageBackArrowCaption} </a>
+                <Typography
+                  style={{
+                    textAlign: "center",
+                    marginTop: "0px",
+                    color: "rgba(17, 20, 45, 1)",
+                  }}>
+                  <a href="http://localhost:3000/register">
+                    {" "}
+                    {loginPageData.loginPageBackArrowCaption}{" "}
+                  </a>
                   {/* Render the title from loginPageData & link the home page */}
                 </Typography>
               </Grid>
