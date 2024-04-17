@@ -8,6 +8,9 @@ import {
   Grid,
   FormControlLabel,
   Checkbox,
+  List,
+  ListItem,
+  ListItemText,
 } from "@mui/material";
 import { postData, postRegsiterData } from "@/services/api";
 import { registerPageDetails } from "@/data/registerPage";
@@ -53,16 +56,14 @@ const Register: React.FC = () => {
   const PostApiData = async () => {
     try {
       const result = await postRegsiterData(
-        "https://slc-open-hms-api.azurewebsites.net/register",
+        registerPageDetails.registerPageWebLink, // Using the URL from registerPageDetails
         formData
       ).then((response) => {
         console.log(response);
         if (!response.ok) {
-          console.log("Post Request Unsucceeful", response);
           setRegistrationMessage(response.title);
           setErrorMessages(Object.values(response.errors));
         } else {
-          console.log("Post Request Successfull", response);
           setRegistrationMessage("Registration successful!");
           setErrorMessages([]);
           clearFormData();
@@ -261,7 +262,7 @@ const Register: React.FC = () => {
               label={
                 <>
                   {registerPageDetails.registerPageAgreeRulesSection}
-                   {/* Add link to Terms and Conditions section */}
+                  {/* Add link to Terms and Conditions section */}
                   <a
                     href="/terms-condition"
                     style={{ color: "rgba(0, 60, 112, 1)" }}>
@@ -343,11 +344,13 @@ const Register: React.FC = () => {
         </Grid>
       </form>
       {errorMessages.length > 0 && (
-        <ul>
+        <List>
           {errorMessages.map((errorMessage, index) => (
-            <li key={index}>{errorMessage}</li>
+            <ListItem key={index}>
+              <ListItemText primary={errorMessage} />
+            </ListItem>
           ))}
-        </ul>
+        </List>
       )}
     </Container>
   );
