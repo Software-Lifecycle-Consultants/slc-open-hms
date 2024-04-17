@@ -13,7 +13,8 @@ import { postData, postRegsiterData } from "@/services/api";
 import {registerPageDetails} from "@/data/registerPage";
 import Box from "@mui/material/Box";
 import ArrowBack from "@mui/icons-material/ArrowBack";
-
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/bootstrap.css";
 /**
  * This page represents the registration page.
 */
@@ -90,6 +91,7 @@ const Register: React.FC = () => {
     PostApiData();
     console.log("Register Data:", formData);
   };
+  const [phone, setPhone] = useState("");
   return (
     <Container maxWidth="sm">
       <form onSubmit={handleSubmit}>
@@ -145,16 +147,15 @@ const Register: React.FC = () => {
             color: '#11142D'
           }}>
             {registerPageDetails.registerPagePhoneNumSection}
-            <TextField
-              fullWidth
-              placeholder="0754436874"
-              variant="outlined"
-              type="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={(e) => handleChange(e, "phone")}
-              required
-            />
+            <PhoneInput
+            country={"eg"}
+            enableSearch={true}
+            value={phone}
+            onChange={(phone) => setPhone(phone)}
+            
+            inputStyle={{
+              width:"100%"}}
+          />
           </Grid>
           {/* Email Section */}
           <Grid item xs={12} sx={{
