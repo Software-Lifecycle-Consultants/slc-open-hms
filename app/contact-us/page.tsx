@@ -6,8 +6,10 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { postData } from "@/services/api";
 import HeaderSection from "@/components/contactPage/HeaderSection";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import ContactCard from "@/components/contactPage/ContactCard";
+import Map from "@/components/contactPage/Map/Map";
+import ContactForm from "@/components/contactPage/ContactForm";
 
 //Contact data captured from the front-end
 interface ContactData {
@@ -22,46 +24,11 @@ interface ContactData {
  */
 
 const ContactUs = () => {
-  /*const [formData, setFormData] = useState<ContactData>({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const postApiData = async () => {
-    try {
-      //save base url in a config file later
-      const result = await postData('https://slc-open-hms-api.azurewebsites.net/api/Contacts', formData)
-        .then((response) => {
-          console.log("Post Request Successful:", response);
-          clearFormData();
-          console.log(response);
-        });
-
-    }
-    catch (error) {
-      console.error('Error making POST request:', error);
-    }
-  };
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const clearFormData = () => {
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
-  }
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    postApiData();
-    console.log('Form Data:', formData);
-  };*/
+  const positionInfos = [
+    {
+      address: "1234, 5th Avenue, New York, USA",
+    },
+  ];
 
   return (
     <>
@@ -72,20 +39,51 @@ const ContactUs = () => {
           height: { xs: "200px", sm: "250px", md: "300px", lg: "300px" },
           width: "100%",
           display: "inline-block",
-          marginLeft: { xs: "10px", sm: "15px", md: "30px", lg: "60px" },
+
           paddingBottom: "10px",
         }}
       >
+        {/* header section of the contact page */}
         <HeaderSection />
       </Box>
 
       <Box
         sx={{
-          display: "flex",
+          display: { xs: "block", sm: "flex", md: "flex", lg: "flex" },
         }}
       >
+        {/* contact card section */}
         <ContactCard />
       </Box>
+
+      <Container>
+        <Box
+          sx={{
+            marginTop: "50px",
+            display: { xs: "block", sm: "block", md: "flex", lg: "flex" },
+          }}
+        >
+          {/* Map and Contact Form */}
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6}>
+              <Map positionInfos={positionInfos} />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                height: "800px",
+              }}
+            >
+              <ContactForm />
+            </Grid>
+          </Grid>
+        </Box>
+      </Container>
     </>
   );
 };
