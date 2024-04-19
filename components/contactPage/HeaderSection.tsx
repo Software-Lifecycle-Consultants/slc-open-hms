@@ -6,11 +6,12 @@ const HeaderSection = () => {
   return (
     <>
       <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} lg={4} xl={4}>
           <Box
             sx={{
               paddingTop: { xs: "25px", sm: "50px", md: "50px" },
               paddingBottom: { xs: "25px", sm: "50px", md: "50px", lg: "50px" },
+              marginLeft: { xs: "10px", sm: "15px", md: "30px", lg: "60px" },
             }}
           >
             <Typography
@@ -25,7 +26,7 @@ const HeaderSection = () => {
                 letterSpacing: "0.186px",
               }}
             >
-              Get in touch
+              Get In Touch
             </Typography>
             <Typography
               variant="body1"
