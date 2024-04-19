@@ -5,6 +5,7 @@ import ListItem from "@mui/material/ListItem";
 import Checkbox from "@mui/material/Checkbox";
 import { Box, Typography } from "@mui/material";
 import { mulish } from "../../app/fonts";
+import { checkListText } from "@/data/checkoutPage";
 
 const CheckList = () => {
   /* Functional component for the checklist */
@@ -60,7 +61,7 @@ const CheckList = () => {
                   marginTop: "12px",
                 }}
               >
-                Activity
+                {checkListText.activityTitle}
               </Typography>
               {/* Price label */}
               <Typography
@@ -77,7 +78,7 @@ const CheckList = () => {
                   marginLeft: { xs: "32%", sm: "66%", md: "62%", lg: "69%" },
                 }}
               >
-                + Rp. 230.000
+                {checkListText.activityPrice}
               </Typography>
             </Box>
           </ListItem>
