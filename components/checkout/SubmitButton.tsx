@@ -49,13 +49,15 @@ const SubmitButton = () => {
           textTransform: "none",
           width: "100%",
           height: "56px",
-          marginTop: "20px",
+          marginTop: "50px",
           fontSize: "16px",
           fontStyle: "normal",
           fontWeight: "600",
           lineHeight: "120%",
           letterSpacing: "0.08px",
           backgroundColor: "#C7923E",
+          marginBottom: "120px",
+
           "&:hover": {
             backgroundColor: "#c7833e",
           },

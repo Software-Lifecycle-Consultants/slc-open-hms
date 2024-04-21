@@ -7,16 +7,20 @@ import {
   Container,
   Grid,
   FormControlLabel,
-  Checkbox
+  Checkbox,
+  List,
+  ListItem,
+  ListItemText,
 } from "@mui/material";
 import { postData, postRegsiterData } from "@/services/api";
-import {registerPageDetails} from "@/data/registerPage";
+import { registerPageDetails } from "@/data/registerPage";
 import Box from "@mui/material/Box";
 import ArrowBack from "@mui/icons-material/ArrowBack";
-
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/bootstrap.css";
 /**
  * This page represents the registration page.
-*/
+ */
 
 interface RegisterData {
   firstname: string;
@@ -35,7 +39,7 @@ const Register: React.FC = () => {
     email: "",
     username: "",
     password: "",
-    confirm_pwd: ""
+    confirm_pwd: "",
   });
   const [registrationMessage, setRegistrationMessage] = useState("");
   const [errorMessages, setErrorMessages] = useState<string[]>([]);
@@ -53,16 +57,15 @@ const Register: React.FC = () => {
   const PostApiData = async () => {
     try {
       const result = await postRegsiterData(
-        "https://slc-open-hms-api.azurewebsites.net/register",formData)
-        .then((response) => {
+        registerPageDetails.registerPageWebLink, // Using the URL from registerPageDetails
+        formData
+      ).then((response) => {
         console.log(response);
         if (!response.ok) {
-          console.log("Post Request Unsucceeful", response);
           setRegistrationMessage(response.title);
           setErrorMessages(Object.values(response.errors));
-        } else  {        
-           console.log("Post Request Successfull", response);
-          setRegistrationMessage('Registration successful!');
+        } else {
+          setRegistrationMessage("Registration successful!");
           setErrorMessages([]);
           clearFormData();
         }
@@ -80,40 +83,48 @@ const Register: React.FC = () => {
       email: "",
       username: "",
       password: "",
-      confirm_pwd: ""
+      confirm_pwd: "",
     });
     setRegistrationMessage("");
     setErrorMessages([]);
   };
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();    
+    event.preventDefault();
     PostApiData();
     console.log("Register Data:", formData);
   };
+  const [phone, setPhone] = useState("");
   return (
     <Container maxWidth="sm">
       <form onSubmit={handleSubmit}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 0, md: 3 }}>
-      { /* Assign to the Header Details */ }
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 0, md: 3 }}>
+          {/* Assign to the Header Details */}
           <Grid item xs={12}>
-            <Typography variant="h4" sx={{
-              marginTop: "18px",
-              fontWeight: "bold",
-              color: '#11142D'
-            }}>
+            <Typography
+              variant="h4"
+              sx={{
+                marginTop: "18px",
+                fontWeight: "bold",
+                color: "#11142D",
+              }}>
               {registerPageDetails.registerPageTitle}
             </Typography>
-            <Typography variant="body1" sx={{
-              marginTop: "8px",
-              color: '#9A9AB0'
-            }}>
+            <Typography
+              variant="body1"
+              sx={{
+                marginTop: "8px",
+                color: "#9A9AB0",
+              }}>
               {registerPageDetails.registerPageSubtitle}
             </Typography>
           </Grid>
           {/* First Name Section */}
-          <Grid item xs={5} sx={{
-            color: '#11142D'
-          }}>
+          <Grid
+            item
+            xs={5}
+            sx={{
+              color: "#11142D",
+            }}>
             {registerPageDetails.registerPageFirstNameSection}
             <TextField
               fullWidth
@@ -126,9 +137,12 @@ const Register: React.FC = () => {
             />
           </Grid>
           {/* Last Name Section */}
-          <Grid item xs={7} sx={{
-            color: '#11142D'
-          }}>
+          <Grid
+            item
+            xs={7}
+            sx={{
+              color: "#11142D",
+            }}>
             {registerPageDetails.registerPageLastNameSection}
             <TextField
               fullWidth
@@ -141,25 +155,30 @@ const Register: React.FC = () => {
             />
           </Grid>
           {/* Phone Number Section */}
-          <Grid item xs={12} sx={{
-            color: '#11142D'
-          }}>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              color: "#11142D",
+            }}>
             {registerPageDetails.registerPagePhoneNumSection}
-            <TextField
-              fullWidth
-              placeholder="0754436874"
-              variant="outlined"
-              type="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={(e) => handleChange(e, "phone")}
-              required
-            />
+            <PhoneInput
+            country={"eg"}
+            enableSearch={true}
+            value={phone}
+            onChange={(phone) => setPhone(phone)}
+            
+            inputStyle={{
+              width:"100%"}}
+          />
           </Grid>
           {/* Email Section */}
-          <Grid item xs={12} sx={{
-            color: '#11142D'
-          }}>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              color: "#11142D",
+            }}>
             {registerPageDetails.registerPageEmailSection}
             <TextField
               fullWidth
@@ -174,7 +193,7 @@ const Register: React.FC = () => {
           </Grid>
           {/* User Name Section */}
           <Grid item xs={12}>
-          {registerPageDetails.registerPageUserNameSection}
+            {registerPageDetails.registerPageUserNameSection}
             <TextField
               fullWidth
               placeholder="john23@gmail.com"
@@ -186,9 +205,12 @@ const Register: React.FC = () => {
             />
           </Grid>
           {/* Password Section */}
-          <Grid item xs={12} sx={{
-            color: '#11142D'
-          }}>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              color: "#11142D",
+            }}>
             {registerPageDetails.registerPagePasswordSection}
             <TextField
               fullWidth
@@ -202,11 +224,14 @@ const Register: React.FC = () => {
             />
           </Grid>
           {/* Confirm Password Section */}
-          <Grid item xs={12} sx={{
-            color: '#11142D'
-          }}>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              color: "#11142D",
+            }}>
             {registerPageDetails.registerPageConfirmPwdSection}
-            <TextField 
+            <TextField
               fullWidth
               placeholder="*********"
               variant="outlined"
@@ -219,10 +244,11 @@ const Register: React.FC = () => {
           </Grid>
           {/* Agree to the Ruls Section */}
           <Grid item xs={12} marginTop={1}>
-            <FormControlLabel sx={{
-              marginTop: "5px",
-              color: '#11142D'
-            }}
+            <FormControlLabel
+              sx={{
+                marginTop: "5px",
+                color: "#11142D",
+              }}
               control={
                 <Checkbox
                   sx={{
@@ -234,15 +260,28 @@ const Register: React.FC = () => {
                   }}
                 />
               }
-              label={registerPageDetails.registerPageAgreeRulesSection}
+              label={
+                <>
+                  {registerPageDetails.registerPageAgreeRulesSection}
+                  {/* Add link to Terms and Conditions section */}
+                  <a
+                    href="/terms-condition"
+                    style={{ color: "rgba(0, 60, 112, 1)" }}>
+                    {registerPageDetails.registerPageTermsandConditionsSection}
+                  </a>
+                </>
+              }
             />
           </Grid>
           {/* Sign Up Section */}
-          <Grid item xs={12} sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}>
             <Button
               type="submit"
               variant="contained"
@@ -257,27 +296,37 @@ const Register: React.FC = () => {
                 "&:hover": {
                   backgroundColor: "#c7833e",
                 },
-                textAlign: "center"
-              }}
-            >
+                textAlign: "center",
+              }}>
               {registerPageDetails.registerPageButtonSection}
             </Button>
             <Typography>{registrationMessage}</Typography>
           </Grid>
           {/* Render to Have an account the Login page */}
-          <Grid item xs={12} sx={{
-            color: '#11142D'
-          }}>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              color: "#11142D",
+            }}>
             <Typography align="center">
-              {registerPageDetails.registerPageHaveAccountSection} <a href="/login"> {registerPageDetails.registerPageLoginSection} </a>
+              {registerPageDetails.registerPageHaveAccountSection}{" "}
+              <a href="/login">
+                {" "}
+                {registerPageDetails.registerPageLoginSection}{" "}
+              </a>
             </Typography>
           </Grid>
           {/* Render to Back to the Home page */}
-          <Grid item xs={12} sx={{
-              padding: '35px',
-              color: '#11142D',
+          <Grid
+            item
+            xs={12}
+            sx={{
+              padding: "35px",
+              color: "#11142D",
             }}
-            container alignItems="center"
+            container
+            alignItems="center"
             justifyContent="center">
             <a href="/">
               <Box
@@ -296,12 +345,14 @@ const Register: React.FC = () => {
         </Grid>
       </form>
       {errorMessages.length > 0 && (
-              <ul>
-                {errorMessages.map((errorMessage, index) => (
-                  <li key={index}>{errorMessage}</li>
-                ))}
-              </ul>
-            )}
+        <List>
+          {errorMessages.map((errorMessage, index) => (
+            <ListItem key={index}>
+              <ListItemText primary={errorMessage} />
+            </ListItem>
+          ))}
+        </List>
+      )}
     </Container>
   );
 };
