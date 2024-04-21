@@ -22,7 +22,7 @@
 }
 
 .description{
-
+    display: flex;
     text-align: center;
     padding: 3px;
     border: none;
@@ -30,6 +30,7 @@
     font-family: 'Mulish';
     font-size: 20px;
     margin: 10px 10px 10px 10px;
+    align-items: center;
 
 
 }
