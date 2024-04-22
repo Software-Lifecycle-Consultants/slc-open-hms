@@ -4,6 +4,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { mulish } from "@/app/fonts";
+import { contactCardDetails } from "@/data/contactPage";
 
 const ContactCard = () => {
   return (
@@ -40,7 +41,7 @@ const ContactCard = () => {
                 fontSize: { xs: "16px", sm: "16px", md: "18px", lg: "20px" },
               }}
             >
-              t.travala@gmail.com
+              {contactCardDetails.email}
             </Typography>
           </Grid>
         </CardContent>
@@ -76,7 +77,7 @@ const ContactCard = () => {
                 fontSize: { xs: "16px", sm: "13px", md: "18px", lg: "20px" },
               }}
             >
-              101 Independence Avenue
+              {contactCardDetails.address}
             </Typography>
           </Grid>
         </CardContent>
@@ -112,7 +113,7 @@ const ContactCard = () => {
                 fontSize: { xs: "16px", sm: "16px", md: "18px", lg: "20px" },
               }}
             >
-              +1 234 56 789
+              {contactCardDetails.phone}
             </Typography>
           </Grid>
         </CardContent>
