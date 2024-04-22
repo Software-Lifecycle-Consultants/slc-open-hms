@@ -5,10 +5,14 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { mulish } from "@/app/fonts";
 import { contactCardDetails } from "@/data/contactPage";
+/*
+This component represents contact information cards displaying email, address, and phone number in the contact page.
+*/
 
 const ContactCard = () => {
   return (
     <>
+      {/* Email Card */}
       <Card
         className={mulish.className}
         sx={{
@@ -26,6 +30,7 @@ const ContactCard = () => {
       >
         <CardContent sx={{}}>
           <Grid container alignItems="center">
+            {/* Mail Icon */}
             <Box>
               <MailOutlineIcon
                 sx={{
@@ -34,6 +39,7 @@ const ContactCard = () => {
                 }}
               />
             </Box>
+            {/* Email Text */}
             <Typography
               variant="body1"
               sx={{
@@ -46,6 +52,7 @@ const ContactCard = () => {
           </Grid>
         </CardContent>
       </Card>
+      {/* Address Card */}
       <Card
         className={mulish.className}
         sx={{
@@ -62,6 +69,7 @@ const ContactCard = () => {
       >
         <CardContent>
           <Grid container alignItems="center">
+            {/* Location Icon */}
             <Box>
               <LocationOnIcon
                 sx={{
@@ -70,6 +78,7 @@ const ContactCard = () => {
                 }}
               />
             </Box>
+            {/* Address Text */}
             <Typography
               variant="body1"
               sx={{
@@ -82,6 +91,7 @@ const ContactCard = () => {
           </Grid>
         </CardContent>
       </Card>
+      {/* Phone Card */}
       <Card
         className={mulish.className}
         sx={{
@@ -98,6 +108,7 @@ const ContactCard = () => {
       >
         <CardContent>
           <Grid container alignItems="center">
+            {/* Phone Icon */}
             <Box>
               <PhoneIcon
                 sx={{
@@ -106,6 +117,7 @@ const ContactCard = () => {
                 }}
               />
             </Box>
+            {/* Phone Text */}
             <Typography
               variant="body1"
               sx={{
