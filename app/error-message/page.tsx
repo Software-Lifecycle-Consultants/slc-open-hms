@@ -11,6 +11,10 @@ import mainImage from "../../public/images/homePage/ErrorMessage/ErrorImage.webp
 import Image from "next/image";
 import { inter } from "../../app/fonts";
 
+/**
+ * This page represents the 404 Error Message Page.
+*/
+
 export default function ErrorMassage() {
     return (
         <>
@@ -117,29 +121,31 @@ export default function ErrorMassage() {
                             {pageDetails.backArroSection1}
                         </Button>
                     </a>
-                    <Button
-                        type="submit"
-                        variant="contained"
-                        color="primary"
-                        style={{
-                            borderRadius: "15px",
-                            padding: "12px 18px",
-                        }}
+                    <a href="/">
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            style={{
+                                borderRadius: "15px",
+                                padding: "12px 18px",
+                            }}
 
-                        sx={{
-                            backgroundColor: "#C7923E",
-                            "&:hover": {
-                                backgroundColor: "#c7833e",
-                            },
-                            textAlign: "center",
-                            fontWeight: "Medium",
-                            fontSize: "16px",
-                            marginTop: "24px",
-                            marginLeft: "12px"
-                        }}
-                    >
-                        {pageDetails.backArroSection2}
-                    </Button>
+                            sx={{
+                                backgroundColor: "#C7923E",
+                                "&:hover": {
+                                    backgroundColor: "#c7833e",
+                                },
+                                textAlign: "center",
+                                fontWeight: "Medium",
+                                fontSize: "16px",
+                                marginTop: "24px",
+                                marginLeft: "12px"
+                            }}
+                        >
+                            {pageDetails.backArroSection2}
+                        </Button>
+                    </a>
                 </Grid>
             </Grid>
         </>
