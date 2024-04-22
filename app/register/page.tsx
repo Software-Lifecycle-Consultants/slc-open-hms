@@ -18,7 +18,7 @@ import Box from "@mui/material/Box";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
-import "../../app/style/styles.css";
+import { orangebuttonCommonStyle } from "../../components/homePage/styles";
 /**
  * This page represents the registration page.
  */
@@ -286,7 +286,7 @@ const Register: React.FC = () => {
             }}>
             <Button
               type="submit"
-              className="buttonCommonStyle" // Add the button class here
+              sx={orangebuttonCommonStyle} // Add the button class
               >
               {registerPageDetails.registerPageButtonSection}
             </Button>
