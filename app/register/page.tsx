@@ -18,6 +18,7 @@ import Box from "@mui/material/Box";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
+import "../../app/style/styles.css";
 /**
  * This page represents the registration page.
  */
@@ -163,14 +164,14 @@ const Register: React.FC = () => {
             }}>
             {registerPageDetails.registerPagePhoneNumSection}
             <PhoneInput
-            country={"eg"}
-            enableSearch={true}
-            value={phone}
-            onChange={(phone) => setPhone(phone)}
-            
-            inputStyle={{
-              width:"100%"}}
-          />
+              country={"eg"}
+              enableSearch={true}
+              value={phone}
+              onChange={(phone) => setPhone(phone)}
+              inputStyle={{
+                width: "100%",
+              }}
+            />
           </Grid>
           {/* Email Section */}
           <Grid
@@ -281,23 +282,12 @@ const Register: React.FC = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              marginBottom: "10px",
             }}>
             <Button
               type="submit"
-              variant="contained"
-              color="primary"
-              style={{
-                borderRadius: "15px",
-                padding: "12px 20px",
-              }}
-              fullWidth
-              sx={{
-                backgroundColor: "#C7923E",
-                "&:hover": {
-                  backgroundColor: "#c7833e",
-                },
-                textAlign: "center",
-              }}>
+              className="button" // Add the button class here
+              >
               {registerPageDetails.registerPageButtonSection}
             </Button>
             <Typography>{registrationMessage}</Typography>
@@ -324,6 +314,7 @@ const Register: React.FC = () => {
             sx={{
               padding: "35px",
               color: "#11142D",
+              marginBottom: "30px"
             }}
             container
             alignItems="center"

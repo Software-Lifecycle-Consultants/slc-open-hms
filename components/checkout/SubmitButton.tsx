@@ -1,8 +1,8 @@
-import { Button, Checkbox, Typography, Box } from '@mui/material';
-import React from 'react'
-import { submitContent } from '@/data/checkoutPage';
+import { Button, Checkbox, Typography, Box } from "@mui/material";
+import React from "react";
+import { submitContent } from "@/data/checkoutPage";
 import { mulish } from "../../app/fonts";
-
+import "../../app/style/styles.css";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const SubmitButton = () => {
@@ -31,42 +31,19 @@ const SubmitButton = () => {
             letterSpacing: "0.08px",
             fontWeight: "600",
             marginTop: "24px",
-          }}
-        >
+          }}>
           {submitContent.condition}
         </Typography>
       </Box>
       <Button
         variant="contained"
-        className={mulish.className}
-        sx={{
-          borderRadius: "8px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "18px 24px",
-          gap: "10px",
-          textTransform: "none",
-          width: "100%",
-          height: "56px",
-          marginTop: "50px",
-          fontSize: "16px",
-          fontStyle: "normal",
-          fontWeight: "600",
-          lineHeight: "120%",
-          letterSpacing: "0.08px",
-          backgroundColor: "#C7923E",
-          marginBottom: "120px",
-
-          "&:hover": {
-            backgroundColor: "#c7833e",
-          },
-        }}
+        className={`${mulish.className} button`} // Add the button class
+        sx={{ marginBottom: "100px" }}
       >
         {submitContent.submitctaCaption}
       </Button>
     </>
   );
-}
+};
 
-export default SubmitButton
+export default SubmitButton;

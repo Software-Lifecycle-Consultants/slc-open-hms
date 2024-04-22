@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import {
-  Button,
   TextField,
   Typography,
   Container,
@@ -10,11 +9,14 @@ import {
   Checkbox,
   IconButton,
   InputAdornment,
+  Button,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import { loginPageData } from "@/data/loginPage";
 import ArrowBack from "@mui/icons-material/ArrowBack";
+import "../style/styles.css";
+
 // Functional component for Login
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -182,26 +184,14 @@ const Login = () => {
                   {/* Placeholder for the bottom right corner */}
                 </Grid>
               </Grid>
-              <Grid item xs={12} marginTop={4}>
+              <Grid item xs={12} marginTop={4}sx={{ marginBottom: "20px" }}>
                 {/* Login Button Section */}
                 <Button
                   type="submit"
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    borderRadius: "12px",
-                    fontSize: "1.2rem",
-                    padding: "12px 24px",
-                  }}
-                  fullWidth
-                  sx={{
-                    backgroundColor: "#C7923E",
-                    "&:hover": {
-                      backgroundColor: "#c7833e",
-                    },
-                  }}>
-                  {loginPageData.loginPageButtonCaption}
+                  className="button" // Add the button class here
+                >
                   {/* Render the title from loginPageData */}
+                  {loginPageData.loginPageButtonCaption}
                 </Button>
               </Grid>
               <Grid item xs={12}>
@@ -222,7 +212,9 @@ const Login = () => {
                 xs={12}
                 container
                 alignItems="center"
-                justifyContent="center">
+                justifyContent="center"
+                sx={{ marginBottom: "50px" }}
+                >
                 <a href="/">
                   <Box
                     bgcolor="#CCCCCC" // Background color
@@ -242,7 +234,7 @@ const Login = () => {
                     marginTop: "0px",
                     color: "rgba(17, 20, 45, 1)",
                   }}>
-                  <a href="http://localhost:3000/register">
+                  <a href="/register">
                     {" "}
                     {loginPageData.loginPageBackArrowCaption}{" "}
                   </a>
