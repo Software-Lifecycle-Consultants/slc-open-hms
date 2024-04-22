@@ -13,6 +13,11 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import { postData } from "@/services/api";
 
+/*
+This component represents a contact form where users can enter their details and submit a message.
+ * It includes fields for first name, last name, email, phone number, country, subject, and message.
+*/
+
 interface ContactFormData {
   firstname: string;
   lastname: string;
@@ -43,6 +48,8 @@ const ContactForm = ({}) => {
   const [countries, setCountries] = useState<Country[]>([]);
   const [country, setCountry] = useState("");
   const [phone, setPhone] = useState("");
+
+  // Fetch countries data from an API on component mount
   useEffect(() => {
     const fetchCountries = async () => {
       try {
@@ -61,6 +68,7 @@ const ContactForm = ({}) => {
     fetchCountries();
   }, []);
 
+  // Function to make a POST request to submit form data to the backend API
   const PostApiData = async () => {
     try {
       //save base url in a config file later
@@ -77,6 +85,7 @@ const ContactForm = ({}) => {
     }
   };
 
+  // Function to handle form field changes
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     name: string
@@ -87,6 +96,7 @@ const ContactForm = ({}) => {
     });
   };
 
+  // Function to clear form data, submit message, and error messages
   const clearFormData = () => {
     setFormData({
       firstname: "",
@@ -101,6 +111,7 @@ const ContactForm = ({}) => {
     setErrorMessages([]);
   };
 
+  // Function to handle form submission
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     PostApiData();
@@ -109,6 +120,7 @@ const ContactForm = ({}) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      {/* Card component representing the contact form */}
       <Card
         sx={{
           width: "100%",
@@ -119,7 +131,9 @@ const ContactForm = ({}) => {
         }}
       >
         <CardContent>
+          {/* Grid container for form fields */}
           <Grid container spacing={4} sx={{ padding: "20px 30px 20px 30px" }}>
+            {/* First Name field */}
             <Grid item xs={6}>
               <TextField
                 label="First Name"
@@ -132,6 +146,7 @@ const ContactForm = ({}) => {
               />
             </Grid>
             <Grid item xs={6}>
+              {/* Last Name field */}
               <TextField
                 label="Last Name"
                 fullWidth
@@ -143,6 +158,7 @@ const ContactForm = ({}) => {
               />
             </Grid>
             <Grid item xs={12}>
+              {/* Email Address field */}
               <TextField
                 label="Email Address"
                 fullWidth
@@ -154,7 +170,9 @@ const ContactForm = ({}) => {
               />
             </Grid>
           </Grid>
+          {/* Second Grid container for phone number and country fields */}
           <Grid container spacing={4} sx={{ padding: "20px 30px 20px 30px" }}>
+            {/* Phone Number field */}
             <Grid
               item
               xs={6}
@@ -162,6 +180,7 @@ const ContactForm = ({}) => {
                 color: "#11142D",
               }}
             >
+              {/*The component for phone number input is imported from react-phone-input-2 library*/}
               <PhoneInput
                 country={"Sri Lanka"}
                 enableSearch={true}
@@ -173,6 +192,7 @@ const ContactForm = ({}) => {
                 }}
               />
             </Grid>
+            {/* Country field */}
             <Grid item xs={6}>
               <TextField
                 select
@@ -184,6 +204,7 @@ const ContactForm = ({}) => {
                   setCountry(country.target.value as string)
                 }
               >
+                {/* Menu items for country selection */}
                 {countries.map((country) => (
                   <MenuItem key={country.cca2} value={country.cca2}>
                     {country.name.common}
@@ -192,7 +213,9 @@ const ContactForm = ({}) => {
               </TextField>
             </Grid>
           </Grid>
+          {/* Third Grid container for subject and message fields */}
           <Grid container spacing={4} sx={{ padding: "20px 30px 20px 30px" }}>
+            {/* Subject field */}
             <Grid item xs={12}>
               <TextField
                 label="Subject"
@@ -203,6 +226,7 @@ const ContactForm = ({}) => {
                 onChange={(e) => handleChange(e, "subject")}
               ></TextField>
             </Grid>
+            {/* Message field */}
             <Grid item xs={12}>
               <TextField
                 label="Message"
@@ -217,7 +241,10 @@ const ContactForm = ({}) => {
             </Grid>
           </Grid>
         </CardContent>
+        {/* Box container for submit button */}
         <Box sx={{ textAlign: "right", padding: "0 40px 30px" }}>
+          {/* Submit button */}
+
           <Button
             variant="contained"
             sx={{
