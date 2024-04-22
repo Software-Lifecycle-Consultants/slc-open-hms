@@ -188,7 +188,7 @@ const Login = () => {
                 {/* Login Button Section */}
                 <Button
                   type="submit"
-                  className="button" // Add the button class here
+                  className="buttonCommonStyle" // Add the button class here
                 >
                   {/* Render the title from loginPageData */}
                   {loginPageData.loginPageButtonCaption}

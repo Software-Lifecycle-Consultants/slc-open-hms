@@ -37,7 +37,7 @@ const SubmitButton = () => {
       </Box>
       <Button
         variant="contained"
-        className={`${mulish.className} button`} // Add the button class
+        className={`${mulish.className} buttonCommonStyle`} // Add the button class
         sx={{ marginBottom: "100px" }}
       >
         {submitContent.submitctaCaption}

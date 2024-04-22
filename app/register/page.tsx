@@ -286,7 +286,7 @@ const Register: React.FC = () => {
             }}>
             <Button
               type="submit"
-              className="button" // Add the button class here
+              className="buttonCommonStyle" // Add the button class here
               >
               {registerPageDetails.registerPageButtonSection}
             </Button>

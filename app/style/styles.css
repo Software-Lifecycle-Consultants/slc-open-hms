@@ -1,4 +1,4 @@
-.button {
+.buttonCommonStyle {
     border-radius: 8px; /* Single value for border-radius */
     display: flex;
     justify-content: center; /* Lowercase */
@@ -21,7 +21,7 @@
     color: white;
   }
   
-  .button:hover {
+  .buttonCommonStyle:hover {
     background-color: #c7833e;
   }
   
