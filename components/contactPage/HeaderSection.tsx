@@ -1,4 +1,5 @@
 import { lora, mulish } from "@/app/fonts";
+import { contactHeading } from "@/data/contactPage";
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 
@@ -26,7 +27,7 @@ const HeaderSection = () => {
                 letterSpacing: "0.186px",
               }}
             >
-              Get In Touch
+              {contactHeading.headerTitle}
             </Typography>
             <Typography
               variant="body1"
@@ -41,9 +42,7 @@ const HeaderSection = () => {
                 marginTop: "22px",
               }}
             >
-              Need assistance or have questions? Get in Touch to our friendly
-              team. Were here to help make your experience seamless and
-              enjoyable.
+              {contactHeading.headerDescription}
             </Typography>
           </Box>
         </Grid>
