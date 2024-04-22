@@ -5,6 +5,10 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import LeafletControlGeocoder from "../Map/LeafletControlGeocoder";
 import "leaflet/dist/leaflet.css";
 
+/*
+This component integrates the React Leaflet library to display a map.
+It uses the user's geolocation to center the map initially.
+*/
 interface PositionInfo {
   address: string;
 }
@@ -53,11 +57,12 @@ const Map: React.FC<MapProps> = (props) => {
         height: "700px",
       }}
     >
+      {/* TileLayer for map display */}
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-
+      {/* LeafletControlGeocoder for geocoding addresses */}
       <LeafletControlGeocoder positionInfos={positionInfos} />
     </MapContainer>
   );
