@@ -3,11 +3,17 @@ import { contactHeading } from "@/data/contactPage";
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 
+/*
+Header section of the contact page.
+*/
 const HeaderSection = () => {
   return (
     <>
+      {/* Grid container to organize layout */}
       <Grid container spacing={2}>
+        {/* Grid item for header content */}
         <Grid item xs={12} md={6} lg={4} xl={4}>
+          {/* Box container for styling */}
           <Box
             sx={{
               paddingTop: { xs: "25px", sm: "50px", md: "50px" },
@@ -15,6 +21,7 @@ const HeaderSection = () => {
               marginLeft: { xs: "10px", sm: "15px", md: "30px", lg: "60px" },
             }}
           >
+            {/* Title Typography */}
             <Typography
               variant="h1"
               className={lora.className}
@@ -27,8 +34,10 @@ const HeaderSection = () => {
                 letterSpacing: "0.186px",
               }}
             >
+              {/* Header title text */}
               {contactHeading.headerTitle}
             </Typography>
+            {/* Description Typography */}
             <Typography
               variant="body1"
               className={mulish.className}
@@ -42,6 +51,7 @@ const HeaderSection = () => {
                 marginTop: "22px",
               }}
             >
+              {/* Header description text */}
               {contactHeading.headerDescription}
             </Typography>
           </Box>
