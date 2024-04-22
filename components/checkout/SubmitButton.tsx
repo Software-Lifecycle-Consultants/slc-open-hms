@@ -2,7 +2,7 @@ import { Button, Checkbox, Typography, Box } from "@mui/material";
 import React from "react";
 import { submitContent } from "@/data/checkoutPage";
 import { mulish } from "../../app/fonts";
-import "../../app/style/styles.css";
+import { orangebuttonCommonStyle } from "../homePage/styles";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const SubmitButton = () => {
@@ -37,8 +37,8 @@ const SubmitButton = () => {
       </Box>
       <Button
         variant="contained"
-        className={`${mulish.className} buttonCommonStyle`} // Add the button class
-        sx={{ marginBottom: "100px" }}
+        className={mulish.className}
+        sx={{...orangebuttonCommonStyle ,marginBottom: "100px" }}
       >
         {submitContent.submitctaCaption}
       </Button>
