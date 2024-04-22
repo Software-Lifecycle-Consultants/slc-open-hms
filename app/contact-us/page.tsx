@@ -10,26 +10,14 @@ import { Box, Grid } from "@mui/material";
 import ContactCard from "@/components/contactPage/ContactCard";
 import Map from "@/components/contactPage/Map/Map";
 import ContactForm from "@/components/contactPage/ContactForm";
-
-//Contact data captured from the front-end
-interface ContactData {
-  name: string;
-  email: string;
-  message: string;
-}
+import { positionInfos } from "@/data/contactPage";
 
 /**
  * ContactUs component represents the Contact Us screen of the website.
- * It includes feilds to input user's name, email, messsge and Submit button.
+ * It includes map and a contact form.
  */
 
 const ContactUs = () => {
-  const positionInfos = [
-    {
-      address: "1234, 5th Avenue, New York, USA",
-    },
-  ];
-
   return (
     <>
       <Box
