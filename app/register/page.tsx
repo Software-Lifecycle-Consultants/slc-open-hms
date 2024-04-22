@@ -105,7 +105,7 @@ const Register: React.FC = () => {
             </Typography>
             <Typography variant="body1" sx={{
               marginTop: "8px",
-              color: '#9A9AB0'
+              color: '#515151'
             }}>
               {registerPageDetails.registerPageSubtitle}
             </Typography>
@@ -218,12 +218,12 @@ const Register: React.FC = () => {
             />
           </Grid>
           {/* Agree to the Ruls Section */}
-          <Grid item xs={12} marginTop={1}>
-            <FormControlLabel sx={{
+          <Grid item xs={12} marginTop={1}
+             sx={{
               marginTop: "5px",
-              color: '#11142D'
-            }}
-              control={
+              color: '#515151'
+            }}>
+              {
                 <Checkbox
                   sx={{
                     "& .MuiSvgIcon-root": { fontSize: 20 },
@@ -234,8 +234,7 @@ const Register: React.FC = () => {
                   }}
                 />
               }
-              label={registerPageDetails.registerPageAgreeRulesSection}
-            />
+              {registerPageDetails.registerPageAgreeRulesSection} <a href="/terms-condition"> {registerPageDetails.registerPageTermsSection} </a>
           </Grid>
           {/* Sign Up Section */}
           <Grid item xs={12} sx={{
