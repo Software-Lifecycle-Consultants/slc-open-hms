@@ -15,7 +15,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import { loginPageData } from "@/data/loginPage";
 import ArrowBack from "@mui/icons-material/ArrowBack";
-import "../style/styles.css";
+import { orangebuttonCommonStyle } from "@/components/homePage/styles.js";
 
 // Functional component for Login
 const Login = () => {
@@ -188,7 +188,7 @@ const Login = () => {
                 {/* Login Button Section */}
                 <Button
                   type="submit"
-                  className="buttonCommonStyle" // Add the button class here
+                  sx={orangebuttonCommonStyle} // Add the button class
                 >
                   {/* Render the title from loginPageData */}
                   {loginPageData.loginPageButtonCaption}
