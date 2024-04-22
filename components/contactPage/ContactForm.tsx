@@ -38,7 +38,7 @@ const ContactForm = ({}) => {
     subject: "",
     message: "",
   });
-  const [registrationMessage, setRegistrationMessage] = useState("");
+  const [submitMessage, setSubmitMessage] = useState("");
   const [errorMessages, setErrorMessages] = useState<string[]>([]);
   const [countries, setCountries] = useState<Country[]>([]);
   const [country, setCountry] = useState("");
@@ -97,7 +97,7 @@ const ContactForm = ({}) => {
       subject: "",
       message: "",
     });
-    setRegistrationMessage("");
+    setSubmitMessage("");
     setErrorMessages([]);
   };
 
@@ -186,7 +186,7 @@ const ContactForm = ({}) => {
               >
                 {countries.map((country) => (
                   <MenuItem key={country.cca2} value={country.cca2}>
-                    {country.name.common} {/* Accessing the common property */}
+                    {country.name.common}
                   </MenuItem>
                 ))}
               </TextField>
