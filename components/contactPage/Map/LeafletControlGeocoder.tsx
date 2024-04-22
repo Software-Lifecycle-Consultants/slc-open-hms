@@ -5,7 +5,10 @@ import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import L from "leaflet";
 import { geocoders } from "leaflet-control-geocoder";
-
+/*
+This component integrates the Leaflet Control Geocoder to convert addresses to latitude and longitude.
+ It adds markers to the map for each address provided.
+*/
 interface PositionInfo {
   address: string; //declear the address as a prop
 }
@@ -20,6 +23,7 @@ const LeafletControlGeocoder: React.FC<LeafletControlGeocoderProps> = (
   const map = useMap();
   const { positionInfos } = props;
 
+  // Effect to add markers for each address provided
   useEffect(() => {
     const geocoder = new geocoders.Nominatim();
 
@@ -51,7 +55,7 @@ const LeafletControlGeocoder: React.FC<LeafletControlGeocoderProps> = (
     });
   }, [map, positionInfos]);
 
-  return null;
+  return null; // Return null as LeafletControlGeocoder does not render any visible UI
 };
 
 export default LeafletControlGeocoder;
