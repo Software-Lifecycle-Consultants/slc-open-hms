@@ -5,9 +5,16 @@ export const heading = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elitsed pretium, egestas sed sit orem ipsum dolor sit amet,",
 };
 
-/* Assign title to the billing details form of the checkout page*/
-export const billingDetailsFormTitle = "Booking Details";
-
+/* Assign Data to the billing details form of the checkout page*/
+export const billingDetailsForm = {
+billingDetailsFormTitle: "Booking Details",
+firstNameLbl: "First Name",
+lastNameLbl: "Last Name",
+emailLbl: "Email Address",
+telephoneLbl: "Phone Number",
+passportLbl: "Passport Number",
+addressLbl: "Address",
+}
 /* Assign data to the booking information card of the checkout page */
 export const bookingInfoCard = {
     roomTitle: "President Luxury Double Room View NY City",
@@ -24,13 +31,29 @@ export const extraFacilitationSection = {
   extraFacilitationSectionTitle: "Request meals and other services",
   facility1: "Meals",
   facility2: "Services",
+  requestText: "Special Request",
 };
 
 /* Assign title to the calendar component of the checkout page */
-export const calenderTitle = "Select your check-in and check-out dates";
+export const calenderData = {
+  calenderTitle: "Select your check-in and check-out dates",
+  
+}
 
 /* Assign condition and button caption to the submit button component of the checkout page */
 export const submitContent = {
   condition: "I have agree to the rules, Terms and Conditions.",
   submitctaCaption: "Submit Booking Request",
 };
+/* Assign data to the activities in checklist on checkout page */
+export const checkListText= {
+  activityTitle: "Activity",
+  activityPrice: "+ Rp. 230.000",
+};
+/* Assign data to the terms and condition content */
+export const termsText={
+termTitle: "Terms and Conditions",
+term1: "Input your Special term-1 in Here",
+term2: "Input your Special term-2 in Here",
+term3: "Input your Special term-3 in Here",
+}

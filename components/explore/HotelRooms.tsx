@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import RoomCard from "../guestRoomDetails/RoomCard";
-import { roomDetails } from "../../data/explorePage";
+import { additionalData, roomDetails } from "../../data/explorePage";
 import { useSearchParams } from "next/navigation";
 
 interface RoomDetail {
@@ -67,7 +67,6 @@ const HotelRooms = ({
     setFilteredRooms(filteredResults);
   }, [searchParams]); // Update when search params change
 
-  console.log("Filtered Rooms:", filteredRooms);
   return (
     <>
       <Grid container spacing={2}>
@@ -83,7 +82,7 @@ const HotelRooms = ({
           ))
         ) : (
           <Grid item xs={12}>
-            <p>No rooms match the criteria.</p>
+            <p>{additionalData.roomUnavailableMessage}</p>
           </Grid>
         )}
       </Grid>

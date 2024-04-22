@@ -22,14 +22,15 @@
 }
 
 .description{
-
+    display: flex;
     text-align: center;
     padding: 3px;
     border: none;
     color: #1A242D;
     font-family: 'Mulish';
-    font-size: medium;
+    font-size: 20px;
     margin: 10px 10px 10px 10px;
+    align-items: center;
 
 
 }
