@@ -1,9 +1,11 @@
 "use client";
 import { Box, Container } from "@mui/material";
 import Banner from "@/components/blogPage/Banner1"
+import BlogCard from "@/components/blogPage/blogcard";
 
 export default function blog(){
     return (
+      <>
         <Box
         sx={{
           backgroundColor: "#0C111F",
@@ -15,6 +17,19 @@ export default function blog(){
         <Container>
           <Banner />
         </Container>
+        </Box>
+        <Box
+        sx={{marginTop:"-80px"}}>
+        <Container>
+          <BlogCard 
+            image= {"/images/blogPage/hambanthota.webp"}
+            user= {"user"}  
+            date= {"2000-2-2"}
+            title={"test title"}
+            description= {"string"}
+            tag= {"tag"} />
+        </Container>
       </Box>
+      </>
       );
 }
