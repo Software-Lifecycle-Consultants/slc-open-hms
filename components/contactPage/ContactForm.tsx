@@ -130,11 +130,18 @@ const ContactForm = ({}) => {
           marginRight: "auto",
         }}
       >
-        <CardContent>
+        <CardContent sx={{}}>
           {/* Grid container for form fields */}
-          <Grid container spacing={4} sx={{ padding: "20px 30px 20px 30px" }}>
+          <Grid
+            container
+            spacing={{ xs: 1, sm: 2, md: 4 }}
+            sx={{
+              padding: { xs: "10px 20px 10px 20px" },
+              display: { xs: "block", sm: "flex", md: "flex", lg: "flex" },
+            }}
+          >
             {/* First Name field */}
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6} md={6}>
               <TextField
                 label="First Name"
                 fullWidth
@@ -145,7 +152,7 @@ const ContactForm = ({}) => {
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6} md={6}>
               {/* Last Name field */}
               <TextField
                 label="Last Name"
@@ -171,11 +178,17 @@ const ContactForm = ({}) => {
             </Grid>
           </Grid>
           {/* Second Grid container for phone number and country fields */}
-          <Grid container spacing={4} sx={{ padding: "20px 30px 20px 30px" }}>
+          <Grid
+            container
+            spacing={{ xs: 1, sm: 2, md: 4 }}
+            sx={{ padding: { xs: "10px 20px 10px 20px" } }}
+          >
             {/* Phone Number field */}
             <Grid
               item
-              xs={6}
+              xs={12}
+              sm={6}
+              md={6}
               sx={{
                 color: "#11142D",
               }}
@@ -185,15 +198,16 @@ const ContactForm = ({}) => {
                 country={"Sri Lanka"}
                 enableSearch={true}
                 value={phone}
-                placeholder="Enter phone number"
+                placeholder="Add phone number"
                 onChange={(phone) => setPhone(phone)}
                 inputStyle={{
                   width: "100%",
+                  fontFamily: "Mulish",
                 }}
               />
             </Grid>
             {/* Country field */}
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6} md={6}>
               <TextField
                 select
                 label="Country"
@@ -214,7 +228,11 @@ const ContactForm = ({}) => {
             </Grid>
           </Grid>
           {/* Third Grid container for subject and message fields */}
-          <Grid container spacing={4} sx={{ padding: "20px 30px 20px 30px" }}>
+          <Grid
+            container
+            spacing={{ xs: 1, sm: 1, md: 4 }}
+            sx={{ padding: { xs: "10px 20px 10px 20px" } }}
+          >
             {/* Subject field */}
             <Grid item xs={12}>
               <TextField
@@ -237,6 +255,7 @@ const ContactForm = ({}) => {
                 type="message"
                 value={formData.message}
                 onChange={(e) => handleChange(e, "message")}
+                required
               />
             </Grid>
           </Grid>
