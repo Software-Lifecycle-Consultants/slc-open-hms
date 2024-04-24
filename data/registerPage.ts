@@ -1,5 +1,6 @@
 /* Assign to the Register page Details */
 export const registerPageDetails ={
+    registerPageWebLink: "https://slc-open-hms-api.azurewebsites.net/register",
     registerPageTitle: "Get Started !",
     registerPageSubtitle: "Be a Part of Our Jounrney....",
     registerPageFirstNameSection: "First Name",
@@ -9,7 +10,8 @@ export const registerPageDetails ={
     registerPageUserNameSection: "User Name",
     registerPagePasswordSection: "Password",
     registerPageConfirmPwdSection: "Confirm Password",
-    registerPageAgreeRulesSection: "I have agree to the rules, Terms and conditions.",
+    registerPageAgreeRulesSection: "I have agree to the rules," ,
+    registerPageTermsandConditionsSection: "Terms and Conditions.",
     registerPageButtonSection: "Sign Up",
     registerPageHaveAccountSection: "Have an account?",
     registerPageLoginSection: "Login Here",

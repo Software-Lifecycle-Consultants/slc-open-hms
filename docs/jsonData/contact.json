@@ -1,0 +1,9 @@
+{
+   "contact":{
+      "page-title":"Contact Us",
+      "page-description":"Description of the Contact Us page goes here",
+      "telephone-number":"123-456-7890",
+      "address":"123 Main Street, City, Country",
+      "email":"contact@example.com"
+   }
+}
