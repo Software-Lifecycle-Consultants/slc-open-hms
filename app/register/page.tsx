@@ -99,14 +99,16 @@ const Register: React.FC = () => {
       { /* Assign to the Header Details */ }
           <Grid item xs={12}>
             <Typography variant="h4" sx={{
-              marginTop: "18px",
+              marginTop: "40px",
               fontWeight: "bold",
               color: '#11142D'
             }}>
               {registerPageDetails.registerPageTitle}
             </Typography>
             <Typography variant="body1" sx={{
-              marginTop: "8px",
+              marginTop: "5px",
+              marginLeft: "15px",
+              marginBottom:"8px",
               color: '#9A9AB0'
             }}>
               {registerPageDetails.registerPageSubtitle}
