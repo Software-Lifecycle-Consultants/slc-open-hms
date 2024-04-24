@@ -19,10 +19,10 @@ export default function blog(){
         </Container>
         </Box>
         <Box
-        sx={{marginTop:"-80px"}}>
+        sx={{marginTop:"50px"}}>
         <Container>
           <BlogCard 
-            image= {"/images/blogPage/hambanthota.webp"}
+            image= {"/images/blogPage/anuradhapura.webp"}
             user= {"user"}  
             date= {"2000-2-2"}
             title={"test title"}
