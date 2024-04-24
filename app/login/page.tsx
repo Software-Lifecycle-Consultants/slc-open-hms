@@ -200,7 +200,7 @@ const Login = () => {
                   align="center"
                   style={{ color: "rgba(17, 20, 45, 1)" }}>
                   {loginPageData.loginPageNoAccountCaption}{" "}
-                  <a href="/" style={{ color: "rgba(0, 60, 112, 1)" }}>
+                  <a href="/register" style={{ color: "rgba(0, 60, 112, 1)" }}>
                     {" "}
                     {loginPageData.loginPageRegisterCaption}{" "}
                   </a>{" "}
@@ -234,7 +234,7 @@ const Login = () => {
                     marginTop: "0px",
                     color: "rgba(17, 20, 45, 1)",
                   }}>
-                  <a href="/register">
+                  <a href="/">
                     {" "}
                     {loginPageData.loginPageBackArrowCaption}{" "}
                   </a>
