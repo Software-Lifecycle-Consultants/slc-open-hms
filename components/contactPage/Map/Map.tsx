@@ -27,25 +27,20 @@ const Map: React.FC<MapProps> = (props) => {
   });
 
   useEffect(() => {
-    const getLocation = () => {
-      if (typeof window !== "undefined" && navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            //get the location of the user
-            setLatLng({
-              lat: position.coords.latitude, //get the latitude
-              lng: position.coords.longitude, //get the longitude
-              isLoaded: true,
-            });
-          },
-          (error) => {
-            alert(error);
-          }
-        );
-      }
-    };
-
-    getLocation();
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setLatLng({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+            isLoaded: true,
+          });
+        },
+        (error) => {
+          alert(error);
+        }
+      );
+    }
   }, [setLatLng]);
   return (
     <MapContainer
