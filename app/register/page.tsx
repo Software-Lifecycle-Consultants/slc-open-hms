@@ -13,7 +13,9 @@ import { postData, postRegsiterData } from "@/services/api";
 import {registerPageDetails} from "@/data/registerPage";
 import Box from "@mui/material/Box";
 import ArrowBack from "@mui/icons-material/ArrowBack";
-
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/bootstrap.css";
+import { orangebuttonCommonStyle } from "../../components/homePage/styles";
 /**
  * This page represents the registration page.
 */
@@ -145,15 +147,14 @@ const Register: React.FC = () => {
             color: '#11142D'
           }}>
             {registerPageDetails.registerPagePhoneNumSection}
-            <TextField
-              fullWidth
-              placeholder="0754436874"
-              variant="outlined"
-              type="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={(e) => handleChange(e, "phone")}
-              required
+            <PhoneInput
+              country={"eg"}
+              enableSearch={true}
+              value={phone}
+              onChange={(phone) => setPhone(phone)}
+              inputStyle={{
+                width: "100%",
+              }}
             />
           </Grid>
           {/* Email Section */}
@@ -237,11 +238,15 @@ const Register: React.FC = () => {
               {registerPageDetails.registerPageAgreeRulesSection} <a href="/terms-condition"> {registerPageDetails.registerPageTermsSection} </a>
           </Grid>
           {/* Sign Up Section */}
-          <Grid item xs={12} sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginBottom: "10px",
+            }}>
             <Button
               type="submit"
               variant="contained"
@@ -256,9 +261,8 @@ const Register: React.FC = () => {
                 "&:hover": {
                   backgroundColor: "#c7833e",
                 },
-                textAlign: "center"
-              }}
-            >
+                textAlign: "center",
+              }}>
               {registerPageDetails.registerPageButtonSection}
             </Button>
             <Typography>{registrationMessage}</Typography>
@@ -272,9 +276,13 @@ const Register: React.FC = () => {
             </Typography>
           </Grid>
           {/* Render to Back to the Home page */}
-          <Grid item xs={12} sx={{
-              padding: '35px',
-              color: '#11142D',
+          <Grid
+            item
+            xs={12}
+            sx={{
+              padding: "35px",
+              color: "#11142D",
+              marginBottom: "30px"
             }}
             container alignItems="center"
             justifyContent="center">
