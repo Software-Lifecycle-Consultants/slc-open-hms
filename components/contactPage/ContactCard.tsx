@@ -28,7 +28,7 @@ const ContactCard = () => {
           gap: "auto",
         }}
       >
-        <CardContent sx={{}}>
+        <CardContent>
           <Grid container alignItems="center">
             {/* Mail Icon */}
             <Box>
