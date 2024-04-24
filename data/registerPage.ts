@@ -10,7 +10,7 @@ export const registerPageDetails ={
     registerPageUserNameSection: "User Name",
     registerPagePasswordSection: "Password",
     registerPageConfirmPwdSection: "Confirm Password",
-    registerPageAgreeRulesSection: "I have agree to the rules, ",
+    registerPageAgreeRulesSection: "I have agree to the rules," ,
     registerPageTermsandConditionsSection: "Terms and Conditions.",
     registerPageButtonSection: "Sign Up",
     registerPageHaveAccountSection: "Have an account?",
