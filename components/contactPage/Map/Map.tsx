@@ -28,7 +28,7 @@ const Map: React.FC<MapProps> = (props) => {
 
   useEffect(() => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
+      navigator.geolocation.watchPosition(
         (position) => {
           setLatLng({
             lat: position.coords.latitude,
