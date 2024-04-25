@@ -26,22 +26,6 @@ const Map: React.FC<MapProps> = (props) => {
     isLoaded: false,
   });
 
-  // useEffect(() => {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.watchPosition(
-  //       (position) => {
-  //         setLatLng({
-  //           lat: position.coords.latitude,
-  //           lng: position.coords.longitude,
-  //           isLoaded: true,
-  //         });
-  //       },
-  //       (error) => {
-  //         alert(error);
-  //       }
-  //     );
-  //   }
-  // }, [setLatLng]);
   return (
     <MapContainer
       center={[latLng.lat, latLng.lng]} //center the map to the user's location
