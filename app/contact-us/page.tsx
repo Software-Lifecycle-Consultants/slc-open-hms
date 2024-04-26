@@ -8,7 +8,6 @@ import { postData } from "@/services/api";
 import HeaderSection from "@/components/contactPage/HeaderSection";
 import { Box, Grid } from "@mui/material";
 import ContactCard from "@/components/contactPage/ContactCard";
-//import Map from "@/components/contactPage/Map/Map";
 import ContactForm from "@/components/contactPage/ContactForm";
 import { positionInfos } from "@/data/contactPage";
 import dynamic from "next/dynamic";
