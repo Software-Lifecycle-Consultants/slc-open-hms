@@ -7,7 +7,6 @@ import "leaflet/dist/leaflet.css";
 
 import { Grid, useMediaQuery, useTheme } from "@mui/material";
 import { map } from "leaflet";
-import { mapContainerStyles } from "../Map/Styles";
 
 /*
 This component integrates the React Leaflet library to display a map.
