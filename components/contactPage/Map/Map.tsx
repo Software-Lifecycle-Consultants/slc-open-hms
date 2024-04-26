@@ -5,7 +5,6 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import LeafletControlGeocoder from "../Map/LeafletControlGeocoder";
 import "leaflet/dist/leaflet.css";
 import { useMediaQuery, useTheme } from "@mui/material";
-import Box from "@mui/material";
 /*
 This component integrates the React Leaflet library to display a map.
 It uses the user's geolocation to center the map initially.
@@ -27,17 +26,8 @@ const Map: React.FC<MapProps> = (props) => {
     isLoaded: false,
   });
 
-  // const useMapHeight = () => {
-  //   const theme = useTheme();
-  //   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-
-  //   return isSmallScreen ? "400px" : "700px";
-  // };
-
-  // const [mapHeight, setMapHeight] = useState(useMapHeight());
 
   const theme = useTheme();
-
   //Use useMediaQuery hook from MUI to check if the screen size is small
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -56,8 +46,6 @@ const Map: React.FC<MapProps> = (props) => {
           height: "100%",
           width: "100%",
         }}
-
-        // style={{ width: "100%", height: mapHeight }}
       >
         {/* TileLayer for map display */}
         <TileLayer
