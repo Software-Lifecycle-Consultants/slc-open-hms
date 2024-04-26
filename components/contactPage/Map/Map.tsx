@@ -5,6 +5,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import LeafletControlGeocoder from "../Map/LeafletControlGeocoder";
 import "leaflet/dist/leaflet.css";
 import { useMediaQuery, useTheme } from "@mui/material";
+import Box from "@mui/material";
 /*
 This component integrates the React Leaflet library to display a map.
 It uses the user's geolocation to center the map initially.
@@ -26,27 +27,37 @@ const Map: React.FC<MapProps> = (props) => {
     isLoaded: false,
   });
 
-  const useMapHeight = () => {
-    const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  // const useMapHeight = () => {
+  //   const theme = useTheme();
+  //   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
-    return isSmallScreen ? "400px" : "700px";
-  };
+  //   return isSmallScreen ? "400px" : "700px";
+  // };
 
-  const [mapHeight, setMapHeight] = useState(useMapHeight());
+  // const [mapHeight, setMapHeight] = useState(useMapHeight());
+
+  const theme = useTheme();
+
+  //Use useMediaQuery hook from MUI to check if the screen size is small
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <div className="map-container">
+    <div className="map-container"
+    style={{
+      width: isSmallScreen ? "340px" : "100%",
+      height: isSmallScreen ? "300px" : "700px",
+    }}
+    >
       <MapContainer
         center={[latLng.lat, latLng.lng]} //center the map to the user's location
         zoom={13}
         scrollWheelZoom={false}
-        // style={{
-        //   height: "700px",
-        //   width: "100%",
-        // }}
+        style={{
+          height: "100%",
+          width: "100%",
+        }}
 
-        style={{ width: "100%", height: mapHeight }}
+        // style={{ width: "100%", height: mapHeight }}
       >
         {/* TileLayer for map display */}
         <TileLayer
