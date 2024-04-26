@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import LeafletControlGeocoder from "../Map/LeafletControlGeocoder";
 import "leaflet/dist/leaflet.css";
-
+import { useMediaQuery, useTheme } from "@mui/material";
 /*
 This component integrates the React Leaflet library to display a map.
 It uses the user's geolocation to center the map initially.
