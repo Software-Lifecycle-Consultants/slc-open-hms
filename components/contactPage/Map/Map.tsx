@@ -5,6 +5,10 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import LeafletControlGeocoder from "../Map/LeafletControlGeocoder";
 import "leaflet/dist/leaflet.css";
 
+import { Grid, useMediaQuery, useTheme } from "@mui/material";
+import { map } from "leaflet";
+import { mapContainerStyles } from "../Map/Styles";
+
 /*
 This component integrates the React Leaflet library to display a map.
 It uses the user's geolocation to center the map initially.
@@ -26,24 +30,37 @@ const Map: React.FC<MapProps> = (props) => {
     isLoaded: false,
   });
 
+  const useMapHeight = () => {
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
+    return isSmallScreen ? "400px" : "700px";
+  };
+
+  const [mapHeight, setMapHeight] = useState(useMapHeight());
+
   return (
-    <MapContainer
-      center={[latLng.lat, latLng.lng]} //center the map to the user's location
-      zoom={13}
-      scrollWheelZoom={false}
-      style={{
-        width: "100%",
-        height: "700px",
-      }}
-    >
-      {/* TileLayer for map display */}
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {/* LeafletControlGeocoder for geocoding addresses */}
-      <LeafletControlGeocoder positionInfos={positionInfos} />
-    </MapContainer>
+    <div className="map-container">
+      <MapContainer
+        center={[latLng.lat, latLng.lng]} //center the map to the user's location
+        zoom={13}
+        scrollWheelZoom={false}
+        // style={{
+        //   height: "700px",
+        //   width: "100%",
+        // }}
+
+        style={{ width: "100%", height: mapHeight }}
+      >
+        {/* TileLayer for map display */}
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {/* LeafletControlGeocoder for geocoding addresses */}
+        <LeafletControlGeocoder positionInfos={positionInfos} />
+      </MapContainer>
+    </div>
   );
 };
 
