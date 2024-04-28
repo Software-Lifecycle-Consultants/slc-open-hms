@@ -101,21 +101,19 @@ const Register: React.FC = () => {
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 0, md: 3 }}>
           {/* Assign to the Header Details */}
           <Grid item xs={12}>
-            <Typography
-              variant="h4"
-              sx={{
-                marginTop: "18px",
-                fontWeight: "bold",
-                color: "#11142D",
-              }}>
+            <Typography variant="h4" sx={{
+              marginTop: "40px",
+              fontWeight: "bold",
+              color: '#11142D'
+            }}>
               {registerPageDetails.registerPageTitle}
             </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                marginTop: "8px",
-                color: "#9A9AB0",
-              }}>
+            <Typography variant="body1" sx={{
+              marginTop: "5px",
+              marginLeft: "15px",
+              marginBottom:"8px",
+              color: '#9A9AB0'
+            }}>
               {registerPageDetails.registerPageSubtitle}
             </Typography>
           </Grid>
