@@ -1,23 +1,25 @@
 "use client";
 import Typography from "@mui/material/Typography";
-import {
-  pageDetails,
-  headerDetails,
-  headsection1,
-  headsection2,
-  subsection2,
-  subsection4,
-  headsection3,
-  subsection6,
-  headsection4,
-  subsection8,
-  headsection5,
-  headsection6,
-  headsection7,
-  pageEnd,
-} from "@/data/termscondition";
+import termsAndConditionsData from "@/data/termscondition";
 
-const TermsCondition= () => {
+
+const TermsCondition = () => {
+  const {
+    pageDetails,
+    headerDetails,
+    headsection1,
+    headsection2,
+    subsection2,
+    subsection4,
+    headsection3,
+    subsection6,
+    headsection4,
+    subsection8,
+    headsection5,
+    headsection6,
+    headsection7,
+    pageEnd,
+  } = termsAndConditionsData;
   return (
     <>
       <div
