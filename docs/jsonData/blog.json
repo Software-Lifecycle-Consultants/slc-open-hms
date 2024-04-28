@@ -3,6 +3,7 @@
       "title":"This is blog title",
       "subtitle":"This is blog subtitle",
       "coverimage": "cover_image.jpg",
+      "publishedTime": "2024-04-24",
       "tags":{
          "tag1":true,
          "tag2":true,
