@@ -15,11 +15,11 @@ import {
   pageEnd,
 } from "@/data/termscondition";
 import Typography from "@mui/material/Typography";
-import { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "HMS Dev | T&C",
-  description: "HMS System under development",
-};
+// import { Metadata } from "next";
+// export const metadata: Metadata = {
+//   title: "HMS Dev | T&C",
+//   description: "HMS System under development",
+// };
 export default function TermsCondition() {
   return (
     <>
