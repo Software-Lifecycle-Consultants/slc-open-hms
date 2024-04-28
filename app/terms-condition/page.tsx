@@ -65,7 +65,7 @@ const TermsCondition = () => {
           }}
         >
           Effective Date:
-          {/* {headerDetails.effectiveDate} */}
+          {headerDetails.effectiveDate}
         </Typography>
         <Typography
           variant="body1"

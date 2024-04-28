@@ -8,10 +8,10 @@ pageDetails :{
     justifyContent: "center"
 },
 /* Assign header section of the Terms and Conditions page */
-today : new Date(),
+
  headerDetails :{
     title: "Terms And Conditions",
-    // effectiveDate: today.toISOString().split('T')[0],  // Format today's data as YYYY MM DD
+    effectiveDate: new Date().toISOString().split('T')[0],  // Format today's data as YYYY MM DD
     description: "These Terms and Conditions (“Terms”) govern your use of the SLC website and the services provided by SLC (“we,” “us,” or “our”). By accessing our website or using our services, you agree to be bound by these Terms. If you do not agree with these Terms, please refrain from using our website and services."
 },
 /* Assign Details to the head section 1 */
