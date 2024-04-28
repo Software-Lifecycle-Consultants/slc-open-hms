@@ -75,3 +75,30 @@ export const buttonTextStyle = {
     margin: "3px",
   },
 };
+
+/* Common Button style for Login, Register & Booking */
+export const orangebuttonCommonStyle = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "10px",
+  borderRadius: "8px",
+  padding: "18px 24px",
+  width: "100%",
+  height: "50px",
+  marginTop: "20px",
+  fontSize: "20px",
+  fontStyle:"normal",
+  fontWeight: "600",
+  lineHeight: "120%",
+  letterSpacing: "0.08px",
+  backgroundColor: "#C7923E",
+  textAlign: "center",
+  textTransform: "capitalize",
+  transition: "background-color 0.3s ease",
+  fontFamily: "'mulish', sans-serif",
+  color: "white",
+  ":hover": {
+    backgroundColor: "#c7833e",
+  },
+};
