@@ -93,7 +93,7 @@ export default function TermsCondition() {
         >
           {headsection1.title1}
         </Typography>
-        <Typography variant="body1"> {headsection1.content1} </Typography>
+        <Typography variant="body1"> {headsection1.content1.join(" ")} </Typography>
         <Typography
           variant="body1"
           sx={{
@@ -102,7 +102,7 @@ export default function TermsCondition() {
         >
           {subsection2.title2}
         </Typography>
-        <Typography variant="body1"> {subsection2.content2} </Typography>
+        <Typography variant="body1"> {subsection2.content2.join(" ")} </Typography>
         {/* Assign Details to the head section 2 */}
         <Typography
           variant="h4"
@@ -120,7 +120,7 @@ export default function TermsCondition() {
         >
           {headsection2.title1}
         </Typography>
-        <Typography variant="body1"> {headsection2.content1} </Typography>
+        <Typography variant="body1"> {headsection2.content1.join(" ")} </Typography>
         <Typography
           variant="body1"
           sx={{
@@ -129,7 +129,7 @@ export default function TermsCondition() {
         >
           {subsection4.title2}
         </Typography>
-        <Typography variant="body1"> {subsection4.content2} </Typography>
+        <Typography variant="body1"> {subsection4.content2.join(" ")} </Typography>
         {/* Assign Details to the head section 3 */}
         <Typography
           variant="h4"
@@ -147,7 +147,7 @@ export default function TermsCondition() {
         >
           {headsection3.title1}
         </Typography>
-        <Typography variant="body1"> {headsection3.content1} </Typography>
+        <Typography variant="body1"> {headsection3.content1.join(" ")} </Typography>
         <Typography
           variant="body1"
           sx={{
@@ -156,7 +156,7 @@ export default function TermsCondition() {
         >
           {subsection6.title2}
         </Typography>
-        <Typography variant="body1"> {subsection6.content2} </Typography>
+        <Typography variant="body1"> {subsection6.content2.join(" ")} </Typography>
         {/* Assign Details to the head section 4 */}
         <Typography
           variant="h4"
@@ -174,7 +174,7 @@ export default function TermsCondition() {
         >
           {headsection4.title1}
         </Typography>
-        <Typography variant="body1"> {headsection4.content1} </Typography>
+        <Typography variant="body1"> {headsection4.content1.join(" ")} </Typography>
         <Typography
           variant="body1"
           sx={{
@@ -216,7 +216,7 @@ export default function TermsCondition() {
             marginTop: "8px",
           }}
         >
-          {headsection6.content1}
+          {headsection6.content1.join(" ")}
         </Typography>
         {/* Assign Details to the head section 7 */}
         <Typography
@@ -233,7 +233,7 @@ export default function TermsCondition() {
             marginTop: "8px",
           }}
         >
-          {headsection7.content2}
+          {headsection7.content2.join(" ")}
         </Typography>
         {/* Assign Details to the pageEnd section */}
         <Typography
