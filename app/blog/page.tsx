@@ -1,7 +1,9 @@
 "use client";
-import { Box, Container } from "@mui/material";
+import { Box, Container, Grid,  } from "@mui/material";
 import Banner from "@/components/blogPage/Banner1"
 import BlogCard from "@/components/blogPage/blogcard";
+import { blogData, bannerData } from '@/data/blogPage';
+import Image from "next/image";
 
 export default function blog(){
     return (
@@ -14,20 +16,47 @@ export default function blog(){
           flexGrow: 1,
         }}
       >
+        {/* banner section  */}
         <Container>
           <Banner />
         </Container>
         </Box>
+        {/* banner image */}
+        <Box sx={{marginTop:"-8%"}}>
+          <Container>
+          <Image
+            src={bannerData.image}
+            alt="test"
+            width={1350}
+            height={400}
+            style={{
+              width: "100%",
+              height: "50%",
+              flexShrink: 0,
+            }}
+          />
+          </Container>
+        </Box>
+        {/* blog cards */}
         <Box
         sx={{marginTop:"50px"}}>
         <Container>
-          <BlogCard 
-            image= {"/images/blogPage/anuradhapura.webp"}
-            user= {"user"}  
-            date= {"2000-2-2"}
-            title={"test title"}
-            description= {"string"}
-            tag= {"tag"} />
+        <Grid container spacing={2}>
+        {blogData.map((item) => (
+          <Grid key={item.id} item xs={12} sm={6} md={4}>
+            <BlogCard
+              image={item.image}
+              user={item.user}
+              date={item.date}
+              title={item.title}
+              description={item.description}
+              tag={item.tag}
+              tag1= {item.tag1}
+              tag2={item.tag2}
+            />
+          </Grid>
+        ))}
+      </Grid>
         </Container>
       </Box>
       </>

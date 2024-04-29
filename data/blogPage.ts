@@ -1,4 +1,5 @@
 export const blogData = [
+    //  asign data into blog card in blog page
     {
         id: 1,
         image: "/images/blogPage/anuradhapura.webp",
@@ -12,13 +13,62 @@ export const blogData = [
     },
     {
         id: 2,
-        image: "/images/blogPage/hambanthota.webp",
-        user: "amal kumara",
-        date: "5 feb 2024",
-        title: "hambanthota",
-        description: "cachbzcmnasdkjbczx asdhbkads sd aksd asndhias dihashd asdj ashud asd jhas dlaysdnas nm silgd fsbn dlih mnv dash a ",
-        tag: "lktravel",
-        tag1: "xxyz",
-        tag2: "animeWorld",
+        image: "/images/blogPage/galle.webp",
+        user: "Lana Steiner",
+        date: "18 Jan 2022",
+        title: "Galle Fort Heritage",
+        description: "Step into the storied past of Galle Fort, where colonial charm and maritime history converge against the backdrop of the Indian Ocean.",
+        tag: "ArchaeologySL",
+        tag1: "HistoricalSites",
+        tag2: "",
+    },
+    {
+        id: 3,
+        image: "/images/blogPage/sigiriya.webp",
+        user: "Alec Whitten",
+        date: "17 Jan 2022",
+        title: "Sigiriya - Sri Lanka's Enigmatic Citadel Unveiled",
+        description: "Discover Sigiriya: Sri Lanka's UNESCO Heritage marvel, hiding ancient mysteries and architectural wonders.",
+        tag: "Sri Lanka",
+        tag1: "Mystery",
+        tag2: "",
+    },
+    {
+        id: 4,
+        image: "/images/blogPage/ella.webp",
+        user: "Demi WIlkinson",
+        date: "16 Jan 2022",
+        title: "Iconic Nine Arch Bridge: Ella",
+        description: "Discover the enchanting beauty of Ella, nestled amidst lush tea plantations, iconic landmarks like the Nine Arch Bridge, and serene natural escapes",
+        tag: "ArchaeologySL",
+        tag1: "Sri  Lanka",
+        tag2: "VisitSL",
+    },
+    {
+        id: 5,
+        image: "/images/blogPage/ambuluwawa.webp",
+        user: "Candice Wu",
+        date: "15 Jan 2022",
+        title: "Ambuluwawa Sanctuary",
+        description: "Embark on a journey to Ambuluwawa, where lush landscapes and breathtaking vistas await atop this picturesque hill in Sri Lanka.",
+        tag: "ArchaeologySL",
+        tag1: "Sri  Lanka",
+        tag2: "",
+    },
+    {
+        id: 6,
+        image: "/images/blogPage/kandy.webp",
+        user: "Natali Craig ",
+        date: "14 Jan 2022",
+        title: "Cultural Icon: Dalada Maligawa",
+        description: "Delve into the spiritual heart of Sri Lanka at Dalada Maligawa, home to the sacred relic of the tooth of the Buddha.",
+        tag: "History",
+        tag1: "Sri  Lanka",
+        tag2: "",
     },
 ];
+
+
+export const bannerData ={
+    image:"/images/blogPage/hambanthota.webp",
+}
