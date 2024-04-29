@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import NorthEastIcon from '@mui/icons-material/NorthEast';
-import blogData from "@/data/blogPage"
+
 
 interface BlogCardProps {
   image: string;
@@ -29,10 +29,6 @@ export const ulstyles={
   gap: "8px",
   
 }
-
-
-
-
 
 const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, description, tag, tag1,tag2, }) => {
   const router = useRouter();

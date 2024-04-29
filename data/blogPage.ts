@@ -68,7 +68,13 @@ export const blogData = [
     },
 ];
 
-
+// banner data
 export const bannerData ={
     image:"/images/blogPage/hambanthota.webp",
+    bannertext:"blog",
+    bannerTitle:"Sri Lankan Marvels",
+    bannerDescription:"Celebrate the Beauty of Sri Lanka: Explore, Discover, and Be Enchanted!",
+    bannerSlogen: "We care about your data in our",
+    bannerLinkText: "privacy policy",
+    buttonText:"Subscribe",
 }

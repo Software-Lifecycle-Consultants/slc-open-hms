@@ -1,12 +1,13 @@
 import { Typography,Grid,TextField,Button } from "@mui/material";
+import { bannerData } from '@/data/blogPage';
 // banner section of the blog page
 const Banner = () => {
   return(
     <div style={{textAlign:"center"}}>
       {/* text in the banner  */}
-    <Typography sx={{fontSize:"16px"}}>blog</Typography>
-    <Typography sx={{fontSize:"48px"}}>Sri Lankan Marvels</Typography>
-    <Typography sx={{fontSize:"20px"}}>Celebrate the Beauty of Sri Lanka: Explore, Discover, and Be Enchanted!</Typography>
+    <Typography sx={{fontSize:"16px"}}>{bannerData.bannertext}</Typography>
+    <Typography sx={{fontSize:"48px"}}>{bannerData.bannerTitle}</Typography>
+    <Typography sx={{fontSize:"20px"}}>{bannerData.bannerDescription}</Typography>
     {/* text area to enter the email */}
     <div style={{alignItems:"center", marginTop:"15px",}}>
     <TextField id="filled-basic" label="Enter your email" variant="filled" sx={{backgroundColor:"white",borderRadius:"8px",height:"48px",
@@ -20,9 +21,9 @@ const Banner = () => {
         borderRadius:"8px",
       }} 
       variant="contained" >
-      Subscribe
+      {bannerData.buttonText}
       </Button>
-      <Typography sx={{marginBottom: "12%"}}>We care about your data in our <a href="/privacy-policy">privacy policy</a></Typography>
+      <Typography sx={{marginBottom: "12%", marginTop:"1%",}}>{bannerData.bannerSlogen} <a href="/privacy-policy" style={{color:"white",}}>{bannerData.bannerLinkText}</a></Typography>
     </div>
     </div>
     
