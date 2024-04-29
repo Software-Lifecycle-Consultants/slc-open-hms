@@ -1,7 +1,7 @@
 const privacyandpolicydata ={
 
 /* Assign header Details to the header1 */
-      today : new Date(),
+
  header1Details : {
       title: "Privacy & Policy",
       effectiveDate:"Effective Date:"+ new Date().toISOString().split('T')[0], // Format today's date as YYYY-MM-DD
