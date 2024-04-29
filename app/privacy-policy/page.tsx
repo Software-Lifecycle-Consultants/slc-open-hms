@@ -141,14 +141,14 @@ function PrivacyPolicy() {
         <Typography variant="body1">{section501.content}</Typography>{/* Render the content from section501 */}
       </Box>
       <Box marginTop={4}>
-        <Typography variant="h5">{section6.Title}</Typography> {/* Render the title from section6 */}
+        <Typography variant="h5">{section6.title}</Typography> {/* Render the title from section6 */}
         {/* Render the content from section6 */}
         <Typography variant="body1" sx={{ marginTop: -1 }}>
           {section6.content}
         </Typography>
       </Box>
       <Box marginTop={4}>
-        <Typography variant="h5">{section7.Title}</Typography> {/* Render the title from section7 */}
+        <Typography variant="h5">{section7.title}</Typography> {/* Render the title from section7 */}
         {/* Render the content from section7 */}
         <Typography variant="body1" sx={{ marginTop: -1 }}>
           {section7.content}

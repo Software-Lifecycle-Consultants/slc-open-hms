@@ -81,12 +81,12 @@ const privacyandpolicydata ={
       },
 /* Assign Details to the section 6 */
  section6 : {
-      Title: "6. International Data Transfers",
+      title: "6. International Data Transfers",
       content:"Your personal information may be transferred to and processed in countries outside your jurisdiction, including countries that may have different data protection laws. We will take appropriate measures to ensure that any international transfers comply with applicable data protection laws."
       },
 /* Assign Details to the section 7 */
  section7 : {
-      Title: "7. Contact Us",
+      title: "7. Contact Us",
       content: "If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us: Email: hello@softwareconsultant.org"
       },
 }
