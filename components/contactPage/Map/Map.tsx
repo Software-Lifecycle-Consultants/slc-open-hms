@@ -26,17 +26,19 @@ const Map: React.FC<MapProps> = (props) => {
     isLoaded: false,
   });
 
-
   const theme = useTheme();
   //Use useMediaQuery hook from MUI to check if the screen size is small
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <div className="map-container"
-    style={{
-      width: isSmallScreen ? "340px" : "100%",
-      height: isSmallScreen ? "300px" : "700px",
-    }}
+    <div
+      className="map-container"
+      style={{
+        width: isSmallScreen ? "300px" : "100%",
+        height: isSmallScreen ? "300px" : "700px",
+        marginLeft: "auto",
+        marginRight: "auto",
+      }}
     >
       <MapContainer
         center={[latLng.lat, latLng.lng]} //center the map to the user's location
@@ -48,10 +50,7 @@ const Map: React.FC<MapProps> = (props) => {
         }}
       >
         {/* TileLayer for map display */}
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         {/* LeafletControlGeocoder for geocoding addresses */}
         <LeafletControlGeocoder positionInfos={positionInfos} />
       </MapContainer>
