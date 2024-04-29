@@ -16,6 +16,7 @@ import Box from "@mui/material/Box";
 import { loginPageData } from "@/data/loginPage";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import { orangebuttonCommonStyle } from "@/components/homePage/styles.js";
+import Link from "next/link";
 
 // Functional component for Login
 const Login = () => {
@@ -145,7 +146,6 @@ const Login = () => {
                 />
               </Grid>
               <Grid container>
-                {" "}
                 {/* Remember me and Forgot password Section */}
                 <Grid item xs={6} marginTop={1}>
                   <FormControlLabel
@@ -169,11 +169,9 @@ const Login = () => {
                 </Grid>
                 <Grid item xs={6} marginTop={2} textAlign="right">
                   <Typography style={{ color: "rgba(17, 20, 45, 1)" }}>
-                    {" "}
-                    <a href="/">
-                      {" "}
+                    <Link href="/">
                       {loginPageData.loginPageForgotPasswordCaption}{" "}
-                    </a>
+                    </Link>
                     {/* Render the title from loginPageData & link the Forgot Password page */}
                   </Typography>
                 </Grid>
@@ -200,10 +198,9 @@ const Login = () => {
                   align="center"
                   style={{ color: "rgba(17, 20, 45, 1)" }}>
                   {loginPageData.loginPageNoAccountCaption}{" "}
-                  <a href="/register" style={{ color: "rgba(0, 60, 112, 1)" }}>
-                    {" "}
+                  <Link href="/register" style={{ color: "rgba(0, 60, 112, 1)" }}>
                     {loginPageData.loginPageRegisterCaption}{" "}
-                  </a>{" "}
+                  </Link>
                   {/* Render the title from loginPageData & loginPageData6 & link the Register page to loginPageData */}
                 </Typography>
               </Grid>
@@ -215,7 +212,7 @@ const Login = () => {
                 justifyContent="center"
                 sx={{ marginBottom: "50px" }}
                 >
-                <a href="/">
+                <Link href="/">
                   <Box
                     bgcolor="#CCCCCC" // Background color
                     borderRadius="50%" // Rounded corners to make it circular
@@ -227,17 +224,16 @@ const Login = () => {
                     <ArrowBack style={{ fontSize: "20px", color: "#000000" }} />{" "}
                     {/* Icon color */}
                   </Box>
-                </a>
+                </Link>
                 <Typography
                   style={{
                     textAlign: "center",
                     marginTop: "0px",
                     color: "rgba(17, 20, 45, 1)",
                   }}>
-                  <a href="/">
-                    {" "}
+                  <Link href="/">
                     {loginPageData.loginPageBackArrowCaption}{" "}
-                  </a>
+                  </Link>
                   {/* Render the title from loginPageData & link the home page */}
                 </Typography>
               </Grid>
