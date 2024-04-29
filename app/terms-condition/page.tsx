@@ -1,26 +1,25 @@
-import {
-  pageDetails,
-  headerDetails,
-  headsection1,
-  headsection2,
-  subsection2,
-  subsection4,
-  headsection3,
-  subsection6,
-  headsection4,
-  subsection8,
-  headsection5,
-  headsection6,
-  headsection7,
-  pageEnd,
-} from "@/data/termscondition";
+"use client";
 import Typography from "@mui/material/Typography";
-// import { Metadata } from "next";
-// export const metadata: Metadata = {
-//   title: "HMS Dev | T&C",
-//   description: "HMS System under development",
-// };
-export default function TermsCondition() {
+import termsAndConditionsData from "@/data/termscondition";
+
+
+const TermsCondition = () => {
+  const {
+    pageDetails,
+    headerDetails,
+    headsection1,
+    headsection2,
+    subsection2,
+    subsection4,
+    headsection3,
+    subsection6,
+    headsection4,
+    subsection8,
+    headsection5,
+    headsection6,
+    headsection7,
+    pageEnd,
+  } = termsAndConditionsData;
   return (
     <>
       <div
@@ -258,3 +257,4 @@ export default function TermsCondition() {
     </>
   );
 }
+export default TermsCondition;
