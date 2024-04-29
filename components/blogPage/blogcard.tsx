@@ -37,6 +37,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, descripti
 
   return (
     <>
+    {/* blog card */}
       <Card
         elevation={0}
         sx={{
@@ -52,6 +53,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, descripti
             maxWidth: "384px",
           }}
         >
+          {/* image of the card */}
           <Image
             src={image}
             alt="test"
@@ -64,6 +66,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, descripti
             }}
           />
         </Box>
+        {/* card content */}
         <CardContent>
           <Box sx={{ paddingTop: "10px", marginBottom: "-5%", display:"flex" }}>
           <ul style={{
@@ -71,6 +74,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, descripti
             listStyle: "none",
             display: "flex",
             }} >
+              
                 <li style={{color: "#6941C6",
                 margin: "5px",}}>
                 {user}
@@ -91,8 +95,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, descripti
             <div>
             <Typography sx={{fontSize:"24px",}}> {title} </Typography>
             </div>
-            <div>
-            <NorthEastIcon sx={{ color: "#101828", marginLeft:"300%" , fontSize:"22px" }} />
+            <div style={{marginLeft:"100px"}}>
+            <NorthEastIcon sx={{ color: "#101828" , fontSize:"20px", marginTop:"5px" }} />
             </div>
             </Box>
             <Box>{description}</Box>
@@ -103,23 +107,23 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, descripti
                 color: "#6941C6",
                 borderRadius: "5px",
                 textAlign:"center",
-                width:"40%",
+                gap:"3px",
                 fontSize:"14px"}}>
                 {tag}
                 </li>
                 <li style={{background: "#EEF4FF",
                 color: "#3538CD",
                 borderRadius: "5px",
+                gap:"3px",
                 textAlign:"center",
-                width:"40%",
                 fontSize:"14px"}}>
                 {tag1}
                 </li>
                 <li style={{background: "#FDF2FA",
                 color: "#C11574",
                 borderRadius: "5px",
+                gap:"3px",  
                 textAlign:"center",
-                width:"40%",
                 fontSize:"14px"}}>
                 {tag2}
                 </li>
