@@ -118,7 +118,7 @@ const Register: React.FC = () => {
               marginTop: "5px",
               marginLeft: "15px",
               marginBottom:"8px",
-              color: '#9A9AB0'
+              color: '#515151'
             }}>
               {registerPageDetails.registerPageSubtitle}
             </Typography>
@@ -129,6 +129,7 @@ const Register: React.FC = () => {
             xs={5}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPageFirstNameSection}
             <TextField
@@ -147,6 +148,7 @@ const Register: React.FC = () => {
             xs={7}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPageLastNameSection}
             <TextField
@@ -165,6 +167,7 @@ const Register: React.FC = () => {
             xs={12}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPagePhoneNumSection}
             <PhoneInput
@@ -183,6 +186,7 @@ const Register: React.FC = () => {
             xs={12}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPageEmailSection}
             <TextField
@@ -197,7 +201,11 @@ const Register: React.FC = () => {
             />
           </Grid>
           {/* User Name Section */}
-          <Grid item xs={12}>
+          <Grid item xs={12} 
+          sx={{
+            fontWeight: "bold",
+            color: "#11142D",
+            }}>
             {registerPageDetails.registerPageUserNameSection}
             <TextField
               fullWidth
@@ -215,6 +223,7 @@ const Register: React.FC = () => {
             xs={12}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPagePasswordSection}
             <TextField
@@ -234,6 +243,7 @@ const Register: React.FC = () => {
             xs={12}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPageConfirmPwdSection}
             <TextField
@@ -253,6 +263,7 @@ const Register: React.FC = () => {
               sx={{
                 marginTop: "5px",
                 color: "#11142D",
+                fontWeight: "bold",
               }}
               control={
                 <Checkbox
@@ -271,7 +282,7 @@ const Register: React.FC = () => {
                   {/* Add link to Terms and Conditions section */}
                   <a
                     href="/terms-condition"
-                    style={{ color: "rgba(0, 60, 112, 1)" }}>
+                    style={{ color: "#003C70", marginLeft:"5px" }}>
                     {registerPageDetails.registerPageTermsandConditionsSection}
                   </a>
                 </>
@@ -302,6 +313,7 @@ const Register: React.FC = () => {
             xs={12}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             <Typography align="center">
               {registerPageDetails.registerPageHaveAccountSection}{" "}
