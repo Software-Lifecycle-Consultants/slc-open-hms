@@ -305,7 +305,7 @@ const Register: React.FC = () => {
             }}>
             <Typography align="center">
               {registerPageDetails.registerPageHaveAccountSection}{" "}
-              <a href="/login">
+              <a href="/login" style={{color:"#003C70", textDecoration:"none"}}>
                 {" "}
                 {registerPageDetails.registerPageLoginSection}{" "}
               </a>
@@ -334,7 +334,7 @@ const Register: React.FC = () => {
               </Box>
             </a>
             <Typography style={{ textAlign: "center", marginTop: "0px" }}>
-              {registerPageDetails.registerPageBackArroSection}
+            <a href="/" style={{color:"#11142D", textDecoration:"none"}}>{registerPageDetails.registerPageBackArroSection}</a>
             </Typography>
           </Grid>
         </Grid>
