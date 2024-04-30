@@ -96,6 +96,12 @@ const Register: React.FC = () => {
   };
   const [phone, setPhone] = useState("");
   return (
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      minHeight="70vh" /* Set minimum height to occupy the full viewport */
+    >
     <Container maxWidth="sm">
       <form onSubmit={handleSubmit}>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 0, md: 3 }}>
@@ -343,6 +349,7 @@ const Register: React.FC = () => {
         </List>
       )}
     </Container>
+    </Box>
   );
 };
 
