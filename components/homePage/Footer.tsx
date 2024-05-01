@@ -1,10 +1,10 @@
 // Importing required components and images
-import { Box, Grid, Typography, Link } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import { currentYear, footerContent } from "@/data/homePage";
 import { montserrat } from "../../app/fonts";
-// import Link from "next/link"; 
+import Link from "next/link";
 
 /* Footer component displays the website footer. */
 const Footer = () => {

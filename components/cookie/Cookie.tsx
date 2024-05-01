@@ -79,10 +79,11 @@ export default function Cookie() {
             {/* cookie description */}
             <div className="description">
               {/* icon on the cookie */}
-              <div style={{marginLeft:"20%"}}>
-              <CookieIcon sx={{ color: "#C7923E", fontSize:"30px", marginTop: "2px",  rotate:"275deg",}} />
+              <div>
+              <CookieIcon sx={{ color: "#C7923E", fontSize: { xs: "25px", sm: "38px", md: "30px" }, marginTop: "2px",  rotate:"275deg",}} />
               </div>
-              <div style={{marginLeft:"15px"}}>{cookieData.cookieDescription}
+              <div style={{marginLeft:"15px",}}>
+                {cookieData.cookieDescription}
               {/* accept reject ButtonGroup */}
               <ToggleButtonGroup color="success" sx={{ height: "30px", marginLeft: "20px" }}>
                 <ToggleButton value="accept" onClick={checkCookie} color="success" sx={{ background: "#C7923E", borderRadius: "8px", color: "white" }}>

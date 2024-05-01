@@ -1,24 +1,10 @@
 import React from "react";
 import { Metadata } from "next";
-import {
-  sectio5,
-  section1,
-  section102,
-  section2,
-  section202,
-  section3,
-  section302,
-  section4,
-  section402,
-  section501,
-  section6,
-  section7,
-  header1Details,
-} from "@/data/privacypolicyPage";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import privacyandpolicydata from "@/data/privacypolicyPage";
 
 /**
  *  PrivacyPolicyScreen component represents the Privacy & Policy Screen of the website.
@@ -30,6 +16,21 @@ export const metadata: Metadata = {
 };
 
 function PrivacyPolicy() {
+    const {
+      header1Details,
+      section1,
+      section102,
+      section2,
+      section202,
+      section3,
+      section302,
+      section4,
+      section402,
+      section5,
+      section501,
+      section6,
+      section7
+    } = privacyandpolicydata;
   return (
     <Box
       maxWidth="1320px" /* Adjust max-width as needed */
@@ -126,10 +127,10 @@ function PrivacyPolicy() {
         </Typography>
       </Box>
       <Box marginTop={4}>
-        <Typography variant="h5">{sectio5.title}</Typography> {/* Render the title from section5 */}
+        <Typography variant="h5">{section5.title}</Typography> {/* Render the title from section5 */}
         {/* Render the content from section5 */}
         <List dense sx={{ marginTop: -1.8 }}>
-          {sectio5.content.map((item, index) => (
+          {section5.content.map((item, index) => (
             <ListItem key={index} sx={{ py: 0 }}>
               <Typography variant="body1">{item}</Typography>
             </ListItem>
@@ -140,14 +141,14 @@ function PrivacyPolicy() {
         <Typography variant="body1">{section501.content}</Typography>{/* Render the content from section501 */}
       </Box>
       <Box marginTop={4}>
-        <Typography variant="h5">{section6.Title}</Typography> {/* Render the title from section6 */}
+        <Typography variant="h5">{section6.title}</Typography> {/* Render the title from section6 */}
         {/* Render the content from section6 */}
         <Typography variant="body1" sx={{ marginTop: -1 }}>
           {section6.content}
         </Typography>
       </Box>
       <Box marginTop={4}>
-        <Typography variant="h5">{section7.Title}</Typography> {/* Render the title from section7 */}
+        <Typography variant="h5">{section7.title}</Typography> {/* Render the title from section7 */}
         {/* Render the content from section7 */}
         <Typography variant="body1" sx={{ marginTop: -1 }}>
           {section7.content}
