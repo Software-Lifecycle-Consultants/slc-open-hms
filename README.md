@@ -75,6 +75,14 @@ npm install slick-carousel
 ```bash
 npm install react-phone-input-2 --save
  ```
+ 
+ - [leaflet](https://www.npmjs.com/package/leaflet) - Version 1.9.4
+  - An open-source JavaScript library for mobile-friendly interactive map
+  - Install the package in your project directory using the following commands.
+```bash
+npm install leaflet\
+npm i leaflet-control-geocoder@1.8.3
+ ```
 
 3. Set up the environment variables:
   - Create a .env.local file in the root directory of the project.
