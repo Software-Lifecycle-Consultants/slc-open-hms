@@ -19,8 +19,8 @@ This component represents a contact form where users can enter their details and
 */
 
 interface ContactFormData {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: string;
   country: string;
@@ -35,8 +35,8 @@ interface Country {
 
 const ContactForm = ({}) => {
   const [formData, setFormData] = useState<ContactFormData>({
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     country: "",
@@ -99,8 +99,8 @@ const ContactForm = ({}) => {
   // Function to clear form data, submit message, and error messages
   const clearFormData = () => {
     setFormData({
-      firstname: "",
-      lastname: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phone: "",
       country: "",
@@ -146,8 +146,8 @@ const ContactForm = ({}) => {
                 label="First Name"
                 fullWidth
                 variant="outlined"
-                type="firstName"
-                value={formData.firstname}
+                type="text"
+                value={formData.firstName}
                 onChange={(e) => handleChange(e, "firstName")}
                 required
               />
@@ -158,8 +158,8 @@ const ContactForm = ({}) => {
                 label="Last Name"
                 fullWidth
                 variant="outlined"
-                type="lastName"
-                value={formData.lastname}
+                type="text"
+                value={formData.lastName}
                 onChange={(e) => handleChange(e, "lastName")}
                 required
               />
