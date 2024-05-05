@@ -11,6 +11,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Link,
 } from "@mui/material";
 import { postData, postRegsiterData } from "@/services/api";
 import { registerPageDetails } from "@/data/registerPage";
@@ -317,10 +318,10 @@ const Register: React.FC = () => {
             }}>
             <Typography align="center">
               {registerPageDetails.registerPageHaveAccountSection}{" "}
-              <a href="/login" style={{color:"#003C70", textDecoration:"none"}}>
+              <Link href="/login" style={{color:"#003C70", textDecoration:"none"}}>
                 {" "}
                 {registerPageDetails.registerPageLoginSection}{" "}
-              </a>
+              </Link>
             </Typography>
           </Grid>
           {/* Render to Back to the Home page */}
@@ -335,7 +336,7 @@ const Register: React.FC = () => {
             container
             alignItems="center"
             justifyContent="center">
-            <a href="/">
+            <Link href="/">
               <Box
                 bgcolor="#CCCCCC"
                 borderRadius="50%"
@@ -344,9 +345,9 @@ const Register: React.FC = () => {
                 marginRight="10px">
                 <ArrowBack style={{ color: "#000000" }} />{" "}
               </Box>
-            </a>
+            </Link>
             <Typography style={{ textAlign: "center", marginTop: "0px" }}>
-            <a href="/" style={{color:"#11142D", textDecoration:"none"}}>{registerPageDetails.registerPageBackArroSection}</a>
+            <Link href="/" style={{color:"#11142D", textDecoration:"none"}}>{registerPageDetails.registerPageBackArroSection}</Link>
             </Typography>
           </Grid>
         </Grid>
