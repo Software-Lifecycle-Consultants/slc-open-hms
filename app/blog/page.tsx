@@ -1,6 +1,6 @@
 "use client";
 import { Box, Container, Grid,  } from "@mui/material";
-import Banner from "@/components/blogPage/Banner1"
+import Banner from "@/components/blogPage/BlogBanner"
 import BlogCard from "@/components/blogPage/blogcard";
 import { blogData, bannerData } from '@/data/blogPage';
 import Image from "next/image";

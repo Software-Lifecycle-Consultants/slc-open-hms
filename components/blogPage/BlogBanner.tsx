@@ -1,4 +1,4 @@
-import { Typography,Grid,TextField,Button } from "@mui/material";
+import { Typography,Grid,TextField,Button, Link } from "@mui/material";
 import { bannerData } from '@/data/blogPage';
 // banner section of the blog page
 const Banner = () => {
@@ -23,7 +23,7 @@ const Banner = () => {
       variant="contained" >
       {bannerData.buttonText}
       </Button>
-      <Typography sx={{marginBottom: "12%", marginTop:"1%",}}>{bannerData.bannerSlogen} <a href="/privacy-policy" style={{color:"white",}}>{bannerData.bannerLinkText}</a></Typography>
+      <Typography sx={{marginBottom: "12%", marginTop:"1%",}}>{bannerData.bannerSlogen} <Link href="/privacy-policy" style={{color:"white",}}>{bannerData.bannerLinkText}</Link></Typography>
     </div>
     </div>
     
