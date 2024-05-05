@@ -74,7 +74,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, descripti
             listStyle: "none",
             display: "flex",
             }} >
-              
+              {/* user name and date list on the card */}
                 <li style={{color: "#6941C6",
                 margin: "5px",}}>
                 {user}
@@ -93,6 +93,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, descripti
             </Box>
             <Box sx={{ display: "flex",  }}>
             <div>
+              {/* title section of the card  */}
             <Typography sx={{fontSize:"24px",}}> {title} </Typography>
             </div>
             <div style={{marginLeft:"100px"}}>
@@ -102,6 +103,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, descripti
             <Box>{description}</Box>
             <Box sx={{ display: "flex" }}>
               <Box sx={{display: "flex"}}>
+                {/* hashtag list */}
               <ul style={ulstyles} >
                 <li style={{background: "#F9F5FF",
                 color: "#6941C6",
