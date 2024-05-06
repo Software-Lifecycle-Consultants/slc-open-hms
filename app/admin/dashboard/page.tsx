@@ -17,49 +17,9 @@ const AdminDashboard = () => {
   return (
     <>
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
-        <Container>
-          <Heading />
-        </Container>
+        
       </Box>
-      <Box
-        sx={{
-          display: "grid",
-          columnGap: 2,
-          rowGap: 3,
-        }}
-      >
-        <Container>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={8}>
-              <BillingDetails />
-              {/* <BookingDetailsForm /> */}
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <BookingInfo />
-              {/* <GuestRoom /> */}
-            </Grid>
-          </Grid>
-        </Container>
-        <Container>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={8}>
-              <ExtraFacilitation />
-              {/* <ServicesCard /> */}
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Calender />
-            </Grid>
-          </Grid>
-        </Container>
-
-        <Container>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={8}>
-              <SubmitButton />
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
+      
     </>
   );
 };
