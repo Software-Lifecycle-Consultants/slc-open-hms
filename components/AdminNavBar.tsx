@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import DrawerComponent from '@/components/homePage/DrawerComponent';
+import AdminDrawerComponent from '@/components/homePage/AdminDrawerComponent';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 
@@ -55,7 +55,7 @@ const AdminNavBar: React.FC = () => {
               <>
                 <img src="/images/admin/profileLogo.png" alt="logo" style={{ width: "50px", height: "auto" }} />
                 {/* Replace DrawerComponent with your drawer component */}
-                <DrawerComponent />
+                <AdminDrawerComponent />
               </>
             ) : (
               <>
