@@ -32,6 +32,8 @@ const LogoCarousel: React.FC = () => {
     slidesToScroll: 1, // Number of slides to scroll at a time
     autoplay: true, // Autoplay is enabled
     autoplaySpeed: 1000, // Autoplay speed in milliseconds
+    centerMode: true,
+    centerPadding: "0px",
   };
 
   // Custom styles for the Card component
@@ -43,6 +45,7 @@ const LogoCarousel: React.FC = () => {
     borderWidth: "0px", // Set border width to 0
     borderRadius: "0px", // Set border radius to 0
     boxShadow: "none", // Remove any box shadow
+    height:isMobile ? "50px" : "200px",
   };
 
   return (
@@ -78,6 +81,8 @@ interface SliderSettings {
   slidesToScroll: number;
   autoplay: boolean;
   autoplaySpeed: number;
+  centerMode: boolean,
+  centerPadding: string,
 }
 
 export default LogoCarousel; // Exporting the LogoCarousel component as the default export
