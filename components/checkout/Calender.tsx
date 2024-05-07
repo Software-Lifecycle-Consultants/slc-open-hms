@@ -1,45 +1,52 @@
 "use client";
-import React from "react";
-import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
-import { LocalizationProvider } from "@mui/x-date-pickers-pro";
-import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
-import { DateRangeCalendar } from "@mui/x-date-pickers-pro/DateRangeCalendar";
-import { Grid, Typography } from "@mui/material";
-import { lora } from "../../app/fonts";
+import React, { useState } from "react";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { Box, Typography } from "@mui/material";
+import { DateRange, Range } from "react-date-range";
+import "react-date-range/dist/styles.css"; // Import the styles
+import "react-date-range/dist/theme/default.css";
 import { calenderData } from "@/data/checkoutPage";
-import { DateRangePicker } from "@mui/x-date-pickers-pro/DateRangePicker";
+import { lora } from "../../app/fonts";
 
 const Calender = () => {
   /* State for managing the selected date range */
+  const [state, setState] = useState<Range[]>([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={["DateRangeCalendar"]}>
-        {/* Calendar title */}
-        <Typography
-          variant="h4"
-          className={lora.className}
-          style={{
-            color: "#11142D",
-            fontSize: "24px",
-            lineHeight: "120%",
-            fontStyle: "normal",
-            letterSpacing: "0.10px",
-            fontWeight: "700",
-            marginTop: "14px",
-            textAlign: "center",
-          }}
-        >
-          {calenderData.calenderTitle}
-        </Typography>
-        {/* Calendar */}
-        <Grid container justifyContent="center" marginLeft={1}>
-          <DemoItem>
-            <DateRangeCalendar calendars={1} />
-          </DemoItem>
-        </Grid>
-        <DateRangePicker localeText={{ start: "Check-in", end: "Check-out" }} />
-      </DemoContainer>
+      {/* Calendar title */}
+      <Typography
+        variant="h5"
+        className={lora.className}
+        style={{
+          color: "#11142D",
+          fontSize: "24px",
+          lineHeight: "120%",
+          fontStyle: "normal",
+          letterSpacing: "0.12px",
+          fontWeight: "700",
+          marginTop: "14px",
+          textAlign: "center",
+        }}
+      >
+        {calenderData.calenderTitle}
+      </Typography>
+      <Box sx={{ justifyContent: "center", display: "flex" }}>
+        {/* Calendar component */}
+        <DateRange
+          editableDateInputs={true}
+          onChange={(item) => setState([item.selection])}
+          moveRangeOnFirstSelection={false}
+          ranges={state}
+        />
+      </Box>
     </LocalizationProvider>
   );
 };
