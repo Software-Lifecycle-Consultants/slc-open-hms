@@ -10,7 +10,6 @@ import { calenderData } from "@/data/checkoutPage";
 import { lora } from "../../app/fonts";
 
 const Calender = () => {
-  /* State for managing the selected date range */
   const [state, setState] = useState<Range[]>([
     {
       startDate: new Date(),
