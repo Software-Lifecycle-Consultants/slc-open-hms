@@ -46,7 +46,7 @@ export default function blog(){
           <Grid key={item.id} item xs={12} sm={6} md={4}>
             <BlogCard
               image={item.image}
-              user={item.user}
+              author={item.author}
               date={item.date}
               title={item.title}
               description={item.description}

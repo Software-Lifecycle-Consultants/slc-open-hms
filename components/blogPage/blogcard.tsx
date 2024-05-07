@@ -6,6 +6,9 @@ import {
   Card,
   CardContent,
   Typography,
+  Grid,
+  Stack,
+  Chip,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import NorthEastIcon from '@mui/icons-material/NorthEast';
@@ -13,7 +16,7 @@ import NorthEastIcon from '@mui/icons-material/NorthEast';
 
 interface BlogCardProps {
   image: string;
-  user: string;
+  author: string;
   date: string;
   title: string;
   description: string;
@@ -30,7 +33,7 @@ export const ulstyles={
   
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, description, tag, tag1,tag2, }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ image, author, date, title, description, tag, tag1,tag2, }) => {
   const router = useRouter();
 
 
@@ -77,7 +80,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, descripti
               {/* user name and date list on the card */}
                 <li style={{color: "#6941C6",
                 margin: "5px",}}>
-                {user}
+                {author}
                 </li>
                 <li style={{color: "#6941C6",
                 margin: "5px",}}>
@@ -104,32 +107,25 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, user, date, title, descripti
             <Box sx={{ display: "flex" }}>
               <Box sx={{display: "flex"}}>
                 {/* hashtag list */}
-              <ul style={ulstyles} >
-                <li style={{background: "#F9F5FF",
-                color: "#6941C6",
-                borderRadius: "5px",
-                textAlign:"center",
-                gap:"3px",
-                fontSize:"14px"}}>
-                {tag}
-                </li>
-                <li style={{background: "#EEF4FF",
-                color: "#3538CD",
-                borderRadius: "5px",
-                gap:"3px",
-                textAlign:"center",
-                fontSize:"14px"}}>
-                {tag1}
-                </li>
-                <li style={{background: "#FDF2FA",
-                color: "#C11574",
-                borderRadius: "5px",
-                gap:"3px",  
-                textAlign:"center",
-                fontSize:"14px"}}>
-                {tag2}
-                </li>
-              </ul>
+                <Grid item mt={1}>
+              <Stack spacing={1} alignItems="center">
+                <Stack direction="row" spacing={1}>
+                  {/* Tags */}
+                  <Chip
+                    sx={{ color: "#027A48", bgcolor: "#ECFDF3" }}
+                    label={tag}/>
+
+                  <Chip
+                    sx={{ color: "#3538CD", bgcolor: "#EEF4FF" }}
+                    label={tag1}
+                  />
+                  <Chip
+                    sx={{ color: "#C11574", bgcolor: "#FDF2FA" }}
+                    label={tag2}
+                  />
+                </Stack>
+              </Stack>
+            </Grid>
                 </Box>
               </Box>
         </CardContent>

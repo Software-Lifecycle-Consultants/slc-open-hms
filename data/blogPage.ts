@@ -3,7 +3,7 @@ export const blogData = [
     {
         id: 1,
         image: "/images/blogPage/anuradhapura.webp",
-        user: "saman kumara",
+        author: "saman kumara",
         date: "5 jan 2024",
         title: "anuradhapuraya",
         description: "asildkasndkasidkmdlasdij asdhbkads sd aksd asndhias dihashd asdj ashud asd jhas dlaysdnas nm silgd fsbn dlih mnv dash a ",
@@ -14,7 +14,7 @@ export const blogData = [
     {
         id: 2,
         image: "/images/blogPage/galle.webp",
-        user: "Lana Steiner",
+        author: "Lana Steiner",
         date: "18 Jan 2022",
         title: "Galle Fort Heritage",
         description: "Step into the storied past of Galle Fort, where colonial charm and maritime history converge against the backdrop of the Indian Ocean.",
@@ -25,7 +25,7 @@ export const blogData = [
     {
         id: 3,
         image: "/images/blogPage/sigiriya.webp",
-        user: "Alec Whitten",
+        author: "Alec Whitten",
         date: "17 Jan 2022",
         title: "Sigiriya - Sri Lanka's Enigmatic Citadel Unveiled",
         description: "Discover Sigiriya: Sri Lanka's UNESCO Heritage marvel, hiding ancient mysteries and architectural wonders.",
@@ -36,7 +36,7 @@ export const blogData = [
     {
         id: 4,
         image: "/images/blogPage/ella.webp",
-        user: "Demi WIlkinson",
+        author: "Demi WIlkinson",
         date: "16 Jan 2022",
         title: "Iconic Nine Arch Bridge: Ella",
         description: "Discover the enchanting beauty of Ella, nestled amidst lush tea plantations, iconic landmarks like the Nine Arch Bridge, and serene natural escapes",
@@ -47,7 +47,7 @@ export const blogData = [
     {
         id: 5,
         image: "/images/blogPage/ambuluwawa.webp",
-        user: "Candice Wu",
+        author: "Candice Wu",
         date: "15 Jan 2022",
         title: "Ambuluwawa Sanctuary",
         description: "Embark on a journey to Ambuluwawa, where lush landscapes and breathtaking vistas await atop this picturesque hill in Sri Lanka.",
@@ -58,7 +58,7 @@ export const blogData = [
     {
         id: 6,
         image: "/images/blogPage/kandy.webp",
-        user: "Natali Craig ",
+        author: "Natali Craig ",
         date: "14 Jan 2022",
         title: "Cultural Icon: Dalada Maligawa",
         description: "Delve into the spiritual heart of Sri Lanka at Dalada Maligawa, home to the sacred relic of the tooth of the Buddha.",
