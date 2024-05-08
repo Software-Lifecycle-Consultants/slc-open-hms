@@ -7,7 +7,6 @@ import React from "react";
 import BillingDetails from "@/components/checkout/BillingDetails";
 import BookingInfo from "@/components/checkout/BookingInfo";
 import ExtraFacilitation from "@/components/checkout/ExtraFacilitation";
-import TermAndCondition from "@/components/checkout/TermAndCondition";
 /**
  * CheckoutScreen component represents the checkout screen of the website.
  * It includes sections like Heading, Billing details form, Booking info, Extra facilitation, Calender and Submit button.
@@ -48,7 +47,6 @@ const editListing = () => {
             </Grid>
             <Grid item xs={12} md={4}>
               <Calender />
-              <TermAndCondition />
             </Grid>
           </Grid>
         </Container>
