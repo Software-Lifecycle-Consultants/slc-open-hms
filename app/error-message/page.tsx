@@ -20,13 +20,7 @@ export default function ErrorMassage() {
             display: { xs: "block", sm: "block", md: "flex", lg: "flex" },
           }}
         >
-          <Grid
-            container
-            // direction="row"
-            // justifyContent="center"
-            alignItems="center"
-            spacing={2}
-          >
+          <Grid container alignItems="center" spacing={2}>
             {/* Left side of the banner image */}
             <Grid item xs={12} md={6}>
               <Image
@@ -57,8 +51,8 @@ export default function ErrorMassage() {
                 sx={{
                   textAlign: "Left",
                   fontWeight: "semi bold",
-                  fontSize: "16px",
-                  marginRight: "385px",
+                  fontSize: { xs: "14px", sm: "14px", md: "16px", lg: "16px" },
+
                   color: "#11142D",
                   alignItems: {
                     xs: "center",
@@ -78,7 +72,7 @@ export default function ErrorMassage() {
                   textAlign: "Left",
                   marginTop: "12px",
                   fontWeight: "semi bold",
-                  fontSize: "60px",
+                  fontSize: { xs: "40px", sm: "55px", md: "60px", lg: "60px" },
                   marginRight: "28px",
                   color: "#11142D",
                 }}
@@ -93,7 +87,7 @@ export default function ErrorMassage() {
                   textAlign: "Left",
                   marginTop: "24px",
                   fontWeight: "Regular",
-                  fontSize: "20px",
+                  fontSize: { xs: "16px", sm: "18px", md: "20px", lg: "20px" },
                   color: "#11142D",
                 }}
               >
@@ -106,7 +100,7 @@ export default function ErrorMassage() {
                 sx={{
                   textAlign: "Left",
                   fontWeight: "Regular",
-                  fontSize: "20px",
+                  fontSize: { xs: "14px", sm: "14px", md: "16px", lg: "16px" },
                   color: "#11142D",
                 }}
               >
@@ -115,9 +109,10 @@ export default function ErrorMassage() {
               {/* Render to Go Back and Take Me Home Section */}
               <Container
                 sx={{
-                  display: { xs: "block", sm: "flex", md: "flex", lg: "flex" },
-                  alignContent: "flex-end",
+                  display: "flex",
+                  alignItems: "space-between",
                   marginBottom: "24px",
+                  gap: "auto",
                 }}
               >
                 <a href="/">
@@ -127,7 +122,7 @@ export default function ErrorMassage() {
                     color="primary"
                     style={{
                       borderRadius: "15px",
-                      //padding: "12px 18px",
+
                       color: "#000000",
                     }}
                     sx={{
@@ -137,11 +132,22 @@ export default function ErrorMassage() {
                       },
                       textAlign: "center",
                       fontWeight: "Median",
-                      fontSize: "16px",
+                      fontSize: {
+                        xs: "12px",
+                        sm: "12px",
+                        md: "16px",
+                        lg: "16px",
+                      },
                       marginTop: "24px",
                     }}
                   >
-                    <ArrowBack style={{ color: "#000000" }} />
+                    <ArrowBack
+                      style={{
+                        color: "#000000",
+                        height: "10px",
+                        width: "20px",
+                      }}
+                    />
                     {pageDetails.backArroSection1}
                   </Button>
                 </a>
@@ -152,7 +158,6 @@ export default function ErrorMassage() {
                     color="primary"
                     style={{
                       borderRadius: "15px",
-                      //padding: "12px 18px",
                     }}
                     sx={{
                       backgroundColor: "#C7923E",
@@ -162,8 +167,8 @@ export default function ErrorMassage() {
                       textAlign: "center",
                       fontWeight: "Medium",
                       fontSize: {
-                        xs: "14px",
-                        sm: "16px",
+                        xs: "12px",
+                        sm: "12px",
                         md: "16px",
                         lg: "16px",
                       },
