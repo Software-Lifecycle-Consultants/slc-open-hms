@@ -12,7 +12,6 @@ import {
     Link,
   } from "@mui/material";
   import Image from "next/image";
-  import avatarImage from "@/public/images/blogDetails/avatar.webp";
   import ContentCopyIcon from "@mui/icons-material/ContentCopy";
   import LinkedInIcon from "@mui/icons-material/LinkedIn";
   import TwitterIcon from "@mui/icons-material/Twitter";
@@ -46,6 +45,7 @@ import {
                 <Typography
                   variant="body2"
                   color="text.secondary"
+                  mt={5}
                   sx={{
                     fontSize: "30px",
                     textAlign: "left",
@@ -65,8 +65,14 @@ import {
                   }}
                 >
                   {blogcontent.pharagraph.pTitle1.paragraph1}
-                  <br />
-                  <br />
+                  </Typography>
+                  <Typography
+                  gutterBottom
+                  sx={{
+                    color: "#515151",
+                    fontSize: "20px",
+                    textAlign: "justify",
+                  }}>
                   {blogcontent.pharagraph.pTitle1.paragraph2}
                 </Typography>
               </Grid>
@@ -117,9 +123,10 @@ import {
                   }}
                 >
                   {blogcontent.pharagraph.blockquoteText}
-                  <br />
+                  
                   <cite
                     style={{
+                      marginTop:"10px",
                       color: "#515151",
                       fontSize: "15px",
                       fontStyle: "normal",
@@ -139,16 +146,23 @@ import {
                   }}
                 >
                   {blogcontent.pharagraph.bodyParagraph}
-                  <br />
-                  <br />
+                  </Typography>
+                  <Typography
+                  gutterBottom
+                  sx={{
+                    color: "#515151",
+                    fontSize: "20px",
+                    textAlign: "justify",
+                  }}
+                > 
                   {blogcontent.pharagraph.bodyParagraph1}
-                  <br />
-                  <br />
+                  
                 </Typography>
                 {/* Second paragraph title */}
                 <Typography
                   variant="body2"
                   color="text.secondary"
+                  mt={5}
                   sx={{
                     fontSize: "30px",
                     textAlign: "left",
@@ -168,13 +182,13 @@ import {
                   }}
                 >
                   {blogcontent.pharagraph.pTitle2.paragraph1}
-                  <br />
-                  <br />
+                  
                 </Typography>
                 {/* Third paragraph title */}
                 <Typography
                   variant="body2"
                   color="text.secondary"
+                  mt={5}
                   sx={{
                     fontSize: "30px",
                     textAlign: "left",
@@ -194,11 +208,10 @@ import {
                   }}
                 >
                   {blogcontent.pharagraph.pTitle3.paragraph1}
-                  <br />
                 </Typography>
               </Grid>
               {/* Grid item for final image */}
-              <Grid item sx={{ alignItems: "center" }}>
+              <Grid item mt={5} sx={{ alignItems: "center", }}>
                 {/* Final image */}
                 <Image
                   src={blogcontent.pharagraph.imageEnd}
@@ -237,11 +250,11 @@ import {
                   }}
                 >
                   {blogcontent.pharagraph.lastParagraph}
-                  <br />
+                  
                 </Typography>
               </Grid>
               {/* Conclusion Box */}
-              <Box sx={{ m: 5, bgcolor: "#F9FAFB" }}>
+              <Box mt={5} sx={{ m: 5, bgcolor: "#F9FAFB" }}>
                 <Typography
                   variant="body2"
                   color="text.secondary"
@@ -265,10 +278,17 @@ import {
                   }}
                 >
                   {blogcontent.ConclutionBoxText.paragraph}
-                  <br />
-                  <br />
+                  </Typography>
+                  <Typography
+                  gutterBottom
+                  sx={{
+                    color: "#515151",
+                    fontSize: "18px",
+                    textAlign: "justify",
+                  }}
+                >
                   {blogcontent.ConclutionBoxText.paragraph1}
-                  <br />
+                  
                 </Typography>
               </Box>
               {/* Author Info and Sharing */}
