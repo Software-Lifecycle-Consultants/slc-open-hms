@@ -7,13 +7,10 @@ import React from "react";
 import BillingDetails from "@/components/checkout/BillingDetails";
 import BookingInfo from "@/components/checkout/BookingInfo";
 import ExtraFacilitation from "@/components/checkout/ExtraFacilitation";
-import TermAndCondition from "@/components/checkout/TermAndCondition";
-
 /**
  * CheckoutScreen component represents the checkout screen of the website.
  * It includes sections like Heading, Billing details form, Booking info, Extra facilitation, Calender and Submit button.
  */
-
 const AdminDashboard = () => {
   return (
     <>
@@ -50,13 +47,9 @@ const AdminDashboard = () => {
             <Grid item xs={12} md={4}>
               <Calender />
             </Grid>
-            <Grid item xs={12} md={4}>
-              <TermAndCondition />
-            </Grid>
             <Grid item xs={12} md={4}></Grid>
           </Grid>
         </Container>
-
         <Container>
           <Grid container spacing={2}>
             <Grid item xs={12} md={8}>
