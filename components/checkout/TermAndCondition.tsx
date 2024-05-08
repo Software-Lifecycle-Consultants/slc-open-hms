@@ -22,6 +22,7 @@ const TermAndCondition = () => {
           letterSpacing: "0.08px",
           fontWeight: "700",
           marginTop: "8px",
+          textAlign: "center",
         }}
       >
         {termsText.termTitle}
@@ -38,6 +39,7 @@ const TermAndCondition = () => {
           letterSpacing: "0.08px",
           fontWeight: "400",
           marginTop: "16px",
+          textAlign: "center",
         }}
       >
         {termsText.term1}
@@ -53,6 +55,7 @@ const TermAndCondition = () => {
           letterSpacing: "0.08px",
           fontWeight: "400",
           marginTop: "16px",
+          textAlign: "center",
         }}
       >
         {termsText.term2}
@@ -68,6 +71,7 @@ const TermAndCondition = () => {
           letterSpacing: "0.08px",
           fontWeight: "400",
           marginTop: "16px",
+          textAlign: "center",
         }}
       >
         {termsText.term3}
