@@ -7,12 +7,10 @@ import React from "react";
 import BillingDetails from "@/components/checkout/BillingDetails";
 import BookingInfo from "@/components/checkout/BookingInfo";
 import ExtraFacilitation from "@/components/checkout/ExtraFacilitation";
-
 /**
  * CheckoutScreen component represents the checkout screen of the website.
  * It includes sections like Heading, Billing details form, Booking info, Extra facilitation, Calender and Submit button.
  */
-
 const AdminDashboard = () => {
   return (
     <>
@@ -51,7 +49,6 @@ const AdminDashboard = () => {
             </Grid>
           </Grid>
         </Container>
-
         <Container>
           <Grid container spacing={2}>
             <Grid item xs={12} md={8}>
