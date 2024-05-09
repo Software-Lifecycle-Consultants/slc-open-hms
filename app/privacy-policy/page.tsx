@@ -11,10 +11,6 @@ import privacyandpolicydata from "@/data/privacypolicyPage";
  *  PrivacyPolicyScreen component represents the Privacy & Policy Screen of the website.
  */
 
-export const metadata: Metadata = {
-  title: "HMS Dev | Privacy Policy",
-  description: "HMS System under development",
-};
 
 function PrivacyPolicy() {
     const {
