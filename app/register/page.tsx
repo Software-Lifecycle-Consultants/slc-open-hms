@@ -11,6 +11,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Link,
 } from "@mui/material";
 import { postData, postRegsiterData } from "@/services/api";
 import { registerPageDetails } from "@/data/registerPage";
@@ -96,6 +97,12 @@ const Register: React.FC = () => {
   };
   const [phone, setPhone] = useState("");
   return (
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      minHeight="70vh" /* Set minimum height to occupy the full viewport */
+    >
     <Container maxWidth="sm">
       <form onSubmit={handleSubmit}>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 0, md: 3 }}>
@@ -112,7 +119,7 @@ const Register: React.FC = () => {
               marginTop: "5px",
               marginLeft: "15px",
               marginBottom:"8px",
-              color: '#9A9AB0'
+              color: '#515151'
             }}>
               {registerPageDetails.registerPageSubtitle}
             </Typography>
@@ -123,6 +130,7 @@ const Register: React.FC = () => {
             xs={5}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPageFirstNameSection}
             <TextField
@@ -141,6 +149,7 @@ const Register: React.FC = () => {
             xs={7}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPageLastNameSection}
             <TextField
@@ -159,6 +168,7 @@ const Register: React.FC = () => {
             xs={12}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPagePhoneNumSection}
             <PhoneInput
@@ -177,6 +187,7 @@ const Register: React.FC = () => {
             xs={12}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPageEmailSection}
             <TextField
@@ -191,7 +202,11 @@ const Register: React.FC = () => {
             />
           </Grid>
           {/* User Name Section */}
-          <Grid item xs={12}>
+          <Grid item xs={12} 
+          sx={{
+            fontWeight: "bold",
+            color: "#11142D",
+            }}>
             {registerPageDetails.registerPageUserNameSection}
             <TextField
               fullWidth
@@ -209,6 +224,7 @@ const Register: React.FC = () => {
             xs={12}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPagePasswordSection}
             <TextField
@@ -228,6 +244,7 @@ const Register: React.FC = () => {
             xs={12}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             {registerPageDetails.registerPageConfirmPwdSection}
             <TextField
@@ -247,6 +264,7 @@ const Register: React.FC = () => {
               sx={{
                 marginTop: "5px",
                 color: "#11142D",
+                fontWeight: "bold",
               }}
               control={
                 <Checkbox
@@ -265,7 +283,7 @@ const Register: React.FC = () => {
                   {/* Add link to Terms and Conditions section */}
                   <a
                     href="/terms-condition"
-                    style={{ color: "rgba(0, 60, 112, 1)" }}>
+                    style={{ color: "#003C70", marginLeft:"5px" }}>
                     {registerPageDetails.registerPageTermsandConditionsSection}
                   </a>
                 </>
@@ -296,13 +314,14 @@ const Register: React.FC = () => {
             xs={12}
             sx={{
               color: "#11142D",
+              fontWeight: "bold",
             }}>
             <Typography align="center">
               {registerPageDetails.registerPageHaveAccountSection}{" "}
-              <a href="/login">
+              <Link href="/login" style={{color:"#003C70", textDecoration:"none"}}>
                 {" "}
                 {registerPageDetails.registerPageLoginSection}{" "}
-              </a>
+              </Link>
             </Typography>
           </Grid>
           {/* Render to Back to the Home page */}
@@ -317,7 +336,7 @@ const Register: React.FC = () => {
             container
             alignItems="center"
             justifyContent="center">
-            <a href="/">
+            <Link href="/">
               <Box
                 bgcolor="#CCCCCC"
                 borderRadius="50%"
@@ -326,9 +345,9 @@ const Register: React.FC = () => {
                 marginRight="10px">
                 <ArrowBack style={{ color: "#000000" }} />{" "}
               </Box>
-            </a>
+            </Link>
             <Typography style={{ textAlign: "center", marginTop: "0px" }}>
-              {registerPageDetails.registerPageBackArroSection}
+            <Link href="/" style={{color:"#11142D", textDecoration:"none"}}>{registerPageDetails.registerPageBackArroSection}</Link>
             </Typography>
           </Grid>
         </Grid>
@@ -343,6 +362,7 @@ const Register: React.FC = () => {
         </List>
       )}
     </Container>
+    </Box>
   );
 };
 

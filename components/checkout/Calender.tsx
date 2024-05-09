@@ -1,14 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import { Box, Typography, Card, CardContent } from "@mui/material";
-import { DateRange,Range} from "react-date-range";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { Box, Typography } from "@mui/material";
+import { DateRange, Range } from "react-date-range";
 import "react-date-range/dist/styles.css"; // Import the styles
 import "react-date-range/dist/theme/default.css";
-import { calenderData, termsText } from "@/data/checkoutPage";
-import { lora, mulish } from "../../app/fonts";
+import { calenderData } from "@/data/checkoutPage";
+import { lora } from "../../app/fonts";
 
 const Calender = () => {
-  /* State for managing the selected date range */
   const [state, setState] = useState<Range[]>([
     {
       startDate: new Date(),
@@ -18,109 +19,34 @@ const Calender = () => {
   ]);
 
   return (
-    <>
-      <Card
-        elevation={0}
-        sx={{
-          borderRadius: "8px",
-          maxWidth: "397px",
-          border: "1px solid",
-          borderColor: "var(--light-separators-colors-secondary, #E1E1E1)",
-          height: "650px",
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      {/* Calendar title */}
+      <Typography
+        variant="h5"
+        className={lora.className}
+        style={{
+          color: "#11142D",
+          fontSize: "24px",
+          lineHeight: "120%",
+          fontStyle: "normal",
+          letterSpacing: "0.12px",
+          fontWeight: "700",
+          marginTop: "14px",
+          textAlign: "center",
         }}
       >
-        <CardContent>
-          {/* Calendar title */}
-          <Typography
-            variant="h5"
-            className={lora.className}
-            style={{
-              color: "#11142D",
-              fontSize: "24px",
-              lineHeight: "120%",
-              fontStyle: "normal",
-              letterSpacing: "0.12px",
-              fontWeight: "700",
-              marginTop: "14px",
-            }}
-          >
-            {calenderData.calenderTitle}
-          </Typography>
-          <Box sx={{ backgroundColor: "" }}>
-            {/* Calendar component */}
-            <DateRange
-              editableDateInputs={true}
-              onChange={(item) => setState([item.selection])}
-              moveRangeOnFirstSelection={false}
-              ranges={state}
-            />
-          </Box>
-          {/* Terms and Conditions */}
-          <Typography
-            variant="h5"
-            className={mulish.className}
-            style={{
-              color: "#11142D",
-              fontSize: "16px",
-              lineHeight: "120%",
-              fontStyle: "normal",
-              letterSpacing: "0.08px",
-              fontWeight: "700",
-              marginTop: "8px",
-            }}
-          >
-            {termsText.termTitle}
-          </Typography>
-          {/* Special Request */}
-          <Typography
-            variant="body1"
-            className={mulish.className}
-            style={{
-              color: "#9A9AB0",
-              fontSize: "16px",
-              lineHeight: "125%",
-              fontStyle: "normal",
-              letterSpacing: "0.08px",
-              fontWeight: "400",
-              marginTop: "16px",
-            }}
-          >
-           {termsText.term1}
-          </Typography>
-          <Typography
-            variant="body1"
-            className={mulish.className}
-            style={{
-              color: "#9A9AB0",
-              fontSize: "16px",
-              lineHeight: "125%",
-              fontStyle: "normal",
-              letterSpacing: "0.08px",
-              fontWeight: "400",
-              marginTop: "16px",
-            }}
-          >
-            {termsText.term2}
-          </Typography>
-          <Typography
-            variant="body1"
-            className={mulish.className}
-            style={{
-              color: "#9A9AB0",
-              fontSize: "16px",
-              lineHeight: "125%",
-              fontStyle: "normal",
-              letterSpacing: "0.08px",
-              fontWeight: "400",
-              marginTop: "16px",
-            }}
-          >
-            {termsText.term3}
-          </Typography>
-        </CardContent>
-      </Card>
-    </>
+        {calenderData.calenderTitle}
+      </Typography>
+      <Box sx={{ justifyContent: "center", display: "flex" }}>
+        {/* Calendar component */}
+        <DateRange
+          editableDateInputs={true}
+          onChange={(item) => setState([item.selection])}
+          moveRangeOnFirstSelection={false}
+          ranges={state}
+        />
+      </Box>
+    </LocalizationProvider>
   );
 };
-
 export default Calender;
