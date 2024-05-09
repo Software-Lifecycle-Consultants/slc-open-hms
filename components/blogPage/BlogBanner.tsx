@@ -23,7 +23,7 @@ const Banner = () => {
       variant="contained" >
       {bannerData.buttonText}
       </Button>
-      <Typography sx={{marginBottom: "12%", marginTop:"1%",}}>{bannerData.bannerSlogen} <Link href="/privacy-policy" style={{color:"white",}}>{bannerData.bannerLinkText}</Link></Typography>
+      <Typography sx={{marginBottom: "12%", marginTop:"1%",}}>{bannerData.bannerSlogen} <Link href="https://www.google.com/intl/si/inputtools/try/" style={{color:"white",}}>{bannerData.bannerLinkText}</Link></Typography>
     </div>
     </div>
     

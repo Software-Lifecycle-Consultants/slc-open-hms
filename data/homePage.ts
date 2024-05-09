@@ -182,7 +182,7 @@ export const footerContent = {
   TermsConditionLink: "/terms-condition",
   CompanyNameText: "Travala",
   PrivacyPolicyText: "Privacy Policy",
-  PrivacyPolicyLink: "/privacy-policy",
+  PrivacyPolicyLink: "https://www.google.com/intl/si/inputtools/try/",
 };
 
 // error modal variable
