@@ -6,6 +6,7 @@ import ArrowBack from "@mui/icons-material/ArrowBack";
 import mainImage from "../../public/images/homePage/ErrorMessage/ErrorImage.webp";
 import Image from "next/image";
 import { inter } from "../../app/fonts";
+import Link from "next/link";
 
 /**
  * This page represents the 404 Error Message Page.
@@ -115,7 +116,7 @@ export default function ErrorMassage() {
                   gap: "auto",
                 }}
               >
-                <a href="/">
+                <Link href="/">
                   <Button
                     type="submit"
                     variant="contained"
@@ -150,8 +151,8 @@ export default function ErrorMassage() {
                     />
                     {pageDetails.backArroSection1}
                   </Button>
-                </a>
-                <a href="/">
+                </Link>
+                <Link href="/">
                   <Button
                     type="submit"
                     variant="contained"
@@ -178,7 +179,7 @@ export default function ErrorMassage() {
                   >
                     {pageDetails.backArroSection2}
                   </Button>
-                </a>
+                </Link>
               </Container>
             </Grid>
           </Grid>
