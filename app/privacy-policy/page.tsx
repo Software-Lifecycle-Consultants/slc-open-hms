@@ -31,6 +31,7 @@ function PrivacyPolicy() {
   } = privacyandpolicydata;
 
   return (
+    <>
     <Box
       maxWidth="1320px"
       margin="0 auto"
@@ -142,6 +143,7 @@ function PrivacyPolicy() {
         </Typography>
       </Box>
     </Box>
+    </>
   );
 }
 
