@@ -37,5 +37,7 @@ export const blogcontent = {
         title:"Conclusion",
         paragraph:"Sigiriya stands as a testament to the ingenuity, creativity, and resilience of its creators. From its awe-inspiring architecture to its enigmatic frescoes, every aspect of this ancient citadel tells a story of a bygone era. As visitors ascend its rockyheights and explore its hidden wonders, they are transported back in time, unraveling the mysteries of a civilization long past. Sigiriya is more than just a tourist attraction; it is a living testament to the enduring legacy of Sri Lanka's rich cultural heritage.",
         paragraph1:" So, if you ever find yourself in the pearl of the Indian Ocean, be sure to make the journey to Sigiriya and experience the magic of this ancient wonder for yourself.",
-    }
+    },
+    blogcardTitle:"From the blog",
+    blogcardDescription:"Uncover the essence of Sri Lanka through captivating narratives, vibrant imagery, and insightful exploration on our blog page.",
 }
