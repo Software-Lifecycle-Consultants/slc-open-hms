@@ -42,7 +42,8 @@ function PrivacyPolicy() {
       </Typography>
       <Box marginTop={7}>
         <Typography variant="subtitle1"> {/* Render the subtitle from header1Details */}
-          <b>{header1Details.effectiveDate}</b> {/* Render the effectiveDate from header1Details */}
+          {/* <b>{header1Details.effectiveDate}</b> */}
+           {/* Render the effectiveDate from header1Details */}
         </Typography>
         <Typography variant="body1">{header1Details.description}</Typography> {/* Render the Description from header1Details */}
       </Box>
