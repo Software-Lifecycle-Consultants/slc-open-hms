@@ -1,4 +1,5 @@
 
+"use client";
 import React from "react";
 import { Metadata } from "next";
 import Typography from "@mui/material/Typography";
