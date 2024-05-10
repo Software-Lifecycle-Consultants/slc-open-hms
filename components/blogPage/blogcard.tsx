@@ -82,7 +82,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, author, date, title, descrip
     <Box sx={{
       marginLeft:"200px",
       justifyContent: "flex-end"}}>       
-    <Link href={"/"} target="_blank">
+    <Link href={"/blog-detail"}>
       <Button 
             sx={{fontSize: {md:"14px", xs:"10px"},}}
             variant="contained"
