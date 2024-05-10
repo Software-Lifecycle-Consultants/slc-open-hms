@@ -5,6 +5,7 @@ export const pages = [
   { label: "Explore", route: "/explore" },
   { label: "Book Now", route: "/checkout" },
   { label: "Contact", route: "/contact-us" },
+  { label: "Blog", route: "/blog"}
 ];
 
 /* Assign button labels to the navigation bar component of the website */
@@ -19,6 +20,7 @@ export const drawerPages = [
   { label: "Explore", route: "/explore" },
   { label: "Book Now", route: "/checkout" },
   { label: "Contact", route: "/contact-us" },
+  { label: "Blog", route: "/blog"},
   { label: "Register", route: "/register" },
   { label: "Login", route: "/login" },
 ];
