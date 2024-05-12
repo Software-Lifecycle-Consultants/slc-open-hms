@@ -14,6 +14,7 @@ import AdminLayout from './admin/layout';
 import { useSelectedLayoutSegments } from 'next/navigation';
 import { metadata } from '@/data/metadata'; // Import the metadata constant
 import AdminNavbar from '@/components/AdminNavBar';
+import MainContent from '@/components/MainContent';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const segments = useSelectedLayoutSegments();
@@ -30,42 +31,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {isAdminRoute ? (
             <AdminLayout>
               {isAdminDashboardRoute ? <AdminNavbar /> : null}
-              {children}
+              <MainContent showFooter={false}>{children}</MainContent>
             </AdminLayout>
           ) : (
             <>
-              {/* The NavBar of the web page */}
               <Navbar />
-              {/* The box that wrappes the main content {children}  and Footer*/}
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  minHeight: '100vh',
-                }}
-              >
-                {/* Inner BoxTo allow children to grow and take up available space. */}
-                <Box
-                  sx={{
-                    flex: '1 0 auto',
-                  }}
-                >
-                  <div className="container">{children}</div>
-                </Box>
-                {/* The Footer of the web page */}
-                <Box
-                  sx={{
-                    flexShrink: 0, // To prevent Footer from shrinking, and to position at the bottom of the page.
-                    backgroundColor: '#1A242D',
-                    padding: '20px 0',
-                    width: '100%',
-                  }}
-                >
-                  <Container>
-                    <Footer />
-                  </Container>
-                </Box>
-              </Box>
+              <MainContent>{children}</MainContent>
             </>
           )}
         </ThemeProvider>
