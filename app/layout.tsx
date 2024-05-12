@@ -20,8 +20,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const isAdminRoute = segments.includes('admin');
   //const isAdminRoute = segments.some((segment) => segment === 'admin');
   const isAdminDashboardRoute = segments.includes('dashboard');
-  console.log("isAdminRoute is :" + isAdminRoute );
-  console.log("isAdminDashboardRoute is :" + isAdminDashboardRoute );
+  console.log("isAdminRoute is :" + isAdminRoute);
+  console.log("isAdminDashboardRoute is :" + isAdminDashboardRoute);
   return (
     <html lang="en" className={inter.className}>
       <body>
@@ -36,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <>
               {/* The NavBar of the web page */}
               <Navbar />
+              {/* The box that wrappes the main content {children} */}
               <Box
                 sx={{
                   display: 'flex',
@@ -43,10 +44,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   minHeight: '100vh',
                 }}
               >
-                {/* The box that wrappes the main content {children} */}
+                {/* Inner BoxTo allow children to grow and take up available space. */}
                 <Box
                   sx={{
-                    flex: '1 0 auto', // To allow children to grow and take up available space.
+                    flex: '1 0 auto',
                   }}
                 >
                   <div className="container">{children}</div>
