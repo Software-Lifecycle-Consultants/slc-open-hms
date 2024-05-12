@@ -64,7 +64,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <Container>
                     <Footer />
                   </Container>
-
                 </Box>
               </Box>
             </>
