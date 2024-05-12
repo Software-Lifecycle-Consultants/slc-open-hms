@@ -5,14 +5,14 @@ import Box from "@mui/material/Box";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import mainImage from "../../public/images/homePage/ErrorMessage/ErrorImage.webp";
 import Image from "next/image";
-import { inter } from "../../app/fonts";
+import { inter } from "./fonts";
 import Link from "next/link";
 
 /**
  * This page represents the 404 Error Message Page.
  */
 
-export default function ErrorMassage() {
+export default function NotFound() {
   return (
     <>
       <Container>
