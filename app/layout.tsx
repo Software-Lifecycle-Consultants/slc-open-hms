@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <>
               {/* The NavBar of the web page */}
               <Navbar />
-              {/* The box that wrappes the main content {children} */}
+              {/* The box that wrappes the main content {children}  and Footer*/}
               <Box
                 sx={{
                   display: 'flex',
