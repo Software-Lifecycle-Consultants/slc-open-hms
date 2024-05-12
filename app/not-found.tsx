@@ -116,7 +116,6 @@ export default function NotFound() {
                   gap: "auto",
                 }}
               >
-                <Link href="/">
                   <Button
                     type="submit"
                     variant="contained"
@@ -141,6 +140,7 @@ export default function NotFound() {
                       },
                       marginTop: "24px",
                     }}
+                    onClick={() => window.history.back()}
                   >
                     <ArrowBack
                       style={{
@@ -151,7 +151,6 @@ export default function NotFound() {
                     />
                     {pageDetails.backArroSection1}
                   </Button>
-                </Link>
                 <Link href="/">
                   <Button
                     type="submit"
