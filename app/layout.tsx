@@ -28,18 +28,43 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider theme={theme}>
           <CssBaseline />
           {isAdminRoute ? (
-            <AdminLayout> 
+            <AdminLayout>
               {isAdminDashboardRoute ? <AdminNavbar /> : null}
               {children}
-              </AdminLayout>  
+            </AdminLayout>
           ) : (
             <>
+              {/* The NavBar of the web page */}
               <Navbar />
-              <div className="container">{children}</div>
-              <Box sx={{ backgroundColor: '#1A242D', padding: '20px 0', width: '100%' }}>
-                <Container>
-                  <Footer />
-                </Container>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  minHeight: '100vh',
+                }}
+              >
+                {/* The box that wrappes the main content {children} */}
+                <Box
+                  sx={{
+                    flex: '1 0 auto', // To allow children to grow and take up available space.
+                  }}
+                >
+                  <div className="container">{children}</div>
+                </Box>
+                {/* The Footer of the web page */}
+                <Box
+                  sx={{
+                    flexShrink: 0, // To prevent Footer from shrinking, and to position at the bottom of the page.
+                    backgroundColor: '#1A242D',
+                    padding: '20px 0',
+                    width: '100%',
+                  }}
+                >
+                  <Container>
+                    <Footer />
+                  </Container>
+
+                </Box>
               </Box>
             </>
           )}
