@@ -3,7 +3,7 @@ import { pageDetails } from "@/data/errormessage";
 import { Button, Typography, Grid, Container } from "@mui/material";
 import Box from "@mui/material/Box";
 import ArrowBack from "@mui/icons-material/ArrowBack";
-import mainImage from "../../public/images/homePage/ErrorMessage/ErrorImage.webp";
+import mainImage from "@/public/images/homePage/ErrorMessage/ErrorImage.webp";
 import Image from "next/image";
 import { inter } from "./fonts";
 import Link from "next/link";
