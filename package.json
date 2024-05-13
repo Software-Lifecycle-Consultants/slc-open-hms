@@ -1,6 +1,6 @@
 {
-  "name": "hotel-management-system",
-  "version": "1.0.3",
+  "name": "hospitality-management-system",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
