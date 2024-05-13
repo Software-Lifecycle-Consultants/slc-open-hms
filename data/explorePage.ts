@@ -250,3 +250,36 @@ export const roomDetails = [
     bookingLinks: [{ expedia: "url3" }, { hotelscom: "url4" }],
   },
 ];
+
+/* Assign data to the search bar section of explore page */
+export const searchBarData = {
+  // search bar label
+  searchBarfilterlbl1: "Room Type",
+  searchBarfilterlbl2: "Guest",
+  searchBarfilterlbl3: "Beds",
+  searchBarfilterlbl4: "Short By",
+ 
+  //search bar list content
+  lbl1Content1: "Select Room Type",
+  lbl1Content2: "Executive Suite",
+  lbl1Content3: "Family room",
+  lbl1Content4: "King Suite",
+  
+  lbl2Content1: "Select Number of Guests",
+  lbl2Content2: "1 Adult",
+  lbl2Content3: "2 Adults",
+  lbl2Content4: "2 Adults & 1 child",
+
+  lbl3Content1: "Select Bed Type",
+  lbl3Content2: "1 single Queen",
+  lbl3Content3: "King size",
+  lbl3Content4: "Double bed",
+
+  lbl4Content1: "All",
+  lbl4Content2: "Twenty",
+  lbl4Content3: "Thirty",
+};
+
+export const additionalData ={
+  roomUnavailableMessage: "No rooms match the criteria.",
+};

@@ -6,7 +6,7 @@ import {
   CardContent,
 } from "@mui/material";
 import React from 'react'
-import { billingDetailsFormTitle } from "@/data/checkoutPage";
+import { billingDetailsForm } from "@/data/checkoutPage";
 import { lora, mulish } from "../../app/fonts";
 
 /**
@@ -70,7 +70,7 @@ const BillingDetails = () => {
                     marginTop: "10px",
                   }}
                 >
-                  {billingDetailsFormTitle}
+                  {billingDetailsForm.billingDetailsFormTitle}
                 </Typography>
               </Grid>
               {/* First Name */}
@@ -80,7 +80,7 @@ const BillingDetails = () => {
                   className={mulish.className}
                   style={formLabelStyles}
                 >
-                  First Name
+                  {billingDetailsForm.firstNameLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
@@ -97,7 +97,7 @@ const BillingDetails = () => {
                   className={mulish.className}
                   style={formLabelStyles}
                 >
-                  Last Name
+                  {billingDetailsForm.lastNameLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
@@ -114,7 +114,7 @@ const BillingDetails = () => {
                   className={mulish.className}
                   style={formLabelStyles}
                 >
-                  Email Address
+                  {billingDetailsForm.emailLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
@@ -131,7 +131,7 @@ const BillingDetails = () => {
                   className={mulish.className}
                   style={formLabelStyles}
                 >
-                  Phone Number
+                  {billingDetailsForm.telephoneLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
@@ -148,7 +148,7 @@ const BillingDetails = () => {
                   className={mulish.className}
                   style={formLabelStyles}
                 >
-                  Passport Number
+                  {billingDetailsForm.passportLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
@@ -165,7 +165,7 @@ const BillingDetails = () => {
                   className={mulish.className}
                   style={formLabelStyles}
                 >
-                  Address
+                  {billingDetailsForm.addressLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
