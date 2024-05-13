@@ -82,12 +82,14 @@ const NavBar = () => {
   const navigationToRegisterPage = () => {
     setIsLoading(true);
     router.push("/register");
+    setIsLoading(false);
   };
 
     /* Navigate to the login page */
   const navigationToLoginPage = () => {
     setIsLoading(true);
     router.push("/login");
+    setIsLoading(false);
   };
 
   const handleContentLoad = () => {
