@@ -1,0 +1,69 @@
+{
+   "room":{
+      "title":"Example Title",
+      "subtitle":"Example Subtitle",
+      "descriptionTitle":"This is an example description title.",
+      "description":"This is an example description.",
+      "coverimage":"example_image.jpg",
+      "images":[
+         "img1.png",
+         "img2.png",
+         "img3.png",
+         "img4.png"
+      ],
+      "categories":{
+         "category1":{
+            "title":"RoomType",
+            "values":[
+               "Exetive",
+               "Family",
+               "King",
+               "Single",
+               "Non-AC"
+            ]
+         },
+         "category2":{
+            "title":"RoomType",
+            "values":[
+               "Exetive",
+               "Family",
+               "King",
+               "Single",
+               "Non-AC"
+            ]
+         },
+         "category3":{
+            "title":"RoomType",
+            "values":[
+               "Exetive",
+               "Family",
+               "King",
+               "Single",
+               "Non-AC"
+            ]
+         }
+      },
+      "service-adons":{
+         "title":"Hotel Facilities",
+         "description":"These are the facilities we provide",
+         "adons":[
+            "Executive",
+            "Family",
+            "King",
+            "Single",
+            "Non-AC"
+         ]
+      },
+      "additionalInfo":{
+         "title":"Hotel Facilities",
+         "description":"These are the facilities we provide",
+         "adons":[
+            "Executive",
+            "Family",
+            "King",
+            "Single",
+            "Non-AC"
+         ]
+      }
+   }
+}

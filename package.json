@@ -1,6 +1,6 @@
 {
   "name": "hotel-management-system",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,31 +9,36 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.3",
-    "@mui/material": "^5.14.4",
+    "@mui/icons-material": "^5.15.12",
+    "@mui/material": "^5.15.12",
     "@mui/x-date-pickers": "^6.11.2",
     "@mui/x-date-pickers-pro": "^6.11.2",
-    "@types/node": "20.4.10",
-    "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.9",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.13",
+    "leaflet": "^1.9.4",
+    "leaflet-control-geocoder": "^2.4.0",
     "material-ui-colors": "^1.0.0",
-    "next": "13.4.13",
+    "next": "^14.2.2",
     "react": "^18.2.0",
     "react-date-range": "^1.4.0",
     "react-dom": "18.2.0",
+    "react-leaflet": "^4.2.1",
+    "react-phone-input-2": "^2.15.1",
     "react-responsive": "^9.0.2",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1",
-    "typescript": "5.1.6"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.11",
+    "@types/node": "20.11.4",
+    "@types/react": "18.2.48",
     "@types/react-date-range": "^1.4.4",
-    "@types/react-slick": "^0.23.10"
+    "@types/react-slick": "^0.23.10",
+    "typescript": "5.3.3"
   }
 }

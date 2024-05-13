@@ -1,19 +1,20 @@
-import { Box, Grid, Typography } from '@mui/material';
-import React from 'react'
-import { heroSection } from '@/data/explorePage';
+import { Box, Grid, Typography } from "@mui/material";
+import React from "react";
+import { heroSection } from "@/data/explorePage";
+import { lora, mulish } from "../../app/fonts";
 
 const HeroSection = () => {
   return (
     <>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Box sx={{ paddingTop: { xs: "112px", sm: "150px", md: "150px" } }}>
+          <Box sx={{ paddingTop: { xs: "25px", sm: "50px", md: "50px" } }}>
             <Typography
               variant="h1"
+              className={lora.className}
               sx={{
                 color: "#FFFFFF",
-                fontFamily: "Lora",
-                fontSize: "62px",
+                fontSize: { xs: "42px", sm: "50px", md: "55px" },
                 fontStyle: "normal",
                 fontWeight: 700,
                 lineHeight: "120%",
@@ -24,9 +25,9 @@ const HeroSection = () => {
             </Typography>
             <Typography
               variant="body1"
+              className={mulish.className}
               sx={{
                 color: "#FFFFFF",
-                fontFamily: "Mulish, sans-serif",
                 fontSize: "16px",
                 lineHeight: "125%",
                 fontStyle: "normal",
@@ -42,6 +43,6 @@ const HeroSection = () => {
       </Grid>
     </>
   );
-}
+};
 
-export default HeroSection
+export default HeroSection;

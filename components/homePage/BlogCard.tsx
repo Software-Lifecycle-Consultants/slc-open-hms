@@ -1,23 +1,57 @@
-import { blogCardText } from '@/data/homePage';
-import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
-import Image from 'next/image';
-import React from 'react'
+import { blogCardText, dialogBox } from "@/data/homePage";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+ 
+} from "@mui/material";
+import * as React from "react";
+import { montserrat } from "../../app/fonts";
+import { useRouter } from "next/navigation";
+
 
 /* DestinationCardDetails component displays details of a destination in a card. */
 
 interface BlogCardProps {
-  image: string; // The image URL of the destination.
+  vedioURL: string; // The image URL of the destination.
   city: string; // The name of the city.
   description: string; // A brief description of the destination.
   price: number; // The price per person for the destination.
 }
 
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: { xs: "85%", sm: "60%", md: "35%" },
+  height: "auto",
+  bgcolor: "background.paper",
+  boxShadow: 50,
+  p: 4,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
 const BlogCard: React.FC<BlogCardProps> = ({
-  image,
+  vedioURL,
   city,
   description,
   price,
 }) => {
+
+  
+
+  // set route to checkout page
+  const router = useRouter();
+  const navigationToBookNow = () => {
+    router.push("/checkout");
+  };
   return (
     <>
       {/* Card component */}
@@ -36,12 +70,12 @@ const BlogCard: React.FC<BlogCardProps> = ({
             margin: "0 auto",
           }}
         >
-          {/* Image component */}
-          <Image
-            src={image}
-            alt="test"
-            width={400}
-            height={284}
+          {/* video component */}
+          <iframe
+            src={vedioURL}
+            width="400"
+            height="284"
+            frameBorder="0"
             style={{
               width: "100%",
               height: "auto",
@@ -60,9 +94,9 @@ const BlogCard: React.FC<BlogCardProps> = ({
           <Typography
             gutterBottom
             variant="h5"
+            className={montserrat.className}
             style={{
               color: "#0C111F",
-              fontFamily: "Montserrat, sans-serif",
               fontSize: "24px",
               lineHeight: "26px",
               fontStyle: "normal",
@@ -76,7 +110,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
             variant="body2"
             style={{
               color: "rgba(12, 17, 31, 0.60)",
-              fontFamily: "Inter",
               fontSize: "18px",
               lineHeight: "180%",
               fontStyle: "normal",
@@ -99,7 +132,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
               variant="body2"
               style={{
                 color: "rgba(12, 17, 31, 0.60)",
-                fontFamily: "Inter",
                 fontSize: "18px",
                 lineHeight: "155%",
                 fontStyle: "normal",
@@ -127,7 +159,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
               <Typography
                 style={{
                   color: "rgba(12, 17, 31, 0.60)",
-                  fontFamily: "Inter",
                   fontSize: "18px",
                   lineHeight: "155%",
                   fontStyle: "normal",
@@ -147,16 +178,18 @@ const BlogCard: React.FC<BlogCardProps> = ({
             {/* Button for ticket booking */}
             <Button
               variant="contained"
+              onClick={navigationToBookNow}
               style={{
-                backgroundColor: "#7C46FE",
+                background: "var(--l-2, linear-gradient(135deg, #8482FF 0%, #7723FE 100%))",
                 borderRadius: "45px",
                 color: "#FFF",
-                fontFamily: "Inter",
                 fontSize: "14px",
                 lineHeight: "180%",
-                fontStyle: "normal",
+                fontStyle: "medium",
                 letterSpacing: "-0.14px",
                 fontWeight: "500",
+                fontFamily: "__Inter_e66fe9",
+                textTransform: "none",
               }}
             >
               {blogCardText.blogctaCaption}

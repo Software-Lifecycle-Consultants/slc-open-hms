@@ -1,44 +1,46 @@
-import type { Metadata } from 'next'
-import React, { PropsWithChildren } from "react";
+'use client';
+
+import React from 'react';
 import { Box, Container } from '@mui/material';
-import { Inter } from 'next/font/google'
-import CssBaseline from '@mui/material/CssBaseline'; // Import the CssBaseline component
+import { inter } from './fonts';
+import theme from '@/Theme';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Navbar from "../components/homePage/NavBar";
-import Footer from "../components/homePage/Footer";
-const inter = Inter({ subsets: ['latin'] })
+import Navbar from '../components/homePage/NavBar';
+import Footer from '../components/homePage/Footer';
+import AdminLayout from './admin/layout';
+import { useSelectedLayoutSegments } from 'next/navigation';
+import { metadata } from '@/data/metadata'; // Import the metadata constant
+import AdminNavbar from '@/components/AdminNavBar';
+import MainContent from '@/components/MainContent';
 
-export const metadata: Metadata = {
-  title: 'HMS Dev',
-  description: 'HMS System under development',
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const segments = useSelectedLayoutSegments();
+  const isAdminRoute = segments.includes('admin');
+  //const isAdminRoute = segments.some((segment) => segment === 'admin');
+  const isAdminDashboardRoute = segments.includes('dashboard');
+  console.log("isAdminRoute is :" + isAdminRoute);
+  console.log("isAdminDashboardRoute is :" + isAdminDashboardRoute);
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {/* Add the CssBaseline component to override the 8px margin */}
-        <CssBaseline />
-        <Navbar />
-        <div className="container">{children}</div>
-        {/* Footer*/}
-        <Box
-          sx={{
-            backgroundColor: "#FFF",
-            padding: "20px 0",
-            width: "100%",
-          }}
-        >
-          <Container>
-            <Footer />
-          </Container>
-        </Box>
+    <html lang="en" className={inter.className}>
+      <body>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          {isAdminRoute ? (
+            <AdminLayout>
+              {isAdminDashboardRoute ? <AdminNavbar /> : null}
+              <MainContent showFooter={false}>{children}</MainContent>
+            </AdminLayout>
+          ) : (
+            <>
+              <Navbar />
+              <MainContent>{children}</MainContent>
+            </>
+          )}
+        </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

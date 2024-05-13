@@ -1,3 +1,3 @@
-export { default as wallet } from "./Wallet.png";
-export { default as user } from "./3 User.png";
-export { default as heart } from "./Heart.png";
+export { default as wallet } from "./Wallet.webp";
+export { default as user } from "./3 User.webp";
+export { default as heart } from "./Heart.webp";

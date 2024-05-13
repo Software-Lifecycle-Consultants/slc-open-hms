@@ -8,6 +8,12 @@ import {
 import React from "react";
 import CheckList from "./CheckList";
 import { extraFacilitationSection } from "@/data/checkoutPage";
+import { lora, mulish } from "../../app/fonts";
+
+/* Font style for placeholder */
+const mulishPlaceholderStyle = {
+  fontFamily: "Mulish",
+};
 
 /* Functional component for ExtraFacilitation */
 const ExtraFacilitation = () => {
@@ -27,9 +33,9 @@ const ExtraFacilitation = () => {
           {/* Title */}
           <Typography
             variant="h1"
+            className={lora.className}
             style={{
-              color: "var(--light-text-color-title, #11142D)",
-              fontFamily: "Lora",
+              color: "#11142D",
               fontSize: "24px",
               lineHeight: "120%",
               fontStyle: "normal",
@@ -43,9 +49,9 @@ const ExtraFacilitation = () => {
           {/* Facility 1 */}
           <Typography
             variant="h5"
+            className={lora.className}
             style={{
-              color: "var(--light-text-color-title, #11142D)",
-              fontFamily: "Lora",
+              color: "#11142D",
               fontSize: "24px",
               lineHeight: "120%",
               fontStyle: "normal",
@@ -63,9 +69,9 @@ const ExtraFacilitation = () => {
           {/* Facility 2 */}
           <Typography
             variant="h5"
+            className={lora.className}
             style={{
-              color: "var(--light-text-color-title, #11142D)",
-              fontFamily: "Lora",
+              color: "#11142D",
               fontSize: "24px",
               lineHeight: "120%",
               fontStyle: "normal",
@@ -83,9 +89,9 @@ const ExtraFacilitation = () => {
           {/* Special Request */}
           <Typography
             variant="body1"
+            className={mulish.className}
             style={{
-              color: "var(--light-text-color-body-1, #515151)",
-              fontFamily: "Mulish, sans-serif",
+              color: "#515151",
               fontSize: "16px",
               lineHeight: "120%",
               fontStyle: "normal",
@@ -94,7 +100,7 @@ const ExtraFacilitation = () => {
               marginTop: "28px",
             }}
           >
-            Special Request
+            {extraFacilitationSection.requestText}
           </Typography>
           {/* TextField for Special Request */}
           <TextField
@@ -104,6 +110,7 @@ const ExtraFacilitation = () => {
             multiline
             rows={4} // Adjust the number of rows to fit your desired height
             sx={{ width: "100%", marginTop: "10px" }}
+            InputProps={{ style: mulishPlaceholderStyle }}
           />
         </CardContent>
       </Card>

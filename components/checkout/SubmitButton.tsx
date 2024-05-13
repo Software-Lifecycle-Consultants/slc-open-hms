@@ -1,7 +1,8 @@
-import { Button, Checkbox, Typography, Box } from '@mui/material';
-import React from 'react'
-import { submitContent } from '@/data/checkoutPage';
-
+import { Button, Checkbox, Typography, Box } from "@mui/material";
+import React from "react";
+import { submitContent } from "@/data/checkoutPage";
+import { mulish } from "../../app/fonts";
+import { orangebuttonCommonStyle } from "../homePage/styles";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const SubmitButton = () => {
@@ -21,49 +22,28 @@ const SubmitButton = () => {
         />
         <Typography
           variant="body1"
+          className={mulish.className}
           style={{
-            color: "color: var(--light-text-color-body-1, #515151)",
-            fontFamily: "Mulish, sans-serif",
+            color: "#515151",
             fontSize: "16px",
             lineHeight: "120%",
             fontStyle: "normal",
             letterSpacing: "0.08px",
             fontWeight: "600",
             marginTop: "24px",
-          }}
-        >
+          }}>
           {submitContent.condition}
         </Typography>
       </Box>
       <Button
         variant="contained"
-        sx={{
-          borderRadius: "8px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "18px 24px",
-          gap: "10px",
-          textTransform: "none",
-          width: "100%",
-          height: "56px",
-          marginTop: "20px",
-          fontFamily: "Mulish, sans-serif",
-          fontSize: "16px",
-          fontStyle: "normal",
-          fontWeight: "600",
-          lineHeight: "120%",
-          letterSpacing: "0.08px",
-          backgroundColor: "#C7923E",
-          "&:hover": {
-            backgroundColor: "#c7833e",
-          },
-        }}
+        className={mulish.className}
+        sx={{...orangebuttonCommonStyle ,marginBottom: "100px" }}
       >
         {submitContent.submitctaCaption}
       </Button>
     </>
   );
-}
+};
 
-export default SubmitButton
+export default SubmitButton;

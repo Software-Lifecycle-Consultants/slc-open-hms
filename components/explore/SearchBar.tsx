@@ -1,20 +1,49 @@
-"use client"
-import { Box, Container, FormControl, Grid, InputAdornment, InputLabel, MenuItem, TextField } from '@mui/material';
-import React from 'react'
-import { useState } from "react";
+"use client";
+import {
+  Box,
+  Container,
+  FormControl,
+  Grid,
+  InputAdornment,
+  InputLabel,
+  MenuItem,
+  TextField,
+} from "@mui/material";
+import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { searchBarData } from "@/data/explorePage";
 
 const SearchBar = () => {
-    const [searchTerm, setSearchTerm] = useState("");
-    const [age, setAge] = useState("");
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
 
-    const handleSelect = (event: SelectChangeEvent) => {
-      setAge(event.target.value);
-    };
+  const handleSelect = (key: string, selector: string) => {
+    //key = field name, selector = selected value
+    const params = new URLSearchParams(searchParams);
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      setSearchTerm(event.target.value);
+    if (selector) {
+      params.set(key, selector);
+    } else {
+      params.delete(key);
+    }
+    //replace the current url with the new url
+    replace(`${pathname}?${params.toString()}`);
+  };
+
+  const handleSearch = (searchTerm: string) => {
+    //searchTerm = search query
+    const params = new URLSearchParams(searchParams);
+
+    if (searchTerm) {
+      params.set("query", searchTerm);
+    } else {
+      params.delete("query");
+    }
+    //replace the current url with the new url
+    replace(`${pathname}?${params.toString()}`);
   };
 
   return (
@@ -35,8 +64,8 @@ const SearchBar = () => {
                 id="search"
                 type="search"
                 label="Search"
-                value={searchTerm}
-                onChange={handleChange}
+                defaultValue={searchParams.get("query")?.toString()}
+                onChange={(e) => handleSearch(e.target.value)}
                 sx={{ width: "100%" }}
                 InputProps={{
                   endAdornment: (
@@ -66,18 +95,21 @@ const SearchBar = () => {
                     sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
                   >
                     <InputLabel id="demo-simple-select-standard-label">
-                      Room Type
+                      {searchBarData.searchBarfilterlbl1}
                     </InputLabel>
                     <Select
                       labelId="demo-simple-select-standard-label"
-                      id="demo-simple-select-standard"
-                      value={age}
-                      onChange={handleSelect}
+                      id="roomType"
+                      value={searchParams.get("roomType")?.toString() || ""}
+                      onChange={(e) => handleSelect("roomType", e.target.value)}
                       label="Room Type"
                     >
-                      <MenuItem value={1}>Executive Suite</MenuItem>
-                      <MenuItem value={2}>Family room</MenuItem>
-                      <MenuItem value={3}>King Suite</MenuItem>
+                      <MenuItem value="">{searchBarData.lbl1Content1}</MenuItem>
+                      <MenuItem value="Executive Suite">
+                      {searchBarData.lbl1Content2}
+                      </MenuItem>
+                      <MenuItem value="Family Room">{searchBarData.lbl1Content3}</MenuItem>
+                      <MenuItem value="King Suite">{searchBarData.lbl1Content4}</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
@@ -87,18 +119,21 @@ const SearchBar = () => {
                     sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
                   >
                     <InputLabel id="demo-simple-select-standard-label">
-                      Guest
+                    {searchBarData.searchBarfilterlbl2}
                     </InputLabel>
                     <Select
                       labelId="demo-simple-select-standard-label"
-                      id="demo-simple-select-standard"
-                      value={age}
-                      onChange={handleSelect}
+                      id="guest"
+                      value={searchParams.get("guest")?.toString() || ""}
+                      onChange={(e) => handleSelect("guest", e.target.value)}
                       label="Guest"
                     >
-                      <MenuItem value={1}>2 Adults</MenuItem>
-                      <MenuItem value={2}>1 Adult</MenuItem>
-                      <MenuItem value={3}>2 Adults & 1 child</MenuItem>
+                      <MenuItem value="">{searchBarData.lbl2Content1}</MenuItem>
+                      <MenuItem value="1 Adult">{searchBarData.lbl2Content2}</MenuItem>
+                      <MenuItem value="2 Adults">{searchBarData.lbl2Content3}</MenuItem>
+                      <MenuItem value="2 Adults & 1 child">
+                      {searchBarData.lbl2Content4} 
+                      </MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
@@ -108,18 +143,19 @@ const SearchBar = () => {
                     sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
                   >
                     <InputLabel id="demo-simple-select-standard-label">
-                      Beds
+                    {searchBarData.searchBarfilterlbl3}
                     </InputLabel>
                     <Select
                       labelId="demo-simple-select-standard-label"
-                      id="demo-simple-select-standard"
-                      value={age}
-                      onChange={handleSelect}
+                      id="beds"
+                      value={searchParams.get("beds")?.toString() || ""}
+                      onChange={(e) => handleSelect("beds", e.target.value)}
                       label="Beds"
                     >
-                      <MenuItem value={1}>1 single Queen</MenuItem>
-                      <MenuItem value={2}>King size</MenuItem>
-                      <MenuItem value={3}>Double bed</MenuItem>
+                      <MenuItem value="">{searchBarData.lbl3Content1}</MenuItem>
+                      <MenuItem value="1 single Queen">{searchBarData.lbl3Content2}</MenuItem>
+                      <MenuItem value="King size">{searchBarData.lbl3Content3}</MenuItem>
+                      <MenuItem value="Double bed">{searchBarData.lbl3Content4}</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
@@ -129,18 +165,18 @@ const SearchBar = () => {
                     sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
                   >
                     <InputLabel id="demo-simple-select-standard-label">
-                      Sort By
+                    {searchBarData.searchBarfilterlbl4}
                     </InputLabel>
                     <Select
                       labelId="demo-simple-select-standard-label"
-                      id="demo-simple-select-standard"
-                      value={age}
-                      onChange={handleSelect}
+                      id="sortBy"
+                      value={searchParams.get("sortBy")?.toString() || ""}
+                      onChange={(e) => handleSelect("sortBy", e.target.value)}
                       label="Sort By"
                     >
-                      <MenuItem value={1}>All</MenuItem>
-                      <MenuItem value={2}>Twenty</MenuItem>
-                      <MenuItem value={3}>Thirty</MenuItem>
+                      <MenuItem value="">{searchBarData.lbl4Content1}</MenuItem>
+                      <MenuItem value="20">{searchBarData.lbl4Content2}</MenuItem>
+                      <MenuItem value="30">{searchBarData.lbl4Content3}</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
@@ -151,6 +187,6 @@ const SearchBar = () => {
       </Box>
     </>
   );
-}
+};
 
-export default SearchBar
+export default SearchBar;

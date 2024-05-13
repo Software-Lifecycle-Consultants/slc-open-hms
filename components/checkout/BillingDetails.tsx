@@ -6,11 +6,35 @@ import {
   CardContent,
 } from "@mui/material";
 import React from 'react'
-import { billingDetailsFormTitle } from "@/data/checkoutPage";
+import { billingDetailsForm } from "@/data/checkoutPage";
+import { lora, mulish } from "../../app/fonts";
 
 /**
  * BillingDetails component is the form used in checkout page to input users billing details.
  */
+
+/* Syles for text fields */
+const textFieldStyles = {
+  width: "100%",
+  height: "48px",
+  marginTop: "10px",
+};
+
+/* Styles for form labels */
+const formLabelStyles = {
+  color: "#11142D",
+  fontSize: "16px",
+  lineHeight: "120%",
+  fontStyle: "normal",
+  letterSpacing: "0.08px",
+  fontWeight: "700",
+  marginTop: "10px",
+};
+
+/* Font style for placeholder */
+const mulishPlaceholderStyle = {
+  fontFamily: "Mulish",
+};
 
 const BillingDetails = () => {
   return (
@@ -23,7 +47,7 @@ const BillingDetails = () => {
           maxWidth: "816px",
           border: "1px solid",
           borderRadius: "8px",
-          borderColor: "var(--light-separators-colors-secondary, #E1E1E1)",
+          borderColor: "#E1E1E1",
           flexShrink: "0",
         }}
       >
@@ -35,9 +59,9 @@ const BillingDetails = () => {
               <Grid item xs={12}>
                 <Typography
                   variant="h1"
+                  className={lora.className}
                   style={{
-                    color: "var(--light-text-color-title, #11142D)",
-                    fontFamily: "Lora",
+                    color: "#11142D",
                     fontSize: "24px",
                     lineHeight: "120%",
                     fontStyle: "normal",
@@ -46,145 +70,102 @@ const BillingDetails = () => {
                     marginTop: "10px",
                   }}
                 >
-                  {billingDetailsFormTitle}
+                  {billingDetailsForm.billingDetailsFormTitle}
                 </Typography>
               </Grid>
               {/* First Name */}
               <Grid item xs={12} md={6}>
                 <Typography
                   variant="h1"
-                  style={{
-                    color: "var(--light-text-color-title, #11142D)",
-                    fontFamily: "Mulish, sans-serif",
-                    fontSize: "16px",
-                    lineHeight: "120%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.08px",
-                    fontWeight: "700",
-                    marginTop: "10px",
-                  }}
+                  className={mulish.className}
+                  style={formLabelStyles}
                 >
-                  First Name
+                  {billingDetailsForm.firstNameLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
                   placeholder="Input your First Name in Here"
                   variant="outlined"
-                  sx={{ width: "100%", height: "48px", marginTop: "10px" }}
+                  sx={textFieldStyles}
+                  InputProps={{ style: mulishPlaceholderStyle }}
                 />
               </Grid>
               {/* Last Name */}
               <Grid item xs={12} md={6}>
                 <Typography
                   variant="h1"
-                  style={{
-                    color: "var(--light-text-color-title, #11142D)",
-                    fontFamily: "Mulish, sans-serif",
-                    fontSize: "16px",
-                    lineHeight: "120%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.08px",
-                    fontWeight: "700",
-                    marginTop: "10px",
-                  }}
+                  className={mulish.className}
+                  style={formLabelStyles}
                 >
-                  Last Name
+                  {billingDetailsForm.lastNameLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
                   placeholder="Input your Last Name in Here"
                   variant="outlined"
-                  sx={{ width: "100%", height: "48px", marginTop: "10px" }}
+                  sx={textFieldStyles}
+                  InputProps={{ style: mulishPlaceholderStyle }}
                 />
               </Grid>
               {/* Email Address */}
               <Grid item xs={12}>
                 <Typography
                   variant="h1"
-                  style={{
-                    color: "var(--light-text-color-title, #11142D)",
-                    fontFamily: "Mulish, sans-serif",
-                    fontSize: "16px",
-                    lineHeight: "120%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.08px",
-                    fontWeight: "700",
-                    marginTop: "10px",
-                  }}
+                  className={mulish.className}
+                  style={formLabelStyles}
                 >
-                  Email Address
+                  {billingDetailsForm.emailLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
                   placeholder="Input your Email Address in Here"
                   variant="outlined"
-                  sx={{ width: "100%", height: "48px", marginTop: "10px" }}
+                  sx={textFieldStyles}
+                  InputProps={{ style: mulishPlaceholderStyle }}
                 />
               </Grid>
               {/* Phone Number */}
               <Grid item xs={12}>
                 <Typography
                   variant="h1"
-                  style={{
-                    color: "var(--light-text-color-title, #11142D)",
-                    fontFamily: "Mulish, sans-serif",
-                    fontSize: "16px",
-                    lineHeight: "120%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.08px",
-                    fontWeight: "700",
-                    marginTop: "10px",
-                  }}
+                  className={mulish.className}
+                  style={formLabelStyles}
                 >
-                  Phone Number
+                  {billingDetailsForm.telephoneLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
                   placeholder="Input your Phone Number in Here"
                   variant="outlined"
-                  sx={{ width: "100%", height: "48px", marginTop: "10px" }}
+                  sx={textFieldStyles}
+                  InputProps={{ style: mulishPlaceholderStyle }}
                 />
               </Grid>
               {/* Passport Number */}
               <Grid item xs={12}>
                 <Typography
                   variant="h1"
-                  style={{
-                    color: "var(--light-text-color-title, #11142D)",
-                    fontFamily: "Mulish, sans-serif",
-                    fontSize: "16px",
-                    lineHeight: "120%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.08px",
-                    fontWeight: "700",
-                    marginTop: "10px",
-                  }}
+                  className={mulish.className}
+                  style={formLabelStyles}
                 >
-                  Passport Number
+                  {billingDetailsForm.passportLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
                   placeholder="Input your Email Address in Here"
                   variant="outlined"
-                  sx={{ width: "100%", height: "48px", marginTop: "10px" }}
+                  sx={textFieldStyles}
+                  InputProps={{ style: mulishPlaceholderStyle }}
                 />
               </Grid>
               {/* Address */}
               <Grid item xs={12}>
                 <Typography
                   variant="h1"
-                  style={{
-                    color: "var(--light-text-color-title, #11142D)",
-                    fontFamily: "Mulish, sans-serif",
-                    fontSize: "16px",
-                    lineHeight: "120%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.08px",
-                    fontWeight: "700",
-                    marginTop: "10px",
-                  }}
+                  className={mulish.className}
+                  style={formLabelStyles}
                 >
-                  Address
+                  {billingDetailsForm.addressLbl}
                 </Typography>
                 <TextField
                   id="outlined-basic"
@@ -196,6 +177,7 @@ const BillingDetails = () => {
                     marginTop: "10px",
                     marginBottom: "30px",
                   }}
+                  InputProps={{ style: mulishPlaceholderStyle }}
                 />
               </Grid>
             </Grid>

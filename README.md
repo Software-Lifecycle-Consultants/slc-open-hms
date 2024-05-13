@@ -54,7 +54,7 @@ npm install @mui/icons-material
 - [react-date-range](https://www.npmjs.com/package/react-date-range) - Version 1.4.4
   - A date library agnostic React component for choosing dates and date ranges. 
   - Uses date-fns for date operations.
-  - Install the pkg/s using the following commands and import skeleton and theme styles.
+  - Install the package in your project directory using the following commands.
  ```bash
 npm install --save react-date-range
 npm install --save react date-fns
@@ -67,6 +67,21 @@ npm install --save react date-fns
 ```bash
 npm install react-slick --save
 npm install slick-carousel
+ ```
+
+ - [react-phone-input-2](https://www.npmjs.com/package/react-phone-input-2) - Version 2.15.1
+  - A customizable phone input component with auto formatting.
+  - Install the package in your project directory using the following commands.
+```bash
+npm install react-phone-input-2 --save
+ ```
+ 
+ - [leaflet](https://www.npmjs.com/package/leaflet) - Version 1.9.4
+  - An open-source JavaScript library for mobile-friendly interactive map
+  - Install the package in your project directory using the following commands.
+```bash
+npm install leaflet\
+npm i leaflet-control-geocoder@1.8.3
  ```
 
 3. Set up the environment variables:

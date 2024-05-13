@@ -10,7 +10,6 @@ import BlogCard from "./BlogCard";
 /* Styles for typography - Heading 1 */
 const typographyh1Styles = {
   color: "#0C111F",
-  fontFamily: "Inter",
   fontSize: "48px",
   lineHeight: "130%",
   fontStyle: "normal",
@@ -21,7 +20,6 @@ const typographyh1Styles = {
 /* Styles for typography - Body 2 */
 const typographybody2Styles = {
   color: "#0C111F",
-  fontFamily: "Inter",
   fontSize: "20px",
   lineHeight: "180%",
   fontStyle: "normal",
@@ -52,7 +50,7 @@ const Blog = () => {
             <>
               {/* Destination card details component */}
               <BlogCard
-                image={item.image}
+                vedioURL={item.vedioURL}
                 city={item.city}
                 description={item.description}
                 price={item.price}

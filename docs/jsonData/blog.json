@@ -1,0 +1,24 @@
+{
+   "blog":{
+      "title":"This is blog title",
+      "subtitle":"This is blog subtitle",
+      "coverimage": "cover_image.jpg",
+      "publishedTime": "2024-04-24",
+      "tags":{
+         "tag1":true,
+         "tag2":true,
+         "tag3":true
+      },
+      "blogcontent":"blog content goes here",
+      "author":{
+         "name":"Author Name",
+         "description":"Author description goes here",
+         "authorimage":"author_image.jpg",
+         "socialmedia":{
+            "facebook":"facebook_username",
+            "twitter":"twitter_username",
+            "linkedin":"linkedin_username"
+         }
+      }
+   }
+}
