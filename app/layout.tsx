@@ -15,6 +15,7 @@ import { useSelectedLayoutSegments } from 'next/navigation';
 import { metadata } from '@/data/metadata'; // Import the metadata constant
 import AdminNavbar from '@/components/AdminNavBar';
 import MainContent from '@/components/MainContent';
+import Script from 'next/script';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const segments = useSelectedLayoutSegments();
@@ -25,7 +26,44 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   console.log("isAdminDashboardRoute is :" + isAdminDashboardRoute);
   return (
     <html lang="en" className={inter.className}>
+      <head>
+        {/* Google Analytics Script */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-PFMTG15DNW"
+      />
+      <Script id='g-analytics'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-PFMTG15DNW');
+        `}
+      </Script>
+      {/* Google Tag Manager */}
+      <Script id='g-tag-manager'>
+        {
+          `
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-KLK5J5D4');
+          `
+        }
+      </Script>
+      </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-KLK5J5D4"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            ></iframe>
+          </noscript>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           {isAdminRoute ? (
