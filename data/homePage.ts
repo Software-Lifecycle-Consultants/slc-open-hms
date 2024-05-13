@@ -21,8 +21,8 @@ export const drawerPages = [
   { label: "Book Now", route: "/checkout" },
   { label: "Contact", route: "/contact-us" },
   { label: "Blog", route: "/blog"},
-  { label: "Register", route: "/register" },
-  { label: "Login", route: "/login" },
+  // { label: "Register", route: "/register" },  //TEMPORARY REMOVE
+  // { label: "Login", route: "/login" }, // TEMPORARY REMOVE
 ];
 
 /* Assign array of pages and their corresponding routes to the navigation drawer component of the website */
