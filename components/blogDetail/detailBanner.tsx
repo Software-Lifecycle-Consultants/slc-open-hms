@@ -1,4 +1,4 @@
-import { Typography, Grid, Stack, Chip, List, ListItem, Box } from "@mui/material";
+import { Typography, Grid, Stack, Chip, Box } from "@mui/material";
 import Image from "next/image";
 import sigiriRock from "@/public/images/blogDetails/sigiriRock.webp";
 import {blogcontent} from "@/data/blogDetail"
