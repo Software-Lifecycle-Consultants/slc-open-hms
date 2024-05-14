@@ -5,11 +5,11 @@ const Banner = () => {
   return(
     <div style={{textAlign:"center"}}>
       {/* text in the banner  */}
-    <Typography sx={{fontSize:"16px"}}>{bannerData.bannertext}</Typography>
-    <Typography sx={{fontSize:"48px"}}>{bannerData.bannerTitle}</Typography>
-    <Typography sx={{fontSize:"20px"}}>{bannerData.bannerDescription}</Typography>
+    <Typography  sx={{fontSize:"16px"}}>{bannerData.bannertext}</Typography>
+    <Typography mt={2} sx={{fontSize:"48px"}}>{bannerData.bannerTitle}</Typography>
+    <Typography mt={2} sx={{fontSize:"20px"}}>{bannerData.bannerDescription}</Typography>
     {/* text area to enter the email */}
-    <div style={{alignItems:"center", marginTop:"15px",}}>
+    <div style={{alignItems:"center", marginTop:"40px",}}>
     <TextField id="filled-basic" label="Enter your email" variant="filled" sx={{backgroundColor:"white",borderRadius:"8px",height:"48px",
         width:"25%", fontSize:"14px",}}/>
     {/* button in the banner section */}
