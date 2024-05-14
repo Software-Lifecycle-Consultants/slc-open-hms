@@ -1,4 +1,4 @@
-import { Typography,Grid,TextField,Button, Link } from "@mui/material";
+import { Typography,Grid,TextField,Button, Link, Box } from "@mui/material";
 import { bannerData } from '@/data/blogPage';
 // banner section of the blog page
 const Banner = () => {
@@ -10,8 +10,9 @@ const Banner = () => {
     <Typography mt={2} sx={{fontSize:"20px"}}>{bannerData.bannerDescription}</Typography>
     {/* text area to enter the email */}
     <div style={{alignItems:"center", marginTop:"40px",}}>
+      <Box mx={"auto"} >
     <TextField id="filled-basic" label="Enter your email" variant="filled" sx={{backgroundColor:"white",borderRadius:"8px",height:"48px",
-        width:"25%", fontSize:"14px",}}/>
+        width:{md:"30%", xs:"50%"}, fontSize:{md:"14px", xs:"10px"}, justifyContent:"center"}}/>
     {/* button in the banner section */}
       <Button sx={{
         marginLeft:"15px",
@@ -19,11 +20,13 @@ const Banner = () => {
         width:"auto",
         background: "var(--l-2, linear-gradient(135deg, #8482FF 0%, #7723FE 100%))",
         borderRadius:"8px",
+        fontSize:{md:"14px", xs:"12px"},
       }} 
       variant="contained" >
       {bannerData.buttonText}
       </Button>
-      <Typography sx={{marginBottom: "12%", marginTop:"1%",}}>{bannerData.bannerSlogen} <Link href="/privacy-policy" style={{color:"white",}}>{bannerData.bannerLinkText}</Link></Typography>
+      <Typography ml={{md:"250px", xs:"40px", sm:"130px", lg:"345px", xl:""}} sx={{marginBottom: "12%", marginTop:"1%", textAlign:"left"}}>{bannerData.bannerSlogen} <Link href="/privacy-policy" style={{color:"white",}}>{bannerData.bannerLinkText}</Link></Typography>
+      </Box>
     </div>
     </div>
     
