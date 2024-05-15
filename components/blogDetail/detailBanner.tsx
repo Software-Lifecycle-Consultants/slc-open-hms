@@ -1,4 +1,4 @@
-import { Typography, Grid, Stack, Chip, List, ListItem, Box } from "@mui/material";
+import { Typography, Grid, Stack, Chip, Box } from "@mui/material";
 import Image from "next/image";
 import sigiriRock from "@/public/images/blogDetails/sigiriRock.webp";
 import {blogcontent} from "@/data/blogDetail"
@@ -14,22 +14,12 @@ const DetailBanner = () => {
             {/* Grid item for alignment and title */}
             <Grid item xs sx={{ alignItems: "center", textAlign: "center" }}>
               {/* Published date */}
-              <Box sx={{width:"250px", mx:"auto",}}>
-                <List
-                  style={{
-                    display: "flex",
-                    color: "#7F56D9",
-                    justifyContent: "center",
-                    gap:"5px",
-                  }}
-                >
-                  <ListItem>
+              <Box sx={{width:"250px", mx:"auto", display:"flex", gap:"10px", color:"#7F56D9"}}>
+                
+                  
                     <Typography> Published </Typography>
-                  </ListItem>
-                  <ListItem sx={{marginLeft:"-80px"}}>
                     <Typography> 27 may 2024 </Typography>
-                  </ListItem>
-                </List>
+                
               </Box>
               {/* Main title */}
               <Typography

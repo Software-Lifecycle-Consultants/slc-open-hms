@@ -79,9 +79,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, author, date, title, descrip
             </Box>
             <Box>{description}</Box>
             
-    <Box sx={{
-      marginLeft:"200px",
-      justifyContent: "flex-end"}}>       
+            <Stack direction="row" justifyContent="flex-end">      
     <Link href={"/blog-detail"}>
       <Button 
             sx={{fontSize: {md:"14px", xs:"10px"},}}
@@ -100,10 +98,10 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, author, date, title, descrip
               }}
           >
             Read more
-            <LaunchIcon sx={{ color: "#FFFFFF" ,  fontSize: {md:"14px", xs:"10px"}, marginLeft:"8px"}} />
+            <LaunchIcon sx={{ color: "#FFFFFF" ,  fontSize: {xl:"10px", md:"14px", xs:"10px"}, marginLeft:"8px"}} />
           </Button>
           </Link>
-          </Box>
+          </Stack>
       
         </CardContent>
       </Card>
