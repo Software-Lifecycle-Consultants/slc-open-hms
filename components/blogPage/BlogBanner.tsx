@@ -26,7 +26,7 @@ const Banner = () => {
         </Typography>
       </Box>
       {/* text area to enter the email */}
-      <Stack direction="row" justifyContent="flex-end" textAlign="center"> 
+      <Stack direction="row" justifyContent="flex-end" mx={{ xs: 4, md: 25, sm:28, s:2 }}> 
       <Box alignContent="center" mt={4}
         sx={{ width: "100%", justifyContent: "center", alignItems: "center", }}
       >
@@ -38,7 +38,7 @@ const Banner = () => {
             backgroundColor: "white",
             borderRadius: "8px",
             height: "48px",
-            width: { md: "30%", xs: "50%" },
+            width: { md: "70%", xs: "50%" },
             fontSize: { md: "14px", xs: "10px" },
             justifyContent: "center",
           }}
@@ -46,25 +46,26 @@ const Banner = () => {
         {/* button in the banner section */}
         <Button
           sx={{
-            marginLeft: "15px",
+            marginLeft: "10px",
             height: "48px",
             width: "auto",
             background:
               "var(--l-2, linear-gradient(135deg, #8482FF 0%, #7723FE 100%))",
             borderRadius: "8px",
-            fontSize: { md: "14px", xs: "12px" },
+            fontSize: { md: "14px", xs: "12px", s:"6px" },
           }}
           variant="contained"
         >
           {bannerData.buttonText}
         </Button>
-
-        <Typography mt={2} mb={20}>
+        <Box>
+        <Typography mt={2} mb={20}  sx={{alignItems:"center", }}>
           {bannerData.bannerSlogen}{" "}
           <Link href="/privacy-policy" style={{ color: "white" }}>
             {bannerData.bannerLinkText}
           </Link>
         </Typography>
+        </Box>
       </Box>
       </Stack>
     </Container>
