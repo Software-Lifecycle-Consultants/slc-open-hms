@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import LaunchIcon from '@mui/icons-material/Launch';
+import { bannerData } from "@/data/blogPage";
 
 
 interface BlogCardProps {
@@ -97,7 +98,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, author, date, title, descrip
                 textTransform: "none",
               }}
           >
-            Read more
+             {bannerData.Btntxtblogcard}
             <LaunchIcon sx={{ color: "#FFFFFF" ,  fontSize: {xl:"10px", md:"14px", xs:"10px"}, marginLeft:"8px"}} />
           </Button>
           </Link>

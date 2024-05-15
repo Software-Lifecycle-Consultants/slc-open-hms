@@ -40,4 +40,6 @@ export const blogcontent = {
     },
     blogcardTitle:"From the blog",
     blogcardDescription:"Uncover the essence of Sri Lanka through captivating narratives, vibrant imagery, and insightful exploration on our blog page.",
+    blogDetailtoptxt:"Published",
+    blogDetailDate:"27 may 2024",
 }

@@ -77,4 +77,5 @@ export const bannerData ={
     bannerSlogen: "We care about your data in our",
     bannerLinkText: "privacy policy",
     buttonText:"Subscribe",
+    Btntxtblogcard: "Read more",
 }
