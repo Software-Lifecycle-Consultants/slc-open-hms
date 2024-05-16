@@ -27,15 +27,16 @@ const ContactUs = () => {
         sx={{
           backgroundColor: "white",
           color: "white",
-          height: { xs: "200px", sm: "250px", md: "300px", lg: "300px" },
           width: "100%",
           display: "inline-block",
+          p: '2.5rem 0',
 
-          paddingBottom: "10px",
         }}
       >
+      <Container>
         {/* header section of the contact page */}
         <HeaderSection />
+      </Container>
       </Box>
 
       <Container>
