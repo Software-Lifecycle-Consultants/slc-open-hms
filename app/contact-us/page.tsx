@@ -38,6 +38,7 @@ const ContactUs = () => {
         <HeaderSection />
       </Box>
 
+      <Container>
       <Box
         sx={{
           display: { xs: "block", sm: "flex", md: "flex", lg: "flex" },
@@ -46,6 +47,7 @@ const ContactUs = () => {
         {/* contact card section */}
         <ContactCard />
       </Box>
+      </Container>
 
       <Container>
         <Box
