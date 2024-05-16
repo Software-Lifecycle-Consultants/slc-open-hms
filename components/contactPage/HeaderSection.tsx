@@ -17,6 +17,7 @@ const HeaderSection = () => {
           <Box
             sx={{
               paddingTop: { xs: "25px", sm: "50px", md: "50px" },
+              paddingLeft: { xs: "25px", sm: "50px", md: "50px", lg: "50px" },
               paddingBottom: { xs: "25px", sm: "50px", md: "50px", lg: "50px" },
               marginLeft: { xs: "10px", sm: "15px", md: "30px", lg: "60px" },
             }}
@@ -32,11 +33,14 @@ const HeaderSection = () => {
                 fontWeight: 700,
                 lineHeight: "120%",
                 letterSpacing: "0.186px",
+                whiteSpace: "nowrap",
               }}
             >
               {/* Header title text */}
               {contactHeading.headerTitle}
             </Typography>
+            <Grid>
+            <Box>
             {/* Description Typography */}
             <Typography
               variant="body1"
@@ -54,6 +58,8 @@ const HeaderSection = () => {
               {/* Header description text */}
               {contactHeading.headerDescription}
             </Typography>
+            </Box>
+            </Grid>
           </Box>
         </Grid>
       </Grid>
