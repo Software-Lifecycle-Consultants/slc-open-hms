@@ -17,8 +17,8 @@ const DetailBanner = () => {
               <Box sx={{width:"250px", mx:"auto", display:"flex", gap:"10px", color:"#7F56D9"}}>
                 
                   
-                    <Typography> Published </Typography>
-                    <Typography> 27 may 2024 </Typography>
+                    <Typography> {blogcontent.blogDetailtoptxt} </Typography>
+                    <Typography> {blogcontent.blogDetailDate} </Typography>
                 
               </Box>
               {/* Main title */}
