@@ -121,37 +121,38 @@ const roomDetails = () => {
         <Container>
           {/* (7) The Save and Close buttons are rendered here. */}
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
-            <Button
-              sx={{
-                marginTop: "7px",
-                justifyContent: "center",
-                backgroundColor: "#4A5472",
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                marginLeft: "70%",
-                textAlign: "center",
-              }}
-              variant="outlined"
-            >
-              Close
-            </Button>
-            <Button
-              sx={{
-                marginTop: "7px",
-                backgroundColor: "#4A5472",
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                marginLeft: "10px",
-                textAlign: "center",
-              }}
-              variant="contained"
-            >
-              Save
-            </Button>
+            <Box display="flex" justifyContent="end" alignItems="center">
+              <Button
+                sx={{
+                  marginTop: "7px",
+                  justifyContent: "center",
+                  color: "white",
+                  width: "100px",
+                  height: "30px",
+                  borderRadius: "8px",
+                  textAlign: "center",
+                }}
+                variant="outlined"
+              >
+                <Typography style={{ color: "#000" }}>Close</Typography>
+               
+              </Button>
+              <Button
+                sx={{
+                  marginTop: "7px",
+                  backgroundColor: "#4A5472",
+                  color: "white",
+                  width: "100px",
+                  height: "30px",
+                  borderRadius: "8px",
+                  marginLeft: "12px",
+                  textAlign: "center",
+                }}
+                variant="contained"
+              >
+                Save
+              </Button>
+            </Box>
           </Grid>
         </Container>
       </Box>
