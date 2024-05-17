@@ -90,7 +90,6 @@ export default function Category() {
           renderInput={(params) => (
             <TextField
               {...params}
-              variant="filled"
               label="Enter Category Name"
             />
           )}
@@ -127,7 +126,6 @@ export default function Category() {
           renderInput={(params) => (
             <TextField
               {...params}
-              variant="filled"
               label="Enter Category Name"
             />
           )}
@@ -164,7 +162,6 @@ export default function Category() {
           renderInput={(params) => (
             <TextField
               {...params}
-              variant="filled"
               label="Enter Category Name"
             />
           )}
@@ -201,7 +198,6 @@ export default function Category() {
           renderInput={(params) => (
             <TextField
               {...params}
-              variant="filled"
               label="Enter Category Name"
             />
           )}
