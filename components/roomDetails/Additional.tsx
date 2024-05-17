@@ -70,7 +70,7 @@ const Additional = () => {
                 <TextField
                   fullWidth
                   multiline
-                  rows={10}
+                  rows={14}
                   label="Enter description"
                   id="Enter description"
                 />
