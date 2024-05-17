@@ -120,7 +120,8 @@ export default function ServiceAd() {
                   ))
                 }
                 renderInput={(params) => (
-                  <TextField {...params} variant="filled" label="Towels" />
+                  <TextField {...params}
+                  label="Towels" />
                 )}
                 options={[]}
               />
