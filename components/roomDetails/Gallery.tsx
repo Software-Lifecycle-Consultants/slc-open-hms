@@ -1,8 +1,5 @@
 import * as React from "react";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import Image from "next/image";
-import { Grid, Card, Typography, Button,  } from "@mui/material";
+import { Box, Card, Typography, Button,  } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
@@ -60,6 +57,7 @@ export default function StandardImageList() {
         >
           Drag & Drop Your images or Browse
         </Typography>
+        <Box display="flex" justifyContent="end" alignItems="center">
         <Button
           component="label"
           role={undefined}
@@ -68,17 +66,34 @@ export default function StandardImageList() {
           startIcon={<CloudUploadIcon />}
           sx={{
             marginTop: "7px",
-            backgroundColor: "#4A5472",
-            marginLeft: "70%",
-            color: "white",
-
+            backgroundColor: "white",
+            color: "black",
             height: "30px",
             borderRadius: "8px",
           }}
         >
           <VisuallyHiddenInput type="file" />
         </Button>
+        </Box>
       </Card>
+      {/* Gallery images submit button */}
+      <Box display="flex" justifyContent="center" alignItems="center"> 
+        <Button
+          sx={{
+            marginTop: "7px",
+            justifyContent: "center",
+            color: "white",
+            width: "100px",
+            height: "30px",
+            borderRadius: "8px",
+            textAlign: "center",
+            backgroundColor: "#4A5472",
+          }}
+          variant="outlined"
+        >
+          <Typography style={{ color: "white" }}>Submit</Typography>
+        </Button>
+      </Box>
     </>
   );
 }
