@@ -37,6 +37,16 @@ const Step3: React.FC<Step3Props> = ({ onNext, onChange }) => {
     onChange({ [name]: value });
   };
 
+// Function to handle form submission
+const handleResetPassword = () => {
+  //ToDo
+  /* Add your logic to handle password reset here
+  For example, you can validate passwords and perform the reset operation
+  After the reset operation is successful, navigate to the next step*/
+  onNext();
+};
+
+
   return (
     // Container for the entire component
     <Container
@@ -100,7 +110,7 @@ const Step3: React.FC<Step3Props> = ({ onNext, onChange }) => {
         <Button
           variant="contained"
           color="primary"
-          onClick={onNext}
+          onClick={handleResetPassword}
           sx={{
             textTransform: "none",
             fontStyle: "normal",
