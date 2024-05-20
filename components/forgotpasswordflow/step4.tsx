@@ -6,22 +6,20 @@ import React, { useState, ChangeEvent } from "react";
 import { Box, Button, Container, Typography, Link } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
+import { useRouter } from "next/navigation";
 
 // Define the props interface for Step4 component
 interface Step4Props {
   onNext: () => void; // Function to proceed to the next step
-  onChange: (email: string) => void; // Function to handle email changes
 }
 
 // Step4 component
-const Step4: React.FC<Step4Props> = ({ onNext, onChange }) => {
-  // State to manage the email
-  const [email, setEmail] = useState("");
+const Step4: React.FC<Step4Props> = ({ onNext }) => {
+  const router = useRouter(); // Initialize the router
 
-  // Function to handle changes in the email input
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-    onChange(e.target.value);
+  // Function to navigate to admin dashboard
+  const handleNext = () => {
+    router.push("/admin/dashboard"); // Navigate to the admin dashboard
   };
 
   return (
@@ -65,7 +63,7 @@ const Step4: React.FC<Step4Props> = ({ onNext, onChange }) => {
               backgroundColor: "#718EBF",
             },
           }}
-          onClick={onNext}
+          onClick={handleNext}
         >
           Continue
         </Button>
