@@ -12,7 +12,7 @@ import {
   Link,
 } from "@mui/material";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
+import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
 
 // Define the props interface for Step3 component
 interface Step3Props {
@@ -121,26 +121,8 @@ const Step3: React.FC<Step3Props> = ({ onNext, onChange }) => {
       </Box>
       {/* Link to go back to login page */}
       <Box mt={2} textAlign="center">
-        <Link
-          href="/login"
-          variant="body2"
-          sx={{
-            mt: 2,
-            alignItems: "center",
-            justifyContent: "center",
-            textDecoration: "none",
-            fontSize: "15px",
-            color: "#4A5472",
-            display: "flex",
-          }}
-        >
-          <Box display="flex" alignItems="center">
-            <ArrowBackOutlinedIcon
-              sx={{ fontSize: "15px", marginRight: "10px" }}
-            />
-            Back to log in
-          </Box>
-        </Link>
+        {/* Go back to admin login page */}
+        <AdminLoginLink />
       </Box>
     </Container>
   );

@@ -5,7 +5,7 @@
 import React, { useState, ChangeEvent } from "react";
 import { Box, Button, Container, Typography, Link } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
+import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
 
 // Define the props interface for Step4 component
 interface Step4Props {
@@ -71,23 +71,8 @@ const Step4: React.FC<Step4Props> = ({ onNext, onChange }) => {
         </Button>
         {/* Link to go back to login page */}
         <Box mt={2}>
-          <Link
-            href="/login"
-            variant="body2"
-            sx={{
-              mt: 2,
-              textDecoration: "none",
-              fontSize: "15px",
-              color: "#4A5472",
-            }}
-          >
-            <Box display="flex" alignItems="center">
-              <ArrowBackOutlinedIcon
-                sx={{ fontSize: "15px", marginRight: "10px" }}
-              />
-              Back to log in
-            </Box>
-          </Link>
+          {/* Go back to admin login page */}
+          <AdminLoginLink />
         </Box>
       </Box>
     </Container>

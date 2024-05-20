@@ -10,8 +10,8 @@ import {
   Typography,
   Link,
 } from "@mui/material";
-import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
 
 // Defining the props interface for Step1 component
 interface Step1Props {
@@ -115,26 +115,8 @@ const Step1: React.FC<Step1Props> = ({ onNext, onChange }) => {
         >
           Reset Password
         </Button>
-        {/* Link to go back to login page */}
-        <Link
-          href="/admin"
-          sx={{
-            textDecoration: "none",
-            color: "#4A5472",
-            display: "flex",
-            fontSize: "15px",
-            alignItems: "center",
-            justifyContent: "center",
-            mt: 2,
-          }}
-        >
-          <Box display="flex" alignItems="center">
-            <ArrowBackOutlinedIcon
-              sx={{ fontSize: "15px", marginRight: "10px" }}
-            />
-            Back to log in
-          </Box>
-        </Link>
+        {/* Go back to admin login page */}
+        <AdminLoginLink />
       </Box>
     </Container>
   );

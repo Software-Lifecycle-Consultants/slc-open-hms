@@ -5,7 +5,7 @@
 import React, { useState, ChangeEvent } from "react";
 import { Button, Container, Typography, Link, Box } from "@mui/material";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
+import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
 
 // Defining the props interface for Step2 component
 interface Step2Props {
@@ -96,26 +96,8 @@ const Step2: React.FC<Step2Props> = ({ onNext, onChange }) => {
           <Typography sx={{ fontWeight: "bold" }}> Click to resend </Typography>
         </Box>
       </Link>
-      {/* Link to go back to login page */}
-      <Link
-        href="/login"
-        variant="body2"
-        sx={{
-          mt: 2,
-          display: "flex",
-          alignItems: "center",
-          fontSize: "15px",
-          textDecoration: "none",
-          color: "#4A5472",
-        }}
-      >
-        <Box display="flex" alignItems="center">
-          <ArrowBackOutlinedIcon
-            sx={{ fontSize: "15px", marginRight: "10px" }}
-          />
-          Back to log in
-        </Box>
-      </Link>
+      {/* Go back to admin login page */}
+      <AdminLoginLink />
     </Container>
   );
 };
