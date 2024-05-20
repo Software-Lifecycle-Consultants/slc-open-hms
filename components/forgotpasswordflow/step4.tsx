@@ -10,11 +10,10 @@ import { useRouter } from "next/navigation";
 
 // Define the props interface for Step4 component
 interface Step4Props {
-  onNext: () => void; // Function to proceed to the next step
 }
 
 // Step4 component
-const Step4: React.FC<Step4Props> = ({ onNext }) => {
+const Step4: React.FC<Step4Props> = ({}) => {
   const router = useRouter(); // Initialize the router
 
   // Function to navigate to admin dashboard
