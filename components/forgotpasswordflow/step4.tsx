@@ -7,6 +7,7 @@ import { Box, Button, Container, Typography, Link } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
 import { useRouter } from "next/navigation";
+import { forgotpasswordpageData } from "@/data/forgotPasswordfFow";
 
 // Define the props interface for Step4 component
 interface Step4Props {
@@ -37,11 +38,12 @@ const Step4: React.FC<Step4Props> = ({}) => {
         <Box mt={10}>
           <CheckCircleIcon sx={{ fontSize: 40, color: "#039855" }} />
           <Typography variant="h5" gutterBottom>
-            Password reset
+          {forgotpasswordpageData.forgotpasswordstep4Title}
+          {/* Render the Title from forgotpasswordpageData */}
           </Typography>
           <Typography variant="subtitle1" sx={{ mt: 2 }}>
-            Your password has been successfully reset. Click below to log in
-            magically.
+          {forgotpasswordpageData.forgotpasswordstep4subTitle}
+          {/* Render the Sub Title from forgotpasswordpageData */}
           </Typography>
         </Box>
         {/* Button to continue */}
@@ -64,7 +66,8 @@ const Step4: React.FC<Step4Props> = ({}) => {
           }}
           onClick={handleNext}
         >
-          Continue
+          {forgotpasswordpageData.forgotpasswordstep4ButtonCaption}
+          {/* Render the Button Caption from forgotpasswordpageData */}
         </Button>
         {/* Link to go back to login page */}
         <Box mt={2}>

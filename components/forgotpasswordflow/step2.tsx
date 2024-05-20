@@ -6,6 +6,7 @@ import React, { useState, ChangeEvent } from "react";
 import { Button, Container, Typography, Link, Box } from "@mui/material";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
+import { forgotpasswordpageData } from "@/data/forgotPasswordfFow";
 
 // Defining the props interface for Step2 component
 interface Step2Props {
@@ -34,19 +35,15 @@ const Step2: React.FC<Step2Props> = ({onNext,email}) => {
       {/* Title */}
       <Box textAlign="center" mt={3}>
         <Typography variant="h5" gutterBottom sx={{ color: "#4A5472" }}>
-          Check your email
+        {forgotpasswordpageData.forgotpasswordstep2Title}
+          {/* Render the Title from forgotpasswordpageData */}
         </Typography>
       </Box>
       {/* Notification */}
       <Typography variant="subtitle1" sx={{ mt: 1, color: "#4A5472" }}>
-        We sent a password reset link to
-        {/* Displaying the email */}
-        <Typography
-          variant="subtitle1"
-          sx={{ color: "#4A5472", mt: -1, textAlign: "center" }}
-        >
-          ABCD@gmail.com
-        </Typography>
+      {forgotpasswordpageData.forgotpasswordstep2subTitle}
+          {/* Render the Sub Title from forgotpasswordpageData */}
+        
       </Typography>
       {/* Displaying the email */}
       <Typography
@@ -74,7 +71,8 @@ const Step2: React.FC<Step2Props> = ({onNext,email}) => {
         }}
         onClick={onNext}
       >
-        Open email app
+       {forgotpasswordpageData.forgotpasswordstep2ButtonCaption}
+          {/* Render the Button Caption from forgotpasswordpageData */}
       </Button>
       {/* Link to resend email */}
       <Link
@@ -84,8 +82,14 @@ const Step2: React.FC<Step2Props> = ({onNext,email}) => {
         onClick={() => console.log("Resend email logic here")}
       >
         <Box sx={{ display: "flex" }}>
-          <Typography>Didn't receive the email?</Typography>
-          <Typography sx={{ fontWeight: "bold" }}> Click to resend </Typography>
+          <Typography>
+            {forgotpasswordpageData.forgotpasswordstep2NotReceiveEmailCaption}
+          {/* Render the Didn't receive Email Caption from forgotpasswordpageData */}
+          </Typography>
+          <Typography sx={{ fontWeight: "bold" }}>
+            {forgotpasswordpageData.forgotpasswordstep2ResendCodeCaption}
+          {/* Render the Resend Code Caption from forgotpasswordpageData */} 
+          </Typography>
         </Box>
       </Link>
       {/* Go back to admin login page */}

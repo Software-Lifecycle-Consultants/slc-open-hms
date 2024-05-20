@@ -1,4 +1,3 @@
-// Step1.tsx
 "use client";
 // Importing necessary modules from React and Material-UI
 import React, { useState, ChangeEvent } from "react";
@@ -12,6 +11,7 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
+import { forgotpasswordpageData } from "@/data/forgotPasswordfFow";
 
 // Defining the props interface for Step1 component
 interface Step1Props {
@@ -21,16 +21,41 @@ interface Step1Props {
 
 // Step1 component
 const Step1: React.FC<Step1Props> = ({ onNext, onChange }) => {
-  // State to manage form data
+  // State to manage form data and validation
   const [formData, setFormData] = useState({
     email: "", // Email field
   });
+  const [emailError, setEmailError] = useState("");
+
+  // Email validation function
+  const validateEmail = (email: string) => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  };
 
   // Function to handle changes in form fields
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     onChange({ [name]: value });
+
+    // Validate email
+    if (name === "email") {
+      if (!validateEmail(value)) {
+        setEmailError("Please enter a valid email address.");
+      } else {
+        setEmailError("");
+      }
+    }
+  };
+
+  // Function to handle the form submission
+  const handleNext = () => {
+    if (validateEmail(formData.email)) {
+      onNext();
+    } else {
+      setEmailError("Please enter a valid email address.");
+    }
   };
 
   return (
@@ -68,7 +93,8 @@ const Step1: React.FC<Step1Props> = ({ onNext, onChange }) => {
           gutterBottom
           sx={{ color: "#4A5472", fontWeight: 500 }}
         >
-          Forgot password?
+          {forgotpasswordpageData.forgotpasswordstep1Title}
+          {/* Render the Title from forgotpasswordpageData */}
         </Typography>
         {/* Description */}
         <Typography
@@ -77,11 +103,15 @@ const Step1: React.FC<Step1Props> = ({ onNext, onChange }) => {
           gutterBottom
           sx={{ color: "#4A5472" }}
         >
-          Don't worry, we'll help you reset your password.
+          {forgotpasswordpageData.forgotpasswordstep1subTitle}
+          {/* Render the SubTitle from forgotpasswordpageData */}
         </Typography>
         {/* Form for email input */}
         <Box width="100%" textAlign="left" mt={5} sx={{ maxWidth: "400px" }}>
-          <Typography sx={{ color: "#4A5472" }}>Email</Typography>
+          <Typography sx={{ color: "#4A5472" }}>
+            {forgotpasswordpageData.forgotpasswordstep1EmailtxtCaption}
+            {/* Render the Email Text Caption from forgotpasswordpageData */}
+          </Typography>
           <TextField
             sx={{ color: "#4A5472" }}
             label="Enter Your Email*"
@@ -91,6 +121,8 @@ const Step1: React.FC<Step1Props> = ({ onNext, onChange }) => {
             value={formData.email}
             onChange={handleChange}
             fullWidth
+            error={!!emailError}
+            helperText={emailError}
           />
         </Box>
         {/* Button to reset password */}
@@ -111,9 +143,10 @@ const Step1: React.FC<Step1Props> = ({ onNext, onChange }) => {
               backgroundColor: "#718EBF",
             },
           }}
-          onClick={onNext}
+          onClick={handleNext}
         >
-          Reset Password
+          {forgotpasswordpageData.forgotpasswordstep1ButtonCaption}
+          {/* Render the Forgot password Button Caption from forgotpasswordpageData */}
         </Button>
         {/* Go back to admin login page */}
         <AdminLoginLink />
