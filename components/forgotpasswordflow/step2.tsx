@@ -10,19 +10,10 @@ import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
 // Defining the props interface for Step2 component
 interface Step2Props {
   onNext: () => void; // Function to proceed to the next step
-  onChange: (email: string) => void; // Function to handle email changes
 }
 
 // Step2 component
-const Step2: React.FC<Step2Props> = ({ onNext, onChange }) => {
-  // State to manage the email
-  const [email, setEmail] = useState("");
-
-  // Function to handle changes in the email input
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-    onChange(e.target.value);
-  };
+const Step2: React.FC<Step2Props> = ({ onNext}) => {
 
   return (
     // Container for the entire component
