@@ -39,7 +39,7 @@ const ForgotpasswordFlow: React.FC = () => {
       )}
       {/* Render Step2 component if step is 2 */}
       {step === 2 && (
-        <Step2 onNext={handleNextStep}/>
+        <Step2 onNext={handleNextStep}  email={formData.email}/>
       )}
 
       {step === 3 && (
