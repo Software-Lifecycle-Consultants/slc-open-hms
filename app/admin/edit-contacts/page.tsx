@@ -17,10 +17,10 @@ const editContact = () =>{
       padding="30px" /* Add padding */
       bgcolor="rgba(238, 245, 255, 1)" /* Add background color */
     >
-      <Container>
+      <Container maxWidth="lg" >
         <Box>
-          <Grid container spacing={2} justifyContent="space-between">
-            <Grid item xs={10}>
+          <Grid container spacing={2} justifyContent="space-between" alignItems="center">
+            <Grid item xs={12} md={6} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
               <Typography
                 align="left"
                 fontSize="32px"
@@ -29,8 +29,8 @@ const editContact = () =>{
                 <b>{adminEditContactUs.adminContactHeaderTitle}</b>
               </Typography>
             </Grid>
-            <Grid item xs={1} alignItems={"right"}>
-              <Button variant="contained" endIcon={<FindInPageIcon />}>
+            <Grid item xs={12} md={1.2} style={{ display: 'flex', flexDirection: 'column', alignItems: 'right' }}>
+              <Button variant="outlined" endIcon={<FindInPageIcon />} style={{ backgroundColor: '#4A5472', width:"100px", height:"40px" , borderColor: '#5B5959', borderWidth:2, color: 'white', textTransform: 'capitalize',}}>
                 {adminEditContactUs.adminContactViewButton}
               </Button>
             </Grid>
@@ -93,14 +93,14 @@ const editContact = () =>{
                  style={{ marginTop: '8px' }}
                />
               </Grid>
-            <Grid item xs={12} marginTop={0}>
+            <Grid item xs={12}>
               {/* Adress Section */}
               <Typography style={{ color: "#9E9E9E" }}>
                 {/* Render the title from admineditcontactus Data */}
                 {adminEditContactUs.adminContactTitle05}
               </Typography>
             </Grid>
-            <Grid item xs={12} marginTop={0} style={{ textAlign: "center" }}>
+            <Grid item xs={12} style={{ textAlign: "center" }}>
               {/* Address line 01 TextField */}
               <TextField
                 fullWidth
@@ -136,7 +136,7 @@ const editContact = () =>{
                 InputProps={{ style: { backgroundColor: 'white' } }}
               />
             </Grid>
-            <Grid item xs={12} md={6}  marginTop={1} style={{ textAlign: "center" }}>
+            <Grid item xs={12} md={6}  marginTop={0} style={{ textAlign: "center" }}>
               {/* Address Zip Code TextField */}
               <TextField
                 fullWidth
@@ -145,7 +145,7 @@ const editContact = () =>{
                 InputProps={{ style: { backgroundColor: 'white' } }}
               />
             </Grid>
-            <Grid item xs={12} md={6}  marginTop={1} style={{ textAlign: "center" }}>
+            <Grid item xs={12} md={6}  marginTop={0} style={{ textAlign: "center" }}>
               {/* Address Country TextField */}
               <TextField
                 fullWidth
