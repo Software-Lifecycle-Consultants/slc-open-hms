@@ -1,14 +1,30 @@
 "use client";
-import { Box, Container, Grid,  } from "@mui/material";
-import Banner from "@/components/blogPage/BlogBanner"
+import { useState } from 'react';
+import { Box, Container, Grid, Typography } from "@mui/material";
+import Banner from "@/components/blogPage/BlogBanner";
 import BlogCard from "@/components/blogPage/blogcard";
 import { blogData, bannerData } from '@/data/blogPage';
 import Image from "next/image";
+import Pagination from '@mui/material/Pagination';
+import PaginationItem from '@mui/material/PaginationItem';
+import Stack from '@mui/material/Stack';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-export default function blog(){
-    return (
-      <>
-        <Box
+const itemsPerPage = 6; // Number of blog cards per page
+
+export default function Blog() {
+  const [page, setPage] = useState(1);
+
+  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value);
+  };
+
+  const displayedBlogs = blogData.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+
+  return (
+    <>
+      <Box
         sx={{
           backgroundColor: "#0C111F",
           color: "white",
@@ -20,10 +36,10 @@ export default function blog(){
         <Container>
           <Banner />
         </Container>
-        </Box>
-        {/* banner image */}
-        <Box sx={{marginTop:"-8%"}}>
-          <Container>
+      </Box>
+      {/* banner image */}
+      <Box sx={{ marginTop: "-8%" }}>
+        <Container>
           <Image
             src={bannerData.image}
             alt="test"
@@ -35,30 +51,58 @@ export default function blog(){
               flexShrink: 0,
             }}
           />
-          </Container>
-        </Box>
-        {/* blog cards */}
-        <Box
-        sx={{marginTop:"50px"}}>
-        <Container>
-        <Grid container spacing={2}>
-        {blogData.map((item) => (
-          <Grid key={item.id} item xs={12} sm={6} md={4}>
-            <BlogCard
-              image={item.image}
-              author={item.author}
-              date={item.date}
-              title={item.title}
-              description={item.description}
-              tag={item.tag}
-              tag1= {item.tag1}
-              tag2={item.tag2}
-            />
-          </Grid>
-        ))}
-      </Grid>
         </Container>
       </Box>
-      </>
-      );
+      {/* blog cards */}
+      <Box sx={{ marginTop: "50px" }}>
+        <Container>
+          <Grid container spacing={2}>
+            {displayedBlogs.map((item) => (
+              <Grid key={item.id} item xs={12} sm={6} md={4}>
+                <BlogCard
+                  image={item.image}
+                  author={item.author}
+                  date={item.date}
+                  title={item.title}
+                  description={item.description}
+                  tag={item.tag}
+                  tag1={item.tag1}
+                  tag2={item.tag2}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+      {/* Pagination */}
+      <Container>
+        <Stack mb={5} spacing={2} alignItems="center">
+          <Pagination
+            count={Math.ceil(blogData.length / itemsPerPage)}
+            page={page}
+            onChange={handleChange}
+            renderItem={(item) => (
+              <PaginationItem
+                components={{
+                  previous: () => <Box display={"flex"} gap={2}><ArrowBackIcon fontSize="small" /><Typography>previous</Typography></Box>,
+                  next: () => <Box display={"flex"} gap={2}><Typography>next</Typography> <ArrowForwardIcon fontSize="small" /></Box>,
+                }}
+                {...item}
+                sx={{
+                  borderRadius: '50%',
+                  '& .MuiPaginationItem-icon': {
+                    fontSize: '16px',
+                  },
+                  '&.Mui-selected': {
+                    backgroundColor: '#F9F5FF', // Adjust color as per your theme
+                    color: '#9c27b0', // Adjust color as per your theme
+                  },
+                }}
+              />
+            )}
+          />
+        </Stack>
+      </Container>
+    </>
+  );
 }
