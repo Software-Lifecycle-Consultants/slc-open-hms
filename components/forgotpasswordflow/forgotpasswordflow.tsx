@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import Step1 from "./Step1";
-import Step2 from "./Step2";
-import Step3 from "./Step3";
-import Step4 from "./Step4";
+import Step1 from "@/components/forgotpasswordflow/Step1";
+import Step2 from "@/components/forgotpasswordflow/Step2";
+import Step3 from "@/components/forgotpasswordflow/Step3";
+import Step4 from "@/components/forgotpasswordflow/Step4";
 
 // Define the shape of form data
 interface FormData {
@@ -41,7 +41,6 @@ const ForgotpasswordFlow: React.FC = () => {
       {step === 2 && (
         <Step2 onNext={handleNextStep}  email={formData.email}/>
       )}
-
       {step === 3 && (
         <Step3 onNext={handleNextStep} onChange={handleFormDataChange} />
       )}

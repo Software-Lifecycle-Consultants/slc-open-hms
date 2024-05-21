@@ -98,20 +98,20 @@ const Step3: React.FC<Step3Props> = ({ onNext, onChange }) => {
       >
         <LockOpenOutlinedIcon sx={{ fontSize: "45px", color: "#4A5472" }} />
         <Typography mt={2} variant="h5" sx={{ color: "#4A5472" }}>
-        {forgotpasswordpageData.forgotpasswordstep3Title}
+          {forgotpasswordpageData.forgotpasswordstep3Title}
           {/* Render the Title from forgotpasswordpageData */}
         </Typography>
         <Typography mt={2} sx={{ color: "#4A5472" }}>
-        {forgotpasswordpageData.forgotpasswordstep3subTitle}
+          {forgotpasswordpageData.forgotpasswordstep3subTitle}
           {/* Render the Sub Title from forgotpasswordpageData */}
         </Typography>
       </Box>
       {/* Form for password input */}
       <Box display="flex" flexDirection="column" gap={2} mt={5} width="100%">
-        <Typography sx={{ color: "#4A5472", mt: -1 }}> 
-        {forgotpasswordpageData.forgotpasswordstep3PasswordtxtCaption}
-            {/* Render the Password Text Caption from forgotpasswordpageData */}
-            </Typography>
+        <Typography sx={{ color: "#4A5472", mt: -1 }}>
+          {forgotpasswordpageData.forgotpasswordstep3PasswordtxtCaption}
+          {/* Render the Password Text Caption from forgotpasswordpageData */}
+        </Typography>
         {/* Input field for password */}
         <TextField
           sx={{ color: "#4A5472" }}
@@ -126,12 +126,12 @@ const Step3: React.FC<Step3Props> = ({ onNext, onChange }) => {
           helperText={errors.password}
         />
         <Typography sx={{ color: "#4A5472", mt: -2 }}>
-        {forgotpasswordpageData.forgotpasswordstep3CharacterstxtCaption}
-            {/* Render the Character Text Caption from forgotpasswordpageData */}
+          {forgotpasswordpageData.forgotpasswordstep3CharacterstxtCaption}
+          {/* Render the Character Text Caption from forgotpasswordpageData */}
         </Typography>
         <Typography sx={{ color: "#4A5472", mt: 1 }}>
-        {forgotpasswordpageData.forgotpasswordstep3ComfirmPasswordtxtCaption}
-            {/* Render the Comfirm Password Text Caption from forgotpasswordpageData */}
+          {forgotpasswordpageData.forgotpasswordstep3ComfirmPasswordtxtCaption}
+          {/* Render the Comfirm Password Text Caption from forgotpasswordpageData */}
         </Typography>
         {/* Input field for re-entering password */}
         <TextField
