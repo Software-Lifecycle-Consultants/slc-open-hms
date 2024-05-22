@@ -31,6 +31,7 @@ export default function StandardImageList() {
         }}
       >
         <Typography
+        mt={2}
           style={{
             color: "Gray",
             fontSize: "16px",
@@ -38,12 +39,13 @@ export default function StandardImageList() {
             fontStyle: "normal",
             letterSpacing: "0.12px",
             fontWeight: "700",
-            marginTop: "10px",
+
           }}
         >
           Gallery
         </Typography>
         <Typography
+        mt={4}
           style={{
             color: "Gray",
             fontSize: "16px",
@@ -51,7 +53,6 @@ export default function StandardImageList() {
             fontStyle: "normal",
             letterSpacing: "0.12px",
             fontWeight: "700",
-            marginTop: "10px",
             textAlign: "center",
           }}
         >
@@ -65,11 +66,11 @@ export default function StandardImageList() {
           tabIndex={-1}
           startIcon={<CloudUploadIcon />}
           sx={{
-            marginTop: "7px",
+            mt: "7",
             backgroundColor: "white",
             color: "black",
             height: "30px",
-            borderRadius: "8px",
+            borderRadius: "8",
           }}
         >
           <VisuallyHiddenInput type="file" />
@@ -77,15 +78,15 @@ export default function StandardImageList() {
         </Box>
       </Card>
       {/* Gallery images submit button */}
-      <Box display="flex" justifyContent="center" alignItems="center"> 
+      <Box mt={2}
+       display="flex" justifyContent="center" alignItems="center" > 
         <Button
           sx={{
-            marginTop: "7px",
             justifyContent: "center",
             color: "white",
             width: "100px",
             height: "30px",
-            borderRadius: "8px",
+            borderRadius: "8",
             textAlign: "center",
             backgroundColor: "#4A5472",
           }}
