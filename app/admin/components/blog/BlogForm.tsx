@@ -391,7 +391,13 @@ const BlogForm: React.FC = () => {
             </Grid>
           </Grid>
 
-          <Box sx={{ textAlign: "right", padding: "0 40px 30px" }}>
+          <Box
+            sx={{
+              textAlign: "right",
+              padding: "0 40px 30px",
+              //display: { xs: "flex" },
+            }}
+          >
             <Button
               type="button"
               sx={{
@@ -399,7 +405,7 @@ const BlogForm: React.FC = () => {
                 border: "2px solid black",
                 borderRadius: "10px",
                 color: "black",
-                padding: "10px 24px",
+                padding: { xs: "8px 14px" },
                 marginRight: "10px",
               }}
               onClick={() => console.log("Draft Saved")}
@@ -414,7 +420,7 @@ const BlogForm: React.FC = () => {
                 borderRadius: "10px",
                 color: "white",
                 border: "2px solid ",
-                padding: "10px 24px",
+                padding: { xs: "8px 14px" },
                 "&:hover": {
                   backgroundColor: "#3B435F",
                   borderColor: "#3B435F",
