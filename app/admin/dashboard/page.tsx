@@ -15,7 +15,7 @@ import Charts from "@/components/admin/charts"
 const AdminDashboard = () => {
   return (
     <>
-      <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
+      <Box sx={{ backgroundColor: "#EEF5FF", padding: "40px 0", width: "100%", height: "110vh" }}>
       <>
       <div className="flex">
         
