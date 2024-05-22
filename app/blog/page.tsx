@@ -10,11 +10,15 @@ import PaginationItem from '@mui/material/PaginationItem';
 import Stack from '@mui/material/Stack';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const itemsPerPage = 6; // Number of blog cards per page
 
 export default function Blog() {
   const [page, setPage] = useState(1);
+  const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.up('sm'));
 
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);
@@ -38,21 +42,24 @@ export default function Blog() {
         </Container>
       </Box>
       {/* banner image */}
-      <Box sx={{ marginTop: "-8%" }}>
-        <Container>
-          <Image
-            src={bannerData.image}
-            alt="test"
-            width={1350}
-            height={400}
-            style={{
-              width: "100%",
-              height: "50%",
-              flexShrink: 0,
-            }}
-          />
-        </Container>
-      </Box>
+      {/* logic to identify the screen */}
+      <Box sx={{ marginTop: isTablet ? "-8%" : 0 }}>
+  {isTablet && (
+    <Container>
+      <Image
+        src={bannerData.image}
+        alt="test"
+        width={1350}
+        height={400}
+        style={{
+          width: "100%",
+          height: "50%",
+          flexShrink: 0,
+        }}
+      />
+    </Container>
+  )}
+</Box>
       {/* blog cards */}
       <Box sx={{ marginTop: "50px" }}>
         <Container>
