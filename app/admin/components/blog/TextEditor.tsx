@@ -1,38 +1,36 @@
 "use client";
-import React, { useState } from "react";
-import ReactQuill, { Quill } from "react-quill";
+import React, { useEffect } from "react";
+import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 interface TextEditorProps {
   onBodyChange: (body: string) => void;
+  bodyContent: string;
 }
 
-const TextEditor: React.FC<TextEditorProps> = ({ onBodyChange }) => {
-  const [body, setBody] = useState<string>("");
-
+const TextEditor: React.FC<TextEditorProps> = ({
+  onBodyChange,
+  bodyContent,
+}) => {
   const handleBodyChange = (content: string) => {
-    setBody(content);
     onBodyChange(content);
   };
 
-  const clearContent = () => {
-    setBody("");
-    onBodyChange("");
-  };
+  useEffect(() => {
+    handleBodyChange(bodyContent);
+  }, [bodyContent]);
 
   return (
-    <>
-      <div>
-        <ReactQuill
-          placeholder="Write something..."
-          modules={modules}
-          formats={formats}
-          onChange={handleBodyChange}
-          value={body}
-          theme="snow"
-        />
-      </div>
-    </>
+    <div>
+      <ReactQuill
+        placeholder="Write something..."
+        modules={modules}
+        formats={formats}
+        onChange={handleBodyChange}
+        value={bodyContent}
+        theme="snow"
+      />
+    </div>
   );
 };
 

@@ -13,6 +13,9 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 import Autocomplete from "@mui/material/Autocomplete";
 import { mulish } from "@/app/fonts";
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import { styled } from "@mui/material/styles";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 const TextEditor = dynamic(() => import("./TextEditor"), {
   ssr: false,
@@ -29,6 +32,18 @@ interface BlogFormValues {
   facebook: string;
   linkedin: string;
 }
+
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
+  height: 1,
+  overflow: "hidden",
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  whiteSpace: "nowrap",
+  width: 1,
+});
 
 const BlogForm: React.FC = () => {
   const [formValues, setFormValues] = useState<BlogFormValues>({
@@ -140,7 +155,10 @@ const BlogForm: React.FC = () => {
               />
             </Grid>
             <Grid item>
-              <TextEditor onBodyChange={handleBodyChange} />
+              <TextEditor
+                onBodyChange={handleBodyChange}
+                bodyContent={formValues.bodyContent}
+              />
             </Grid>
 
             <Typography
@@ -155,21 +173,6 @@ const BlogForm: React.FC = () => {
             >
               Cover Image
             </Typography>
-
-            <Grid
-              item
-              sx={{
-                border: "2px dashed #ccc",
-                padding: "40px",
-                display: "block",
-                margin: "20px",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center",
-              }}
-            >
-              {/* Image Upload */}
-            </Grid>
           </Grid>
 
           <Grid
@@ -181,6 +184,36 @@ const BlogForm: React.FC = () => {
               marginBottom: "20px",
             }}
           >
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+              <Card
+                elevation={0}
+                sx={{
+                  height: "auto",
+                  Width: "auto",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                  borderColor: "#D0D5DD",
+                  flexShrink: "0",
+                  paddingTop: "25%",
+                  paddingLeft: "45%",
+                }}
+              >
+                <Button
+                  sx={{
+                    marginTop: "7px",
+                    backgroundColor: "#4A5472",
+                  }}
+                  component="label"
+                  role={undefined}
+                  variant="contained"
+                  tabIndex={-1}
+                  startIcon={<AddAPhotoIcon />}
+                >
+                  <VisuallyHiddenInput type="file" />
+                </Button>
+              </Card>
+            </Grid>
+
             <Typography
               variant="h3"
               className={mulish.className}
@@ -194,21 +227,36 @@ const BlogForm: React.FC = () => {
               Author Image
             </Typography>
 
-            <Grid
-              item
-              sx={{
-                border: "2px dashed #ccc",
-                padding: "40px",
-                display: "block",
-                marginLeft: "20px",
-                marginRight: "20px",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center",
-              }}
-            >
-              {/* Image Upload */}
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Card
+                elevation={0}
+                sx={{
+                  height: "auto",
+                  Width: "auto",
+                  border: "1px solid",
+                  borderRadius: "8px",
+                  borderColor: "#D0D5DD",
+                  flexShrink: "0",
+                  paddingTop: "25%",
+                  paddingLeft: "45%",
+                }}
+              >
+                <Button
+                  sx={{
+                    marginTop: "7px",
+                    backgroundColor: "#4A5472",
+                  }}
+                  component="label"
+                  role={undefined}
+                  variant="contained"
+                  tabIndex={-1}
+                  startIcon={<CloudUploadIcon />}
+                >
+                  <VisuallyHiddenInput type="file" />
+                </Button>
+              </Card>
             </Grid>
+
             <Grid item>
               <TextField
                 label="Author"
