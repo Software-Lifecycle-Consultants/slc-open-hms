@@ -18,8 +18,7 @@ import { adminLoginPageData } from "@/data/adminlogin";
 import Link from "next/link";
 import adminLogo from "@/public/images/admin/loginpage/adminlogo.webp";
 import Image from "next/image";
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import color from "material-ui-colors/dist/amber";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 
 const AdminLoginPage = () => {
   const router = useRouter(); // Initialize the router
@@ -68,7 +67,7 @@ const AdminLoginPage = () => {
       justifyContent="center"
       minHeight="70vh" /* Set minimum height to occupy the full viewport */
     >
-      <Container maxWidth="sm" sx={{ marginTop: "20px", marginBottom:"20px" }}>
+      <Container maxWidth="sm" sx={{ marginTop: "20px", marginBottom: "20px" }}>
         <Box
           padding={5}
           sx={{
@@ -144,15 +143,7 @@ const AdminLoginPage = () => {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <IconButton
-                          onClick={handleTogglePasswordVisibility}
-                          edge="end">
-                          {formData.showPassword ? (
-                            <EmailOutlinedIcon />
-                          ) : (
-                            <EmailOutlinedIcon/>
-                          )}{" "}
-                        </IconButton>
+                        <EmailOutlinedIcon />
                       </InputAdornment>
                     ),
                   }}
@@ -219,40 +210,45 @@ const AdminLoginPage = () => {
                 </Grid>
                 <Grid item xs={6} marginTop={2} textAlign="right">
                   <Typography style={{ color: "#4A5472" }}>
-                    <Link href="/" style={{color:"#4A5472", textDecoration:"none"}}>
+                    <Link
+                      href="/"
+                      style={{ color: "#4A5472", textDecoration: "none" }}
+                    >
                       {adminLoginPageData.loginPageForgotPasswordCaption}
                     </Link>
                     {/* Render the title from loginPageData & link the Forgot Password page */}
                   </Typography>
                 </Grid>
-                
               </Grid>
               <Grid item xs={12} marginTop={0} sx={{ marginBottom: "20px" }}>
                 {/* Login Button Section */}
                 <Button
-                   type="submit"
-                   sx={{display: "flex",
-                   justifyContent: "center",
-                   alignItems: "center",
-                   gap: "10px",
-                   borderRadius: "25px",
-                   padding: "18px 24px",
-                   width: "100%",
-                   height: "50px",
-                   marginTop: "20px",
-                   fontSize: "20px",
-                   fontStyle:"normal",
-                   fontWeight: "300",
-                   lineHeight: "120%",
-                   letterSpacing: "0.08px",
-                   backgroundColor: "#4A5472",
-                   textAlign: "center",
-                   textTransform: "capitalize",
-                   transition: "background-color 0.3s ease",
-                   fontFamily: "'mulish', sans-serif",
-                   color: "white",
-                   ":hover": {
-                     backgroundColor: "#718EBF",}}}// Add the button class
+                  type="submit"
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "10px",
+                    borderRadius: "25px",
+                    padding: "18px 24px",
+                    width: "100%",
+                    height: "50px",
+                    marginTop: "20px",
+                    fontSize: "20px",
+                    fontStyle: "normal",
+                    fontWeight: "300",
+                    lineHeight: "120%",
+                    letterSpacing: "0.08px",
+                    backgroundColor: "#4A5472",
+                    textAlign: "center",
+                    textTransform: "capitalize",
+                    transition: "background-color 0.3s ease",
+                    fontFamily: "'mulish', sans-serif",
+                    color: "white",
+                    ":hover": {
+                      backgroundColor: "#718EBF",
+                    },
+                  }} // Add the button class
                 >
                   {/* Render the title from loginPageData */}
                   {adminLoginPageData.loginPageButtonCaption}
@@ -260,13 +256,10 @@ const AdminLoginPage = () => {
               </Grid>
               <Grid item xs={12} mb={5}>
                 {/* Register and Forgot password Section */}
-                <Typography
-                  align="center"
-                  style={{ color: "#4A5472" }}
-                >
+                <Typography align="center" style={{ color: "#4A5472" }}>
                   {adminLoginPageData.loginPageNoAccountCaption}{" "}
                   {/* Render the Register page link */}
-                  <Link href="/register"  style={{color:"#4A5472"}}>
+                  <Link href="/register" style={{ color: "#4A5472" }}>
                     {adminLoginPageData.loginPageRegisterCaption}
                   </Link>
                 </Typography>
