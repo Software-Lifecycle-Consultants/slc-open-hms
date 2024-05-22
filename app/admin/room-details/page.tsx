@@ -172,5 +172,3 @@ const roomDetails = () => {
   );
 };
 export default roomDetails;
-
-

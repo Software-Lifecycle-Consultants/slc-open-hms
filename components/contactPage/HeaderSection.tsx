@@ -13,13 +13,11 @@ const HeaderSection = () => {
       <Grid container spacing={2}>
         {/* Grid item for header content */}
         <Grid item xs={12} md={6} lg={4} xl={4}>
-          {/* Box container for styling */}
+           {/* Box container for styling */}
           <Box
             sx={{
-              paddingTop: { xs: "25px", sm: "50px", md: "50px" },
-              paddingBottom: { xs: "25px", sm: "50px", md: "50px", lg: "50px" },
-              marginLeft: { xs: "10px", sm: "15px", md: "30px", lg: "60px" },
-            }}
+                 mt: '1.563rem'
+                }}
           >
             {/* Title Typography */}
             <Typography
@@ -27,16 +25,18 @@ const HeaderSection = () => {
               className={lora.className}
               sx={{
                 color: "#11142D",
-                fontSize: { xs: "42px", sm: "50px", md: "55px" },
+                fontSize: { xs: "52px", sm: "50px", md: "55px" },
                 fontStyle: "normal",
                 fontWeight: 700,
                 lineHeight: "120%",
-                letterSpacing: "0.186px",
+                letterSpacing: "0.186px",                
               }}
             >
               {/* Header title text */}
               {contactHeading.headerTitle}
             </Typography>
+            <Grid>
+            <Box>
             {/* Description Typography */}
             <Typography
               variant="body1"
@@ -54,7 +54,9 @@ const HeaderSection = () => {
               {/* Header description text */}
               {contactHeading.headerDescription}
             </Typography>
-          </Box>
+            </Box>
+            </Grid>
+            </Box>
         </Grid>
       </Grid>
     </>

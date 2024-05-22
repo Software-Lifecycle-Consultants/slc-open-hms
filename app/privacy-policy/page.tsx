@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Metadata } from "next";
 import Typography from "@mui/material/Typography";
@@ -10,10 +11,6 @@ import privacyandpolicydata from "@/data/privacypolicyPage";
  *  PrivacyPolicyScreen component represents the Privacy & Policy Screen of the website.
  */
 
-export const metadata: Metadata = {
-  title: "HMS Dev | Privacy Policy",
-  description: "HMS System under development",
-};
 
 function PrivacyPolicy() {
     const {
@@ -32,6 +29,7 @@ function PrivacyPolicy() {
       section7
     } = privacyandpolicydata;
   return (
+  <>
     <Box
       maxWidth="1320px" /* Adjust max-width as needed */
       margin="0 auto" /* Center the container */
@@ -155,6 +153,7 @@ function PrivacyPolicy() {
         </Typography>
       </Box>
     </Box>
+  </>
   );
 }
 
