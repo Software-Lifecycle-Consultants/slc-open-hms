@@ -48,11 +48,9 @@ const roomDetails = () => {
                 style={{
                   color: "Gray",
                   fontSize: "16px",
-                  lineHeight: "120%",
                   fontStyle: "normal",
                   letterSpacing: "0.12px",
                   fontWeight: "700",
-                  marginTop: "10px",
                 }}
               >
                 Cover Image
@@ -60,7 +58,7 @@ const roomDetails = () => {
               <Card
                 elevation={0}
                 sx={{
-                  height: "299px",
+                  height: "280px",
                   Width: "auto",
                   border: "1px solid",
                   borderRadius: "8px",
@@ -121,37 +119,52 @@ const roomDetails = () => {
         <Container>
           {/* (7) The Save and Close buttons are rendered here. */}
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
-            <Button
-              sx={{
-                marginTop: "7px",
-                justifyContent: "center",
-                backgroundColor: "#4A5472",
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                marginLeft: "70%",
-                textAlign: "center",
-              }}
-              variant="outlined"
-            >
-              Close
-            </Button>
-            <Button
-              sx={{
-                marginTop: "7px",
-                backgroundColor: "#4A5472",
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                marginLeft: "10px",
-                textAlign: "center",
-              }}
-              variant="contained"
-            >
-              Save
-            </Button>
+            <Box display="flex" justifyContent="end" alignItems="center">
+              <Button
+                sx={{
+                  marginTop: "7px",
+                  justifyContent: "center",
+                  backgroundColor: "white",
+                  color: "white",
+                  width: "100px",
+                  height: "30px",
+                  borderRadius: "8px",
+                  textAlign: "center",
+                }}
+                variant="outlined"
+              >
+                <Typography
+                  style={{
+                    color: "Black",
+                  }}
+                >
+                  {" "}
+                  Close
+                </Typography>
+              </Button>
+              <Button
+                sx={{
+                  marginTop: "7px",
+                  backgroundColor: "#4A5472",
+                  color: "white",
+                  width: "100px",
+                  height: "30px",
+                  borderRadius: "8px",
+                  marginLeft: "10px",
+                  textAlign: "center",
+                }}
+                variant="contained"
+              >
+                <Typography
+                  style={{
+                    color: "white",
+                  }}
+                >
+                  {" "}
+                 Save
+                </Typography>
+              </Button>
+            </Box>
           </Grid>
         </Container>
       </Box>
