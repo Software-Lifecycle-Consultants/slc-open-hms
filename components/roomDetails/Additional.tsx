@@ -17,25 +17,23 @@ const Additional = () => {
       <Card
         elevation={0}
         sx={{
-          height: "540px",
+          height: "600px",
           Width: "auto",
           border: "1px solid",
-          borderRadius: "8px",
+          borderRadius: "8",
           borderColor: "#D0D5DD",
           flexShrink: "0",
         }}
       >
         <Box>
           <Typography
-            style={{
+            mt={2}
+            ml={2}
+            sx={{
               color: "Gray",
-              fontSize: "16px",
-              lineHeight: "120%",
+              fontSize: "16",
               fontStyle: "normal",
-              letterSpacing: "0.12px",
-              fontWeight: "700",
-              marginTop: "10px",
-              marginLeft: "10px",
+              letterSpacing: "0.12",
             }}
           >
             {additional.additionalPageTitle}
@@ -54,15 +52,12 @@ const Additional = () => {
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Typography
-                  style={{
+                  mb={2}
+                  sx={{
                     color: "Gray",
-                    fontSize: "16px",
-                    lineHeight: "120%",
+                    fontSize: "16",
                     fontStyle: "normal",
-                    letterSpacing: "0.12px",
-                    fontWeight: "700",
-                    marginTop: "10px",
-                    marginBottom: "10px",
+                    letterSpacing: "0.12",
                   }}
                 >
                   Description
@@ -70,7 +65,7 @@ const Additional = () => {
                 <TextField
                   fullWidth
                   multiline
-                  rows={14}
+                  rows={16}
                   label="Enter description"
                   id="Enter description"
                 />
