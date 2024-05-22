@@ -1,4 +1,5 @@
-"use client";
+"use client"; // This directive indicates that the component is client-side rendered in Next.js.
+
 import {
   Card,
   Grid,
@@ -8,19 +9,21 @@ import {
   CardContent,
   Typography,
   Box,
-} from "@mui/material";
-import { useState } from "react";
-import dynamic from "next/dynamic";
-import Autocomplete from "@mui/material/Autocomplete";
-import { mulish } from "@/app/fonts";
-import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-import { styled } from "@mui/material/styles";
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+} from "@mui/material"; // Importing MUI components.
+import { useState } from "react"; // Importing useState hook from React.
+import dynamic from "next/dynamic"; // Importing dynamic for lazy loading.
+import Autocomplete from "@mui/material/Autocomplete"; // Importing Autocomplete component from MUI.
+import { mulish } from "@/app/fonts"; // Importing custom font class.
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto"; // Importing icon from MUI.
+import { styled } from "@mui/material/styles"; // Importing styled for custom styling.
+import CloudUploadIcon from "@mui/icons-material/CloudUpload"; // Importing icon from MUI.
 
+// Dynamically importing the TextEditor component to enable client-side rendering only.
 const TextEditor = dynamic(() => import("./TextEditor"), {
   ssr: false,
 });
 
+// Interface defining the structure of the blog form values.
 interface BlogFormValues {
   title: string;
   subTitle: string;
@@ -33,6 +36,7 @@ interface BlogFormValues {
   linkedin: string;
 }
 
+// Custom styled component to visually hide the input element.
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
   clipPath: "inset(50%)",
@@ -45,7 +49,9 @@ const VisuallyHiddenInput = styled("input")({
   width: 1,
 });
 
+// Main BlogForm component.
 const BlogForm: React.FC = () => {
+  // useState hook to manage form values.
   const [formValues, setFormValues] = useState<BlogFormValues>({
     title: "",
     subTitle: "",
@@ -58,22 +64,28 @@ const BlogForm: React.FC = () => {
     linkedin: "",
   });
 
+  // Handler to update form values based on input changes.
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
+  // Handler to update tags array in form values.
   const handleTagsChange = (event: React.ChangeEvent<{}>, value: string[]) => {
     setFormValues({ ...formValues, tags: value });
   };
 
+  // Handler to update body content in form values.
   const handleBodyChange = (body: string) => {
     setFormValues({ ...formValues, bodyContent: body });
   };
 
+  // Handler for form submission.
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form Values:", formValues);
+    e.preventDefault(); // Prevent default form submission behavior.
+    console.log("Form Values:", formValues); // Log the form values.
+
+    // Reset the form values after submission.
     setFormValues({
       title: "",
       subTitle: "",
@@ -90,7 +102,7 @@ const BlogForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit}>
       <Card sx={{ marginLeft: "auto", marginRight: "auto" }}>
-        <CardContent>
+        <CardContent sx={{ justifyContent: "center", alignItems: "center" }}>
           <Typography
             variant="h2"
             className={mulish.className}
@@ -111,6 +123,7 @@ const BlogForm: React.FC = () => {
               padding: { xs: "10px 20px 10px 20px" },
             }}
           >
+            {/* Title field */}
             <Grid item>
               <TextField
                 label="Add title"
@@ -123,6 +136,8 @@ const BlogForm: React.FC = () => {
                 onChange={handleInputChange}
               />
             </Grid>
+
+            {/* Sub title field */}
             <Grid item>
               <TextField
                 label="Sub title"
@@ -136,6 +151,7 @@ const BlogForm: React.FC = () => {
               />
             </Grid>
 
+            {/* Tags field */}
             <Grid item>
               <Autocomplete
                 clearIcon={false}
@@ -144,6 +160,7 @@ const BlogForm: React.FC = () => {
                 multiple
                 renderTags={(value, getTagProps) =>
                   value.map((option, index) => (
+                    // eslint-disable-next-line react/jsx-key
                     <Chip label={option} {...getTagProps({ index })} />
                   ))
                 }
@@ -154,6 +171,8 @@ const BlogForm: React.FC = () => {
                 value={formValues.tags}
               />
             </Grid>
+
+            {/* TextEditor component for rich text editing */}
             <Grid item>
               <TextEditor
                 onBodyChange={handleBodyChange}
@@ -174,7 +193,6 @@ const BlogForm: React.FC = () => {
               Cover Image
             </Typography>
           </Grid>
-
           <Grid
             container
             spacing={{ xs: 1, sm: 2, md: 2 }}
@@ -184,18 +202,34 @@ const BlogForm: React.FC = () => {
               marginBottom: "20px",
             }}
           >
-            <Grid item xs={12} sm={12} md={12} lg={12}>
+            {/* Cover Image Upload */}
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
+              sx={{ alignItems: "center" }}
+            >
               <Card
                 elevation={0}
                 sx={{
-                  height: "auto",
-                  Width: "auto",
+                  height: {
+                    xs: "300px",
+                    sm: "450px",
+                    md: "450px",
+                    lg: "500px",
+                    xl: "550px",
+                  },
+                  width: "auto",
+
                   border: "1px solid",
                   borderRadius: "8px",
                   borderColor: "#D0D5DD",
-                  flexShrink: "0",
-                  paddingTop: "25%",
-                  paddingLeft: "45%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "16px",
                 }}
               >
                 <Button
@@ -227,18 +261,26 @@ const BlogForm: React.FC = () => {
               Author Image
             </Typography>
 
+            {/* Author Image Upload */}
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
               <Card
                 elevation={0}
                 sx={{
-                  height: "auto",
-                  Width: "auto",
+                  height: {
+                    xs: "300px",
+                    sm: "450px",
+                    md: "450px",
+                    lg: "500px",
+                    xl: "550px",
+                  },
+                  width: "auto",
                   border: "1px solid",
                   borderRadius: "8px",
                   borderColor: "#D0D5DD",
-                  flexShrink: "0",
-                  paddingTop: "25%",
-                  paddingLeft: "45%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "16px",
                 }}
               >
                 <Button
@@ -257,6 +299,7 @@ const BlogForm: React.FC = () => {
               </Card>
             </Grid>
 
+            {/* Author field */}
             <Grid item>
               <TextField
                 label="Author"
@@ -270,6 +313,7 @@ const BlogForm: React.FC = () => {
               />
             </Grid>
 
+            {/* Author Description field */}
             <Grid item>
               <TextField
                 label="Author Description..."
@@ -306,6 +350,7 @@ const BlogForm: React.FC = () => {
               Social Media Links
             </Typography>
 
+            {/* Social Media Links fields */}
             <Grid item>
               <TextField
                 label="Twitter"
@@ -389,4 +434,4 @@ const BlogForm: React.FC = () => {
   );
 };
 
-export default BlogForm;
+export default BlogForm; // Exporting the BlogForm component as default.
