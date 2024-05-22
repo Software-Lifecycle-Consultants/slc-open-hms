@@ -210,7 +210,7 @@ const AdminLoginPage = () => {
                 </Grid>
                 <Grid item xs={6} marginTop={2} textAlign="right">
                   <Typography style={{ color: "#4A5472" }}>
-                    <Link href="/" style={{color:"#4A5472", textDecoration:"none"}}>
+                    <Link href="/admin/forgot-password" style={{color:"#4A5472", textDecoration:"none"}}>
                       {adminLoginPageData.loginPageForgotPasswordCaption}
                     </Link>
                     {/* Render the title from loginPageData & link the Forgot Password page */}
