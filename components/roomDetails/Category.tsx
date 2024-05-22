@@ -46,10 +46,10 @@ export default function Category() {
     <Card
       elevation={0}
       sx={{
-        height: "540px",
+        height: "600px",
         Width: "auto",
         border: "1px solid",
-        borderRadius: "8px",
+        borderRadius: "8",
         borderColor: "#D0D5DD",
         flexShrink: "0",
         padding: "10px 25px 10px 25px",
@@ -57,14 +57,13 @@ export default function Category() {
     >
       <Box>
         <Typography
+          mt={2}
           style={{
             color: "Gray",
-            fontSize: "16px",
-            lineHeight: "120%",
+            fontSize: "16",
             fontStyle: "normal",
-            letterSpacing: "0.12px",
+            letterSpacing: "0.12",
             fontWeight: "700",
-            marginTop: "10px",
           }}
         >
           {category.detailsCategory}
@@ -88,22 +87,18 @@ export default function Category() {
             ))
           }
           renderInput={(params) => (
-            <TextField
-              {...params}
-              label="Enter Category Name"
-            />
+            <TextField {...params} label="Enter Category Name" />
           )}
           options={[]}
         />
         <Typography
+          mt={2}
           style={{
             color: "Gray",
-            fontSize: "16px",
-            lineHeight: "120%",
+            fontSize: "16",
             fontStyle: "normal",
-            letterSpacing: "0.12px",
+            letterSpacing: "0.12",
             fontWeight: "700",
-            marginTop: "10px",
           }}
         >
           {category.category1}
@@ -124,22 +119,18 @@ export default function Category() {
             ))
           }
           renderInput={(params) => (
-            <TextField
-              {...params}
-              label="Enter Category Name"
-            />
+            <TextField {...params} label="Enter Category Name" />
           )}
           options={[]}
         />
         <Typography
+          mt={2}
           style={{
             color: "Gray",
-            fontSize: "16px",
-            lineHeight: "120%",
+            fontSize: "16",
             fontStyle: "normal",
-            letterSpacing: "0.12px",
+            letterSpacing: "0.12",
             fontWeight: "700",
-            marginTop: "10px",
           }}
         >
           {category.category2}
@@ -160,22 +151,18 @@ export default function Category() {
             ))
           }
           renderInput={(params) => (
-            <TextField
-              {...params}
-              label="Enter Category Name"
-            />
+            <TextField {...params} label="Enter Category Name" />
           )}
           options={[]}
         />
         <Typography
+          mt={2}
           style={{
             color: "Gray",
-            fontSize: "16px",
-            lineHeight: "120%",
+            fontSize: "16",
             fontStyle: "normal",
-            letterSpacing: "0.12px",
+            letterSpacing: "0.12",
             fontWeight: "700",
-            marginTop: "10px",
           }}
         >
           {category.category3}
@@ -196,22 +183,18 @@ export default function Category() {
             ))
           }
           renderInput={(params) => (
-            <TextField
-              {...params}
-              label="Enter Category Name"
-            />
+            <TextField {...params} label="Enter Category Name" />
           )}
           options={[]}
         />
         <Typography
+          mt={2}
           style={{
             color: "Gray",
-            fontSize: "16px",
-            lineHeight: "120%",
+            fontSize: "16",
             fontStyle: "normal",
             letterSpacing: "0.12px",
             fontWeight: "700",
-            marginTop: "10px",
           }}
         >
           Price
