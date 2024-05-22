@@ -47,22 +47,21 @@ export default function ServiceAd() {
           height: "420px",
           Width: "20px",
           border: "1px solid",
-          borderRadius: "8px",
+          borderRadius: "8",
           borderColor: "#D0D5DD",
           flexShrink: "0",
         }}
       >
         <Box>
           <Typography
+          mt={2}
+          ml={2}
             style={{
               color: "Gray",
-              fontSize: "16px",
-              lineHeight: "120%",
+              fontSize: "16",
               fontStyle: "normal",
-              letterSpacing: "0.12px",
+              letterSpacing: "0.12",
               fontWeight: "700",
-              marginTop: "10px",
-              marginLeft: "10px",
             }}
           >
             {serviceAdd.serviceAddPageTitle}
@@ -82,15 +81,14 @@ export default function ServiceAd() {
 
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Typography
+                mt={2}
+                mb={2}
                   style={{
                     color: "Gray",
-                    fontSize: "16px",
-                    lineHeight: "120%",
+                    fontSize: "16",
                     fontStyle: "normal",
-                    letterSpacing: "0.12px",
+                    letterSpacing: "0.12",
                     fontWeight: "700",
-                    marginTop: "10px",
-                    marginBottom: "10px",
                   }}
                 >
                   Description
