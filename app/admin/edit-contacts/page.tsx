@@ -16,8 +16,11 @@ const editContact = () =>{
     <Box
       padding="30px" /* Add padding */
       bgcolor="rgba(238, 245, 255, 1)" /* Add background color */
+      minHeight="100vh"
+      display="flex"
+      flexDirection="column"
     >
-      <Container maxWidth="lg" >
+      <Container maxWidth="lg" style={{ flexGrow: 1 }}>
         <Box>
           <Grid container spacing={2} justifyContent="space-between" alignItems="center">
             <Grid item xs={12} md={6} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
