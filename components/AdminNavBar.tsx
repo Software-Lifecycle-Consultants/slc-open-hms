@@ -65,10 +65,10 @@ const AdminNavBar: React.FC = () => {
     },
  }}>
                   {/* Replace the label and route with your menu items */}
-                  <Tab label="Dashboard" onClick={() => navigationToScreens("/abc")}  />
-                  <Tab label="Items" onClick={() => navigationToScreens("/cde")} />
-                  <Tab label="Blog" onClick={() => navigationToScreens("/xyz")} />
-                  <Tab label="Contact Us" onClick={() => navigationToScreens("/xyz")} />
+                  <Tab label="Dashboard" onClick={() => navigationToScreens("./dashboard")}  />
+                  <Tab label="Items" onClick={() => navigationToScreens("./rooms")} />
+                  <Tab label="Blog" onClick={() => navigationToScreens("./blog")} />
+                  <Tab label="Contact Us" onClick={() => navigationToScreens("./edit-contacts")} />
                 </Tabs>
                 <Button variant="text" onClick={navigationToRegisterPage} sx={{ color: "#FFF", textTransform: "none", margin: "5px" }}>
                 <SettingsIcon sx={{ width: 35, height: 35 }}/>

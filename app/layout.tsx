@@ -14,33 +14,29 @@ import AdminLayout from './admin/layout';
 import { useSelectedLayoutSegments } from 'next/navigation';
 import { metadata } from '@/data/metadata'; // Import the metadata constant
 import AdminNavbar from '@/components/AdminNavBar';
+import MainContent from '@/components/MainContent';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const segments = useSelectedLayoutSegments();
   const isAdminRoute = segments.includes('admin');
-  //const isAdminRoute = segments.some((segment) => segment === 'admin');
-  const isAdminDashboardRoute = segments.includes('dashboard');
-  console.log("isAdminRoute is :" + isAdminRoute );
-  console.log("isAdminDashboardRoute is :" + isAdminDashboardRoute );
+  // Checks if the length of the segments array is greater than 1 and if the isAdminRoute variable is true also excluse forgot-password route
+  const isAdminDashboardRoute = segments.length > 1 && isAdminRoute && segments[1] !== 'forgot-password';;
+  console.log("isAdminRoute is :" + isAdminRoute);
+  console.log("isAdminDashboardRoute is :" + isAdminDashboardRoute);
   return (
     <html lang="en" className={inter.className}>
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           {isAdminRoute ? (
-            <AdminLayout> 
+            <AdminLayout>
               {isAdminDashboardRoute ? <AdminNavbar /> : null}
-              {children}
-              </AdminLayout>  
+              <MainContent showFooter={false}>{children}</MainContent>
+            </AdminLayout>
           ) : (
             <>
               <Navbar />
-              <div className="container">{children}</div>
-              <Box sx={{ backgroundColor: '#1A242D', padding: '20px 0', width: '100%' }}>
-                <Container>
-                  <Footer />
-                </Container>
-              </Box>
+              <MainContent>{children}</MainContent>
             </>
           )}
         </ThemeProvider>

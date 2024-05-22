@@ -1,6 +1,6 @@
 {
-  "name": "hotel-management-system",
-  "version": "1.0.3",
+  "name": "hospitality-management-system",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -29,6 +29,7 @@
     "react-dom": "18.2.0",
     "react-leaflet": "^4.2.1",
     "react-phone-input-2": "^2.15.1",
+    "react-quill": "^2.0.0",
     "react-responsive": "^9.0.2",
     "react-slick": "^0.29.0",
     "recharts": "^2.12.7",

@@ -169,7 +169,7 @@ const Login = () => {
                 </Grid>
                 <Grid item xs={6} marginTop={2} textAlign="right">
                   <Typography style={{ color: "rgba(17, 20, 45, 1)" }}>
-                    <Link href="/">
+                    <Link href="/" style={{textDecoration:"none", color:"#11142D"}}>
                       {loginPageData.loginPageForgotPasswordCaption}{" "}
                     </Link>
                     {/* Render the title from loginPageData & link the Forgot Password page */}
@@ -198,7 +198,7 @@ const Login = () => {
                   align="center"
                   style={{ color: "rgba(17, 20, 45, 1)" }}>
                   {loginPageData.loginPageNoAccountCaption}{" "}
-                  <Link href="/register" style={{ color: "rgba(0, 60, 112, 1)" }}>
+                  <Link href="/register" style={{ color: "#003C70",textDecoration:"none" }}>
                     {loginPageData.loginPageRegisterCaption}{" "}
                   </Link>
                   {/* Render the title from loginPageData & loginPageData6 & link the Register page to loginPageData */}
@@ -230,8 +230,9 @@ const Login = () => {
                     textAlign: "center",
                     marginTop: "0px",
                     color: "rgba(17, 20, 45, 1)",
+                    
                   }}>
-                  <Link href="/">
+                  <Link href="/" style={{textDecoration:"none", color:"#11142D"}}>
                     {loginPageData.loginPageBackArrowCaption}{" "}
                   </Link>
                   {/* Render the title from loginPageData & link the home page */}

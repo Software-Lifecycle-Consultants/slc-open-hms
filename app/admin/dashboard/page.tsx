@@ -8,12 +8,10 @@ import BillingDetails from "@/components/checkout/BillingDetails";
 import BookingInfo from "@/components/checkout/BookingInfo";
 import ExtraFacilitation from "@/components/checkout/ExtraFacilitation";
 import Charts from "@/components/admin/charts"
-
 /**
  * CheckoutScreen component represents the checkout screen of the website.
  * It includes sections like Heading, Billing details form, Booking info, Extra facilitation, Calender and Submit button.
  */
-
 const AdminDashboard = () => {
   return (
     <>
