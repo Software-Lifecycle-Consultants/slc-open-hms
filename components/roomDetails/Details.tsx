@@ -12,8 +12,9 @@ const Details = () => {
           Width: "auto",
           border: "1px solid",
           borderRadius: "8",
-          borderColor: "white",
+          borderColor: "#EEF5FF",
           flexShrink: "0",
+          backgroundColor: "#EEF5FF",
         }}
       >
         <CardContent>
@@ -34,8 +35,8 @@ const Details = () => {
 
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Typography
-                mt={2}
-                mb={2}
+                  mt={2}
+                  mb={2}
                   style={{
                     color: "Gray",
                     fontSize: "16",

@@ -25,7 +25,9 @@ const VisuallyHiddenInput = styled("input")({
 const roomDetails = () => {
   return (
     <>
-      <Box sx={{ backgroundColor: "", padding: "10px 0", width: "100%" }}>
+      <Box
+        sx={{ backgroundColor: "#EEF5FF", padding: "10px 0", width: "100%" }}
+      >
         <Container>
           <HeadingBook />
         </Container>
@@ -33,6 +35,7 @@ const roomDetails = () => {
       <Box
         sx={{
           display: "grid",
+          backgroundColor: "#EEF5FF",
         }}
       >
         {/* (1) The Details component is imported and rendered here. */}
@@ -161,7 +164,7 @@ const roomDetails = () => {
                   }}
                 >
                   {" "}
-                 Save
+                  Save
                 </Typography>
               </Button>
             </Box>
