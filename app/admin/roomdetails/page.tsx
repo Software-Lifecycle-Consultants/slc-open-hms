@@ -48,11 +48,9 @@ const roomDetails = () => {
                 style={{
                   color: "Gray",
                   fontSize: "16px",
-                  lineHeight: "120%",
                   fontStyle: "normal",
                   letterSpacing: "0.12px",
                   fontWeight: "700",
-                  marginTop: "10px",
                 }}
               >
                 Cover Image
@@ -60,7 +58,7 @@ const roomDetails = () => {
               <Card
                 elevation={0}
                 sx={{
-                  height: "299px",
+                  height: "280px",
                   Width: "auto",
                   border: "1px solid",
                   borderRadius: "8px",
