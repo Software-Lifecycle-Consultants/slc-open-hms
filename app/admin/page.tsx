@@ -174,9 +174,9 @@ const AdminLoginPage = () => {
                           edge="end"
                         >
                           {formData.showPassword ? (
-                            <VisibilityOff />
-                          ) : (
                             <Visibility />
+                          ) : (
+                            <VisibilityOff />
                           )}{" "}
                           {/* Toggle visibility icon */}
                         </IconButton>
