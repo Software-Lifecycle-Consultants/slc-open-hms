@@ -1,8 +1,9 @@
-import { Button, Checkbox, Typography, Box } from "@mui/material";
+import { Button, Checkbox, Typography, Box, Link } from "@mui/material";
 import React from "react";
 import { submitContent } from "@/data/checkoutPage";
 import { mulish } from "../../app/fonts";
 import { orangebuttonCommonStyle } from "../homePage/styles";
+import PDFGenerator from "../pdf-generator/page";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const SubmitButton = () => {
@@ -35,6 +36,7 @@ const SubmitButton = () => {
           {submitContent.condition}
         </Typography>
       </Box>
+      <Link href={"/pdf-genarator"}>
       <Button
         variant="contained"
         className={mulish.className}
@@ -42,6 +44,7 @@ const SubmitButton = () => {
       >
         {submitContent.submitctaCaption}
       </Button>
+      </Link>
     </>
   );
 };
