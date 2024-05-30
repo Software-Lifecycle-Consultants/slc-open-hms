@@ -6,6 +6,7 @@ import {
   Document,
   View,
   StyleSheet,
+  Image,
 } from "@react-pdf/renderer";
 
 const styles = StyleSheet.create({
@@ -146,14 +147,17 @@ const PDFGenerator = () => {
       <Page size="A4" wrap>
         <View style={styles.container}>
           {/* PDF Heading */}
-          
+          <Image
+            style={styles.image}
+            src="/public/images/admin/loginpage/adminlogo.webp"
+          />
+
           <Text style={styles.heading}>Travala</Text>
 
           {/* PDF Heading */}
           <View style={styles.content}>
             {/* View section 1 */}
             <View style={styles.section}>
-              
               <Text style={styles.details}> 101 Independence Avenue</Text>
             </View>
 

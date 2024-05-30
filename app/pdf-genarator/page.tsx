@@ -4,10 +4,6 @@ import { PDFViewer, StyleSheet } from "@react-pdf/renderer";
 import { useState, useEffect } from "react";
 
 const styles = StyleSheet.create({
-
-
-
-
   pdfView: {
     marginBottom: 10,
     marginTop: 10,
@@ -22,12 +18,6 @@ export default function Home() {
     setIsClient(true);
   }, []);
 
-  // below error was handled using react hooks in above
-
-  // Internal error: Error: PDFDownloadLink is a web
-  // specific API. You're either using this component on Node, or your
-  // bundler is not loading react-pdf from the appropriate web build.
-
   return (
     <>
       {isClient ? (
@@ -39,18 +29,16 @@ export default function Home() {
               backgroundColor: "#C7923E",
               paddingTop: "25px",
               paddingBottom: "25px",
-              fontSize:"30px",
+              fontSize: "30px",
             }}
           >
-             PDF View 
+            PDF View
           </div>
           <div style={styles.pdfView}>
-            <PDFViewer width= "100%" height="600">
+            <PDFViewer width="100%" height="600">
               <PDFGenerator />
             </PDFViewer>
           </div>
-
-          
         </div>
       ) : null}
     </>
