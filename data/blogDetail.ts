@@ -1,6 +1,7 @@
 
 //data used in blog detail page 
 export const blogcontent = {
+    copybuttontxt:"Copy Link",
     blogMainTitle: "Sigiriya - Sri Lanka's Enigmatic Citadel Unveiled",
     blogSubtitle: "Explore the ancient mysteries and architectural marvels of Sigiriya, a UNESCO World Heritage Site nestled in the heart of Sri Lanka.",
     pharagraph:{
@@ -13,6 +14,8 @@ export const blogcontent = {
         imageEndsource:"Unsplash",
         blockquoteText:'“In a world older and more complete than ours they move finished and complete, gifted with extensions of the senses we have In a realm ancient and sublime, they dwell with a completeness and grace beyond our reach, adorned with senses we`ve forsaken or never grasped, attuned to melodies we may never perceive.ost or never attained, living by voices we shall never hear.”',
         blockquoteCite:"Olivia Rhye, Product Designer",
+        blockquoteUser:"Olivia Rhye",
+        blockquotePosistion: "Product Designer, Untitled",
         bodyParagraph:"What sets Sigiriya apart from other ancient sites is its remarkable fusion of natural landscape with architectural brilliance. The ascent to the summit involves navigating through a series of intricate water gardens, frescoes, and staircases carved into the rock itself. The highlight of the climb is the awe-inspiring Lion Gate, where visitors are greeted by two monumental lion paws, remnants of what was once a colossal lion statue guarding the entrance to the palace atop the rock.",
         bodyParagraph1:"At the summit, the ruins of King Kasyapa's palace offer panoramic views of the surrounding countryside, making it evident why he chose this location for his stronghold. The complex includes the remains of royal chambers, audience halls, and even a mirror wall adorned with ancient graffiti, providing insights into the lives of the inhabitants of Sigiriya centuries ago.",
         pTitle1:{

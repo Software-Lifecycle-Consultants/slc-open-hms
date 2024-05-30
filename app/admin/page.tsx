@@ -19,7 +19,6 @@ import Link from "next/link";
 import adminLogo from "@/public/images/admin/loginpage/adminlogo.webp";
 import Image from "next/image";
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import color from "material-ui-colors/dist/amber";
 
 const AdminLoginPage = () => {
   const router = useRouter(); // Initialize the router
@@ -144,15 +143,7 @@ const AdminLoginPage = () => {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <IconButton
-                          onClick={handleTogglePasswordVisibility}
-                          edge="end">
-                          {formData.showPassword ? (
-                            <EmailOutlinedIcon />
-                          ) : (
-                            <EmailOutlinedIcon/>
-                          )}{" "}
-                        </IconButton>
+                        <EmailOutlinedIcon />
                       </InputAdornment>
                     ),
                   }}
@@ -183,9 +174,9 @@ const AdminLoginPage = () => {
                           edge="end"
                         >
                           {formData.showPassword ? (
+                            <Visibility /> 
+                        ) : (
                             <VisibilityOff />
-                          ) : (
-                            <Visibility />
                           )}{" "}
                           {/* Toggle visibility icon */}
                         </IconButton>
@@ -219,7 +210,7 @@ const AdminLoginPage = () => {
                 </Grid>
                 <Grid item xs={6} marginTop={2} textAlign="right">
                   <Typography style={{ color: "#4A5472" }}>
-                    <Link href="/" style={{color:"#4A5472", textDecoration:"none"}}>
+                    <Link href="/admin/forgot-password" style={{color:"#4A5472", textDecoration:"none"}}>
                       {adminLoginPageData.loginPageForgotPasswordCaption}
                     </Link>
                     {/* Render the title from loginPageData & link the Forgot Password page */}
