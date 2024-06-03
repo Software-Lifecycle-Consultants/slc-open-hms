@@ -25,21 +25,16 @@ const rooms = () => {
     >
       {/* Large Container for Add More Button */}
       <Container maxWidth="lg" style={{ position: 'relative', }}>
-        <Link href="/admin/room-details" style={{ position: 'absolute', top: '15px', right: '0px' }}>
+        <Link href="/admin/room-details" style={{ position: 'absolute', top: '15px', right: '22px' }}>
           <Button
             variant="outlined"
-            endIcon={<AddCircleOutlineIcon
-              style={{
-                width: 26,
-                height: 26,
-              }} />
-            }
+            endIcon={<AddCircleOutlineIcon/>}
             style={{
               fontFamily: "Mulish",
               backgroundColor: "#4A5472",
               fontSize: "16px",
-              width: "130px",
-              height: "40px",
+              width: "auto",
+              height: "auto",
               borderColor: "#5B5959",
               borderWidth: 2,
               color: "white",
@@ -48,75 +43,72 @@ const rooms = () => {
             {roomlistData.roomlistAddMoreButton}
           </Button>
         </Link>
-
-
-      {/* Small Container for Room List */}
-      <Container maxWidth="md" style={{ marginTop: "130px" }}>
-        <Box>
-          <Grid container spacing={2} justifyContent="space-between">
-            {rooms.map((room, index) => (
-              <Grid item xs={12}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginTop: index === 0 ? "0px" : "5px",
-                }} key={index}>
-                {/* Hotel Icon */}
-                <Box
+        {/* Small Container for Room List */}
+        <Container maxWidth="md" style={{ marginTop: "130px" }}>
+          <Box>
+            <Grid container spacing={2} justifyContent="space-between">
+              {rooms.map((room, index) => (
+                <Grid item xs={12}
                   style={{
-                    backgroundColor: "#D9D9D9",
-                    borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
-                    width: 45,
-                    height: 45,
-                  }}
-                >
-                  <HotelIcon
+                    marginTop: index === 0 ? "0px" : "5px",
+                  }} key={index}>
+                  {/* Hotel Icon */}
+                  <Box
                     style={{
-                      color: "#666666",
-                      width: 35,
-                      height: 35,
-                    }} />
-                </Box>
-                {/* Room Name Text */}
-                <Typography
-                  style={{
-                    fontFamily: "Mulish",
-                    marginLeft: "20px",
-                    fontWeight: 550,
-                  }}>
-                  {roomlistData.roomlistText}
-                </Typography>
-                {/* edit Icon */}
-                <IconButton
-                  style={{
-                    marginLeft: "auto",
-                    color: "#000000",
-                  }}>
-                  <EditIcon
+                      backgroundColor: "#D9D9D9",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: 45,
+                      height: 45,
+                    }}>
+                    <HotelIcon
+                      style={{
+                        color: "#666666",
+                        width: 35,
+                        height: 35,
+                      }}/>
+                  </Box>
+                  {/* Room Name Text */}
+                  <Typography
                     style={{
-                      width: 28,
-                      height: 28,
-                    }} />
-                </IconButton>
-                {/* Delete Icon */}
-                <IconButton
-                  style={{
-                    color: "#000000",
-                  }}>
-                  <DeleteIcon
+                      fontFamily: "Mulish",
+                      marginLeft: "20px",
+                      fontWeight: 550,
+                    }}>
+                    {roomlistData.roomlistText}
+                  </Typography>
+                  {/* edit Icon */}
+                  <IconButton
                     style={{
-                      width: 28,
-                      height: 28,
-                    }} />
-                </IconButton>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Container>
+                      marginLeft: "auto",
+                      color: "#000000",
+                    }}>
+                    <EditIcon
+                      style={{
+                        width: 28,
+                        height: 28,
+                      }} />
+                  </IconButton>
+                  {/* Delete Icon */}
+                  <IconButton
+                    style={{
+                      color: "#000000",
+                    }}>
+                    <DeleteIcon
+                      style={{
+                        width: 28,
+                        height: 28,
+                      }} />
+                  </IconButton>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Container>
       </Container>
     </Box>
   );
