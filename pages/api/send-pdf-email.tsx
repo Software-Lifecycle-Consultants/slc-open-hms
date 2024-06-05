@@ -5,15 +5,19 @@ import htmlPdf from 'html-pdf-node';
 import { Readable } from 'stream';
 import { join } from 'path';
 
+// Define the request body type
 type RequestBody = {
   email: string;
 };
 
+// Default export function to handle the API request
 export default async function sendPdfEmail(req: NextApiRequest, res: NextApiResponse) {
+  // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
+  // Extract the email from the request body
   const { email }: RequestBody = req.body;
 
   try {
@@ -52,7 +56,7 @@ export default async function sendPdfEmail(req: NextApiRequest, res: NextApiResp
         resolve(buffer);
       });
     });
-    
+
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: 'gmail',
