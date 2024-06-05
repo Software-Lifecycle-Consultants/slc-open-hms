@@ -26,7 +26,7 @@ const roomDetails = () => {
   return (
     <>
       <Box
-        sx={{ backgroundColor: "#EEF5FF", padding: "10px 0", width: "100%", marginLeft: "17px"}}
+        sx={{ backgroundColor: "#EEF5FF", padding: "10px 0", width: "100%", mx: "2px"}}
       >
         <Container>
           <HeadingBook />
