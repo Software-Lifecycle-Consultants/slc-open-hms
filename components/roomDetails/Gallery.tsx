@@ -82,13 +82,18 @@ export default function StandardImageList() {
        display="flex" justifyContent="center" alignItems="center" > 
         <Button
           sx={{
+            textTransform: "none",
             justifyContent: "center",
             color: "white",
             width: "100px",
             height: "30px",
-            borderRadius: "8",
+            borderRadius: "8px",
             textAlign: "center",
             backgroundColor: "#4A5472",
+            "&:hover": {
+              backgroundColor: "#192959",
+              
+            },
           }}
           variant="outlined"
         >
