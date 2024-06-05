@@ -6,7 +6,7 @@ import BarChartPlot from "./BarChartPlot";
 const Charts = () => {
   return (
     <>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 6,padding: '80px' }}> {/* Outer Box */}
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 6,padding: '80px',backgroundColor:'#EEF5FF' }}> {/* Outer Box */}
         <Box sx={{ backgroundColor: 'white', padding: '50px',borderRadius:5 }}> {/* White Box 1 */}
           <section className="flex my-4 px-4 gap-3">
             <AreaChartPlot />
