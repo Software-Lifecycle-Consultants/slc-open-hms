@@ -17,7 +17,7 @@ const rooms = () => {
   return (
     <Box
       padding="30px"
-      bgcolor="rgba(238, 245, 255, 1)"
+      bgcolor="#f0f4fc"
       minHeight="100vh"
       display="flex"
       flexDirection="column"
@@ -37,7 +37,7 @@ const rooms = () => {
             style={{
               fontFamily: "Mulish",
               backgroundColor: "#4A5472",
-              fontSize: "16px",
+              fontSize: "15px",
               width: "130px",
               height: "40px",
               borderColor: "#5B5959",
