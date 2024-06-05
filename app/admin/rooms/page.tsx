@@ -24,12 +24,12 @@ const rooms = () => {
       position="relative"
     >
       {/* Large Container for Add More Button */}
-      <Container maxWidth="lg" style={{ position: 'relative', }}>
+      <Container maxWidth="lg" sx={{ position: 'relative', }}>
         <Link href="/admin/room-details" style={{ position: 'absolute', top: '15px', right: '22px' }}>
           <Button
             variant="outlined"
             endIcon={<AddCircleOutlineIcon/>}
-            style={{
+            sx={{
               fontFamily: "Mulish",
               backgroundColor: "#4A5472",
               fontSize: "16px",
@@ -44,19 +44,19 @@ const rooms = () => {
           </Button>
         </Link>
         {/* Small Container for Room List */}
-        <Container maxWidth="md" style={{ marginTop: "130px" }}>
+        <Container maxWidth="md" sx={{ marginTop: "130px" }}>
           <Box>
             <Grid container spacing={2} justifyContent="space-between">
               {rooms.map((room, index) => (
                 <Grid item xs={12}
-                  style={{
+                  sx={{
                     display: "flex",
                     alignItems: "center",
                     marginTop: index === 0 ? "0px" : "5px",
                   }} key={index}>
                   {/* Hotel Icon */}
                   <Box
-                    style={{
+                    sx={{
                       backgroundColor: "#D9D9D9",
                       borderRadius: "50%",
                       display: "flex",
@@ -66,7 +66,7 @@ const rooms = () => {
                       height: 45,
                     }}>
                     <HotelIcon
-                      style={{
+                      sx={{
                         color: "#666666",
                         width: 35,
                         height: 35,
@@ -74,7 +74,7 @@ const rooms = () => {
                   </Box>
                   {/* Room Name Text */}
                   <Typography
-                    style={{
+                    sx={{
                       fontFamily: "Mulish",
                       marginLeft: "20px",
                       fontWeight: 550,
@@ -83,23 +83,23 @@ const rooms = () => {
                   </Typography>
                   {/* edit Icon */}
                   <IconButton
-                    style={{
+                    sx={{
                       marginLeft: "auto",
                       color: "#000000",
                     }}>
                     <EditIcon
-                      style={{
+                      sx={{
                         width: 28,
                         height: 28,
                       }} />
                   </IconButton>
                   {/* Delete Icon */}
                   <IconButton
-                    style={{
+                    sx={{
                       color: "#000000",
                     }}>
                     <DeleteIcon
-                      style={{
+                      sx={{
                         width: 28,
                         height: 28,
                       }} />
