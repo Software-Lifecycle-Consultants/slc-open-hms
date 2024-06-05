@@ -26,7 +26,7 @@ const EmailForm = () => {
       if (response.ok) {
         // If the response is ok, parse the JSON response
         const result = await response.json();
-        alert(result.message); // Alert the success message fafSDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        alert(result.message); // Alert the success message 
       } else {
          // If the response is not ok, parse the error message
         const { error } = await response.json();
@@ -34,7 +34,7 @@ const EmailForm = () => {
       }
     } catch (error) {
       console.error('Error sending email:', error); // Log the error
-      setError('Failed to send email'); // Set a generic error message https://github.com/Software-Lifecycle-Consultants/slc-open-hms/pull/383/files
+      setError('Failed to send email'); // Set a generic error message 
     } finally {
       setIsSending(false); // Reset the sending status
     }
