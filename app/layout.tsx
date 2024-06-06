@@ -18,9 +18,9 @@ import MainContent from '@/components/MainContent';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const segments = useSelectedLayoutSegments();
-  const isAdminRoute = segments.includes('admin');
+  const isAdminRoute = segments?.includes('admin');
   // Checks if the length of the segments array is greater than 1 and if the isAdminRoute variable is true also excluse forgot-password route
-  const isAdminDashboardRoute = segments.length > 1 && isAdminRoute && segments[1] !== 'forgot-password';;
+  const isAdminDashboardRoute = segments && segments.length > 1 && isAdminRoute && segments[1] !== 'forgot-password';;
   console.log("isAdminRoute is :" + isAdminRoute);
   console.log("isAdminDashboardRoute is :" + isAdminDashboardRoute);
   return (
