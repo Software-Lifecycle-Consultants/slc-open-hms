@@ -306,14 +306,14 @@ import {
                       <ListItem alignItems="flex-start">
                         <ListItemAvatar>
                           {/* Author Avatar */}
-                          <Avatar src={"avatarImage"} alt="Olivia Rhyne" />
+                          <Avatar src={"avatarImage"} alt={blogcontent.pharagraph.blockquoteUser} />
                         </ListItemAvatar>
                         {/* Author Name and Position */}
                         <ListItemText
-                          primary="Olivia Rhye"
+                          primary={blogcontent.pharagraph.blockquoteUser}
                           secondary={
                             <React.Fragment>
-                              {"Product Designer, Untitled"}
+                              {blogcontent.pharagraph.blockquotePosistion}
                             </React.Fragment>
                           }
                         />
@@ -335,7 +335,7 @@ import {
                           <ContentCopyIcon
                             sx={{ color: "#344054", mr: "10px" }}
                           />{" "}
-                          Copy Link
+                          {blogcontent.copybuttontxt}
                         </Button>
                         <Button
                           variant="outlined"

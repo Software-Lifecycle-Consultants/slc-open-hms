@@ -84,6 +84,20 @@ npm install leaflet
 npm i leaflet-control-geocoder@1.8.3
  ```
 
+- [Recharts](https://recharts.org/en-US/guide) - Version 2.12.7
+  - A composable charting library built on React components.
+  - Install the package in your project directory using the following commands.
+```bash
+npm install recharts
+ ```
+
+- [react-quill](https://www.npmjs.com/package/react-quill) - Version 2.0.0
+  - A rich text editor component for React applications
+  - Install the package in your project directory using the following commands.
+```bash
+npm install react-quill --save
+ ```
+
 3. Set up the environment variables:
   - Create a .env.local file in the root directory of the project.
   - Add the required environment variables, such as database connection strings, API keys, etc.

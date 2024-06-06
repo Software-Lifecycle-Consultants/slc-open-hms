@@ -8,13 +8,13 @@ const Details = () => {
       <Card
         elevation={0}
         sx={{
-          height: "550px",
+          height: "580px",
           Width: "auto",
           border: "1px solid",
-          borderRadius: "8px",
-          borderColor: "#D0D5DD",
+          borderRadius: "8",
+          borderColor: "#EEF5FF",
           flexShrink: "0",
-          marginTop: "30px",
+          backgroundColor: "#EEF5FF",
         }}
       >
         <CardContent>
@@ -35,15 +35,14 @@ const Details = () => {
 
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Typography
+                  mt={2}
+                  mb={2}
                   style={{
                     color: "Gray",
-                    fontSize: "16px",
-                    lineHeight: "120%",
+                    fontSize: "16",
                     fontStyle: "normal",
-                    letterSpacing: "0.12px",
+                    letterSpacing: "0.12",
                     fontWeight: "700",
-                    marginTop: "10px",
-                    marginBottom: "10px",
                   }}
                 >
                   Description
@@ -51,7 +50,7 @@ const Details = () => {
                 <TextField
                   fullWidth
                   multiline
-                  rows={8}
+                  rows={10}
                   label="Enter description"
                   id="Enter description"
                 />
