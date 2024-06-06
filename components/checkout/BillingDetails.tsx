@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Grid,
   Typography,
@@ -8,6 +9,11 @@ import {
 import React from 'react'
 import { billingDetailsForm } from "@/data/checkoutPage";
 import { lora, mulish } from "../../app/fonts";
+
+interface BillingDetailsProps {
+  email: string;
+  setEmail: (email: string) => void;
+}
 
 /**
  * BillingDetails component is the form used in checkout page to input users billing details.
@@ -36,7 +42,10 @@ const mulishPlaceholderStyle = {
   fontFamily: "Mulish",
 };
 
-const BillingDetails = () => {
+const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
   return (
     <>
       {/* Card for the billing details form */}
@@ -117,6 +126,9 @@ const BillingDetails = () => {
                   {billingDetailsForm.emailLbl}
                 </Typography>
                 <TextField
+                required
+                value={email}
+                onChange={handleEmailChange}
                   id="outlined-basic"
                   placeholder="Input your Email Address in Here"
                   variant="outlined"
