@@ -63,7 +63,6 @@ export default function Category() {
             fontSize: "16",
             fontStyle: "normal",
             letterSpacing: "0.12",
-            fontWeight: "700",
           }}
         >
           {category.detailsCategory}
@@ -72,25 +71,6 @@ export default function Category() {
       {/* Stack for the form layout */}
       <Stack spacing={2} marginTop={2}>
         {/* Autocomplete component for the category 1 */}
-        <Autocomplete
-          multiple
-          id="tags-filled"
-          freeSolo
-          onInputChange={handleChange} // Listen for input changes
-          renderTags={(value, getTagProps) =>
-            value.map((option, index) => (
-              <Chip
-                variant="outlined"
-                label={option}
-                {...getTagProps({ index })}
-              />
-            ))
-          }
-          renderInput={(params) => (
-            <TextField {...params} label="Enter Category Name" />
-          )}
-          options={[]}
-        />
         <Typography
           mt={2}
           style={{
