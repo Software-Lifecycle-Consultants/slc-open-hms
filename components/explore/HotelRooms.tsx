@@ -32,6 +32,11 @@ const HotelRooms = ({
   const [filteredRooms, setFilteredRooms] = useState<RoomDetail[]>(roomDetails);
 
   useEffect(() => {
+    if (!searchParams) {
+      // If searchParams is null, do nothing or handle the error as needed
+      return;
+    }
+
     const query = searchParams.get("query") || "";
     const roomType = searchParams.get("roomType") || "";
     const bedSizes = searchParams.get("beds") || "";
