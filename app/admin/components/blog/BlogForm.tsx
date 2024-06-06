@@ -18,6 +18,7 @@ import AddAPhotoIcon from "@mui/icons-material/AddAPhoto"; // Importing icon fro
 import { styled } from "@mui/material/styles"; // Importing styled for custom styling.
 import CloudUploadIcon from "@mui/icons-material/CloudUpload"; // Importing icon from MUI.
 
+
 // Dynamically importing the TextEditor component to enable client-side rendering only.
 const TextEditor = dynamic(() => import("./TextEditor"), {
   ssr: false,
@@ -391,22 +392,26 @@ const BlogForm: React.FC = () => {
             </Grid>
           </Grid>
 
-          <Box
+          <Box 
             sx={{
               textAlign: "right",
-              padding: "0 40px 30px",
+              padding: "0 18px 20px 30px",
               //display: { xs: "flex" },
             }}
           >
             <Button
               type="button"
               sx={{
-                backgroundColor: "#FFFFFF",
+                textTransform:"none",
+                backgroundColor: "#EBEBEB",
                 border: "2px solid black",
-                borderRadius: "10px",
+                borderRadius: "8px",
                 color: "black",
                 padding: { xs: "8px 14px" },
+                width: "100px",
+                height: "30px",
                 marginRight: "10px",
+                fontSize: "14px",
               }}
               onClick={() => console.log("Draft Saved")}
             >
@@ -416,18 +421,23 @@ const BlogForm: React.FC = () => {
             <Button
               type="submit"
               sx={{
+                textTransform:"none",
                 backgroundColor: "#4A5472",
                 borderRadius: "10px",
                 color: "white",
                 border: "2px solid ",
+                width: "100px",
+                height: "35px",
+                
                 padding: { xs: "8px 14px" },
                 "&:hover": {
-                  backgroundColor: "#3B435F",
+                  backgroundColor: "#192959",
                   borderColor: "#3B435F",
                 },
                 "&:active": {
                   backgroundColor: "#2C3045",
                   borderColor: "#2C3045",
+                  fontSize: "19px"
                 },
               }}
             >
@@ -439,5 +449,7 @@ const BlogForm: React.FC = () => {
     </form>
   );
 };
+
+
 
 export default BlogForm; // Exporting the BlogForm component as default.

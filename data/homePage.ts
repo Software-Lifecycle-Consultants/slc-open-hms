@@ -28,7 +28,7 @@ export const drawerPages = [
 /* Assign array of pages and their corresponding routes to the navigation drawer component of the website */
 export const adminDrawerPages = [
   { label: "Dashboard", route: "./dashboard" },
-  { label: "Item", route: "./room-details" },
+  { label: "Rooms", route: "./rooms" },
   { label: "Blog", route: "./blog" },
   { label: "Contact Us", route: "./edit-contacts" },
   { label: "Settings", route: "./settings" },

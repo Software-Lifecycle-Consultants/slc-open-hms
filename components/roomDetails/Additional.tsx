@@ -8,6 +8,7 @@ import {
   Box,
 } from "@mui/material";
 import { additional } from "@/data/roomDetails";
+import { Bolt } from "@mui/icons-material";
 
 /* Functional component for ExtraFacilitation */
 const Additional = () => {
@@ -34,6 +35,7 @@ const Additional = () => {
               fontSize: "16",
               fontStyle: "normal",
               letterSpacing: "0.12",
+              fontWeight: 'bold',
             }}
           >
             {additional.additionalPageTitle}
@@ -46,7 +48,7 @@ const Additional = () => {
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <TextField
                   fullWidth
-                  label="Enter Service Enter Additional Information TitleAdd On Title"
+                  label={<b style={{ fontWeight: 'bold' }}>Enter Additional Information Title</b>}
                   id="ATitle"
                 />
               </Grid>
@@ -58,6 +60,7 @@ const Additional = () => {
                     fontSize: "16",
                     fontStyle: "normal",
                     letterSpacing: "0.12",
+                    fontWeight: 'bold'
                   }}
                 >
                   Description
