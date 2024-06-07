@@ -5,13 +5,12 @@ import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import L from "leaflet";
 import { geocoders } from "leaflet-control-geocoder";
-
-/**
- * Interface defining the structure for position information.
- */
-
+/*
+This component integrates the Leaflet Control Geocoder to convert addresses to latitude and longitude.
+ It adds markers to the map for each address provided.
+*/
 interface PositionInfo {
-  address: string;
+  address: string; //declear the address as a prop
 }
 
 /**
@@ -33,77 +32,39 @@ const LeafletControlGeocoder: React.FC<LeafletControlGeocoderProps> = (
   const map = useMap();
   const { positionInfos } = props;
 
+  // Effect to add markers for each address provided
   useEffect(() => {
-    // Ensure the map instance is available
-    if (!map) {
-      console.error("Map instance is not available");
-      return;
-    }
-
     const geocoder = new geocoders.Nominatim();
 
-    /**
-     * Function to add markers for each address provided.
-     */
+    positionInfos.forEach((positionInfo) => {
+      const address = positionInfo.address; //destructure the address from positionInfo
+      if (address) {
+        //check if address is not null
+        geocoder.geocode(address, (resultArray: any[]) => {
+          //convert the address to lat and long
+          if (resultArray.length > 0) {
+            const result = resultArray[0];
+            const latlng = result.center;
 
-    const addMarkers = async () => {
-      for (const positionInfo of positionInfos) {
-        const address = positionInfo.address;
-        if (address) {
-          try {
-            const resultArray = await geocodeAddress(geocoder, address);
-            if (resultArray.length > 0) {
-              const result = resultArray[0];
-              const latlng = result.center;
+            const customIcon = new L.Icon({
+              iconUrl: "https://www.svgrepo.com/show/362123/map-marker.svg", //icon for the map marker
+              iconSize: [30, 50],
+              iconAnchor: [12, 41],
+              popupAnchor: [1, -34],
+              shadowSize: [41, 41],
+            });
 
-              //Custom marker
-              const customIcon = new L.Icon({
-                iconUrl: "https://www.svgrepo.com/show/362123/map-marker.svg",
-                iconSize: [30, 50],
-                iconAnchor: [12, 41],
-                popupAnchor: [1, -34],
-                shadowSize: [41, 41],
-              });
-
-              const marker = L.marker(latlng, { icon: customIcon });
-
-              // Ensure the map is ready before adding the marker
-              map.whenReady(() => {
-                marker.addTo(map).bindPopup(result.name);
-                map.fitBounds(result.bbox);
-              });
-
-              if (!marker) {
-                console.error("Marker could not be added to the map");
-              }
-            }
-          } catch (error) {
-            console.error("Geocoding error:", error);
+            L.marker(latlng, { icon: customIcon })
+              .addTo(map) //add the marker to the map
+              .bindPopup(result.name); //display the name of the location on the map
+            map.fitBounds(result.bbox); //fit the map to the location
           }
-        }
-      }
-    };
-
-    addMarkers();
-  }, [map, positionInfos]);
-
-  return null;
-};
-
-//Function to geocode an address using the specified geocoder.
-
-const geocodeAddress = (geocoder: any, address: string): Promise<any[]> => {
-  //A promise that resolves to an array of geocoding results.
-  return new Promise((resolve, reject) => {
-    //The geocoder to use for the address conversion to geocode.
-    geocoder.geocode(address, (results: any[]) => {
-      if (results) {
-        resolve(results);
-      } else {
-        reject(new Error("Geocoding failed"));
+        });
       }
     });
-  });
+  }, [map, positionInfos]);
+
+  return null; // Return null as LeafletControlGeocoder does not render any visible UI
 };
 
 export default LeafletControlGeocoder;
