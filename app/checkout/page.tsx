@@ -1,4 +1,5 @@
-"use client"
+"use client";
+import  { useState } from 'react';
 import Calender from "@/components/checkout/Calender";
 import Heading from "@/components/checkout/Heading";
 import SubmitButton from "@/components/checkout/SubmitButton";
@@ -14,6 +15,7 @@ import TermAndCondition from "@/components/checkout/TermAndCondition";
  */
 
 const CheckoutScreen = () => {
+  const [email, setEmail] = useState('');
   return (
     <>
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
@@ -31,7 +33,7 @@ const CheckoutScreen = () => {
         <Container>
           <Grid container spacing={2}>
             <Grid item xs={12} md={8}>
-              <BillingDetails />
+              <BillingDetails email={email} setEmail={setEmail} />
               {/* <BookingDetailsForm /> */}
             </Grid>
             <Grid item xs={12} md={4}>
@@ -56,7 +58,7 @@ const CheckoutScreen = () => {
         <Container>
           <Grid container spacing={2}>
             <Grid item xs={12} md={8}>
-              <SubmitButton />
+              <SubmitButton email={email} />
             </Grid>
           </Grid>
         </Container>
