@@ -104,6 +104,13 @@ npm install react-quill --save
 npm install zod 
  ```
 
+- [nodemailer](https://nodemailer.com/) - Version 6.9.13
+  - A module for Node.js applications to allow easy as cake email sending.
+  - Install the package in your project directory using the following commands.
+```bash
+npm install nodemailer
+ ```
+
 - [react-quill](https://www.npmjs.com/package/react-quill) - Version 2.0.0
   - A rich text editor component for React applications
   - Install the package in your project directory using the following commands.
