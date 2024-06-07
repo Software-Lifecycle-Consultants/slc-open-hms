@@ -111,11 +111,11 @@ npm install zod
 npm install nodemailer
  ```
 
-- [react-quill](https://www.npmjs.com/package/react-quill) - Version 2.0.0
-  - A rich text editor component for React applications
+- [react-quill](https://www.npmjs.com/package/html-pdf-node) - 1.0.7
+  - A plugin to  convert html page or public URL into PDF.
   - Install the package in your project directory using the following commands.
 ```bash
-npm install react-quill --save
+npm install html-pdf-node
  ```
 
 3. Set up the environment variables:
