@@ -97,7 +97,7 @@ export default function StandardImageList() {
               backgroundColor: "#192959",
               
             },
-             release-v1.0.2-qa2
+
           }}
           variant="outlined"
         >
