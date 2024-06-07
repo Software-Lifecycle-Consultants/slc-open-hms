@@ -96,6 +96,7 @@ export default function StandardImageList() {
             "&:hover": {
               backgroundColor: "#192959",
             },
+
           }}
           variant="outlined"
         >

@@ -48,7 +48,7 @@ const Additional = () => {
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <TextField
                   fullWidth
-                  label={<b style={{ fontWeight: 'bold' }}>Enter Additional Information Title</b>}
+                  label={<b style={{ fontWeight: 'normal' }}>Enter Additional Information Title</b>}
                   id="ATitle"
                 />
               </Grid>
