@@ -14,176 +14,131 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <>
-      <Container>
-        <Box
-          sx={{
-            display: { xs: "block", sm: "block", md: "flex", lg: "flex" },
-          }}
-        >
-          <Grid container alignItems="center" spacing={2}>
-            {/* Left side of the banner image */}
-            <Grid item xs={12} md={6}>
-              <Image
-                src={mainImage}
-                alt="test"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  flexShrink: 0,
-                }}
-              />
-            </Grid>
-            {/* Right side of the banner  */}
-            <Grid
-              item
-              xs={12}
-              md={6}
+    <Box sx={{ padding: { xs: 2, sm: 2, md: 2 } }}>
+      <Grid container alignItems="center">
+        {/* Left side of the banner image */}
+        <Grid item xs={12} md={6}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%",
+            }}
+          >
+            <Image
+              src={mainImage}
+              alt="Error Image"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Box>
+        </Grid>
+        {/* Right side of the banner */}
+        <Grid item xs={12} md={6}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              textAlign: { xs: "center", md: "center" },
+              padding: { xs: 2, sm: 3, md: 3 },
+            }}
+          >
+            {/* Title */}
+            <Typography
+              variant="h6"
+              className={inter.className}
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
+                fontSize: { xs: "14px", md: "16px" },
+                color: "#11142D",
               }}
             >
-              {/* Text 1 */}
-              <Typography
-                variant="h6"
-                className={inter.className}
+              {pageDetails.title}
+            </Typography>
+            {/* Subtitle */}
+            <Typography
+              variant="h4"
+              className={inter.className}
+              sx={{
+                marginTop: { xs: 1, sm: 1, md: 1 },
+                fontSize: { xs: "30px", sm: "40px", md: "50px" },
+                color: "#11142D",
+              }}
+            >
+              {pageDetails.subtitle}
+            </Typography>
+            {/* Content 1 */}
+            <Typography
+              variant="h6"
+              className={inter.className}
+              sx={{
+                marginTop: 2,
+                fontSize: { xs: "16px", md: "20px" },
+                color: "#11142D",
+                marginBottom: { xs: 2, sm: 2, md: 2 },
+              }}
+            >
+              {pageDetails.content1}
+            </Typography>
+            {/* Content 2 */}
+            <Typography
+              variant="h6"
+              className={inter.className}
+              sx={{
+                fontSize: { xs: "14px", md: "16px" },
+                color: "#11142D",
+                marginBottom: { xs: 2, sm: 2, md: 2 },
+              }}
+            >
+              {pageDetails.content2}
+            </Typography>
+          </Box>
+          {/* Buttons */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              alignItems: "center",
+              justifyContent: { xs: "center", sm: "center", md: "center" },
+              marginTop: 2,
+              gap: 2,
+              paddingBottom: { xs: 2, sm: 2, md: 2 },
+            }}
+          >
+            <Button
+              variant="contained"
+              sx={{
+                borderRadius: "15px",
+                backgroundColor: "#FFFFFF",
+                color: "#000000",
+                "&:hover": { backgroundColor: "#FFFFFF" },
+                fontSize: { xs: "12px", md: "16px" },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              onClick={() => window.history.back()}
+            >
+              <ArrowBack sx={{ color: "#000000", marginRight: 1 }} />
+              {pageDetails.backArroSection1}
+            </Button>
+            <Link href="/" passHref>
+              <Button
+                variant="contained"
                 sx={{
-                  textAlign: "Left",
-                  fontWeight: "semi bold",
-                  fontSize: { xs: "14px", sm: "14px", md: "16px", lg: "16px" },
-
-                  color: "#11142D",
-                  alignItems: {
-                    xs: "center",
-                    sm: "center",
-                    md: "center",
-                    lg: "flex-start",
-                  },
+                  borderRadius: "15px",
+                  backgroundColor: "#C7923E",
+                  color: "#FFFFFF",
+                  "&:hover": { backgroundColor: "#C7833E" },
+                  fontSize: { xs: "12px", md: "16px" },
                 }}
               >
-                {pageDetails.title}
-              </Typography>
-              {/* Text 2 */}
-              <Typography
-                variant="h4"
-                className={inter.className}
-                sx={{
-                  textAlign: "Left",
-                  marginTop: "12px",
-                  fontWeight: "semi bold",
-                  fontSize: { xs: "40px", sm: "55px", md: "60px", lg: "60px" },
-                  marginRight: "28px",
-                  color: "#11142D",
-                }}
-              >
-                {pageDetails.subtitle}
-              </Typography>
-              {/* Text 3 */}
-              <Typography
-                variant="h6"
-                className={inter.className}
-                sx={{
-                  textAlign: "Left",
-                  marginTop: "24px",
-                  fontWeight: "Regular",
-                  fontSize: { xs: "16px", sm: "18px", md: "20px", lg: "20px" },
-                  color: "#11142D",
-                }}
-              >
-                {pageDetails.content1}
-              </Typography>
-              {/* Text 4 */}
-              <Typography
-                variant="h6"
-                className={inter.className}
-                sx={{
-                  textAlign: "Left",
-                  fontWeight: "Regular",
-                  fontSize: { xs: "14px", sm: "14px", md: "16px", lg: "16px" },
-                  color: "#11142D",
-                }}
-              >
-                {pageDetails.content2}
-              </Typography>
-              {/* Render to Go Back and Take Me Home Section */}
-              <Container
-                sx={{
-                  display: "flex",
-                  alignItems: "space-between",
-                  marginBottom: "24px",
-                  gap: "auto",
-                }}
-              >
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    style={{
-                      borderRadius: "15px",
-
-                      color: "#000000",
-                    }}
-                    sx={{
-                      backgroundColor: "#FFFFFF	",
-                      "&:hover": {
-                        backgroundColor: "#FFFFFF	",
-                      },
-                      textAlign: "center",
-                      fontWeight: "Median",
-                      fontSize: {
-                        xs: "12px",
-                        sm: "12px",
-                        md: "16px",
-                        lg: "16px",
-                      },
-                      marginTop: "24px",
-                    }}
-                    onClick={() => window.history.back()}
-                  >
-                    <ArrowBack
-                      style={{
-                        color: "#000000",
-                        height: "10px",
-                        width: "20px",
-                      }}
-                    />
-                    {pageDetails.backArroSection1}
-                  </Button>
-                <Link href="/">
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    style={{
-                      borderRadius: "15px",
-                    }}
-                    sx={{
-                      backgroundColor: "#C7923E",
-                      "&:hover": {
-                        backgroundColor: "#c7833e",
-                      },
-                      textAlign: "center",
-                      fontWeight: "Medium",
-                      fontSize: {
-                        xs: "12px",
-                        sm: "12px",
-                        md: "16px",
-                        lg: "16px",
-                      },
-                      marginTop: "24px",
-                      marginLeft: "12px",
-                    }}
-                  >
-                    {pageDetails.backArroSection2}
-                  </Button>
-                </Link>
-              </Container>
-            </Grid>
-          </Grid>
-        </Box>
-      </Container>
-    </>
+                {pageDetails.backArroSection2}
+              </Button>
+            </Link>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
