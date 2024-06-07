@@ -95,7 +95,6 @@ export default function StandardImageList() {
             backgroundColor: "#4A5472",
             "&:hover": {
               backgroundColor: "#192959",
-              
             },
 
           }}

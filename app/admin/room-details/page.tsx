@@ -166,8 +166,6 @@ const roomDetails = () => {
                   borderRadius: "8px",
                   marginLeft: "10px",
                   textAlign: "center",
-                  "&:hover": {
-                    backgroundColor: "#192959",}
 
                 }}
                 variant="contained"
