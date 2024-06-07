@@ -26,7 +26,7 @@ const roomDetails = () => {
   return (
     <>
       <Box
-        sx={{ backgroundColor: "#EEF5FF", padding: "10px 0", width: "100%" }}
+        sx={{ backgroundColor: "#EEF5FF", padding: "10px 0", width: "100%", mx: "2px"}}
       >
         <Container>
           <HeadingBook />
@@ -40,6 +40,7 @@ const roomDetails = () => {
         }}
       >
         {/* (1) The Details component is imported and rendered here. */}
+        
         <Container>
           <Grid container spacing={2}>
             {/* <RoomDetailsForm /> */}
@@ -59,6 +60,7 @@ const roomDetails = () => {
               >
                 Cover Image
               </Typography>
+              
               <Card
                 elevation={0}
                 sx={{
@@ -76,6 +78,8 @@ const roomDetails = () => {
                   sx={{
                     marginTop: "7px",
                     backgroundColor: "#4A5472",
+                    "&:hover": {  // Hover style applied here
+                      backgroundColor: "#192959"},
                   }}
                   component="label"
                   role={undefined}
@@ -155,6 +159,7 @@ const roomDetails = () => {
                   textTransform: "none",
                   marginTop: "7px",
                   backgroundColor: "#4A5472",
+                  "&:hover": {backgroundColor: "#192959"},
                   color: "white",
                   width: "100px",
                   height: "30px",
@@ -163,12 +168,14 @@ const roomDetails = () => {
                   textAlign: "center",
                   "&:hover": {
                     backgroundColor: "#192959",}
+
                 }}
                 variant="contained"
               >
                 <Typography
                   style={{
                     color: "white",
+                    
                   }}
                 >
                   {" "}

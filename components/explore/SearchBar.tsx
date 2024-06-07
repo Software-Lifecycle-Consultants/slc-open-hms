@@ -21,8 +21,9 @@ const SearchBar = () => {
   const { replace } = useRouter();
 
   const handleSelect = (key: string, selector: string) => {
-    //key = field name, selector = selected value
-    const params = new URLSearchParams(searchParams);
+    if (!searchParams) return;
+
+    const params = new URLSearchParams(searchParams as any);
 
     if (selector) {
       params.set(key, selector);
@@ -34,8 +35,9 @@ const SearchBar = () => {
   };
 
   const handleSearch = (searchTerm: string) => {
-    //searchTerm = search query
-    const params = new URLSearchParams(searchParams);
+    if (!searchParams) return;
+
+    const params = new URLSearchParams(searchParams as any);
 
     if (searchTerm) {
       params.set("query", searchTerm);
@@ -64,7 +66,7 @@ const SearchBar = () => {
                 id="search"
                 type="search"
                 label="Search"
-                defaultValue={searchParams.get("query")?.toString()}
+                defaultValue={searchParams?.get("query")?.toString() || ""}
                 onChange={(e) => handleSearch(e.target.value)}
                 sx={{ width: "100%" }}
                 InputProps={{
@@ -100,16 +102,20 @@ const SearchBar = () => {
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="roomType"
-                      value={searchParams.get("roomType")?.toString() || ""}
+                      value={searchParams?.get("roomType")?.toString() || ""}
                       onChange={(e) => handleSelect("roomType", e.target.value)}
                       label="Room Type"
                     >
                       <MenuItem value="">{searchBarData.lbl1Content1}</MenuItem>
                       <MenuItem value="Executive Suite">
-                      {searchBarData.lbl1Content2}
+                        {searchBarData.lbl1Content2}
                       </MenuItem>
-                      <MenuItem value="Family Room">{searchBarData.lbl1Content3}</MenuItem>
-                      <MenuItem value="King Suite">{searchBarData.lbl1Content4}</MenuItem>
+                      <MenuItem value="Family Room">
+                        {searchBarData.lbl1Content3}
+                      </MenuItem>
+                      <MenuItem value="King Suite">
+                        {searchBarData.lbl1Content4}
+                      </MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
@@ -119,20 +125,24 @@ const SearchBar = () => {
                     sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
                   >
                     <InputLabel id="demo-simple-select-standard-label">
-                    {searchBarData.searchBarfilterlbl2}
+                      {searchBarData.searchBarfilterlbl2}
                     </InputLabel>
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="guest"
-                      value={searchParams.get("guest")?.toString() || ""}
+                      value={searchParams?.get("guest")?.toString() || ""}
                       onChange={(e) => handleSelect("guest", e.target.value)}
                       label="Guest"
                     >
                       <MenuItem value="">{searchBarData.lbl2Content1}</MenuItem>
-                      <MenuItem value="1 Adult">{searchBarData.lbl2Content2}</MenuItem>
-                      <MenuItem value="2 Adults">{searchBarData.lbl2Content3}</MenuItem>
+                      <MenuItem value="1 Adult">
+                        {searchBarData.lbl2Content2}
+                      </MenuItem>
+                      <MenuItem value="2 Adults">
+                        {searchBarData.lbl2Content3}
+                      </MenuItem>
                       <MenuItem value="2 Adults & 1 child">
-                      {searchBarData.lbl2Content4} 
+                        {searchBarData.lbl2Content4}
                       </MenuItem>
                     </Select>
                   </FormControl>
@@ -143,19 +153,25 @@ const SearchBar = () => {
                     sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
                   >
                     <InputLabel id="demo-simple-select-standard-label">
-                    {searchBarData.searchBarfilterlbl3}
+                      {searchBarData.searchBarfilterlbl3}
                     </InputLabel>
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="beds"
-                      value={searchParams.get("beds")?.toString() || ""}
+                      value={searchParams?.get("beds")?.toString() || ""}
                       onChange={(e) => handleSelect("beds", e.target.value)}
                       label="Beds"
                     >
                       <MenuItem value="">{searchBarData.lbl3Content1}</MenuItem>
-                      <MenuItem value="1 single Queen">{searchBarData.lbl3Content2}</MenuItem>
-                      <MenuItem value="King size">{searchBarData.lbl3Content3}</MenuItem>
-                      <MenuItem value="Double bed">{searchBarData.lbl3Content4}</MenuItem>
+                      <MenuItem value="1 single Queen">
+                        {searchBarData.lbl3Content2}
+                      </MenuItem>
+                      <MenuItem value="King size">
+                        {searchBarData.lbl3Content3}
+                      </MenuItem>
+                      <MenuItem value="Double bed">
+                        {searchBarData.lbl3Content4}
+                      </MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
@@ -165,18 +181,22 @@ const SearchBar = () => {
                     sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
                   >
                     <InputLabel id="demo-simple-select-standard-label">
-                    {searchBarData.searchBarfilterlbl4}
+                      {searchBarData.searchBarfilterlbl4}
                     </InputLabel>
                     <Select
                       labelId="demo-simple-select-standard-label"
                       id="sortBy"
-                      value={searchParams.get("sortBy")?.toString() || ""}
+                      value={searchParams?.get("sortBy")?.toString() || ""}
                       onChange={(e) => handleSelect("sortBy", e.target.value)}
                       label="Sort By"
                     >
                       <MenuItem value="">{searchBarData.lbl4Content1}</MenuItem>
-                      <MenuItem value="20">{searchBarData.lbl4Content2}</MenuItem>
-                      <MenuItem value="30">{searchBarData.lbl4Content3}</MenuItem>
+                      <MenuItem value="20">
+                        {searchBarData.lbl4Content2}
+                      </MenuItem>
+                      <MenuItem value="30">
+                        {searchBarData.lbl4Content3}
+                      </MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>

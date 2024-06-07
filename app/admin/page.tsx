@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // Import useRouter
+import { useRouter } from "next/navigation";
 import {
   TextField,
   Typography,
@@ -18,45 +18,72 @@ import { adminLoginPageData } from "@/data/adminlogin";
 import Link from "next/link";
 import adminLogo from "@/public/images/admin/loginpage/adminlogo.webp";
 import Image from "next/image";
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import { z } from "zod";
 
-const AdminLoginPage = () => {
-  const router = useRouter(); // Initialize the router
+// Define Zod schema
+const schema = z.object({
+  email: z
+    .string()
+    .min(1, "Username should not be empty")
+    .email("Username must be a valid email"),
 
-  const [formData, setFormData] = useState({
+  password: z
+    .string()
+    .min(1, "Password should not be empty")
+    .min(6, "Password must be more than 6 characters"),
+});
+
+type FormData = z.infer<typeof schema>;
+type Errors = {
+  email?: string;
+  password?: string;
+};
+
+const AdminLoginPage: React.FC = () => {
+  const router = useRouter(); // Initialize the Next.js router
+  const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",
-    showPassword: false,
-  });
+  }); // Initialize state for form data
+  const [showPassword, setShowPassword] = useState(false); // Initialize state for password visibility toggle
+  const [errors, setErrors] = useState<Errors>({}); // Initialize state for form validation errors
 
+  // Handle form input change
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    field: string
+    field: keyof FormData
   ) => {
     setFormData({
       ...formData,
       [field]: event.target.value,
     });
-  };
-
-  const handleTogglePasswordVisibility = () => {
-    setFormData({
-      ...formData,
-      showPassword: !formData.showPassword,
+    setErrors({
+      ...errors,
+      [field]: "", // Reset error message for the field being changed
     });
   };
 
+  // Toggle password visibility
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  // Handle form submission
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log(formData);
+    const result = schema.safeParse(formData); // Validate form data using the Zod schema
 
-    // For demonstration, always navigate to dashboard
-    const loginSuccessful = true; // Replace with actual logic
-
-    if (loginSuccessful) {
-      router.push("/admin/dashboard"); // Navigate to the admin dashboard
+    if (!result.success) {
+      const fieldErrors = result.error.format(); // Format validation errors
+      setErrors({
+        email: fieldErrors.email?._errors[0] || "", // Set error message for email field
+        password: fieldErrors.password?._errors[0] || "", // Set error message for password field
+      });
     } else {
-      alert("Invalid credentials. Please try again.");
+      // Handle successful form submission
+      console.log(formData);
+      router.push("/admin/dashboard"); // Navigate to the admin dashboard on successful login
     }
   };
 
@@ -65,27 +92,25 @@ const AdminLoginPage = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      minHeight="70vh" /* Set minimum height to occupy the full viewport */
+      minHeight="70vh" // Set minimum height to occupy the full viewport
     >
-      <Container maxWidth="sm" sx={{ marginTop: "20px", marginBottom:"20px" }}>
+      <Container maxWidth="sm" sx={{ marginTop: "20px", marginBottom: "20px" }}>
         <Box
           padding={5}
           sx={{
-            bgcolor: "#EEF5FF",
+            bgcolor: "#EEF5FF", // Set background color
             mx: "auto",
             mt: "10",
-            borderRadius: "20px",
+            borderRadius: "35px",
             height: "auto",
           }}
         >
           <form onSubmit={handleSubmit}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                {" "}
-                {/* Banner Section */}
                 <Image
                   src={adminLogo}
-                  alt="test"
+                  alt="Admin Logo"
                   width={617.758}
                   height={616.951}
                   style={{
@@ -96,7 +121,7 @@ const AdminLoginPage = () => {
                   }}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} marginBottom={5}>
                 <Box marginTop={2}>
                   <Typography
                     align="center"
@@ -106,32 +131,18 @@ const AdminLoginPage = () => {
                       color: "rgba(81, 81, 81, 1)",
                     }}
                   >
-                    {adminLoginPageData.loginPageDescription}
-                    {/* Render the subtitle from loginPageData */}
+                    {adminLoginPageData.loginPageDescription}{" "}
+                    {/* Login page description */}
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={8} marginTop={3}>
-                {/* Email Section */}
-                <Typography style={{ color: "#4A5472" }}>
-                  {adminLoginPageData.loginPageTitle}
-                </Typography>
-                {/* Render the title from loginPageData */}
-              </Grid>
-              <Grid item xs={8} marginTop={3}>
+              <Grid item xs={8}>
                 {/* Email Section */}
                 <Typography style={{ color: "#4A5472" }}>
                   {adminLoginPageData.loginPageEmailtxtCaption}
                 </Typography>
-                {/* Render the title from loginPageData */}
               </Grid>
-              <Grid
-                item
-                xs={12}
-                marginTop={-1.3}
-                style={{ textAlign: "center" }}
-              >
-                {/* Email TextField */}
+              <Grid item xs={12} style={{ textAlign: "center" }}>
                 <TextField
                   fullWidth
                   label="Email"
@@ -139,33 +150,41 @@ const AdminLoginPage = () => {
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleChange(e, "email")}
-                  required
+                  error={!!errors.email} // Set error state based on validation
+                  helperText={errors.email} // Display error message
+                  FormHelperTextProps={{
+                    style: { fontSize: "1em" }, // Increase font size of error message
+                  }}
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <EmailOutlinedIcon />
+                        <IconButton edge="end">
+                          <EmailOutlinedIcon />
+                        </IconButton>
                       </InputAdornment>
                     ),
                   }}
                 />
               </Grid>
-              <Grid item xs={12} marginTop={2.5}>
+              <Grid item xs={12}>
                 {/* Password Section */}
                 <Typography style={{ color: "rgba(17, 20, 45, 1)" }}>
                   {adminLoginPageData.loginPagePasswordtxtCaption}
                 </Typography>
-                {/* Render the title from loginPageData */}
               </Grid>
-              <Grid item xs={12} marginTop={-1.3}>
-                {/* Password TextField */}
+              <Grid item xs={12}>
                 <TextField
                   fullWidth
                   label="Password"
                   variant="outlined"
-                  type={formData.showPassword ? "text" : "password"} // Toggle visibility based on state
+                  type={showPassword ? "text" : "password"}
                   value={formData.password}
                   onChange={(e) => handleChange(e, "password")}
-                  required
+                  error={!!errors.password} // Set error state based on validation
+                  helperText={errors.password}
+                  FormHelperTextProps={{
+                    style: { fontSize: "1em" }, // Increase font size of error message
+                  }} // Display error message
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
@@ -173,12 +192,7 @@ const AdminLoginPage = () => {
                           onClick={handleTogglePasswordVisibility}
                           edge="end"
                         >
-                          {formData.showPassword ? (
-                            <Visibility /> 
-                        ) : (
-                            <VisibilityOff />
-                          )}{" "}
-                          {/* Toggle visibility icon */}
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                       </InputAdornment>
                     ),
@@ -186,9 +200,7 @@ const AdminLoginPage = () => {
                 />
               </Grid>
               <Grid container>
-                {" "}
-                {/* Remember me and Forgot password Section */}
-                <Grid item xs={6} marginTop={1}>
+                <Grid item xs={6} marginTop={2}>
                   <FormControlLabel
                     control={
                       <Checkbox
@@ -199,65 +211,62 @@ const AdminLoginPage = () => {
                             color: "#4A5472",
                           },
                           marginTop: "2px",
+                          paddingLeft: "25px",
                         }}
                       />
                     }
-                    label={
-                      adminLoginPageData.loginPageCheckBoxCaption
-                    } /* Render the title from loginPageData */
+                    label={adminLoginPageData.loginPageCheckBoxCaption} // Remember me checkbox
                     style={{ color: "rgba(17, 20, 45, 1)" }}
                   />
                 </Grid>
-                <Grid item xs={6} marginTop={2} textAlign="right">
+                <Grid item xs={6} marginTop={3} textAlign="right">
                   <Typography style={{ color: "#4A5472" }}>
-                    <Link href="/admin/forgot-password" style={{color:"#4A5472", textDecoration:"none"}}>
+                    <Link
+                      href="/"
+                      style={{ color: "#4A5472", textDecoration: "none" }}
+                    >
                       {adminLoginPageData.loginPageForgotPasswordCaption}
                     </Link>
-                    {/* Render the title from loginPageData & link the Forgot Password page */}
                   </Typography>
                 </Grid>
-                
               </Grid>
               <Grid item xs={12} marginTop={0} sx={{ marginBottom: "20px" }}>
-                {/* Login Button Section */}
                 <Button
-                   type="submit"
-                   sx={{display: "flex",
-                   justifyContent: "center",
-                   alignItems: "center",
-                   gap: "10px",
-                   borderRadius: "25px",
-                   padding: "18px 24px",
-                   width: "100%",
-                   height: "50px",
-                   marginTop: "20px",
-                   fontSize: "20px",
-                   fontStyle:"normal",
-                   fontWeight: "300",
-                   lineHeight: "120%",
-                   letterSpacing: "0.08px",
-                   backgroundColor: "#4A5472",
-                   textAlign: "center",
-                   textTransform: "capitalize",
-                   transition: "background-color 0.3s ease",
-                   fontFamily: "'mulish', sans-serif",
-                   color: "white",
-                   ":hover": {
-                     backgroundColor: "#718EBF",}}}// Add the button class
+                  type="submit"
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "10px",
+                    borderRadius: "25px",
+                    padding: "18px 24px",
+                    width: "100%",
+                    height: "50px",
+                    marginTop: "20px",
+                    fontSize: "20px",
+                    fontStyle: "normal",
+                    fontWeight: "300",
+                    lineHeight: "120%",
+                    letterSpacing: "0.08px",
+                    backgroundColor: "#4A5472",
+                    textAlign: "center",
+                    textTransform: "capitalize",
+                    transition: "background-color 0.3s ease",
+                    fontFamily: "'mulish', sans-serif",
+                    color: "white",
+                    ":hover": {
+                      backgroundColor: "#718EBF",
+                    },
+                  }}
                 >
-                  {/* Render the title from loginPageData */}
                   {adminLoginPageData.loginPageButtonCaption}
                 </Button>
               </Grid>
               <Grid item xs={12} mb={5}>
-                {/* Register and Forgot password Section */}
-                <Typography
-                  align="center"
-                  style={{ color: "#4A5472" }}
-                >
+                <Typography align="center" style={{ color: "#4A5472" }}>
                   {adminLoginPageData.loginPageNoAccountCaption}{" "}
-                  {/* Render the Register page link */}
-                  <Link href="/register"  style={{color:"#4A5472"}}>
+                  {/* No account caption */}
+                  <Link href="/register" style={{ color: "#4A5472" }}>
                     {adminLoginPageData.loginPageRegisterCaption}
                   </Link>
                 </Typography>

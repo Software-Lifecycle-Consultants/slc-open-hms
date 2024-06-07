@@ -1,12 +1,14 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import BlogForm from "../components/blog/BlogForm";
 
 const blog = () => {
   return (
     <>
-      <Container maxWidth="lg" sx={{ marginTop: "10px", marginBottom: "10px" }}>
+    <Box sx={{backgroundColor:'#EEF5FF'}}>
+      <Container maxWidth="lg" sx={{ marginTop: "10px", marginBottom: "10px"}}>
         <BlogForm />
       </Container>
+      </Box>
     </>
   );
 };
