@@ -95,9 +95,7 @@ export default function StandardImageList() {
             backgroundColor: "#4A5472",
             "&:hover": {
               backgroundColor: "#192959",
-              
             },
-             release-v1.0.2-qa2
           }}
           variant="outlined"
         >
