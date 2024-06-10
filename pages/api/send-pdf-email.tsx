@@ -27,168 +27,298 @@ export default async function sendPdfEmail(
     // Define the HTML content for the PDF
     const htmlContent = `
     
-   <html>
-<head></head>
-<body>
-  <div style="display: flex; flex-direction: column; font-weight: bold; justify-content: center; background-color: white; color: black; margin: 10px; padding: 10px;">
-    <!-- PDF Heading -->
-    <img style="width: 10px; height: 20px;" src="/public/images/admin/loginpage/adminlogo.webp" alt="Admin Logo">
+  <html>
+  <head>
+    <style>
+      html {
+        -webkit-print-color-adjust: exact;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        justify-content: center;
+        background-color: white;
+        color: black;
+        margin: 10px;
+        padding: 10px;
+      }
+      .heading {
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background-color: #e4e8ff;
+      }
+      .sub-heading {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 24px;
+        text-align: left;
+        font-size: 32px;
+        margin-left: 10px;
+      }
+      .details-view {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-weight: 500;
+        color: black;
+        background-color: white;
+        padding: 5px;
+        margin-left: 10px;
+      }
+      .details-row,
+      .booking-row,
+      .services-details-row,
+      .subtitle,
+      .subtotle,
+      .total {
+        display: flex;
+        gap: 50px;
+        flex-direction: row;
+        background-color: white;
+        border-color: white;
+        font-size: 28px;
+      }
+      .booking-row {
+        gap: 20px;
+        font-size: 28px;
+      }
+      .services-details-row {
+        margin-left: 10px;
+        gap: 300px;
+        font-size: 28px;
+      }
+      .subtitle {
+        gap: 300px;
+        background-color: #e4e8ff;
+        padding: 15px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 28px;
+      }
+      .subtotle,
+      .total {
+        gap: 300px;
+        padding: 10px 15px;
+        font-size: 28px;
+      }
+      .subtotle {
+        background-color: #fff0e2;
+        margin-top: 20px;
+      }
+      .total {
+        font-size: 28px;
+        background-color: #fcd1bf;
+      }
+      .details {
+        text-align: left;
+        font-size: 24px;
+        width: 384px;
+      }
+      .content {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+      .section {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 10px 0;
+      }
+      .image {
+        width: 10px;
+        height: 20px;
+      }
+      .special-notice,
+      .special-criteria {
+        text-align: left;
+        font-size: 12px;
+        width: 384px;
+        font-size: 28px;
+        font-style: italic;
+        margin-left: 8px;
+        margin-top: 20px;
+      }
+      .special-criteria {
+        font-size: 24px;
+        margin-top: 5px;
+        margin-left: 15px;
+      }
+      hr {
+        border: 5px solid #A6B4FD;
+     
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- PDF Heading -->
+     
 
-    <h1 style="text-align: center; padding-top: 25px; padding-bottom: 25px; background-color: #E4E8FF;">Travala</h1>
+      <h1 class="heading">Travala</h1>
 
-    <!-- PDF Heading -->
-    <div style="display: flex; flex-direction: row; gap: 20px;">
-      <!-- View section 1 -->
-      <div style="display: flex; flex-direction: column; background-color: white; padding: 10px 0;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">101 Independence Avenue</p>
-      </div>
-
-      <!-- View section 2 -->
-      <div style="display: flex; flex-direction: column; background-color: white; padding: 10px 0;">
-        <div style="display: flex; gap: 20px; flex-direction: row; background-color: white; border-color: white;">
-          <p style="text-align: left; font-size: 14px; width: 384px;">+1 234 56 789</p>
-          <p style="text-align: left; font-size: 14px; width: 384px;">t.travala@gmail.com</p>
-        </div>
-        <div style="display: flex; gap: 20px; flex-direction: row; background-color: white; border-color: white;">
-          <p style="text-align: left; font-size: 14px; width: 384px;">www.holiday.com/travala</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Booking details content -->
-    <h2 style="margin-top: 20px; margin-bottom: 20px; font-size: 24px; text-align: left; margin-left: 10px;">Booking Details</h2>
-
-    <div style="display: flex; flex-direction: column; gap: 4px; font-weight: 500; color: black; background-color: white; padding: 5px; margin-left: 10px;">
-      <!-- Check In -->
-      <div style="display: flex; gap: 50px; flex-direction: row; background-color: white; border-color: white;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Check In</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">Monday 11, March, 2024</p>
-      </div>
-
-      <!-- Check out -->
-      <div style="display: flex; gap: 50px; flex-direction: row; background-color: white; border-color: white;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Check Out</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">Monday 15, March, 2024</p>
-      </div>
-
-      <!-- Guests -->
-      <div style="display: flex; gap: 50px; flex-direction: row; background-color: white; border-color: white;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Guests</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">2 Adults, 1 Child</p>
-      </div>
-
-      <!-- Rooms -->
-      <div style="display: flex; gap: 50px; flex-direction: row; background-color: white; border-color: white;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Rooms</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">01</p>
-      </div>
-
-      <!-- Room Plan -->
-      <div style="display: flex; gap: 50px; flex-direction: row; background-color: white; border-color: white;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Room Plan</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">President Luxury Double Room View NY City</p>
-      </div>
-    </div>
-    <!-- Booking details content -->
-
-    <!-- Booked by content -->
-    <h2 style="margin-top: 20px; margin-bottom: 20px; font-size: 24px; text-align: left; margin-left: 10px;">Booked By</h2>
-
-    <div style="display: flex; flex-direction: column; gap: 4px; font-weight: 500; color: black; background-color: white; padding: 5px; margin-left: 10px;">
-      <div style="display: flex; flex-direction: row; gap: 20px;">
+      <!-- PDF Heading -->
+      <div class="content">
         <!-- View section 1 -->
-        <div style="display: flex; flex-direction: column; background-color: white; padding: 10px 0;">
-          <p style="text-align: left; font-size: 14px; width: 384px;">adrina sell</p>
-          <p style="text-align: left; font-size: 14px; width: 384px;">adrina.sell@gmail.com</p>
-          <p style="text-align: left; font-size: 14px; width: 384px;">+12 4444 88 969</p>
+        <div class="section">
+          <p class="details">101 Independence Avenue</p>
         </div>
 
         <!-- View section 2 -->
-        <div style="display: flex; flex-direction: column; background-color: white; padding: 10px 0;">
-          <div style="display: flex; gap: 20px; flex-direction: row; background-color: white; border-color: white;">
-            <p style="text-align: left; font-size: 14px; width: 384px;">Booking #</p>
-            <p style="text-align: left; font-size: 14px; width: 384px;">00000256</p>
+        <div class="section">
+          <div class="booking-row">
+            <p class="details"><span class="glyphicon glyphicon-earphone"></span>+1 234 56 789</p>
+            <p class="details">t.travala@gmail.com</p>
           </div>
-          <div style="display: flex; gap: 20px; flex-direction: row; background-color: white; border-color: white;">
-            <p style="text-align: left; font-size: 14px; width: 384px;">Booking Date</p>
-            <p style="text-align: left; font-size: 14px; width: 384px;">02/03/2024</p>
-          </div>
-          <div style="display: flex; gap: 20px; flex-direction: row; background-color: white; border-color: white;">
-            <p style="text-align: left; font-size: 14px; width: 384px;">Status</p>
-            <p style="text-align: left; font-size: 14px; width: 384px;">Draft</p>
+          <div class="booking-row">
+            <p class="details">www.holiday.com/travala</p>
           </div>
         </div>
       </div>
-      <!--  -->
-      <div style="display: flex; gap: 200px; background-color: #E4E8FF; padding: 15px; margin-top: 15px; margin-bottom: 10px;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Products selected</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">Amount</p>
-      </div>
-      <!-- Check In -->
-      <div style="display: flex; gap: 200px; margin-left: 10px;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">President Luxury Double Room View NY City ( 4 Days )</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">$ 240.00 </p>
-      </div>
+	</div>
+    
+		<hr>
+        <div class="container">
+      <!-- Booking details content -->
+      <h2 class="sub-heading">Booking Details</h2>
 
-      <!-- Check out -->
-      <div style="display: flex; gap: 200px; margin-left: 10px;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Private Pool</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">$ 35.00</p>
-      </div>
+      <div class="details-view">
+        <!-- Check In -->
+        <div class="details-row">
+          <p class="details">Check In</p>
+          <p class="details">Monday 11, March, 2024</p>
+        </div>
 
-      <!-- Guests -->
-      <div style="display: flex; gap: 200px; margin-left: 10px;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Spa</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">$ 50.00</p>
-      </div>
+        <!-- Check out -->
+        <div class="details-row">
+          <p class="details">Check Out</p>
+          <p class="details">Monday 15, March, 2024</p>
+        </div>
 
-      <div style="display: flex; gap: 200px; background-color: #E4E8FF; padding: 15px; margin-top: 15px; margin-bottom: 10px;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Services</p>
-      </div>
-      <!-- Check In -->
-      <div style="display: flex; gap: 200px; margin-left: 10px;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Laundry and Dry cleaning</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">$ 35.00</p>
-      </div>
+        <!-- Guests -->
+        <div class="details-row">
+          <p class="details">Guests</p>
+          <p class="details">2 Adults, 1 Child</p>
+        </div>
 
-      <!-- Check out -->
-      <div style="display: flex; gap: 200px; margin-left: 10px;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Airport pick-up ( 1 day )</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">$ 80.00</p>
-      </div>
+        <!-- Rooms -->
+        <div class="details-row">
+          <p class="details">Rooms</p>
+          <p class="details">01</p>
+        </div>
 
-      <div style="display: flex; gap: 200px; background-color: #E4E8FF; padding: 15px; margin-top: 15px; margin-bottom: 10px;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Meals</p>
+        <!-- Room Plan -->
+        <div class="details-row">
+          <p class="details">Room Plan</p>
+          <p class="details"><b>President Luxury Double Room View NY City</b></p>
+        </div>
       </div>
-      <!-- Check In -->
-      <div style="display: flex; gap: 200px; margin-left: 10px;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Breakfast (4 days)</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">$ 35.00</p>
-      </div>
+      <!-- Booking details content -->
 
-      <!-- Check out -->
-      <div style="display: flex; gap: 200px; margin-left: 10px;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Dinner (4 days)</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">$ 50.00</p>
+      <!-- Booked by content -->
+      <h2 class="sub-heading">Booked By</h2>
+
+      <div class="details-view">
+        <div class="content">
+          <!-- View section 1 -->
+          <div class="section">
+            <p class="details">adrina sell</p>
+            <p class="details"><u>adrina.sell@gmail.com</u></p>
+            <p class="details">+12 4444 88 969</p>
+          </div>
+
+          <!-- View section 2 -->
+          <div class="section">
+            <div class="booking-row">
+              <p class="details">Booking #</p>
+              <p class="details">00000256</p>
+            </div>
+            <div class="booking-row">
+              <p class="details">Booking Date</p>
+              <p class="details">02/03/2024</p>
+            </div>
+            <div class="booking-row">
+              <p class="details">Status</p>
+              <p class="details">Draft</p>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="subtitle">
+          <p class="details">Products selected</p>
+          <p class="details">Amount</p>
+        </div>
+        <!-- Check In -->
+        <div class="services-details-row">
+          <p class="details">
+            President Luxury Double Room View NY City ( 4 Days )
+          </p>
+          <p class="details"><b>$ 240.00</b></p>
+        </div>
+
+        <!-- Check out -->
+        <div class="services-details-row">
+          <p class="details">Private Pool</p>
+          <p class="details"><b>$ 35.00</b></p>
+        </div>
+
+        <!-- Guests -->
+        <div class="services-details-row">
+          <p class="details">Spa</p>
+          <p class="details"><b>$ 50.00</b></p>
+        </div>
+        <br><br>
+        <div class="subtitle">
+          <p class="details">Services</p>
+        </div>
+        <!-- Check In -->
+        <div class="services-details-row">
+          <p class="details">Laundry and Dry cleaning</p>
+          <p class="details"><b>$ 35.00</b></p>
+        </div>
+
+        <!-- Check out -->
+        <div class="services-details-row">
+          <p class="details">Airport pick-up ( 1 day )</p>
+          <p class="details"><b>$ 80.00</b></p>
+        </div>
+
+        <div class="subtitle">
+          <p class="details">Meals</p>
+        </div>
+        <!-- Check In -->
+        <div class="services-details-row">
+          <p class="details">Breakfast (4 days)</p>
+          <p class="details"><b>$ 35.00</b></p>
+        </div>
+
+        <!-- Check out -->
+        <div class="services-details-row">
+          <p class="details">Dinner (4 days)</p>
+          <p class="details"><b>$ 50.00</b></p>
+        </div>
+
+        <div class="subtotle">
+          <p class="details">Tax Rate</p>
+          <p class="details"><b>15%</b></p>
+        </div>
+        <div class="total">
+          <p class="details"><b>Total</b></p>
+          <p class="details"><b>$158.20</b></p>
+        </div>
       </div>
-      <br><br><br><br><br><br><br><br>
-      <div style="display: flex; gap: 200px; padding: 10px 15px; background-color: #FFF0E2; margin-top: 20px;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Tax Rate</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">15%</p>
-      </div>
-      <div style="display: flex; gap: 200px; padding: 10px 15px; background-color: #FCD1BF;">
-        <p style="text-align: left; font-size: 14px; width: 384px;">Total</p>
-        <p style="text-align: left; font-size: 14px; width: 384px;">$158.20</p>
-      </div>
+      <p class="special-notice">Special Instructions</p>
+      <p class="special-criteria">Check out before 11.00 a.m</p>
+      <p class="special-criteria">No pets allowed</p>
+      <p class="special-criteria">Check in from 2.00 p.m</p>
+      <!-- Booked by content -->
     </div>
-    <p style="text-align: left; font-size: 12px; width: 384px; font-style: italic; margin-left: 8px; margin-top: 20px;">Special Instructions</p>
-    <p style="text-align: left; font-size: 12px; width: 384px; font-style: italic; margin-left: 15px; margin-top: 5px;">refer to these criteria</p>
-    <p style="text-align: left; font-size: 12px; width: 384px; font-style: italic; margin-left: 15px; margin-top: 5px;">refer to these criteria</p>
-    <p style="text-align: left; font-size: 12px; width: 384px; font-style: italic; margin-left: 15px; margin-top: 5px;">refer to these criteria</p>
-    <!-- Booked by content -->
-  </div>
-</body>
+  </body>
 </html>
+
+
 
     
     `;
