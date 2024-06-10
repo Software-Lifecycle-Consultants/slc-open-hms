@@ -5,6 +5,10 @@ import Image from "next/image";
 import { currentYear, footerContent } from "@/data/homePage";
 import { montserrat } from "../../../app/fonts";
 import Link from "next/link";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import XIcon from '@mui/icons-material/X';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import { alignProperty } from "@mui/material/styles/cssUtils";
 
 /* Footer component displays the website footer. */
 const Footer = () => {
@@ -223,18 +227,14 @@ const Footer = () => {
               </Typography>
             )}
             <Box sx={{ display: "flex", paddingRight: { xs: "15px", md: "0" } }}>
-              <a href={footerContent.socialMediaLink1} target="_blank" style={{ color: "white", textDecoration:"none"}}>
-                <Image
-                  src={footerContent.socialMediaIcon1}
-                  width={9.92}
-                  height={19.84}
-                  alt="fb"
-                  style={{
+              <Link href={footerContent.socialMediaLink1} target="_blank" style={{ color: "white", textDecoration:"none"}}>
+                <XIcon
+                  sx={{
                     flexShrink: 0,
                     marginTop: "17px",
                   }}
                 />
-              </a>
+              </Link>
               {!isMobile && (
                 <Typography
                   variant="body2"
@@ -246,24 +246,20 @@ const Footer = () => {
                     lineHeight: "28px",
                     fontStyle: "normal",
                     fontWeight: "400",
-                    marginLeft: "18px",
-                    marginTop: "15px",
+                    marginLeft: "12px",
+                    marginTop: "14px",
                   }}
                   >
-                    <a href={footerContent.socialMediaLink1} target="_blank" style={{ color: "white", textDecoration:"none"}}> {footerContent.socialMediaText1}</a>
+                    <Link href={footerContent.socialMediaLink1} target="_blank" style={{ color: "white", textDecoration:"none"}}> {footerContent.socialMediaText1}</Link>
                 </Typography>
                 )}
             </Box>
             <Box sx={{ display: "flex", paddingRight: { xs: "15px", md: "0" } }}>
               <a href={footerContent.socialMediaLink2} target="_blank" style={{ color: "white", textDecoration:"none"}}>
-                <Image
-                  src={footerContent.socialMediaIcon2}
-                  width={19}
-                  height={19}
-                  alt="fb"
-                  style={{
+                <XIcon
+                  sx={{
                     flexShrink: 0,
-                    marginTop: "8px",
+                    marginTop: "9px",
                   }}
                 />
               </a>
@@ -283,23 +279,19 @@ const Footer = () => {
                   }}
                 >
                 {/* creates the link to the socila media <twitter> */}
-                  <a href={footerContent.socialMediaLink2} target="_blank" style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText2}</a>
+                  <Link href={footerContent.socialMediaLink2} target="_blank" style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText2}</Link>
                 </Typography>
               )}
             </Box>
             <Box sx={{ display: "flex", paddingRight: { xs: "15px", md: "0" } }}>
-              <a href={footerContent.socialMediaLink3} target="_blank" style={{ color: "white", textDecoration:"none"}}>
-                <Image
-                  src={footerContent.socialMediaIcon3}
-                  width={19}
-                  height={19}
-                  alt="fb"
-                  style={{
+              <Link href={footerContent.socialMediaLink3} target="_blank" style={{ color: "white", textDecoration:"none"}}>
+                <InstagramIcon
+                  sx={{
                     flexShrink: 0,
-                    marginTop: "8px",
+                    marginTop: "9px",
                   }}
                 />
-              </a>
+              </Link>
               {!isMobile && (
                 <Typography
                   variant="body2"
@@ -315,7 +307,7 @@ const Footer = () => {
                     marginTop: "5px",
                   }}
                 >
-                  <a href={footerContent.socialMediaLink3} target="_blank" style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText3}</a>
+                  <Link href={footerContent.socialMediaLink3} target="_blank" style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText3}</Link>
                 </Typography>
               )}
             </Box>
@@ -329,8 +321,9 @@ const Footer = () => {
               width: "100%",
               flexDirection: isMobile ? "column" : "row",
               alignItems: isMobile ? "left" : "flex-start",
+              justifyContent: "space-between", // Space elements apart for web view
             }}
-          >
+          >{/*Privacy Policy Mobile view*/}
             {isMobile && (
               <Typography
                 variant="body2"
@@ -348,17 +341,18 @@ const Footer = () => {
                 <Link href={footerContent.PrivacyPolicyLink} style={{ color: "white", textDecoration: "none" }}>{footerContent.PrivacyPolicyText}</Link>
               </Typography>
             )}
-            <Box
-              sx={{
-                display: "flex",
-                width: isMobile ? "100%" : "50%",
-                justifyContent: isMobile ? "left" : "flex-start",
-                textAlign: isMobile ? "center" : "left",
-              }}
-            >
-              <Typography
+            {/*Copyright & Terms and Conditions Mobile view*/}
+            {isMobile && (
+              <Grid container 
+              item 
+              xs={12}
+              direction="row" 
+              justifyContent="space-between" // Space elements apart for web view
+              alignItems="center"
+              >
+                <Typography
                 variant="body2"
-                sx={{
+                 sx={{
                   color: '#FFFFFF',
                   fontFamily: "Inter",
                   fontSize: "15px",
@@ -366,46 +360,100 @@ const Footer = () => {
                   fontStyle: "normal",
                   fontWeight: "400",
                   letterSpacing: "-0.205px",
-                  marginTop: isMobile ? "10px" : "90px",
-                  marginRight: isMobile ? "10px" : "0",
-                }}
-              >
-                Copyright © {footerContent.CompanyNameText} {currentYear}
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: '#FFFFFF',
-                  fontFamily: "Inter",
-                  fontSize: "15px",
-                  lineHeight: "normal",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  letterSpacing: "-0.205px",
-                  marginTop: isMobile ? "10px" : "90px",
-                  marginLeft: isMobile ? "40px" : "auto",
-                }}
-              >
-                <Link href={footerContent.TermsConditionLink} style={{ color: "white", textDecoration: "none" }}>{footerContent.TermsConditionText}</Link>
-              </Typography>
-            </Box>
+                  marginTop: "10px",
+                 }}
+                >
+                  Copyright © {footerContent.CompanyNameText} {currentYear}
+                </Typography>
+                <Typography
+                 variant="body2"
+                 sx={{
+                   color: '#FFFFFF',
+                   fontFamily: "Inter",
+                   fontSize: "15px",
+                   lineHeight: "normal",
+                   fontStyle: "normal",
+                   fontWeight: "400",
+                   letterSpacing: "-0.205px",
+                   marginTop: "10px",
+                 }}
+                >
+                  <Link href={footerContent.TermsConditionLink} style={{ color: "white", textDecoration: "none" }}>{footerContent.TermsConditionText}</Link>
+                </Typography>
+              </Grid>
+            )}
+            {/* Web view */}
             {!isMobile && (
-              <Typography
-                variant="body2"
-                sx={{
-                  color: '#FFFFFF',
-                  fontFamily: "Inter",
-                  fontSize: "15px",
-                  lineHeight: "normal",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  letterSpacing: "-0.205px",
-                  marginTop: "90px",
-                  marginLeft: "4%",
-                }}
-              >
-                <Link href={footerContent.PrivacyPolicyLink} style={{ color: "white", textDecoration: "none" }}>{footerContent.PrivacyPolicyText}</Link>
-              </Typography>
+              <Grid item xs={12} md={12}>
+                <Box
+                 style={{
+                   display: "flex",
+                   width: "100%",
+                 }}
+                >
+                  <Box
+                   style={{
+                    width: "50%",
+                   }}
+                  >
+                    <Typography
+                     variant="body2"
+                     style={{
+                       color: '#FFFFFF',
+                       fontFamily: "Inter",
+                       fontSize: "15px",
+                       lineHeight: "normal",
+                       fontStyle: "normal",
+                       fontWeight: "400",
+                       letterSpacing: "-0.205px",
+                       marginTop: "90px",
+                     }}
+                   >
+                     Copyright © {footerContent.CompanyNameText} {currentYear}
+                   </Typography>
+                 </Box>
+                 <Box
+                   style={{
+                     display: "flex",
+                     width: "50%",
+                     alignItems: "flex-end",
+                   }}
+                 >
+                   <Typography
+                     variant="body2"
+                     style={{
+                       color: '#FFFFFF',
+                       fontFamily: "Inter",
+                       fontSize: "15px",
+                       lineHeight: "normal",
+                       fontStyle: "normal",
+                       fontWeight: "400",
+                       letterSpacing: "-0.205px",
+                       marginTop: "90px",
+                       marginLeft: "auto",
+                     }}
+                   >
+                     <Link href={footerContent.TermsConditionLink} style={{ color: "white", textDecoration:"none"}}>{footerContent.TermsConditionText}</Link>
+                   </Typography>
+                   <Typography
+                     variant="body2"
+                     style={{
+                       color: '#FFFFFF',
+                       fontFamily: "Inter",
+                       fontSize: "15px",
+                       lineHeight: "normal",
+                       fontStyle: "normal",
+                       fontWeight: "400",
+                       letterSpacing: "-0.205px",
+                       marginTop: "90px",
+                       marginLeft: "4%",
+                     }}
+                   >
+                     <Link href={footerContent.PrivacyPolicyLink}style={{ color: "white", textDecoration:"none"}}>{footerContent.PrivacyPolicyText}</Link>
+                   </Typography>
+                 </Box>
+               </Box>
+             </Grid>
             )}
           </Box>
         </Grid>
