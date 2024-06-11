@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import AdminDrawerComponent from '@/components/front-end/homePage/AdminDrawerComponent';
+import AdminDrawerComponent from '@/components/frontend/homePage/AdminDrawerComponent';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 

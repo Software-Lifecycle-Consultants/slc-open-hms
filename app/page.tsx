@@ -1,12 +1,12 @@
 "use client";
 import { Box, Container } from "@mui/material";
-import Banner from "../components/front-end/homePage/Banner";
-import Testimonials from "../components/front-end/homePage/Testimonials";
-import Blog from "../components/front-end/homePage/Blog";
-import CustomCard from "../components/front-end/homePage/CustomCard";
-import LogoCarousel from "@/components/front-end/homePage/LogoCarousel";
-import ContactNowBanner from "@/components/front-end/homePage/contactNow";
-import Cookie from "../components/front-end/cookie/Cookie";
+import Banner from "../components/frontend/homePage/Banner";
+import Testimonials from "../components/frontend/homePage/Testimonials";
+import Blog from "../components/frontend/homePage/Blog";
+import CustomCard from "../components/frontend/homePage/CustomCard";
+import LogoCarousel from "@/components/frontend/homePage/LogoCarousel";
+import ContactNowBanner from "@/components/frontend/homePage/contactNow";
+import Cookie from "@/components/frontend/cookieBanner/Cookie";
 
 /**
  * HomeScreen represents the main screen of the website.
@@ -16,7 +16,6 @@ import Cookie from "../components/front-end/cookie/Cookie";
 /* Style class for the box component of each section component */
 const sectionStyle = {
   backgroundColor: "#FFFFF",
-  padding: "20px 0",
   width: "100%",
 };
 

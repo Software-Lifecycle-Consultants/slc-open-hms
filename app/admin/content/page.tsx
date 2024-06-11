@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from 'react';
 import { Container, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
-import BannerDetails from "@/components/back-end/admin/content/BannerDetails";
-import MainBannerCard from "@/components/back-end/admin/content/MainBannerCard";
-import BannerCard from "@/components/back-end/admin/content/BannerCard";
+import BannerDetails from "@/components/admin/contentPage/BannerDetails";
+import MainBannerCard from "@/components/admin/contentPage/MainBannerCard";
+import BannerCard from "@/components/admin/contentPage/BannerCard";
 
 const HomePage: React.FC = () => {
   const [component, setComponent] = useState<string>('');

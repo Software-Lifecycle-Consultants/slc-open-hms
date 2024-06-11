@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
-import RoomCard from "../guestRoomDetails/RoomCard";
+import RoomCard from "../guestRoomDetailsPage/RoomCard";
 import { additionalData, roomDetails } from "../../../data/explorePage";
 import { useSearchParams } from "next/navigation";
 

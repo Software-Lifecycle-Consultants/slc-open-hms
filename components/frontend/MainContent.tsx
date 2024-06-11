@@ -1,6 +1,6 @@
 // MainContent.tsx
 import { Box, Container } from '@mui/material';
-import Footer from '../homePage/Footer';
+import Footer from './homePage/Footer';
 
 interface MainContentProps {
   children: React.ReactNode;
