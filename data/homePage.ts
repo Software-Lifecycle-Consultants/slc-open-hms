@@ -175,7 +175,7 @@ export const footerContent = {
   socialMediaText1: "Facebook",
   socialMediaLink1: "https://web.facebook.com/profile.php?id=100095424093550",
   socialMediaIcon2: "/images/homePage/footerImages/twitter.webp",
-  socialMediaText2: "Twitter",
+  socialMediaText2: "X (Twitter)",
   socialMediaLink2: "https://twitter.com/softwareCnslt",
   socialMediaIcon3: "/images/homePage/footerImages/instagram.webp",
   socialMediaText3: "Instagram",
