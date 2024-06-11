@@ -1,12 +1,12 @@
 "use client"
 import React from 'react'
 import { Box, Container } from "@mui/material";
-import HeroBanner from '@/components/guestRoomDetails/HeroBanner';
-import AboutRoom from '@/components/guestRoomDetails/AboutRoom';
-import Facilities from '@/components/guestRoomDetails/Facilities';
-import AdditionalInfo from '@/components/guestRoomDetails/AdditionalInfo';
-import SimilarRooms from '@/components/guestRoomDetails/SimilarRooms';
-import Gallery from '@/components/guestRoomDetails/Gallery';
+import HeroBanner from '@/components/front-end/guestRoomDetails/HeroBanner';
+import AboutRoom from '@/components/front-end/guestRoomDetails/AboutRoom';
+import Facilities from '@/components/front-end/guestRoomDetails/Facilities';
+import AdditionalInfo from '@/components/front-end/guestRoomDetails/AdditionalInfo';
+import SimilarRooms from '@/components/front-end/guestRoomDetails/SimilarRooms';
+import Gallery from '@/components/front-end/guestRoomDetails/Gallery';
 
 /**
  * RoomDetailsScreen component represents the each hotel room details of the website.

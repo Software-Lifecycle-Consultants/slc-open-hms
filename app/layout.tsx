@@ -8,13 +8,11 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Navbar from '../components/homePage/NavBar';
-import Footer from '../components/homePage/Footer';
+import Navbar from '../components/front-end/homePage/NavBar';
 import AdminLayout from './admin/layout';
 import { useSelectedLayoutSegments } from 'next/navigation';
-import { metadata } from '@/data/metadata'; // Import the metadata constant
-import AdminNavbar from '@/components/AdminNavBar';
-import MainContent from '@/components/MainContent';
+import AdminNavbar from '@/components/back-end/admin/AdminNavBar';
+import MainContent from '@/components/front-end/layoutComponent/MainContent';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const segments = useSelectedLayoutSegments();

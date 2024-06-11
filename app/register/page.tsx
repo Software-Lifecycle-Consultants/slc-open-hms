@@ -19,7 +19,7 @@ import Box from "@mui/material/Box";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
-import { orangebuttonCommonStyle } from "../../components/homePage/styles";
+import { orangebuttonCommonStyle } from "../../components/front-end/homePage/styles";
 /**
  * This page represents the registration page.
  */

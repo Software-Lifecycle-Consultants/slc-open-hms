@@ -1,5 +1,5 @@
 import { Box, Container } from "@mui/material";
-import BlogForm from "../components/blog/BlogForm";
+import BlogForm from "../../../components/back-end/admin/blog/BlogForm";
 
 const blog = () => {
   return (

@@ -1,14 +1,14 @@
 "use client";
 import  { useState } from 'react';
-import Calender from "@/components/checkout/Calender";
-import Heading from "@/components/checkout/Heading";
-import SubmitButton from "@/components/checkout/SubmitButton";
+import Calender from "@/components/front-end/checkout/Calender";
+import Heading from "@/components/front-end/checkout/Heading";
+import SubmitButton from "@/components/front-end/checkout/SubmitButton";
 import { Grid, Box, Container } from "@mui/material";
 import React from "react";
-import BillingDetails from "@/components/checkout/BillingDetails";
-import BookingInfo from "@/components/checkout/BookingInfo";
-import ExtraFacilitation from "@/components/checkout/ExtraFacilitation";
-import TermAndCondition from "@/components/checkout/TermAndCondition";
+import BillingDetails from "@/components/front-end/checkout/BillingDetails";
+import BookingInfo from "@/components/front-end/checkout/BookingInfo";
+import ExtraFacilitation from "@/components/front-end/checkout/ExtraFacilitation";
+import TermAndCondition from "@/components/front-end/checkout/TermAndCondition";
 /**
  * CheckoutScreen component represents the checkout screen of the website.
  * It includes sections like Heading, Billing details form, Booking info, Extra facilitation, Calender and Submit button.

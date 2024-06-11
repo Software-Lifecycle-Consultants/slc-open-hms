@@ -1,12 +1,12 @@
 "use client";
 import { Box, Container } from "@mui/material";
-import Banner from "../components/homePage/Banner";
-import Testimonials from "../components/homePage/Testimonials";
-import Blog from "../components/homePage/Blog";
-import CustomCard from "../components/homePage/CustomCard";
-import LogoCarousel from "@/components/homePage/LogoCarousel";
-import ContactNowBanner from "@/components/homePage/contactNow";
-import Cookie from "../components/cookie/Cookie";
+import Banner from "../components/front-end/homePage/Banner";
+import Testimonials from "../components/front-end/homePage/Testimonials";
+import Blog from "../components/front-end/homePage/Blog";
+import CustomCard from "../components/front-end/homePage/CustomCard";
+import LogoCarousel from "@/components/front-end/homePage/LogoCarousel";
+import ContactNowBanner from "@/components/front-end/homePage/contactNow";
+import Cookie from "../components/front-end/cookie/Cookie";
 
 /**
  * HomeScreen represents the main screen of the website.
