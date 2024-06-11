@@ -18,19 +18,7 @@ const VisuallyHiddenInput = styled("input")({
 export default function StandardImageList() {
   return (
     <>
-      <Card
-        elevation={0}
-        sx={{
-          height: "235px",
-          Width: "450px",
-          border: "1px solid",
-          borderRadius: "8px",
-          borderColor: "#D0D5DD",
-          flexShrink: "0",
-          padding: "10px 25px 10px 25px",
-        }}
-      >
-        <Typography
+     <Typography
         mt={2}
           style={{
             color: "Gray",
@@ -44,6 +32,19 @@ export default function StandardImageList() {
         >
           Gallery
         </Typography>
+      <Card
+        elevation={0}
+        sx={{
+          height: "235px",
+          Width: "450px",
+          border: "1px solid",
+          borderRadius: "8px",
+          borderColor: "#D0D5DD",
+          flexShrink: "0",
+          padding: "10px 25px 10px 25px",
+        }}
+      >
+       
         <Typography
         mt={4}
           style={{
@@ -54,6 +55,7 @@ export default function StandardImageList() {
             letterSpacing: "0.12px",
             fontWeight: "700",
             textAlign: "center",
+            marginTop: "100px",
           }}
         >
           Drag & Drop Your images or Browse
@@ -71,6 +73,7 @@ export default function StandardImageList() {
             color: "black",
             height: "30px",
             borderRadius: "8",
+            marginTop: "-25px",
           }}
         >
           <VisuallyHiddenInput type="file" />
@@ -82,13 +85,18 @@ export default function StandardImageList() {
        display="flex" justifyContent="center" alignItems="center" > 
         <Button
           sx={{
+            textTransform: "none",
             justifyContent: "center",
             color: "white",
             width: "100px",
             height: "30px",
-            borderRadius: "8",
+            borderRadius: "8px",
             textAlign: "center",
             backgroundColor: "#4A5472",
+            "&:hover": {
+              backgroundColor: "#192959",
+            },
+
           }}
           variant="outlined"
         >

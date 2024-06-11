@@ -97,6 +97,26 @@ npm install recharts
 ```bash
 npm install react-quill --save
  ```
+- [zod](https://zod.dev/) - Version 3.23.8
+  - A TypeScript-first schema declaration and validation library.
+  - Install the package in your project directory using the following commands.
+```bash
+npm install zod 
+ ```
+
+- [nodemailer](https://nodemailer.com/) - Version 6.9.13
+  - A module for Node.js applications to allow easy as cake email sending.
+  - Install the package in your project directory using the following commands.
+```bash
+npm install nodemailer
+ ```
+
+- [html-pdf-node](https://www.npmjs.com/package/html-pdf-node) - 1.0.7
+  - A plugin to  convert html page or public URL into PDF.
+  - Install the package in your project directory using the following commands.
+```bash
+npm install html-pdf-node
+ ```
 
 3. Set up the environment variables:
   - Create a .env.local file in the root directory of the project.

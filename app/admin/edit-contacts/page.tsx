@@ -159,10 +159,27 @@ const editContact = () =>{
             </Grid>
               {/* Submit Section */}
             <Grid item xs={12} marginTop={5} style={{ textAlign: "center" }}>
-              <Button variant="outlined" size="large" type="submit" style={{ backgroundColor: 'white', width:"12%", height:"50px" , borderColor: 'black', borderWidth: 1, color: '#5B5959', textTransform: 'capitalize',}}>
+              <Box ml="1048px">
+              <Button 
+                sx={{
+                  textTransform: "none",
+                  justifyContent: "center",
+                  color: "white",
+                  width: "100px",
+                  height: "30px",
+                  borderRadius: "8px",
+                  textAlign: "center",
+                  backgroundColor: "#4A5472",
+                  "&:hover": {
+                    backgroundColor: "#192959",}
+                }}
+              variant="outlined" 
+              size="large" 
+              type="submit" >
                 {/* Render the title from admineditcontactus Data */}
                 {adminEditContactUs.adminContactSubmitButton}
               </Button>
+              </Box>
             </Grid>
           </Grid>
         </Box>

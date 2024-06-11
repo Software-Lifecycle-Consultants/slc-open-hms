@@ -26,7 +26,7 @@ const roomDetails = () => {
   return (
     <>
       <Box
-        sx={{ backgroundColor: "#EEF5FF", padding: "10px 0", width: "100%" }}
+        sx={{ backgroundColor: "#EEF5FF", padding: "10px 0", width: "100%", mx: "2px"}}
       >
         <Container>
           <HeadingBook />
@@ -36,9 +36,11 @@ const roomDetails = () => {
         sx={{
           display: "grid",
           backgroundColor: "#EEF5FF",
+          padding: "0 0 30px 0",
         }}
       >
         {/* (1) The Details component is imported and rendered here. */}
+        
         <Container>
           <Grid container spacing={2}>
             {/* <RoomDetailsForm /> */}
@@ -58,6 +60,7 @@ const roomDetails = () => {
               >
                 Cover Image
               </Typography>
+              
               <Card
                 elevation={0}
                 sx={{
@@ -75,6 +78,8 @@ const roomDetails = () => {
                   sx={{
                     marginTop: "7px",
                     backgroundColor: "#4A5472",
+                    "&:hover": {  // Hover style applied here
+                      backgroundColor: "#192959"},
                   }}
                   component="label"
                   role={undefined}
@@ -125,6 +130,7 @@ const roomDetails = () => {
             <Box display="flex" justifyContent="end" alignItems="center">
               <Button
                 sx={{
+                  textTransform: "none",
                   marginTop: "7px",
                   justifyContent: "center",
                   backgroundColor: "white",
@@ -133,7 +139,10 @@ const roomDetails = () => {
                   height: "30px",
                   borderRadius: "8px",
                   textAlign: "center",
-                }}
+                  borderColor: "#5B5959",
+                  "&:hover": {
+                    backgroundColor: "#192959",}
+                  }}
                 variant="outlined"
               >
                 <Typography
@@ -147,20 +156,24 @@ const roomDetails = () => {
               </Button>
               <Button
                 sx={{
+                  textTransform: "none",
                   marginTop: "7px",
                   backgroundColor: "#4A5472",
+                  "&:hover": {backgroundColor: "#192959"},
                   color: "white",
                   width: "100px",
                   height: "30px",
                   borderRadius: "8px",
                   marginLeft: "10px",
                   textAlign: "center",
+
                 }}
                 variant="contained"
               >
                 <Typography
                   style={{
                     color: "white",
+                    
                   }}
                 >
                   {" "}

@@ -1,7 +1,8 @@
-import { Grid, Typography, TextField, Card, CardContent } from "@mui/material";
+import { Grid, Typography, TextField, Card, CardContent, Box } from "@mui/material";
 import React from "react";
 
 const Details = () => {
+  
   return (
     <>
       {/* Card for the billing details form */}
@@ -12,11 +13,12 @@ const Details = () => {
           Width: "auto",
           border: "1px solid",
           borderRadius: "8",
-          borderColor: "#EEF5FF",
+          borderColor: "#d4d4dc",
           flexShrink: "0",
           backgroundColor: "#EEF5FF",
         }}
       >
+        <Box sx={{backgroundColor: 'white', padding:"10px 15px 10px 15px", borderRadius:2}}>
         <CardContent>
           <form>
             {/* Grid container for form layout */}
@@ -58,6 +60,7 @@ const Details = () => {
             </Grid>
           </form>
         </CardContent>
+        </Box>
       </Card>
     </>
   );
