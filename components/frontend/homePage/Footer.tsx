@@ -227,14 +227,26 @@ const Footer = () => {
               </Typography>
             )}
             <Box sx={{ display: "flex", paddingRight: { xs: "15px", md: "0" } }}>
-              <Link href={footerContent.socialMediaLink1} target="_blank" style={{ color: "white", textDecoration:"none"}}>
-                <XIcon
-                  sx={{
-                    flexShrink: 0,
-                    marginTop: "17px",
-                  }}
-                />
-              </Link>
+            {isMobile && (
+                <Link href={footerContent.socialMediaLink1} target="_blank" style={{ color: "white", textDecoration:"none"}}>
+                  <FacebookIcon
+                    sx={{
+                      flexShrink: 0,
+                      marginTop: "10px",
+                    }}
+                  />
+                </Link>
+              )}
+              {!isMobile && (
+                <Link href={footerContent.socialMediaLink1} target="_blank" style={{ color: "white", textDecoration:"none"}}>
+                  <FacebookIcon
+                    sx={{
+                      flexShrink: 0,
+                      marginTop: "17px",
+                    }}
+                  />
+                </Link>
+              )}
               {!isMobile && (
                 <Typography
                   variant="body2"
