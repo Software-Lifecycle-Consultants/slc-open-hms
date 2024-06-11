@@ -87,7 +87,7 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ email }) => {
         <Button
           type="submit"
           variant="contained"
-          disabled={isSending}
+          disabled={!isChecked}
           className={mulish.className}
           sx={{
             ...orangebuttonCommonStyle,
