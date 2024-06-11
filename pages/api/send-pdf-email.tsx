@@ -2,8 +2,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 import htmlPdf from "html-pdf-node";
-import { Readable } from "stream";
-import { join } from "path";
+
 
 // Define the request body type
 type RequestBody = {
