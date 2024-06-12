@@ -5,7 +5,7 @@
 import React, { useState, ChangeEvent } from "react";
 import { Box, Button, Container, Typography, Link } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
+import AdminLoginLink from "@/components/admin/forgotPasswordFlow/AdminLoginLink";
 import { useRouter } from "next/navigation";
 import { forgotpasswordpageData } from "@/data/forgotPasswordfFow";
 

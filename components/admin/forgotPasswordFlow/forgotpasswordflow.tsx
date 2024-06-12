@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import Step1 from "@/components/forgotpasswordflow/Step1";
-import Step2 from "@/components/forgotpasswordflow/Step2";
-import Step3 from "@/components/forgotpasswordflow/Step3";
-import Step4 from "@/components/forgotpasswordflow/Step4";
+import Step1 from "@/components/admin/forgotPasswordFlow/Step1";
+import Step2 from "@/components/admin/forgotPasswordFlow/Step2";
+import Step3 from "@/components/admin/forgotPasswordFlow/Step3";
+import Step4 from "@/components/admin/forgotPasswordFlow/Step4";
 
 // Define the shape of form data
 interface FormData {

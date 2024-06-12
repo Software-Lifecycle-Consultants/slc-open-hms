@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Banner from "@/components/frontend/blogPage/BlogBanner";
-import BlogCard from "@/components/frontend/blogPage/blogcard";
+import BlogCard from "@/components/frontend/blogPage/Blogcard";
 import { blogData, bannerData } from '@/data/blogPage';
 import Image from "next/image";
 import Pagination from '@mui/material/Pagination';

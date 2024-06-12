@@ -5,7 +5,7 @@ import {
 import React from "react";;
 import { blogCardData } from "../../../data/homePage";
 import { blogSection } from "../../../data/homePage";
-import BlogCard from "./BlogCard";
+import BlogCard from "./DestinationCards";
 
 /* Styles for typography - Heading 1 */
 const typographyh1Styles = {

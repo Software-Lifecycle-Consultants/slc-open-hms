@@ -8,7 +8,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Navbar from '../components/frontend/homePage/NavBar';
+import Navbar from '../components/frontend/NavBar';
 import AdminLayout from './admin/layout';
 import { useSelectedLayoutSegments } from 'next/navigation';
 import AdminNavbar from '@/components/admin/AdminNavBar';

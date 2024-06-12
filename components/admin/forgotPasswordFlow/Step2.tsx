@@ -5,7 +5,7 @@
 import React, { useState, ChangeEvent } from "react";
 import { Button, Container, Typography, Link, Box } from "@mui/material";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
+import AdminLoginLink from "@/components/admin/forgotPasswordFlow/AdminLoginLink";
 import { forgotpasswordpageData } from "@/data/forgotPasswordfFow";
 
 // Defining the props interface for Step2 component

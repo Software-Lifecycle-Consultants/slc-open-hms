@@ -1,11 +1,11 @@
 "use client";
 import { Box, Container } from "@mui/material";
-import Banner from "../components/frontend/homePage/Banner";
+import Banner from "../components/frontend/homePage/HeroBanner";
 import Testimonials from "../components/frontend/homePage/Testimonials";
-import Blog from "../components/frontend/homePage/Blog";
+import Blog from "../components/frontend/homePage/DestinationOverView";
 import CustomCard from "../components/frontend/homePage/CustomCard";
 import LogoCarousel from "@/components/frontend/homePage/LogoCarousel";
-import ContactNowBanner from "@/components/frontend/homePage/contactNow";
+import ContactNowBanner from "@/components/frontend/homePage/SecondaryBanner";
 import Cookie from "@/components/frontend/cookieBanner/Cookie";
 
 /**
@@ -22,7 +22,7 @@ const sectionStyle = {
 export default function HomeScreen() {
   return (
     <>
-      {/* Banner Section */}
+      {/* HeroBanner Section */}
       <Box
         sx={{
           backgroundColor: "#0C111F",
@@ -47,13 +47,13 @@ export default function HomeScreen() {
           <LogoCarousel />
         </Container>
       </Box>
-      {/* Blog Section */}
+      {/* DestinationOverView  Section */}
       <Box sx={sectionStyle}>
         <Container>
           <Blog />
         </Container>
       </Box>
-      {/* Contact Now Banner  */}
+      {/* SecondaryBanner section  */}
       <Box
         sx={{ backgroundColor: "#0C111F", color: "white", padding: "40px 0" }}
       >

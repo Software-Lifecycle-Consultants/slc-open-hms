@@ -12,7 +12,7 @@ import {
   Link,
 } from "@mui/material";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
+import AdminLoginLink from "@/components/admin/forgotPasswordFlow/AdminLoginLink";
 import { forgotpasswordpageData } from "@/data/forgotPasswordfFow";
 
 // Define the props interface for Step3 component

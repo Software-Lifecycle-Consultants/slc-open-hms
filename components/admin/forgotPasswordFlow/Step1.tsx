@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import AdminLoginLink from "@/components/forgotpasswordflow/AdminLoginLink";
+import AdminLoginLink from "@/components/admin/forgotPasswordFlow/AdminLoginLink";
 import { forgotpasswordpageData } from "@/data/forgotPasswordfFow";
 
 // Defining the props interface for Step1 component
