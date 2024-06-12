@@ -1,4 +1,4 @@
-// Importing required components and images
+// Importing required components and icons
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import Image from "next/image";
@@ -8,12 +8,11 @@ import Link from "next/link";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { alignProperty } from "@mui/material/styles/cssUtils";
 
 /* Footer component displays the website footer. */
 const Footer = () => {
   // Use MediaQuery to detect if the screen width is 600px or less (mobile view)
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const isMobile = useMediaQuery('(max-width:900px)');
   return (
     <>
       <Grid container spacing={2}>
@@ -262,6 +261,7 @@ const Footer = () => {
                     marginTop: "14px",
                   }}
                   >
+                    {/* creates the link to the socila media <facebook> */}
                     <Link href={footerContent.socialMediaLink1} target="_blank" style={{ color: "white", textDecoration:"none"}}> {footerContent.socialMediaText1}</Link>
                 </Typography>
                 )}
@@ -319,6 +319,7 @@ const Footer = () => {
                     marginTop: "5px",
                   }}
                 >
+                  {/* creates the link to the socila media <instagram> */}
                   <Link href={footerContent.socialMediaLink3} target="_blank" style={{ color: "white", textDecoration:"none"}}>{footerContent.socialMediaText3}</Link>
                 </Typography>
               )}
