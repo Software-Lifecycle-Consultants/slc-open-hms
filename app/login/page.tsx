@@ -15,7 +15,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import { loginPageData } from "@/data/loginPage";
 import ArrowBack from "@mui/icons-material/ArrowBack";
-import { orangebuttonCommonStyle } from "@/components/homePage/styles.js";
+import { orangebuttonCommonStyle } from "@/components/frontend/homePage/styles.js";
 import Link from "next/link";
 
 // Functional component for Login

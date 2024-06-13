@@ -1,8 +1,8 @@
 "use client";
-import DetailBanner from "@/components/blogDetail/detailBanner";
-import ContentBanner from "@/components/blogDetail/content";
+import DetailBanner from "@/components/frontend/blogDetailPage/DetailBanner";
+import ContentBanner from "@/components/frontend/blogDetailPage/Content";
 import { Box, Container, Grid, Stack, Typography,  } from "@mui/material";
-import BlogCard from "@/components/blogPage/blogcard";
+import BlogCard from "@/components/frontend/blogPage/Blogcard";
 import { blogData, bannerData } from '@/data/blogPage';
 import { blogcontent, } from '@/data/blogDetail';
 import {Button, Link} from "@mui/material";

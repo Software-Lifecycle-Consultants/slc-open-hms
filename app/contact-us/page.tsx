@@ -5,10 +5,10 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { postData } from "@/services/api";
-import HeaderSection from "@/components/contactPage/HeaderSection";
+import HeaderSection from "@/components/frontend/contactUsPage/HeaderSection";
 import { Box, Grid } from "@mui/material";
-import ContactCard from "@/components/contactPage/ContactCard";
-import ContactForm from "@/components/contactPage/ContactForm";
+import ContactCard from "@/components/frontend/contactUsPage/ContactCard";
+import ContactForm from "@/components/frontend/contactUsPage/ContactForm";
 import { positionInfos } from "@/data/contactPage";
 import dynamic from "next/dynamic";
 
@@ -18,7 +18,7 @@ import dynamic from "next/dynamic";
  */
 
 const ContactUs = () => {
-  const Map = dynamic(() => import("@/components/contactPage/Map/Map"), {
+  const Map = dynamic(() => import("@/components/frontend/contactUsPage/Map/Map"), {
     ssr: false,
   });
   return (

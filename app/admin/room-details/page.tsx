@@ -1,10 +1,10 @@
 "use client";
-import HeadingBook from "@/components/roomDetails/HeadingBook"; 
-import Details from "@/components/roomDetails/Details";
-import Category from "@/components/roomDetails/Category";
-import ServiceAd from "@/components/roomDetails/ServiceAd";
-import Additional from "@/components/roomDetails/Additional";
-import Gallery from "@/components/roomDetails/Gallery";
+import HeadingBook from "@/components/frontend/roomDetailsPage/HeadingBook"; 
+import Details from "@/components/frontend/roomDetailsPage/Details";
+import Category from "@/components/frontend/roomDetailsPage/Category";
+import ServiceAd from "@/components/frontend/roomDetailsPage/ServiceAd";
+import Additional from "@/components/frontend/roomDetailsPage/Additional";
+import Gallery from "@/components/frontend/roomDetailsPage/Gallery";
 import { Grid, Box, Container, Card, Typography } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";

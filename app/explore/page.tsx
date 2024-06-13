@@ -1,8 +1,8 @@
 "use client";
 import { Box, Container } from "@mui/material";
-import HotelRooms from "@/components/explore/HotelRooms"; // Importing HotelRooms component from the 'explore' folder
-import SearchBar from "@/components/explore/SearchBar"; // Importing SearchBar component from the 'explore' folder
-import HeroSection from "@/components/explore/HeroSection"; // Importing HeroSection component from the 'explore' folder
+import HotelRooms from "@/components/frontend/explorePage/HotelRooms"; // Importing HotelRooms component from the 'explore' folder
+import SearchBar from "@/components/frontend/explorePage/SearchBar"; // Importing SearchBar component from the 'explore' folder
+import HeroSection from "@/components/frontend/explorePage/HeroSection"; // Importing HeroSection component from the 'explore' folder
 
 /**
  * ExploreScreen component represents the explore screen of the website.
