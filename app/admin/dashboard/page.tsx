@@ -7,7 +7,7 @@ import React from "react";
 import BillingDetails from "@/components/frontend/checkoutPage/BillingDetails";
 import BookingInfo from "@/components/frontend/checkoutPage/BookingInfo";
 import ExtraFacilitation from "@/components/frontend/checkoutPage/ExtraFacilitation";
-import Charts from "@/components/admin/dashboard/Charts"
+import Charts from "@/components/admin/dashboard/charts";
 /**
  * CheckoutScreen component represents the checkout screen of the website.
  * It includes sections like Heading, Billing details form, Booking info, Extra facilitation, Calender and Submit button.
