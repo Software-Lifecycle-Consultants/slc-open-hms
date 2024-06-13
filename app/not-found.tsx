@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <Box sx={{ padding: { xs: 2, sm: 2, md: 2 } }}>
+    <Box sx={{minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
       <Grid container alignItems="center">
         {/* Left side of the banner image */}
         <Grid item xs={12} md={6}>
@@ -23,7 +23,6 @@ export default function NotFound() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              height: "100%",
             }}
           >
             <Image
@@ -40,7 +39,7 @@ export default function NotFound() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              textAlign: { xs: "center", md: "center" },
+              textAlign: { xs: "center", md: "left" },
               padding: { xs: 2, sm: 3, md: 3 },
             }}
           >
@@ -99,7 +98,7 @@ export default function NotFound() {
               display: "flex",
               flexDirection: { xs: "column", sm: "row" },
               alignItems: "center",
-              justifyContent: { xs: "center", sm: "center", md: "center" },
+              justifyContent: { xs: "center", sm: "center", md: "flex-start" },
               marginTop: 2,
               gap: 2,
               paddingBottom: { xs: 2, sm: 2, md: 2 },
