@@ -4,7 +4,7 @@ export const pages = [
   { label: "Home", route: "/" },
   { label: "Explore", route: "/explore" },
   { label: "Book Now", route: "/checkout" },
-  { label: "Contact", route: "/contact-us" },
+  { label: "Contact Us", route: "/contact-us" },
   { label: "Blog", route: "/blog"}
 ];
 
@@ -19,7 +19,7 @@ export const drawerPages = [
   { label: "Home", route: "/" },
   { label: "Explore", route: "/explore" },
   { label: "Book Now", route: "/checkout" },
-  { label: "Contact", route: "/contact-us" },
+  { label: "Contact Us", route: "/contact-us" },
   { label: "Blog", route: "/blog"},
   // { label: "Register", route: "/register" },  //TEMPORARY REMOVE
   // { label: "Login", route: "/login" }, // TEMPORARY REMOVE
