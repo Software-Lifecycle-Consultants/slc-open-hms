@@ -1,5 +1,5 @@
 import React from "react";
-import ForgotpasswordFlow from "@/components/admin/forgotPasswordFlow/ForgotPasswordFlow";
+import ForgotpasswordFlow from "@/components/admin/forgotPasswordFlow/forgotpasswordflow";
 
 const Forgotpasswordpage = () => {
   return (
