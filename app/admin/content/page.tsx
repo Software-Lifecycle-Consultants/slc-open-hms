@@ -5,7 +5,7 @@ import HeroBanner from "@/app/admin/components/content/HeroBanner";
 import DestinationOverview from "@/app/admin/components/content/DestinationOverview";
 import BannerCard from "@/app/admin/components/content/BannerCard";
 import LogoCarousel from "@/app/admin/components/content/LogoCarousel";
-import { adminContentPage } from "@/data/adminContent";
+import { adminContentPage } from "@/data/admincontent";
 
 const HomePage: React.FC = () => {
   const [component, setComponent] = useState<string>('');
