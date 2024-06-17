@@ -2,7 +2,7 @@ import React from 'react';
 import { TextField, Grid, Typography, Card, Box, Button } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
-import { adminContentDestinationOverview } from '@/data/adminContent';
+import { adminContentDestinationOverview } from '@/data/admincontent';
 import EditIcon from "@mui/icons-material/Edit";
 
 const VisuallyHiddenInput = styled("input")({
@@ -208,7 +208,7 @@ const DestinationOverview: React.FC = () => {
                 rows={4}
               />
               <Typography sx={{ marginTop: "10px" }}>
-                {adminContentDestinationOverview.adminContentMainBarTitle03 // Main Banner Title
+                {adminContentDestinationOverview.adminContentMainBarTitle03
                 }
               </Typography>
               <TextField
@@ -360,5 +360,4 @@ const DestinationOverview: React.FC = () => {
     </Grid>
   );
 };
-
 export default DestinationOverview;
