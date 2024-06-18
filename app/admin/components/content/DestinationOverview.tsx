@@ -118,13 +118,13 @@ const DestinationOverview: React.FC = () => {
                 sx={{ marginTop: "05px", fontWeight: "bold" }}
               >
                 {
-                  adminContentDestinationOverview.adminContentMainBarCard02 // Display the card 02 title
+                  adminContentDestinationOverview.adminContentMainBarCard01 // Display the card 02 title
                 }
               </Typography>
 
               <Typography sx={{ marginTop: "10px" }}>
                 {
-                  adminContentDestinationOverview.adminContentCardMainBarTitle02 // Display the card 02 title
+                  adminContentDestinationOverview.adminContentCardMainBarTitle01 // Display the card 02 title
                 }
               </Typography>
               <TextField
@@ -135,7 +135,7 @@ const DestinationOverview: React.FC = () => {
               />
               <Typography sx={{ marginTop: "10px" }}>
                 {
-                  adminContentDestinationOverview.adminContentCardMainBarDesTitle02 // Display the card 02 description
+                  adminContentDestinationOverview.adminContentCardMainBarDesTitle01 // Display the card 02 description
                 }
               </Typography>
               <TextField
