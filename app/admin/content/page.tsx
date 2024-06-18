@@ -8,13 +8,12 @@ import {
   Select,
   SelectChangeEvent,
   Grid,
-  Button,
   Typography,
   Box,
 } from "@mui/material";
 import HeroBanner from "@/app/admin/components/content/HeroBanner";
 import DestinationOverview from "@/app/admin/components/content/DestinationOverview";
-import BannerCard from "@/app/admin/components/content/BannerCard";
+import DestinationCards from "@/app/admin/components/content/DestinationCards";
 import LogoCarousel from "@/app/admin/components/content/LogoCarousel";
 import { adminContentPage } from "@/data/admincontent";
 
@@ -53,13 +52,13 @@ const HomePage: React.FC = () => {
             >
               <MenuItem value="x">Hero Banner</MenuItem>
               <MenuItem value="y">Destination Overview</MenuItem>
-              <MenuItem value="z">Banner Card</MenuItem>
+              <MenuItem value="z">Destination Cards</MenuItem>
               <MenuItem value="a">Logo Carousel</MenuItem>
             </Select>
           </FormControl>
           {component === "x" && <HeroBanner />}
           {component === "y" && <DestinationOverview />}
-          {component === "z" && <BannerCard />}
+          {component === "z" && <DestinationCards />}
           {component === "a" && <LogoCarousel />}
         </Container>
       </Grid>
