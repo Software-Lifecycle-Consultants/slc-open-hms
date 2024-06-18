@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from 'react';
 import { Container, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Grid, Button, Typography, Box } from '@mui/material';
-
-import BannerDetails from "@/components/admin/contentPage/BannerDetails";
-import MainBannerCard from "@/components/admin/contentPage/MainBannerCard";
-import BannerCard from "@/components/admin/contentPage/BannerCard";
+import DestinationOverview from '@/components/admin/contentPage/DestinationOverview';
+import HeroBanner from '@/components/admin/contentPage/HeroBanner';
+import DestinationCards from '@/components/admin/contentPage/DestinationCards';
+import LogoCarousel from '@/components/admin/contentPage/LogoCarousel';
 import { adminContentPage } from "@/data/admincontent";
 
 
@@ -47,10 +47,10 @@ const HomePage: React.FC = () => {
               <MenuItem value="a">Logo Carousel</MenuItem>
             </Select>
           </FormControl>
-          {/* {component === "x" && <HeroBanner />}
+          {component === "x" && <HeroBanner />}
           {component === "y" && <DestinationOverview />}
-          {component === "z" && <BannerCard />}
-          {component === "a" && <LogoCarousel />} */}
+          {component === "z" && <DestinationCards/>}
+          {component === "a" && <LogoCarousel />}
         </Container>
       </Grid>
     </Grid>
