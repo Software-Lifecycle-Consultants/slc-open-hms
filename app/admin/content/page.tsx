@@ -1,9 +1,18 @@
 "use client";
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { Container, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import BannerDetails from "@/components/admin/contentPage/BannerDetails";
 import MainBannerCard from "@/components/admin/contentPage/MainBannerCard";
 import BannerCard from "@/components/admin/contentPage/BannerCard";
+=======
+import { Container, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Grid, Button, Typography, Box } from '@mui/material';
+import HeroBanner from "@/app/admin/components/content/HeroBanner";
+import DestinationOverview from "@/app/admin/components/content/DestinationOverview";
+import BannerCard from "@/app/admin/components/content/BannerCard";
+import LogoCarousel from "@/app/admin/components/content/LogoCarousel";
+import { adminContentPage } from "@/data/admincontent";
+>>>>>>> feature-admin-content-dup
 
 const HomePage: React.FC = () => {
   const [component, setComponent] = useState<string>('');
@@ -13,24 +22,44 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <Container>
-      <FormControl fullWidth margin="normal">
-        <InputLabel id="component-select-label">Select Component</InputLabel>
-        <Select
-          labelId="component-select-label"
-          value={component}
-          label="Select Component"
-          onChange={handleChange}
-        >
-          <MenuItem value="x">Banner Details</MenuItem>
-          <MenuItem value="y">Main Banner Card</MenuItem>
-          <MenuItem value="z">Banner Card</MenuItem>
-        </Select>
-      </FormControl>
-      {component === 'x' && <BannerDetails />}
-      {component === 'y' && <MainBannerCard />}
-      {component === 'z' && <BannerCard />}
-    </Container>
+    <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+      <Container>
+        <Typography variant="h3" sx={{ marginTop: "20px", fontWeight: "bold" }}>
+          {adminContentPage.adminContentPageHeaderTitle}
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            marginTop: "20px",
+          }}
+        ></Box>
+      </Container>
+      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+        <Container>
+          <FormControl fullWidth margin="normal">
+            <InputLabel id="component-select-label">
+              Select Component
+            </InputLabel>
+            <Select
+              labelId="component-select-label"
+              value={component}
+              label="Select Component"
+              onChange={handleChange}
+            >
+              <MenuItem value="x">Hero Banner</MenuItem>
+              <MenuItem value="y">Destination Overview</MenuItem>
+              <MenuItem value="z">Banner Card</MenuItem>
+              <MenuItem value="a">Logo Carousel</MenuItem>
+            </Select>
+          </FormControl>
+          {component === "x" && <HeroBanner />}
+          {component === "y" && <DestinationOverview />}
+          {component === "z" && <BannerCard />}
+          {component === "a" && <LogoCarousel />}
+        </Container>
+      </Grid>
+    </Grid>
   );
 };
 
