@@ -43,13 +43,13 @@ const HomePage: React.FC = () => {
             >
               <MenuItem value="x">Hero Banner</MenuItem>
               <MenuItem value="y">Destination Overview</MenuItem>
-              <MenuItem value="z">Banner Card</MenuItem>
+              <MenuItem value="z">Destination Cards</MenuItem>
               <MenuItem value="a">Logo Carousel</MenuItem>
             </Select>
           </FormControl>
           {component === "x" && <HeroBanner />}
           {component === "y" && <DestinationOverview />}
-          {component === "z" && <DestinationCards/>}
+          {component === "z" && <DestinationCards />}
           {component === "a" && <LogoCarousel />}
         </Container>
       </Grid>
