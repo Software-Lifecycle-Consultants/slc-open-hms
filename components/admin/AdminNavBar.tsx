@@ -67,6 +67,7 @@ const AdminNavBar: React.FC = () => {
                   {/* Replace the label and route with your menu items */}
                   <Tab label="Dashboard" onClick={() => navigationToScreens("./dashboard")}  />
                   <Tab label="Rooms" onClick={() => navigationToScreens("./rooms")} />
+                  <Tab label="Content" onClick={() => navigationToScreens("./content")}/>
                   <Tab label="Blog" onClick={() => navigationToScreens("./blog")} />
                   <Tab label="Contact Us" onClick={() => navigationToScreens("./edit-contacts")} />
                 </Tabs>
