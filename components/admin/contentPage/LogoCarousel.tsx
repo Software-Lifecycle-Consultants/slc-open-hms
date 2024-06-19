@@ -3,21 +3,6 @@ import { TextField, Grid, Typography, Card, Box, Button } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
 import { adminContentLogoCarousel } from "@/data/admincontent";
-import Image from "next/image"; // Importing the Image component from Next.js
-import { clientLogos } from "@/data/homePage"; // Importing client logos from the specified data file
-import Slider from "react-slick"; // Importing the Slider component from react-slick
-
-// Styles for the carousel container
-const carouselContainerStyles = {
-  overflow: "hidden",
-};
-
-// Styles to prevent white vertical line on mobile
-const carouselOverflowStyles = {
-  ".slick-list": {
-    overflow: "visible",
-  },
-};
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -81,26 +66,6 @@ const LogoCarousel: React.FC = () => {
               variant="outlined"
               required
             />
-            <Box sx={{ ...carouselContainerStyles, ...carouselOverflowStyles }}>
-              {/* Wrapping the Slider with a Box to control height and responsiveness */}
-              <Box sx={{ maxWidth: "100vw" }}>
-                <Slider>
-                  {/* Mapping through clientLogos and rendering each logo */}
-                  {clientLogos.map((item) => (
-                    <Box key={item.id}>
-                      <Card style={cardStyles}>
-                        <Image
-                          src={item.logoImage}
-                          alt={`Logo ${item.id}`}
-                          width={162}
-                          height={32}
-                        />
-                      </Card>
-                    </Box>
-                  ))}
-                </Slider>
-              </Box>
-            </Box>
             <Button
               sx={{ backgroundColor: "#4A5472", marginTop: "10px" }}
               component="label"
