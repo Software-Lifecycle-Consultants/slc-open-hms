@@ -41,3 +41,22 @@ export const adminContentLogoCarousel = {
     adminContentLogoCarouselUploadButton:"Upload file",
     adminContentLogoCarouselSubmitButton:"Submit"
 }
+
+//Destination card component 
+export const adminContentDestinationCard = {
+    adminContentDestinationCardHeaderTitle: "Videos",
+    adminContentDestinationCardButtonCard1: "Cappadocia",
+    adminContentDestinationCardButtonCard2: "Sossusvlei",
+    adminContentDestinationCardButtonCard3: "Albuquerque",
+    adminContentDestinationCardHeaderTitle1: "Add New Videos",
+    adminContentDestinationCardTitle:"Video Title",
+    adminContentDestinationCardDescription:"Video  Description",
+    adminContentDestinationCardTitle1:"Video URL 1",
+    adminContentDestinationCardTitle2:"Video Title",
+    adminContentDestinationCardDescription2:"Description",
+    adminContentDestinationCardTitle3:"Price",
+    adminContentDestinationCardTitle4:"City",
+    adminContentDestinationCardTitle5:"Custom Tag",
+    adminContentDestinationCardTitle6:"Button Name",
+    adminContentDestinationCardSubmitButton:"Save"
+}
