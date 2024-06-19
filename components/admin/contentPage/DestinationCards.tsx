@@ -25,7 +25,8 @@ const DestinationCards: React.FC = () => {
         >
           {/* Display the header title */}
           <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-            {adminContentDestinationCard.adminContentDestinationCardHeaderTitle // Display the header title
+            {
+              adminContentDestinationCard.adminContentDestinationCardHeaderTitle // Display the header title
             }
           </Typography>
           <Box
@@ -122,7 +123,8 @@ const DestinationCards: React.FC = () => {
             }
           </Typography>
           <Typography sx={{ marginTop: "10px" }}>
-            {adminContentDestinationCard.adminContentDestinationCardTitle // Display the video title
+            {
+              adminContentDestinationCard.adminContentDestinationCardTitle // Display the video title
             }
           </Typography>
           <TextField
@@ -146,7 +148,8 @@ const DestinationCards: React.FC = () => {
             sx={{ m: 1 }}
           />
           <Typography sx={{ marginTop: "10px" }}>
-            {adminContentDestinationCard.adminContentDestinationCardTitle3 // Display the video URL 1
+            {
+              adminContentDestinationCard.adminContentDestinationCardTitle1 // Display the video URL 1
             }
           </Typography>
           <TextField
@@ -156,9 +159,10 @@ const DestinationCards: React.FC = () => {
             required
             sx={{ m: 1 }}
           />
-          <Typography sx={{ marginTop: "10px" }}> 
-            {adminContentDestinationCard.adminContentDestinationCardTitle4 // Display the video title
-             }
+          <Typography sx={{ marginTop: "10px" }}>
+            {
+              adminContentDestinationCard.adminContentDestinationCardTitle4 // Display the video title
+            }
           </Typography>
           <TextField
             fullWidth
@@ -168,7 +172,7 @@ const DestinationCards: React.FC = () => {
             sx={{ m: 1 }}
           />
           <Typography sx={{ marginTop: "10px" }}>
-            {" "}
+
             {
               adminContentDestinationCard.adminContentDestinationCardDescription2 // Display the video description
             }
@@ -182,8 +186,8 @@ const DestinationCards: React.FC = () => {
             sx={{ m: 1 }}
           />
           <Typography sx={{ marginTop: "10px" }}>
-            {" "}
-            {adminContentDestinationCard.adminContentDestinationCardTitle4 // Display the video title
+            {
+              adminContentDestinationCard.adminContentDestinationCardTitle3 // Display the video title
             }
           </Typography>
           <TextField
@@ -194,7 +198,8 @@ const DestinationCards: React.FC = () => {
             sx={{ m: 1 }}
           />
           <Typography sx={{ marginTop: "10px" }}>
-            {adminContentDestinationCard.adminContentDestinationCardTitle5 // Display the custom tag
+            {
+              adminContentDestinationCard.adminContentDestinationCardTitle5 // Display the custom tag
             }
           </Typography>
           <TextField
@@ -205,7 +210,8 @@ const DestinationCards: React.FC = () => {
             sx={{ m: 1 }}
           />
           <Typography sx={{ marginTop: "10px" }}>
-            {adminContentDestinationCard.adminContentDestinationCardTitle6 // Display the button name
+            {
+              adminContentDestinationCard.adminContentDestinationCardTitle6 // Display the button name
             }
           </Typography>
           <TextField
@@ -237,8 +243,9 @@ const DestinationCards: React.FC = () => {
                 color: "white",
               }}
             >
-             {adminContentDestinationCard.adminContentDestinationCardSubmitButton // Display the submit button text
-             }
+              {
+                adminContentDestinationCard.adminContentDestinationCardSubmitButton // Display the submit button text
+              }
             </Typography>
           </Button>
         </Box>
