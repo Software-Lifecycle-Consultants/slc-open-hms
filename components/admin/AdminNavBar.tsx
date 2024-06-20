@@ -31,7 +31,7 @@ const AdminNavBar: React.FC = () => {
   };
 
   const navigationToRegisterPage = () => {
-    router.push("/register");
+    router.push("/admin/profile-settings");
   };
 
   const navigationToLoginPage = () => {
