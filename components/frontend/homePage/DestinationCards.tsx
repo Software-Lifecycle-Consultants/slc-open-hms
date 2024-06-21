@@ -6,12 +6,10 @@ import {
   CardActions,
   CardContent,
   Typography,
- 
 } from "@mui/material";
 import * as React from "react";
 import { montserrat } from "../../../app/fonts";
 import { useRouter } from "next/navigation";
-
 
 /* DestinationCardDetails component displays details of a destination in a card. */
 
@@ -44,9 +42,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
   description,
   price,
 }) => {
-
-  
-
   // set route to checkout page
   const router = useRouter();
   const navigationToBookNow = () => {
@@ -91,31 +86,11 @@ const BlogCard: React.FC<BlogCardProps> = ({
           }}
         >
           {/* Destination city */}
-          <Typography
-            gutterBottom
-            variant="h5"
-            className={montserrat.className}
-            style={{
-              color: "#0C111F",
-              fontSize: "24px",
-              lineHeight: "26px",
-              fontStyle: "normal",
-              fontWeight: "700",
-            }}
-          >
+          <Typography gutterBottom variant="body1">
             {city}
           </Typography>
           {/* Destination description */}
-          <Typography
-            variant="body2"
-            style={{
-              color: "rgba(12, 17, 31, 0.60)",
-              fontSize: "18px",
-              lineHeight: "180%",
-              fontStyle: "normal",
-              fontWeight: "400",
-            }}
-          >
+          <Typography variant="h3" sx={{ opacity: 0.6 }}>
             {description}
           </Typography>
         </CardContent>
@@ -127,69 +102,33 @@ const BlogCard: React.FC<BlogCardProps> = ({
         >
           <Box>
             {/* Price label */}
-            <Typography
-              gutterBottom
-              variant="body2"
-              style={{
-                color: "rgba(12, 17, 31, 0.60)",
-                fontSize: "18px",
-                lineHeight: "155%",
-                fontStyle: "normal",
-                fontWeight: "400",
-                letterSpacing: "-0.18px",
-              }}
-            >
+            <Typography gutterBottom variant="h3">
               {blogCardText.customTag1}
             </Typography>
             <Box style={{ display: "flex" }}>
               {/* Price per person */}
-              <Typography
-                style={{
-                  color: "#0C111F",
-                  fontFamily: "Montserrat, sans-serif",
-                  fontSize: "24px",
-                  lineHeight: "28px",
-                  fontStyle: "normal",
-                  fontWeight: "700",
-                }}
-              >
+              <Typography fontSize={"20px"} fontFamily={"Mulish"}>
                 ${price}
               </Typography>
               {/* Price per person label */}
-              <Typography
-                style={{
-                  color: "rgba(12, 17, 31, 0.60)",
-                  fontSize: "18px",
-                  lineHeight: "155%",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  letterSpacing: "-0.18px",
-                }}
-              >
+              <Typography variant="h3" color={"#0C111F"} sx={{ opacity: 0.6 }}>
                 {blogCardText.customTag2}
               </Typography>
             </Box>
           </Box>
           <Box
-            style={{
-              marginLeft: "60px",
-            }}
+            padding={3}
+            sx={{ display: "flex", justifyContent: "flex-end", width: "100%" }}
           >
             {/* Button for ticket booking */}
             <Button
               variant="contained"
               onClick={navigationToBookNow}
-              style={{
-                background: "var(--l-2, linear-gradient(135deg, #8482FF 0%, #7723FE 100%))",
-                borderRadius: "45px",
-                color: "#FFF",
-                fontSize: "14px",
-                lineHeight: "180%",
-                fontStyle: "medium",
-                letterSpacing: "-0.14px",
-                fontWeight: "500",
-                fontFamily: "__Inter_e66fe9",
-                textTransform: "none",
+              sx={{
+                background:
+                  "var(--l-2, linear-gradient(135deg, #8482FF 0%, #7723FE 100%))",
+                borderRadius: "2.813rem",
+                color: "white",
               }}
             >
               {blogCardText.blogctaCaption}

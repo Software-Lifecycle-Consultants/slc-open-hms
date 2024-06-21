@@ -8,14 +8,13 @@ import {
   Typography,
   Button,
   Stack,
-
 } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import { blogCardData, userTestimonial } from "@/data/homePage";
 //import { testimonialSectionDetails } from "@/data/homePage";
 import { montserrat, inter } from "../../../app/fonts";
-import LaunchIcon from '@mui/icons-material/Launch';
+import LaunchIcon from "@mui/icons-material/Launch";
 import Link from "next/link";
 const Testimonials = () => {
   const [value, setValue] = React.useState(4); // Rating value
@@ -24,13 +23,11 @@ const Testimonials = () => {
   const accountStatsStyle = {
     marginTop: "31.682px", // Half of the userAvatar height
     width: "90%",
-    height: "250px",
+    height: "290px",
     borderRadius: "18px",
     paddingTop: "36px",
     marginLeft: { xs: "5%", md: "none" },
   };
-
-  
 
   const accountContainerStyle = {
     position: "relative",
@@ -47,7 +44,7 @@ const Testimonials = () => {
   };
 
   /* Typography style for heading 5 */
-  const typographyh5Style = {
+  /*const typographyh5Style = {
     color: "#0C111F",
     fontSize: "24px",
     lineHeight: "28px",
@@ -56,7 +53,7 @@ const Testimonials = () => {
   };
 
   /* Typography style for heading 1 */
-  const typographyh1Style = {
+  /*const typographyh1Style = {
     color: "#0C111F",
     fontSize: "48px",
     lineHeight: "130%",
@@ -77,7 +74,7 @@ const Testimonials = () => {
   };
 
   /* Typography style for paragraph */
-  const typographyParagraphStyle = {
+  /*const typographyParagraphStyle = {
     color: "#0C111F",
     fontSize: "20px",
     lineHeight: "180%",
@@ -86,7 +83,7 @@ const Testimonials = () => {
     marginTop: "5px",
     marginBottom: "95px",
     marginLeft: { xs: "5%", md: "none" },
-  };
+  };*/
 
   return (
     <>
@@ -114,18 +111,13 @@ const Testimonials = () => {
             <Card elevation={0} sx={accountStatsStyle}>
               <CardContent>
                 {/* User's name */}
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  className={montserrat.className}
-                  style={typographyh5Style}
-                >
+                <Typography gutterBottom variant="body1">
                   {userTestimonial.userName}
                 </Typography>
                 {/* User's rating */}
                 <Rating name="read-only" value={value} readOnly />
                 {/* User's testimonial description */}
-                <Typography variant="body2" style={typographyCardStyle}>
+                <Typography variant="h3">
                   {userTestimonial.testimonial}
                 </Typography>
               </CardContent>
@@ -147,18 +139,13 @@ const Testimonials = () => {
             <Card elevation={0} sx={accountStatsStyle}>
               <CardContent>
                 {/* User's name */}
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  className={montserrat.className}
-                  style={typographyh5Style}
-                >
+                <Typography gutterBottom variant="body1">
                   {userTestimonial.userName1}
                 </Typography>
                 {/* User's rating */}
                 <Rating name="read-only" value={value} readOnly />
                 {/* User's testimonial description */}
-                <Typography variant="body2"  style={typographyCardStyle}>
+                <Typography variant="h3">
                   {userTestimonial.testimonial1}
                 </Typography>
               </CardContent>
@@ -180,53 +167,41 @@ const Testimonials = () => {
             <Card elevation={0} sx={accountStatsStyle}>
               <CardContent>
                 {/* User's name */}
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  className={montserrat.className}
-                  style={typographyh5Style}
-                >
+                <Typography gutterBottom variant="body1">
                   {userTestimonial.userName2}
                 </Typography>
                 {/* User's rating */}
                 <Rating name="read-only" value={value} readOnly />
                 {/* User's testimonial description */}
-                <Typography variant="body2" style={typographyCardStyle}>
+                <Typography variant="h3">
                   {userTestimonial.testimonial2}
                 </Typography>
               </CardContent>
             </Card>
           </Box>
-          
-          
         </Grid>
-        
-        </Grid>
-        
-    <Stack spacing={2} direction="row" justifyContent="flex-end">
-    <Link href={userTestimonial.testimonialButtonLink} target="_blank">
-      <Button 
-            
-            variant="contained"
-              style={{
-                background: "var(--l-2, linear-gradient(135deg, #8482FF 0%, #7723FE 100%))",
-                borderRadius: "45px",
-                color: "#FFF",
-                fontSize: "14px",
-                lineHeight: "180%",
-                fontStyle: "normal",
-                letterSpacing: "-0.14px",
-                fontWeight: "500",
-                marginBottom:"25px",
-                marginTop:"25px",
-                textTransform: "none",
+      </Grid>
+
+      <Stack spacing={2} direction="row" justifyContent="flex-end">
+        <Link href={userTestimonial.testimonialButtonLink} target="_blank">
+          <Box padding={3}>
+            <Button
+              variant="contained"
+              sx={{
+                background:
+                  "var(--l-2, linear-gradient(135deg, #8482FF 0%, #7723FE 100%))",
+                borderRadius: "2.813rem",
+                color: "white",
               }}
-          >
-            {userTestimonial.testimonialButtonText}
-            <LaunchIcon sx={{ color: "#FFFFFF" ,  fontSize: "15px", marginLeft:"8px"}} />
-          </Button>
-          </Link>
-    </Stack>
+            >
+              {userTestimonial.testimonialButtonText}
+              <LaunchIcon
+                sx={{ color: "#FFFFFF", fontSize: "15px", marginLeft: "8px" }}
+              />
+            </Button>
+          </Box>
+        </Link>
+      </Stack>
     </>
   );
 };
