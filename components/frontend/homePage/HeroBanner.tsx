@@ -47,16 +47,16 @@ const Banner = () => {
         {/* Left side of the banner */}
         <Grid item xs={12} md={6}>
           {/* Heading 5 */}
-          <Typography variant="h2" textTransform={"uppercase"} color={"#E97458"} fontSize={"1.125rem"}>
+          <Typography variant="h2" textTransform="uppercase" color="#E97458" fontSize="1.125rem">
             {bannerDetails.bannerTitle}
           </Typography>
           {/* Heading 1 */}
-          <Typography variant="h1" color={"white"}
+          <Typography variant="h1" color="white"
           >
             {bannerDetails.bannerSubTitle}
           </Typography>
           {/* Body text */}
-          <Typography variant="body2" fontSize={"1.5rem"} sx={{ color: "rgba(255, 255, 255, 0.7)" }}>
+          <Typography variant="body2" fontSize="1.5rem" sx={{ color: "rgba(255, 255, 255, 0.7)" }}>
             {bannerDetails.bannerDescription}
           </Typography>
           <Box
