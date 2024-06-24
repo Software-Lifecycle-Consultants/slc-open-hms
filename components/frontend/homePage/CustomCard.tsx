@@ -47,7 +47,7 @@ const typographyh5Style = {
 
 /* Typography styles for body 2 */
 const typographyBody2Style = {
-  color: "353535F",
+  color: "#353535F",
   fontSize: "20px",
   fontStyle: "normal",
   lineHeight: "36px",
