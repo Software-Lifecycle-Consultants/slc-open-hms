@@ -5,6 +5,7 @@ import DestinationOverview from '@/components/admin/contentPage/DestinationOverv
 import HeroBanner from '@/components/admin/contentPage/HeroBanner';
 import DestinationCards from '@/components/admin/contentPage/DestinationCards';
 import LogoCarousel from '@/components/admin/contentPage/LogoCarousel';
+import Testimonials from '@/components/admin/contentPage/Testimonials';
 import { adminContentPage } from "@/data/admincontent";
 
 
@@ -45,12 +46,14 @@ const HomePage: React.FC = () => {
               <MenuItem value="y">Destination Overview</MenuItem>
               <MenuItem value="z">Destination Cards</MenuItem>
               <MenuItem value="a">Logo Carousel</MenuItem>
+              <MenuItem value="b">Testimonials</MenuItem>
             </Select>
           </FormControl>
           {component === "x" && <HeroBanner />}
           {component === "y" && <DestinationOverview />}
           {component === "z" && <DestinationCards />}
           {component === "a" && <LogoCarousel />}
+          {component === "b" && <Testimonials />}
         </Container>
       </Grid>
     </Grid>

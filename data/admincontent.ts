@@ -60,3 +60,16 @@ export const adminContentDestinationCard = {
     adminContentDestinationCardTitle6:"Button Name",
     adminContentDestinationCardSubmitButton:"Save"
 }
+// Compare this snippet from app/admin/components/content/Testimonials.tsx:
+export const adminContentTestimonials = {
+    adminContentTestimonialsHeaderTitle: "Testimonials",
+    adminContentTestimonialsButtonCard1: "Jhone Lown",
+    adminContentTestimonialsButtonCard2: "Kane Braen",
+    adminContentTestimonialsButtonCard3: "Adam lauvis",
+    adminContentTestimonialsHeaderTitle1: "Add New Testimonials",
+    adminContentTestimonialsTitle:"Upload Profile Image",
+    adminContentTestimonialsDescription:"Drag & Drop Your images or Browse",
+    adminContentTestimonialsTitle1:"Name",
+    adminContentTestimonialsDescription1:"Description",
+    adminContentDestinationCardSubmitButton:"Save"
+}
