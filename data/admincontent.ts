@@ -73,3 +73,13 @@ export const adminContentTestimonials = {
     adminContentTestimonialsDescription1:"Description",
     adminContentDestinationCardSubmitButton:"Save"
 }
+// Compare this snippet from app/admin/components/content/SecondaryBannerSection.tsx:
+export const adminContentSecondaryBanner = {
+    adminContentSecondaryBannerHeaderTitle: "Secondary Banner Section",
+    adminContentSecondaryBannerDetailsTitle01:"Secondary Banner Section Title",
+    adminContentSecondaryBannerDetailsTitle02:"Secondary Banner Section  Description",   
+    adminContentSecondaryBannerDetailsTitle03:"Button Name",
+    adminContentSecondaryBannerDetailsTitle04:"Video URL",
+    adminContentSecondaryBannerDetailsEditButton:"Edit",
+    adminContentSecondaryBannerDetailsSubmitButton:"Save",
+}

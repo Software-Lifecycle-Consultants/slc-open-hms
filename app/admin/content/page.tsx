@@ -6,6 +6,7 @@ import HeroBanner from '@/components/admin/contentPage/HeroBanner';
 import DestinationCards from '@/components/admin/contentPage/DestinationCards';
 import LogoCarousel from '@/components/admin/contentPage/LogoCarousel';
 import Testimonials from '@/components/admin/contentPage/Testimonials';
+import SecondaryBannerSection from '@/components/admin/contentPage/SecondaryBannerSection';
 import { adminContentPage } from "@/data/admincontent";
 
 
@@ -47,6 +48,7 @@ const HomePage: React.FC = () => {
               <MenuItem value="z">Destination Cards</MenuItem>
               <MenuItem value="a">Logo Carousel</MenuItem>
               <MenuItem value="b">Testimonials</MenuItem>
+              <MenuItem value="c">Secondary Banner Section</MenuItem>
             </Select>
           </FormControl>
           {component === "x" && <HeroBanner />}
@@ -54,6 +56,7 @@ const HomePage: React.FC = () => {
           {component === "z" && <DestinationCards />}
           {component === "a" && <LogoCarousel />}
           {component === "b" && <Testimonials />}
+          {component === "c" && <SecondaryBannerSection />}
         </Container>
       </Grid>
     </Grid>
