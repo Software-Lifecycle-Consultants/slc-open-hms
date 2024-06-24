@@ -47,12 +47,12 @@ const typographyh5Style = {
 
 /* Typography styles for body 2 */
 const typographyBody2Style = {
-  color: "#0C111F",
+  color: "#353535F",
   fontSize: "20px",
   fontStyle: "normal",
   lineHeight: "36px",
   fontWeight: "400",
-  marginTop: "16px", // Add margin top
+  marginTop: "2px", // Add margin top
   marginLeft: { xs: "26px", sm: "4px", md: "25px" },
 };
 
@@ -69,11 +69,11 @@ const CustomCard = ({}) => {
     >
       <Grid item xs={12} md={6}>
         {/* Heading 1 */}
-        <Typography variant="h1" sx={typographyh1Style}>
+        <Typography variant="h2">
           {cardDetails1.customCardTitle}
         </Typography>
         {/* Body 1 */}
-        <Typography variant="body1" sx={typographyBody1Style}>
+        <Typography variant="body2" marginTop={"2rem"} sx={{opacity: 0.6}} >
           {cardDetails1.customCardDescription}
         </Typography>
         {/* Image */}
@@ -197,21 +197,18 @@ const CustomCard = ({}) => {
                     md={10}
                     sx={{
                       width: "100%",
-                      padding: "24px",
+                      padding: "20px",
                       display: "flex",
                       flexDirection: "column", // Use column direction
                     }}
                   >
                     {/* Heading 5 */}
-                    <Typography
-                      variant="h5"
-                      className={montserrat.className}
-                      sx={typographyh5Style}
+                    <Typography variant="body1"  marginLeft={"1.563rem"}                             
                     >
                       {item.title}
                     </Typography>
                     {/* Body 2 */}
-                    <Typography variant="body2" sx={typographyBody2Style}>
+                    <Typography variant="body2" sx={{opacity: 0.6}} marginTop={"1rem"}  marginLeft={"1.563rem"}>
                       {item.description}
                     </Typography>
                     {/* Divider */}

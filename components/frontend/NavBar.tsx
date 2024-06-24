@@ -129,11 +129,10 @@ const NavBar = () => {
                 <Tabs
                   sx={{ marginLeft: "auto" }}
                   value={value}
-                  onChange={handleChange}
-                  textColor="inherit"
+                  onChange={handleChange}                  
                   indicatorColor="secondary"
                   TabIndicatorProps={{ 
-                    style: { backgroundColor: "#c7833e" },
+                    style: { backgroundColor: "#FFFFFF" },
                    }}
                 >
                  {/* Map through pages to create Tabs for navigation */}
