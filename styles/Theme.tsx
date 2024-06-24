@@ -12,7 +12,7 @@ const lightTheme = createTheme({
       main: '#C7923E', // Set the primary color
     },
     secondary: {
-      main: '#4A5472', // Set the secondary color
+      main: '#FFFFFF', // Set the secondary color
     },
     error: {
       main: '#E83B3B', // Set the error color
@@ -48,28 +48,28 @@ const lightTheme = createTheme({
     h3: { // Define the h3 typography settings
       fontFamily: 'Mulish',
       fontSize: '1.125rem',
-      fontWeight: "200",
+      fontWeight: 200,
       letterSpacing: '0.02rem',
       color: '#353535',
       lineHeight: '1.75rem',
-      fontStyle: "normal",
+      fontStyle: 'normal',
     },
     h4: { // Define the h4 typography settings
-      fontSize: "1rem",
+      fontSize: '1rem',
       lineHeight: '2rem',
     },
     h5: { // Define the h5 typography settings
       fontSize: '0.875rem',
-      fontWeight: "700",
+      fontWeight: 700,
       fontFamily: 'Lora',
       letterSpacing: '-0.01rem',
       color: '#0C111F',
       textTransform: 'capitalize',
       lineHeight: '1.75 rem',
-      fontStyle: "normal",
+      fontStyle: 'normal',
     },
     h6: { // Define the h6 typography settings
-      fontSize: "0.75rem",
+      fontSize: '0.75rem',
     },
     body1: { // Define the body1 typography settings
       color: '#0C111F',
@@ -78,7 +78,7 @@ const lightTheme = createTheme({
       fontFamily: 'Lora',
       lineHeight: '2.25rem',
       letterSpacing: '0.01rem',
-      fontStyle: "normal",
+      fontStyle: 'normal',
 
     },
     body2: { // Define the body2 typography settings
@@ -87,13 +87,13 @@ const lightTheme = createTheme({
       lineHeight: '2.25rem',
       fontWeight: 200,
       fontFamily: 'Mulish',
-      fontStyle: "normal",
+      fontStyle: 'normal',
       letterSpacing: '-0.01rem',
     },
     button: { // Define the button typography settings
       textTransform: 'capitalize',
-      fontWeight: "600",
-      color: "#C7923E",
+      fontWeight: 600,
+      color: '#C7923E',
       fontFamily: 'Mulish',
       fontSize: '1rem',
     },
@@ -107,6 +107,17 @@ const lightTheme = createTheme({
         },
       },
     },
+    MuiTab: { 
+      styleOverrides: { 
+        root: {          
+          color: '#FFFFFF', 
+          '&.Mui-selected': {
+            color: '#FFFFFF', 
+          },          
+        },
+        
+      },      
+    },    
   },
 },
 );
