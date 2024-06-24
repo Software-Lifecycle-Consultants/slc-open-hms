@@ -29,6 +29,7 @@ export const drawerPages = [
 export const adminDrawerPages = [
   { label: "Dashboard", route: "./dashboard" },
   { label: "Rooms", route: "./rooms" },
+  { label: "Content", route: "./content" },
   { label: "Blog", route: "./blog" },
   { label: "Contact Us", route: "./edit-contacts" },
   { label: "Settings", route: "./settings" },

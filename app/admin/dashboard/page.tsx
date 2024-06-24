@@ -11,6 +11,9 @@ const AdminDashboard = () => {
     <>
       <Box sx={{ backgroundColor: "#EEF5FF", padding: "40px 0", width: "100%", height: "110vh" }}>
       <>
+      <Box sx={{ml:"130px",mb:"-83px", color:"#343C6A", fontSize:"20px", fontWeight:"500"}}> 
+        Customer History 
+      </Box>
       <div className="flex">
         
         <main className="flex-grow ml-64 relative">

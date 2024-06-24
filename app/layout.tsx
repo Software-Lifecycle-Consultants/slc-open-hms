@@ -3,7 +3,7 @@
 import React from 'react';
 import { Box, Container } from '@mui/material';
 import { inter } from './fonts';
-import theme from '@/Theme';
+import {lightTheme, darkTheme} from '@/styles/Theme';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import 'slick-carousel/slick/slick.css';
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={lightTheme}>
           <CssBaseline />
           {isAdminRoute ? (
             <AdminLayout>

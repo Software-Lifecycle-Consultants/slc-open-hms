@@ -16,12 +16,12 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 
 import {
-  typographyh5Style,
   typographyh1Style,
   typographyBody1Style,
   buttonContainedStyle,
   buttonTextStyle,
 } from "./styles";
+import color from "material-ui-colors/dist/amber";
 
 
 
@@ -47,19 +47,16 @@ const Banner = () => {
         {/* Left side of the banner */}
         <Grid item xs={12} md={6}>
           {/* Heading 5 */}
-          <Typography variant="h5" sx={typographyh5Style}>
+          <Typography variant="h2" textTransform="uppercase" color="#E97458" fontSize="1.125rem">
             {bannerDetails.bannerTitle}
           </Typography>
           {/* Heading 1 */}
-          <Typography
-            variant="h1"
-            className={lora.className}
-            sx={typographyh1Style}
+          <Typography variant="h1" color="white"
           >
             {bannerDetails.bannerSubTitle}
           </Typography>
           {/* Body text */}
-          <Typography variant="body1" sx={typographyBody1Style}>
+          <Typography variant="body2" fontSize="1.5rem" sx={{ color: "rgba(255, 255, 255, 0.7)" }}>
             {bannerDetails.bannerDescription}
           </Typography>
           <Box
@@ -70,7 +67,7 @@ const Banner = () => {
             }}
           >
             {/* Button with icon for web and tablet view */}
-            <Button variant="contained" sx={buttonContainedStyle}>
+            <Button variant="contained" sx={{ borderRadius: "6.25rem", background: "var(--l-2, linear-gradient(135deg, #F9EC7D 0%, #F5B100 100%))", fontWeight: 600, gap: "0.625rem" }}>
               {bannerDetails.bannercta1Caption}
               {/* Arrow icon */}
               <Box
@@ -89,7 +86,7 @@ const Banner = () => {
             </Button>
 
             {/* Button with arrow icon for mobile view */}
-            <Button variant="text" onClick={navigationToExplore} sx={buttonTextStyle}>
+            <Button variant="text" sx={{ color: "white", fontWeight: "normal", fontSize: "0.875rem" }} onClick={navigationToExplore}>
               <Box
                 sx={{
                   backgroundColor: "rgba(255, 255, 255, 0.18)",
@@ -119,7 +116,7 @@ const Banner = () => {
               </Box>
               {bannerDetails.bannercta2Caption}
             </Button>
-            
+
           </Box>
         </Grid>
         {/* Right side of the banner - image */}
