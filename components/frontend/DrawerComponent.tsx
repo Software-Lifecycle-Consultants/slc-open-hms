@@ -32,7 +32,12 @@ const DrawerComponent = () => {
           sx: {
             backgroundColor: "#0C111F",
             width: { xs: "150px", sm: "168px" },
-          },
+            '& .MuiTypography-root': { // Targeting all Typography components inside the Drawer
+              color: 'white',
+              fontWeight: 400,
+              fontSize: '1rem',
+            },
+          },          
         }}
       >
         <List>
