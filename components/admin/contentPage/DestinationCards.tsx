@@ -222,6 +222,7 @@ const DestinationCards: React.FC = () => {
             sx={{ m: 1 }}
           />
         </Card>
+        <Grid my={4}>
         <Box display="flex" justifyContent="end" alignItems="center">
           <Button
             sx={{
@@ -249,6 +250,7 @@ const DestinationCards: React.FC = () => {
             </Typography>
           </Button>
         </Box>
+       </Grid>
       </Grid>
     </Grid>
   );

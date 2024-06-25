@@ -193,6 +193,7 @@ const Testimonials: React.FC = () => {
           <Typography component="legend">Ratings</Typography>
           <Rating name="no-value" value={null} />
         </Card>
+        <Grid my={4}>
         <Box display="flex" justifyContent="end" alignItems="center">
           <Button
             sx={{
@@ -220,6 +221,7 @@ const Testimonials: React.FC = () => {
             </Typography>
           </Button>
         </Box>
+        </Grid>
       </Grid>
     </Grid>
   );
