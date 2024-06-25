@@ -47,11 +47,19 @@ const Banner = () => {
         {/* Left side of the banner */}
         <Grid item xs={12} md={6}>
           {/* Heading 5 */}
-          <Typography variant="h2" textTransform="uppercase" color="#E97458" fontSize="1.125rem">
+          <Typography variant="h2"
+            sx={{
+              textTransform: "uppercase",
+              color: "#E97458",
+              fontSize: "1.125rem",
+              '@media (max-width:600px)': {
+                fontSize: '1rem',
+              },
+            }} >
             {bannerDetails.bannerTitle}
           </Typography>
           {/* Heading 1 */}
-          <Typography variant="h1" color="white"
+          <Typography variant="h1" color="secondary"
           >
             {bannerDetails.bannerSubTitle}
           </Typography>
@@ -86,7 +94,7 @@ const Banner = () => {
             </Button>
 
             {/* Button with arrow icon for mobile view */}
-            <Button variant="text" sx={{ color: "white", fontWeight: "normal", fontSize: "0.875rem" }} onClick={navigationToExplore}>
+            <Button variant="text" sx={{ color: "secondary.main", fontWeight: "normal", fontSize: "0.875rem" }} onClick={navigationToExplore}>
               <Box
                 sx={{
                   backgroundColor: "rgba(255, 255, 255, 0.18)",
