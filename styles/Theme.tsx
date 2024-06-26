@@ -25,7 +25,7 @@ const lightTheme = createTheme({
     },
     text: {
       primary: '#353535', // Set the primary text color
-      secondary: grey[500], // Set the secondary text color
+      secondary: '#FFFFFF', // Set the secondary text color
     },
   },
   // Define typography settings for the theme
@@ -37,13 +37,20 @@ const lightTheme = createTheme({
       fontFamily: 'Lora',
       color: '#0C111F',
       fontstyle: 'normal',
-      letterSpacing: '-0.03rem'
+      letterSpacing: '-0.03rem',
+      '@media (max-width:600px)': {
+        fontSize: '3.125rem'
+      },
     },
     h2: { // Define the h2 typography settings
       fontSize: '3rem',
       fontWeight: 700,
       fontFamily: 'Lora',
       color: '#0C111F',
+      '@media (max-width:600px)': {
+        fontSize: '2.5rem',
+        paddingTop: '1.25rem'
+      },
     },
     h3: { // Define the h3 typography settings
       fontFamily: 'Mulish',
@@ -53,10 +60,17 @@ const lightTheme = createTheme({
       color: '#353535',
       lineHeight: '1.75rem',
       fontStyle: 'normal',
+      '@media (max-width:600px)': {
+        fontSize: '1.1rem'
+      },
     },
     h4: { // Define the h4 typography settings
       fontSize: '1rem',
       lineHeight: '2rem',
+      fontFamily: 'Mulish',
+      '@media (max-width:600px)': {
+        fontSize: '0.8rem'
+      },
     },
     h5: { // Define the h5 typography settings
       fontSize: '0.875rem',
@@ -67,9 +81,15 @@ const lightTheme = createTheme({
       textTransform: 'capitalize',
       lineHeight: '1.75 rem',
       fontStyle: 'normal',
+      '@media (max-width:600px)': {
+        fontSize: '0.875rem'
+      },
     },
     h6: { // Define the h6 typography settings
       fontSize: '0.75rem',
+      '@media (max-width:600px)': {
+        fontSize: '0.75rem'
+      },
     },
     body1: { // Define the body1 typography settings
       color: '#0C111F',
@@ -79,7 +99,9 @@ const lightTheme = createTheme({
       lineHeight: '2.25rem',
       letterSpacing: '0.01rem',
       fontStyle: 'normal',
-
+      '@media (max-width:600px)': {
+        fontSize: '1.5rem'
+      },
     },
     body2: { // Define the body2 typography settings
       color: '#353535',
@@ -89,6 +111,9 @@ const lightTheme = createTheme({
       fontFamily: 'Mulish',
       fontStyle: 'normal',
       letterSpacing: '-0.01rem',
+      '@media (max-width:600px)': {
+        fontSize: '1rem'
+      },
     },
     button: { // Define the button typography settings
       textTransform: 'capitalize',
@@ -96,6 +121,9 @@ const lightTheme = createTheme({
       color: '#C7923E',
       fontFamily: 'Mulish',
       fontSize: '1rem',
+      '@media (max-width:600px)': {
+        fontSize: '0.75rem'
+      },
     },
   },
   // Define component styles for the theme
