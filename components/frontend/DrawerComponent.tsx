@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useRouter } from "next/navigation";
 import { drawerPages } from "@/data/homePage";
+import { lightTheme } from "@/styles/Theme";
 
 /* DrawerComponent displays a drawer with navigation links. */
 const DrawerComponent = () => {
@@ -33,7 +34,7 @@ const DrawerComponent = () => {
             backgroundColor: "#0C111F",
             width: { xs: "150px", sm: "168px" },
             '& .MuiTypography-root': { // Targeting all Typography components inside the Drawer
-              color: 'white',
+              color: lightTheme.palette.secondary.main,
               fontWeight: 400,
               fontSize: '1rem',
             },
