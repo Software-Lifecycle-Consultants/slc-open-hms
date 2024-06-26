@@ -67,6 +67,7 @@ const lightTheme = createTheme({
     h4: { // Define the h4 typography settings
       fontSize: '1rem',
       lineHeight: '2rem',
+      fontFamily: 'Mulish',
       '@media (max-width:600px)': {
         fontSize: '0.8rem'
       },
