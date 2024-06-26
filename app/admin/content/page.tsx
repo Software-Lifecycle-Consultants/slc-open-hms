@@ -9,6 +9,7 @@ import Testimonials from '@/components/admin/contentPage/Testimonials';
 import SecondaryBannerSection from '@/components/admin/contentPage/SecondaryBannerSection';
 import TermsConditions from '@/components/admin/contentPage/TermsConditions';
 import PrivacyPolicy from '@/components/admin/contentPage/PrivacyPolicy';
+import Footer from '@/components/admin/contentPage/Footer';
 import { adminContentPage } from "@/data/admincontent";
 
 const HomePage: React.FC = () => {
@@ -52,6 +53,7 @@ const HomePage: React.FC = () => {
               <MenuItem value="c">Secondary Banner Section</MenuItem>
               <MenuItem value="d">Terms & Conditions</MenuItem>
               <MenuItem value="e">Privacy Policy</MenuItem>
+              <MenuItem value="f">Footer</MenuItem>
             </Select>
           </FormControl>
           {component === "x" && <HeroBanner />}
@@ -62,6 +64,7 @@ const HomePage: React.FC = () => {
           {component === "c" && <SecondaryBannerSection />}
           {component === "d" && <TermsConditions />}
           {component === "e" && <PrivacyPolicy />}
+          {component === "f" && <Footer />}
         </Container>
       </Grid>
     </Grid>
