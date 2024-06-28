@@ -22,7 +22,7 @@ import {
   buttonTextStyle,
 } from "./styles";
 import color from "material-ui-colors/dist/amber";
-import { lightTheme } from "@/styles/Theme";
+import { themeClient } from "@/styles/Theme";
 
 
 
@@ -95,7 +95,7 @@ const Banner = () => {
             </Button>
 
             {/* Button with arrow icon for mobile view */}
-            <Button variant="text" sx={{ color: lightTheme.palette.secondary.main, fontWeight: "normal", fontSize: "0.875rem" }} onClick={navigationToExplore}>
+            <Button variant="text" sx={{ color: themeClient.palette.secondary.main, fontWeight: "normal", fontSize: "0.875rem" }} onClick={navigationToExplore}>
               <Box
                 sx={{
                   backgroundColor: "rgba(255, 255, 255, 0.18)",
