@@ -4,7 +4,7 @@ import { grey } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 
 // Create a Material-UI theme
-const lightTheme = createTheme({
+const themeClient = createTheme({
   // Define the color palette for the theme
   palette: {
     mode: 'light', // Set the mode to light
@@ -151,7 +151,7 @@ const lightTheme = createTheme({
 );
 
 // Create a dark theme
-const darkTheme = createTheme({
+const themeAdmin = createTheme({
   palette: {
     mode: 'dark', // Set the mode to dark
     primary: {
@@ -210,4 +210,4 @@ const darkTheme = createTheme({
 },
 );
 
-export { lightTheme, darkTheme };
+export { themeClient, themeAdmin };
