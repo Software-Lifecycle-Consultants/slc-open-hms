@@ -345,7 +345,7 @@ export default async function sendPdfEmail(
     // Configure the email options
     const mailOptions: nodemailer.SendMailOptions = {
       from: process.env.SMTP_EMAIL,
-      to: email,
+      to: `${email}, ${process.env.SMTP_EMAIL}`, // Send the email to both the recipient and the sender
       subject: "Your PDF Attachment",
       text: "Please find the attached PDF generated from HTML content.",
       attachments: [

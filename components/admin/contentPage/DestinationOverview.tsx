@@ -318,7 +318,7 @@ const DestinationOverview: React.FC = () => {
             </Card>
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}  my={4}>
           <Box display="flex" justifyContent="end" alignItems="center">
             <Button
               endIcon={<EditIcon />}

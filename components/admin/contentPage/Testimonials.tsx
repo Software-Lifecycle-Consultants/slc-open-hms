@@ -1,11 +1,27 @@
-import React from 'react';
+import React from "react";
 import { TextField, Grid, Card, Typography, Box, Button } from "@mui/material";
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
-import { adminContentDestinationCard } from '@/data/admincontent';
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import { adminContentTestimonials } from "@/data/admincontent";
+import { adminContentDestinationOverview } from "@/data/admincontent";
+import Rating from "@mui/material/Rating";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { styled } from "@mui/material/styles";
 
-const DestinationCards: React.FC = () => {
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
+  height: 1,
+  overflow: "hidden",
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  whiteSpace: "nowrap",
+  width: 1,
+});
+
+const Testimonials: React.FC = () => {
   return (
     <Grid container spacing={2}>
       {/* Display the Videos cards  */}
@@ -26,7 +42,7 @@ const DestinationCards: React.FC = () => {
           {/* Display the header title */}
           <Typography variant="h6" sx={{ fontWeight: "bold" }}>
             {
-              adminContentDestinationCard.adminContentDestinationCardHeaderTitle // Display the header title
+              adminContentTestimonials.adminContentTestimonialsHeaderTitle // Display the header title
             }
           </Typography>
           <Box
@@ -41,7 +57,7 @@ const DestinationCards: React.FC = () => {
           >
             <Typography sx={{ flexGrow: 0.9 }}>
               {
-                adminContentDestinationCard.adminContentDestinationCardButtonCard1 // Display the button card 1
+                adminContentTestimonials.adminContentTestimonialsButtonCard1 // Display the button card 1
               }
             </Typography>
             <IconButton aria-label="edit">
@@ -66,7 +82,7 @@ const DestinationCards: React.FC = () => {
               <Typography sx={{ flexGrow: 0.9 }}>
                 {" "}
                 {
-                  adminContentDestinationCard.adminContentDestinationCardButtonCard2 // Display the button card 2
+                  adminContentTestimonials.adminContentTestimonialsButtonCard2 // Display the button card 2
                 }
               </Typography>
             </Typography>
@@ -90,7 +106,7 @@ const DestinationCards: React.FC = () => {
           >
             <Typography sx={{ flexGrow: 0.9 }}>
               {
-                adminContentDestinationCard.adminContentDestinationCardButtonCard3 // Display the button card 3
+                adminContentTestimonials.adminContentTestimonialsButtonCard3 // Display the button card 3
               }
             </Typography>
             <IconButton aria-label="edit">
@@ -117,110 +133,65 @@ const DestinationCards: React.FC = () => {
             padding: "25px",
           }}
         >
+          {/* Add New Testimonials */}
           <Typography variant="h6" sx={{ fontWeight: "bold" }}>
             {
-              adminContentDestinationCard.adminContentDestinationCardHeaderTitle1 // Display the header title
+              adminContentTestimonials.adminContentTestimonialsHeaderTitle1 // Display the header title
             }
           </Typography>
           <Typography sx={{ marginTop: "10px" }}>
             {
-              adminContentDestinationCard.adminContentDestinationCardTitle // Display the video title
-            }
-          </Typography>
-          <TextField
-            fullWidth
-            label="Enter Video  Title"
-            variant="outlined"
-            required
-            sx={{ m: 1 }}
-          />
-          <Typography sx={{ marginTop: "10px" }}>
-            {
-              adminContentDestinationCard.adminContentDestinationCardDescription2 // Display the video description
+              adminContentTestimonials.adminContentTestimonialsTitle // Display the video description
             }{" "}
           </Typography>
           <TextField
             fullWidth
+            label="Drag & Drop Your images or Browse"
+            variant="outlined"
+            multiline
+            sx={{ m: 1 }}
+          />
+          <Button
+            sx={{ backgroundColor: "#4A5472", marginTop: "10px" }}
+            component="label"
+            role={undefined}
+            variant="contained"
+            tabIndex={-1}
+            startIcon={<CloudUploadIcon />}
+          >
+            {
+              adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
+            }
+            <VisuallyHiddenInput type="file" />
+          </Button>
+          <Typography sx={{ marginTop: "10px" }}>
+            {
+              adminContentTestimonials.adminContentTestimonialsTitle1 // Display the video URL 1
+            }
+          </Typography>
+          <TextField
+            fullWidth
+            label="Enter Name"
+            variant="outlined"
+            required
+            sx={{ m: 1 }}
+          />
+          <Typography sx={{ marginTop: "10px" }}>
+            {
+              adminContentTestimonials.adminContentTestimonialsDescription1 // Display the video description
+            }
+          </Typography>
+          <TextField
+            fullWidth
             label="Enter Description"
             variant="outlined"
             multiline
             rows={4}
             sx={{ m: 1 }}
           />
-          <Typography sx={{ marginTop: "10px" }}>
-            {
-              adminContentDestinationCard.adminContentDestinationCardTitle1 // Display the video URL 1
-            }
-          </Typography>
-          <TextField
-            fullWidth
-            label="Enter Video URL 1 Link"
-            variant="outlined"
-            required
-            sx={{ m: 1 }}
-          />
-          <Typography sx={{ marginTop: "10px" }}>
-            {
-              adminContentDestinationCard.adminContentDestinationCardTitle4 // Display the video title
-            }
-          </Typography>
-          <TextField
-            fullWidth
-            label="Enter City Name"
-            variant="outlined"
-            required
-            sx={{ m: 1 }}
-          />
-          <Typography sx={{ marginTop: "10px" }}>
-
-            {
-              adminContentDestinationCard.adminContentDestinationCardDescription2 // Display the video description
-            }
-          </Typography>
-          <TextField
-            fullWidth
-            label="Enter Description"
-            variant="outlined"
-            multiline
-            rows={4}
-            sx={{ m: 1 }}
-          />
-          <Typography sx={{ marginTop: "10px" }}>
-            {
-              adminContentDestinationCard.adminContentDestinationCardTitle3 // Display the video title
-            }
-          </Typography>
-          <TextField
-            fullWidth
-            label="Price"
-            variant="outlined"
-            required
-            sx={{ m: 1 }}
-          />
-          <Typography sx={{ marginTop: "10px" }}>
-            {
-              adminContentDestinationCard.adminContentDestinationCardTitle5 // Display the custom tag
-            }
-          </Typography>
-          <TextField
-            fullWidth
-            label="Enter Custom Tag"
-            variant="outlined"
-            required
-            sx={{ m: 1 }}
-          />
-          <Typography sx={{ marginTop: "10px" }}>
-            {
-              adminContentDestinationCard.adminContentDestinationCardTitle6 // Display the button name
-            }
-          </Typography>
-          <TextField
-            fullWidth
-            label="Enter Button Name"
-            variant="outlined"
-            required
-            sx={{ m: 1 }}
-          />
+          {/* Ratings*/}
+          <Typography component="legend">Ratings</Typography>
+          <Rating name="no-value" value={null} />
         </Card>
         <Grid my={4}>
         <Box display="flex" justifyContent="end" alignItems="center">
@@ -245,15 +216,15 @@ const DestinationCards: React.FC = () => {
               }}
             >
               {
-                adminContentDestinationCard.adminContentDestinationCardSubmitButton // Display the submit button text
+                adminContentTestimonials.adminContentDestinationCardSubmitButton // Display the submit button text
               }
             </Typography>
           </Button>
         </Box>
-       </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );
 };
 
-export default DestinationCards;
+export default Testimonials;

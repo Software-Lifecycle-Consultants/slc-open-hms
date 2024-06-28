@@ -222,7 +222,7 @@ const AdminLoginPage: React.FC = () => {
                 <Grid item xs={6} marginTop={3} textAlign="right">
                   <Typography style={{ color: "#4A5472" }}>
                     <Link
-                      href="/"
+                      href="/admin/forgot-password"
                       style={{ color: "#4A5472", textDecoration: "none" }}
                     >
                       {adminLoginPageData.loginPageForgotPasswordCaption}
