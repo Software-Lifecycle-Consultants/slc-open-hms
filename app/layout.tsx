@@ -3,7 +3,7 @@
 import React from 'react';
 import { Box, Container } from '@mui/material';
 import { inter } from './fonts';
-import {lightTheme, darkTheme} from '@/styles/Theme';
+import {themeClient, themeAdmin} from '@/styles/Theme';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import 'slick-carousel/slick/slick.css';
@@ -17,14 +17,19 @@ import MainContent from '@/components/frontend/MainContent';
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const segments = useSelectedLayoutSegments();
   const isAdminRoute = segments?.includes('admin');
+  
   // Checks if the length of the segments array is greater than 1 and if the isAdminRoute variable is true also excluse forgot-password route
   const isAdminDashboardRoute = segments && segments.length > 1 && isAdminRoute && segments[1] !== 'forgot-password';;
+  
+  // Choose theme based on route
+  const theme = isAdminRoute ? themeAdmin : themeClient;
+  
   console.log("isAdminRoute is :" + isAdminRoute);
   console.log("isAdminDashboardRoute is :" + isAdminDashboardRoute);
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <ThemeProvider theme={lightTheme}>
+        <ThemeProvider theme={theme}>
           <CssBaseline />
           {isAdminRoute ? (
             <AdminLayout>
