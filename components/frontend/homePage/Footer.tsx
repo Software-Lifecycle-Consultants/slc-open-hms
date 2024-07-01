@@ -55,7 +55,7 @@ const Footer = () => {
           <Box>
             <Typography
               variant="h4"
-              fontWeight={700}
+              fontWeight='700'
               sx={{
                 "@media (max-width:600px)": {
                   fontWeight: "bold",
@@ -66,9 +66,9 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="h5"
-              fontFamily={"Mulish"}
-              color={"#FFFFFF"}
-              fontWeight={200}
+              fontFamily="Mulish"
+              color="#FFFFFF"
+              fontWeight='200'
             >
               <Link
                 href="/product/product-1"
@@ -79,9 +79,9 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="h5"
-              fontFamily={"Mulish"}
-              color={"#FFFFFF"}
-              fontWeight={200}
+              fontFamily="Mulish"
+              color="#FFFFFF"
+              fontWeight='200'
             >
               <Link
                 href="/product/product-2"
@@ -92,9 +92,9 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="h5"
-              fontFamily={"Mulish"}
-              color={"#FFFFFF"}
-              fontWeight={200}
+              fontFamily="Mulish"
+              color="#FFFFFF"
+              fontWeight='200'
             >
               <Link
                 href="/product/product-3"
@@ -120,7 +120,7 @@ const Footer = () => {
           <Box>
             <Typography
               variant="h4"
-              fontWeight={700}
+              fontWeight='700'
               sx={{
                 "@media (max-width:600px)": {
                   fontWeight: "bold",
@@ -131,9 +131,9 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="h5"
-              fontFamily={"Mulish"}
-              color={"#FFFFFF"}
-              fontWeight={200}
+              fontFamily="Mulish"
+              color="#FFFFFF"
+              fontWeight='200'
             >
               <Link
                 href="/contact-us"
@@ -145,9 +145,9 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="h5"
-              fontFamily={"Mulish"}
-              color={"#FFFFFF"}
-              fontWeight={200}
+              fontFamily="Mulish"
+              color="#FFFFFF"
+              fontWeight='200'
             >
               <Link href="/" style={{ color: "white", textDecoration: "none" }}>
                 {footerContent.customText2}
@@ -155,10 +155,10 @@ const Footer = () => {
             </Typography>
             <Typography
               variant="h5"
-              fontFamily={"Mulish"}
-              color={"#FFFFFF"}
-              fontWeight={200}
-            >
+              fontFamily="Mulish"
+              color="#FFFFFF"
+              fontWeight='200'
+            >'
               <Link href="/" style={{ color: "white", textDecoration: "none" }}>
                 {footerContent.customText3}
               </Link>
@@ -181,7 +181,7 @@ const Footer = () => {
             sx={{ display: "flex", flexDirection: { xs: "row", md: "column" } }}
           >
             {!isMobile && (
-              <Typography variant="h4" fontWeight={700}>
+              <Typography variant="h4" fontWeight='700'>
                 {footerContent.footerSectionText3}
               </Typography>
             )}
@@ -217,7 +217,7 @@ const Footer = () => {
                 </Link>
               )}
               {!isMobile && (
-                <Typography variant="h5" fontFamily={"Mulish"} fontWeight={200}>
+                <Typography variant="h5" fontFamily="Mulish" fontWeight='200'>
                   {/* creates the link to the socila media <facebook> */}
                   <Link
                     href={footerContent.socialMediaLink1}
@@ -246,7 +246,7 @@ const Footer = () => {
                 />
               </a>
               {!isMobile && (
-                <Typography variant="h5" fontFamily={"Mulish"} fontWeight={200}>
+                <Typography variant="h5" fontFamily="Mulish" fontWeight='200'>
                   {/* creates the link to the socila media <twitter> */}
                   <Link
                     href={footerContent.socialMediaLink2}
@@ -274,7 +274,7 @@ const Footer = () => {
                 />
               </Link>
               {!isMobile && (
-                <Typography variant="h5" fontFamily={"Mulish"} fontWeight={200}>
+                <Typography variant="h5" fontFamily="Mulish" fontWeight='200'>
                   {/* creates the link to the socila media <instagram> */}
                   <Link
                     href={footerContent.socialMediaLink3}
@@ -352,7 +352,7 @@ const Footer = () => {
                       width: "50%",
                     }}
                   >
-                    <Typography variant="h4" marginTop={"90px"}>
+                    <Typography variant="h4" marginTop="90px">
                       Copyright © {footerContent.CompanyNameText} {currentYear}
                     </Typography>
                   </Box>
@@ -365,8 +365,8 @@ const Footer = () => {
                   >
                     <Typography
                       variant="h4"
-                      marginTop={"90px"}
-                      marginLeft={"auto"}
+                      marginTop="90px"
+                      marginLeft="auto"
                     >
                       <Link
                         href={footerContent.TermsConditionLink}
@@ -377,8 +377,8 @@ const Footer = () => {
                     </Typography>
                     <Typography
                       variant="h4"
-                      marginTop={"90px"}
-                      marginLeft={"30px"}
+                      marginTop="90px"
+                      marginLeft="30px"
                     >
                       <Link
                         href={footerContent.PrivacyPolicyLink}
