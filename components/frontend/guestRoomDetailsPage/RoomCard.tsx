@@ -87,16 +87,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
         <CardContent>
           <Box sx={{ paddingTop: "10px", marginBottom: "10%" }}>
             <Typography
-              variant="h5"
-              className={lora.className}
-              style={{
-                color: "#11142D",
-                fontSize: "24px",
-                lineHeight: "120%",
-                fontStyle: "normal",
-                letterSpacing: "0.12px",
-                fontWeight: "700",
-              }}
+              variant="body1"
             >
               {roomName}
             </Typography>
@@ -110,9 +101,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <CheckBoxIcon sx={{ fontSize: 32, color: "#9A9AB0" }} />
                 <Typography
-                  variant="body1"
-                  className={mulish.className}
-                  style={checkBoxTypographyStyle}
+                  variant='h4' color='#9A9AB0'
                 >
                   {roomCardCheckIconContent.checkIcon1Caption}
                 </Typography>
@@ -124,9 +113,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                   }}
                 />
                 <Typography
-                  variant="body1"
-                  className={mulish.className}
-                  style={checkBoxTypographyStyle}
+                  variant='h4' color='#9A9AB0'
                 >
                   {roomCardCheckIconContent.checkIcon2Caption}
                 </Typography>
@@ -138,67 +125,36 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                   }}
                 />
                 <Typography
-                  variant="body1"
-                  className={mulish.className}
-                  style={checkBoxTypographyStyle}
+                  variant='h4' color='#9A9AB0'
                 >
                   {roomCardCheckIconContent.checkIcon3Caption}
                 </Typography>
               </Box>
             </Box>
-            <Box sx={{ display: "flex" }}>
-              <Button
-                variant="contained"
-                onClick={navigationToRoomDetailsScreen}
-                sx={buttonStyle}
-              >
-                {roomCardTexts.custonText1}
-              </Button>
+            <Box sx={{ display: "flex", paddingTop: '2.5rem' }}>
+              <Box>
+                <Button
+                  variant="contained"
+                  onClick={navigationToRoomDetailsScreen}
+                >
+                  {roomCardTexts.custonText1}
+                </Button>
+              </Box>
               <Box sx={{ marginLeft: "120px" }}>
                 <Typography
-                  variant="body2"
-                  className={mulish.className}
-                  style={{
-                    color: "#515151",
-                    fontSize: "14px",
-                    lineHeight: "130%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.112px",
-                    fontWeight: "600",
-                    marginTop: "20px",
-                  }}
+                  variant="h5"
+
                 >
                   {roomCardTexts.custonText2}
                 </Typography>
                 <Box sx={{ display: "flex" }}>
                   <Typography
-                    variant="body2"
-                    className={lora.className}
-                    style={{
-                      color: "#27343F",
-                      fontSize: "39px",
-                      lineHeight: "120%",
-                      fontStyle: "normal",
-                      letterSpacing: "0.195px",
-                      fontWeight: "700",
-                      marginTop: "2px",
-                    }}
+                    variant="body1"
                   >
                     ${price}
                   </Typography>
                   <Typography
-                    variant="body2"
-                    className={mulish.className}
-                    style={{
-                      color: "#9A9AB0",
-                      fontSize: "12px",
-                      lineHeight: "120%",
-                      fontStyle: "normal",
-                      letterSpacing: "0.096px",
-                      fontWeight: "400",
-                      marginTop: "22px",
-                      marginLeft: "4px",
-                    }}
+                    variant="h4" paddingTop={1}
                   >
                     /{roomCardTexts.custonText3}
                   </Typography>
