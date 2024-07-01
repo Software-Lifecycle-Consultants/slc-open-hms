@@ -48,6 +48,7 @@ const ContactNowBanner = () => {
                 fontWeight: 600,
                 gap: "0.625rem",
                 marginTop: "25px",
+                color: '#0C111F',
               }}
             >
               {Blog2.contactNowCaption}
