@@ -132,20 +132,68 @@ const themeClient = createTheme({
       styleOverrides: { // Override the default styles
         root: {
           borderRadius: '0.5rem', // Set the border radius
+          color: '#FFFFFF', // Set the text color
         },
       },
     },
-    MuiTab: { 
-      styleOverrides: { 
-        root: {          
-          color: '#FFFFFF', 
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          color: '#FFFFFF',
           '&.Mui-selected': {
-            color: '#FFFFFF', 
-          },          
+            color: '#FFFFFF',
+          },
         },
-        
-      },      
-    },    
+
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-root': {
+            color: '#353535',
+          },
+          '& .MuiInputLabel-root': {
+            color: '#9A9AB0',
+            fontFamily: 'Mulish',
+            fontSize: '1.5rem',
+          },
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          color: '#11142D',
+          fontFamily: 'Mulish',
+          fontSize: '1rem',
+          '@media (max-width:600px)': {
+            fontSize: '1rem'
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          color: '#11142D',
+          fontFamily: 'Mulish',
+          fontSize: '1rem',
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: '#9A9AB0',
+          fontFamily: 'Mulish',
+          fontSize: '1rem',
+          '@media (max-width:600px)': {
+            fontSize: '1rem',
+          },
+        },
+      },
+    },
   },
 },
 );

@@ -76,7 +76,7 @@ const Banner = () => {
             }}
           >
             {/* Button with icon for web and tablet view */}
-            <Button variant="contained" sx={{ borderRadius: "6.25rem", background: "var(--l-2, linear-gradient(135deg, #F9EC7D 0%, #F5B100 100%))", fontWeight: 600, gap: "0.625rem" }}>
+            <Button variant="contained" sx={{ borderRadius: "6.25rem", background: "var(--l-2, linear-gradient(135deg, #F9EC7D 0%, #F5B100 100%))", fontWeight: 600, gap: "0.625rem", color:'#0C111F' }}>
               {bannerDetails.bannercta1Caption}
               {/* Arrow icon */}
               <Box
