@@ -158,7 +158,7 @@ const Footer = () => {
               fontFamily="Mulish"
               color="#FFFFFF"
               fontWeight='200'
-            >'
+            >
               <Link href="/" style={{ color: "white", textDecoration: "none" }}>
                 {footerContent.customText3}
               </Link>
