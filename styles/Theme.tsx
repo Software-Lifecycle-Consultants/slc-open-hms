@@ -2,6 +2,7 @@
 "use client";
 import { grey } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
+import color from 'material-ui-colors/dist/blue';
 
 // Create a Material-UI theme
 const themeClient = createTheme({
@@ -31,7 +32,8 @@ const themeClient = createTheme({
   // Define typography settings for the theme
   typography: {
     fontFamily: 'Lora, sans-serif', // Set the default font family
-    h1: {  // Define the h1 typography settings
+    h1: {
+      // Define the h1 typography settings
       fontSize: '5rem',
       fontWeight: 700,
       fontFamily: 'Lora',
@@ -39,20 +41,22 @@ const themeClient = createTheme({
       fontstyle: 'normal',
       letterSpacing: '-0.03rem',
       '@media (max-width:600px)': {
-        fontSize: '3.125rem'
+        fontSize: '3.125rem',
       },
     },
-    h2: { // Define the h2 typography settings
+    h2: {
+      // Define the h2 typography settings
       fontSize: '3rem',
       fontWeight: 700,
       fontFamily: 'Lora',
       color: '#0C111F',
       '@media (max-width:600px)': {
         fontSize: '2.5rem',
-        paddingTop: '1.25rem'
+        paddingTop: '1.25rem',
       },
     },
-    h3: { // Define the h3 typography settings
+    h3: {
+      // Define the h3 typography settings
       fontFamily: 'Mulish',
       fontSize: '1.125rem',
       fontWeight: 200,
@@ -61,20 +65,29 @@ const themeClient = createTheme({
       lineHeight: '1.75rem',
       fontStyle: 'normal',
       '@media (max-width:600px)': {
-        fontSize: '1.1rem'
+        fontSize: '1.1rem',
       },
     },
-    h4: { // Define the h4 typography settings
+    h4: {
+      // Define the h4 typography settings
       fontSize: '1rem',
       lineHeight: '2rem',
       fontFamily: 'Mulish',
-      fontWeight:'200',
-      color:'#353535',
+      color: '#FFFFFF',
+      letterSpacing: '-0.01rem',
+      fontStyle: 'normal',
+      fontWeight: '200',
       '@media (max-width:600px)': {
-        fontSize: '0.8rem'
+        fontSize: '1rem',
+        fontFamily: 'Mulish',
+        fontWeight: 200,
+        lineHeight: '1.2rem',
+        fontStyle: 'normal',
+        letterSpacing: '-0.205px',
       },
     },
-    h5: { // Define the h5 typography settings
+    h5: {
+      // Define the h5 typography settings
       fontSize: '0.875rem',
       fontWeight: 700,
       fontFamily: 'Lora',
@@ -84,16 +97,23 @@ const themeClient = createTheme({
       lineHeight: '1.75 rem',
       fontStyle: 'normal',
       '@media (max-width:600px)': {
-        fontSize: '0.875rem'
+        fontSize: '0.875rem',
+        fontFamily: 'Mulish',
+        fontWeight: 200,
+        lineHeight: '1.75rem',
+        fontStyle: 'normal',
+        letterSpacing: '0.1px',
       },
     },
-    h6: { // Define the h6 typography settings
+    h6: {
+      // Define the h6 typography settings
       fontSize: '0.75rem',
       '@media (max-width:600px)': {
-        fontSize: '0.75rem'
+        fontSize: '0.75rem',
       },
     },
-    body1: { // Define the body1 typography settings
+    body1: {
+      // Define the body1 typography settings
       color: '#0C111F',
       fontSize: '1.5rem',
       fontWeight: 700,
@@ -102,10 +122,11 @@ const themeClient = createTheme({
       letterSpacing: '0.01rem',
       fontStyle: 'normal',
       '@media (max-width:600px)': {
-        fontSize: '1.5rem'
+        fontSize: '1.5rem',
       },
     },
-    body2: { // Define the body2 typography settings
+    body2: {
+      // Define the body2 typography settings
       color: '#353535',
       fontSize: '1.25rem',
       lineHeight: '2.25rem',
@@ -114,24 +135,27 @@ const themeClient = createTheme({
       fontStyle: 'normal',
       letterSpacing: '-0.01rem',
       '@media (max-width:600px)': {
-        fontSize: '1rem'
+        fontSize: '1rem',
       },
     },
-    button: { // Define the button typography settings
+    button: {
+      // Define the button typography settings
       textTransform: 'capitalize',
       fontWeight: 600,
       color: '#C7923E',
       fontFamily: 'Mulish',
       fontSize: '1rem',
       '@media (max-width:600px)': {
-        fontSize: '0.75rem'
+        fontSize: '0.75rem',
       },
     },
   },
   // Define component styles for the theme
   components: {
-    MuiButton: { // Define the button component styles
-      styleOverrides: { // Override the default styles
+    MuiButton: {
+      // Define the button component styles
+      styleOverrides: {
+        // Override the default styles
         root: {
           borderRadius: '0.5rem', // Set the border radius
           color: '#FFFFFF', // Set the text color
@@ -145,10 +169,9 @@ const themeClient = createTheme({
           '&.Mui-selected': {
             color: '#FFFFFF',
           },
+          },
         },
-
       },
-    },
     MuiTextField: {
       styleOverrides: {
         root: {
@@ -197,9 +220,7 @@ const themeClient = createTheme({
       },
     },
   },
-},
-);
-
+});
 // Create a dark theme
 const themeAdmin = createTheme({
   palette: {

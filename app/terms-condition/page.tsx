@@ -49,6 +49,7 @@ const TermsCondition = () => {
         <Typography
           variant="h4"
           marginTop="10px"
+          color="#353535"
         >
           {headerDetails.description}
         </Typography>
@@ -63,17 +64,19 @@ const TermsCondition = () => {
         <Typography
           variant="h4"
           marginTop="8px"
+          color="#353535"
         >
           {headsection1.title1}
         </Typography>
-        <Typography variant="h4"> {headsection1.content1} </Typography>
+        <Typography variant="h4" color="#353535"> {headsection1.content1} </Typography>
         <Typography
           variant="h4"
           marginTop="12px"
+          color="#353535"
         >
           {subsection2.title2}
         </Typography>
-        <Typography variant="h4"> {subsection2.content2} </Typography>
+        <Typography variant="h4" color="#353535"> {subsection2.content2} </Typography>
         {/* Assign Details to the head section 2 */}
         <Typography
           variant="h3"
@@ -85,17 +88,19 @@ const TermsCondition = () => {
         <Typography
           variant="h4"
           marginTop="8px"
+          color="#353535"
         >
           {headsection2.title1}
         </Typography>
-        <Typography variant="h4"> {headsection2.content1} </Typography>
+        <Typography variant="h4" color="#353535"> {headsection2.content1} </Typography>
         <Typography
           variant="h4"
           marginTop="10px"
+          color="#353535"
         >
           {subsection4.title2}
         </Typography>
-        <Typography variant="h4"> {subsection4.content2} </Typography>
+        <Typography variant="h4" color="#353535"> {subsection4.content2} </Typography>
         {/* Assign Details to the head section 3 */}
         <Typography
           variant="h3"
@@ -107,17 +112,19 @@ const TermsCondition = () => {
         <Typography
           variant="h4"
           marginTop="8px"
+          color="#353535"
         >
           {headsection3.title1}
         </Typography>
-        <Typography variant="h4"> {headsection3.content1} </Typography>
+        <Typography variant="h4" color="#353535"> {headsection3.content1} </Typography>
         <Typography
           variant="h4"
           marginTop="12px"
+          color="#353535"
         >
           {subsection6.title2}
         </Typography>
-        <Typography variant="h4"> {subsection6.content2} </Typography>
+        <Typography variant="h4" color="#353535"> {subsection6.content2} </Typography>
         {/* Assign Details to the head section 4 */}
         <Typography
           variant="h3"
@@ -129,17 +136,19 @@ const TermsCondition = () => {
         <Typography
           variant="h4"
           marginTop="8px"
+          color="#353535"
         >
           {headsection4.title1}
         </Typography>
-        <Typography variant="h4"> {headsection4.content1} </Typography>
+        <Typography variant="h4" color="#353535"> {headsection4.content1} </Typography>
         <Typography
           variant="h4"
           marginTop="12px"
+          color="#353535"
         >
           {subsection8.title2}
         </Typography>
-        <Typography variant="h4"> {subsection8.content2} </Typography>
+        <Typography variant="h4" color="#353535"> {subsection8.content2} </Typography>
         {/* Assign Details to the head section 5 */}
         <Typography
           variant="h3"
@@ -151,6 +160,7 @@ const TermsCondition = () => {
         <Typography
           variant="h4"
           marginTop="8px"
+          color="#353535"
         >
           {headsection5.content}
         </Typography>
@@ -165,6 +175,7 @@ const TermsCondition = () => {
         <Typography
           variant="h4"
           marginTop="8px"
+          color="#353535"
         >
           {headsection6.content1}
         </Typography>
@@ -180,6 +191,7 @@ const TermsCondition = () => {
           variant="h4"
           marginTop="8px"
           marginBottom="50px"
+          color="#353535"
         >
           {headsection7.content2}
         </Typography>
