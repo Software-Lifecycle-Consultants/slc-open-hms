@@ -73,7 +73,7 @@ const themeClient = createTheme({
       fontSize: '1rem',
       lineHeight: '2rem',
       fontFamily: 'Mulish',
-      color: '#FFFFFF',
+      color: '#353535',
       letterSpacing: '-0.01rem',
       fontStyle: 'normal',
       fontWeight: '200',
@@ -128,7 +128,7 @@ const themeClient = createTheme({
     body2: {
       // Define the body2 typography settings
       color: '#353535',
-      fontSize: '1.125rem',
+      fontSize: '1.25rem',
       lineHeight: '2.25rem',
       fontWeight: 200,
       fontFamily: 'Mulish',
