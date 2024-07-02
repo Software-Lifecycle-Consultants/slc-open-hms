@@ -25,11 +25,11 @@ const ContactNowBanner = () => {
         {/* Left side of the contactNow banner */}
         <Grid item xs={12} md={6}>
           {/* Heading 1 */}
-          <Typography variant="h1" color={"white"} fontSize={"4rem"}>
+          <Typography variant="h1" color="white" fontSize="4rem">
             {Blog2.contactNowTitle}
           </Typography>
           {/* Body text */}
-          <Typography variant="h4">{Blog2.contactNowDescription}</Typography>
+          <Typography variant="h4" color="#FFFFFF">{Blog2.contactNowDescription}</Typography>
           <Box
             sx={{
               display: "flex",
