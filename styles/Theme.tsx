@@ -73,7 +73,7 @@ const themeClient = createTheme({
       fontSize: '1rem',
       lineHeight: '2rem',
       fontFamily: 'Mulish',
-      color: '#FFFFFF',
+      color: '#353535',
       letterSpacing: '-0.01rem',
       fontStyle: 'normal',
       fontWeight: '200',
