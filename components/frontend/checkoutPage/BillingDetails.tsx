@@ -83,7 +83,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your First Name in Here"
                   variant="outlined"
-                  sx={{ marginTop: '0.625rem', width: '100%' }}
+                  sx={{ marginTop: '0.625rem' }}
                   
                 />
               </Grid>
@@ -98,7 +98,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your Last Name in Here"
                   variant="outlined"
-                  sx={{ marginTop: '0.625rem', width: '100%' }}
+                  sx={{ marginTop: '0.625rem' }}
                 />
               </Grid>
               {/* Email Address */}
@@ -115,7 +115,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your Email Address in Here"
                   variant="outlined"
-                  sx={{ marginTop: '0.625rem', width: '100%' }}
+                  sx={{ marginTop: '0.625rem' }}
                 />
               </Grid>
               {/* Phone Number */}
@@ -129,7 +129,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your Phone Number in Here"
                   variant="outlined"
-                  sx={{ marginTop: '0.625rem', width: '100%' }}
+                  sx={{ marginTop: '0.625rem' }}
                 />
               </Grid>
               {/* Passport Number */}
@@ -143,7 +143,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your Email Address in Here"
                   variant="outlined"
-                  sx={{ marginTop: '0.625rem', width: '100%' }}
+                  sx={{ marginTop: '0.625rem' }}
                 />
               </Grid>
               {/* Address */}
@@ -157,7 +157,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your Address in Here"
                   variant="outlined"
-                  sx={{ marginTop: '0.625rem', width: '100%' }}                                  
+                  sx={{ marginTop: '0.625rem' }}                                  
                 />
               </Grid>
             </Grid>
