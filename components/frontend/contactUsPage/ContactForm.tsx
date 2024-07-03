@@ -124,7 +124,7 @@ const ContactForm = ({}) => {
       <Card
         sx={{
           width: "100%",
-          height: "700px",
+          height: "auto",
 
           marginLeft: "auto",
           marginRight: "auto",
@@ -203,7 +203,10 @@ const ContactForm = ({}) => {
                 inputStyle={{
                   width: "100%",
                   fontFamily: "Mulish",
-                }}
+                  fontSize: "16px",
+                  color:"#9A9AB0",
+                  fontWeight: "bold",
+                  }}
               />
             </Grid>
             {/* Country field */}
@@ -263,17 +266,15 @@ const ContactForm = ({}) => {
         {/* Box container for submit button */}
         <Box sx={{ textAlign: "right", padding: "0 40px 30px" }}>
           {/* Submit button */}
-
           <Button
             variant="contained"
             sx={{
-              backgroundColor: "#D7A754",
               color: "#FFFFFF",
               borderRadius: "8px",
               boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
               padding: "12px 24px",
               textTransform: "none",
-
+              marginTop: {md: 4,},
               "&:hover": {
                 backgroundColor: "#C6944C",
               },

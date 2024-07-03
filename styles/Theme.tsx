@@ -66,7 +66,7 @@ const themeClient = createTheme({
     },
     h4: { // Define the h4 typography settings
       fontSize: '1rem',
-      lineHeight: '2rem',
+      lineHeight: '1.75rem',
       fontFamily: 'Mulish',
       '@media (max-width:600px)': {
         fontSize: '0.8rem'
@@ -152,11 +152,12 @@ const themeClient = createTheme({
         root: {
           '& .MuiOutlinedInput-root': {
             color: '#353535',
+            fontSize: '1.125rem',
           },
           '& .MuiInputLabel-root': {
             color: '#9A9AB0',
             fontFamily: 'Mulish',
-            fontSize: '1.5rem',
+            fontSize: '1rem',
           },
         },
       },
