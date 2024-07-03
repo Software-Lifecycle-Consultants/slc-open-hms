@@ -16,7 +16,7 @@ const HeroSection = () => {
               {heroSection.exploreSectionTitle}
             </Typography>
             <Typography
-              variant="h4"              
+              variant="h4" color= {themeClient.palette.secondary.main}
             >
               {heroSection.exploreSectionDescription}
             </Typography>
