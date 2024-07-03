@@ -22,18 +22,7 @@ const Calender = () => {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       {/* Calendar title */}
       <Typography
-        variant="h5"
-        className={lora.className}
-        style={{
-          color: "#11142D",
-          fontSize: "24px",
-          lineHeight: "120%",
-          fontStyle: "normal",
-          letterSpacing: "0.12px",
-          fontWeight: "700",
-          marginTop: "14px",
-          textAlign: "center",
-        }}
+        variant='body1' marginTop='0.875rem' textAlign='center'
       >
         {calenderData.calenderTitle}
       </Typography>
