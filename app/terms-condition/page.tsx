@@ -18,7 +18,6 @@ const TermsCondition = () => {
     headsection5,
     headsection6,
     headsection7,
-    pageEnd,
   } = termsAndConditionsData;
   return (
     <>
@@ -30,228 +29,159 @@ const TermsCondition = () => {
           color: "#11142D",
         }}
       >
-        {/* Assign to the Page Details of the Terms and Conditions page */}
-        <Typography
-          variant="h4"
-          sx={{
-            textAlign: "center",
-            marginTop: "10px",
-            fontWeight: "bold",
-          }}
-        >
-          {pageDetails.title}
-        </Typography>
-        <Typography
-          variant="h6"
-          sx={{
-            textAlign: "center",
-          }}
-        >
-          {pageDetails.subtitle}
-        </Typography>
         {/* Assign header section of the Terms and Conditions page */}
         <Typography
-          variant="h4"
-          sx={{
-            marginTop: "10px",
-          }}
+          variant="h2"
+          color="#11142D"
+          marginTop="10px" 
         >
           {headerDetails.title}
         </Typography>
         <Typography
-          variant="h5"
-          sx={{
-            marginTop: "10px",
-          }}
+          variant="body2"
+          fontWeight="700"
+          color="#353535"
+          marginTop="40px"
         >
           Effective Date:
           {headerDetails.effectiveDate}
         </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "10px",
-          }}
+          variant="h4"
+          marginTop="10px"
         >
           {headerDetails.description}
         </Typography>
         {/* Assign Details to the head section 1 */}
         <Typography
-          variant="h4"
-          sx={{
-            marginTop: "15px",
-          }}
+          variant="h3"
+          fontWeight="600"
+          marginTop="15px"
         >
           {headsection1.subsection1}
         </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "8px",
-          }}
+          variant="h4"
+          marginTop="8px"
         >
           {headsection1.title1}
         </Typography>
-        <Typography variant="body1"> {headsection1.content1} </Typography>
+        <Typography variant="h4"> {headsection1.content1} </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "12px",
-          }}
+          variant="h4"
+          marginTop="12px"
         >
           {subsection2.title2}
         </Typography>
-        <Typography variant="body1"> {subsection2.content2} </Typography>
+        <Typography variant="h4"> {subsection2.content2} </Typography>
         {/* Assign Details to the head section 2 */}
         <Typography
-          variant="h4"
-          sx={{
-            marginTop: "15px",
-          }}
+          variant="h3"
+          fontWeight="600"
+          marginTop="15px"
         >
           {headsection2.subsection3}
         </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "8px",
-          }}
+          variant="h4"
+          marginTop="8px"
         >
           {headsection2.title1}
         </Typography>
-        <Typography variant="body1"> {headsection2.content1} </Typography>
+        <Typography variant="h4"> {headsection2.content1} </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "12px",
-          }}
+          variant="h4"
+          marginTop="10px"
         >
           {subsection4.title2}
         </Typography>
-        <Typography variant="body1"> {subsection4.content2} </Typography>
+        <Typography variant="h4"> {subsection4.content2} </Typography>
         {/* Assign Details to the head section 3 */}
         <Typography
-          variant="h4"
-          sx={{
-            marginTop: "15px",
-          }}
+          variant="h3"
+          fontWeight="600"
+          marginTop="15px"
         >
           {headsection3.subsection5}
         </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "8px",
-          }}
+          variant="h4"
+          marginTop="8px"
         >
           {headsection3.title1}
         </Typography>
-        <Typography variant="body1"> {headsection3.content1} </Typography>
+        <Typography variant="h4"> {headsection3.content1} </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "12px",
-          }}
+          variant="h4"
+          marginTop="12px"
         >
           {subsection6.title2}
         </Typography>
-        <Typography variant="body1"> {subsection6.content2} </Typography>
+        <Typography variant="h4"> {subsection6.content2} </Typography>
         {/* Assign Details to the head section 4 */}
         <Typography
-          variant="h4"
-          sx={{
-            marginTop: "15px",
-          }}
+          variant="h3"
+          fontWeight="600"
+          marginTop="15px"
         >
           {headsection4.subsection7}
         </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "8px",
-          }}
+          variant="h4"
+          marginTop="8px"
         >
           {headsection4.title1}
         </Typography>
-        <Typography variant="body1"> {headsection4.content1} </Typography>
+        <Typography variant="h4"> {headsection4.content1} </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "12px",
-          }}
+          variant="h4"
+          marginTop="12px"
         >
           {subsection8.title2}
         </Typography>
-        <Typography variant="body1"> {subsection8.content2} </Typography>
+        <Typography variant="h4"> {subsection8.content2} </Typography>
         {/* Assign Details to the head section 5 */}
         <Typography
-          variant="h4"
-          sx={{
-            marginTop: "15px",
-          }}
+          variant="h3"
+          fontWeight="600"
+          marginTop="15px"
         >
           {headsection5.subsection9}
         </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "8px",
-          }}
+          variant="h4"
+          marginTop="8px"
         >
           {headsection5.content}
         </Typography>
         {/* Assign Details to the head section 6 */}
         <Typography
-          variant="h4"
-          sx={{
-            marginTop: "15px",
-          }}
+          variant="h3"
+          fontWeight="600"
+          marginTop="15px"
         >
           {headsection6.subsection10}
         </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "8px",
-          }}
+          variant="h4"
+          marginTop="8px"
         >
           {headsection6.content1}
         </Typography>
         {/* Assign Details to the head section 7 */}
         <Typography
-          variant="h4"
-          sx={{
-            marginTop: "15px",
-          }}
+          variant="h3"
+          fontWeight="600"
+          marginTop="15px"
         >
           {headsection7.subsection11}
         </Typography>
         <Typography
-          variant="body1"
-          sx={{
-            marginTop: "8px",
-          }}
+          variant="h4"
+          marginTop="8px"
+          marginBottom="50px"
         >
           {headsection7.content2}
-        </Typography>
-        {/* Assign Details to the pageEnd section */}
-        <Typography
-          variant="h4"
-          sx={{
-            textAlign: "center",
-            marginTop: "30px",
-            fontWeight: "bold",
-          }}
-        >
-          {pageEnd.subtitle}
-        </Typography>
-        <Typography
-          variant="h6"
-          sx={{
-            textAlign: "center",
-          }}
-        >
-          {pageEnd.title}
         </Typography>
       </div>
     </>
