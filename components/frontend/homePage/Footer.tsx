@@ -35,7 +35,7 @@ const Footer = () => {
             </Link>
           </Box>
           <Box>
-            <Typography variant="h4">
+            <Typography variant="h4" color="#FFFFFF">
               {footerContent.footerSectionDescription}
             </Typography>
           </Box>
@@ -56,6 +56,7 @@ const Footer = () => {
             <Typography
               variant="h4"
               fontWeight='700'
+              color="#FFFFFF"
               sx={{
                 "@media (max-width:600px)": {
                   fontWeight: "bold",
@@ -121,6 +122,7 @@ const Footer = () => {
             <Typography
               variant="h4"
               fontWeight='700'
+              color="#FFFFFF"
               sx={{
                 "@media (max-width:600px)": {
                   fontWeight: "bold",
@@ -181,7 +183,7 @@ const Footer = () => {
             sx={{ display: "flex", flexDirection: { xs: "row", md: "column" } }}
           >
             {!isMobile && (
-              <Typography variant="h4" fontWeight='700'>
+              <Typography variant="h4" fontWeight='700' color="#FFFFFF">
                 {footerContent.footerSectionText3}
               </Typography>
             )}
@@ -301,7 +303,7 @@ const Footer = () => {
           >
             {/*Privacy Policy Mobile view*/}
             {isMobile && (
-              <Typography variant="h4" marginBottom={2}>
+              <Typography variant="h4" color="#FFFFFF" marginBottom={2}>
                 <Link
                   href={footerContent.PrivacyPolicyLink}
                   style={{ color: "white", textDecoration: "none" }}
@@ -320,12 +322,13 @@ const Footer = () => {
                 justifyContent="space-between" // Space elements apart for web view
                 alignItems="center"
               >
-                <Typography variant="h4" marginBottom={2} marginTop={2}>
+                <Typography variant="h4" color="#FFFFFF" marginBottom={2} marginTop={2}>
                   Copyright © {footerContent.CompanyNameText} {currentYear}
                 </Typography>
                 <Typography
                   //Terms & conditions mobile view//
                   variant="h4"
+                  color="#FFFFFF"
                   marginBottom={2}
                   marginTop={2}
                 >
@@ -352,7 +355,7 @@ const Footer = () => {
                       width: "50%",
                     }}
                   >
-                    <Typography variant="h4" marginTop="90px">
+                    <Typography variant="h4" color="#FFFFFF" marginTop="90px">
                       Copyright © {footerContent.CompanyNameText} {currentYear}
                     </Typography>
                   </Box>
@@ -365,6 +368,7 @@ const Footer = () => {
                   >
                     <Typography
                       variant="h4"
+                      color="#FFFFFF"
                       marginTop="90px"
                       marginLeft="auto"
                     >
@@ -377,6 +381,7 @@ const Footer = () => {
                     </Typography>
                     <Typography
                       variant="h4"
+                      color="#FFFFFF"
                       marginTop="90px"
                       marginLeft="30px"
                     >
