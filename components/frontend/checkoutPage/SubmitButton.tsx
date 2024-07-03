@@ -68,34 +68,30 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ email }) => {
             }}
           />
           <Typography
-            variant="body1"
-            className={mulish.className}
-            style={{
-              color: "#515151",
-              fontSize: "16px",
-              lineHeight: "120%",
-              fontStyle: "normal",
-              letterSpacing: "0.08px",
-              fontWeight: "600",
-              marginTop: "24px",
-            }}
+            variant='h4' color='#515151' marginTop='1.5rem' lineHeight='1.2rem' 
           >
             {submitContent.condition}
           </Typography>
         </Box>
         {error && <div>{error}</div>}
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          p: '1rem',
+        }}>
         <Button
           type="submit"
           variant="contained"
           disabled={!isChecked}
-          className={mulish.className}
-          sx={{
-            ...orangebuttonCommonStyle,
+          sx={{            
             marginBottom: "100px",
           }}
         >
           {submitContent.submitctaCaption}
         </Button>
+        </Box>
         {error && (
           <Typography color="error" variant="body2">
             {error}
