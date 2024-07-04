@@ -71,7 +71,7 @@ const themeClient = createTheme({
     h4: {
       // Define the h4 typography settings
       fontSize: '1rem',
-      lineHeight: '2rem',
+      lineHeight: '1.75rem',
       fontFamily: 'Mulish',
       color: '#353535',
       letterSpacing: '-0.01rem',

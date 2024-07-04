@@ -21,16 +21,9 @@ const HeaderSection = () => {
           >
             {/* Title Typography */}
             <Typography
-              variant="h1"
-              className={lora.className}
-              sx={{
-                color: "#11142D",
-                fontSize: { xs: "52px", sm: "50px", md: "55px" },
-                fontStyle: "normal",
-                fontWeight: 700,
-                lineHeight: "120%",
-                letterSpacing: "0.186px",                
-              }}
+              variant="h2"
+              color="#11142D"
+              marginTop="22px"
             >
               {/* Header title text */}
               {contactHeading.headerTitle}
@@ -39,17 +32,9 @@ const HeaderSection = () => {
             <Box>
             {/* Description Typography */}
             <Typography
-              variant="body1"
-              className={mulish.className}
-              sx={{
-                color: "#515151",
-                fontSize: { xs: "14px", sm: "14px", md: "16px", lg: "16px" },
-                lineHeight: "125%",
-                fontStyle: "normal",
-                letterSpacing: "0.08px",
-                fontWeight: "400",
-                marginTop: "22px",
-              }}
+              variant="h4"
+              color="#11142D"
+              marginTop="22px"
             >
               {/* Header description text */}
               {contactHeading.headerDescription}
