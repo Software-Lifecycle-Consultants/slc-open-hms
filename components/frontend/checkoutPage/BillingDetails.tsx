@@ -67,17 +67,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
               {/* Title for the billing details form */}
               <Grid item xs={12}>
                 <Typography
-                  variant="h1"
-                  className={lora.className}
-                  style={{
-                    color: "#11142D",
-                    fontSize: "24px",
-                    lineHeight: "120%",
-                    fontStyle: "normal",
-                    letterSpacing: "0.12px",
-                    fontWeight: "700",
-                    marginTop: "10px",
-                  }}
+                  variant="body1"                  
                 >
                   {billingDetailsForm.billingDetailsFormTitle}
                 </Typography>
@@ -85,9 +75,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
               {/* First Name */}
               <Grid item xs={12} md={6}>
                 <Typography
-                  variant="h1"
-                  className={mulish.className}
-                  style={formLabelStyles}
+                  variant="h4" fontWeight='600' sx={{ '@media (max-width:600px)': { fontWeight: 600 } }}
                 >
                   {billingDetailsForm.firstNameLbl}
                 </Typography>
@@ -95,16 +83,14 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your First Name in Here"
                   variant="outlined"
-                  sx={textFieldStyles}
-                  InputProps={{ style: mulishPlaceholderStyle }}
+                  sx={{ marginTop: '0.625rem' }}
+                  
                 />
               </Grid>
               {/* Last Name */}
               <Grid item xs={12} md={6}>
                 <Typography
-                  variant="h1"
-                  className={mulish.className}
-                  style={formLabelStyles}
+                  variant="h4" fontWeight='600' sx={{ '@media (max-width:600px)': { fontWeight: 600 } }}
                 >
                   {billingDetailsForm.lastNameLbl}
                 </Typography>
@@ -112,16 +98,13 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your Last Name in Here"
                   variant="outlined"
-                  sx={textFieldStyles}
-                  InputProps={{ style: mulishPlaceholderStyle }}
+                  sx={{ marginTop: '0.625rem' }}
                 />
               </Grid>
               {/* Email Address */}
               <Grid item xs={12}>
                 <Typography
-                  variant="h1"
-                  className={mulish.className}
-                  style={formLabelStyles}
+                  variant="h4" fontWeight='600' sx={{ '@media (max-width:600px)': { fontWeight: 600 } }}
                 >
                   {billingDetailsForm.emailLbl}
                 </Typography>
@@ -132,16 +115,13 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your Email Address in Here"
                   variant="outlined"
-                  sx={textFieldStyles}
-                  InputProps={{ style: mulishPlaceholderStyle }}
+                  sx={{ marginTop: '0.625rem' }}
                 />
               </Grid>
               {/* Phone Number */}
               <Grid item xs={12}>
                 <Typography
-                  variant="h1"
-                  className={mulish.className}
-                  style={formLabelStyles}
+                  variant="h4" fontWeight='600' sx={{ '@media (max-width:600px)': { fontWeight: 600 } }}
                 >
                   {billingDetailsForm.telephoneLbl}
                 </Typography>
@@ -149,16 +129,13 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your Phone Number in Here"
                   variant="outlined"
-                  sx={textFieldStyles}
-                  InputProps={{ style: mulishPlaceholderStyle }}
+                  sx={{ marginTop: '0.625rem' }}
                 />
               </Grid>
               {/* Passport Number */}
               <Grid item xs={12}>
                 <Typography
-                  variant="h1"
-                  className={mulish.className}
-                  style={formLabelStyles}
+                  variant="h4" fontWeight='600' sx={{ '@media (max-width:600px)': { fontWeight: 600 } }}
                 >
                   {billingDetailsForm.passportLbl}
                 </Typography>
@@ -166,16 +143,13 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your Email Address in Here"
                   variant="outlined"
-                  sx={textFieldStyles}
-                  InputProps={{ style: mulishPlaceholderStyle }}
+                  sx={{ marginTop: '0.625rem' }}
                 />
               </Grid>
               {/* Address */}
               <Grid item xs={12}>
                 <Typography
-                  variant="h1"
-                  className={mulish.className}
-                  style={formLabelStyles}
+                  variant="h4" fontWeight='600' sx={{ '@media (max-width:600px)': { fontWeight: 600 } }}
                 >
                   {billingDetailsForm.addressLbl}
                 </Typography>
@@ -183,13 +157,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                   id="outlined-basic"
                   placeholder="Input your Address in Here"
                   variant="outlined"
-                  sx={{
-                    width: "100%",
-                    height: "48px",
-                    marginTop: "10px",
-                    marginBottom: "30px",
-                  }}
-                  InputProps={{ style: mulishPlaceholderStyle }}
+                  sx={{ marginTop: '0.625rem' }}                                  
                 />
               </Grid>
             </Grid>

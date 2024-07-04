@@ -90,7 +90,7 @@ const themeClient = createTheme({
       // Define the h5 typography settings
       fontSize: '0.875rem',
       fontWeight: 700,
-      fontFamily: 'Lora',
+      fontFamily: 'Mulish',
       letterSpacing: '-0.01rem',
       color: '#0C111F',
       textTransform: 'capitalize',
@@ -175,14 +175,24 @@ const themeClient = createTheme({
     MuiTextField: {
       styleOverrides: {
         root: {
+          width: '100%',
           '& .MuiOutlinedInput-root': {
             color: '#353535',
+            fontSize: '1.125rem',
           },
           '& .MuiInputLabel-root': {
             color: '#9A9AB0',
             fontFamily: 'Mulish',
-            fontSize: '1.5rem',
+            fontSize: '1rem',
           },
+          '@media (max-width:600px)': {
+        '& .MuiOutlinedInput-root': {
+          fontSize: '1rem', // Larger font size on wider screens
+        },
+        '& .MuiInputLabel-root': {
+          fontSize: '1rem', // Larger label size on wider screens
+        },
+      },
         },
       },
     },

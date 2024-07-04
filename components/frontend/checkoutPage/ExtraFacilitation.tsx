@@ -32,33 +32,13 @@ const ExtraFacilitation = () => {
         <CardContent>
           {/* Title */}
           <Typography
-            variant="h1"
-            className={lora.className}
-            style={{
-              color: "#11142D",
-              fontSize: "24px",
-              lineHeight: "120%",
-              fontStyle: "normal",
-              letterSpacing: "0.12px",
-              fontWeight: "700",
-              marginTop: "10px",
-            }}
+            variant='body1' marginTop='0.625rem'
           >
             {extraFacilitationSection.extraFacilitationSectionTitle}
           </Typography>
           {/* Facility 1 */}
           <Typography
-            variant="h5"
-            className={lora.className}
-            style={{
-              color: "#11142D",
-              fontSize: "24px",
-              lineHeight: "120%",
-              fontStyle: "normal",
-              letterSpacing: "0.12px",
-              fontWeight: "700",
-              marginTop: "25px",
-            }}
+            variant='body1' marginTop='1.563rem'
           >
             {extraFacilitationSection.facility1}
           </Typography>
@@ -68,17 +48,7 @@ const ExtraFacilitation = () => {
           </Box>
           {/* Facility 2 */}
           <Typography
-            variant="h5"
-            className={lora.className}
-            style={{
-              color: "#11142D",
-              fontSize: "24px",
-              lineHeight: "120%",
-              fontStyle: "normal",
-              letterSpacing: "0.12px",
-              fontWeight: "700",
-              marginTop: "25px",
-            }}
+            variant='body1' marginTop='1.563rem'
           >
             {extraFacilitationSection.facility2}
           </Typography>
@@ -88,17 +58,8 @@ const ExtraFacilitation = () => {
           </Box>
           {/* Special Request */}
           <Typography
-            variant="body1"
-            className={mulish.className}
-            style={{
-              color: "#515151",
-              fontSize: "16px",
-              lineHeight: "120%",
-              fontStyle: "normal",
-              letterSpacing: "0.08px",
-              fontWeight: "700",
-              marginTop: "28px",
-            }}
+            variant='h4' fontWeight='700' marginTop='1.75rem'
+            sx={{ '@media (max-width:600px)': { fontWeight: 700 } }}
           >
             {extraFacilitationSection.requestText}
           </Typography>
@@ -109,8 +70,7 @@ const ExtraFacilitation = () => {
             variant="outlined"
             multiline
             rows={4} // Adjust the number of rows to fit your desired height
-            sx={{ width: "100%", marginTop: "10px" }}
-            InputProps={{ style: mulishPlaceholderStyle }}
+            sx={{ marginTop: '0.625rem' }}
           />
         </CardContent>
       </Card>

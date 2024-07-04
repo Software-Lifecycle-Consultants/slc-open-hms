@@ -49,34 +49,13 @@ const CheckList = () => {
               />
               {/* Activity label */}
               <Typography
-                variant="h5"
-                className={mulish.className}
-                style={{
-                  color: "#FFF",
-                  fontSize: "16px",
-                  lineHeight: "120%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "600",
-                  marginTop: "12px",
-                }}
+                variant="h4" color='#FFFFFF' marginTop='0.75rem' lineHeight='1.2rem'
               >
                 {checkListText.activityTitle}
               </Typography>
               {/* Price label */}
               <Typography
-                variant="h5"
-                className={mulish.className}
-                sx={{
-                  color: "#FFF",
-                  fontSize: "16px",
-                  lineHeight: "120%",
-                  fontStyle: "normal",
-                  letterSpacing: "0.08px",
-                  fontWeight: "700",
-                  marginTop: "12px",
-                  marginLeft: { xs: "32%", sm: "66%", md: "62%", lg: "69%" },
-                }}
+                variant="h4" color='#FFFFFF' marginTop='0.75rem' lineHeight='1.2rem' marginLeft='auto' fontWeight='700'
               >
                 {checkListText.activityPrice}
               </Typography>
