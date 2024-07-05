@@ -7,6 +7,7 @@ import mainImage from "@/public/images/homePage/ErrorMessage/ErrorImage.webp";
 import Image from "next/image";
 import { inter } from "./fonts";
 import Link from "next/link";
+import { themeClient } from "@/styles/Theme";
 
 /**
  * This page represents the 404 Error Message Page.
@@ -45,49 +46,28 @@ export default function NotFound() {
           >
             {/* Title */}
             <Typography
-              variant="h6"
-              className={inter.className}
-              sx={{
-                fontSize: { xs: "14px", md: "16px" },
-                color: "#11142D",
-              }}
+              variant='h4'
             >
               {pageDetails.title}
             </Typography>
             {/* Subtitle */}
             <Typography
-              variant="h4"
-              className={inter.className}
-              sx={{
-                marginTop: { xs: 1, sm: 1, md: 1 },
-                fontSize: { xs: "30px", sm: "40px", md: "50px" },
-                color: "#11142D",
-              }}
+              variant='h2'
             >
               {pageDetails.subtitle}
             </Typography>
             {/* Content 1 */}
             <Typography
-              variant="h6"
-              className={inter.className}
+              variant='body2'
               sx={{
                 marginTop: 2,
-                fontSize: { xs: "16px", md: "20px" },
-                color: "#11142D",
-                marginBottom: { xs: 2, sm: 2, md: 2 },
               }}
             >
               {pageDetails.content1}
             </Typography>
             {/* Content 2 */}
             <Typography
-              variant="h6"
-              className={inter.className}
-              sx={{
-                fontSize: { xs: "14px", md: "16px" },
-                color: "#11142D",
-                marginBottom: { xs: 2, sm: 2, md: 2 },
-              }}
+              variant='body2'             
             >
               {pageDetails.content2}
             </Typography>
@@ -107,30 +87,21 @@ export default function NotFound() {
             <Button
               variant="contained"
               sx={{
-                borderRadius: "15px",
-                backgroundColor: "#FFFFFF",
-                color: "#000000",
-                "&:hover": { backgroundColor: "#FFFFFF" },
-                fontSize: { xs: "12px", md: "16px" },
+                backgroundColor: themeClient.palette.secondary.main,
+                color: themeClient.palette.text.primary,
+                "&:hover": { backgroundColor: themeClient.palette.secondary.main },
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
               }}
               onClick={() => window.history.back()}
             >
-              <ArrowBack sx={{ color: "#000000", marginRight: 1 }} />
+              <ArrowBack sx={{ color: themeClient.palette.text.primary, marginRight: 1 }} />
               {pageDetails.backArroSection1}
             </Button>
             <Link href="/" passHref>
               <Button
                 variant="contained"
-                sx={{
-                  borderRadius: "15px",
-                  backgroundColor: "#C7923E",
-                  color: "#FFFFFF",
-                  "&:hover": { backgroundColor: "#C7833E" },
-                  fontSize: { xs: "12px", md: "16px" },
-                }}
               >
                 {pageDetails.backArroSection2}
               </Button>
