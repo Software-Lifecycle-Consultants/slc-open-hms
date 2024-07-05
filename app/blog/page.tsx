@@ -83,7 +83,7 @@ export default function Blog() {
       </Box>
       {/* Pagination */}
       <Container>
-        <Stack mb={5} spacing={2} alignItems="center">
+        <Stack p={5} mt={3} mb={5} spacing={2} alignItems="center">
           <Pagination
             count={Math.ceil(blogData.length / itemsPerPage)}
             page={page}
@@ -91,18 +91,21 @@ export default function Blog() {
             renderItem={(item) => (
               <PaginationItem
                 components={{
-                  previous: () => <Box display={"flex"} gap={2}><ArrowBackIcon fontSize="small" /><Typography>previous</Typography></Box>,
-                  next: () => <Box display={"flex"} gap={2}><Typography>next</Typography> <ArrowForwardIcon fontSize="small" /></Box>,
+                  previous: () => <Box display={"flex"} gap={2}><ArrowBackIcon fontSize="medium" /><Typography variant='h5'>previous</Typography></Box>,
+                  next: () => <Box display={"flex"} gap={2}><Typography variant='h5'>next</Typography> <ArrowForwardIcon fontSize="medium" /></Box>,
                 }}
                 {...item}
                 sx={{
-                  borderRadius: '50%',
-                  '& .MuiPaginationItem-icon': {
-                    fontSize: '16px',
-                  },
+                  borderRadius: '0.5rem',
                   '&.Mui-selected': {
                     backgroundColor: '#F9F5FF', // Adjust color as per your theme
-                    color: '#9c27b0', // Adjust color as per your theme
+                    color: '#a3762f', // Adjust color as per your theme
+                  },
+                  '& .MuiSvgIcon-root': {
+                    height: '1.5em',
+                    '@media (max-width:600px)': {
+                    height: '1.2em',
+                    },
                   },
                 }}
               />
