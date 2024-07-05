@@ -34,8 +34,10 @@ export default function blogDetailed(){
     paddingTop:"50px",
     }}>
   <Container>
-  <Typography variant="h5"> {blogcontent.blogcardTitle}</Typography>
-  <Typography sx={{marginRight:{md:"500px"}}}> {blogcontent.blogcardDescription}</Typography>
+  <Typography fontSize="36px" fontFamily="Mulish" fontWeight="700" color="#11142D" marginBottom="25px"> {blogcontent.blogcardTitle}</Typography>
+  <Typography sx={{fontFamily:"Mulish", fontSize: "20px", fontWeight:"200",marginRight:{md:"500px"},'@media (max-width:600px)': {
+                lineHeight:"1.75rem",fontSize:"1.1rem",
+              },}}> {blogcontent.blogcardDescription}</Typography>
 </Container>
 </Box>
  {/* blog cards */}
@@ -68,16 +70,14 @@ export default function blogDetailed(){
     <Stack direction="row" justifyContent="flex-end">       
     <Link href={"/blog"}>
       <Button 
-            sx={{fontSize: {md:"14px", xs:"10px"},}}
             variant="contained"
               style={{
-                background: "var(--l-2, linear-gradient(135deg, #8482FF 0%, #7723FE 100%))",
                 borderRadius: "8px",
                 color: "#FFF",
                 lineHeight: "180%",
                 fontStyle: "normal",
                 letterSpacing: "-0.14px",
-                fontWeight: "500",
+                fontWeight: "200",
                 marginBottom:"25px",
                 marginTop:"25px",
                 textTransform: "none",
