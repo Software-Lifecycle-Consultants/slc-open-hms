@@ -40,7 +40,7 @@ const Testimonials: React.FC = () => {
           }}
         >
           {/* Display the header title */}
-          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+          <Typography variant="h3" sx={{ fontWeight: "bold" }}>
             {
               adminContentTestimonials.adminContentTestimonialsHeaderTitle // Display the header title
             }
@@ -55,7 +55,7 @@ const Testimonials: React.FC = () => {
               border: "1px solid #000",
             }}
           >
-            <Typography sx={{ flexGrow: 0.9 }}>
+            <Typography variant="h3" sx={{ flexGrow: 0.9 }}>
               {
                 adminContentTestimonials.adminContentTestimonialsButtonCard1 // Display the button card 1
               }
@@ -78,9 +78,8 @@ const Testimonials: React.FC = () => {
               mt: 2,
             }}
           >
-            <Typography sx={{ flexGrow: 0.9 }}>
-              <Typography sx={{ flexGrow: 0.9 }}>
-                {" "}
+            <Typography variant="h3" sx={{ flexGrow: 0.9 }}>
+              <Typography variant="h3" sx={{ flexGrow: 0.9 }}>
                 {
                   adminContentTestimonials.adminContentTestimonialsButtonCard2 // Display the button card 2
                 }
@@ -104,7 +103,7 @@ const Testimonials: React.FC = () => {
               justifyContent: "end",
             }}
           >
-            <Typography sx={{ flexGrow: 0.9 }}>
+            <Typography variant="h3" sx={{ flexGrow: 0.9 }}>
               {
                 adminContentTestimonials.adminContentTestimonialsButtonCard3 // Display the button card 3
               }
@@ -134,12 +133,12 @@ const Testimonials: React.FC = () => {
           }}
         >
           {/* Add New Testimonials */}
-          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+          <Typography variant="h2" sx={{ fontWeight: "bold" }}>
             {
               adminContentTestimonials.adminContentTestimonialsHeaderTitle1 // Display the header title
             }
           </Typography>
-          <Typography sx={{ marginTop: "10px" }}>
+          <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentTestimonials.adminContentTestimonialsTitle // Display the video description
             }{" "}
@@ -151,20 +150,13 @@ const Testimonials: React.FC = () => {
             multiline
             sx={{ m: 1 }}
           />
-          <Button
-            sx={{ backgroundColor: "#4A5472", marginTop: "10px" }}
-            component="label"
-            role={undefined}
-            variant="contained"
-            tabIndex={-1}
-            startIcon={<CloudUploadIcon />}
-          >
+          <Button startIcon={<CloudUploadIcon />}>
             {
               adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
             }
             <VisuallyHiddenInput type="file" />
           </Button>
-          <Typography sx={{ marginTop: "10px" }}>
+          <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentTestimonials.adminContentTestimonialsTitle1 // Display the video URL 1
             }
@@ -176,7 +168,7 @@ const Testimonials: React.FC = () => {
             required
             sx={{ m: 1 }}
           />
-          <Typography sx={{ marginTop: "10px" }}>
+          <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentTestimonials.adminContentTestimonialsDescription1 // Display the video description
             }
@@ -190,37 +182,25 @@ const Testimonials: React.FC = () => {
             sx={{ m: 1 }}
           />
           {/* Ratings*/}
-          <Typography component="legend">Ratings</Typography>
+          <Typography variant="h3" component="legend">
+            Ratings
+          </Typography>
           <Rating name="no-value" value={null} />
         </Card>
         <Grid my={4}>
-        <Box display="flex" justifyContent="end" alignItems="center">
-          <Button
-            sx={{
-              textTransform: "none",
-              marginTop: "7px",
-              backgroundColor: "#4A5472",
-              "&:hover": { backgroundColor: "#192959" },
-              color: "white",
-              width: "100px",
-              height: "30px",
-              borderRadius: "8px",
-              marginLeft: "10px",
-              textAlign: "center",
-            }}
-            variant="contained"
-          >
-            <Typography
-              style={{
-                color: "white",
-              }}
-            >
-              {
-                adminContentTestimonials.adminContentDestinationCardSubmitButton // Display the submit button text
-              }
-            </Typography>
-          </Button>
-        </Box>
+          <Box display="flex" justifyContent="end" alignItems="center">
+            <Button>
+              <Typography
+                style={{
+                  color: "white",
+                }}
+              >
+                {
+                  adminContentTestimonials.adminContentDestinationCardSubmitButton // Display the submit button text
+                }
+              </Typography>
+            </Button>
+          </Box>
         </Grid>
       </Grid>
     </Grid>
