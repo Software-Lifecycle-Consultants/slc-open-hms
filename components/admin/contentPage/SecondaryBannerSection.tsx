@@ -21,7 +21,7 @@ const SecondaryBannerSection: React.FC = () => {
           }}
         >
           <Typography
-            variant="h6"
+            variant="h2"
             sx={{ marginTop: "05px", fontWeight: "bold" }}
           >
             {
@@ -36,7 +36,7 @@ const SecondaryBannerSection: React.FC = () => {
             noValidate
             autoComplete="off"
           >
-            <Typography sx={{ marginTop: "10px" }}>
+            <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
                 adminContentSecondaryBanner.adminContentSecondaryBannerDetailsTitle01 // Display the banner title
               }
@@ -48,7 +48,7 @@ const SecondaryBannerSection: React.FC = () => {
               variant="outlined"
               required
             />
-            <Typography sx={{ marginTop: "10px" }}>
+            <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
                 adminContentSecondaryBanner.adminContentSecondaryBannerDetailsTitle02 // Display the banner sub title
               }
@@ -63,7 +63,7 @@ const SecondaryBannerSection: React.FC = () => {
             />
             <Grid container>
               <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                <Typography sx={{ marginTop: "10px" }}>
+                <Typography variant="h3" sx={{ marginTop: "10px" }}>
                   {
                     adminContentSecondaryBanner.adminContentSecondaryBannerDetailsTitle03 // Display the banner description
                   }
@@ -77,7 +77,7 @@ const SecondaryBannerSection: React.FC = () => {
                 />
               </Grid>
             </Grid>
-            <Typography sx={{ marginTop: "10px" }}>
+            <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
                 adminContentSecondaryBanner.adminContentSecondaryBannerDetailsTitle04 // Display the banner description
               }
@@ -93,25 +93,7 @@ const SecondaryBannerSection: React.FC = () => {
         </Card>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
           <Box display="flex" justifyContent="end" alignItems="center">
-            <Button
-              endIcon={<EditIcon />}
-              sx={{
-                textTransform: "none",
-                marginTop: "7px",
-                justifyContent: "center",
-                backgroundColor: "#4A5472",
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                textAlign: "center",
-                borderColor: "#5B5959",
-                "&:hover": {
-                  backgroundColor: "#192959",
-                },
-              }}
-              variant="outlined"
-            >
+            <Button endIcon={<EditIcon />}>
               <Typography
                 style={{
                   color: "White",
@@ -122,21 +104,7 @@ const SecondaryBannerSection: React.FC = () => {
                 }
               </Typography>
             </Button>
-            <Button
-              sx={{
-                textTransform: "none",
-                marginTop: "7px",
-                backgroundColor: "#4A5472",
-                "&:hover": { backgroundColor: "#192959" },
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                marginLeft: "10px",
-                textAlign: "center",
-              }}
-              variant="contained"
-            >
+            <Button>
               <Typography
                 style={{
                   color: "white",
