@@ -24,7 +24,7 @@ const DestinationCards: React.FC = () => {
           }}
         >
           {/* Display the header title */}
-          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+          <Typography variant="h2" sx={{ fontWeight: "bold" }}>
             {
               adminContentDestinationCard.adminContentDestinationCardHeaderTitle // Display the header title
             }
@@ -39,7 +39,7 @@ const DestinationCards: React.FC = () => {
               border: "1px solid #000",
             }}
           >
-            <Typography sx={{ flexGrow: 0.9 }}>
+            <Typography variant="h3" sx={{ flexGrow: 0.9 }}>
               {
                 adminContentDestinationCard.adminContentDestinationCardButtonCard1 // Display the button card 1
               }
@@ -62,9 +62,8 @@ const DestinationCards: React.FC = () => {
               mt: 2,
             }}
           >
-            <Typography sx={{ flexGrow: 0.9 }}>
+            <Typography variant="h3" sx={{ flexGrow: 0.9 }}>
               <Typography sx={{ flexGrow: 0.9 }}>
-                {" "}
                 {
                   adminContentDestinationCard.adminContentDestinationCardButtonCard2 // Display the button card 2
                 }
@@ -88,7 +87,7 @@ const DestinationCards: React.FC = () => {
               justifyContent: "end",
             }}
           >
-            <Typography sx={{ flexGrow: 0.9 }}>
+            <Typography variant="h3" sx={{ flexGrow: 0.9 }}>
               {
                 adminContentDestinationCard.adminContentDestinationCardButtonCard3 // Display the button card 3
               }
@@ -117,12 +116,12 @@ const DestinationCards: React.FC = () => {
             padding: "25px",
           }}
         >
-          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+          <Typography variant="h2" sx={{ fontWeight: "bold" }}>
             {
               adminContentDestinationCard.adminContentDestinationCardHeaderTitle1 // Display the header title
             }
           </Typography>
-          <Typography sx={{ marginTop: "10px" }}>
+          <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentDestinationCard.adminContentDestinationCardTitle // Display the video title
             }
@@ -134,7 +133,7 @@ const DestinationCards: React.FC = () => {
             required
             sx={{ m: 1 }}
           />
-          <Typography sx={{ marginTop: "10px" }}>
+          <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentDestinationCard.adminContentDestinationCardDescription2 // Display the video description
             }{" "}
@@ -147,7 +146,7 @@ const DestinationCards: React.FC = () => {
             rows={4}
             sx={{ m: 1 }}
           />
-          <Typography sx={{ marginTop: "10px" }}>
+          <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentDestinationCard.adminContentDestinationCardTitle1 // Display the video URL 1
             }
@@ -159,7 +158,7 @@ const DestinationCards: React.FC = () => {
             required
             sx={{ m: 1 }}
           />
-          <Typography sx={{ marginTop: "10px" }}>
+          <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentDestinationCard.adminContentDestinationCardTitle4 // Display the video title
             }
@@ -171,8 +170,7 @@ const DestinationCards: React.FC = () => {
             required
             sx={{ m: 1 }}
           />
-          <Typography sx={{ marginTop: "10px" }}>
-
+          <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentDestinationCard.adminContentDestinationCardDescription2 // Display the video description
             }
@@ -185,7 +183,7 @@ const DestinationCards: React.FC = () => {
             rows={4}
             sx={{ m: 1 }}
           />
-          <Typography sx={{ marginTop: "10px" }}>
+          <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentDestinationCard.adminContentDestinationCardTitle3 // Display the video title
             }
@@ -197,7 +195,7 @@ const DestinationCards: React.FC = () => {
             required
             sx={{ m: 1 }}
           />
-          <Typography sx={{ marginTop: "10px" }}>
+          <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentDestinationCard.adminContentDestinationCardTitle5 // Display the custom tag
             }
@@ -209,7 +207,7 @@ const DestinationCards: React.FC = () => {
             required
             sx={{ m: 1 }}
           />
-          <Typography sx={{ marginTop: "10px" }}>
+          <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentDestinationCard.adminContentDestinationCardTitle6 // Display the button name
             }
@@ -223,34 +221,21 @@ const DestinationCards: React.FC = () => {
           />
         </Card>
         <Grid my={4}>
-        <Box display="flex" justifyContent="end" alignItems="center">
-          <Button
-            sx={{
-              textTransform: "none",
-              marginTop: "7px",
-              backgroundColor: "#4A5472",
-              "&:hover": { backgroundColor: "#192959" },
-              color: "white",
-              width: "100px",
-              height: "30px",
-              borderRadius: "8px",
-              marginLeft: "10px",
-              textAlign: "center",
-            }}
-            variant="contained"
-          >
-            <Typography
-              style={{
-                color: "white",
-              }}
+          <Box display="flex" justifyContent="end" alignItems="center">
+            <Button
             >
-              {
-                adminContentDestinationCard.adminContentDestinationCardSubmitButton // Display the submit button text
-              }
-            </Typography>
-          </Button>
-        </Box>
-       </Grid>
+              <Typography
+                style={{
+                  color: "white",
+                }}
+              >
+                {
+                  adminContentDestinationCard.adminContentDestinationCardSubmitButton // Display the submit button text
+                }
+              </Typography>
+            </Button>
+          </Box>
+        </Grid>
       </Grid>
     </Grid>
   );
