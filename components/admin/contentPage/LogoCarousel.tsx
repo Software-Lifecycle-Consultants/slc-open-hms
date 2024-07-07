@@ -46,7 +46,7 @@ const LogoCarousel: React.FC = () => {
           }}
         >
           <Typography
-            variant="h6"
+            variant="h2"
             sx={{ marginTop: "05px", fontWeight: "bold" }}
           >
             {adminContentLogoCarousel.adminContentLogoCarouselHeaderTitle // Display the header title
@@ -67,11 +67,6 @@ const LogoCarousel: React.FC = () => {
               required
             />
             <Button
-              sx={{ backgroundColor: "#4A5472", marginTop: "10px" }}
-              component="label"
-              role={undefined}
-              variant="contained"
-              tabIndex={-1}
               startIcon={<CloudUploadIcon />}
             >
               {adminContentLogoCarousel.adminContentLogoCarouselUploadButton // Display the upload button text
@@ -83,19 +78,6 @@ const LogoCarousel: React.FC = () => {
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
           <Box display="flex" justifyContent="end" alignItems="center">
             <Button
-              sx={{
-                textTransform: "none",
-                marginTop: "7px",
-                backgroundColor: "#4A5472",
-                "&:hover": { backgroundColor: "#192959" },
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                marginLeft: "10px",
-                textAlign: "center",
-              }}
-              variant="contained"
             >
               <Typography
                 style={{
