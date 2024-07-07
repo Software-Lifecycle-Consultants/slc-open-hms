@@ -7,10 +7,9 @@ const AboutRoom = () => {
   return (
     <>
       <Typography
-        variant="h3"
-        className={lora.className}
         style={{
           color: "#11142D",
+          fontFamily:"Mulish",
           fontSize: "39px",
           fontStyle: "normal",
           fontWeight: 700,
@@ -21,17 +20,9 @@ const AboutRoom = () => {
         {aboutRoom.roomTitle}
       </Typography>
       <Typography
-        variant="body1"
-        className={mulish.className}
-        sx={{
-          color: "#515151",
-          fontSize: "16px",
-          lineHeight: "120%",
-          fontStyle: "normal",
-          letterSpacing: "0.08px",
-          fontWeight: "400",
-          marginTop: "22px",
-        }}
+        variant="h4"
+        color="#515151"
+        marginTop="22px"
       >
         {aboutRoom.roomDescription}
       </Typography>

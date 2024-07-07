@@ -22,17 +22,6 @@ const Gallery: React.FC = () => {
     autoplaySpeed: 1000,
   };
 
-  const titleStyle = [
-    {
-      color: "#11142D",
-      fontSize: "39px",
-      fontStyle: "normal",
-      fontWeight: 700,
-      lineHeight: "120%",
-      letterSpacing: "0.195px",
-    },
-  ];
-
   const cardStyles: React.CSSProperties = {
     display: "flex",
     justifyContent: "center",
@@ -46,7 +35,7 @@ const Gallery: React.FC = () => {
   };
   return (
     <>
-      <Typography variant="h3" className={lora.className} sx={titleStyle}>
+      <Typography color= "#11142D" fontSize= "39px" fontStyle= "normal" fontWeight= "700" lineHeight= "120%" letterSpacing= "0.195px" marginBottom="25px">
         {galleryTitle}
       </Typography>
       <Slider {...settings}>
