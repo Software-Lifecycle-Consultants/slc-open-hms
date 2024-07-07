@@ -10,7 +10,7 @@ const HeroBanner: React.FC = () => {
         <Card
           elevation={0}
           sx={{
-            height: "650px",
+            height: "auto",
             width: "100%",
             border: "1px solid",
             borderRadius: "8px",
@@ -20,10 +20,7 @@ const HeroBanner: React.FC = () => {
             padding: "20px",
           }}
         >
-          <Typography
-            variant="h6"
-            sx={{ marginTop: "05px", fontWeight: "bold" }}
-          >
+          <Typography variant="h2">
             {
               adminContentHeroBanner.adminContentHeaderTitle // Display the header title
             }
@@ -36,7 +33,7 @@ const HeroBanner: React.FC = () => {
             noValidate
             autoComplete="off"
           >
-            <Typography sx={{ marginTop: "10px" }}>
+            <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
                 adminContentHeroBanner.adminContentBannerDetailsTitle01 // Display the banner title
               }
@@ -48,7 +45,7 @@ const HeroBanner: React.FC = () => {
               variant="outlined"
               required
             />
-            <Typography sx={{ marginTop: "10px" }}>
+            <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
                 adminContentHeroBanner.adminContentBannerDetailsTitle02 // Display the banner sub title
               }
@@ -60,7 +57,7 @@ const HeroBanner: React.FC = () => {
               variant="outlined"
               required
             />
-            <Typography sx={{ marginTop: "10px" }}>
+            <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
                 adminContentHeroBanner.adminContentBannerDetailsTitle03 // Display the banner description
               }
@@ -76,7 +73,7 @@ const HeroBanner: React.FC = () => {
           </Box>
           <Grid container>
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
                   adminContentHeroBanner.adminContentBannerDetailsTitle04 // Display the banner button 1
                 }
@@ -86,11 +83,11 @@ const HeroBanner: React.FC = () => {
                 label="Enter Banner Sub Title"
                 variant="outlined"
                 required
-                sx={{ m: 1, width: "44ch" }}
+                sx={{ m: 1, width: "40ch" }}
               />
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
                   adminContentHeroBanner.adminContentBannerDetailsTitle05 // Display the banner button 2
                 }
@@ -100,7 +97,7 @@ const HeroBanner: React.FC = () => {
                 label="Enter Banner Sub Title"
                 variant="outlined"
                 required
-                sx={{ m: 1, width: "44ch" }}
+                sx={{ m: 1, width: "40ch" }}
               />
             </Grid>
           </Grid>
@@ -108,23 +105,7 @@ const HeroBanner: React.FC = () => {
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
           <Box display="flex" justifyContent="end" alignItems="center">
             <Button
-            endIcon={<EditIcon />}
-              sx={{
-                textTransform: "none",
-                marginTop: "7px",
-                justifyContent: "center",
-                backgroundColor: "#4A5472",
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                textAlign: "center",
-                borderColor: "#5B5959",
-                "&:hover": {
-                  backgroundColor: "#192959",
-                },
-              }}
-              variant="outlined"
+              endIcon={<EditIcon />}
             >
               <Typography
                 style={{
@@ -137,24 +118,8 @@ const HeroBanner: React.FC = () => {
               </Typography>
             </Button>
             <Button
-              sx={{
-                textTransform: "none",
-                marginTop: "7px",
-                backgroundColor: "#4A5472",
-                "&:hover": { backgroundColor: "#192959" },
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                marginLeft: "10px",
-                textAlign: "center",
-              }}
-              variant="contained"
             >
               <Typography
-                style={{
-                  color: "white",
-                }}
               >
                 {
                   adminContentHeroBanner.adminContentBannerDetailsSubmitButton // Display the submit button text
