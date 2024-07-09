@@ -90,7 +90,7 @@ const AdditionalInfo = () => {
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography variant="h3" fontWeight="700">{item.accordionDescription}</Typography>
+                  <Typography variant="h4">{item.accordionDescription}</Typography>
                 </AccordionDetails>
               </Accordion>
             ))}

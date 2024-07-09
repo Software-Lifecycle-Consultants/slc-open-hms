@@ -33,9 +33,12 @@ const ContactCard = () => {
             <Box>
               <MailOutlineIcon
                 sx={{
-                  fontSize: { xs: "20px", sm: "25px", md: "40px", lg: "50px" },
+                  fontSize: '2.5rem',
                   verticalAlign: "middle",
                   marginRight:"20px",
+                  '@media (max-width:600px)': {
+                  fontSize: '1.5rem',
+                  },
                 }}
               />
             </Box>
@@ -70,9 +73,12 @@ const ContactCard = () => {
             <Box>
               <LocationOnIcon
                 sx={{
-                  fontSize: { xs: "20px", sm: "21px", md: "40px", lg: "50px" },
+                  fontSize: '2.5rem',
                   verticalAlign: "middle",
                   marginRight:"10px",
+                  '@media (max-width:600px)': {
+                  fontSize: '1.5rem',
+                  },
                 }}
               />
             </Box>
@@ -107,9 +113,12 @@ const ContactCard = () => {
             <Box>
               <PhoneIcon
                 sx={{
-                  fontSize: { xs: "20px", sm: "23px", md: "40px", lg: "50px" },
+                  fontSize: '2.5rem',
                   verticalAlign: "middle",
                   marginRight:"10px",
+                  '@media (max-width:600px)': {
+                  fontSize: '1.5rem',
+                  },
                 }}
               />
             </Box>

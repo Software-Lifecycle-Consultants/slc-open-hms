@@ -154,7 +154,9 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
                     ${price}
                   </Typography>
                   <Typography
-                    variant="h4" paddingTop={1}
+                    variant="h4" paddingTop={0.5} sx={{ '@media (max-width:600px)': {
+                      paddingTop: 1,
+                    }, }}
                   >
                     /{roomCardTexts.custonText3}
                   </Typography>

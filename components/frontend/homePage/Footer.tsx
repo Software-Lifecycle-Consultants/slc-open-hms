@@ -214,6 +214,7 @@ const Footer = () => {
                     sx={{
                       flexShrink: 0,
                       marginTop: "6px",
+                      fontSize:'25px',
                     }}
                   />
                 </Link>
@@ -244,6 +245,7 @@ const Footer = () => {
                   sx={{
                     flexShrink: 0,
                     marginTop: "5px",
+                    fontSize:'1.563rem',
                   }}
                 />
               </a>
@@ -272,6 +274,7 @@ const Footer = () => {
                   sx={{
                     flexShrink: 0,
                     marginTop: "5px",
+                    fontSize:'1.563rem',
                   }}
                 />
               </Link>
