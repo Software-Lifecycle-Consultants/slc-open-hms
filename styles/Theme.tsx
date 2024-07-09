@@ -201,7 +201,6 @@ const themeClient = createTheme({
 // Create a dark theme
 const themeAdmin = createTheme({
   palette: {
-    mode: "light", // Set the mode to dark
     primary: {
       main: "#D0D5DD",
     },
