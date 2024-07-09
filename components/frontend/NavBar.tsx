@@ -127,7 +127,7 @@ const NavBar = () => {
               <>
                 {/* Display Tabs and Buttons on larger screens */}
                 <Tabs
-                  sx={{ marginLeft: "auto" }}
+                  sx={{ margin: "auto" }}
                   value={value}
                   onChange={handleChange}                  
                   indicatorColor="secondary"
