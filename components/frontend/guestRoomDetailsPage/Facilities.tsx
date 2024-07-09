@@ -3,19 +3,17 @@ import React from 'react'
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { facilitiesSection } from '@/data/roomDetailsPage';
 import { facilitiesData } from '@/data/roomDetailsPage';
-import { lora, mulish } from "../../../app/fonts";
 
 const Facilities = () => {
   return (
     <>
-      <Typography
+      <Typography variant='h5'
         fontSize="39px"
         color= "#11142D"
-          fontStyle= "normal"
-          fontWeight= "700"
-          lineHeight="120%"
-          letterSpacing= "0.195px"
-          fontFamily="Mulish"
+        sx={{'@media (max-width:600px)': {
+          fontSize: '1.5rem',
+          fontWeight:'700',
+        },}}   
       >
         {facilitiesSection.facilitiesSectionTitle}
       </Typography>

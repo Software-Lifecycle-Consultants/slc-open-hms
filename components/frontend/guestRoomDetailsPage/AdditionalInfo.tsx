@@ -34,12 +34,19 @@ const AdditionalInfo = () => {
           >
             {additionalInfoSection.additionalInfoSectionDescription}
           </Typography>
-          <Typography variant="h4" color="#11142D" marginTop="32px" fontWeight="700">
+          <Typography variant="h4" color="#11142D" marginTop="32px" fontWeight="700"
+          sx={{'@media (max-width:600px)': {
+            fontSize: '1rem',
+            fontWeight:'700',
+          },}}>
             Check in {additionalInfoSection.checkinTime}
           </Typography>
           <Typography
             variant="h4" color="#11142D" marginTop="25px" fontWeight="700"
-          >
+            sx={{'@media (max-width:600px)': {
+              fontSize: '1rem',
+              fontWeight:'700',
+            },}}>
             Check Out {additionalInfoSection.checkoutTime}
           </Typography>
           <Button

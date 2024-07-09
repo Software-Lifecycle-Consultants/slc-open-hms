@@ -9,7 +9,6 @@ import Image from "next/image";
 import img from "@/public/images/hotelRooms/Room3.webp";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { roomDetailsHeroSection } from "@/data/roomDetailsPage";
-import { lora, mulish } from "../../../app/fonts";
 
 const HeroBanner = () => {
   return (
@@ -102,10 +101,12 @@ const HeroBanner = () => {
             <Typography
               variant="h6"
               color= "#9A9AB0"
-              letterSpacing= "0.096px"
               fontWeight= "400"
               marginTop="18px"
               marginLeft= "4px"
+              sx={{'@media (max-width:600px)': {
+                marginTop:'5px',
+              },}}
             >
               {roomDetailsHeroSection.customText2}
             </Typography>

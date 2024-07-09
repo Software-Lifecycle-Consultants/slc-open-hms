@@ -35,7 +35,11 @@ const Gallery: React.FC = () => {
   };
   return (
     <>
-      <Typography color= "#11142D" fontSize= "39px" fontStyle= "normal" fontWeight= "700" lineHeight= "120%" letterSpacing= "0.195px" marginBottom="25px">
+      <Typography variant="h5" color= "#11142D" fontSize= "39px" marginBottom="25px"
+      sx={{'@media (max-width:600px)': {
+        fontSize: '1.5rem',
+        fontWeight:'700',
+      },}}>
         {galleryTitle}
       </Typography>
       <Slider {...settings}>

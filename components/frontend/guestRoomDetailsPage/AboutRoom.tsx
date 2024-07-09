@@ -6,16 +6,11 @@ import { lora, mulish } from "../../../app/fonts";
 const AboutRoom = () => {
   return (
     <>
-      <Typography
-        style={{
-          color: "#11142D",
-          fontFamily:"Mulish",
-          fontSize: "39px",
-          fontStyle: "normal",
-          fontWeight: 700,
-          lineHeight: "120%",
-          letterSpacing: "0.195px",
-        }}
+      <Typography variant='h5'color= "#11142D" fontSize= "39px" 
+      sx={{'@media (max-width:600px)': {
+                fontSize: '1.5rem',
+                fontWeight:'700',
+              },}}
       >
         {aboutRoom.roomTitle}
       </Typography>
