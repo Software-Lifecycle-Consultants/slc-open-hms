@@ -33,18 +33,19 @@ import {
                 {/* Start paragraph */}
                 <Typography
                   gutterBottom
+                  variant="body2"
+                  textAlign="justify"
                   sx={{
-                    color: "#515151",
-                    fontSize: "20px",
-                    textAlign: "justify",
+                    '@media (max-width:600px)': {
+                      lineHeight: '1.75rem',
+                    },
                   }}
                 >
                   {blogcontent.pharagraph.startParagraph}
                 </Typography>
                 {/* First paragraph title */}
                 <Typography
-                  variant="body2"
-                  color="text.secondary"
+                gutterBottom
                   mt={5}
                   sx={{
                     fontSize: "30px",
@@ -58,21 +59,18 @@ import {
                 {/* First paragraph content */}
                 <Typography
                   gutterBottom
-                  sx={{
-                    color: "#515151",
-                    fontSize: "20px",
-                    textAlign: "justify",
-                  }}
+                  variant="h3"
+                  textAlign="justify"
+                  color="#515151"
                 >
                   {blogcontent.pharagraph.pTitle1.paragraph1}
                   </Typography>
                   <Typography
                   gutterBottom
-                  sx={{
-                    color: "#515151",
-                    fontSize: "20px",
-                    textAlign: "justify",
-                  }}>
+                  variant="h3"
+                  textAlign="justify"
+                  color="#515151"
+                  >
                   {blogcontent.pharagraph.pTitle1.paragraph2}
                 </Typography>
               </Grid>
@@ -92,16 +90,14 @@ import {
                 />
                 {/* Image description */}
                 <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: "14px",
-                    textAlign: "left",
-                    color: "#515151",
-                  }}
+                  variant="h5"
+                  color="#515151"
+                  textAlign="left"
+                  fontFamily="Mulish"
+                  fontWeight="200"
                 >
                   {blogcontent.pharagraph.imageContentText}{" "}
-                  <Link href="" sx={{ color: "#515151" }}>
+                  <Link href="" sx={{ color: "#667085" }}>
                     {blogcontent.pharagraph.imageContentsource}
                   </Link>
                 </Typography>
@@ -112,6 +108,7 @@ import {
                 <blockquote
                   style={{
                     color: "#11142D",
+                    fontFamily: "Mulish",
                     fontSize: "24px",
                     textAlign: "justify",
                     borderLeft: "0.2em solid",
@@ -123,89 +120,79 @@ import {
                   }}
                 >
                   {blogcontent.pharagraph.blockquoteText}
-                  
+                  <Typography
+                  mt={2}>
                   <cite
                     style={{
                       marginTop:"10px",
                       color: "#515151",
-                      fontSize: "15px",
+                      fontSize: "16px",
                       fontStyle: "normal",
+                      fontFamily:"Mulish",
+                      fontWeight:"200",
                     }}
                   >
                     -{blogcontent.pharagraph.blockquoteCite}
                   </cite>
+                  </Typography>
                 </blockquote>
-  
                 {/* Body paragraphs */}
                 <Typography
                   gutterBottom
-                  sx={{
-                    color: "#515151",
-                    fontSize: "20px",
-                    textAlign: "justify",
-                  }}
+                  variant="h3"
+                  color= "#515151"
+                  textAlign= "justify"
+                  mt={3}
                 >
                   {blogcontent.pharagraph.bodyParagraph}
                   </Typography>
                   <Typography
                   gutterBottom
-                  sx={{
-                    color: "#515151",
-                    fontSize: "20px",
-                    textAlign: "justify",
-                  }}
+                  variant="h3"
+                  color= "#515151"
+                  textAlign= "justify"
                 > 
                   {blogcontent.pharagraph.bodyParagraph1}
                   
                 </Typography>
                 {/* Second paragraph title */}
                 <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  mt={5}
-                  sx={{
-                    fontSize: "30px",
-                    textAlign: "left",
-                    fontWeight: "bold",
-                    color: "#11142D",
-                  }}
+                  variant="body1"
+                  textAlign="left"
+                  color= "#11142D"
+                  fontFamily="Mulish"
+                  mt={3}
                 >
                   {blogcontent.pharagraph.pTitle2.title}
                 </Typography>
                 {/* Second paragraph content */}
                 <Typography
                   gutterBottom
-                  sx={{
-                    color: "#515151",
-                    fontSize: "20px",
-                    textAlign: "justify",
-                  }}
+                  variant="h3"
+                  color= "#515151"
+                  textAlign= "justify"
+                  mt={1}
                 >
                   {blogcontent.pharagraph.pTitle2.paragraph1}
                   
                 </Typography>
                 {/* Third paragraph title */}
                 <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  mt={5}
-                  sx={{
-                    fontSize: "30px",
-                    textAlign: "left",
-                    fontWeight: "bold",
-                    color: "#11142D",
-                  }}
+                  variant="body1"
+                  textAlign="left"
+                  color= "#11142D"
+                  fontFamily="Mulish"
+                  mt={3}
                 >
                   {blogcontent.pharagraph.pTitle3.title}
                 </Typography>
                 {/* Third paragraph content */}
                 <Typography
                   gutterBottom
-                  sx={{
-                    color: "#515151",
-                    fontSize: "20px",
-                    textAlign: "justify",
-                  }}
+                  variant="h3"
+                  color= "#515151"
+                  textAlign= "justify"
+                  mt={1}
                 >
                   {blogcontent.pharagraph.pTitle3.paragraph1}
                 </Typography>
@@ -226,28 +213,25 @@ import {
                 />
                 {/* Final image description */}
                 <Typography
-                  variant="body2"
-                  color="text.secondary"
                   gutterBottom
-                  sx={{
-                    fontSize: "14px",
-                    textAlign: "left",
-                    color: "#515151",
-                  }}
+                  variant="h5"
+                  color="#667085"
+                  textAlign="left"
+                  fontFamily="Mulish"
+                  fontWeight="200"
                 >
                   {blogcontent.pharagraph.imageEndText}{" "}
-                  <Link href="" sx={{ color: "#515151" }}>
+                  <Link href="" sx={{ color: "#667085" }}>
                     {blogcontent.pharagraph.imageEndsource}
                   </Link>
                 </Typography>
                 {/* Last paragraph */}
                 <Typography
                   gutterBottom
-                  sx={{
-                    color: "#515151",
-                    fontSize: "20px",
-                    textAlign: "justify",
-                  }}
+                  variant="h3"
+                  color= "#515151"
+                  textAlign= "justify"
+                  mt={1}
                 >
                   {blogcontent.pharagraph.lastParagraph}
                   
@@ -256,11 +240,10 @@ import {
               {/* Conclusion Box */}
               <Box mt={5} sx={{ m: 5, bgcolor: "#F9FAFB" }}>
                 <Typography
-                  variant="body2"
-                  color="text.secondary"
                   gutterBottom
                   sx={{
                     fontSize: "30px",
+                    fontFamily:"Mulish",
                     textAlign: "left",
                     fontWeight: "bold",
                     color: "#11142D",
@@ -271,21 +254,19 @@ import {
                 </Typography>
                 <Typography
                   gutterBottom
-                  sx={{
-                    color: "#515151",
-                    fontSize: "18px",
-                    textAlign: "justify",
-                  }}
+                  variant="h3"
+                  color= "#515151"
+                  textAlign= "justify"
+                  mt={1}
                 >
                   {blogcontent.ConclutionBoxText.paragraph}
                   </Typography>
                   <Typography
                   gutterBottom
-                  sx={{
-                    color: "#515151",
-                    fontSize: "18px",
-                    textAlign: "justify",
-                  }}
+                  variant="h3"
+                  color= "#515151"
+                  textAlign= "justify"
+                  mt={1}
                 >
                   {blogcontent.ConclutionBoxText.paragraph1}
                   
@@ -316,13 +297,24 @@ import {
                               {blogcontent.pharagraph.blockquotePosistion}
                             </React.Fragment>
                           }
+                          primaryTypographyProps={{
+                            fontFamily: "Mulish", // Added font family for the author's name
+                            fontWeight: "700", //font weight for the author's name
+                            fontSize:"18px", //font size for the author's name
+                            color:"#11142D",//font color for the author's name
+                          }}
+                          secondaryTypographyProps={{
+                            fontFamily: "Mulish", // Added font family for the author's position
+                            color: "#515151", 
+                            fontSize:"16px"// font color for the author's position
+                          }}
                         />
                       </ListItem>
                     </List>
                   </Grid>
                   <Grid item xs>
                     {/* Sharing Buttons */}
-                    <Box sx={{ marginTop: "30px" }}>
+                    <Box sx={{ marginTop: "30px", paddingLeft:"25px" }}>
                       <Stack spacing={1} direction="row">
                         <Button
                           variant="outlined"
@@ -330,10 +322,11 @@ import {
                             fontSize: "14px",
                             borderColor: "#D0D5DD",
                             color: "#344054",
+                            fontWeight: "normal",
                           }}
                         >
                           <ContentCopyIcon
-                            sx={{ color: "#344054", mr: "10px" }}
+                            sx={{ color: "#344054", mr: "10px",fontFamily:"Mullish" }}
                           />{" "}
                           {blogcontent.copybuttontxt}
                         </Button>

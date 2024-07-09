@@ -118,7 +118,7 @@ const themeClient = createTheme({
       fontSize: '1.5rem',
       fontWeight: 700,
       fontFamily: 'Lora',
-      lineHeight: '2.25rem',
+      lineHeight: '1.75rem',
       letterSpacing: '0.01rem',
       fontStyle: 'normal',
       '@media (max-width:600px)': {
@@ -129,7 +129,7 @@ const themeClient = createTheme({
       // Define the body2 typography settings
       color: '#353535',
       fontSize: '1.25rem',
-      lineHeight: '2.25rem',
+      lineHeight: '1.75rem',
       fontWeight: 200,
       fontFamily: 'Mulish',
       fontStyle: 'normal',
