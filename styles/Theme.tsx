@@ -108,6 +108,9 @@ const themeClient = createTheme({
     h6: {
       // Define the h6 typography settings
       fontSize: '0.75rem',
+      fontFamily:'Mulish',
+      fontStyle:'normal',
+      lineHeight: '1.75 rem',
       '@media (max-width:600px)': {
         fontSize: '0.75rem',
       },
