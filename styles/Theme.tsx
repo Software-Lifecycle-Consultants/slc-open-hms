@@ -237,61 +237,78 @@ const themeClient = createTheme({
 // Create a dark theme
 const themeAdmin = createTheme({
   palette: {
-    mode: 'dark', // Set the mode to dark
     primary: {
-      main: '#C7923E',
+      main: "#D0D5DD",
     },
     secondary: {
-      main: '#4A5472',
+      main: "#4A5472",
     },
     background: {
-      default: '#121212',
-      paper: '#121212',
+      default: "#CEDEFF",
+      paper: "#FFFFFF",
     },
     text: {
-      primary: '#FFFFFF',
+      primary: "#FFFFFF",
       secondary: grey[500],
     },
   },
   typography: {
-    fontFamily: 'Lora, sans-serif',
+    fontFamily: "Mulish", // Set the default font family
     h1: {
-      fontSize: '20rem',
+      // Define the h1 typography settings
+      fontSize: "2.5rem",
       fontWeight: 700,
-      fontWeightBold: 400,
-      fontFamily: 'Lora',
-
+      fontFamily: "Mulish",
+      color: "#0C111F",
+      fontstyle: "normal",
+      letterSpacing: "-0.03rem",
+      "@media (max-width:600px)": {
+        fontSize: "2.125rem",
+      },
     },
     h2: {
-      fontSize: '1.75rem',
+      // Define the h2 typography settings
+      fontSize: "1.2rem",
       fontWeight: 700,
-      fontFamily: 'Lora',
+      fontFamily: "Mulish",
+      color: "#0C111F",
+      "@media (max-width:600px)": {
+        fontSize: "1.25rem",
+        paddingTop: "1.25rem",
+      },
     },
     h3: {
-      fontFamily: 'Lora',
+      // Define the h3 typography settings
+      fontFamily: "Mulish",
+      fontSize: "1.125rem",
+      fontWeight: 200,
+      letterSpacing: "0.02rem",
+      color: "#353535",
+      lineHeight: "1.75rem",
+      fontStyle: "normal",
+      "@media (max-width:600px)": {
+        fontSize: "1.1rem",
+      },
     },
-    h5: {
-      fontFamily: 'Mulish',
-    },
-    body1: {
-      fontSize: '1.5rem',
-      fontWeight: 400,
-      fontFamily: 'Mulish',
-    },
+
     button: {
-      textTransform: 'capitalize',
-    },
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: '0.5rem',
-        },
+      // Define the button typography settings
+      textTransform: "capitalize",
+      fontWeight: 600,
+      backgroundColor: "#4A5472",
+      color: "white",
+      width: "auto",
+      height: "30px",
+      borderRadius: "8px",
+      margin: "0.5rem",
+      fontFamily: "Mulish",
+      fontSize: "1rem",
+      "&:hover": { backgroundColor: "#000" },
+      "@media (max-width:600px)": {
+        fontSize: "0.75rem",
       },
     },
   },
-},
-);
+});
 
 export { themeClient, themeAdmin };
