@@ -208,7 +208,7 @@ const themeAdmin = createTheme({
       main: "#4A5472",
     },
     background: {
-      default: "#CEDEFF",
+      default: "#EEF5FF",
       paper: "#FFFFFF",
     },
     text: {
@@ -261,12 +261,12 @@ const themeAdmin = createTheme({
       fontWeight: 600,
       backgroundColor: "#4A5472",
       color: "white",
-      width: "auto",
-      height: "30px",
+      width: "115px",
+      height: "37px",
       borderRadius: "8px",
       margin: "0.5rem",
       fontFamily: "Mulish",
-      fontSize: "1rem",
+      fontSize: "0.75rem",
       "&:hover": { backgroundColor: "#000" },
       "@media (max-width:600px)": {
         fontSize: "0.75rem",
