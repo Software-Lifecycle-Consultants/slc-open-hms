@@ -214,7 +214,7 @@ const Footer = () => {
                     sx={{
                       flexShrink: 0,
                       marginTop: "6px",
-                      fontSize:'25px',
+                      fontSize:'1.563rem',
                     }}
                   />
                 </Link>
