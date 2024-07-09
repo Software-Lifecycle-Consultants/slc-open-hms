@@ -101,7 +101,7 @@ const AdditionalInfo = () => {
   const router = useRouter();
 
   const navigationToCheckoutScreen = () => {
-    router.push("/CheckoutScreen");
+    router.push("/checkout");
   };
 
   return (
