@@ -7,24 +7,43 @@ import Additional from "@/components/frontend/roomDetailsPage/Additional";
 import Gallery from "@/components/frontend/roomDetailsPage/Gallery";
 import { Grid, Box, Container, Card, Typography } from "@mui/material";
 import React from "react";
+import { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const VisuallyHiddenInput = styled("input")({
-  clip: "rect(0 0 0 0)",
-  clipPath: "inset(50%)",
-  height: 1,
-  overflow: "hidden",
-  position: "absolute",
-  bottom: 0,
-  left: 0,
-  whiteSpace: "nowrap",
-  width: 1,
-});
+
+
 const roomDetails = () => {
+  const [files, setfiles] = useState('')
+  const VisuallyHiddenInput = styled("input")({
+    clip: "rect(0 0 0 0)",
+    clipPath: "inset(50%)",
+    height: 1,
+    overflow: "hidden",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    whiteSpace: "nowrap",
+    width: 1,
+  });
+  const handleSave = () => {
+    const url = "https://localhost:7042/api/Images";
+    const data = {
+      "Files" : files 
+    }
+    axios.post(url, data)
+    .then((result) =>{
+      console.log(result);
+      toast.success("Image Uploaded Successfully");
+    })
+  }
   return (
     <>
+      <ToastContainer />
       <Box
         sx={{ backgroundColor: "#EEF5FF", padding: "10px 0", width: "100%", mx: "2px"}}
       >
@@ -74,7 +93,7 @@ const roomDetails = () => {
                   paddingLeft: "45%",
                 }}
               >
-                <Button
+                <Button onClick={() => handleSave()} // Button click event is handled here
                   sx={{
                     marginTop: "7px",
                     backgroundColor: "#4A5472",

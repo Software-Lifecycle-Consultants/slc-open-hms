@@ -2,6 +2,10 @@ import * as React from "react";
 import { Box, Card, Typography, Button,  } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { useState } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -16,6 +20,29 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 export default function StandardImageList() {
+  const [files, setfiles] = useState('')
+  const VisuallyHiddenInput = styled("input")({
+    clip: "rect(0 0 0 0)",
+    clipPath: "inset(50%)",
+    height: 1,
+    overflow: "hidden",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    whiteSpace: "nowrap",
+    width: 1,
+  });
+  const handleSave = () => {
+    const url = "https://localhost:7042/api/Images";
+    const data = {
+      "Files" : files 
+    }
+    axios.post(url, data)
+    .then((result) =>{
+      console.log(result);
+      toast.success("Image Uploaded Successfully");
+    })
+  }
   return (
     <>
      <Typography
@@ -83,7 +110,7 @@ export default function StandardImageList() {
       {/* Gallery images submit button */}
       <Box mt={2}
        display="flex" justifyContent="center" alignItems="center" > 
-        <Button
+        <Button onClick={() => handleSave()}
           sx={{
             textTransform: "none",
             justifyContent: "center",
