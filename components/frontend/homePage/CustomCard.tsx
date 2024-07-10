@@ -69,11 +69,11 @@ const CustomCard = ({}) => {
     >
       <Grid item xs={12} md={6}>
         {/* Heading 1 */}
-        <Typography variant="h2">
+        <Typography variant="h2" mt='1.25rem'>
           {cardDetails1.customCardTitle}
         </Typography>
         {/* Body 1 */}
-        <Typography variant="body2" marginTop={"2rem"} sx={{opacity: 0.6}} >
+        <Typography variant="body2" marginTop="2rem" sx={{opacity: 0.6}} >
           {cardDetails1.customCardDescription}
         </Typography>
         {/* Image */}

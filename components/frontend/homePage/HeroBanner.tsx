@@ -73,6 +73,7 @@ const Banner = () => {
               display: "flex",
               flexDirection: "row", // Adjust the layout for different screen sizes
               alignItems: "center",
+              paddingTop: "1rem",
             }}
           >
             {/* Button with icon for web and tablet view */}

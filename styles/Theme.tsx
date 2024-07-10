@@ -96,6 +96,7 @@ const themeClient = createTheme({
       textTransform: 'capitalize',
       lineHeight: '1.75 rem',
       fontStyle: 'normal',
+      marginTop:'0.313rem',
       '@media (max-width:600px)': {
         fontSize: '0.875rem',
         fontFamily: 'Mulish',

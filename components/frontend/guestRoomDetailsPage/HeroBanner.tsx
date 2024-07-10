@@ -16,12 +16,7 @@ const HeroBanner = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <Typography
-              color= "#11142D"
-              fontSize="62px"
-              fontStyle="normal"
-              fontWeight="700"
-              lineHeight="120%"
-              letterSpacing= "0.186px"
+            variant="h2"
           >
             {roomDetailsHeroSection.roomDetailsTitle}
           </Typography>
