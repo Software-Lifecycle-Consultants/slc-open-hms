@@ -15,13 +15,13 @@ const Banner = () => {
     <Container maxWidth="md">
       <Box style={{ textAlign: "center" }}>
         {/* text in the banner  */}
-        <Typography sx={{ fontSize: "16px" }}>
+        <Typography variant='h4' color='#FFFFFF'>
           {bannerData.bannertext}
         </Typography>
-        <Typography mt={2} sx={{ fontSize: "48px" }}>
+        <Typography variant='h2' color='#FFFFFF' mt={2}>
           {bannerData.bannerTitle}
         </Typography>
-        <Typography mt={2} sx={{ fontSize: "20px" }}>
+        <Typography variant='body2' color='#FFFFFF' mt={2}>
           {bannerData.bannerDescription}
         </Typography>
       </Box>
@@ -39,7 +39,6 @@ const Banner = () => {
             borderRadius: "8px",
             height: "48px",
             width: { md: "70%", xs: "50%" },
-            fontSize: { md: "14px", xs: "10px" },
             justifyContent: "center",
           }}
         />
@@ -49,17 +48,13 @@ const Banner = () => {
             marginLeft: "10px",
             height: "48px",
             width: "auto",
-            background:
-              "var(--l-2, linear-gradient(135deg, #8482FF 0%, #7723FE 100%))",
-            borderRadius: "8px",
-            fontSize: { md: "14px", xs: "12px", s:"6px" },
           }}
           variant="contained"
         >
           {bannerData.buttonText}
         </Button>
         <Box>
-        <Typography mt={2} mb={20}  sx={{alignItems:"center", }}>
+        <Typography variant="h5" color='#FFFFFF' mt={2} mb={20}  sx={{alignItems:"center", }}>
           {bannerData.bannerSlogen}{" "}
           <Link href="/privacy-policy" style={{ color: "white" }}>
             {bannerData.bannerLinkText}

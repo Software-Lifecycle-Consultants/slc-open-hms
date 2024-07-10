@@ -14,26 +14,25 @@ const DetailBanner = () => {
             {/* Grid item for alignment and title */}
             <Grid item xs sx={{ alignItems: "center", textAlign: "center" }}>
               {/* Published date */}
-              <Box sx={{width:"250px", mx:"auto", display:"flex", gap:"10px", color:"#7F56D9"}}>
+              <Box sx={{width:"250px", mx:"auto", display:"flex", gap:"10px", color:"#7F56D9",justifyContent:"center"}}>
                 
                   
-                    <Typography> {blogcontent.blogDetailtoptxt} </Typography>
-                    <Typography> {blogcontent.blogDetailDate} </Typography>
+                    <Typography variant="h4" color="#7F56D9"  > {blogcontent.blogDetailtoptxt} </Typography>
+                    <Typography variant="h4" color="#7F56D9" > {blogcontent.blogDetailDate} </Typography>
                 
               </Box>
               {/* Main title */}
               <Typography
-                variant="h4"
+                variant="h2"
+                color="#11142D"
                 gutterBottom
-                sx={{ color: "#11142D", fontWeight: "bold", fontSize: "48px" }}
               >
                 {blogcontent.blogMainTitle}
               </Typography>
               {/* Subtitle */}
               <Typography
                 variant="body2"
-                color="text.secondary"
-                sx={{ fontSize: "20" }}
+                color="#515151"
               >
                 {blogcontent.blogSubtitle}
               </Typography>

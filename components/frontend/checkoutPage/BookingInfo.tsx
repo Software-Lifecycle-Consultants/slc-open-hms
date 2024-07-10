@@ -65,44 +65,23 @@ const BookingInfo = () => {
           <Box sx={{ paddingTop: "10px", marginBottom: "10%" }}>
             {/* Room title */}
             <Typography
-              variant="h5"
-              className={lora.className}
-              style={{
-                color: "#11142D",
-                fontSize: "24px",
-                lineHeight: "120%",
-                fontStyle: "normal",
-                letterSpacing: "0.12px",
-                fontWeight: "700",
-              }}
+              variant="body1"              
             >
               {bookingInfoCard.roomTitle}
             </Typography>
             {/* Booking date */}
             <Typography
-              variant="body1"
-              className={mulish.className}
-              style={{
-                color: "#515151",
-                fontSize: "16px",
-                lineHeight: "120%",
-                fontStyle: "normal",
-                letterSpacing: "0.08px",
-                fontWeight: "600",
-                marginTop: "22px",
-              }}
+              variant="h4" sx={{color:'#515151', fontWeight: 600, marginTop:'1.375rem','@media (max-width:600px)': {fontWeight: 600}}}
             >
               {bookingInfoCard.date}
             </Typography>
             {/* Check icons */}
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <CheckBoxIcon
-                sx={{ fontSize: 34, color: "#9A9AB0", marginTop: "18px" }}
+                sx={{ fontSize: 34, color: "#9A9AB0", marginTop: "1.125rem" }}
               />
               <Typography
-                variant="body1"
-                className={mulish.className}
-                style={checkBoxTypographyStyle}
+                variant='h4' color='#9A9AB0' marginTop='1.125rem'                
               >
                 {bookingInfoCard.checkIcon1}
               </Typography>
@@ -110,14 +89,12 @@ const BookingInfo = () => {
                 sx={{
                   fontSize: 34,
                   color: "#9A9AB0",
-                  marginTop: "18px",
-                  marginLeft: "25px",
+                  marginTop: "1.125rem",
+                  marginLeft: "1.563rem",
                 }}
               />
               <Typography
-                variant="body1"
-                className={mulish.className}
-                style={checkBoxTypographyStyle}
+                variant='h4' color='#9A9AB0' marginTop='1.125rem'
               >
                 {bookingInfoCard.checkIcon2}
               </Typography>
@@ -125,47 +102,25 @@ const BookingInfo = () => {
                 sx={{
                   fontSize: 34,
                   color: "#9A9AB0",
-                  marginTop: "18px",
-                  marginLeft: "25px",
+                  marginTop: "1.125rem",
+                  marginLeft: "1.563rem",
                 }}
               />
               <Typography
-                variant="body1"
-                className={mulish.className}
-                style={checkBoxTypographyStyle}
+                variant='h4' color='#9A9AB0' marginTop='1.125rem'
               >
                 {bookingInfoCard.checkIcon3}
               </Typography>
             </Box>
             {/* Price title */}
             <Typography
-              variant="body2"
-              className={mulish.className}
-              style={{
-                color: "#515151",
-                fontSize: "14px",
-                lineHeight: "130%",
-                fontStyle: "normal",
-                letterSpacing: "0.112px",
-                fontWeight: "600",
-                marginTop: "14px",
-              }}
+              variant="h5"
             >
               {bookingInfoCard.priceTitle}
             </Typography>
             {/* Total price */}
             <Typography
-              variant="body2"
-              className={lora.className}
-              style={{
-                color: "#27343F",
-                fontSize: "39px",
-                lineHeight: "120%",
-                fontStyle: "normal",
-                letterSpacing: "0.195px",
-                fontWeight: "700",
-                marginTop: "4px",
-              }}
+              variant="h2" marginTop='0.25rem'
             >
               {bookingInfoCard.price}
             </Typography>

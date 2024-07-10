@@ -127,13 +127,12 @@ const NavBar = () => {
               <>
                 {/* Display Tabs and Buttons on larger screens */}
                 <Tabs
-                  sx={{ marginLeft: "auto" }}
+                  sx={{ margin: "auto" }}
                   value={value}
-                  onChange={handleChange}
-                  textColor="inherit"
+                  onChange={handleChange}                  
                   indicatorColor="secondary"
                   TabIndicatorProps={{ 
-                    style: { backgroundColor: "#c7833e" },
+                    style: { backgroundColor: "#FFFFFF" },
                    }}
                 >
                  {/* Map through pages to create Tabs for navigation */}

@@ -23,7 +23,7 @@ const DestinationOverview: React.FC = () => {
         <Card
           elevation={0}
           sx={{
-            height: "550px",
+            height: "650px",
             width: "100%",
             border: "1px solid",
             borderRadius: "8px",
@@ -33,7 +33,7 @@ const DestinationOverview: React.FC = () => {
           }}
         >
           <Typography
-            variant="h6"
+            variant="h2"
             sx={{ marginTop: "05px", fontWeight: "bold" }}
           >
             {
@@ -83,11 +83,6 @@ const DestinationOverview: React.FC = () => {
               required
             />
             <Button
-              sx={{ backgroundColor: "#4A5472", marginTop: "10px" }}
-              component="label"
-              role={undefined}
-              variant="contained"
-              tabIndex={-1}
               startIcon={<CloudUploadIcon />}
             >
               {
@@ -157,11 +152,6 @@ const DestinationOverview: React.FC = () => {
                 required
               />
               <Button
-                sx={{ backgroundColor: "#4A5472", marginTop: "10px" }}
-                component="label"
-                role={undefined}
-                variant="contained"
-                tabIndex={-1}
                 startIcon={<CloudUploadIcon />}
               >
                 {
@@ -230,11 +220,6 @@ const DestinationOverview: React.FC = () => {
                 required
               />
               <Button
-                sx={{ backgroundColor: "#4A5472", marginTop: "10px" }}
-                component="label"
-                role={undefined}
-                variant="contained"
-                tabIndex={-1}
                 startIcon={<CloudUploadIcon />}
               >
                 {
@@ -303,11 +288,6 @@ const DestinationOverview: React.FC = () => {
                 required
               />
               <Button
-                sx={{ backgroundColor: "#4A5472", marginTop: "10px" }}
-                component="label"
-                role={undefined}
-                variant="contained"
-                tabIndex={-1}
                 startIcon={<CloudUploadIcon />}
               >
                 {
@@ -318,26 +298,10 @@ const DestinationOverview: React.FC = () => {
             </Card>
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}  my={4}>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12} my={1}>
           <Box display="flex" justifyContent="end" alignItems="center">
             <Button
               endIcon={<EditIcon />}
-              sx={{
-                textTransform: "none",
-                marginTop: "7px",
-                justifyContent: "center",
-                backgroundColor: "#4A5472",
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                textAlign: "center",
-                borderColor: "#5B5959",
-                "&:hover": {
-                  backgroundColor: "#192959",
-                },
-              }}
-              variant="outlined"
             >
               <Typography
                 style={{
@@ -350,19 +314,6 @@ const DestinationOverview: React.FC = () => {
               </Typography>
             </Button>
             <Button
-              sx={{
-                textTransform: "none",
-                marginTop: "7px",
-                backgroundColor: "#4A5472",
-                "&:hover": { backgroundColor: "#4A5472" },
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                marginLeft: "20px",
-                textAlign: "center",
-              }}
-              variant="contained"
             >
               <Typography
                 style={{

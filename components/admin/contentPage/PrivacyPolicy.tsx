@@ -92,7 +92,7 @@ const PrivacyPolicy: React.FC = () => {
           }}
         >
           <Typography
-            variant="h6"
+            variant="h2"
             sx={{ marginTop: "05px", fontWeight: "bold" }} // Styling for the header title.
           >
             Privacy Policy
@@ -109,22 +109,6 @@ const PrivacyPolicy: React.FC = () => {
           <Box display="flex" justifyContent="end" alignItems="center">
             <Button
               endIcon={<EditIcon />}
-              sx={{
-                textTransform: "none",
-                marginTop: "7px",
-                justifyContent: "center",
-                backgroundColor: "#4A5472",
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                textAlign: "center",
-                borderColor: "#5B5959",
-                "&:hover": {
-                  backgroundColor: "#192959",
-                },
-              }}
-              variant="outlined"
             >
               <Typography
                 style={{
@@ -136,21 +120,7 @@ const PrivacyPolicy: React.FC = () => {
                 }
               </Typography>
             </Button>
-            <Button
-              sx={{
-                textTransform: "none",
-                marginTop: "7px",
-                backgroundColor: "#4A5472",
-                "&:hover": { backgroundColor: "#192959" },
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                marginLeft: "10px",
-                textAlign: "center",
-              }}
-              variant="contained"
-            >
+            <Button>
               <Typography
                 style={{
                   color: "white",

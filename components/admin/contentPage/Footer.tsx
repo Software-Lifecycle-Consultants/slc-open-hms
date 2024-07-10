@@ -19,12 +19,7 @@ const VisuallyHiddenInput = styled("input")({
 const Footer: React.FC = () => {
   return (
     <Grid container spacing={2}>
-      <Grid item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <Card
           elevation={0}
           sx={{
@@ -33,10 +28,11 @@ const Footer: React.FC = () => {
             borderRadius: "8px",
             flexShrink: "0",
             p: "20px",
+            border: "1px solid #000",
           }}
         >
           <Typography
-            variant="h6"
+            variant="h2"
             sx={{ marginTop: "05px", fontWeight: "bold" }}
           >
             Logo
@@ -55,20 +51,15 @@ const Footer: React.FC = () => {
               variant="outlined"
               required
             />
-            <Button
-              sx={{ backgroundColor: "#4A5472", marginTop: "10px" }}
-              component="label"
-              role={undefined}
-              variant="contained"
-              tabIndex={-1}
-              startIcon={<CloudUploadIcon />}
-            >
+            <Button startIcon={<CloudUploadIcon />}>
               {
                 adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
               }
               <VisuallyHiddenInput type="file" />
             </Button>
-            <Typography sx={{ marginTop: "10px" }}>Description</Typography>
+            <Typography variant="h3" sx={{ marginTop: "10px" }}>
+              Description
+            </Typography>
             <TextField
               fullWidth
               label="Enter Description"
@@ -76,7 +67,7 @@ const Footer: React.FC = () => {
               multiline
               rows={4}
             />
-            <Typography sx={{ marginTop: "10px" }}>
+            <Typography variant="h3" sx={{ marginTop: "10px" }}>
               Owner Of Copyright
             </Typography>
             <TextField
@@ -96,13 +87,13 @@ const Footer: React.FC = () => {
                 height: "auto",
                 width: "100%",
                 borderRadius: "8px",
-
+                border: "1px solid #000",
                 flexShrink: "0",
                 mt: 2,
                 p: "20px",
               }}
             >
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 Footer Section 1
               </Typography>
               <TextField
@@ -111,21 +102,27 @@ const Footer: React.FC = () => {
                 variant="outlined"
                 required
               />
-              <Typography sx={{ marginTop: "10px" }}>Sub Section 1</Typography>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
+                Sub Section 1
+              </Typography>
               <TextField
                 fullWidth
                 label="Enter Sub Section 1"
                 variant="outlined"
                 required
               />
-              <Typography sx={{ marginTop: "10px" }}>Sub Section 2</Typography>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
+                Sub Section 2
+              </Typography>
               <TextField
                 fullWidth
                 label="Enter Sub Section 2"
                 variant="outlined"
                 required
               />
-              <Typography sx={{ marginTop: "10px" }}>Sub Section 3</Typography>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
+                Sub Section 3
+              </Typography>
               <TextField
                 fullWidth
                 label="Enter Sub Section 3"
@@ -145,9 +142,10 @@ const Footer: React.FC = () => {
                 flexShrink: "0",
                 mt: 2,
                 p: "20px",
+                border: "1px solid #000",
               }}
             >
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 Footer Section 2
               </Typography>
               <TextField
@@ -156,14 +154,18 @@ const Footer: React.FC = () => {
                 variant="outlined"
                 required
               />
-              <Typography sx={{ marginTop: "10px" }}>Sub Section 1</Typography>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
+                Sub Section 1
+              </Typography>
               <TextField
                 fullWidth
                 label="Enter Sub Section 1"
                 variant="outlined"
                 required
               />
-              <Typography sx={{ marginTop: "10px" }}>Sub Section 2</Typography>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
+                Sub Section 2
+              </Typography>
               <TextField
                 fullWidth
                 label="Enter Sub Section 2"
@@ -190,9 +192,10 @@ const Footer: React.FC = () => {
                 flexShrink: "0",
                 mt: 2,
                 p: "20px",
+                border: "1px solid #000",
               }}
             >
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 Footer Section 3
               </Typography>
               <TextField
@@ -201,21 +204,27 @@ const Footer: React.FC = () => {
                 variant="outlined"
                 required
               />
-              <Typography sx={{ marginTop: "10px" }}>Sub Section 1</Typography>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
+                Sub Section 1
+              </Typography>
               <TextField
                 fullWidth
                 label="Enter Sub Section 1"
                 variant="outlined"
                 required
               />
-              <Typography sx={{ marginTop: "10px" }}>Sub Section 2</Typography>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
+                Sub Section 2
+              </Typography>
               <TextField
                 fullWidth
                 label="Enter Sub Section 2"
                 variant="outlined"
                 required
               />
-              <Typography sx={{ marginTop: "10px" }}>Sub Section 3</Typography>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
+                Sub Section 3
+              </Typography>
               <TextField
                 fullWidth
                 label="Enter Sub Section 3"
@@ -229,22 +238,6 @@ const Footer: React.FC = () => {
           <Box display="flex" justifyContent="end" alignItems="center">
             <Button
               endIcon={<EditIcon />}
-              sx={{
-                textTransform: "none",
-                marginTop: "7px",
-                justifyContent: "center",
-                backgroundColor: "#4A5472",
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                textAlign: "center",
-                borderColor: "#5B5959",
-                "&:hover": {
-                  backgroundColor: "#192959",
-                },
-              }}
-              variant="outlined"
             >
               <Typography
                 style={{
@@ -256,21 +249,7 @@ const Footer: React.FC = () => {
                 }
               </Typography>
             </Button>
-            <Button
-              sx={{
-                textTransform: "none",
-                marginTop: "7px",
-                backgroundColor: "#4A5472",
-                "&:hover": { backgroundColor: "#4A5472" },
-                color: "white",
-                width: "100px",
-                height: "30px",
-                borderRadius: "8px",
-                marginLeft: "20px",
-                textAlign: "center",
-              }}
-              variant="contained"
-            >
+            <Button>
               <Typography
                 style={{
                   color: "white",

@@ -3,7 +3,6 @@ import React from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import { mulish } from "@/app/fonts";
 import { contactCardDetails } from "@/data/contactPage";
 /*
 This component represents contact information cards displaying email, address, and phone number in the contact page.
@@ -14,7 +13,6 @@ const ContactCard = () => {
     <>
       {/* Email Card */}
       <Card
-        className={mulish.className}
         sx={{
           borderRadius: "8px",
           boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -25,7 +23,8 @@ const ContactCard = () => {
           marginLeft: "auto",
           marginRight: "auto",
           display: "flex",
-          gap: "auto",
+          alignItems:"center",
+          justifyContent:"center",
         }}
       >
         <CardContent>
@@ -34,18 +33,18 @@ const ContactCard = () => {
             <Box>
               <MailOutlineIcon
                 sx={{
-                  fontSize: { xs: "20px", sm: "25px", md: "40px", lg: "50px" },
+                  fontSize: '2.5rem',
                   verticalAlign: "middle",
+                  marginRight:"20px",
+                  '@media (max-width:600px)': {
+                  fontSize: '1.5rem',
+                  },
                 }}
               />
             </Box>
             {/* Email Text */}
             <Typography
-              variant="body1"
-              sx={{
-                fontWeight: "500",
-                fontSize: { xs: "16px", sm: "16px", md: "18px", lg: "20px" },
-              }}
+              variant="body2"
             >
               {contactCardDetails.email}
             </Typography>
@@ -54,7 +53,6 @@ const ContactCard = () => {
       </Card>
       {/* Address Card */}
       <Card
-        className={mulish.className}
         sx={{
           borderRadius: "8px",
           boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -65,6 +63,8 @@ const ContactCard = () => {
           marginLeft: "auto",
           marginRight: "auto",
           display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <CardContent>
@@ -73,18 +73,18 @@ const ContactCard = () => {
             <Box>
               <LocationOnIcon
                 sx={{
-                  fontSize: { xs: "20px", sm: "21px", md: "40px", lg: "50px" },
+                  fontSize: '2.5rem',
                   verticalAlign: "middle",
+                  marginRight:"10px",
+                  '@media (max-width:600px)': {
+                  fontSize: '1.5rem',
+                  },
                 }}
               />
             </Box>
             {/* Address Text */}
             <Typography
-              variant="body1"
-              sx={{
-                fontWeight: "500",
-                fontSize: { xs: "16px", sm: "13px", md: "18px", lg: "20px" },
-              }}
+              variant="body2"
             >
               {contactCardDetails.address}
             </Typography>
@@ -93,7 +93,6 @@ const ContactCard = () => {
       </Card>
       {/* Phone Card */}
       <Card
-        className={mulish.className}
         sx={{
           borderRadius: "8px",
           boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -104,6 +103,8 @@ const ContactCard = () => {
           marginLeft: "auto",
           marginRight: "auto",
           display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <CardContent>
@@ -112,18 +113,18 @@ const ContactCard = () => {
             <Box>
               <PhoneIcon
                 sx={{
-                  fontSize: { xs: "20px", sm: "23px", md: "40px", lg: "50px" },
+                  fontSize: '2.5rem',
                   verticalAlign: "middle",
+                  marginRight:"10px",
+                  '@media (max-width:600px)': {
+                  fontSize: '1.5rem',
+                  },
                 }}
               />
             </Box>
             {/* Phone Text */}
             <Typography
-              variant="body1"
-              sx={{
-                fontWeight: "500",
-                fontSize: { xs: "16px", sm: "16px", md: "18px", lg: "20px" },
-              }}
+              variant="body2"
             >
               {contactCardDetails.phone}
             </Typography>

@@ -34,13 +34,13 @@ const Blog = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
           {/* Heading 1 */}
-          <Typography variant="h1" style={typographyh1Styles}>
+          <Typography variant="h2">
             {blogSection.blogSectionTitle}
           </Typography>
         </Grid>
         <Grid item xs={12} md={4}>
           {/* Body 2 */}
-          <Typography variant="body2" style={typographybody2Styles}>
+          <Typography variant="body2" marginTop={"0.313rem"} sx={{opacity: 0.6}}>
             {blogSection.blogSectionDescription}
           </Typography>
         </Grid>

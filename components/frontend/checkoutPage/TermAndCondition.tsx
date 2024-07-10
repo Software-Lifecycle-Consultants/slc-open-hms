@@ -12,67 +12,24 @@ const TermAndCondition = () => {
     <Grid>
       {/* Terms and Conditions */}
       <Typography
-        variant="h5"
-        className={mulish.className}
-        style={{
-          color: "#11142D",
-          fontSize: "16px",
-          lineHeight: "120%",
-          fontStyle: "normal",
-          letterSpacing: "0.08px",
-          fontWeight: "700",
-          marginTop: "8px",
-          textAlign: "center",
-        }}
+        variant="h4" fontWeight='700' marginTop='0.5rem' textAlign='center'
+        sx={{ '@media (max-width:600px)': { fontWeight: 700 } }}
       >
         {termsText.termTitle}
       </Typography>
       {/* Special Request */}
       <Typography
-        variant="body1"
-        className={mulish.className}
-        style={{
-          color: "#9A9AB0",
-          fontSize: "16px",
-          lineHeight: "125%",
-          fontStyle: "normal",
-          letterSpacing: "0.08px",
-          fontWeight: "400",
-          marginTop: "16px",
-          textAlign: "center",
-        }}
+        variant='h4' color='#9A9AB0' marginTop='1rem' textAlign='center'
       >
         {termsText.term1}
       </Typography>
       <Typography
-        variant="body1"
-        className={mulish.className}
-        style={{
-          color: "#9A9AB0",
-          fontSize: "16px",
-          lineHeight: "125%",
-          fontStyle: "normal",
-          letterSpacing: "0.08px",
-          fontWeight: "400",
-          marginTop: "16px",
-          textAlign: "center",
-        }}
+        variant='h4' color='#9A9AB0' marginTop='1rem' textAlign='center'
       >
         {termsText.term2}
       </Typography>
       <Typography
-        variant="body1"
-        className={mulish.className}
-        style={{
-          color: "#9A9AB0",
-          fontSize: "16px",
-          lineHeight: "125%",
-          fontStyle: "normal",
-          letterSpacing: "0.08px",
-          fontWeight: "400",
-          marginTop: "16px",
-          textAlign: "center",
-        }}
+        variant='h4' color='#9A9AB0' marginTop='1rem' textAlign='center'
       >
         {termsText.term3}
       </Typography>

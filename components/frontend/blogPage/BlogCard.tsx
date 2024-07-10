@@ -76,27 +76,15 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, author, date, title, descrip
           
             <Box sx={{ display: "flex",  }}>
               {/* title section of the card  */}
-            <Typography sx={{fontSize:"24px",}}> {title} </Typography>
+            <Typography variant='body1'> {title} </Typography>
             </Box>
-            <Box>{description}</Box>
+            <Box><Typography variant='h4'>{description}</Typography></Box>
             
             <Stack direction="row" justifyContent="flex-end">      
     <Link href={"/blog-detail"}>
       <Button 
             sx={{fontSize: {md:"14px", xs:"10px"},}}
             variant="contained"
-              style={{
-                background: "var(--l-2, linear-gradient(135deg, #8482FF 0%, #7723FE 100%))",
-                borderRadius: "45px",
-                color: "#FFF",
-                lineHeight: "180%",
-                fontStyle: "normal",
-                letterSpacing: "-0.14px",
-                fontWeight: "500",
-                marginBottom:"25px",
-                marginTop:"25px",
-                textTransform: "none",
-              }}
           >
              {bannerData.Btntxtblogcard}
             <LaunchIcon sx={{ color: "#FFFFFF" ,  fontSize: {xl:"10px", md:"14px", xs:"10px"}, marginLeft:"8px"}} />

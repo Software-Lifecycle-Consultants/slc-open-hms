@@ -13,89 +13,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useRouter } from "next/navigation";
 import { additionalInfoSection } from "@/data/roomDetailsPage";
 import { accordionData } from "@/data/roomDetailsPage";
-import { lora, mulish } from "../../../app/fonts";
-
-const accordionTypographyStyle = [
-  {
-    color: "#9A9AB0",
-    fontSize: "16px",
-    lineHeight: "125%",
-    fontStyle: "normal",
-    letterSpacing: "0.08px",
-    fontWeight: "400",
-  },
-];
-
-const titleStyle = [
-  {
-    color: "#11142D",
-    fontSize: "39px",
-    fontStyle: "normal",
-    fontWeight: 700,
-    lineHeight: "120%",
-    letterSpacing: "0.195px",
-  },
-];
-
-const descriptinStyle = [
-  {
-    color: "#515151",
-    fontSize: "16px",
-    lineHeight: "125%",
-    fontStyle: "normal",
-    letterSpacing: "0.08px",
-    fontWeight: "400",
-    marginTop: "24px",
-  },
-];
-
-const checkInStyle = [
-  {
-    color: "#11142D",
-    fontSize: "16px",
-    fontStyle: "normal",
-    fontWeight: 700,
-    lineHeight: "120%",
-    letterSpacing: "0.08px",
-    marginTop: "32px",
-  },
-];
-
-const checkoutStyle = [
-  {
-    color: "#11142D",
-    fontSize: "16px",
-    fontStyle: "normal",
-    fontWeight: 700,
-    lineHeight: "120%",
-    letterSpacing: "0.08px",
-    marginTop: "24px",
-  },
-];
-
-const buttonStyle = [
-  {
-    borderRadius: "8px",
-    display: "inline-flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "11px 24px",
-    gap: "10px",
-    textTransform: "none",
-    width: "45%",
-    height: "56px",
-    marginTop: "40px",
-    fontSize: "16px",
-    fontStyle: "normal",
-    fontWeight: "600",
-    lineHeight: "120%",
-    letterSpacing: "0.08px",
-    backgroundColor: "#C7923E",
-    "&:hover": {
-      backgroundColor: "#c7833e",
-    },
-  },
-];
 
 const AdditionalInfo = () => {
   const router = useRouter();
@@ -108,31 +25,34 @@ const AdditionalInfo = () => {
     <>
       <Grid container spacing={1}>
         <Grid item xs={12} md={6}>
-          <Typography variant="h3" className={lora.className} sx={titleStyle}>
+          <Typography fontSize="39px"fontFamily="Mulish" color="#11142D">
             {additionalInfoSection.additionalInfoSectionTitle}
           </Typography>
           <Typography
-            variant="body1"
-            className={mulish.className}
-            sx={descriptinStyle}
+            variant="h4"
+            marginTop="25px"
           >
             {additionalInfoSection.additionalInfoSectionDescription}
           </Typography>
-          <Typography variant="h6" className={lora.className} sx={checkInStyle}>
+          <Typography variant="h4" color="#11142D" marginTop="32px" fontWeight="700"
+          sx={{'@media (max-width:600px)': {
+            fontSize: '1rem',
+            fontWeight:'700',
+          },}}>
             Check in {additionalInfoSection.checkinTime}
           </Typography>
           <Typography
-            variant="h6"
-            className={lora.className}
-            sx={checkoutStyle}
-          >
+            variant="h4" color="#11142D" marginTop="25px" fontWeight="700"
+            sx={{'@media (max-width:600px)': {
+              fontSize: '1rem',
+              fontWeight:'700',
+            },}}>
             Check Out {additionalInfoSection.checkoutTime}
           </Typography>
           <Button
+          sx={{marginTop:"25px"}}
             variant="contained"
-            className={mulish.className}
             onClick={navigationToCheckoutScreen}
-            sx={buttonStyle}
           >
             {additionalInfoSection.additionalInfoSectionctaCaption}
           </Button>
@@ -163,15 +83,14 @@ const AdditionalInfo = () => {
                   id="panel1a-header"
                 >
                   <Typography
-                    variant="body1"
-                    className={mulish.className}
-                    sx={accordionTypographyStyle}
+                    variant="h4"
+                    color="#9A9AB0"
                   >
                     {item.accordion}
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>{item.accordionDescription}</Typography>
+                  <Typography variant="h4">{item.accordionDescription}</Typography>
                 </AccordionDetails>
               </Accordion>
             ))}

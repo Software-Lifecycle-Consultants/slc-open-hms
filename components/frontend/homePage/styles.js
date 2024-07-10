@@ -4,11 +4,9 @@
 /* Typography style for heading 5 */
 export const typographyh5Style = {
   color: "#E97458",
-  fontSize: { xs: "18px", sm: "22px", md: "18px" },
   fontStyle: "normal",
   fontWeight: "700",
   lineHeight: "normal",
-  textTransform: "uppercase",
   marginTop: { xs: "14px", md: "5px" },
 };
 
