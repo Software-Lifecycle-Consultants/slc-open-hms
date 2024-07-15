@@ -21,6 +21,19 @@ const VisuallyHiddenInput = styled("input")({
 
 export default function StandardImageList() {
   const [files, setfiles] = useState('')
+  function handleImage (e){
+    console.log(e.target.files);
+    setfiles(e.target.files)
+  }
+function handleSave () {
+  const formData  = new FormData()
+  formData.append('files', files[0])
+  axios.post('https://localhost:7042/api/Images', formData).then((result) =>{
+    console.log(result);
+    toast.success("Image Uploaded Successfully");
+  }) 
+}
+
   const VisuallyHiddenInput = styled("input")({
     clip: "rect(0 0 0 0)",
     clipPath: "inset(50%)",
@@ -32,17 +45,7 @@ export default function StandardImageList() {
     whiteSpace: "nowrap",
     width: 1,
   });
-  const handleSave = () => {
-    const url = "https://localhost:7042/api/Images";
-    const data = {
-      "Files" : files 
-    }
-    axios.post(url, data)
-    .then((result) =>{
-      console.log(result);
-      toast.success("Image Uploaded Successfully");
-    })
-  }
+  
   return (
     <>
      <Typography
@@ -97,20 +100,20 @@ export default function StandardImageList() {
           sx={{
             mt: "7",
             backgroundColor: "white",
-            color: "black",
+            color: "black", 
             height: "30px",
             borderRadius: "8",
             marginTop: "-25px",
           }}
         >
-          <VisuallyHiddenInput type="file" />
+          <VisuallyHiddenInput type="file" multiple onChange={handleImage}/>
         </Button>
         </Box>
       </Card>
       {/* Gallery images submit button */}
       <Box mt={2}
        display="flex" justifyContent="center" alignItems="center" > 
-        <Button onClick={() => handleSave()}
+        <Button onClick={handleSave}
           sx={{
             textTransform: "none",
             justifyContent: "center",
