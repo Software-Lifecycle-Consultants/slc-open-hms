@@ -2,7 +2,7 @@
 import * as React from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-import { Box, Card, Stack, Typography } from "@mui/material";
+import { Box, Card, Container, MenuItem, Select, Stack, Typography } from "@mui/material";
 import { category } from "@/data/roomDetails";
 import { FormControl, InputLabel, OutlinedInput, InputAdornment } from "@mui/material";
 import Chip from "@mui/material/Chip";
@@ -57,13 +57,8 @@ export default function Category() {
     >
       <Box>
         <Typography
+          variant="h3"
           mt={2}
-          style={{
-            color: "Gray",
-            fontSize: "16",
-            fontStyle: "normal",
-            letterSpacing: "0.12",
-          }}
         >
           {category.detailsCategory}
         </Typography>
@@ -72,110 +67,68 @@ export default function Category() {
       <Stack spacing={2} marginTop={2}>
         {/* Autocomplete component for the category 1 */}
         <Typography
+          variant='h2'
           mt={2}
-          style={{
-            color: "Gray",
-            fontSize: "16",
-            fontStyle: "normal",
-            letterSpacing: "0.12",
-            fontWeight: "700",
-          }}
         >
           {category.category1}
         </Typography>
-        {/* Autocomplete component for the category 2 */}
-        <Autocomplete
-          multiple
-          id="tags-filled"
-          freeSolo
-          onInputChange={handleChange} // Listen for input changes
-          renderTags={(value, getTagProps) =>
-            value.map((option, index) => (
-              <Chip
-                variant="outlined"
-                label={option}
-                {...getTagProps({ index })}
-              />
-            ))
-          }
-          renderInput={(params) => (
-            <TextField {...params} label="Enter Category Name" />
-          )}
-          options={[]}
-        />
+        {/* Dropdown component for the category 2 */}
+          <FormControl fullWidth margin="normal">
+          <InputLabel id="roomtype-select-label">
+              <Typography>Select Room Type</Typography>
+            </InputLabel>
+            <Select
+            labelId="roomtype-select-label"
+            label="Select Room Type"
+            >
+              <MenuItem value="a"> <Typography>Family Room</Typography></MenuItem>
+              <MenuItem value="b"> <Typography>Executive Room</Typography></MenuItem>
+              <MenuItem value="c"> <Typography>Luxury Room</Typography></MenuItem>
+            </Select>
+          </FormControl>
         <Typography
           mt={2}
-          style={{
-            color: "Gray",
-            fontSize: "16",
-            fontStyle: "normal",
-            letterSpacing: "0.12",
-            fontWeight: "700",
-          }}
+          variant='h2'
         >
           {category.category2}
         </Typography>
-        {/* Autocomplete component for the category 3*/}
-        <Autocomplete
-          multiple
-          id="tags-filled"
-          freeSolo
-          onInputChange={handleChange} // Listen for input changes
-          renderTags={(value, getTagProps) =>
-            value.map((option, index) => (
-              <Chip
-                variant="outlined"
-                label={option}
-                {...getTagProps({ index })}
-              />
-            ))
-          }
-          renderInput={(params) => (
-            <TextField {...params} label="Enter Category Name" />
-          )}
-          options={[]}
-        />
+        {/* Dropdown component for the category 3*/}
+        <FormControl fullWidth margin="normal">
+          <InputLabel id="bedtype-select-label">
+              <Typography>Select Bed Type</Typography>
+            </InputLabel>
+            <Select
+            labelId="bedtype-select-label"
+            label="Select bed Type"
+            >
+              <MenuItem value="e"> <Typography>King Size</Typography></MenuItem>
+              <MenuItem value="f"> <Typography>Double Size</Typography></MenuItem>
+              <MenuItem value="g"> <Typography>Single</Typography></MenuItem>
+            </Select>
+          </FormControl>
         <Typography
+          variant='h2'
           mt={2}
-          style={{
-            color: "Gray",
-            fontSize: "16",
-            fontStyle: "normal",
-            letterSpacing: "0.12",
-            fontWeight: "700",
-          }}
         >
           {category.category3}
         </Typography>
-        {/* Autocomplete component for the category 4 */}
-        <Autocomplete
-          multiple
-          id="tags-filled"
-          freeSolo
-          onInputChange={handleChange} // Listen for input changes
-          renderTags={(value, getTagProps) =>
-            value.map((option, index) => (
-              <Chip
-                variant="outlined"
-                label={option}
-                {...getTagProps({ index })}
-              />
-            ))
-          }
-          renderInput={(params) => (
-            <TextField {...params} label="Enter Category Name" />
-          )}
-          options={[]}
-        />
+        {/* Dropdown component for the category 4 */}
+        <FormControl fullWidth margin="normal">
+          <InputLabel id="guest-select-label">
+              <Typography>Select Guests</Typography>
+            </InputLabel>
+            <Select
+            labelId="guest-select-label"
+            label="Select Guests"
+            >
+              <MenuItem value="h"> <Typography>01</Typography></MenuItem>
+              <MenuItem value="i"> <Typography>02</Typography></MenuItem>
+              <MenuItem value="j"> <Typography>03</Typography></MenuItem>
+            </Select>
+          </FormControl>
         <Typography
+          variant='h2'
           mt={2}
-          style={{
-            color: "Gray",
-            fontSize: "16",
-            fontStyle: "normal",
-            letterSpacing: "0.12px",
-            fontWeight: "700",
-          }}
         >
           Price
         </Typography>
@@ -191,3 +144,7 @@ export default function Category() {
     </Card>
   );
 };
+function useState<T>(arg0: string): [any, any] {
+  throw new Error("Function not implemented.");
+}
+
