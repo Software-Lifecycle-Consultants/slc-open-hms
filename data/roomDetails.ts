@@ -9,9 +9,9 @@ export const details = {
 
 export const category = {
   detailsCategory: "Category",
-  category1: "Category 1",
-  category2: "Category 2",
-  category3: "Category 3",
+  category1: "Room Type",
+  category2: "Beds",
+  category3: "Guest",
 };
 
 export const serviceAdd = {
