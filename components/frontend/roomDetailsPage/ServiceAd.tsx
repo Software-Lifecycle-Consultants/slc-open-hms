@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { Typography, Card, CardContent, Grid, Stack, TextField, Autocomplete, Box } from "@mui/material";
+import { Typography, Card, CardContent, Grid, Stack, TextField, Autocomplete, Box, Checkbox, FormGroup, FormControlLabel } from "@mui/material";
 import { serviceAdd } from "@/data/roomDetails";
 import Chip from "@mui/material/Chip";
 
@@ -44,7 +44,7 @@ export default function ServiceAd() {
       <Card
         elevation={0}
         sx={{
-          height: "420px",
+          height: "100%",
           Width: "20px",
           border: "1px solid",
           borderRadius: "8",
@@ -54,15 +54,9 @@ export default function ServiceAd() {
       >
         <Box>
           <Typography
+          variant="h2"
           mt={2}
           ml={2}
-            style={{
-              color: "Gray",
-              fontSize: "16",
-              fontStyle: "normal",
-              letterSpacing: "0.12",
-              fontWeight: "700",
-            }}
           >
             {serviceAdd.serviceAddPageTitle}
           </Typography>
@@ -81,15 +75,9 @@ export default function ServiceAd() {
 
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Typography
+                variant="h2"
                 mt={2}
                 mb={2}
-                  style={{
-                    color: "Gray",
-                    fontSize: "16",
-                    fontStyle: "normal",
-                    letterSpacing: "0.12",
-                    fontWeight: "700",
-                  }}
                 >
                   Description
                 </Typography>
@@ -103,25 +91,62 @@ export default function ServiceAd() {
               </Grid>
             </Grid>
             <Stack spacing={2} marginTop={2}>
-              <Autocomplete
-                multiple
-                id="tags-filled"
-                freeSolo
-                onInputChange={handleChange} // Listen for input changes
-                renderTags={(value, getTagProps) =>
-                  value.map((option, index) => (
-                    <Chip
-                      variant="outlined"
-                      label={option}
-                      {...getTagProps({ index })}
-                    />
-                  ))
-                }
-                renderInput={(params) => (
-                  <TextField {...params} label="Tags" /> // Towels is the default value
-                )}
-                options={[]}
-              />
+            <Typography
+                variant='h2'
+                mt={2}
+                mb={2}                
+                >
+                  Add ons
+                </Typography>
+                <Box>
+                <Grid container spacing={2}>
+                  <Grid item xs={2} lg={2}>
+                    <Box>
+                    <FormGroup>
+                      <FormControlLabel control={<Checkbox />} label='Cheese' />
+                      <FormControlLabel control={<Checkbox />} label='Onions' />
+                      <FormControlLabel control={<Checkbox />} label='Bacon' />
+                    </FormGroup>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} lg={2}>
+                    <Box>
+                    <FormGroup>
+                      <FormControlLabel control={<Checkbox />} label='Pepperoni' />
+                      <FormControlLabel control={<Checkbox />} label='Ham' />
+                      <FormControlLabel control={<Checkbox />} label='French Fries' />
+                    </FormGroup>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} lg={2}>
+                    <Box>
+                    <FormGroup>
+                      <FormControlLabel control={<Checkbox />} label='Peppers' />
+                      <FormControlLabel control={<Checkbox />} label='Side Salad' />
+                      <FormControlLabel control={<Checkbox />} label='Salad' />
+                    </FormGroup>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} lg={2}>
+                    <Box>
+                    <FormGroup>
+                      <FormControlLabel control={<Checkbox />} label='Mushrooms' />
+                      <FormControlLabel control={<Checkbox />} label='Olives' />
+                      <FormControlLabel control={<Checkbox />} label='Bacon' />
+                    </FormGroup>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} lg={2}>
+                    <Box>
+                    <FormGroup >
+                      <FormControlLabel control={<Checkbox />} label='Sausage' />
+                      <FormControlLabel control={<Checkbox />} label='Pineapple' />
+                      <FormControlLabel control={<Checkbox />} label='Bacon' />
+                    </FormGroup>
+                    </Box>
+                  </Grid>
+                </Grid>
+                </Box>
             </Stack>
           </form>
         </CardContent>
