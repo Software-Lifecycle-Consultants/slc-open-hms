@@ -33,6 +33,7 @@ const TextEditor: React.FC<TextEditorProps> = ({
         onChange={handleBodyChange} // Handler for content changes.
         value={bodyContent} // The content of the editor.
         theme="snow" // Editor theme.
+         style={{ width: '100%', height: '100%', color: 'Black' }}
       />
     </div>
   );

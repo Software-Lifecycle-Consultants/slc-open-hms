@@ -132,6 +132,11 @@ const DestinationCards: React.FC = () => {
             variant="outlined"
             required
             sx={{ m: 1 }}
+            InputProps={{
+              sx: {
+                color: "black", // Set the input text color to black
+              },
+            }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
@@ -145,6 +150,11 @@ const DestinationCards: React.FC = () => {
             multiline
             rows={4}
             sx={{ m: 1 }}
+            InputProps={{
+              sx: {
+                color: "black", // Set the input text color to black
+              },
+            }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
@@ -157,6 +167,11 @@ const DestinationCards: React.FC = () => {
             variant="outlined"
             required
             sx={{ m: 1 }}
+            InputProps={{
+              sx: {
+                color: "black", // Set the input text color to black
+              },
+            }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
@@ -169,6 +184,11 @@ const DestinationCards: React.FC = () => {
             variant="outlined"
             required
             sx={{ m: 1 }}
+            InputProps={{
+              sx: {
+                color: "black", // Set the input text color to black
+              },
+            }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
@@ -182,6 +202,11 @@ const DestinationCards: React.FC = () => {
             multiline
             rows={4}
             sx={{ m: 1 }}
+            InputProps={{
+              sx: {
+                color: "black", // Set the input text color to black
+              },
+            }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
@@ -194,6 +219,11 @@ const DestinationCards: React.FC = () => {
             variant="outlined"
             required
             sx={{ m: 1 }}
+            InputProps={{
+              sx: {
+                color: "black", // Set the input text color to black
+              },
+            }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
@@ -206,6 +236,11 @@ const DestinationCards: React.FC = () => {
             variant="outlined"
             required
             sx={{ m: 1 }}
+            InputProps={{
+              sx: {
+                color: "black", // Set the input text color to black
+              },
+            }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
@@ -218,12 +253,16 @@ const DestinationCards: React.FC = () => {
             variant="outlined"
             required
             sx={{ m: 1 }}
+            InputProps={{
+              sx: {
+                color: "black", // Set the input text color to black
+              },
+            }}
           />
         </Card>
         <Grid my={4}>
           <Box display="flex" justifyContent="end" alignItems="center">
-            <Button
-            >
+            <Button>
               <Typography
                 style={{
                   color: "white",

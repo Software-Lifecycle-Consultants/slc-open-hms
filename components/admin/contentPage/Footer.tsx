@@ -50,6 +50,11 @@ const Footer: React.FC = () => {
               label="Drag & Drop Your images or Browse"
               variant="outlined"
               required
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
             <Button startIcon={<CloudUploadIcon />}>
               {
@@ -66,6 +71,11 @@ const Footer: React.FC = () => {
               variant="outlined"
               multiline
               rows={4}
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
             <Typography variant="h3" sx={{ marginTop: "10px" }}>
               Owner Of Copyright
@@ -75,6 +85,11 @@ const Footer: React.FC = () => {
               label="Enter Owner Of Copyright"
               variant="outlined"
               multiline
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
           </Box>
         </Card>
@@ -101,6 +116,11 @@ const Footer: React.FC = () => {
                 label="Enter Footer Section 1"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 Sub Section 1
@@ -110,6 +130,11 @@ const Footer: React.FC = () => {
                 label="Enter Sub Section 1"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 Sub Section 2
@@ -119,6 +144,11 @@ const Footer: React.FC = () => {
                 label="Enter Sub Section 2"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 Sub Section 3
@@ -128,6 +158,11 @@ const Footer: React.FC = () => {
                 label="Enter Sub Section 3"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
             </Card>
           </Grid>
@@ -153,6 +188,11 @@ const Footer: React.FC = () => {
                 label="Enter Footer Section 1"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 Sub Section 1
@@ -162,6 +202,11 @@ const Footer: React.FC = () => {
                 label="Enter Sub Section 1"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 Sub Section 2
@@ -171,13 +216,25 @@ const Footer: React.FC = () => {
                 label="Enter Sub Section 2"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
-              <Typography sx={{ marginTop: "10px" }}>Sub Section 3</Typography>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
+                Sub Section 3
+              </Typography>
               <TextField
                 fullWidth
                 label="Enter Sub Section 3"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
             </Card>
           </Grid>
@@ -203,6 +260,11 @@ const Footer: React.FC = () => {
                 label="Enter Footer Section 1"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 Sub Section 1
@@ -212,6 +274,11 @@ const Footer: React.FC = () => {
                 label="Enter Sub Section 1"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 Sub Section 2
@@ -221,6 +288,11 @@ const Footer: React.FC = () => {
                 label="Enter Sub Section 2"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 Sub Section 3
@@ -230,15 +302,18 @@ const Footer: React.FC = () => {
                 label="Enter Sub Section 3"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
             </Card>
           </Grid>
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} my={4}>
           <Box display="flex" justifyContent="end" alignItems="center">
-            <Button
-              endIcon={<EditIcon />}
-            >
+            <Button endIcon={<EditIcon />}>
               <Typography
                 style={{
                   color: "White",

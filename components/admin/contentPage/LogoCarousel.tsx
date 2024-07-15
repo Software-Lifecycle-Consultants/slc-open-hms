@@ -49,7 +49,8 @@ const LogoCarousel: React.FC = () => {
             variant="h2"
             sx={{ marginTop: "05px", fontWeight: "bold" }}
           >
-            {adminContentLogoCarousel.adminContentLogoCarouselHeaderTitle // Display the header title
+            {
+              adminContentLogoCarousel.adminContentLogoCarouselHeaderTitle // Display the header title
             }
           </Typography>
           <Box
@@ -65,11 +66,15 @@ const LogoCarousel: React.FC = () => {
               label="Drag & Drop Your images or Browse"
               variant="outlined"
               required
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
-            <Button
-              startIcon={<CloudUploadIcon />}
-            >
-              {adminContentLogoCarousel.adminContentLogoCarouselUploadButton // Display the upload button text
+            <Button startIcon={<CloudUploadIcon />}>
+              {
+                adminContentLogoCarousel.adminContentLogoCarouselUploadButton // Display the upload button text
               }
               <VisuallyHiddenInput type="file" />
             </Button>
@@ -77,14 +82,14 @@ const LogoCarousel: React.FC = () => {
         </Card>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
           <Box display="flex" justifyContent="end" alignItems="center">
-            <Button
-            >
+            <Button>
               <Typography
                 style={{
                   color: "white",
                 }}
               >
-                {adminContentLogoCarousel.adminContentLogoCarouselSubmitButton // Display the submit button text
+                {
+                  adminContentLogoCarousel.adminContentLogoCarouselSubmitButton // Display the submit button text
                 }
               </Typography>
             </Button>

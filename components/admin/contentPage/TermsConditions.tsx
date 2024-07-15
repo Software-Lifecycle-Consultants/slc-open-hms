@@ -102,14 +102,13 @@ const TermsConditions: React.FC = () => {
             <TextEditor
               onBodyChange={handleBodyChange}
               bodyContent={formValues.bodyContent}
+              
             />
           </Grid>
         </Card>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
           <Box display="flex" justifyContent="end" alignItems="center">
-            <Button
-              endIcon={<EditIcon />}
-            >
+            <Button endIcon={<EditIcon />}>
               <Typography
                 style={{
                   color: "White",

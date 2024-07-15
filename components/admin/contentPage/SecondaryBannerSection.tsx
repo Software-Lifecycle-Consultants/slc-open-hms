@@ -47,6 +47,11 @@ const SecondaryBannerSection: React.FC = () => {
               label="Enter Secondary Banner Section Title"
               variant="outlined"
               required
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
             <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
@@ -60,6 +65,11 @@ const SecondaryBannerSection: React.FC = () => {
               variant="outlined"
               multiline
               rows={4}
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
             <Grid container>
               <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
@@ -74,6 +84,11 @@ const SecondaryBannerSection: React.FC = () => {
                   variant="outlined"
                   required
                   sx={{ m: 1, width: "44ch" }}
+                  InputProps={{
+                    sx: {
+                      color: "black", // Set the input text color to black
+                    },
+                  }}
                 />
               </Grid>
             </Grid>
@@ -88,6 +103,11 @@ const SecondaryBannerSection: React.FC = () => {
               label="Enter Video URL Link"
               variant="outlined"
               multiline
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
           </Box>
         </Card>

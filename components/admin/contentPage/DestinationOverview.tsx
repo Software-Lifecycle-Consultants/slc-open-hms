@@ -48,7 +48,7 @@ const DestinationOverview: React.FC = () => {
             noValidate
             autoComplete="off"
           >
-            <Typography sx={{ marginTop: "10px" }}>
+            <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
                 adminContentDestinationOverview.adminContentMainBarTitle01 // Display the main banner title
               }
@@ -58,8 +58,13 @@ const DestinationOverview: React.FC = () => {
               label="Enter Main Banner Card Title"
               variant="outlined"
               required
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
-            <Typography sx={{ marginTop: "10px" }}>
+            <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
                 adminContentDestinationOverview.adminContentMainBarTitle02 // Display the main banner description
               }
@@ -70,8 +75,13 @@ const DestinationOverview: React.FC = () => {
               variant="outlined"
               multiline
               rows={4}
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
-            <Typography sx={{ marginTop: "10px" }}>
+            <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
                 adminContentDestinationOverview.adminContentMainBarTitle03 // Display the main banner image
               }
@@ -81,10 +91,13 @@ const DestinationOverview: React.FC = () => {
               label="Drag & Drop Your images or Browse"
               variant="outlined"
               required
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
-            <Button
-              startIcon={<CloudUploadIcon />}
-            >
+            <Button startIcon={<CloudUploadIcon />}>
               {
                 adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
               }
@@ -109,7 +122,7 @@ const DestinationOverview: React.FC = () => {
               }}
             >
               <Typography
-                variant="h6"
+                variant="h2"
                 sx={{ marginTop: "05px", fontWeight: "bold" }}
               >
                 {
@@ -117,7 +130,7 @@ const DestinationOverview: React.FC = () => {
                 }
               </Typography>
 
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
                   adminContentDestinationOverview.adminContentCardMainBarTitle01 // Display the card 02 title
                 }
@@ -127,8 +140,13 @@ const DestinationOverview: React.FC = () => {
                 label="Enter Main Banner Card Title"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
                   adminContentDestinationOverview.adminContentCardMainBarDesTitle01 // Display the card 02 description
                 }
@@ -139,8 +157,13 @@ const DestinationOverview: React.FC = () => {
                 variant="outlined"
                 multiline
                 rows={4}
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
                   adminContentDestinationOverview.adminContentMainBarTitle03 // Display the main banner image
                 }
@@ -150,10 +173,13 @@ const DestinationOverview: React.FC = () => {
                 label="Drag & Drop Your images or Browse"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
-              <Button
-                startIcon={<CloudUploadIcon />}
-              >
+              <Button startIcon={<CloudUploadIcon />}>
                 {
                   adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
                 }
@@ -177,7 +203,7 @@ const DestinationOverview: React.FC = () => {
               }}
             >
               <Typography
-                variant="h6"
+                variant="h2"
                 sx={{ marginTop: "05px", fontWeight: "bold" }}
               >
                 {
@@ -185,7 +211,7 @@ const DestinationOverview: React.FC = () => {
                 }
               </Typography>
 
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
                   adminContentDestinationOverview.adminContentCardMainBarTitle02 // Display the card 02 title
                 }
@@ -195,8 +221,13 @@ const DestinationOverview: React.FC = () => {
                 label="Enter Main Banner Card Title"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
                   adminContentDestinationOverview.adminContentCardMainBarDesTitle02 // Display the card 02 description
                 }
@@ -207,8 +238,13 @@ const DestinationOverview: React.FC = () => {
                 variant="outlined"
                 multiline
                 rows={4}
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
                   adminContentDestinationOverview.adminContentMainBarTitle03 // Display the main banner image
                 }
@@ -218,10 +254,13 @@ const DestinationOverview: React.FC = () => {
                 label="Drag & Drop Your images or Browse"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
-              <Button
-                startIcon={<CloudUploadIcon />}
-              >
+              <Button startIcon={<CloudUploadIcon />}>
                 {
                   adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
                 }
@@ -245,7 +284,7 @@ const DestinationOverview: React.FC = () => {
               }}
             >
               <Typography
-                variant="h6"
+                variant="h2"
                 sx={{ marginTop: "05px", fontWeight: "bold" }}
               >
                 {
@@ -253,7 +292,7 @@ const DestinationOverview: React.FC = () => {
                 }
               </Typography>
 
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
                   adminContentDestinationOverview.adminContentCardMainBarTitle03 // Display the card 03 title
                 }
@@ -263,8 +302,13 @@ const DestinationOverview: React.FC = () => {
                 label="Enter Main Banner Card Title"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
                   adminContentDestinationOverview.adminContentCardMainBarDesTitle03 // Display the card 03 description
                 }
@@ -275,8 +319,13 @@ const DestinationOverview: React.FC = () => {
                 variant="outlined"
                 multiline
                 rows={4}
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
-              <Typography sx={{ marginTop: "10px" }}>
+              <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
                   adminContentDestinationOverview.adminContentMainBarTitle03 // Display the main banner image
                 }
@@ -286,10 +335,13 @@ const DestinationOverview: React.FC = () => {
                 label="Drag & Drop Your images or Browse"
                 variant="outlined"
                 required
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
-              <Button
-                startIcon={<CloudUploadIcon />}
-              >
+              <Button startIcon={<CloudUploadIcon />}>
                 {
                   adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
                 }
@@ -300,9 +352,7 @@ const DestinationOverview: React.FC = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} my={1}>
           <Box display="flex" justifyContent="end" alignItems="center">
-            <Button
-              endIcon={<EditIcon />}
-            >
+            <Button endIcon={<EditIcon />}>
               <Typography
                 style={{
                   color: "White",
@@ -313,8 +363,7 @@ const DestinationOverview: React.FC = () => {
                 }
               </Typography>
             </Button>
-            <Button
-            >
+            <Button>
               <Typography
                 style={{
                   color: "white",

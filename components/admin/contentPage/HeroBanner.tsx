@@ -44,6 +44,11 @@ const HeroBanner: React.FC = () => {
               label="Enter Banner Title"
               variant="outlined"
               required
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
             <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
@@ -56,6 +61,11 @@ const HeroBanner: React.FC = () => {
               label="Enter Banner Sub Title"
               variant="outlined"
               required
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
             <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
@@ -69,6 +79,11 @@ const HeroBanner: React.FC = () => {
               variant="outlined"
               multiline
               rows={4}
+              InputProps={{
+                sx: {
+                  color: "black", // Set the input text color to black
+                },
+              }}
             />
           </Box>
           <Grid container>
@@ -84,6 +99,11 @@ const HeroBanner: React.FC = () => {
                 variant="outlined"
                 required
                 sx={{ m: 1, width: "40ch" }}
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
@@ -98,15 +118,18 @@ const HeroBanner: React.FC = () => {
                 variant="outlined"
                 required
                 sx={{ m: 1, width: "40ch" }}
+                InputProps={{
+                  sx: {
+                    color: "black", // Set the input text color to black
+                  },
+                }}
               />
             </Grid>
           </Grid>
         </Card>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
           <Box display="flex" justifyContent="end" alignItems="center">
-            <Button
-              endIcon={<EditIcon />}
-            >
+            <Button endIcon={<EditIcon />}>
               <Typography
                 style={{
                   color: "White",
@@ -117,10 +140,8 @@ const HeroBanner: React.FC = () => {
                 }
               </Typography>
             </Button>
-            <Button
-            >
-              <Typography
-              >
+            <Button>
+              <Typography>
                 {
                   adminContentHeroBanner.adminContentBannerDetailsSubmitButton // Display the submit button text
                 }

@@ -149,6 +149,11 @@ const Testimonials: React.FC = () => {
             variant="outlined"
             multiline
             sx={{ m: 1 }}
+            InputProps={{
+              sx: {
+                color: "black", // Set the input text color to black
+              },
+            }}
           />
           <Button startIcon={<CloudUploadIcon />}>
             {
@@ -167,6 +172,11 @@ const Testimonials: React.FC = () => {
             variant="outlined"
             required
             sx={{ m: 1 }}
+            InputProps={{
+              sx: {
+                color: "black", // Set the input text color to black
+              },
+            }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
@@ -180,6 +190,11 @@ const Testimonials: React.FC = () => {
             multiline
             rows={4}
             sx={{ m: 1 }}
+            InputProps={{
+              sx: {
+                color: "black", // Set the input text color to black
+              },
+            }}
           />
           {/* Ratings*/}
           <Typography variant="h3" component="legend">
