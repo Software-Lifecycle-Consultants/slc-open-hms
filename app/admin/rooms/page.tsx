@@ -32,7 +32,7 @@ const rooms = [
   { name: "Room Name 4" },
 ];
 
-const Dashboard = () => {
+const Rooms = () => {
   const [roomTypeChips, setRoomTypeChips] = useState<string[]>([]);
   const [bedChips, setBedChips] = useState<string[]>([]);
   const [guestChips, setGuestChips] = useState<string[]>([]);
@@ -332,4 +332,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Rooms;
