@@ -235,7 +235,7 @@ const themeClient = createTheme({
     },
   },
 });
-// Create a dark theme
+// Create a Admin theme
 const themeAdmin = createTheme({
   palette: {
     primary: {
@@ -249,7 +249,7 @@ const themeAdmin = createTheme({
       paper: "#FFFFFF",
     },
     text: {
-      primary: "#FFFFFF",
+      primary: "#000000",
       secondary: grey[500],
     },
   },
