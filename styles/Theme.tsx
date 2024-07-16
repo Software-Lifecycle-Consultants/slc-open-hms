@@ -249,7 +249,7 @@ const themeAdmin = createTheme({
       paper: "#FFFFFF",
     },
     text: {
-      primary: "#FFFFFF",
+      primary: "#000",
       secondary: grey[500],
     },
   },
