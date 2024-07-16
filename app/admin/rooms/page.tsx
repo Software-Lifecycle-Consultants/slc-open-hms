@@ -9,7 +9,7 @@ import HotelIcon from "@mui/icons-material/Hotel";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
-
+// Interface defining the structure of room data
 interface RoomData {
   id: string;
   roomType: string;
@@ -18,6 +18,7 @@ interface RoomData {
   price: string;
 }
 
+// Static data for room list display and button text
 const roomlistData = {
   roomlistAddMoreButton: "Add More",
   roomlistText: "Family Room",
@@ -26,6 +27,7 @@ const roomlistData = {
   pricetext: "$600.00",
 };
 
+// Sample room data array
 const rooms: RoomData[] = [
   { id: "1", roomType: "Family Room", bedType: "King Size", guestCapacity: "2 Guest", price: "$600.00" },
   { id: "2", roomType: "Double Room", bedType: "Queen Size", guestCapacity: "2 Guest", price: "$500.00" },
@@ -34,6 +36,7 @@ const rooms: RoomData[] = [
 ];
 
 const Rooms = () => {
+  // State hooks for managing chip inputs and lists
   const [roomTypeChips, setRoomTypeChips] = useState<string[]>([]);
   const [bedChips, setBedChips] = useState<string[]>([]);
   const [guestChips, setGuestChips] = useState<string[]>([]);
@@ -43,6 +46,7 @@ const Rooms = () => {
   const [guestInput, setGuestInput] = useState("");
   const [serviceInput, setServiceInput] = useState("");
 
+  // Function to handle adding a new chip to the list
   const handleAddChip = (
     setChips: React.Dispatch<React.SetStateAction<string[]>>,
     input: string,
@@ -54,14 +58,15 @@ const Rooms = () => {
     }
   };
 
+  // Function to handle deleting a chip from the list
   const handleDeleteChip =
     (
       setChips: React.Dispatch<React.SetStateAction<string[]>>,
       chipToDelete: string
     ) =>
-    () => {
-      setChips((chips) => chips.filter((chip) => chip !== chipToDelete));
-    };
+      () => {
+        setChips((chips) => chips.filter((chip) => chip !== chipToDelete));
+      };
 
   return (
     <Box
@@ -72,8 +77,8 @@ const Rooms = () => {
       flexDirection="column"
       alignItems="center"
     >
-      {/* Large Container for Add More Button */}
-      <Container maxWidth="lg" sx={{ position: 'relative', marginBottom:"20px" }}>
+      {/* Container for the "Add More" button */}
+      <Container maxWidth="lg" sx={{ position: 'relative', marginBottom: "20px" }}>
         <Link href="/admin/room-details" style={{ position: 'absolute', top: '15px', right: '22px' }}>
           <Button
             variant="outlined"
@@ -93,8 +98,8 @@ const Rooms = () => {
           </Button>
         </Link>
 
-        {/* Updated Room List using List component */}
-        <Grid maxWidth="lg" sx={{ 
+        {/* List of rooms displayed using the List component */}
+        <Grid maxWidth="lg" sx={{
           marginTop: { xs: "80px", md: "130px" },
           padding: { xs: "0 15px", sm: "0" } // Add some padding on mobile
         }}>
@@ -172,6 +177,8 @@ const Rooms = () => {
           </List>
         </Grid>
       </Container>
+
+      {/* Container for room details and FAQ */}
       <Container maxWidth="lg" sx={{ marginTop: "50px" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
@@ -190,6 +197,7 @@ const Rooms = () => {
                 Room Details
               </Typography>
               <Stack spacing={2} flexGrow={1}>
+                {/* Room Type Input and Chips */}
                 <Typography>Room Type</Typography>
                 <Box>
                   {roomTypeChips.map((chip, index) => (
@@ -215,6 +223,7 @@ const Rooms = () => {
                     }
                   }}
                 />
+                {/* Bed Input and Chips */}
                 <Typography>Bed</Typography>
                 <Box>
                   {bedChips.map((chip, index) => (
@@ -240,6 +249,7 @@ const Rooms = () => {
                     }
                   }}
                 />
+                {/* Guest Input and Chips */}
                 <Typography>Guest</Typography>
                 <Box>
                   {guestChips.map((chip, index) => (
