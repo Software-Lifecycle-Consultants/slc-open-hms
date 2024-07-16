@@ -33,7 +33,7 @@ export const adminDrawerPages = [
   { label: "Blog", route: "./blog" },
   { label: "Contact Us", route: "./edit-contacts" },
   { label: "Settings", route: "./settings" },
-  { label: "Log Out", route: "./logout" },
+  { label: "Log Out", route: "/admin" },
 ];
 
 

@@ -35,7 +35,7 @@ const AdminNavBar: React.FC = () => {
   };
 
   const navigationToLoginPage = () => {
-    router.push("/login");
+    router.push("/admin");
   };
 
   return (
