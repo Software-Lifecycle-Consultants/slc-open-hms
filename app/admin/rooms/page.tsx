@@ -1,12 +1,23 @@
 "use client";
-import React from "react";
-import {useState} from "react";
-import { Box, Container, Grid, Typography, Button, IconButton,TextField,Stack,Chip} from "@mui/material";
+import React, { useState } from "react";
+import {
+  Box, Container, Grid, Typography, Button, IconButton, TextField, Stack, Chip,
+  List, ListItem, ListItemIcon, ListItemText
+} from "@mui/material";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import HotelIcon from "@mui/icons-material/Hotel";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
+
+interface RoomData {
+  id: string;
+  roomType: string;
+  bedType: string;
+  guestCapacity: string;
+  price: string;
+}
+
 const roomlistData = {
   roomlistAddMoreButton: "Add More",
   roomlistText: "Family Room",
@@ -14,13 +25,14 @@ const roomlistData = {
   guesttext: "2 Guest",
   pricetext: "$600.00",
 };
-  const rooms = [
-    { name: "Room Name 1" },
-    { name: "Room Name 2" },
-    { name: "Room Name 3" },
-    { name: "Room Name 4" },
-  ];
-  
+
+const rooms: RoomData[] = [
+  { id: "1", roomType: "Family Room", bedType: "King Size", guestCapacity: "2 Guest", price: "$600.00" },
+  { id: "2", roomType: "Double Room", bedType: "Queen Size", guestCapacity: "2 Guest", price: "$500.00" },
+  { id: "3", roomType: "Single Room", bedType: "Twin Size", guestCapacity: "1 Guest", price: "$400.00" },
+  { id: "4", roomType: "Suite", bedType: "King Size", guestCapacity: "4 Guest", price: "$800.00" },
+];
+
 const Rooms = () => {
   const [roomTypeChips, setRoomTypeChips] = useState<string[]>([]);
   const [bedChips, setBedChips] = useState<string[]>([]);
@@ -50,6 +62,7 @@ const Rooms = () => {
     () => {
       setChips((chips) => chips.filter((chip) => chip !== chipToDelete));
     };
+
   return (
     <Box
       padding={{ xs: "15px", md: "30px" }}
@@ -60,11 +73,11 @@ const Rooms = () => {
       alignItems="center"
     >
       {/* Large Container for Add More Button */}
-      <Container maxWidth="lg" sx={{ position: 'relative', }}>
+      <Container maxWidth="lg" sx={{ position: 'relative', marginBottom:"20px" }}>
         <Link href="/admin/room-details" style={{ position: 'absolute', top: '15px', right: '22px' }}>
           <Button
             variant="outlined"
-            endIcon={<AddCircleOutlineIcon/>}
+            endIcon={<AddCircleOutlineIcon />}
             sx={{
               fontFamily: "Mulish",
               backgroundColor: "#4A5472",
@@ -79,97 +92,85 @@ const Rooms = () => {
             {roomlistData.roomlistAddMoreButton}
           </Button>
         </Link>
-        {/* Small Container for Room List */}
-        <Container maxWidth="lg" sx={{  marginTop:{xs: "80px", md: "130px" }}}>
-          <Box>
-            <Grid container spacing={2} justifyContent="center" alignItems="center">
-              {rooms.map((room, index) => (
-                <Grid item xs={12} key={index}
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginTop: index === 0 ? "0px" : "5px",
-                  }} 
-                  >
-                    <Box
+
+        {/* Updated Room List using List component */}
+        <Grid maxWidth="lg" sx={{ 
+          marginTop: { xs: "80px", md: "130px" },
+          padding: { xs: "0 15px", sm: "0" } // Add some padding on mobile
+        }}>
+          <List>
+            {rooms.map((room) => (
+              <ListItem
+                key={room.id}
+                alignItems="center"
+                sx={{
+                  borderBottom: '1px solid #e0e0e0',
+                  '&:last-child': { borderBottom: 'none' },
+                  py: 2,
+                }}
+              >
+                <ListItemIcon>
+                  <Box
                     sx={{
+                      backgroundColor: "#D9D9D9",
+                      borderRadius: "50%",
                       display: "flex",
-                      flexDirection: { xs: "column", sm: "row" },
                       alignItems: "center",
-                      textAlign: { xs: "center", sm: "left" },
-                      fontFamily: "Mulish",
-                      fontWeight: 550,
-                      fontSize: { xs: "18px", sm: "24px" },
-                      width: "100%",
+                      justifyContent: "center",
+                      width: 45,
+                      height: 45,
                     }}
                   >
-                    <Grid item xs={12} md={1} style={{ display: 'flex', flexDirection: 'column', alignItems: 'left ' }}>
+                    <HotelIcon sx={{ color: '#666666', width: 35, height: 35 }} />
+                  </Box>
+                </ListItemIcon>
+                <ListItemText
+                  disableTypography
+                  primary={
                     <Box
                       sx={{
-                        backgroundColor: "#D9D9D9",
-                        borderRadius: "50%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        width: 45,
-                        height: 45,
-                        marginBottom: { xs: "10px", sm: "0" },
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        width: '100%',
+                        fontFamily: "Mulish",
+                        fontWeight: 550,
+                        fontSize: { xs: "16px", sm: "18px" },
                       }}
                     >
-                      
-                      <HotelIcon
-                      sx={{
-                        color: "#666666",
-                        width: 35,
-                        height: 35,
-                      }}/>
-                      
+                      <Typography component="span" sx={{ flexBasis: { xs: '70%', sm: '20%' } }}>
+                        {room.roomType}
+                      </Typography>
+                      <Box sx={{ display: { xs: 'none', sm: 'block' }, flexBasis: '20%' }}>
+                        <Typography component="span">
+                          {room.bedType}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ display: { xs: 'none', sm: 'block' }, flexBasis: '20%' }}>
+                        <Typography component="span">
+                          {room.guestCapacity}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ display: { xs: 'none', sm: 'block' }, flexBasis: '20%' }}>
+                        <Typography component="span">
+                          {room.price}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'flex-end', flexBasis: { xs: '30%', sm: '20%' } }}>
+                        <IconButton size="small">
+                          <EditIcon />
+                        </IconButton>
+                        <IconButton size="small">
+                          <DeleteIcon />
+                        </IconButton>
+                      </Box>
                     </Box>
-                    </Grid>
-                    <Grid item xs={15} md={4} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                    <Typography ml={10}>{roomlistData.roomlistText}</Typography>
-                    </Grid>
-                    <Grid item xs={15} md={4} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                    <Typography ml={10}>{roomlistData.bedText}</Typography>
-                    </Grid>
-                    <Grid item xs={15} md={4} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                    <Typography ml={10}>{roomlistData.guesttext}</Typography>
-                    </Grid>
-                    <Grid item xs={15} md={4} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                    <Typography ml={10}>{roomlistData.pricetext}</Typography> 
-                    </Grid>
-                    <Grid item xs={15} md={1} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                    <IconButton
-                    sx={{
-                      color: "#000000",
-                    }}>
-                      <EditIcon
-                      sx={{
-                        width: 28,
-                        height: 28,
-                      }} />
-                      </IconButton>
-                      </Grid>
-                      <Grid item xs={12} md={1} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                      <IconButton
-                    sx={{
-                      color: "#000000",
-                    }}>
-                      <DeleteIcon
-                      sx={{
-                        width: 28,
-                        height: 28,
-                      }} />
-                  </IconButton>    
-                  </Grid>
-                  </Box>
-                  
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
-        </Container>
+                  }
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Grid>
       </Container>
       <Container maxWidth="lg" sx={{ marginTop: "50px" }}>
         <Grid container spacing={2}>
