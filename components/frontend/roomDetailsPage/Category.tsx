@@ -144,7 +144,3 @@ export default function Category() {
     </Card>
   );
 };
-function useState<T>(arg0: string): [any, any] {
-  throw new Error("Function not implemented.");
-}
-
