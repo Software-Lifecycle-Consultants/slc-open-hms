@@ -2,6 +2,7 @@
 import React from "react";
 import { Typography, Card, CardContent, Grid, Stack, TextField, Autocomplete, Box, Checkbox, FormGroup, FormControlLabel } from "@mui/material";
 import { serviceAdd } from "@/data/roomDetails";
+import { addons } from "@/data/adminRoomDetails";
 import Chip from "@mui/material/Chip";
 
 export default function ServiceAd() {
@@ -100,51 +101,21 @@ export default function ServiceAd() {
                 </Typography>
                 <Box>
                 <Grid container spacing={2}>
-                  <Grid item xs={2} lg={2}>
-                    <Box>
-                    <FormGroup>
-                      <FormControlLabel control={<Checkbox />} label='Cheese' />
-                      <FormControlLabel control={<Checkbox />} label='Onions' />
-                      <FormControlLabel control={<Checkbox />} label='Bacon' />
-                    </FormGroup>
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} lg={2}>
-                    <Box>
-                    <FormGroup>
-                      <FormControlLabel control={<Checkbox />} label='Pepperoni' />
-                      <FormControlLabel control={<Checkbox />} label='Ham' />
-                      <FormControlLabel control={<Checkbox />} label='French Fries' />
-                    </FormGroup>
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} lg={2}>
-                    <Box>
-                    <FormGroup>
-                      <FormControlLabel control={<Checkbox />} label='Peppers' />
-                      <FormControlLabel control={<Checkbox />} label='Side Salad' />
-                      <FormControlLabel control={<Checkbox />} label='Salad' />
-                    </FormGroup>
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} lg={2}>
-                    <Box>
-                    <FormGroup>
-                      <FormControlLabel control={<Checkbox />} label='Mushrooms' />
-                      <FormControlLabel control={<Checkbox />} label='Olives' />
-                      <FormControlLabel control={<Checkbox />} label='Bacon' />
-                    </FormGroup>
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} lg={2}>
-                    <Box>
-                    <FormGroup >
-                      <FormControlLabel control={<Checkbox />} label='Sausage' />
-                      <FormControlLabel control={<Checkbox />} label='Pineapple' />
-                      <FormControlLabel control={<Checkbox />} label='Bacon' />
-                    </FormGroup>
-                    </Box>
-                  </Grid>
+                  {addons.map((column, columnIndex) => (
+                    <Grid item xs={12} lg={2} key={columnIndex}>
+                      <Box>
+                        <FormGroup>
+                          {column.map((addon, addonIndex) => (
+                            <FormControlLabel
+                              key={`${columnIndex}-${addonIndex}`}
+                              control={<Checkbox />}
+                              label={addon}
+                            />
+                          ))}
+                        </FormGroup>
+                      </Box>
+                    </Grid>
+                  ))}
                 </Grid>
                 </Box>
             </Stack>
