@@ -22,25 +22,57 @@ const editContact = () =>{
     >
       <Container maxWidth="lg" style={{ flexGrow: 1 }}>
         <Box>
-          <Grid container spacing={2} justifyContent="space-between" alignItems="center">
-            <Grid item xs={12} md={6} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <Typography
-                align="left"
-                fontSize="32px"
-                style={{ fontFamily: "Mulish", color: "#4A5472" }}>
+          <Grid
+            container
+            spacing={2}
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Grid
+              item
+              xs={12}
+              md={6}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+              }}
+            >
+              <Typography variant="h1">
                 {/* Render the title */}
                 <b>{adminEditContactUs.adminContactHeaderTitle}</b>
               </Typography>
             </Grid>
-            <Grid item xs={12} md={1.2} style={{ display: 'flex', flexDirection: 'column', alignItems: 'right' }}>
-              <Button variant="outlined" endIcon={<FindInPageIcon />} style={{ backgroundColor: '#4A5472', width:"100px", height:"40px" , borderColor: '#5B5959', borderWidth:2, color: 'white', textTransform: 'capitalize',}}>
+            <Grid
+              item
+              xs={12}
+              md={1.2}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "right",
+              }}
+            >
+              <Button
+                variant="outlined"
+                endIcon={<FindInPageIcon />}
+                style={{
+                  backgroundColor: "#4A5472",
+                  width: "100px",
+                  height: "40px",
+                  borderColor: "#5B5959",
+                  borderWidth: 2,
+                  color: "white",
+                  textTransform: "capitalize",
+                }}
+              >
                 {adminEditContactUs.adminContactViewButton}
               </Button>
             </Grid>
             <Grid item xs={12} marginTop={0}>
               {/* Title Section */}
-              <Typography fontSize="16px" style={{ color:"#9E9E9E"}}>
-              {/* Render the title from admineditcontactus Data */}
+              <Typography variant="h3">
+                {/* Render the title from admineditcontactus Data */}
                 {adminEditContactUs.adminContactTitle01}
               </Typography>
             </Grid>
@@ -50,13 +82,13 @@ const editContact = () =>{
                 fullWidth
                 label="Add Title"
                 variant="outlined"
-                InputProps={{ style: { backgroundColor: 'white' } }}
+                InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
             <Grid item xs={12} marginTop={0}>
               {/* Description Section */}
-              <Typography style={{ color: "#9E9E9E" }}>
-              {/* Render the title from admineditcontactus Data */}
+              <Typography variant="h3">
+                {/* Render the title from admineditcontactus Data */}
                 {adminEditContactUs.adminContactTitle02}
               </Typography>
             </Grid>
@@ -68,37 +100,51 @@ const editContact = () =>{
                 label="Enter Description"
                 multiline
                 rows={8}
-                InputProps={{ style: { backgroundColor: 'white' } }}
+                InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
-            <Grid item xs={12} md={6} style={{ display: 'flex', flexDirection: 'column'}}>
-               <Typography style={{ color: "#9E9E9E" ,alignSelf: 'flex-start'}}>
-                 {adminEditContactUs.adminContactTitle03}
-               </Typography>
-               <TextField
-                 fullWidth
-                 label="Enter Email Address"
-                 variant="outlined"
-                 type="email"
-                 InputProps={{ style: { backgroundColor: 'white' } }}
-                 style={{ marginTop: '8px' }}
-               />
+            <Grid
+              item
+              xs={12}
+              md={6}
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              <Typography variant="h3">
+                {adminEditContactUs.adminContactTitle03}
+              </Typography>
+              <TextField
+                fullWidth
+                label="Enter Email Address"
+                variant="outlined"
+                type="email"
+                InputProps={{ style: { backgroundColor: "white" } }}
+                style={{ marginTop: "8px" }}
+              />
             </Grid>
-            <Grid item xs={12} md={6} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <Typography style={{ color: "#9E9E9E" }}>
-                 {adminEditContactUs.adminContactTitle04}
-               </Typography>
-               <TextField
-                 fullWidth
-                 label="Enter Phone Number"
-                 variant="outlined"
-                 InputProps={{ style: { backgroundColor: 'white' } }}
-                 style={{ marginTop: '8px' }}
-               />
-              </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+              }}
+            >
+              <Typography variant="h3">
+                {adminEditContactUs.adminContactTitle04}
+              </Typography>
+              <TextField
+                fullWidth
+                label="Enter Phone Number"
+                variant="outlined"
+                InputProps={{ style: { backgroundColor: "white" } }}
+                style={{ marginTop: "8px" }}
+              />
+            </Grid>
             <Grid item xs={12}>
               {/* Adress Section */}
-              <Typography style={{ color: "#9E9E9E" }}>
+              <Typography variant="h3">
                 {/* Render the title from admineditcontactus Data */}
                 {adminEditContactUs.adminContactTitle05}
               </Typography>
@@ -109,7 +155,7 @@ const editContact = () =>{
                 fullWidth
                 label="Enter your Address Line 1"
                 variant="outlined"
-                InputProps={{ style: { backgroundColor: 'white' } }}
+                InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
             <Grid item xs={12} marginTop={0} style={{ textAlign: "center" }}>
@@ -118,67 +164,89 @@ const editContact = () =>{
                 fullWidth
                 label="Enter your Address Line 2"
                 variant="outlined"
-                InputProps={{ style: { backgroundColor: 'white' } }}
+                InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
-            <Grid item xs={12} md={6} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+              }}
+            >
               {/* Address city TextField */}
               <TextField
                 fullWidth
                 label="City"
                 variant="outlined"
-                InputProps={{ style: { backgroundColor: 'white' } }}
+                InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
-            <Grid item xs={12} md={6} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+              }}
+            >
               {/* Address State/Province TextField */}
               <TextField
                 fullWidth
                 label="State/Province"
                 variant="outlined"
-                InputProps={{ style: { backgroundColor: 'white' } }}
+                InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
-            <Grid item xs={12} md={6}  marginTop={0} style={{ textAlign: "center" }}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              marginTop={0}
+              style={{ textAlign: "center" }}
+            >
               {/* Address Zip Code TextField */}
               <TextField
                 fullWidth
                 label="Zip Code"
                 variant="outlined"
-                InputProps={{ style: { backgroundColor: 'white' } }}
+                InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
-            <Grid item xs={12} md={6}  marginTop={0} style={{ textAlign: "center" }}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              marginTop={0}
+              style={{ textAlign: "center" }}
+            >
               {/* Address Country TextField */}
               <TextField
                 fullWidth
                 label="Country"
                 variant="outlined"
-                InputProps={{ style: { backgroundColor: 'white' } }}
+                InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
-              {/* Submit Section */}
-            <Grid item xs={12} marginTop={5} style={{ textAlign: "center" }}>
-              <Box ml="1048px">
-              <Button 
-                sx={{
-                  textTransform: "none",
-                  justifyContent: "center",
-                  color: "white",
-                  width: "100px",
-                  height: "30px",
-                  borderRadius: "8px",
-                  textAlign: "center",
-                  backgroundColor: "#4A5472",
-                  "&:hover": {
-                    backgroundColor: "#192959",}
-                }}
-              variant="outlined" 
-              size="large" 
-              type="submit" >
-                {/* Render the title from admineditcontactus Data */}
-                {adminEditContactUs.adminContactSubmitButton}
-              </Button>
+            {/* Submit Section */}
+            <Grid
+              item
+              xs={12}
+              md={12}
+              marginTop={5}
+              style={{ textAlign: "center" }}
+            >
+              <Box display="flex" justifyContent="end" alignItems="center">
+                {" "}
+                <Button type="submit">
+                  {/* Render the title from admineditcontactus Data */}
+                  {adminEditContactUs.adminContactSubmitButton}
+                </Button>
               </Box>
             </Grid>
           </Grid>

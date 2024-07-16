@@ -54,17 +54,7 @@ const adminSettings = () =>{
               <Button
                 variant="contained"
                 style={{
-                  fontSize: "10px",
-                  width: "8px", // Adjust width to fit content
-                  height: "9px", // Adjust height to fit content
-                  fontWeight: 600, // Semi-bold text
                   backgroundColor: '#4A5472',
-                  borderColor: '#5B5959',
-                  borderWidth: 2,
-                  color: 'white',
-                  textTransform: 'capitalize',
-                  textAlign: "center",
-                  borderRadius: '8%',
                   position: 'absolute',
                   bottom: 5.6, // Align to the same bottom line as IconButton
                   left: 'calc(49.5% + 40px)', // Adjust for correct positioning
@@ -76,8 +66,7 @@ const adminSettings = () =>{
             <Grid item xs={12}>
               <Typography
                 align="center"
-                fontSize="30px"
-                style={{ fontFamily: "Mulish", color: "#4A5472" }}>
+                variant="h1">
                 {/* Render the title */}
                 {adminSettingData.adminSettingTitle01}
               </Typography>
@@ -85,8 +74,7 @@ const adminSettings = () =>{
             <Grid item xs={12} marginTop={-1.8}>
               <Typography
                 align="center"
-                fontSize="22px"
-                style={{ fontFamily: "Mulish", color: "#4A5472" }}>
+               variant="h2">
               <Link href="http://www.gmail.com">
                 {/* Render the title */}
                 {adminSettingData.adminSettingEmail} 
@@ -94,22 +82,20 @@ const adminSettings = () =>{
               </Typography>
             </Grid>
             <Grid item xs={12} style={{ textAlign: "center" }}>
-              <Button variant="outlined" startIcon={<ChatOutlinedIcon />}style={{ fontSize:"18px", backgroundColor: '#4A5472', width:"195px", height:"40px" , borderColor: '#5B5959', borderWidth:2, color: 'white', textTransform: 'capitalize',textAlign:"center"}}>
+              <Button startIcon={<ChatOutlinedIcon />}>
               {adminSettingData.adminSettingCustomerSupportButton}
               </Button>
             </Grid>
             <Grid item xs={12} md={6} marginTop={3} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
               <Typography
-                align="left"
-                fontSize="25px"
-                style={{ fontFamily: "Mulish", color: "#4A5472" }}>
+                variant="h3">
                 {/* Render the title */}
                <b>{adminSettingData.adminSettingTitle02}</b>
               </Typography>
             </Grid>
             <Grid item xs={12} marginTop={0}>
               {/* Change Email Section */}
-              <Typography fontSize="20px" style={{ color:"#4A5472"}}>
+              <Typography variant="h3">
               {/* Render the title from adminSetting Data */}
                 {adminSettingData.adminSettingTitle03}
               </Typography>
@@ -125,13 +111,13 @@ const adminSettings = () =>{
               />
             </Grid>
             <Grid item xs={12} md={2} marginTop={-1.3} style={{ textAlign: "center" }}>
-              <Button variant="outlined" style={{ backgroundColor: '#4A5472', width:"60px", height:"35px", borderColor: '#5B5959', borderWidth:2, color: 'white', textTransform: 'capitalize',}}>
+              <Button>
               {adminSettingData.adminSettingSaveButton}
               </Button>
             </Grid>
             <Grid item xs={12} marginTop={3.5} >
               {/* Change Password Section */}
-              <Typography fontSize="20px" style={{ color: "#4A5472" }}>
+              <Typography variant="h3">
                 {/* Render the title from adminSetting Data */}
                 {adminSettingData.adminSettingTitle04}
               </Typography>
@@ -147,7 +133,7 @@ const adminSettings = () =>{
               />
             </Grid>
             <Grid item xs={12} md={2} marginTop={-1.3} style={{ textAlign: "center" }}>
-              <Button variant="outlined" style={{ backgroundColor: '#4A5472', width:"60px", height:"35px" , borderColor: '#5B5959', borderWidth:2, color: 'white', textTransform: 'capitalize',}}>
+              <Button>
                 {adminSettingData.adminSettingSaveButton}
               </Button>
             </Grid>
