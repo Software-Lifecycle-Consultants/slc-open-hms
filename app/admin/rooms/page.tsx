@@ -80,7 +80,7 @@ const Rooms = () => {
           </Button>
         </Link>
         {/* Small Container for Room List */}
-        <Container maxWidth="md" sx={{  marginTop:{xs: "80px", md: "130px" }}}>
+        <Container maxWidth="lg" sx={{  marginTop:{xs: "80px", md: "130px" }}}>
           <Box>
             <Grid container spacing={2} justifyContent="center" alignItems="center">
               {rooms.map((room, index) => (
@@ -98,12 +98,13 @@ const Rooms = () => {
                       flexDirection: { xs: "column", sm: "row" },
                       alignItems: "center",
                       textAlign: { xs: "center", sm: "left" },
-                      gap: "20px",
                       fontFamily: "Mulish",
                       fontWeight: 550,
                       fontSize: { xs: "18px", sm: "24px" },
+                      width: "100%",
                     }}
                   >
+                    <Grid item xs={12} md={1} style={{ display: 'flex', flexDirection: 'column', alignItems: 'left ' }}>
                     <Box
                       sx={{
                         backgroundColor: "#D9D9D9",
@@ -116,17 +117,29 @@ const Rooms = () => {
                         marginBottom: { xs: "10px", sm: "0" },
                       }}
                     >
+                      
                       <HotelIcon
                       sx={{
                         color: "#666666",
                         width: 35,
                         height: 35,
                       }}/>
+                      
                     </Box>
-                    <Typography>{roomlistData.roomlistText}</Typography>
-                    <Typography>{roomlistData.bedText}</Typography>
-                    <Typography>{roomlistData.guesttext}</Typography>
-                    <Typography>{roomlistData.pricetext}</Typography> 
+                    </Grid>
+                    <Grid item xs={15} md={4} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                    <Typography ml={10}>{roomlistData.roomlistText}</Typography>
+                    </Grid>
+                    <Grid item xs={15} md={4} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                    <Typography ml={10}>{roomlistData.bedText}</Typography>
+                    </Grid>
+                    <Grid item xs={15} md={4} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                    <Typography ml={10}>{roomlistData.guesttext}</Typography>
+                    </Grid>
+                    <Grid item xs={15} md={4} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                    <Typography ml={10}>{roomlistData.pricetext}</Typography> 
+                    </Grid>
+                    <Grid item xs={15} md={1} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                     <IconButton
                     sx={{
                       color: "#000000",
@@ -137,6 +150,8 @@ const Rooms = () => {
                         height: 28,
                       }} />
                       </IconButton>
+                      </Grid>
+                      <Grid item xs={12} md={1} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                       <IconButton
                     sx={{
                       color: "#000000",
@@ -147,7 +162,9 @@ const Rooms = () => {
                         height: 28,
                       }} />
                   </IconButton>    
+                  </Grid>
                   </Box>
+                  
                 </Grid>
               ))}
             </Grid>
