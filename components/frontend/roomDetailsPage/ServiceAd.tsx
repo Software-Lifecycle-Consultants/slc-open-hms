@@ -54,15 +54,8 @@ export default function ServiceAd() {
       >
         <Box>
           <Typography
-          mt={2}
-          ml={2}
-            style={{
-              color: "Gray",
-              fontSize: "16",
-              fontStyle: "normal",
-              letterSpacing: "0.12",
-              fontWeight: "700",
-            }}
+         variant="h3"
+         sx={{ ml: 2, mt: 2 }}
           >
             {serviceAdd.serviceAddPageTitle}
           </Typography>
@@ -83,13 +76,7 @@ export default function ServiceAd() {
                 <Typography
                 mt={2}
                 mb={2}
-                  style={{
-                    color: "Gray",
-                    fontSize: "16",
-                    fontStyle: "normal",
-                    letterSpacing: "0.12",
-                    fontWeight: "700",
-                  }}
+                  variant="h3"
                 >
                   Description
                 </Typography>

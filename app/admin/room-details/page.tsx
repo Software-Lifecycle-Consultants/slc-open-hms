@@ -50,13 +50,7 @@ const roomDetails = () => {
             {/* (2) The Gallery component is imported and rendered here. */}
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
               <Typography
-                style={{
-                  color: "Gray",
-                  fontSize: "16px",
-                  fontStyle: "normal",
-                  letterSpacing: "0.12px",
-                  fontWeight: "700",
-                }}
+             variant="h2"
               >
                 Cover Image
               </Typography>
@@ -129,20 +123,6 @@ const roomDetails = () => {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
             <Box display="flex" justifyContent="end" alignItems="center">
               <Button
-                sx={{
-                  textTransform: "none",
-                  marginTop: "7px",
-                  justifyContent: "center",
-                  backgroundColor: "white",
-                  color: "white",
-                  width: "100px",
-                  height: "30px",
-                  borderRadius: "8px",
-                  textAlign: "center",
-                  borderColor: "#5B5959",
-                  "&:hover": {
-                    backgroundColor: "#192959",}
-                  }}
                 variant="outlined"
               >
                 <Typography
@@ -155,19 +135,6 @@ const roomDetails = () => {
                 </Typography>
               </Button>
               <Button
-                sx={{
-                  textTransform: "none",
-                  marginTop: "7px",
-                  backgroundColor: "#4A5472",
-                  "&:hover": {backgroundColor: "#192959"},
-                  color: "white",
-                  width: "100px",
-                  height: "30px",
-                  borderRadius: "8px",
-                  marginLeft: "10px",
-                  textAlign: "center",
-
-                }}
                 variant="contained"
               >
                 <Typography

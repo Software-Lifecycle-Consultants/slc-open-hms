@@ -58,12 +58,7 @@ export default function Category() {
       <Box>
         <Typography
           mt={2}
-          style={{
-            color: "Gray",
-            fontSize: "16",
-            fontStyle: "normal",
-            letterSpacing: "0.12",
-          }}
+         variant="h2"
         >
           {category.detailsCategory}
         </Typography>
@@ -73,13 +68,7 @@ export default function Category() {
         {/* Autocomplete component for the category 1 */}
         <Typography
           mt={2}
-          style={{
-            color: "Gray",
-            fontSize: "16",
-            fontStyle: "normal",
-            letterSpacing: "0.12",
-            fontWeight: "700",
-          }}
+        variant="h3"
         >
           {category.category1}
         </Typography>
@@ -105,13 +94,7 @@ export default function Category() {
         />
         <Typography
           mt={2}
-          style={{
-            color: "Gray",
-            fontSize: "16",
-            fontStyle: "normal",
-            letterSpacing: "0.12",
-            fontWeight: "700",
-          }}
+        variant="h3"
         >
           {category.category2}
         </Typography>
@@ -137,13 +120,7 @@ export default function Category() {
         />
         <Typography
           mt={2}
-          style={{
-            color: "Gray",
-            fontSize: "16",
-            fontStyle: "normal",
-            letterSpacing: "0.12",
-            fontWeight: "700",
-          }}
+       variant="h3"
         >
           {category.category3}
         </Typography>
@@ -169,13 +146,7 @@ export default function Category() {
         />
         <Typography
           mt={2}
-          style={{
-            color: "Gray",
-            fontSize: "16",
-            fontStyle: "normal",
-            letterSpacing: "0.12px",
-            fontWeight: "700",
-          }}
+       variant="h3"
         >
           Price
         </Typography>

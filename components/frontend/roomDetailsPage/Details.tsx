@@ -39,13 +39,7 @@ const Details = () => {
                 <Typography
                   mt={2}
                   mb={2}
-                  style={{
-                    color: "Gray",
-                    fontSize: "16",
-                    fontStyle: "normal",
-                    letterSpacing: "0.12",
-                    fontWeight: "700",
-                  }}
+                  variant="h3"
                 >
                   Description
                 </Typography>

@@ -29,17 +29,7 @@ const rooms = () => {
           <Button
             variant="outlined"
             endIcon={<AddCircleOutlineIcon/>}
-            sx={{
-              fontFamily: "Mulish",
-              backgroundColor: "#4A5472",
-              fontSize: "15px",
-              width: "130px",
-              height: "40px",
-              borderColor: "#5B5959",
-              borderWidth: 2,
-              color: "white",
-              textTransform: "capitalize",
-            }}>
+          >
             {roomlistData.roomlistAddMoreButton}
           </Button>
         </Link>
@@ -74,11 +64,8 @@ const rooms = () => {
                   </Box>
                   {/* Room Name Text */}
                   <Typography
-                    sx={{
-                      fontFamily: "Mulish",
-                      marginLeft: "20px",
-                      fontWeight: 550,
-                    }}>
+                  ml={2}
+                   variant="h2">
                     {roomlistData.roomlistText}
                   </Typography>
                   {/* edit Icon */}
