@@ -143,21 +143,21 @@ const Rooms = () => {
                         fontSize: { xs: "16px", sm: "18px" },
                       }}
                     >
-                      <Typography component="span" sx={{ flexBasis: { xs: '70%', sm: '20%' } }}ml={2}>
+                      <Typography variant="h3" sx={{ flexBasis: { xs: '70%', sm: '20%' } }}ml={2}>
                         {room.roomType}
                       </Typography>
                       <Box sx={{ display: { xs: 'none', sm: 'block' }, flexBasis: '20%' }}ml={13}>
-                        <Typography component="span">
+                        <Typography variant="h3">
                           {room.bedType}
                         </Typography>
                       </Box>
                       <Box sx={{ display: { xs: 'none', sm: 'block' }, flexBasis: '20%' }}ml={13}>
-                        <Typography component="span">
+                        <Typography variant="h3">
                           {room.guestCapacity}
                         </Typography>
                       </Box>
                       <Box sx={{ display: { xs: 'none', sm: 'block' }, flexBasis: '20%' }}ml={13}>
-                        <Typography component="span">
+                        <Typography variant="h3">
                           {room.price}
                         </Typography>
                       </Box>

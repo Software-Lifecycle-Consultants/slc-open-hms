@@ -57,7 +57,7 @@ export default function Category() {
     >
       <Box>
         <Typography
-          variant="h3"
+          variant="h2"
           mt={2}
         >
           {category.detailsCategory}
@@ -67,7 +67,7 @@ export default function Category() {
       <Stack spacing={2} marginTop={2}>
         {/* Autocomplete component for the category 1 */}
         <Typography
-          variant='h2'
+          variant='h3'
           mt={2}
         >
           {category.category1}
@@ -88,7 +88,7 @@ export default function Category() {
           </FormControl>
         <Typography
           mt={2}
-          variant='h2'
+          variant='h3'
         >
           {category.category2}
         </Typography>
@@ -107,7 +107,7 @@ export default function Category() {
             </Select>
           </FormControl>
         <Typography
-          variant='h2'
+          variant='h3'
           mt={2}
         >
           {category.category3}
@@ -127,7 +127,7 @@ export default function Category() {
             </Select>
           </FormControl>
         <Typography
-          variant='h2'
+          variant='h3'
           mt={2}
         >
           Price

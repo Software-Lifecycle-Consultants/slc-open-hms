@@ -245,7 +245,7 @@ const themeAdmin = createTheme({
       main: "#4A5472",
     },
     background: {
-      default: "#CEDEFF",
+      default: "#EEF5FF",
       paper: "#FFFFFF",
     },
     text: {
