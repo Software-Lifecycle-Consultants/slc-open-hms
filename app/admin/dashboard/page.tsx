@@ -1,5 +1,5 @@
 "use client"
-import {Box} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 import React from "react";
 import Charts from "@/components/admin/dashboard/Charts";
 /**
@@ -9,20 +9,37 @@ import Charts from "@/components/admin/dashboard/Charts";
 const AdminDashboard = () => {
   return (
     <>
-      <Box sx={{ backgroundColor: "#EEF5FF", padding: "40px 0", width: "100%", height: "110vh" }}>
-      <>
-      <Box sx={{ml:"130px",mb:"-83px", color:"#343C6A", fontSize:"20px", fontWeight:"500"}}> 
-        Customer History 
+      <Box
+        sx={{
+          backgroundColor: "#EEF5FF",
+          padding: "40px 0",
+          width: "100%",
+          height: "110vh",
+        }}
+      >
+        <>
+          <Box
+            sx={{
+              ml: "130px",
+              mb: "-83px",
+              color: "#343C6A",
+              fontSize: "20px",
+              fontWeight: "500",
+            }}
+          >
+            <Typography
+              variant="h3"
+            >
+              Customer History
+            </Typography>
+          </Box>
+          <div className="flex">
+            <main className="flex-grow ml-64 relative">
+              <Charts />
+            </main>
+          </div>
+        </>
       </Box>
-      <div className="flex">
-        
-        <main className="flex-grow ml-64 relative">
-          <Charts />
-        </main>
-      </div>
-    </>
-      </Box>
-      
     </>
   );
 };

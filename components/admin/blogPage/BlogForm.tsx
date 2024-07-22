@@ -105,20 +105,14 @@ const BlogForm: React.FC = () => {
       <Card sx={{ marginLeft: "auto", marginRight: "auto" }}>
         <CardContent sx={{ justifyContent: "center", alignItems: "center" }}>
           <Typography
-            variant="h2"
+            variant="h1"
             className={mulish.className}
-            sx={{
-              padding: "10px 20px 10px 20px",
-              fontSize: { xs: "26px", sm: "28px", md: "32px" },
-              fontWeight: 800,
-              color: "#4A5472",
-            }}
           >
             Blog
           </Typography>
           <Grid
             container
-            spacing={{ xs: 1, sm: 2, md: 2 }}
+            spacing={{ xs: 1, sm: 2, md: 2}}
             sx={{
               display: "block",
               padding: { xs: "10px 20px 10px 20px" },
@@ -182,14 +176,9 @@ const BlogForm: React.FC = () => {
             </Grid>
 
             <Typography
-              variant="h3"
+              marginTop={{lg: 2, md: 2 }}
+              variant="h2"
               className={mulish.className}
-              sx={{
-                padding: "10px 20px 10px 20px",
-                fontSize: "16px",
-                fontWeight: 500,
-                color: "#4A5472",
-              }}
             >
               Cover Image
             </Typography>
@@ -210,7 +199,7 @@ const BlogForm: React.FC = () => {
               sm={12}
               md={12}
               lg={12}
-              sx={{ alignItems: "center" }}
+              sx={{ alignItems: "center", py: { lg: 2 , md: 2}}}
             >
               <Card
                 elevation={0}
@@ -234,14 +223,6 @@ const BlogForm: React.FC = () => {
                 }}
               >
                 <Button
-                  sx={{
-                    marginTop: "7px",
-                    backgroundColor: "#4A5472",
-                  }}
-                  component="label"
-                  role={undefined}
-                  variant="contained"
-                  tabIndex={-1}
                   startIcon={<AddAPhotoIcon />}
                 >
                   <VisuallyHiddenInput type="file" />
@@ -250,14 +231,8 @@ const BlogForm: React.FC = () => {
             </Grid>
 
             <Typography
-              variant="h3"
+              variant="h2"
               className={mulish.className}
-              sx={{
-                padding: "10px 20px 10px 20px",
-                fontSize: "16px",
-                fontWeight: 500,
-                color: "#4A5472",
-              }}
             >
               Author Image
             </Typography>
@@ -285,14 +260,6 @@ const BlogForm: React.FC = () => {
                 }}
               >
                 <Button
-                  sx={{
-                    marginTop: "7px",
-                    backgroundColor: "#4A5472",
-                  }}
-                  component="label"
-                  role={undefined}
-                  variant="contained"
-                  tabIndex={-1}
                   startIcon={<CloudUploadIcon />}
                 >
                   <VisuallyHiddenInput type="file" />
@@ -339,14 +306,7 @@ const BlogForm: React.FC = () => {
             }}
           >
             <Typography
-              variant="h3"
-              className={mulish.className}
-              sx={{
-                padding: "10px 20px 10px 20px",
-                fontSize: "16px",
-                fontWeight: 500,
-                color: "#4A5472",
-              }}
+              variant="h2"
             >
               Social Media Links
             </Typography>
@@ -401,18 +361,6 @@ const BlogForm: React.FC = () => {
           >
             <Button
               type="button"
-              sx={{
-                textTransform:"none",
-                backgroundColor: "#EBEBEB",
-                border: "2px solid black",
-                borderRadius: "8px",
-                color: "black",
-                padding: { xs: "8px 14px" },
-                width: "100px",
-                height: "30px",
-                marginRight: "10px",
-                fontSize: "14px",
-              }}
               onClick={() => console.log("Draft Saved")}
             >
               Save Draft
@@ -420,26 +368,6 @@ const BlogForm: React.FC = () => {
 
             <Button
               type="submit"
-              sx={{
-                textTransform:"none",
-                backgroundColor: "#4A5472",
-                borderRadius: "10px",
-                color: "white",
-                border: "2px solid ",
-                width: "100px",
-                height: "35px",
-                
-                padding: { xs: "8px 14px" },
-                "&:hover": {
-                  backgroundColor: "#192959",
-                  borderColor: "#3B435F",
-                },
-                "&:active": {
-                  backgroundColor: "#2C3045",
-                  borderColor: "#2C3045",
-                  fontSize: "19px"
-                },
-              }}
             >
               Publish
             </Button>
