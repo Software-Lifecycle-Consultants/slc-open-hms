@@ -12,13 +12,7 @@ const HeadingBook = () => {
           mt={2}
             variant="h1"
             className={lora.className}
-            style={{
-              color: "#4A5472",
-              fontSize: "32px",
-              fontStyle: "normal",
-              letterSpacing: "0.186px",
-              fontWeight: "700",
-            }}
+           
           >
             {headingBook.roomDetailsPageTitle}
           </Typography>

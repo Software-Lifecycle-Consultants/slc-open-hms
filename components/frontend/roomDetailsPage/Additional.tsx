@@ -30,13 +30,7 @@ const Additional = () => {
           <Typography
             mt={2}
             ml={2}
-            sx={{
-              color: "Gray",
-              fontSize: "16",
-              fontStyle: "normal",
-              letterSpacing: "0.12",
-              fontWeight: 'bold',
-            }}
+          variant="h2"
           >
             {additional.additionalPageTitle}
           </Typography>
@@ -55,13 +49,7 @@ const Additional = () => {
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Typography
                   mb={2}
-                  sx={{
-                    color: "Gray",
-                    fontSize: "16",
-                    fontStyle: "normal",
-                    letterSpacing: "0.12",
-                    fontWeight: 'bold'
-                  }}
+                variant="h3"
                 >
                   Description
                 </Typography>

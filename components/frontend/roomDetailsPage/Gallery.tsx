@@ -20,15 +20,7 @@ export default function StandardImageList() {
     <>
      <Typography
         mt={2}
-          style={{
-            color: "Gray",
-            fontSize: "16px",
-            lineHeight: "120%",
-            fontStyle: "normal",
-            letterSpacing: "0.12px",
-            fontWeight: "700",
-
-          }}
+         variant="h2"
         >
           Gallery
         </Typography>

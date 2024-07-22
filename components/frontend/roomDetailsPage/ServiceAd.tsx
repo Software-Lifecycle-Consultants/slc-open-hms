@@ -55,7 +55,7 @@ export default function ServiceAd() {
       >
         <Box>
           <Typography
-          variant="h2"
+          variant="h3"
           mt={2}
           ml={2}
           >
@@ -76,7 +76,7 @@ export default function ServiceAd() {
 
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Typography
-                variant="h2"
+                variant="h3"
                 mt={2}
                 mb={2}
                 >
@@ -93,7 +93,7 @@ export default function ServiceAd() {
             </Grid>
             <Stack spacing={2} marginTop={2}>
             <Typography
-                variant='h2'
+                variant='h3'
                 mt={2}
                 mb={2}                
                 >
