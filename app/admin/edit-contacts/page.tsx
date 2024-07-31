@@ -1,5 +1,5 @@
-"user client";
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -10,8 +10,44 @@ import {
 } from "@mui/material";
 import { adminEditContactUs } from "@/data/admineditcontactus";
 import FindInPageIcon from '@mui/icons-material/FindInPage';
+import axios from "axios";
 
 const editContact = () =>{
+    // Define state variables for the form fields
+    const [formData, setFormData] = useState({
+      pagetitle: '',
+      pagedescription: '',
+      email: '',
+      phoneNumber: '',
+      addressLine1: '',
+      addressLine2: '',
+      city: '',
+      stateProvince: '',
+      zipCode: '',
+      country: '',
+    });
+  
+    // Handle input change
+    const handleChange = (e) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+    };
+  
+    // Handle button click to make POST request
+    const handleButtonClick = () => {
+    axios.post('https://localhost:7042/api/AdminContacts', formData)
+      .then(response => {
+        console.log('Data posted successfully:', response.data);
+        // Optionally, handle success (e.g., show a success message or redirect)
+      })
+      .catch(error => {
+        console.error('There was an error posting the data!', error);
+        // Optionally, handle error (e.g., show an error message)
+      });
+    };
+
   return (
     <Box
       padding="30px" /* Add padding */
@@ -83,6 +119,9 @@ const editContact = () =>{
                 label="Add Title"
                 variant="outlined"
                 InputProps={{ style: { backgroundColor: "white" } }}
+                name="pagetitle"
+                value={formData.pagetitle}
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12} marginTop={0}>
@@ -101,6 +140,9 @@ const editContact = () =>{
                 multiline
                 rows={8}
                 InputProps={{ style: { backgroundColor: "white" } }}
+                name="pagedescription"
+                value={formData.pagedescription}
+                onChange={handleChange}
               />
             </Grid>
             <Grid
@@ -119,6 +161,9 @@ const editContact = () =>{
                 type="email"
                 InputProps={{ style: { backgroundColor: "white" } }}
                 style={{ marginTop: "8px" }}
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
               />
             </Grid>
             <Grid
@@ -140,6 +185,9 @@ const editContact = () =>{
                 variant="outlined"
                 InputProps={{ style: { backgroundColor: "white" } }}
                 style={{ marginTop: "8px" }}
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -156,6 +204,9 @@ const editContact = () =>{
                 label="Enter your Address Line 1"
                 variant="outlined"
                 InputProps={{ style: { backgroundColor: "white" } }}
+                name="addressLine1"
+                value={formData.addressLine1}
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12} marginTop={0} style={{ textAlign: "center" }}>
@@ -165,6 +216,9 @@ const editContact = () =>{
                 label="Enter your Address Line 2"
                 variant="outlined"
                 InputProps={{ style: { backgroundColor: "white" } }}
+                name="addressLine2"
+                value={formData.addressLine2}
+                onChange={handleChange}
               />
             </Grid>
             <Grid
@@ -183,6 +237,9 @@ const editContact = () =>{
                 label="City"
                 variant="outlined"
                 InputProps={{ style: { backgroundColor: "white" } }}
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
               />
             </Grid>
             <Grid
@@ -201,6 +258,9 @@ const editContact = () =>{
                 label="State/Province"
                 variant="outlined"
                 InputProps={{ style: { backgroundColor: "white" } }}
+                name="stateProvince"
+                value={formData.stateProvince}
+                onChange={handleChange}
               />
             </Grid>
             <Grid
@@ -216,6 +276,9 @@ const editContact = () =>{
                 label="Zip Code"
                 variant="outlined"
                 InputProps={{ style: { backgroundColor: "white" } }}
+                name="zipCode"
+                value={formData.zipCode}
+                onChange={handleChange}
               />
             </Grid>
             <Grid
@@ -231,6 +294,9 @@ const editContact = () =>{
                 label="Country"
                 variant="outlined"
                 InputProps={{ style: { backgroundColor: "white" } }}
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
               />
             </Grid>
             {/* Submit Section */}
@@ -242,8 +308,7 @@ const editContact = () =>{
               style={{ textAlign: "center" }}
             >
               <Box display="flex" justifyContent="end" alignItems="center">
-                {" "}
-                <Button type="submit">
+                <Button onClick={handleButtonClick}>
                   {/* Render the title from admineditcontactus Data */}
                   {adminEditContactUs.adminContactSubmitButton}
                 </Button>
