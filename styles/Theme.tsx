@@ -239,7 +239,7 @@ const themeClient = createTheme({
 const themeAdmin = createTheme({
   palette: {
     primary: {
-      main: "#D0D5DD",
+      main: "#FFFF",
     },
     secondary: {
       main: "#4A5472",
