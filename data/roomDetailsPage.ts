@@ -96,7 +96,7 @@ export const roomCardCheckIconContent = {
 };
 
 export const roomCardTexts = {
-  custonText1: "Learn More",
+  custonText1: "View Details",
   custonText2: "Start From",
   custonText3: "Night",
 };
