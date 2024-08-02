@@ -7,6 +7,7 @@ import CustomCard from "../components/frontend/homePage/CustomCard";
 import LogoCarousel from "@/components/frontend/homePage/LogoCarousel";
 import ContactNowBanner from "@/components/frontend/homePage/SecondaryBanner";
 import Cookie from "@/components/frontend/cookieBanner/Cookie";
+import Head from "next/head";
 
 /**
  * HomeScreen represents the main screen of the website.
@@ -22,6 +23,16 @@ const sectionStyle = {
 export default function HomeScreen() {
   return (
     <>
+    <Head>
+        <title>Travala | The best deals on the world's best destinations</title>        
+        <meta name="description" content="Travala offer best deals on hotels, flights, and travel experiences. Find top destinations at the best prices and book easily for your next adventure." />
+        <meta name="keywords" content="Travel deals, hotel bookings, flight reservations, vacation packages, best travel discounts, luxury accommodations, budget travel deals, top travel destinations, online travel agency, affordable hotels, exclusive travel offers, global hotel deals, travel booking platform, discounted flights, travel deals site" />
+        <meta property="og:title" content="Travala | The best deals on the world's best destinations" />
+        <meta property="og:description" content="With travala you can experience new travel and the best tourist destinations that we have to offer" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.travala.com/" />
+        <meta property="og:image" content="app\favicon.ico" />
+      </Head>
       {/* HeroBanner Section */}
       <Box
         sx={{
