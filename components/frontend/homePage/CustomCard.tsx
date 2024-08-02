@@ -79,7 +79,7 @@ const CustomCard = ({}) => {
         {/* Image */}
         <Image
           src={cardDetails1.customCardImage}
-          alt="test"
+          alt="A beautiful lake in the mountains with a boat in the foreground"
           width={518}
           height={301}
           style={{
@@ -158,7 +158,7 @@ const CustomCard = ({}) => {
                           src={user}
                           width={38}
                           height={38}
-                          alt="wallet"
+                          alt="user"
                           style={{
                             flexShrink: 0,
                           }}
@@ -183,7 +183,7 @@ const CustomCard = ({}) => {
                           src={heart}
                           width={38}
                           height={38}
-                          alt="wallet"
+                          alt="heart"
                           style={{
                             flexShrink: 0,
                           }}
