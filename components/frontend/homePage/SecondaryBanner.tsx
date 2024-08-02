@@ -39,6 +39,7 @@ const ContactNowBanner = () => {
           >
             {/* Button with icon for web and tablet view */}
             <Button
+              aria-label="contactNow"
               href="/contact-us"
               variant="contained"
               sx={{

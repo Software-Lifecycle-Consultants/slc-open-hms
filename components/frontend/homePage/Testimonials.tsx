@@ -130,7 +130,7 @@ const Testimonials = () => {
               {/* User profile image */}
               <Image
                 src={userTestimonial.userProfileImage1}
-                alt="Profile1"
+                alt="user profile picture"
                 width={64}
                 height={64}
               />
@@ -158,7 +158,7 @@ const Testimonials = () => {
               {/* User profile image */}
               <Image
                 src={userTestimonial.userProfileImage2}
-                alt="Profile2"
+                alt="user profile picture"
                 width={64}
                 height={64}
               />
@@ -186,6 +186,7 @@ const Testimonials = () => {
         <Link href={userTestimonial.testimonialButtonLink} target="_blank">
           <Box padding={3}>
             <Button
+              aria-label="Read More"
               variant="contained"
               sx={{
                 background:
