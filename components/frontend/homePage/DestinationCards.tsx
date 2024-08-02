@@ -122,6 +122,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
           >
             {/* Button for ticket booking */}
             <Button
+              aria-label="ticketBooking"
               variant="contained"
               onClick={navigationToBookNow}
               sx={{
