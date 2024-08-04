@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 import { pages } from "@/data/homePage";
 import { navBarButtons } from "@/data/homePage";
 import CircularProgress from '@mui/material/CircularProgress';
+import Link from "next/link";
 
 /* Styles for a text button */
 const textButtonStyles = {
@@ -98,29 +99,33 @@ const NavBar = () => {
 
   return (
     <>
-     {/* Container to hold the content and align it */}
-      <AppBar 
-      position="static" 
-      elevation={0} 
-      sx={{ 
-        backgroundColor: "#0C111F",
-         paddingTop: "20px",
-         }}
-         >
+      {/* Container to hold the content and align it */}
+      <AppBar
+        position="static"
+        elevation={0}
+        sx={{
+          backgroundColor: "#0C111F",
+          paddingTop: "20px",
+        }}
+      >
         {/* Container to hold the content and align it */}
         <Container>
           {/* Toolbar holds the content within the AppBar */}
           <Toolbar disableGutters>
             {/* Display the logo image on larger screens */}
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <Image src={logo} width={142} height={50} alt="logo" />
+              <Link href="/" passHref>
+                <Image src={logo} width={142} height={50} alt="logo" />
+              </Link>
             </Box>
 
             {/* Conditionally render either DrawerComponent or Tabs/Button based on screen size */}
             {isMatch ? (
               <>
                 {/* Display the logo image and DrawerComponent on smaller screens */}
-                <Image src={logo} width={142} height={50} alt="logo" />
+                <Link href="/" passHref>
+                  <Image src={logo} width={142} height={50} alt="logo" />
+                </Link>
                 <DrawerComponent />
               </>
             ) : (
@@ -129,13 +134,13 @@ const NavBar = () => {
                 <Tabs
                   sx={{ margin: "auto" }}
                   value={value}
-                  onChange={handleChange}                  
+                  onChange={handleChange}
                   indicatorColor="secondary"
-                  TabIndicatorProps={{ 
+                  TabIndicatorProps={{
                     style: { backgroundColor: "#FFFFFF" },
-                   }}
+                  }}
                 >
-                 {/* Map through pages to create Tabs for navigation */}
+                  {/* Map through pages to create Tabs for navigation */}
                   {pages.map((page, index) => (
                     <Tab
                       key={index}
