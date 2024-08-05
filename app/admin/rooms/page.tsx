@@ -86,7 +86,16 @@ const Rooms = () => {
           href="/admin/room-details"
           style={{ position: "absolute", top: "15px", right: "22px" }}
         >
-          <Button variant="outlined" endIcon={<AddCircleOutlineIcon />}>
+          <Button
+            variant="outlined"
+            sx={{
+              borderColor: "#5B5959", // Set outline color
+              "&:hover": {
+                backgroundColor: "#192959", // Set hover background color
+              },
+            }}
+            endIcon={<AddCircleOutlineIcon />}
+          >
             {roomlistData.roomlistAddMoreButton}
           </Button>
         </Link>
@@ -215,7 +224,7 @@ const Rooms = () => {
                 height: "100%",
               }}
             >
-              <Typography variant="h6" gutterBottom>
+              <Typography variant="h2" gutterBottom>
                 Room Details
               </Typography>
               <Stack spacing={2} flexGrow={1}>
@@ -303,8 +312,26 @@ const Rooms = () => {
                 />
               </Stack>
               <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-                <Button variant="contained">Close</Button>
-                <Button variant="outlined" sx={{ marginLeft: 2 }}>
+                <Button
+                  variant="contained"
+                  sx={{
+                    borderColor: "#5B5959", // Set outline color
+                    "&:hover": {
+                      backgroundColor: "#192959", // Set hover background color
+                    },
+                  }}
+                >
+                  Close
+                </Button>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    borderColor: "#5B5959", // Set outline color
+                    "&:hover": {
+                      backgroundColor: "#192959", // Set hover background color
+                    },
+                  }}
+                >
                   Save
                 </Button>
               </Box>
@@ -322,7 +349,7 @@ const Rooms = () => {
                 height: "100%",
               }}
             >
-              <Typography variant="h6" gutterBottom>
+              <Typography variant="h2" gutterBottom>
                 FAQ
               </Typography>
               <Stack spacing={2} flexGrow={1}>
@@ -334,8 +361,26 @@ const Rooms = () => {
                 <TextField label="Answer" variant="outlined" fullWidth />
               </Stack>
               <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-                <Button variant="contained">Close</Button>
-                <Button variant="outlined" sx={{ marginLeft: 2 }}>
+                <Button
+                  variant="contained"
+                  sx={{
+                    borderColor: "#5B5959", // Set outline color
+                    "&:hover": {
+                      backgroundColor: "#192959", // Set hover background color
+                    },
+                  }}
+                >
+                  Close
+                </Button>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    borderColor: "#5B5959", // Set outline color
+                    "&:hover": {
+                      backgroundColor: "#192959", // Set hover background color
+                    },
+                  }}
+                >
                   Save
                 </Button>
               </Box>
@@ -343,7 +388,7 @@ const Rooms = () => {
           </Grid>
           <Grid item xs={12}>
             <Box p={3} bgcolor="white" borderRadius="8px">
-              <Typography variant="h6" gutterBottom>
+              <Typography variant="h2" gutterBottom>
                 Service Add ons
               </Typography>
               <Box>
@@ -377,10 +422,26 @@ const Rooms = () => {
                 />
               </Stack>
               <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-                <Button variant="contained">
+                <Button
+                  variant="contained"
+                  sx={{
+                    borderColor: "#5B5959", // Set outline color
+                    "&:hover": {
+                      backgroundColor: "#192959", // Set hover background color
+                    },
+                  }}
+                >
                   Close
                 </Button>
-                <Button variant="outlined" sx={{ marginLeft: 2 }}>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    borderColor: "#5B5959", // Set outline color
+                    "&:hover": {
+                      backgroundColor: "#192959", // Set hover background color
+                    },
+                  }}
+                >
                   Save
                 </Button>
               </Box>

@@ -73,7 +73,11 @@ const roomDetails = () => {
                   sx={{
                     marginTop: "7px",
                     backgroundColor: "#4A5472",
-                    borderRadius: "8px", // Set corner radius
+                    borderRadius: "8px", // Set corner radius     
+                borderColor: "#5B5959", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
                   }}
                   component="label"
                   role={undefined}
