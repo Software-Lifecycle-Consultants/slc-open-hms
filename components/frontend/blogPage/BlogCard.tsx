@@ -61,7 +61,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, author, date, title, descrip
           {/* image of the card */}
           <Image
             src={image}
-            alt="test"
+            alt="Blog post thumbnail"
             width={1000}
             height={750}
             style={{
@@ -81,7 +81,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, author, date, title, descrip
             <Box><Typography variant='h4'>{description}</Typography></Box>
             
             <Stack direction="row" justifyContent="flex-end">      
-    <Link href={"/blog-detail"}>
+    <Link href={"/blog-detail"}aria-label="Read more about this blog post">
       <Button 
             sx={{fontSize: {md:"14px", xs:"10px"},}}
             variant="contained"
