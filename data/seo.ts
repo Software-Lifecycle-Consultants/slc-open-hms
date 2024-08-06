@@ -11,4 +11,7 @@ export const blogSeo ={
     blogcardimage1:"Blog post thumbnail",
     pagebannerimage2:"Scenic view of Sri Lanka",
     blogcardlinklabel:"Read more about this blog post",
+    textfieldarealabel:"Email input field",
+    buttonbannerarealabel:"Subscribe button",
+    privacypolicyarealabel:"Privacy policy",
 };
