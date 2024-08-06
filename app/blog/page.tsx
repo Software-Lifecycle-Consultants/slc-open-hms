@@ -61,7 +61,7 @@ export default function Blog() {
     <Container>
       <Image
         src={bannerData.image}
-        alt="Scenic view of Sri Lanka"
+        alt={blogSeo.pagebannerimage2}
         width={1350}
         height={400}
         style={{
