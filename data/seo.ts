@@ -9,3 +9,14 @@ export const blogSeo ={
     metaogimage: "app\favicon.ico",
     canonicallink:"https://www.travala.com/blog",
 };
+
+export const homeSeo = {
+    metatitle: "Travala | The best deals on the world's best destinations",
+    metadescription: "Travala offer best deals on hotels, flights, and travel experiences. Find top destinations at the best prices and book easily for your next adventure.",
+    metakeyword: "Travel deals, hotel bookings, flight reservations, vacation packages, best travel discounts, luxury accommodations, budget travel deals, top travel destinations, online travel agency, affordable hotels, exclusive travel offers, global hotel deals, travel booking platform, discounted flights, travel deals site",
+    metaogtitle: "Travala | The best deals on the world's best destinations",
+    metaogdescription: "With travala you can experience new travel and the best tourist destinations that we have to offer",
+    metaogtype: "website",
+    metaogurl: " https://www.travala.com/",
+    metaogimage: "app\favicon.ico",
+};
