@@ -17,7 +17,8 @@ import {
   import TwitterIcon from "@mui/icons-material/Twitter";
   import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
   import { blogcontent } from "@/data/blogDetail";
-  
+  import { blogdetailedSeo } from "@/data/seo";
+
   import * as React from "react";
   
   const ContentBanner = () => {
@@ -79,7 +80,7 @@ import {
                 {/* Image */}
                 <Image
                   src={blogcontent.pharagraph.imageContent}
-                  alt="complex"
+                  alt={blogdetailedSeo.contentimage1}
                   width={1000}
                   height={720}
                   style={{
@@ -202,7 +203,7 @@ import {
                 {/* Final image */}
                 <Image
                   src={blogcontent.pharagraph.imageEnd}
-                  alt="complex"
+                  alt={blogdetailedSeo.contentimage2}
                   width={1000}
                   height={720}
                   style={{

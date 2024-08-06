@@ -6,9 +6,23 @@ import BlogCard from "@/components/frontend/blogPage/BlogCard";
 import { blogData, bannerData } from '@/data/blogPage';
 import { blogcontent, } from '@/data/blogDetail';
 import {Button, Link} from "@mui/material";
+import Head from "next/head";
+import { blogdetailedSeo } from "@/data/seo";
+
 export default function blogDetailed(){
     return(
    <> 
+   <Head>
+        <title>{blogdetailedSeo.metatitle}</title>
+        <meta name="description" content= {blogdetailedSeo.metadescription} />
+        <meta name="keywords" content={blogdetailedSeo.metakeyword}/>
+        <meta property="og:title" content={blogdetailedSeo.metaogtitle} />
+        <meta property="og:description" content={blogdetailedSeo.metaogdescription} />
+        <meta property="og:type" content={blogdetailedSeo.metaogtype} />
+        <meta property="og:url" content={blogdetailedSeo.metaogurl} />
+        <meta property="og:image" content={blogdetailedSeo.metaogimage} />
+        <link rel="canonical" href={blogdetailedSeo.canonicallink} />
+      </Head>
    <Box sx={{ 
     backgroundColor: "#FFFFF",
     width: "100%",
@@ -68,7 +82,7 @@ export default function blogDetailed(){
     }}>
     <Container>
     <Stack direction="row" justifyContent="flex-end">       
-    <Link href={"/blog"}>
+    <Link href="/blog" aria-label={blogdetailedSeo.blogcardarealable}>
       <Button 
             variant="contained"
               style={{

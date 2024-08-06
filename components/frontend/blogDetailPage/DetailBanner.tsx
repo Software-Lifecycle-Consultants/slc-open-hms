@@ -2,6 +2,7 @@ import { Typography, Grid, Stack, Chip, Box } from "@mui/material";
 import Image from "next/image";
 import sigiriRock from "@/public/images/blogDetails/sigiriRock.webp";
 import {blogcontent} from "@/data/blogDetail"
+import { blogdetailedSeo } from "@/data/seo";
 
 const DetailBanner = () => {
   return (
@@ -62,7 +63,7 @@ const DetailBanner = () => {
               {/* Image */}
               <Image
                 src={sigiriRock}
-                alt="complex"
+                alt={blogdetailedSeo.detailbannerimage1}
                 width={1000}
                 height={720}
                 style={{
