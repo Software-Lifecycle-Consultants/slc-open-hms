@@ -23,6 +23,7 @@ import {
 } from "./styles";
 import color from "material-ui-colors/dist/amber";
 import { themeClient } from "@/styles/Theme";
+import { homeSeo } from "@/data/seo";
 
 
 
@@ -77,7 +78,7 @@ const Banner = () => {
             }}
           >
             {/* Button with icon for web and tablet view */}
-            <Button aria-label="Our Destination" variant="contained" sx={{ borderRadius: "6.25rem", background: "var(--l-2, linear-gradient(135deg, #F9EC7D 0%, #F5B100 100%))", fontWeight: 600, gap: "0.625rem", color:'#0C111F' }}>
+            <Button aria-label= {homeSeo.herobannerButtonAriaLabel1} variant="contained" sx={{ borderRadius: "6.25rem", background: "var(--l-2, linear-gradient(135deg, #F9EC7D 0%, #F5B100 100%))", fontWeight: 600, gap: "0.625rem", color:'#0C111F' }}>
               {bannerDetails.bannercta1Caption}
               {/* Arrow icon */}
               <Box
@@ -96,7 +97,7 @@ const Banner = () => {
             </Button>
 
             {/* Button with arrow icon for mobile view */}
-            <Button aria-label="Our Gallery" variant="text" sx={{ color: themeClient.palette.secondary.main, fontWeight: "normal", fontSize: "0.875rem" }} onClick={navigationToExplore}>
+            <Button aria-label= {homeSeo.herobannerButtonAriaLabel2} variant="text" sx={{ color: themeClient.palette.secondary.main, fontWeight: "normal", fontSize: "0.875rem" }} onClick={navigationToExplore}>
               <Box
                 sx={{
                   backgroundColor: "rgba(255, 255, 255, 0.18)",
@@ -133,7 +134,7 @@ const Banner = () => {
         <Grid item xs={12} md={6}>
           <Image
             src={mainImage}
-            alt="Woman travelling with a backpack and suitcase"
+            alt= {homeSeo.herobannerImageAlt}
             width={617.758}
             height={616.951}
             style={{

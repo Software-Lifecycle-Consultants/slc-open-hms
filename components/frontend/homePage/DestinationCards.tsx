@@ -10,6 +10,7 @@ import {
 import * as React from "react";
 import { montserrat } from "../../../app/fonts";
 import { useRouter } from "next/navigation";
+import { homeSeo } from "@/data/seo";
 
 /* DestinationCardDetails component displays details of a destination in a card. */
 
@@ -122,7 +123,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
           >
             {/* Button for ticket booking */}
             <Button
-              aria-label="ticketBooking"
+              aria-label={homeSeo.destinationCardsAriaLabel}
               variant="contained"
               onClick={navigationToBookNow}
               sx={{

@@ -16,6 +16,8 @@ import { blogCardData, userTestimonial } from "@/data/homePage";
 import { montserrat, inter } from "../../../app/fonts";
 import LaunchIcon from "@mui/icons-material/Launch";
 import Link from "next/link";
+import { homeSeo } from "@/data/seo";
+
 const Testimonials = () => {
   const [value, setValue] = React.useState(4); // Rating value
 
@@ -102,7 +104,7 @@ const Testimonials = () => {
               {/* User profile image */}
               <Image
                 src={userTestimonial.userProfileImage}
-                alt="Avatar"
+                alt={homeSeo.testimonialsProfileImageAlt}
                 width={64}
                 height={64}
               />
@@ -130,7 +132,7 @@ const Testimonials = () => {
               {/* User profile image */}
               <Image
                 src={userTestimonial.userProfileImage1}
-                alt="user profile picture"
+                alt={homeSeo.testimonialsProfileImageAlt}
                 width={64}
                 height={64}
               />
@@ -158,7 +160,7 @@ const Testimonials = () => {
               {/* User profile image */}
               <Image
                 src={userTestimonial.userProfileImage2}
-                alt="user profile picture"
+                alt={homeSeo.testimonialsProfileImageAlt}
                 width={64}
                 height={64}
               />
@@ -186,7 +188,7 @@ const Testimonials = () => {
         <Link href={userTestimonial.testimonialButtonLink} target="_blank">
           <Box padding={3}>
             <Button
-              aria-label="Read More"
+              aria-label={homeSeo.testimonialsButtonAriaLabel}
               variant="contained"
               sx={{
                 background:

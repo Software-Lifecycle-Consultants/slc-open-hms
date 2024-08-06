@@ -6,6 +6,7 @@ import { ToggleButtonGroup, Box, ToggleButton, Typography   } from "@mui/materia
 import { cookieData } from "../../../data/homePage";
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import { homeSeo } from "@/data/seo";
 
 
 export default function Cookie() {
@@ -86,11 +87,11 @@ export default function Cookie() {
                 {cookieData.cookieDescription}
               {/* accept reject ButtonGroup */}
               <ToggleButtonGroup color="success" sx={{ height: "30px", marginLeft: "20px" }}>
-                <ToggleButton aria-label="accept" value="accept" onClick={checkCookie} color="success" sx={{ background: "#C7923E", borderRadius: "8px", color: "white" }}>
+                <ToggleButton aria-label={homeSeo.cookieButtonAriaLabel1} value="accept" onClick={checkCookie} color="success" sx={{ background: "#C7923E", borderRadius: "8px", color: "white" }}>
                 {cookieData.cookieButtonCaption}
                   <ArrowRightAltIcon sx={{ color: "#FFFFFF", gap: "15px" }} />
                 </ToggleButton>
-                <ToggleButton aria-label="reject" value="reject" onClick={rejectCookie} color="error" sx={{ borderRadius: "8px", color: "black", background: "white", borderColor: "#C7923E" }} >
+                <ToggleButton aria-label={homeSeo.cookieButtonAriaLabel2} value="reject" onClick={rejectCookie} color="error" sx={{ borderRadius: "8px", color: "black", background: "white", borderColor: "#C7923E" }} >
                 <Typography sx={{fontSize: "14px"}}>{cookieData.cookieButtonCaptionReject}</Typography>
                 </ToggleButton>
               </ToggleButtonGroup>
