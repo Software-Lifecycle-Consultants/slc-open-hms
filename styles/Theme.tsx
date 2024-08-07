@@ -239,7 +239,7 @@ const themeClient = createTheme({
 const themeAdmin = createTheme({
   palette: {
     primary: {
-      main: "#D0D5DD",
+      main: "#FFFF",
     },
     secondary: {
       main: "#4A5472",
@@ -304,7 +304,7 @@ const themeAdmin = createTheme({
       margin: "0.5rem",
       fontFamily: "Mulish",
       fontSize: "1rem",
-      "&:hover": { backgroundColor: "#000" },
+      "&:hover": { backgroundColor: "none" },
       "@media (max-width:600px)": {
         fontSize: "0.75rem",
       },

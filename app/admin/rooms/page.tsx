@@ -78,39 +78,35 @@ const Rooms = () => {
       alignItems="center"
     >
       {/* Container for the "Add More" button */}
-      <Container maxWidth="lg" sx={{ position: 'relative', marginBottom: "20px" }}>
-        <Link href="/admin/room-details" style={{ position: 'absolute', top: '15px', right: '22px' }}>
-          <Button
-            variant="outlined"
-            endIcon={<AddCircleOutlineIcon />}
-            sx={{
-              fontFamily: "Mulish",
-              backgroundColor: "#4A5472",
-              fontSize: "15px",
-              width: "130px",
-              height: "40px",
-              borderColor: "#5B5959",
-              borderWidth: 2,
-              color: "white",
-              textTransform: "capitalize",
-            }}>
+      <Container
+        maxWidth="lg"
+        sx={{ position: "relative", marginBottom: "20px" }}
+      >
+        <Link
+          href="/admin/room-details"
+          style={{ position: "absolute", top: "15px", right: "22px" }}
+        >
+          <Button variant="outlined" endIcon={<AddCircleOutlineIcon />}>
             {roomlistData.roomlistAddMoreButton}
           </Button>
         </Link>
 
         {/* List of rooms displayed using the List component */}
-        <Grid maxWidth="lg" sx={{
-          marginTop: { xs: "80px", md: "130px" },
-          padding: { xs: "0 15px", sm: "0" } // Add some padding on mobile
-        }}>
+        <Grid
+          maxWidth="lg"
+          sx={{
+            marginTop: { xs: "80px", md: "130px" },
+            padding: { xs: "0 15px", sm: "0" }, // Add some padding on mobile
+          }}
+        >
           <List>
             {rooms.map((room) => (
               <ListItem
                 key={room.id}
                 alignItems="center"
                 sx={{
-                  borderBottom: '1px solid #e0e0e0',
-                  '&:last-child': { borderBottom: 'none' },
+                  borderBottom: "1px solid #e0e0e0",
+                  "&:last-child": { borderBottom: "none" },
                   py: 2,
                 }}
               >
@@ -126,7 +122,9 @@ const Rooms = () => {
                       height: 45,
                     }}
                   >
-                    <HotelIcon sx={{ color: '#666666', width: 35, height: 35 }} />
+                    <HotelIcon
+                      sx={{ color: "#666666", width: 35, height: 35 }}
+                    />
                   </Box>
                 </ListItemIcon>
                 <ListItemText
@@ -134,34 +132,58 @@ const Rooms = () => {
                   primary={
                     <Box
                       sx={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        width: '100%',
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        width: "100%",
                         fontFamily: "Mulish",
                         fontWeight: 550,
                         fontSize: { xs: "16px", sm: "18px" },
                       }}
                     >
-                      <Typography variant="h3" sx={{ flexBasis: { xs: '70%', sm: '20%' } }}ml={2}>
+                      <Typography
+                        variant="h3"
+                        sx={{ flexBasis: { xs: "70%", sm: "20%" } }}
+                        ml={2}
+                      >
                         {room.roomType}
                       </Typography>
-                      <Box sx={{ display: { xs: 'none', sm: 'block' }, flexBasis: '20%' }}ml={13}>
-                        <Typography variant="h3">
-                          {room.bedType}
-                        </Typography>
+                      <Box
+                        sx={{
+                          display: { xs: "none", sm: "block" },
+                          flexBasis: "20%",
+                        }}
+                        ml={13}
+                      >
+                        <Typography variant="h3">{room.bedType}</Typography>
                       </Box>
-                      <Box sx={{ display: { xs: 'none', sm: 'block' }, flexBasis: '20%' }}ml={13}>
+                      <Box
+                        sx={{
+                          display: { xs: "none", sm: "block" },
+                          flexBasis: "20%",
+                        }}
+                        ml={13}
+                      >
                         <Typography variant="h3">
                           {room.guestCapacity}
                         </Typography>
                       </Box>
-                      <Box sx={{ display: { xs: 'none', sm: 'block' }, flexBasis: '20%' }}ml={13}>
-                        <Typography variant="h3">
-                          {room.price}
-                        </Typography>
+                      <Box
+                        sx={{
+                          display: { xs: "none", sm: "block" },
+                          flexBasis: "20%",
+                        }}
+                        ml={13}
+                      >
+                        <Typography variant="h3">{room.price}</Typography>
                       </Box>
-                      <Box sx={{ display: 'flex', justifyContent: 'flex-end', flexBasis: { xs: '30%', sm: '20%' } }}>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "flex-end",
+                          flexBasis: { xs: "30%", sm: "20%" },
+                        }}
+                      >
                         <IconButton size="small">
                           <EditIcon />
                         </IconButton>
@@ -219,7 +241,11 @@ const Rooms = () => {
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       e.preventDefault();
-                      handleAddChip(setRoomTypeChips, roomTypeInput, setRoomTypeInput);
+                      handleAddChip(
+                        setRoomTypeChips,
+                        roomTypeInput,
+                        setRoomTypeInput
+                      );
                     }
                   }}
                 />
@@ -277,8 +303,8 @@ const Rooms = () => {
                 />
               </Stack>
               <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-                <Button variant="outlined">Close</Button>
-                <Button variant="contained" sx={{ marginLeft: 2 }}>
+                <Button variant="contained">Close</Button>
+                <Button variant="outlined" sx={{ marginLeft: 2 }}>
                   Save
                 </Button>
               </Box>
@@ -308,8 +334,8 @@ const Rooms = () => {
                 <TextField label="Answer" variant="outlined" fullWidth />
               </Stack>
               <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-                <Button variant="outlined">Close</Button>
-                <Button variant="contained" sx={{ marginLeft: 2 }}>
+                <Button variant="contained">Close</Button>
+                <Button variant="outlined" sx={{ marginLeft: 2 }}>
                   Save
                 </Button>
               </Box>
@@ -341,14 +367,18 @@ const Rooms = () => {
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       e.preventDefault();
-                      handleAddChip(setServiceChips, serviceInput, setServiceInput);
+                      handleAddChip(
+                        setServiceChips,
+                        serviceInput,
+                        setServiceInput
+                      );
                     }
                   }}
                 />
               </Stack>
               <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-                <Button variant="outlined">Close</Button>
-                <Button variant="contained" sx={{ marginLeft: 2 }}>
+                <Button variant="contained">Close</Button>
+                <Button variant="outlined" sx={{ marginLeft: 2 }}>
                   Save
                 </Button>
               </Box>

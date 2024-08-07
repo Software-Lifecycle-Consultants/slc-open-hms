@@ -15,3 +15,27 @@ export const blogSeo ={
     linklabel3:"Subscribe button",
     linklabel4:"Privacy policy",
 };
+
+export const homeSeo = {
+    metatitle: "Travala | The best deals on the world's best destinations",
+    metadescription: "Travala offer best deals on hotels, flights, and travel experiences. Find top destinations at the best prices and book easily for your next adventure.",
+    metakeyword: "Travel deals, hotel bookings, flight reservations, vacation packages, best travel discounts, luxury accommodations, budget travel deals, top travel destinations, online travel agency, affordable hotels, exclusive travel offers, global hotel deals, travel booking platform, discounted flights, travel deals site",
+    metaogtitle: "Travala | The best deals on the world's best destinations",
+    metaogdescription: "With travala you can experience new travel and the best tourist destinations that we have to offer",
+    metaogtype: "website",
+    metaogurl: " https://www.travala.com/",
+    metaogimage: "app\favicon.ico",
+    herobannerButtonAriaLabel1: "Our Destination",
+    herobannerButtonAriaLabel2: "Our Gallery",
+    herobannerImageAlt: "Woman travelling with a backpack and suitcase",
+    customCardImageAlt: "A beautiful lake in the mountains with a boat in the foreground",
+    iconImageAlt1: "wallet",
+    iconImageAlt2: "user",
+    iconImageAlt3: "gift",
+    destinationCardsAriaLabel: "ticketBooking",
+    secondaryBannerButtonAriaLabel: "contactNow",
+    testimonialsProfileImageAlt: "user profile picture",
+    testimonialsButtonAriaLabel: "Read More",
+    cookieButtonAriaLabel1: "Accept Cookies",
+    cookieButtonAriaLabel2: "Reject Cookies",
+};

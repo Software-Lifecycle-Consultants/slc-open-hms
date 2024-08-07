@@ -10,6 +10,7 @@ import {
   typographyBody1Style,
   buttonContainedStyle,
 } from "./styles";
+import { homeSeo } from "@/data/seo";
 
 /* contactNow Banner functional component */
 const ContactNowBanner = () => {
@@ -39,6 +40,7 @@ const ContactNowBanner = () => {
           >
             {/* Button with icon for web and tablet view */}
             <Button
+              aria-label={homeSeo.secondaryBannerButtonAriaLabel}
               href="/contact-us"
               variant="contained"
               sx={{
