@@ -8,6 +8,12 @@ export const blogSeo ={
     metaogurl: " https://www.travala.com/",
     metaogimage: "app\favicon.ico",
     canonicallink:"https://www.travala.com/blog",
+    imageAlt1:"Blog post thumbnail",
+    imageAlt2:"Scenic view of Sri Lanka",
+    linklabel1:"Read more about this blog post",
+    linklabel2:"Email input field",
+    linklabel3:"Subscribe button",
+    linklabel4:"Privacy policy",
 };
 
 export const homeSeo = {

@@ -9,6 +9,7 @@ import {
   Container,
 } from "@mui/material";
 import { bannerData } from "@/data/blogPage";
+import { blogSeo } from "@/data/seo";
 // banner section of the blog page
 const Banner = () => {
   return (
@@ -42,7 +43,7 @@ const Banner = () => {
             width: { md: "70%", xs: "50%" },
             justifyContent: "center",
           }}
-          aria-label="Email input field"
+          aria-label={blogSeo.linklabel2}
         />
         {/* button in the banner section */}
         <Button
@@ -52,14 +53,14 @@ const Banner = () => {
             width: "auto",
           }}
           variant="contained"
-          aria-label="Subscribe button"
+          aria-label={blogSeo.linklabel3}
         >
           {bannerData.buttonText}
         </Button>
         <Box>
         <Typography variant="h5" color='#FFFFFF' mt={2} mb={20}  sx={{alignItems:"center", }}>
           {bannerData.bannerSlogen}{" "}
-          <Link href="/privacy-policy" style={{ color: "white" }}aria-label="Privacy policy">
+          <Link href="/privacy-policy" style={{ color: "white" }}aria-label={blogSeo.linklabel4}>
            {bannerData.bannerLinkText}
           </Link>
         </Typography>
