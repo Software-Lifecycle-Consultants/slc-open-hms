@@ -12,6 +12,7 @@ import { bannerData } from "@/data/blogPage";
 // banner section of the blog page
 const Banner = () => {
   return (
+    
     <Container maxWidth="md">
       <Box style={{ textAlign: "center" }}>
         {/* text in the banner  */}
@@ -41,6 +42,7 @@ const Banner = () => {
             width: { md: "70%", xs: "50%" },
             justifyContent: "center",
           }}
+          aria-label="Email input field"
         />
         {/* button in the banner section */}
         <Button
@@ -50,14 +52,15 @@ const Banner = () => {
             width: "auto",
           }}
           variant="contained"
+          aria-label="Subscribe button"
         >
           {bannerData.buttonText}
         </Button>
         <Box>
         <Typography variant="h5" color='#FFFFFF' mt={2} mb={20}  sx={{alignItems:"center", }}>
           {bannerData.bannerSlogen}{" "}
-          <Link href="/privacy-policy" style={{ color: "white" }}>
-            {bannerData.bannerLinkText}
+          <Link href="/privacy-policy" style={{ color: "white" }}aria-label="Privacy policy">
+           {bannerData.bannerLinkText}
           </Link>
         </Typography>
         </Box>

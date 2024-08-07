@@ -7,6 +7,8 @@ import CustomCard from "../components/frontend/homePage/CustomCard";
 import LogoCarousel from "@/components/frontend/homePage/LogoCarousel";
 import ContactNowBanner from "@/components/frontend/homePage/SecondaryBanner";
 import Cookie from "@/components/frontend/cookieBanner/Cookie";
+import Head from "next/head";
+import { homeSeo } from "@/data/seo";
 
 /**
  * HomeScreen represents the main screen of the website.
@@ -22,6 +24,16 @@ const sectionStyle = {
 export default function HomeScreen() {
   return (
     <>
+    <Head>
+        <title>{homeSeo.metatitle}</title>        
+        <meta name="description" content= {homeSeo.metadescription} />
+        <meta name="keywords" content= {homeSeo.metakeyword} />
+        <meta property="og:title" content= {homeSeo.metaogtitle} />
+        <meta property="og:description" content= {homeSeo.metaogdescription} />
+        <meta property="og:type" content= {homeSeo.metaogtype} />
+        <meta property="og:url" content= {homeSeo.metaogurl} />
+        <meta property="og:image" content= {homeSeo.metaogimage} />
+      </Head>
       {/* HeroBanner Section */}
       <Box
         sx={{
