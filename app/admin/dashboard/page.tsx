@@ -12,7 +12,7 @@ const AdminDashboard = () => {
       <Box
         sx={{
           backgroundColor: "#EEF5FF",
-          padding: "40px 0",
+          padding: "60px 0",
           width: "100%",
           height: "110vh",
         }}
@@ -25,6 +25,7 @@ const AdminDashboard = () => {
               color: "#343C6A",
               fontSize: "20px",
               fontWeight: "500",
+              
             }}
           >
             <Typography
