@@ -12,6 +12,7 @@ import {
 import { useRouter } from "next/navigation";
 import { roomCardCheckIconContent, roomCardTexts } from "@/data/roomDetailsPage";
 import { lora, mulish } from "../../../app/fonts";
+import { exploreSeo } from "@/data/seo";
 
 interface RoomCardProps {
   image: string;
@@ -74,7 +75,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
         >
           <Image
             src={image}
-            alt="test"
+            alt={exploreSeo.roomCardImageAlt}
             width={400}
             height={310}
             style={{
@@ -134,6 +135,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ image, roomName, price }) => {
             <Box sx={{ display: "flex", paddingTop: '2.5rem' }}>
               <Box>
                 <Button
+                  aria-label={exploreSeo.roomCardButtonAriaLabel}
                   variant="contained"
                   onClick={navigationToRoomDetailsScreen}
                 >
