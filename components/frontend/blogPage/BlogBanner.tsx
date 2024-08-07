@@ -43,7 +43,7 @@ const Banner = () => {
             width: { md: "70%", xs: "50%" },
             justifyContent: "center",
           }}
-          aria-label={blogSeo.textfieldarealabel}
+          aria-label={blogSeo.linklabel2}
         />
         {/* button in the banner section */}
         <Button
@@ -53,14 +53,14 @@ const Banner = () => {
             width: "auto",
           }}
           variant="contained"
-          aria-label={blogSeo.buttonbannerarealabel}
+          aria-label={blogSeo.linklabel3}
         >
           {bannerData.buttonText}
         </Button>
         <Box>
         <Typography variant="h5" color='#FFFFFF' mt={2} mb={20}  sx={{alignItems:"center", }}>
           {bannerData.bannerSlogen}{" "}
-          <Link href="/privacy-policy" style={{ color: "white" }}aria-label={blogSeo.privacypolicyarealabel}>
+          <Link href="/privacy-policy" style={{ color: "white" }}aria-label={blogSeo.linklabel4}>
            {bannerData.bannerLinkText}
           </Link>
         </Typography>
