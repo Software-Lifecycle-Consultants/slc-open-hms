@@ -63,7 +63,7 @@ const DetailBanner = () => {
               {/* Image */}
               <Image
                 src={sigiriRock}
-                alt={blogdetailedSeo.detailbannerimage1}
+                alt={blogdetailedSeo.detailbannerimageAlt1}
                 width={1000}
                 height={720}
                 style={{

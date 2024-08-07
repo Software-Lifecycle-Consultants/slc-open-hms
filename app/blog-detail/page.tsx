@@ -82,7 +82,7 @@ export default function blogDetailed(){
     }}>
     <Container>
     <Stack direction="row" justifyContent="flex-end">       
-    <Link href="/blog" aria-label={blogdetailedSeo.blogcardarealable}>
+    <Link href="/blog" aria-label={blogdetailedSeo.blogcardAreaLable1}>
       <Button 
             variant="contained"
               style={{

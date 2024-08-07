@@ -80,7 +80,7 @@ import {
                 {/* Image */}
                 <Image
                   src={blogcontent.pharagraph.imageContent}
-                  alt={blogdetailedSeo.contentimage1}
+                  alt={blogdetailedSeo.contentimageAlt1}
                   width={1000}
                   height={720}
                   style={{
@@ -203,7 +203,7 @@ import {
                 {/* Final image */}
                 <Image
                   src={blogcontent.pharagraph.imageEnd}
-                  alt={blogdetailedSeo.contentimage2}
+                  alt={blogdetailedSeo.contentimageAlt2}
                   width={1000}
                   height={720}
                   style={{

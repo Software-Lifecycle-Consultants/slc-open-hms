@@ -12,6 +12,8 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import Head from "next/head";
+import { blogSeo } from "@/data/seo";
 
 const itemsPerPage = 6; // Number of blog cards per page
 
@@ -28,6 +30,17 @@ export default function Blog() {
 
   return (
     <>
+      <Head>
+        <title>{blogSeo.metatitle}</title>
+        <meta name="description" content= {blogSeo.metadescription} />
+        <meta name="keywords" content={blogSeo.metakeyword}/>
+        <meta property="og:title" content={blogSeo.metaogtitle} />
+        <meta property="og:description" content={blogSeo.metaogdescription} />
+        <meta property="og:type" content={blogSeo.metaogtype} />
+        <meta property="og:url" content={blogSeo.metaogurl} />
+        <meta property="og:image" content={blogSeo.metaogimage} />
+        <link rel="canonical" href={blogSeo.canonicallink} />
+      </Head>
       <Box
         sx={{
           backgroundColor: "#0C111F",
@@ -48,7 +61,7 @@ export default function Blog() {
     <Container>
       <Image
         src={bannerData.image}
-        alt="test"
+        alt={blogSeo.imageAlt2}
         width={1350}
         height={400}
         style={{

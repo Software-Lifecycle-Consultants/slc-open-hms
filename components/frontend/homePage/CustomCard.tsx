@@ -13,6 +13,7 @@ import {
 } from "../../../public/images/homePage/customCardImages";
 import { cardDetails1, cardDetails2 } from "../../../data/homePage";
 import { montserrat } from "../../../app/fonts";
+import { homeSeo } from "@/data/seo";
 
 /* Typography styles for heading 1 */
 const typographyh1Style = {
@@ -79,7 +80,7 @@ const CustomCard = ({}) => {
         {/* Image */}
         <Image
           src={cardDetails1.customCardImage}
-          alt="test"
+          alt={homeSeo.customCardImageAlt}
           width={518}
           height={301}
           style={{
@@ -133,7 +134,7 @@ const CustomCard = ({}) => {
                           src={wallet}
                           width={38}
                           height={38}
-                          alt="wallet"
+                          alt={homeSeo.iconImageAlt1}
                           style={{
                             flexShrink: 0,
                           }}
@@ -158,7 +159,7 @@ const CustomCard = ({}) => {
                           src={user}
                           width={38}
                           height={38}
-                          alt="wallet"
+                          alt={homeSeo.iconImageAlt2}
                           style={{
                             flexShrink: 0,
                           }}
@@ -183,7 +184,7 @@ const CustomCard = ({}) => {
                           src={heart}
                           width={38}
                           height={38}
-                          alt="wallet"
+                          alt={homeSeo.iconImageAlt3}
                           style={{
                             flexShrink: 0,
                           }}
