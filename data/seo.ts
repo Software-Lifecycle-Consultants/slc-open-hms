@@ -39,6 +39,21 @@ export const homeSeo = {
     cookieButtonAriaLabel1: "Accept Cookies",
     cookieButtonAriaLabel2: "Reject Cookies",
 };
+export const blogdetailedSeo ={
+    metatitle: "Travala | Sigiriya - Sri Lanka's Enigmatic Citadel Unveiled",
+    metadescription: "Discover the hidden gems of Sri Lanka with Travala. Dive into the rich culture, scenic landscapes, and historic marvels of this beautiful island. Read our detailed guide and plan your next adventure today.",
+    metakeyword: "Sri Lanka travel, Sri Lankan tourism, Sri Lanka marvels, Sri Lanka travel guide, Best places to visit in Sri Lanka, Sri Lanka attractions, Sri Lanka vacation, Sri Lanka tour packages, Scenic landscapes in Sri Lanka, Historical sites in Sri Lanka, Explore Sri Lanka, Sri Lanka travel tips, Sri Lankan culture, Sri Lankan heritage, Sri Lanka adventure",
+    metaogtitle: "Travala | Sigiriya - Sri Lanka's Enigmatic Citadel Unveiled",
+    metaogdescription: "Explore the ancient mysteries and architectural marvels of Sigiriya, a UNESCO World Heritage Site nestled in the heart of Sri Lanka.",
+    metaogtype: "website",
+    metaogurl: " https://www.travala.com/",
+    metaogimage: "app\favicon.ico",
+    canonicallink:"https://www.travala.com/blog-detail",
+    blogcardAreaLable1:"View all posts",
+    detailbannerimageAlt1:"Sigiriya Rock Fortress in Sri Lanka",
+    contentimageAlt1:"A scenic view related to the blog content",
+    contentimageAlt2:"A final scenic view related to the blog content",
+};
 
 export const roomDetailsSeo = {
     metatitle: "Travala | Room Details",

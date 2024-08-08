@@ -108,13 +108,6 @@ const Rooms = () => {
             padding: { xs: "0 15px", sm: "0" }, // Add some padding on mobile
           }}
         >
-        <Grid
-          maxWidth="lg"
-          sx={{
-            marginTop: { xs: "80px", md: "130px" },
-            padding: { xs: "0 15px", sm: "0" }, // Add some padding on mobile
-          }}
-        >
           <List>
             {rooms.map((room) => (
               <ListItem
