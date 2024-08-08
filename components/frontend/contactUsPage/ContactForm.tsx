@@ -12,7 +12,7 @@ import {
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import { postData } from "@/services/api";
-
+import { contactSeo } from "@/data/seo";
 /*
 This component represents a contact form where users can enter their details and submit a message.
  * It includes fields for first name, last name, email, phone number, country, subject, and message.
@@ -119,7 +119,9 @@ const ContactForm = ({}) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}
+    aria-label={contactSeo.contactFormAriaLabel1}
+    >
       {/* Card component representing the contact form */}
       <Card
         sx={{
@@ -150,6 +152,7 @@ const ContactForm = ({}) => {
                 value={formData.firstName}
                 onChange={(e) => handleChange(e, "firstName")}
                 required
+                aria-label={contactSeo.contactFormAriaLabel2}
               />
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
@@ -162,6 +165,7 @@ const ContactForm = ({}) => {
                 value={formData.lastName}
                 onChange={(e) => handleChange(e, "lastName")}
                 required
+                aria-label={contactSeo.contactFormAriaLabel3}
               />
             </Grid>
             <Grid item xs={12}>
@@ -174,6 +178,7 @@ const ContactForm = ({}) => {
                 value={formData.email}
                 onChange={(e) => handleChange(e, "email")}
                 required
+                aria-label={contactSeo.contactFormAriaLabel4}
               />
             </Grid>
           </Grid>
@@ -207,6 +212,7 @@ const ContactForm = ({}) => {
                   color:"#9A9AB0",
                   fontWeight: "bold",
                   }}
+                  aria-label={contactSeo.contactFormAriaLabel5}
               />
             </Grid>
             {/* Country field */}
@@ -220,6 +226,7 @@ const ContactForm = ({}) => {
                 onChange={(country) =>
                   setCountry(country.target.value as string)
                 }
+                aria-label={contactSeo.contactFormAriaLabel6}
               >
                 {/* Menu items for country selection */}
                 {countries.map((country) => (
@@ -245,6 +252,7 @@ const ContactForm = ({}) => {
                 type="subject"
                 value={formData.subject}
                 onChange={(e) => handleChange(e, "subject")}
+                aria-label={contactSeo.contactFormAriaLabel7}
               ></TextField>
             </Grid>
             {/* Message field */}
@@ -259,6 +267,7 @@ const ContactForm = ({}) => {
                 value={formData.message}
                 onChange={(e) => handleChange(e, "message")}
                 required
+                aria-label={contactSeo.contactFormAriaLabel8}
               />
             </Grid>
           </Grid>
@@ -279,6 +288,7 @@ const ContactForm = ({}) => {
                 backgroundColor: "#C6944C",
               },
             }}
+            aria-label={contactSeo.contactFormAriaLabel9}
           >
             Send Message
           </Button>
