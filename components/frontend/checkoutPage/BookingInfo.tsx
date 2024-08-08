@@ -16,6 +16,7 @@ import img from "@/public/images/hotelRooms/Room2.webp";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { bookingInfoCard } from "@/data/checkoutPage";
 import { lora, mulish } from "../../../app/fonts";
+import { checkoutSeo } from "@/data/seo";
 
 /**
  * BookingInfo component is the card used in checkout page to display details of each room.
@@ -73,7 +74,7 @@ const BookingInfo = () => {
           {/* Image of the room */}
           <Image
             src={img}
-            alt="Room Image"
+            alt={checkoutSeo.bookingInfoImageAlt}
             width={400}
             height={330}
             style={{

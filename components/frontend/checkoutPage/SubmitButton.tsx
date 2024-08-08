@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { submitContent } from "@/data/checkoutPage";
 import { mulish } from "../../../app/fonts";
 import { orangebuttonCommonStyle } from "../homePage/styles";
+import { checkoutSeo } from "@/data/seo";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -83,6 +84,7 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ email }) => {
         }}>
         <Button
           type="submit"
+          aria-label={checkoutSeo.submitButtonAriaLabel}
           variant="contained"
           disabled={!isChecked}
           sx={{            
