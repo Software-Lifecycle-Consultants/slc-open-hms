@@ -39,3 +39,19 @@ export const homeSeo = {
     cookieButtonAriaLabel1: "Accept Cookies",
     cookieButtonAriaLabel2: "Reject Cookies",
 };
+
+export const roomDetailsSeo = {
+    metatitle: "Travala | Room Details",
+    metadescription: "Discover the best rooms and suites at Travala. Find the perfect accommodation for your next vacation or business trip.",
+    metakeyword: "Hotel rooms, luxury suites, budget accommodations, travel accommodations, hotel room bookings, vacation rentals, business travel, hotel amenities, room features, hotel room facilities, hotel room types, hotel room rates, hotel room availability, hotel room reservations, hotel room descriptions, hotel room photos",
+    metaogtitle: "Travala | Room Details",
+    metaogdescription: "Find the perfect room or suite for your next trip with Travala",
+    metaogtype: "website",
+    metaogurl: " https://www.travala.com/",
+    metaogimage: "app\favicon.ico",
+    canonicallink:"https://www.travala.com/room-details",
+    roomDetailsHerobannerImageAlt: "Hotel room with a view",
+    roomDetailsGalleryImageAlt1: "Hotel room beds",
+    roomDetailsGalleryImageAlt2: "Hotel room beds",
+    additionalInfoButtonAriaLabel: "Book Now",
+};
