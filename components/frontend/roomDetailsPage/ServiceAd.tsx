@@ -56,6 +56,8 @@ export default function ServiceAd() {
         <Box>
           <Typography
           variant="h3"
+          style={{ fontWeight: 'bold' }}
+          color="black"
           mt={2}
           ml={2}
           >

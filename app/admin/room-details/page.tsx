@@ -26,7 +26,12 @@ const roomDetails = () => {
   return (
     <>
       <Box
-        sx={{ backgroundColor: "#EEF5FF", padding: "10px 0", width: "100%", mx: "2px"}}
+        sx={{
+          backgroundColor: "#EEF5FF",
+          padding: "10px 0",
+          width: "100%",
+          mx: "2px",
+        }}
       >
         <Container>
           <HeadingBook />
@@ -40,21 +45,17 @@ const roomDetails = () => {
         }}
       >
         {/* (1) The Details component is imported and rendered here. */}
-        
+
         <Container>
           <Grid container spacing={2}>
             {/* <RoomDetailsForm /> */}
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6} marginTop={3}>
               <Details />
             </Grid>
             {/* (2) The Gallery component is imported and rendered here. */}
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-              <Typography
-              variant="h2"
-              >
-                Cover Image
-              </Typography>
-              
+              <Typography variant="h2">Cover Image</Typography>
+
               <Card
                 elevation={0}
                 sx={{
@@ -72,8 +73,11 @@ const roomDetails = () => {
                   sx={{
                     marginTop: "7px",
                     backgroundColor: "#4A5472",
-                    "&:hover": {  // Hover style applied here
-                      backgroundColor: "#192959"},
+                    borderRadius: "8px", // Set corner radius     
+                borderColor: "#5B5959", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
                   }}
                   component="label"
                   role={undefined}
@@ -81,6 +85,7 @@ const roomDetails = () => {
                   tabIndex={-1}
                   startIcon={<AddAPhotoIcon />}
                 >
+                  Submit
                   <VisuallyHiddenInput type="file" />
                 </Button>
               </Card>
@@ -123,7 +128,13 @@ const roomDetails = () => {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
             <Box display="flex" justifyContent="end" alignItems="center">
               <Button
-                variant="outlined"
+                variant="contained"
+                sx={{
+                  borderColor: "#5B5959", // Set outline color
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                  },
+                }}
               >
                 <Typography
                   style={{
@@ -135,15 +146,20 @@ const roomDetails = () => {
                 </Typography>
               </Button>
               <Button
-                variant="contained"
+                variant="outlined"
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                    borderColor: "#192959", // Match border color on hover
+                  },
+                  borderColor: "#192959", // Initial border color (if needed)
+                }}
               >
                 <Typography
                   style={{
                     color: "white",
-                    
                   }}
                 >
-                  {" "}
                   Save
                 </Typography>
               </Button>

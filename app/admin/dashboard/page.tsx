@@ -25,6 +25,7 @@ const AdminDashboard = () => {
               color: "#343C6A",
               fontSize: "20px",
               fontWeight: "500",
+              
             }}
           >
             <Typography

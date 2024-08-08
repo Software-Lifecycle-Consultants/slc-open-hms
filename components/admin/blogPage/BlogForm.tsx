@@ -104,15 +104,12 @@ const BlogForm: React.FC = () => {
     <form onSubmit={handleSubmit}>
       <Card sx={{ marginLeft: "auto", marginRight: "auto" }}>
         <CardContent sx={{ justifyContent: "center", alignItems: "center" }}>
-          <Typography
-            variant="h1"
-            className={mulish.className}
-          >
+          <Typography variant="h1" className={mulish.className}>
             Blog
           </Typography>
           <Grid
             container
-            spacing={{ xs: 1, sm: 2, md: 2}}
+            spacing={{ xs: 1, sm: 2, md: 2 }}
             sx={{
               display: "block",
               padding: { xs: "10px 20px 10px 20px" },
@@ -176,7 +173,7 @@ const BlogForm: React.FC = () => {
             </Grid>
 
             <Typography
-              marginTop={{lg: 2, md: 2 }}
+              marginTop={{ lg: 2, md: 2 }}
               variant="h2"
               className={mulish.className}
             >
@@ -199,7 +196,7 @@ const BlogForm: React.FC = () => {
               sm={12}
               md={12}
               lg={12}
-              sx={{ alignItems: "center", py: { lg: 2 , md: 2}}}
+              sx={{ alignItems: "center", py: { lg: 2, md: 2 } }}
             >
               <Card
                 elevation={0}
@@ -222,18 +219,13 @@ const BlogForm: React.FC = () => {
                   padding: "16px",
                 }}
               >
-                <Button
-                  startIcon={<AddAPhotoIcon />}
-                >
+                <Button startIcon={<AddAPhotoIcon />}>
                   <VisuallyHiddenInput type="file" />
                 </Button>
               </Card>
             </Grid>
 
-            <Typography
-              variant="h2"
-              className={mulish.className}
-            >
+            <Typography variant="h2" className={mulish.className}>
               Author Image
             </Typography>
 
@@ -259,9 +251,7 @@ const BlogForm: React.FC = () => {
                   padding: "16px",
                 }}
               >
-                <Button
-                  startIcon={<CloudUploadIcon />}
-                >
+                <Button startIcon={<CloudUploadIcon />}>
                   <VisuallyHiddenInput type="file" />
                 </Button>
               </Card>
@@ -305,11 +295,7 @@ const BlogForm: React.FC = () => {
               marginBottom: "20px",
             }}
           >
-            <Typography
-              variant="h2"
-            >
-              Social Media Links
-            </Typography>
+            <Typography variant="h2">Social Media Links</Typography>
 
             {/* Social Media Links fields */}
             <Grid item>
@@ -352,8 +338,11 @@ const BlogForm: React.FC = () => {
             </Grid>
           </Grid>
 
-          <Box 
+          <Box
             sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              marginTop: "1rem",
               textAlign: "right",
               padding: "0 18px 20px 30px",
               //display: { xs: "flex" },
@@ -361,13 +350,27 @@ const BlogForm: React.FC = () => {
           >
             <Button
               type="button"
+              variant="contained"
               onClick={() => console.log("Draft Saved")}
+              sx={{
+                borderColor: "#5B5959", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}
             >
               Save Draft
             </Button>
 
             <Button
               type="submit"
+              variant="contained"
+              sx={{
+                borderColor: "#5B5959", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}
             >
               Publish
             </Button>
