@@ -76,6 +76,25 @@ export const checkoutSeo = {
     submitButtonAriaLabel: "Submit",
     
 };
+
+export const exploreSeo = {
+    metatitle: "Explore Rooms | Our Premium Room and Suites",
+    metadescription: "Discover luxury and comfort in our Premium Rooms and Suites, designed for an exceptional stay. Enjoy elegant furnishings, upscale amenities, and personalized service in our top-tier accommodations. Experience the ultimate in relaxation and sophistication.",
+    metakeyword: "Travel destinations, top travel spots, best travel destinations, travel experiences, hotel bookings, flight reservations, vacation packages, travel deals, best travel discounts, luxury accommodations, budget travel deals, top travel destinations, online travel agency, affordable hotels, exclusive travel offers, global hotel deals, travel booking platform, discounted flights, travel deals site",
+    metaogtitle: "Travala | Explore the world's best destinations",
+    metaogdescription: "Explore the world's best destinations with Travala. Book hotels, flights, and travel experiences at the best prices.",
+    metaogtype: "website",
+    metaogurl: " https://www.travala.com/",
+    metaogimage: "app\favicon.ico",
+    canonicallink:"https://www.travala.com/explore",
+    searchbarArialabel: "searchBar",
+    inputLabelArialabel1: "roomType",
+    inputLabelArialabel2: "guest",
+    inputLabelArialabel3: "beds",
+    inputLabelArialabel4: "sortBy",
+    roomCardImageAlt: "A luxurious hotel room with a king-size bed and a view of the city",
+    roomCardButtonAriaLabel: "View Details",
+};
 export const contactSeo = {
     metatitle:"Travala | The best deals on the world's best destinations",
     metadescription: "Get in touch with us at Your Website for any queries, support, or assistance you need. We are here to help you with our contact information, including phone, email, and address, as well as a convenient contact form and location map.",
