@@ -17,6 +17,8 @@ import { loginPageData } from "@/data/loginPage";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import { orangebuttonCommonStyle } from "@/components/frontend/homePage/styles.js";
 import Link from "next/link";
+import Head from "next/head";
+import { loginSeo } from "@/data/seo";
 
 // Functional component for Login
 const Login = () => {
@@ -51,6 +53,18 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Head>
+        <title>{loginSeo.metatitle}</title>
+        <meta name="description" content={loginSeo.metadescription}/>
+        <meta name="keywords" content={loginSeo.metakeyword}/>
+        <meta property="og:title" content={loginSeo.metaogtitle}/>
+        <meta property="og:description" content={loginSeo.metaogdescription}/>
+        <meta property="og:image" content={loginSeo.metaogimage}/>
+        <meta property="og:url" content={loginSeo.metaogurl}/>
+        <meta property="og:type" content={loginSeo.metaogtype}/>
+        <link rel="canonical" href={loginSeo.canonicallink} />
+      </Head>
     <Box
       display="flex"
       alignItems="center"
@@ -59,7 +73,8 @@ const Login = () => {
     >
       <Container maxWidth="sm">
         <Box padding={5}>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}
+          aria-label={loginSeo.loginArialabel1}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 {" "}
@@ -68,7 +83,9 @@ const Login = () => {
                   variant="h4"
                   align="center"
                   fontSize="48px"
-                  style={{ fontFamily: "Lora", color: "rgba(17, 20, 45, 1)" }}>
+                  style={{ fontFamily: "Lora", color: "rgba(17, 20, 45, 1)" }}
+                  aria-label={loginSeo.loginArialabel2}
+                  >
                   <b>{loginPageData.loginPageTitle}</b>{" "}
                   {/* Render the title from loginPageData */}
                 </Typography>
@@ -81,7 +98,8 @@ const Login = () => {
                     style={{
                       fontFamily: "Mulish",
                       color: "rgba(81, 81, 81, 1)",
-                    }}>
+                    }}
+                    aria-label={loginSeo.loginArialabel3}>
                     {loginPageData.loginPageDescription}
                     {/* Render the subtitle from loginPageData */}
                   </Typography>
@@ -108,6 +126,7 @@ const Login = () => {
                   value={formData.email}
                   onChange={(e) => handleChange(e, "email")}
                   required
+                  aria-label={loginSeo.loginArialabel4}
                 />
               </Grid>
               <Grid item xs={12} marginTop={2.5}>
@@ -127,12 +146,15 @@ const Login = () => {
                   value={formData.password}
                   onChange={(e) => handleChange(e, "password")}
                   required
+                  aria-label={loginSeo.loginArialabel5}
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
                         <IconButton
                           onClick={handleTogglePasswordVisibility}
-                          edge="end">
+                          edge="end"
+                          aria-label={loginSeo.loginArialabel6}
+                          >
                           {formData.showPassword ? (
                             <VisibilityOff />
                           ) : (
@@ -159,6 +181,7 @@ const Login = () => {
                           },
                           marginTop: "2px",
                         }}
+                        aria-label={loginSeo.loginArialabel7}
                       />
                     }
                     label={
@@ -187,6 +210,7 @@ const Login = () => {
                 <Button
                   type="submit"
                   sx={orangebuttonCommonStyle} // Add the button class
+                  aria-label={loginSeo.loginArialabel8}
                 >
                   {/* Render the title from loginPageData */}
                   {loginPageData.loginPageButtonCaption}
@@ -196,7 +220,9 @@ const Login = () => {
                 {/* Register and Forgot password Section */}
                 <Typography
                   align="center"
-                  style={{ color: "rgba(17, 20, 45, 1)" }}>
+                  style={{ color: "rgba(17, 20, 45, 1)" 
+                  }}
+                  aria-label={loginSeo.loginArialabel9}>
                   {loginPageData.loginPageNoAccountCaption}{" "}
                   <Link href="/register" style={{ color: "#003C70",textDecoration:"none" }}>
                     {loginPageData.loginPageRegisterCaption}{" "}
@@ -220,7 +246,8 @@ const Login = () => {
                     display="flex" // Use flexbox
                     alignItems="center" // Center vertically
                     justifyContent="center" // Center horizontally
-                    marginRight="10px">
+                    marginRight="10px"
+                    aria-label={loginSeo.loginArialabel10}>
                     <ArrowBack style={{ fontSize: "20px", color: "#000000" }} />{" "}
                     {/* Icon color */}
                   </Box>
@@ -230,8 +257,8 @@ const Login = () => {
                     textAlign: "center",
                     marginTop: "0px",
                     color: "rgba(17, 20, 45, 1)",
-                    
-                  }}>
+                  }}
+                  aria-label={loginSeo.loginArialabel11}>
                   <Link href="/" style={{textDecoration:"none", color:"#11142D"}}>
                     {loginPageData.loginPageBackArrowCaption}{" "}
                   </Link>
@@ -243,6 +270,7 @@ const Login = () => {
         </Box>
       </Container>
     </Box>
+    </>
   );
 };
 
