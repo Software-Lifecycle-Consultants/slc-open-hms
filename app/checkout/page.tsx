@@ -9,6 +9,8 @@ import BillingDetails from "@/components/frontend/checkoutPage/BillingDetails";
 import BookingInfo from "@/components/frontend/checkoutPage/BookingInfo";
 import ExtraFacilitation from "@/components/frontend/checkoutPage/ExtraFacilitation";
 import TermAndCondition from "@/components/frontend/checkoutPage/TermAndCondition";
+import Head from 'next/head';
+import { checkoutSeo } from '@/data/seo';
 /**
  * CheckoutScreen component represents the checkout screen of the website.
  * It includes sections like Heading, Billing details form, Booking info, Extra facilitation, Calender and Submit button.
@@ -18,6 +20,17 @@ const CheckoutScreen = () => {
   const [email, setEmail] = useState('');
   return (
     <>
+    <Head>
+    <title>{checkoutSeo.metatitle}</title>
+        <meta name="description" content= {checkoutSeo.metadescription} />
+        <meta name="keywords" content={checkoutSeo.metakeyword}/>
+        <meta property="og:title" content={checkoutSeo.metaogtitle} />
+        <meta property="og:description" content={checkoutSeo.metaogdescription} />
+        <meta property="og:type" content={checkoutSeo.metaogtype} />
+        <meta property="og:url" content={checkoutSeo.metaogurl} />
+        <meta property="og:image" content={checkoutSeo.metaogimage} />
+        <link rel="canonical" href={checkoutSeo.canonicallink} />
+    </Head>
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
           <Heading />

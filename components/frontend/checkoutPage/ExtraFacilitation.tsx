@@ -9,6 +9,7 @@ import React from "react";
 import CheckList from "./CheckList";
 import { extraFacilitationSection } from "@/data/checkoutPage";
 import { lora, mulish } from "../../../app/fonts";
+import { checkoutSeo } from "@/data/seo";
 
 /* Font style for placeholder */
 const mulishPlaceholderStyle = {
@@ -66,6 +67,7 @@ const ExtraFacilitation = () => {
           {/* TextField for Special Request */}
           <TextField
             id="outlined-basic"
+            aria-label={checkoutSeo.extrafacilitationAriaLabel}
             placeholder="Input your Special Request in Here"
             variant="outlined"
             multiline

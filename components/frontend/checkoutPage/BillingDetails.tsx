@@ -9,6 +9,7 @@ import {
 import React from 'react'
 import { billingDetailsForm } from "@/data/checkoutPage";
 import { lora, mulish } from "../../../app/fonts";
+import { checkoutSeo } from '@/data/seo';
 
 interface BillingDetailsProps {
   email: string;
@@ -81,6 +82,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                 </Typography>
                 <TextField
                   id="outlined-basic"
+                  aria-label={checkoutSeo.billingDetailsAriaLabel1}
                   placeholder="Input your First Name in Here"
                   variant="outlined"
                   sx={{ marginTop: '0.625rem' }}
@@ -96,6 +98,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                 </Typography>
                 <TextField
                   id="outlined-basic"
+                  aria-label={checkoutSeo.billingDetailsAriaLabel2}
                   placeholder="Input your Last Name in Here"
                   variant="outlined"
                   sx={{ marginTop: '0.625rem' }}
@@ -113,6 +116,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                 value={email}
                 onChange={handleEmailChange}
                   id="outlined-basic"
+                  aria-label={checkoutSeo.billingDetailsAriaLabel3}
                   placeholder="Input your Email Address in Here"
                   variant="outlined"
                   sx={{ marginTop: '0.625rem' }}
@@ -127,6 +131,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                 </Typography>
                 <TextField
                   id="outlined-basic"
+                  aria-label={checkoutSeo.billingDetailsAriaLabel4}
                   placeholder="Input your Phone Number in Here"
                   variant="outlined"
                   sx={{ marginTop: '0.625rem' }}
@@ -141,6 +146,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                 </Typography>
                 <TextField
                   id="outlined-basic"
+                  aria-label={checkoutSeo.billingDetailsAriaLabel5}
                   placeholder="Input your Email Address in Here"
                   variant="outlined"
                   sx={{ marginTop: '0.625rem' }}
@@ -155,6 +161,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ email, setEmail }) => {
                 </Typography>
                 <TextField
                   id="outlined-basic"
+                  aria-label={checkoutSeo.billingDetailsAriaLabel6}
                   placeholder="Input your Address in Here"
                   variant="outlined"
                   sx={{ marginTop: '0.625rem' }}                                  
