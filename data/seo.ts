@@ -39,6 +39,43 @@ export const homeSeo = {
     cookieButtonAriaLabel1: "Accept Cookies",
     cookieButtonAriaLabel2: "Reject Cookies",
 };
+export const blogdetailedSeo ={
+    metatitle: "Travala | Sigiriya - Sri Lanka's Enigmatic Citadel Unveiled",
+    metadescription: "Discover the hidden gems of Sri Lanka with Travala. Dive into the rich culture, scenic landscapes, and historic marvels of this beautiful island. Read our detailed guide and plan your next adventure today.",
+    metakeyword: "Sri Lanka travel, Sri Lankan tourism, Sri Lanka marvels, Sri Lanka travel guide, Best places to visit in Sri Lanka, Sri Lanka attractions, Sri Lanka vacation, Sri Lanka tour packages, Scenic landscapes in Sri Lanka, Historical sites in Sri Lanka, Explore Sri Lanka, Sri Lanka travel tips, Sri Lankan culture, Sri Lankan heritage, Sri Lanka adventure",
+    metaogtitle: "Travala | Sigiriya - Sri Lanka's Enigmatic Citadel Unveiled",
+    metaogdescription: "Explore the ancient mysteries and architectural marvels of Sigiriya, a UNESCO World Heritage Site nestled in the heart of Sri Lanka.",
+    metaogtype: "website",
+    metaogurl: " https://www.travala.com/",
+    metaogimage: "app\favicon.ico",
+    canonicallink:"https://www.travala.com/blog-detail",
+    blogcardAreaLable1:"View all posts",
+    detailbannerimageAlt1:"Sigiriya Rock Fortress in Sri Lanka",
+    contentimageAlt1:"A scenic view related to the blog content",
+    contentimageAlt2:"A final scenic view related to the blog content",
+};
+
+export const checkoutSeo = {
+    metatitle: "Travala | The best deals on the world's best destinations",
+    metadescription: "Travala offer best deals on hotels, flights, and travel experiences. Find top destinations at the best prices and book easily for your next adventure.",
+    metakeyword: "Travel deals, hotel bookings, flight reservations, vacation packages, best travel discounts, luxury accommodations, budget travel deals, top travel destinations, online travel agency, affordable hotels, exclusive travel offers, global hotel deals, travel booking platform, discounted flights, travel deals site",
+    metaogtitle: "Travala | The best deals on the world's best destinations",
+    metaogdescription: "With travala you can experience new travel and the best tourist destinations that we have to offer",
+    metaogtype: "website",
+    metaogurl: " https://www.travala.com/",
+    metaogimage: "app\favicon.ico",
+    canonicallink:"https://www.travala.com/checkouts",
+    billingDetailsAriaLabel1: "First Name",
+    billingDetailsAriaLabel2: "Last Name",
+    billingDetailsAriaLabel3: "Email Address",
+    billingDetailsAriaLabel4: "Phone Number",
+    billingDetailsAriaLabel5: "Passport ID",
+    billingDetailsAriaLabel6: "Address",
+    bookingInfoImageAlt: "Hotel room image",
+    extrafacilitationAriaLabel: "Special Requests",
+    submitButtonAriaLabel: "Submit",
+    
+};
 
 export const exploreSeo = {
     metatitle: "Explore Rooms | Our Premium Room and Suites",

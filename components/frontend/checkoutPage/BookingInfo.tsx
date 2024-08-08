@@ -1,16 +1,22 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Typography,
   Card,
   CardContent,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  SelectChangeEvent,
 } from "@mui/material";
 import Image from "next/image";
 import img from "@/public/images/hotelRooms/Room2.webp";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { bookingInfoCard } from "@/data/checkoutPage";
 import { lora, mulish } from "../../../app/fonts";
+import { checkoutSeo } from "@/data/seo";
 
 /**
  * BookingInfo component is the card used in checkout page to display details of each room.
@@ -28,6 +34,23 @@ const checkBoxTypographyStyle = {
 };
 
 const BookingInfo = () => {
+  // Ensure roomOptions contains the roomTitle value
+  const roomOptions: string[] = [
+    'Room 1',
+    'Room 2',
+    'Room 3',
+    // Add the default room title if it's not included in the options
+    bookingInfoCard.roomTitle,
+  ];
+
+  // Initialize the selectedRoom state with bookingInfoCard.roomTitle
+  const [selectedRoom, setSelectedRoom] = useState<string>(bookingInfoCard.roomTitle);
+
+  // Handle dropdown change
+  const handleChange = (event: SelectChangeEvent<string>) => {
+    setSelectedRoom(event.target.value);
+  };
+
   return (
     <>
       {/* Card for booking information */}
@@ -51,7 +74,7 @@ const BookingInfo = () => {
           {/* Image of the room */}
           <Image
             src={img}
-            alt="test"
+            alt={checkoutSeo.bookingInfoImageAlt}
             width={400}
             height={330}
             style={{
@@ -63,15 +86,30 @@ const BookingInfo = () => {
         </Box>
         <CardContent>
           <Box sx={{ paddingTop: "10px", marginBottom: "10%" }}>
-            {/* Room title */}
-            <Typography
-              variant="body1"              
-            >
-              {bookingInfoCard.roomTitle}
-            </Typography>
+            {/* Room title as dropdown */}
+            <FormControl fullWidth>
+              <InputLabel>Room Title</InputLabel>
+              <Select
+                value={selectedRoom}
+                onChange={handleChange}
+                label="Room Title"
+              >
+                {roomOptions.map((room, index) => (
+                  <MenuItem key={index} value={room}>
+                    {room}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
             {/* Booking date */}
             <Typography
-              variant="h4" sx={{color:'#515151', fontWeight: 600, marginTop:'1.375rem','@media (max-width:600px)': {fontWeight: 600}}}
+              variant="h4"
+              sx={{
+                color: "#515151",
+                fontWeight: 600,
+                marginTop: "1.375rem",
+                "@media (max-width:600px)": { fontWeight: 600 },
+              }}
             >
               {bookingInfoCard.date}
             </Typography>
@@ -80,9 +118,7 @@ const BookingInfo = () => {
               <CheckBoxIcon
                 sx={{ fontSize: 34, color: "#9A9AB0", marginTop: "1.125rem" }}
               />
-              <Typography
-                variant='h4' color='#9A9AB0' marginTop='1.125rem'                
-              >
+              <Typography variant="h4" color="#9A9AB0" marginTop="1.125rem">
                 {bookingInfoCard.checkIcon1}
               </Typography>
               <CheckBoxIcon
@@ -93,9 +129,7 @@ const BookingInfo = () => {
                   marginLeft: "1.563rem",
                 }}
               />
-              <Typography
-                variant='h4' color='#9A9AB0' marginTop='1.125rem'
-              >
+              <Typography variant="h4" color="#9A9AB0" marginTop="1.125rem">
                 {bookingInfoCard.checkIcon2}
               </Typography>
               <CheckBoxIcon
@@ -106,22 +140,14 @@ const BookingInfo = () => {
                   marginLeft: "1.563rem",
                 }}
               />
-              <Typography
-                variant='h4' color='#9A9AB0' marginTop='1.125rem'
-              >
+              <Typography variant="h4" color="#9A9AB0" marginTop="1.125rem">
                 {bookingInfoCard.checkIcon3}
               </Typography>
             </Box>
             {/* Price title */}
-            <Typography
-              variant="h5"
-            >
-              {bookingInfoCard.priceTitle}
-            </Typography>
+            <Typography variant="h5">{bookingInfoCard.priceTitle}</Typography>
             {/* Total price */}
-            <Typography
-              variant="h2" marginTop='0.25rem'
-            >
+            <Typography variant="h2" marginTop="0.25rem">
               {bookingInfoCard.price}
             </Typography>
           </Box>

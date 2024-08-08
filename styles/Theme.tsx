@@ -284,7 +284,7 @@ const themeAdmin = createTheme({
       fontSize: "1.125rem",
       fontWeight: 200,
       letterSpacing: "0.02rem",
-      color: "#353535",
+      color: "#667085",
       lineHeight: "1.75rem",
       fontStyle: "normal",
       "@media (max-width:600px)": {
