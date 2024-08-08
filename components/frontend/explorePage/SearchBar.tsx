@@ -14,6 +14,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Select from "@mui/material/Select";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { searchBarData } from "@/data/explorePage";
+import { exploreSeo } from "@/data/seo";
 
 const SearchBar = () => {
   const searchParams = useSearchParams();
@@ -66,6 +67,7 @@ const SearchBar = () => {
                 id="search"
                 type="search"
                 label="Search"
+                aria-label={exploreSeo.searchbarArialabel}
                 defaultValue={searchParams?.get("query")?.toString() || ""}
                 onChange={(e) => handleSearch(e.target.value)}
                 sx={{ width: "100%" }}
@@ -96,7 +98,7 @@ const SearchBar = () => {
                     variant="standard"
                     sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
                   >
-                    <InputLabel id="demo-simple-select-standard-label">
+                    <InputLabel id="demo-simple-select-standard-label" aria-label={exploreSeo.inputLabelArialabel1}>
                       {searchBarData.searchBarfilterlbl1}
                     </InputLabel>
                     <Select
@@ -124,7 +126,7 @@ const SearchBar = () => {
                     variant="standard"
                     sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
                   >
-                    <InputLabel id="demo-simple-select-standard-label">
+                    <InputLabel id="demo-simple-select-standard-label" aria-label={exploreSeo.inputLabelArialabel2}>
                       {searchBarData.searchBarfilterlbl2}
                     </InputLabel>
                     <Select
@@ -152,7 +154,7 @@ const SearchBar = () => {
                     variant="standard"
                     sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
                   >
-                    <InputLabel id="demo-simple-select-standard-label">
+                    <InputLabel id="demo-simple-select-standard-label" aria-label={exploreSeo.inputLabelArialabel3}>
                       {searchBarData.searchBarfilterlbl3}
                     </InputLabel>
                     <Select
@@ -180,7 +182,7 @@ const SearchBar = () => {
                     variant="standard"
                     sx={{ marginTop: 1, minWidth: { xs: 120, md: 105 } }}
                   >
-                    <InputLabel id="demo-simple-select-standard-label">
+                    <InputLabel id="demo-simple-select-standard-label" aria-label={exploreSeo.inputLabelArialabel4}>
                       {searchBarData.searchBarfilterlbl4}
                     </InputLabel>
                     <Select
