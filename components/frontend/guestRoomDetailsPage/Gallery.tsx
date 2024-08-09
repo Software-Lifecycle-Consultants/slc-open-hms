@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { galleryTitle } from "@/data/roomDetailsPage";
 import { lora } from "../../../app/fonts";
+import { roomDetailsSeo } from "@/data/seo";
 const Gallery: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // xs or sm breakpoint
@@ -47,7 +48,7 @@ const Gallery: React.FC = () => {
           <Card style={cardStyles}>
             <Image
               src="/images/hotelRooms/Room1.webp"
-              alt="Image 1"
+              alt={roomDetailsSeo.roomDetailsGalleryImageAlt1}
               width={712}
               height={460}
               style={{
@@ -61,7 +62,7 @@ const Gallery: React.FC = () => {
           <Card style={cardStyles}>
             <Image
               src="/images/hotelRooms/Room2.webp"
-              alt="Image 2"
+              alt={roomDetailsSeo.roomDetailsGalleryImageAlt2}
               width={712}
               height={460}
               style={{
