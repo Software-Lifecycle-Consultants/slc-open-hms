@@ -15,6 +15,7 @@ import Image from "next/image";
 import img from "@/public/images/hotelRooms/Room2.webp";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { bookingInfoCard } from "@/data/checkoutPage";
+import {roomsData} from "@/data/roomDetailsPage"
 import { lora, mulish } from "../../../app/fonts";
 import { checkoutSeo } from "@/data/seo";
 
