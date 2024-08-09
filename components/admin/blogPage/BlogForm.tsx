@@ -366,6 +366,8 @@ const BlogForm: React.FC = () => {
               type="submit"
               variant="contained"
               sx={{
+                color: "white", // Set text color
+                backgroundColor: "#4A5472", // Set background color
                 borderColor: "#5B5959", // Set outline color
                 "&:hover": {
                   backgroundColor: "#192959", // Set hover background color
