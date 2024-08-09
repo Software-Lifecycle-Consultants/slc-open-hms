@@ -55,11 +55,11 @@ export default function ServiceAd() {
       >
         <Box>
           <Typography
-          variant="h3"
-          style={{ fontWeight: 'bold' }}
-          color="black"
-          mt={2}
-          ml={2}
+            variant="h3"
+            style={{ fontWeight: "bold" }}
+            color="black"
+            mt={2}
+            ml={2}
           >
             {serviceAdd.serviceAddPageTitle}
           </Typography>
@@ -77,11 +77,7 @@ export default function ServiceAd() {
               </Grid>
 
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <Typography
-                variant="h3"
-                mt={2}
-                mb={2}
-                >
+                <Typography variant="h3" mt={2} mb={2}>
                   Description
                 </Typography>
                 <TextField
@@ -94,14 +90,10 @@ export default function ServiceAd() {
               </Grid>
             </Grid>
             <Stack spacing={2} marginTop={2}>
-            <Typography
-                variant='h3'
-                mt={2}
-                mb={2}                
-                >
-                  Add ons
-                </Typography>
-                <Box>
+              <Typography variant="h3" mt={2} mb={2}>
+                Add ons
+              </Typography>
+              <Box>
                 <Grid container spacing={2}>
                   {addons.map((column, columnIndex) => (
                     <Grid item xs={12} lg={2} key={columnIndex}>
@@ -110,7 +102,7 @@ export default function ServiceAd() {
                           {column.map((addon, addonIndex) => (
                             <FormControlLabel
                               key={`${columnIndex}-${addonIndex}`}
-                              control={<Checkbox />}
+                              control={<Checkbox/>}
                               label={addon}
                             />
                           ))}
@@ -119,7 +111,7 @@ export default function ServiceAd() {
                     </Grid>
                   ))}
                 </Grid>
-                </Box>
+              </Box>
             </Stack>
           </form>
         </CardContent>
