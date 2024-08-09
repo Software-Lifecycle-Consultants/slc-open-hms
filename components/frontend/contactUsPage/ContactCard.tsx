@@ -4,6 +4,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { contactCardDetails } from "@/data/contactPage";
+import { contactSeo } from "@/data/seo";
 /*
 This component represents contact information cards displaying email, address, and phone number in the contact page.
 */
@@ -26,6 +27,7 @@ const ContactCard = () => {
           alignItems:"center",
           justifyContent:"center",
         }}
+        aria-label={contactSeo.contactUsAriaLabel1}
       >
         <CardContent>
           <Grid container alignItems="center">
@@ -40,6 +42,7 @@ const ContactCard = () => {
                   fontSize: '1.5rem',
                   },
                 }}
+                aria-label={contactSeo.contactUsAriaLabel2}
               />
             </Box>
             {/* Email Text */}
@@ -66,6 +69,7 @@ const ContactCard = () => {
           alignItems: "center",
           justifyContent: "center",
         }}
+        aria-label={contactSeo.contactUsAriaLabel3}
       >
         <CardContent>
           <Grid container alignItems="center">
@@ -80,6 +84,7 @@ const ContactCard = () => {
                   fontSize: '1.5rem',
                   },
                 }}
+                aria-label={contactSeo.contactUsAriaLabel4}
               />
             </Box>
             {/* Address Text */}
@@ -106,6 +111,7 @@ const ContactCard = () => {
           alignItems: "center",
           justifyContent: "center",
         }}
+        aria-label={contactSeo.contactUsAriaLabel5}
       >
         <CardContent>
           <Grid container alignItems="center">
@@ -120,6 +126,7 @@ const ContactCard = () => {
                   fontSize: '1.5rem',
                   },
                 }}
+                aria-label={contactSeo.contactUsAriaLabel6}
               />
             </Box>
             {/* Phone Text */}
