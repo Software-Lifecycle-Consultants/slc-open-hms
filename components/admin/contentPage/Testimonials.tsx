@@ -150,7 +150,16 @@ const Testimonials: React.FC = () => {
             multiline
             sx={{ m: 1 }}
           />
-          <Button startIcon={<CloudUploadIcon />}>
+          <Button
+            startIcon={<CloudUploadIcon />}
+            variant="outlined"
+            sx={{
+              borderColor: "#4A5472", // Set outline color
+              "&:hover": {
+                backgroundColor: "#192959", // Set hover background color
+              },
+            }}
+          >
             {
               adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
             }
@@ -189,7 +198,14 @@ const Testimonials: React.FC = () => {
         </Card>
         <Grid my={4}>
           <Box display="flex" justifyContent="end" alignItems="center">
-            <Button>
+            <Button 
+              variant="outlined"
+              sx={{
+                borderColor: "#4A5472", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}>
               <Typography
                 style={{
                   color: "white",

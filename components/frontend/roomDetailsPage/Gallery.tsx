@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Card, Typography, Button,  } from "@mui/material";
+import { Box, Card, Typography, Button, Grid,  } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
@@ -18,12 +18,9 @@ const VisuallyHiddenInput = styled("input")({
 export default function StandardImageList() {
   return (
     <>
-     <Typography
-        mt={2}
-         variant="h2"
-        >
-          Gallery
-        </Typography>
+      <Typography mt={2} variant="h2">
+        Gallery
+      </Typography>
       <Card
         elevation={0}
         sx={{
@@ -36,9 +33,8 @@ export default function StandardImageList() {
           padding: "10px 25px 10px 25px",
         }}
       >
-       
         <Typography
-        mt={4}
+          mt={16}
           style={{
             color: "Gray",
             fontSize: "16px",
@@ -52,29 +48,40 @@ export default function StandardImageList() {
         >
           Drag & Drop Your images or Browse
         </Typography>
-        <Box display="flex" justifyContent="end" alignItems="center">
-        <Button
-          component="label"
-          role={undefined}
-          variant="contained"
-          tabIndex={-1}
-          startIcon={<CloudUploadIcon />}
-          sx={{
-            mt: "7",
-            backgroundColor: "white",
-            color: "black",
-            height: "30px",
-            borderRadius: "8",
-            marginTop: "-25px",
-          }}
+      
+          <Box display="flex-center" justifyContent="end" alignItems="center">
+              <Grid
+          container
+          spacing={2}
+          item
+          xs={7}
+          sm={6}
+          md={2}
+          lg={2}
+          xl={2}
         >
-          <VisuallyHiddenInput type="file" />
-        </Button>
-        </Box>
+            <Button
+              component="label"
+              role={undefined}
+              variant="contained"
+              tabIndex={-1}
+              startIcon={<CloudUploadIcon />}
+              sx={{
+                backgroundColor: "white",
+                color: "black",
+                height: "30px",
+                borderRadius: "8",
+                marginTop: "25px",
+              }}
+            >
+              <VisuallyHiddenInput type="file" />
+            </Button>
+            </Grid>
+          </Box>
+        
       </Card>
       {/* Gallery images submit button */}
-      <Box mt={2}
-       display="flex" justifyContent="center" alignItems="center" > 
+      <Box mt={2} display="flex" justifyContent="center" alignItems="center">
         <Button
           sx={{
             textTransform: "none",
@@ -88,7 +95,6 @@ export default function StandardImageList() {
             "&:hover": {
               backgroundColor: "#192959",
             },
-
           }}
           variant="outlined"
         >

@@ -311,30 +311,30 @@ const Rooms = () => {
                   }}
                 />
               </Stack>
-              <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-                <Button
-                  variant="contained"
-                  sx={{
-                    borderColor: "#5B5959", // Set outline color
-                    "&:hover": {
-                      backgroundColor: "#192959", // Set hover background color
-                    },
-                  }}
-                >
-                  Close
-                </Button>
-                <Button
-                  variant="outlined"
-                  sx={{
-                    borderColor: "#5B5959", // Set outline color
-                    "&:hover": {
-                      backgroundColor: "#192959", // Set hover background color
-                    },
-                  }}
-                >
-                  Save
-                </Button>
-              </Box>
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
+              <Button
+                variant="contained"
+                sx={{
+                  borderColor: "#5B5959", // Set outline color
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                  },
+                }}
+              >
+                Close
+              </Button>
+              <Button
+                variant="outlined"
+                sx={{
+                  borderColor: "#5B5959", // Set outline color
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                  },
+                }}
+              >
+                Save
+              </Button>
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -347,6 +347,7 @@ const Rooms = () => {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 height: "100%",
+                width: "auto",
               }}
             >
               <Typography variant="h2" gutterBottom>
@@ -360,34 +361,34 @@ const Rooms = () => {
                 <TextField label="Question 03" variant="outlined" fullWidth />
                 <TextField label="Answer" variant="outlined" fullWidth />
               </Stack>
-              <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-                <Button
-                  variant="contained"
-                  sx={{
-                    borderColor: "#5B5959", // Set outline color
-                    "&:hover": {
-                      backgroundColor: "#192959", // Set hover background color
-                    },
-                  }}
-                >
-                  Close
-                </Button>
-                <Button
-                  variant="outlined"
-                  sx={{
-                    borderColor: "#5B5959", // Set outline color
-                    "&:hover": {
-                      backgroundColor: "#192959", // Set hover background color
-                    },
-                  }}
-                >
-                  Save
-                </Button>
-              </Box>
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
+              <Button
+                variant="contained"
+                sx={{
+                  borderColor: "#5B5959", // Set outline color
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                  },
+                }}
+              >
+                Close
+              </Button>
+              <Button
+                variant="outlined"
+                sx={{
+                  borderColor: "#5B5959", // Set outline color
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                  },
+                }}
+              >
+                Save
+              </Button>
             </Box>
           </Grid>
           <Grid item xs={12}>
-            <Box p={3} bgcolor="white" borderRadius="8px">
+            <Box p={3} bgcolor="white" borderRadius="8px" mt={10}>
               <Typography variant="h2" gutterBottom>
                 Service Add ons
               </Typography>
@@ -421,30 +422,30 @@ const Rooms = () => {
                   }}
                 />
               </Stack>
-              <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-                <Button
-                  variant="contained"
-                  sx={{
-                    borderColor: "#5B5959", // Set outline color
-                    "&:hover": {
-                      backgroundColor: "#192959", // Set hover background color
-                    },
-                  }}
-                >
-                  Close
-                </Button>
-                <Button
-                  variant="outlined"
-                  sx={{
-                    borderColor: "#5B5959", // Set outline color
-                    "&:hover": {
-                      backgroundColor: "#192959", // Set hover background color
-                    },
-                  }}
-                >
-                  Save
-                </Button>
-              </Box>
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
+              <Button
+                variant="contained"
+                sx={{
+                  borderColor: "#5B5959", // Set outline color
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                  },
+                }}
+              >
+                Close
+              </Button>
+              <Button
+                variant="outlined"
+                sx={{
+                  borderColor: "#5B5959", // Set outline color
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                  },
+                }}
+              >
+                Save
+              </Button>
             </Box>
           </Grid>
         </Grid>

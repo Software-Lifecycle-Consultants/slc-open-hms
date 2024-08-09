@@ -241,20 +241,26 @@ const editContact = () =>{
               marginTop={5}
               style={{ textAlign: "center" }}
             >
-              <Box display="flex" justifyContent="flex-end" alignItems="center" marginTop= "1rem" >
+              <Box
+                display="flex"
+                justifyContent="flex-end"
+                alignItems="center"
+                marginTop="1rem"
+              >
                 {" "}
                 <Button
                   variant="contained"
                   sx={{
+                    color: "white", // Set text color
                     backgroundColor: "#4A5472", // Set background color
                     borderColor: "#5B5959", // Set outline color
                     "&:hover": {
                       backgroundColor: "#192959", // Set hover background color
                     },
                   }}
-                >
-                  {/* Render the title from admineditcontactus Data */}
-                  {adminEditContactUs.adminContactSubmitButton}
+                >     
+                    {/* Render the title from admineditcontactus Data */}
+                    {adminEditContactUs.adminContactSubmitButton}  
                 </Button>
               </Box>
             </Grid>

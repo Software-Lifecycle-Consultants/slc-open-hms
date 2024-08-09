@@ -93,7 +93,16 @@ const SecondaryBannerSection: React.FC = () => {
         </Card>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
           <Box display="flex" justifyContent="end" alignItems="center">
-            <Button endIcon={<EditIcon />}>
+            <Button
+              endIcon={<EditIcon />}
+              variant="outlined"
+              sx={{
+                borderColor: "#4A5472", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}
+            >
               <Typography
                 style={{
                   color: "White",
@@ -104,7 +113,15 @@ const SecondaryBannerSection: React.FC = () => {
                 }
               </Typography>
             </Button>
-            <Button>
+            <Button
+              variant="outlined"
+              sx={{
+                borderColor: "#4A5472", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}
+            >
               <Typography
                 style={{
                   color: "white",

@@ -65,8 +65,8 @@ const roomDetails = () => {
                   borderRadius: "8px",
                   borderColor: "#D0D5DD",
                   flexShrink: "0",
-                  paddingTop: "25%",
-                  paddingLeft: "45%",
+                  paddingTop: "20%",
+                  paddingLeft: "40%", // Set padding left
                 }}
               >
                 <Button
@@ -126,7 +126,7 @@ const roomDetails = () => {
         <Container>
           {/* (7) The Save and Close buttons are rendered here. */}
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
-            <Box display="flex" justifyContent="end" alignItems="center">
+            <Box display="flex" justifyContent="flex-end" alignItems="center">
               <Button
                 variant="contained"
                 sx={{

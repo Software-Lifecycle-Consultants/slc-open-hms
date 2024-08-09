@@ -223,6 +223,13 @@ const DestinationCards: React.FC = () => {
         <Grid my={4}>
           <Box display="flex" justifyContent="end" alignItems="center">
             <Button
+              variant="outlined"
+              sx={{
+                borderColor: "#4A5472", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}
             >
               <Typography
                 style={{
