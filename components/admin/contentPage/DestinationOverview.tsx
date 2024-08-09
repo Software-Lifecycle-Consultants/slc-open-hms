@@ -82,7 +82,16 @@ const DestinationOverview: React.FC = () => {
               variant="outlined"
               required
             />
-            <Button startIcon={<CloudUploadIcon />}>
+            <Button
+              startIcon={<CloudUploadIcon />}
+              variant="outlined"
+              sx={{
+                borderColor: "#4A5472", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}
+            >
               {
                 adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
               }
@@ -149,7 +158,16 @@ const DestinationOverview: React.FC = () => {
                 variant="outlined"
                 required
               />
-              <Button startIcon={<CloudUploadIcon />}>
+              <Button
+                startIcon={<CloudUploadIcon />}
+                variant="outlined"
+                sx={{
+                  borderColor: "#4A5472", // Set outline color
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                  },
+                }}
+              >
                 {
                   adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
                 }
@@ -215,7 +233,16 @@ const DestinationOverview: React.FC = () => {
                 variant="outlined"
                 required
               />
-              <Button startIcon={<CloudUploadIcon />}>
+              <Button
+                startIcon={<CloudUploadIcon />}
+                variant="outlined"
+                sx={{
+                  borderColor: "#4A5472", // Set outline color
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                  },
+                }}
+              >
                 {
                   adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
                 }
@@ -281,7 +308,16 @@ const DestinationOverview: React.FC = () => {
                 variant="outlined"
                 required
               />
-              <Button startIcon={<CloudUploadIcon />}>
+              <Button
+                startIcon={<CloudUploadIcon />}
+                variant="outlined"
+                sx={{
+                  borderColor: "#4A5472", // Set outline color
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                  },
+                }}
+              >
                 {
                   adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
                 }
@@ -292,7 +328,16 @@ const DestinationOverview: React.FC = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} my={1}>
           <Box display="flex" justifyContent="end" alignItems="center">
-            <Button endIcon={<EditIcon />}>
+            <Button
+              endIcon={<EditIcon />}
+              variant="outlined"
+              sx={{
+                borderColor: "#4A5472", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}
+            >
               <Typography
                 style={{
                   color: "White",
@@ -303,7 +348,13 @@ const DestinationOverview: React.FC = () => {
                 }
               </Typography>
             </Button>
-            <Button>
+            <Button variant="outlined"
+              sx={{
+                borderColor: "#4A5472", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}>
               <Typography
                 style={{
                   color: "white",

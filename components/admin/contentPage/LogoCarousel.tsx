@@ -49,7 +49,8 @@ const LogoCarousel: React.FC = () => {
             variant="h2"
             sx={{ marginTop: "05px", fontWeight: "bold" }}
           >
-            {adminContentLogoCarousel.adminContentLogoCarouselHeaderTitle // Display the header title
+            {
+              adminContentLogoCarousel.adminContentLogoCarouselHeaderTitle // Display the header title
             }
           </Typography>
           <Box
@@ -68,8 +69,16 @@ const LogoCarousel: React.FC = () => {
             />
             <Button
               startIcon={<CloudUploadIcon />}
+              variant="outlined"
+              sx={{
+                borderColor: "#4A5472", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}
             >
-              {adminContentLogoCarousel.adminContentLogoCarouselUploadButton // Display the upload button text
+              {
+                adminContentLogoCarousel.adminContentLogoCarouselUploadButton // Display the upload button text
               }
               <VisuallyHiddenInput type="file" />
             </Button>
@@ -78,13 +87,21 @@ const LogoCarousel: React.FC = () => {
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
           <Box display="flex" justifyContent="end" alignItems="center">
             <Button
+              variant="outlined"
+              sx={{
+                borderColor: "#4A5472", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}
             >
               <Typography
                 style={{
                   color: "white",
                 }}
               >
-                {adminContentLogoCarousel.adminContentLogoCarouselSubmitButton // Display the submit button text
+                {
+                  adminContentLogoCarousel.adminContentLogoCarouselSubmitButton // Display the submit button text
                 }
               </Typography>
             </Button>

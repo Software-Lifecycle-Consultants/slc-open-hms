@@ -109,6 +109,13 @@ const PrivacyPolicy: React.FC = () => {
           <Box display="flex" justifyContent="end" alignItems="center">
             <Button
               endIcon={<EditIcon />}
+              variant="outlined"
+              sx={{
+                borderColor: "#4A5472", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}
             >
               <Typography
                 style={{
@@ -120,7 +127,15 @@ const PrivacyPolicy: React.FC = () => {
                 }
               </Typography>
             </Button>
-            <Button>
+            <Button
+              variant="outlined"
+              sx={{
+                borderColor: "#4A5472", // Set outline color
+                "&:hover": {
+                  backgroundColor: "#192959", // Set hover background color
+                },
+              }}
+            >
               <Typography
                 style={{
                   color: "white",
