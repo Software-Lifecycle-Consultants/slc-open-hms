@@ -34,17 +34,11 @@ const checkBoxTypographyStyle = {
 };
 
 const BookingInfo = () => {
-  // Ensure roomOptions contains the roomTitle value
-  const roomOptions: string[] = [
-    'Room 1',
-    'Room 2',
-    'Room 3',
-    // Add the default room title if it's not included in the options
-    bookingInfoCard.roomTitle,
-  ];
+  // Use roomsData to populate room options 
+  const roomOptions = roomsData.map(room => room.roomName);
 
-  // Initialize the selectedRoom state with bookingInfoCard.roomTitle
-  const [selectedRoom, setSelectedRoom] = useState<string>(bookingInfoCard.roomTitle);
+  // Initialize the selectedRoom state with the first room's name
+  const [selectedRoom, setSelectedRoom] = useState<string>(roomsData[0].roomName);
 
   // Handle dropdown change
   const handleChange = (event: SelectChangeEvent<string>) => {
