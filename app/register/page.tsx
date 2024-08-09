@@ -20,6 +20,8 @@ import ArrowBack from "@mui/icons-material/ArrowBack";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import { orangebuttonCommonStyle } from "@/components/frontend/homePage/styles";
+import Head from "next/head";
+import { registerSeo } from "@/data/seo";
 /**
  * This page represents the registration page.
  */
@@ -97,6 +99,19 @@ const Register: React.FC = () => {
   };
   const [phone, setPhone] = useState("");
   return (
+    <>
+      {/* Meta Tags for SEO */}
+      <Head>
+        <title>{registerSeo.metatitle}</title>
+        <meta name="description" content={registerSeo.metadescription}/>
+        <meta name="keywords" content={registerSeo.metakeyword}/>
+        <meta property="og:title" content={registerSeo.metaogtitle} />
+        <meta property="og:description" content={registerSeo.metaogdescription} />
+        <meta property="og:image" content={registerSeo.metaogimage}/>
+        <meta property="og:url" content={registerSeo.metaogurl}/>
+        <meta property="og:type" content={registerSeo.metaogtype} />
+        <link rel="canonical" href={registerSeo.canonicallink}/>
+      </Head>
     <Box
       display="flex"
       alignItems="center"
@@ -111,8 +126,9 @@ const Register: React.FC = () => {
             <Typography variant="h4" sx={{
               marginTop: "40px",
               fontWeight: "bold",
-              color: '#11142D'
-            }}>
+              color: '#11142D'}}
+            aria-label={registerSeo.registerpageAriaLabel1}
+            >
               {registerPageDetails.registerPageTitle}
             </Typography>
             <Typography variant="body1" sx={{
@@ -120,7 +136,9 @@ const Register: React.FC = () => {
               marginLeft: "15px",
               marginBottom:"8px",
               color: '#515151'
-            }}>
+            }}
+            aria-label={registerSeo.registerpageAriaLabel2}
+            >
               {registerPageDetails.registerPageSubtitle}
             </Typography>
           </Grid>
@@ -141,6 +159,7 @@ const Register: React.FC = () => {
               value={formData.firstname}
               onChange={(e) => handleChange(e, "firstname")}
               required
+              aria-label={registerSeo.registerpageAriaLabel3}
             />
           </Grid>
           {/* Last Name Section */}
@@ -160,6 +179,7 @@ const Register: React.FC = () => {
               value={formData.lastname}
               onChange={(e) => handleChange(e, "lastname")}
               required
+              aria-label={registerSeo.registerpageAriaLabel4}
             />
           </Grid>
           {/* Phone Number Section */}
@@ -179,6 +199,7 @@ const Register: React.FC = () => {
               inputStyle={{
                 width: "100%",
               }}
+              aria-label={registerSeo.registerpageAriaLabel5}
             />
           </Grid>
           {/* Email Section */}
@@ -199,6 +220,7 @@ const Register: React.FC = () => {
               value={formData.email}
               onChange={(e) => handleChange(e, "email")}
               required
+              aria-label={registerSeo.registerpageAriaLabel6}
             />
           </Grid>
           {/* User Name Section */}
@@ -216,6 +238,7 @@ const Register: React.FC = () => {
               value={formData.username}
               onChange={(e) => handleChange(e, "username")}
               required
+              aria-label={registerSeo.registerpageAriaLabel7}
             />
           </Grid>
           {/* Password Section */}
@@ -236,6 +259,7 @@ const Register: React.FC = () => {
               value={formData.password}
               onChange={(e) => handleChange(e, "password")}
               required
+              aria-label={registerSeo.registerpageAriaLabel8}
             />
           </Grid>
           {/* Confirm Password Section */}
@@ -256,6 +280,7 @@ const Register: React.FC = () => {
               value={formData.confirm_pwd}
               onChange={(e) => handleChange(e, "confirm_pwd")}
               required
+              aria-label={registerSeo.registerpageAriaLabel9}
             />
           </Grid>
           {/* Agree to the Ruls Section */}
@@ -275,6 +300,7 @@ const Register: React.FC = () => {
                       color: "#C7923E",
                     },
                   }}
+                  aria-label={registerSeo.registerpageAriaLabel10}
                 />
               }
               label={
@@ -303,6 +329,7 @@ const Register: React.FC = () => {
             <Button
               type="submit"
               sx={orangebuttonCommonStyle} // Add the button class
+              aria-label={registerSeo.registerpageAriaLabel11}
               >
               {registerPageDetails.registerPageButtonSection}
             </Button>
@@ -318,7 +345,9 @@ const Register: React.FC = () => {
             }}>
             <Typography align="center">
               {registerPageDetails.registerPageHaveAccountSection}{" "}
-              <Link href="/login" style={{color:"#003C70", textDecoration:"none"}}>
+              <Link href="/login" 
+              aria-label={registerSeo.registerpageAriaLabel12}
+              style={{color:"#003C70", textDecoration:"none"}}>
                 {" "}
                 {registerPageDetails.registerPageLoginSection}{" "}
               </Link>
@@ -343,7 +372,9 @@ const Register: React.FC = () => {
                 display="flex"
                 justifyContent="center"
                 marginRight="10px">
-                <ArrowBack style={{ color: "#000000" }} />{" "}
+                <ArrowBack style={{ color: "#000000" }} 
+                aria-label={registerSeo.registerpageAriaLabel13}
+                />{" "}
               </Box>
             </Link>
             <Typography style={{ textAlign: "center", marginTop: "0px" }}>
@@ -363,6 +394,7 @@ const Register: React.FC = () => {
       )}
     </Container>
     </Box>
+    </>
   );
 };
 
