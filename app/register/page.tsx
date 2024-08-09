@@ -126,8 +126,7 @@ const Register: React.FC = () => {
             <Typography variant="h4" sx={{
               marginTop: "40px",
               fontWeight: "bold",
-              color: '#11142D'
-            }}
+              color: '#11142D'}}
             aria-label={registerSeo.registerpageAriaLabel1}
             >
               {registerPageDetails.registerPageTitle}
