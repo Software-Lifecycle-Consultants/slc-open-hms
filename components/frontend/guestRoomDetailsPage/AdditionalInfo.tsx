@@ -13,6 +13,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useRouter } from "next/navigation";
 import { additionalInfoSection } from "@/data/roomDetailsPage";
 import { accordionData } from "@/data/roomDetailsPage";
+import { roomDetailsSeo } from "@/data/seo";
 
 const AdditionalInfo = () => {
   const router = useRouter();
@@ -50,6 +51,7 @@ const AdditionalInfo = () => {
             Check Out {additionalInfoSection.checkoutTime}
           </Typography>
           <Button
+          aria-label={roomDetailsSeo.additionalInfoButtonAriaLabel}
           sx={{marginTop:"25px"}}
             variant="contained"
             onClick={navigationToCheckoutScreen}
