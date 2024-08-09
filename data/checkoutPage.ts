@@ -31,13 +31,7 @@ export function getFormattedDate(): string {
 
 /* Assign data to the booking information card of the checkout page */
 export const bookingInfoCard = {
-    roomTitle: "President Luxury Double Room View NY City",
-    date: "14 February 2021",
-    checkIcon1: "1 Room",
-    checkIcon2: "2 Guest",
-    checkIcon3: "1 Night",
     priceTitleCaption: "Total Price",
-    price: "$59",
 };
 
 /* Assign titles to the extra facilitation component of the checkout page */

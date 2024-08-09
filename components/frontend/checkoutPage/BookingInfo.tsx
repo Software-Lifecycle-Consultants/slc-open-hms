@@ -12,10 +12,9 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import Image from "next/image";
-import img from "@/public/images/hotelRooms/Room2.webp";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { bookingInfoCard } from "@/data/checkoutPage";
-import {roomsData} from "@/data/roomDetailsPage"
+import { roomsData } from "@/data/roomDetailsPage"
 import { getFormattedDate } from '@/data/checkoutPage';
 import { checkoutSeo } from "@/data/seo";
 
@@ -23,18 +22,10 @@ import { checkoutSeo } from "@/data/seo";
  * BookingInfo component is the card used in checkout page to display details of each room.
  */
 
-/* Styles for checkbox typography */
-const checkBoxTypographyStyle = {
-  color: "#9A9AB0",
-  fontSize: "16px",
-  lineHeight: "125%",
-  fontStyle: "normal",
-  letterSpacing: "0.08px",
-  fontWeight: "400",
-  marginTop: "18px",
-};
 
 const BookingInfo = () => {
+  /* Initializes the selectedRoom state with the first room from roomsData array. 
+     This state holds the currently selected room's details.*/
   const [selectedRoom, setSelectedRoom] = useState(roomsData[0]);
 
   // Handle dropdown change
