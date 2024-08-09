@@ -35,15 +35,15 @@ const checkBoxTypographyStyle = {
 };
 
 const BookingInfo = () => {
-  // Use roomsData to populate room options 
-  const roomOptions = roomsData.map(room => room.roomName);
-
-  // Initialize the selectedRoom state with the first room's name
-  const [selectedRoom, setSelectedRoom] = useState<string>(roomsData[0].roomName);
+  const [selectedRoom, setSelectedRoom] = useState(roomsData[0]);
 
   // Handle dropdown change
   const handleChange = (event: SelectChangeEvent<string>) => {
-    setSelectedRoom(event.target.value);
+    const selectedRoomName = event.target.value;
+    const newSelectedRoom = roomsData.find(room => room.roomName === selectedRoomName);
+    if (newSelectedRoom) {
+      setSelectedRoom(newSelectedRoom);
+    }
   };
 
   return (
@@ -68,7 +68,7 @@ const BookingInfo = () => {
         >
           {/* Image of the room */}
           <Image
-            src={img}
+            src={selectedRoom.roomCoverImage}
             alt={checkoutSeo.bookingInfoImageAlt}
             width={400}
             height={330}
@@ -85,13 +85,13 @@ const BookingInfo = () => {
             <FormControl fullWidth>
               <InputLabel>Room Title</InputLabel>
               <Select
-                value={selectedRoom}
+                value={selectedRoom.roomName}
                 onChange={handleChange}
                 label="Room Title"
               >
-                {roomOptions.map((room, index) => (
-                  <MenuItem key={index} value={room}>
-                    {room}
+                {roomsData.map((room, index) => (
+                  <MenuItem key={index} value={room.roomName}>
+                    {room.roomName}
                   </MenuItem>
                 ))}
               </Select>
@@ -106,7 +106,7 @@ const BookingInfo = () => {
                 "@media (max-width:600px)": { fontWeight: 600 },
               }}
             >
-             {getFormattedDate()}
+              {getFormattedDate()}
             </Typography>
             {/* Check icons */}
             <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -114,7 +114,7 @@ const BookingInfo = () => {
                 sx={{ fontSize: 34, color: "#9A9AB0", marginTop: "1.125rem" }}
               />
               <Typography variant="h4" color="#9A9AB0" marginTop="1.125rem">
-                {bookingInfoCard.checkIcon1}
+                {selectedRoom.checkIcon1Caption}
               </Typography>
               <CheckBoxIcon
                 sx={{
@@ -125,7 +125,7 @@ const BookingInfo = () => {
                 }}
               />
               <Typography variant="h4" color="#9A9AB0" marginTop="1.125rem">
-                {bookingInfoCard.checkIcon2}
+                {selectedRoom.checkIcon2Caption}
               </Typography>
               <CheckBoxIcon
                 sx={{
@@ -136,14 +136,14 @@ const BookingInfo = () => {
                 }}
               />
               <Typography variant="h4" color="#9A9AB0" marginTop="1.125rem">
-                {bookingInfoCard.checkIcon3}
+                {selectedRoom.checkIcon3Caption}
               </Typography>
             </Box>
             {/* Price title */}
             <Typography variant="h5">{bookingInfoCard.priceTitleCaption}</Typography>
             {/* Total price */}
             <Typography variant="h2" marginTop="0.25rem">
-              {bookingInfoCard.price}
+              ${selectedRoom.price}
             </Typography>
           </Box>
         </CardContent>
