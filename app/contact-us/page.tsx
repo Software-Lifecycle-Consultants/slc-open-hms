@@ -11,6 +11,8 @@ import ContactCard from "@/components/frontend/contactUsPage/ContactCard";
 import ContactForm from "@/components/frontend/contactUsPage/ContactForm";
 import { positionInfos } from "@/data/contactPage";
 import dynamic from "next/dynamic";
+import Head from "next/head";
+import { contactSeo } from "@/data/seo";
 
 /**
  * ContactUs component represents the Contact Us screen of the website.
@@ -23,6 +25,17 @@ const ContactUs = () => {
   });
   return (
     <>
+    <Head>
+        <title>{contactSeo.metatitle}</title>
+        <meta name="description" content={contactSeo.metadescription} />
+        <meta name="keywords" content={contactSeo.metakeywords} />
+        <meta property="og:title" content={contactSeo.metaogtitle} />
+        <meta property="og:description" content={contactSeo.metaogdescription} />
+        <meta property="og:image" content={contactSeo.metaogimage} />
+        <meta property="og:url" content={contactSeo.metaogurl} />
+        <meta property="og:type" content={contactSeo.metaogtype} />
+        <link rel="canonical" href={contactSeo.canonicallink} />
+      </Head>
       <Box
         sx={{
           backgroundColor: "white",
