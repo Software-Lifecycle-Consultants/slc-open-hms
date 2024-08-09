@@ -9,6 +9,7 @@ import Image from "next/image";
 import img from "@/public/images/hotelRooms/Room3.webp";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { roomDetailsHeroSection } from "@/data/roomDetailsPage";
+import { roomDetailsSeo } from "@/data/seo";
 
 const HeroBanner = () => {
   return (
@@ -117,7 +118,7 @@ const HeroBanner = () => {
           >
             <Image
               src={img}
-              alt="test"
+              alt={roomDetailsSeo.roomDetailsHerobannerImageAlt}
               width={520}
               height={475}
               style={{
