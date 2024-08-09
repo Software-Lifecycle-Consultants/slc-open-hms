@@ -16,6 +16,7 @@ import img from "@/public/images/hotelRooms/Room2.webp";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { bookingInfoCard } from "@/data/checkoutPage";
 import {roomsData} from "@/data/roomDetailsPage"
+import { getFormattedDate } from '@/data/checkoutPage';
 import { checkoutSeo } from "@/data/seo";
 
 /**
@@ -105,7 +106,7 @@ const BookingInfo = () => {
                 "@media (max-width:600px)": { fontWeight: 600 },
               }}
             >
-              {bookingInfoCard.date}
+             {getFormattedDate()}
             </Typography>
             {/* Check icons */}
             <Box sx={{ display: "flex", alignItems: "center" }}>
