@@ -256,8 +256,7 @@ const Login = () => {
                   style={{
                     textAlign: "center",
                     marginTop: "0px",
-                    color: "rgba(17, 20, 45, 1)",
-                  }}
+                    color: "rgba(17, 20, 45, 1)",}}
                   aria-label={loginSeo.loginArialabel11}>
                   <Link href="/" style={{textDecoration:"none", color:"#11142D"}}>
                     {loginPageData.loginPageBackArrowCaption}{" "}
