@@ -92,7 +92,7 @@ export const galleryTitle = "Room Gallery";
 export const roomCardCheckIconContent = {
   checkIcon1Caption: "2 Guest",
   checkIcon2Caption: "2 Bed",
-  checkIcon3Caption: "1 bathroom",
+  checkIcon3Caption: "1 Bathroom",
 };
 
 export const roomCardTexts = {
@@ -122,6 +122,9 @@ export const roomsData = [
     children: 1,
     fascilities: ["iron", "kettle"],
     bookingLinks: [{ airbnb: "url1" }, { bookingcom: "url2" }],
+    checkIcon1Caption: "2 Guest",
+    checkIcon2Caption: "1 Bed",
+    checkIcon3Caption: "1 Bathroom",
   },
   {
     id: 2,
@@ -141,6 +144,9 @@ export const roomsData = [
     children: 0,
     fascilities: ["swimming pool", "gym", "spa"],
     bookingLinks: [{ expedia: "url3" }, { hotelscom: "url4" }],
+    checkIcon1Caption: "2 Guest",
+    checkIcon2Caption: "2 Bed",
+    checkIcon3Caption: "2 bathroom",
   },
   {
     id: 3,
@@ -160,6 +166,9 @@ export const roomsData = [
     children: 1,
     fascilities: ["wifi", "tv", "mini fridge"],
     bookingLinks: [{ agoda: "url5" }, { orbitz: "url6" }],
+    checkIcon1Caption: "2 Guest",
+    checkIcon2Caption: "1 Bed",
+    checkIcon3Caption: "1 Bathroom",
   },
   {
     id: 4,
@@ -179,6 +188,9 @@ export const roomsData = [
     children: 0,
     fascilities: ["restaurant", "bar", "spa"],
     bookingLinks: [{ expedia: "url7" }, { hotelscom: "url8" }],
+    checkIcon1Caption: "4 Guest",
+    checkIcon2Caption: "2 Bed",
+    checkIcon3Caption: "2 Bathroom",
   },
   {
     id: 5,
@@ -199,6 +211,9 @@ export const roomsData = [
     children: 2,
     fascilities: ["playground", "swimming pool", "restaurant"],
     bookingLinks: [{ agoda: "url9" }, { orbitz: "url10" }],
+    checkIcon1Caption: "3 Guest",
+    checkIcon2Caption: "2 Bed",
+    checkIcon3Caption: "1 Bathroom",
   },
 ];
 

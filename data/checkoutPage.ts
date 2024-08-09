@@ -15,15 +15,23 @@ telephoneLbl: "Phone Number",
 passportLbl: "Passport Number",
 addressLbl: "Address",
 }
+
+/**
+ * Returns today's date formatted as "day month year" (e.g., "9 August 2024").
+ * The date is formatted according to the "en-GB" locale.
+ *
+ * @returns {string} The formatted date string.
+ */
+export function getFormattedDate(): string {
+  const today = new Date();
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  return today.toLocaleDateString('en-GB', options);
+}
+
+
 /* Assign data to the booking information card of the checkout page */
 export const bookingInfoCard = {
-    roomTitle: "President Luxury Double Room View NY City",
-    date: "14 February 2021",
-    checkIcon1: "1 Room",
-    checkIcon2: "2 Guest",
-    checkIcon3: "1 Night",
-    priceTitle: "Total Price",
-    price: "$59",
+    priceTitleCaption: "Total Price",
 };
 
 /* Assign titles to the extra facilitation component of the checkout page */
