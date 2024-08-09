@@ -348,6 +348,7 @@ const Rooms = () => {
                 justifyContent: "space-between",
                 height: "100%",
                 width: "auto",
+                mt: { xs: 8, md: 0, lg: 0 },
               }}
             >
               <Typography variant="h2" gutterBottom>
@@ -388,7 +389,15 @@ const Rooms = () => {
             </Box>
           </Grid>
           <Grid item xs={12}>
-            <Box p={3} bgcolor="white" borderRadius="8px" mt={10}>
+            <Box
+              p={3}
+              bgcolor="white"
+              borderRadius="8px"
+              mt={10}
+              sx={{
+                mt: { xs: 15, md: 10, lg: 10 },
+              }}
+            >
               <Typography variant="h2" gutterBottom>
                 Service Add ons
               </Typography>

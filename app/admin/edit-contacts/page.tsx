@@ -56,7 +56,7 @@ const editContact = () =>{
               <Button
                 variant="outlined"
                 endIcon={<FindInPageIcon />}
-                style={{
+                sx={{
                   backgroundColor: "#4A5472",
                   width: "100px",
                   height: "40px",
@@ -64,6 +64,9 @@ const editContact = () =>{
                   borderWidth: 2,
                   color: "white",
                   textTransform: "capitalize",
+                  "&:hover": {
+                    backgroundColor: "#192959", // Set hover background color
+                  },
                 }}
               >
                 {adminEditContactUs.adminContactViewButton}
@@ -258,9 +261,9 @@ const editContact = () =>{
                       backgroundColor: "#192959", // Set hover background color
                     },
                   }}
-                >     
-                    {/* Render the title from admineditcontactus Data */}
-                    {adminEditContactUs.adminContactSubmitButton}  
+                >
+                  {/* Render the title from admineditcontactus Data */}
+                  {adminEditContactUs.adminContactSubmitButton}
                 </Button>
               </Box>
             </Grid>
