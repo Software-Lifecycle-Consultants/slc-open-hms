@@ -140,7 +140,7 @@ const BookingInfo = () => {
               </Typography>
             </Box>
             {/* Price title */}
-            <Typography variant="h5">{bookingInfoCard.priceTitle}</Typography>
+            <Typography variant="h5">{bookingInfoCard.priceTitleCaption}</Typography>
             {/* Total price */}
             <Typography variant="h2" marginTop="0.25rem">
               {bookingInfoCard.price}

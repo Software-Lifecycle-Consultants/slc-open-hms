@@ -36,7 +36,7 @@ export const bookingInfoCard = {
     checkIcon1: "1 Room",
     checkIcon2: "2 Guest",
     checkIcon3: "1 Night",
-    priceTitle: "Total Price",
+    priceTitleCaption: "Total Price",
     price: "$59",
 };
 
