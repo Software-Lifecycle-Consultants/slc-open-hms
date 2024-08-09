@@ -141,3 +141,26 @@ export const contactSeo = {
     contactFormAriaLabel9:"Send message",
   };
   
+export const loginSeo = {
+    metatitle: "Explore Rooms | Login to Your Website to access your account and manage your preferences.",
+    metadescription: "Login to Your Website to access your account and manage your preferences. Securely enter your email and password to gain access to personalized features.",
+    metakeyword:"Login, Your Website, Account Access, User Login, Secure Login, Online Portal, User Authentication" ,
+    metaogtitle: "Travala | Login - Your Website" ,
+    metaogdescription: "Login to Your Website to access your account and manage your preferences.",
+    metaogtype: "website",
+    metaogurl: " https://www.travala.com/",
+    metaogimage: "app\favicon.ico",
+    canonicallink:"https://www.travala.com/login",
+    searchbarArialabel: "searchBar",
+    loginArialabel1: "Login form",
+    loginArialabel2:"Login page title",
+    loginArialabel3:"Login page description",
+    loginArialabel4:"Email address",
+    loginArialabel5:"Password",
+    loginArialabel6:"Toggle password visibility",
+    loginArialabel7:"Remember me",
+    loginArialabel8:"Login",
+    loginArialabel9:"No account? Register now",
+    loginArialabel10:"Back to home",
+    loginArialabel11:"Back to home",   
+};
