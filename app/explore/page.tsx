@@ -3,6 +3,8 @@ import { Box, Container } from "@mui/material";
 import HotelRooms from "@/components/frontend/explorePage/HotelRooms"; // Importing HotelRooms component from the 'explore' folder
 import SearchBar from "@/components/frontend/explorePage/SearchBar"; // Importing SearchBar component from the 'explore' folder
 import HeroSection from "@/components/frontend/explorePage/HeroSection"; // Importing HeroSection component from the 'explore' folder
+import Head from "next/head";
+import { exploreSeo } from "@/data/seo";
 
 /**
  * ExploreScreen component represents the explore screen of the website.
@@ -26,6 +28,17 @@ const ExploreScreen = ({
 
   return (
     <>
+    <Head>
+    <title>{exploreSeo.metatitle}</title>
+        <meta name="description" content= {exploreSeo.metadescription} />
+        <meta name="keywords" content= {exploreSeo.metakeyword} />
+        <meta property="og:title" content= {exploreSeo.metaogtitle} />
+        <meta property="og:description" content= {exploreSeo.metaogdescription} />
+        <meta property="og:type" content= {exploreSeo.metaogtype} />
+        <meta property="og:url" content= {exploreSeo.metaogurl} />
+        <meta property="og:image" content= {exploreSeo.metaogimage} />
+        <link rel="canonical" href={exploreSeo.canonicallink} />
+    </Head>
       {/* Hero Section */}
       <Box
         sx={{
