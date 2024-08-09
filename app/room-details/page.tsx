@@ -7,6 +7,8 @@ import Facilities from '@/components/frontend/guestRoomDetailsPage/Facilities';
 import AdditionalInfo from '@/components/frontend/guestRoomDetailsPage/AdditionalInfo';
 import SimilarRooms from '@/components/frontend/guestRoomDetailsPage/SimilarRooms';
 import Gallery from '@/components/frontend/guestRoomDetailsPage/Gallery';
+import Head from 'next/head';
+import { roomDetailsSeo } from '@/data/seo';
 
 /**
  * RoomDetailsScreen component represents the each hotel room details of the website.
@@ -23,6 +25,17 @@ const sectionStyles = {
 const RoomDetailsScreen = () => {
   return (
     <>
+    <Head>
+        <title>{roomDetailsSeo.metatitle}</title>
+        <meta name="description" content= {roomDetailsSeo.metadescription} />
+        <meta name="keywords" content={roomDetailsSeo.metakeyword}/>
+        <meta property="og:title" content={roomDetailsSeo.metaogtitle} />
+        <meta property="og:description" content={roomDetailsSeo.metaogdescription} />
+        <meta property="og:type" content={roomDetailsSeo.metaogtype} />
+        <meta property="og:url" content={roomDetailsSeo.metaogurl} />
+        <meta property="og:image" content={roomDetailsSeo.metaogimage} />
+        <link rel="canonical" href={roomDetailsSeo.canonicallink} />
+    </Head>
       {/* Banner Section */}
       <Box sx={sectionStyles}>
         <Container>
