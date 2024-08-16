@@ -14,7 +14,7 @@ export const imagePaths = [
     '/images/galleryPage/image12.webp',
   ];
   export const galleryPage = {
-    galleryPageTitle:"Gallery.",
+    galleryPageTitle:"Gallery",
     galleryPageDescription:"A glimpse into our resort’s beauty through the lense.",
     galleryPageButton:"Book Now",    
 }
