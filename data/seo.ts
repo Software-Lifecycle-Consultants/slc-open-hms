@@ -188,3 +188,15 @@ export const registerSeo = {
     registerpageAriaLabel12:"Go to Login Page",
     registerpageAriaLabel13:"Back to Home Page",
 };
+export const gallerySeo = {
+    metatitle: "Travala | Gallery",
+    metadescription: "Explore stunning images of our top travel destinations at Travala. From serene beaches to bustling cityscapes, our gallery showcases the beauty and luxury that awaits you. Plan your next getaway with us today.",
+    metakeyword: "Travel Gallery, Resort Photos, Vacation Images, Luxury Resort Gallery, Destination Photos, Travel Photography, Travala Resort, Resort Images, Vacation Gallery, Luxury Travel, Holiday Photos, Tourist Destination Images, Travala, Gallery, Travel Destinations, Travel Images, Beautiful Resorts, Exotic Locations, World Travel",
+    metaogtitle: "Travala | Gallery",
+    metaogdescription: "Explore stunning images of our top travel destinations at Travala. From serene beaches to bustling cityscapes, our gallery showcases the beauty and luxury that awaits you. Plan your next getaway with us today.",
+    metaogtype: "website",
+    metaogurl: " https://www.travala.com/",
+    metaogimage: "app\favicon.ico",
+    canonicallink:"https://www.travala.com/gallery",
+    ButtonAriaLabel: "Book Now",
+};
