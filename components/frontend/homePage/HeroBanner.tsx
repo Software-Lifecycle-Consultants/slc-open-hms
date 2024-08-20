@@ -33,8 +33,8 @@ const Banner = () => {
   const router = useRouter();
 
 
-  const navigationToExplore = () => {
-    router.push("/explore");
+  const navigationTogallery = () => {
+    router.push("/gallery");
   };
 
   return (
@@ -97,7 +97,7 @@ const Banner = () => {
             </Button>
 
             {/* Button with arrow icon for mobile view */}
-            <Button aria-label= {homeSeo.herobannerButtonAriaLabel2} variant="text" sx={{ color: themeClient.palette.secondary.main, fontWeight: "normal", fontSize: "0.875rem" }} onClick={navigationToExplore}>
+            <Button aria-label= {homeSeo.herobannerButtonAriaLabel2} variant="text" sx={{ color: themeClient.palette.secondary.main, fontWeight: "normal", fontSize: "0.875rem" }} onClick={navigationTogallery}>
               <Box
                 sx={{
                   backgroundColor: "rgba(255, 255, 255, 0.18)",

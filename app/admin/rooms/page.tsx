@@ -89,10 +89,7 @@ const Rooms = () => {
           <Button
             variant="outlined"
             sx={{
-              borderColor: "#5B5959", // Set outline color
-              "&:hover": {
-                backgroundColor: "#192959", // Set hover background color
-              },
+              width: '8rem',
             }}
             endIcon={<AddCircleOutlineIcon />}
           >
@@ -316,22 +313,18 @@ const Rooms = () => {
               <Button
                 variant="contained"
                 sx={{
-                  borderColor: "#5B5959", // Set outline color
+                  backgroundColor: '#FFFFFF',
+                  color: '#5B5959',
+                  border: '0.063rem solid #5B5959',
                   "&:hover": {
-                    backgroundColor: "#192959", // Set hover background color
-                  },
+                  backgroundColor: "#EBEBEB",
+            },
                 }}
               >
                 Close
               </Button>
               <Button
                 variant="outlined"
-                sx={{
-                  borderColor: "#5B5959", // Set outline color
-                  "&:hover": {
-                    backgroundColor: "#192959", // Set hover background color
-                  },
-                }}
               >
                 Save
               </Button>
@@ -367,9 +360,11 @@ const Rooms = () => {
               <Button
                 variant="contained"
                 sx={{
-                  borderColor: "#5B5959", // Set outline color
+                  backgroundColor: '#FFFFFF',
+                  color: '#5B5959',
+                  border: '0.063rem solid #5B5959', // Set outline color
                   "&:hover": {
-                    backgroundColor: "#192959", // Set hover background color
+                    backgroundColor: "#EBEBEB", // Set hover background color
                   },
                 }}
               >
@@ -377,12 +372,6 @@ const Rooms = () => {
               </Button>
               <Button
                 variant="outlined"
-                sx={{
-                  borderColor: "#5B5959", // Set outline color
-                  "&:hover": {
-                    backgroundColor: "#192959", // Set hover background color
-                  },
-                }}
               >
                 Save
               </Button>
@@ -436,9 +425,11 @@ const Rooms = () => {
               <Button
                 variant="contained"
                 sx={{
-                  borderColor: "#5B5959", // Set outline color
+                  backgroundColor: '#FFFFFF',
+                  color: '#5B5959',
+                  border: '0.063rem solid #5B5959',
                   "&:hover": {
-                    backgroundColor: "#192959", // Set hover background color
+                    backgroundColor: "#EBEBEB", // Set hover background color
                   },
                 }}
               >
@@ -446,12 +437,6 @@ const Rooms = () => {
               </Button>
               <Button
                 variant="outlined"
-                sx={{
-                  borderColor: "#5B5959", // Set outline color
-                  "&:hover": {
-                    backgroundColor: "#192959", // Set hover background color
-                  },
-                }}
               >
                 Save
               </Button>
