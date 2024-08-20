@@ -300,13 +300,36 @@ const themeAdmin = createTheme({
       color: "white",
       width: "auto",
       height: "30px",
-      borderRadius: "8px",
       margin: "0.5rem",
       fontFamily: "Mulish",
       fontSize: "1rem",
-      "&:hover": { backgroundColor: "none" },
       "@media (max-width:600px)": {
         fontSize: "0.75rem",
+      },
+    },
+  },
+  components: {
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          color: '#9A9AB0',
+          "&.Mui-checked": {
+            color: "#9A9AB0",
+          },
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+            color: '#FFFFFF',
+            width: '7.188rem',
+            height: '2.313rem',
+            borderRadius: '0.5rem',            
+            "&:hover": {
+              backgroundColor: '#192959',
+            },
+        },
       },
     },
   },
