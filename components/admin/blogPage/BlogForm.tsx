@@ -353,9 +353,11 @@ const BlogForm: React.FC = () => {
               variant="contained"
               onClick={() => console.log("Draft Saved")}
               sx={{
-                borderColor: "#5B5959", // Set outline color
+                backgroundColor: '#FFFFFF',
+                color: '#5B5959',
+                border: '0.063rem solid #5B5959',
                 "&:hover": {
-                  backgroundColor: "#192959", // Set hover background color
+                  backgroundColor: '#EBEBEB', // Set hover background color
                 },
               }}
             >
