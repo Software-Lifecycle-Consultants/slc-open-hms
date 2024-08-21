@@ -49,7 +49,7 @@ export default function StandardImageList() {
           Drag & Drop Your images or Browse
         </Typography>
       
-          <Box display="flex-center" justifyContent="end" alignItems="center">
+          <Box display="flex-center" justifyContent="center" alignItems="center">
               <Grid
           container
           spacing={2}
@@ -59,6 +59,7 @@ export default function StandardImageList() {
           md={2}
           lg={2}
           xl={2}
+          m={1}
         >
             <Button
               component="label"
