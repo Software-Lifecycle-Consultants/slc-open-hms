@@ -323,13 +323,13 @@ const themeAdmin = createTheme({
         root: {
           '& .MuiOutlinedInput-root': {
             '& fieldset': {
-              borderColor: '#C4C4C4', // Set the default outline color to black
+              borderColor: '#C4C4C4', // Set the default outline color  as per the design
             },
             '&:hover fieldset': {
-              borderColor: '#C4C4C4', // Keep outline black on hover
+              borderColor: '#C4C4C4', // Keep outline #C4C4C4 on hover
             },
             '&.Mui-focused fieldset': {
-              borderColor: '#C4C4C4', // Keep outline black when focused (clicked)
+              borderColor: '#C4C4C4', // Keep outline #C4C4C4 when focused (clicked)
             },
           },
           '& .MuiInputLabel-root': {
