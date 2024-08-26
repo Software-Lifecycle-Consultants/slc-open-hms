@@ -154,10 +154,7 @@ const Testimonials: React.FC = () => {
             startIcon={<CloudUploadIcon />}
             variant="outlined"
             sx={{
-              borderColor: "#4A5472", // Set outline color
-              "&:hover": {
-                backgroundColor: "#192959", // Set hover background color
-              },
+              width: '8.5rem',
             }}
           >
             {
