@@ -233,9 +233,18 @@ const themeClient = createTheme({
         },
       },
     },
+    MuiInputBase:{
+      styleOverrides:{
+        input:{
+          fontSize:'1rem',
+          fontWeight:200,
+          fontFamily:'Mulish',
+        }
+      }
+    }
   },
 });
-// Create a dark theme
+// Create a Admin theme
 const themeAdmin = createTheme({
   palette: {
     primary: {
@@ -300,16 +309,68 @@ const themeAdmin = createTheme({
       color: "white",
       width: "auto",
       height: "30px",
-      borderRadius: "8px",
       margin: "0.5rem",
       fontFamily: "Mulish",
       fontSize: "1rem",
-      "&:hover": { backgroundColor: "none" },
       "@media (max-width:600px)": {
         fontSize: "0.75rem",
       },
     },
   },
-});
-
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: '#C4C4C4', // Set the default outline color  as per the design
+            },
+            '&:hover fieldset': {
+              borderColor: '#C4C4C4', // Keep outline #C4C4C4 on hover
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#C4C4C4', // Keep outline #C4C4C4 when focused (clicked)
+            },
+          },
+          '& .MuiInputLabel-root': {
+            color: '#9A9AB0',
+            fontFamily: 'Mulish',
+            fontSize: '1rem',
+          },
+          '@media (max-width:600px)': {
+            '& .MuiOutlinedInput-root': {
+              fontSize: '1rem',
+            },
+            '& .MuiInputLabel-root': {
+              fontSize: '1rem',
+            },
+          },
+        },
+      },
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          color: '#9A9AB0',
+          "&.Mui-checked": {
+            color: "#9A9AB0",
+          },
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+            color: '#FFFFFF',
+            width: '7.188rem',
+            height: '2.313rem',
+            borderRadius: '0.5rem',            
+            "&:hover": {
+              backgroundColor: '#192959',
+            },
+        },
+      },
+    },
+  }
+})
 export { themeClient, themeAdmin };

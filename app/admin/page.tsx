@@ -19,48 +19,33 @@ import Link from "next/link";
 import adminLogo from "@/public/images/admin/loginpage/adminlogo.webp";
 import Image from "next/image";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import { z } from "zod";
+import { validateFormData } from "@/utils/validation";
+import { schemaLogin } from "@/schemas/adminLogin.schema";
 
-// Define Zod schema
-const schema = z.object({
-  email: z
-    .string()
-    .min(1, "Username should not be empty")
-    .email("Username must be a valid email"),
-
-  password: z
-    .string()
-    .min(1, "Password should not be empty")
-    .min(6, "Password must be more than 6 characters"),
-});
-
-type FormData = z.infer<typeof schema>;
-type Errors = {
-  email?: string;
-  password?: string;
+// Define the form data type based on your schema
+type LoginFormData = {
+  email: string;
+  password: string;
 };
 
 const AdminLoginPage: React.FC = () => {
   const router = useRouter(); // Initialize the Next.js router
-  const [formData, setFormData] = useState<FormData>({
-    email: "",
-    password: "",
-  }); // Initialize state for form data
+  const [formData, setFormData] = useState<LoginFormData>({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false); // Initialize state for password visibility toggle
-  const [errors, setErrors] = useState<Errors>({}); // Initialize state for form validation errors
+  const [errors, setErrors] = useState<Partial<LoginFormData>>({});
 
   // Handle form input change
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    field: keyof FormData
   ) => {
+    const { name, value } = event.target;
     setFormData({
       ...formData,
-      [field]: event.target.value,
+      [name]: value,
     });
     setErrors({
       ...errors,
-      [field]: "", // Reset error message for the field being changed
+      [name]: "", // Reset error message for the field being changed
     });
   };
 
@@ -69,21 +54,15 @@ const AdminLoginPage: React.FC = () => {
     setShowPassword(!showPassword);
   };
 
-  // Handle form submission
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const result = schema.safeParse(formData); // Validate form data using the Zod schema
+    const { errors: validationErrors, data } = validateFormData(schemaLogin, formData);
 
-    if (!result.success) {
-      const fieldErrors = result.error.format(); // Format validation errors
-      setErrors({
-        email: fieldErrors.email?._errors[0] || "", // Set error message for email field
-        password: fieldErrors.password?._errors[0] || "", // Set error message for password field
-      });
+    if (validationErrors) {
+      setErrors(validationErrors);
     } else {
-      // Handle successful form submission
-      console.log(formData);
-      router.push("/admin/dashboard"); // Navigate to the admin dashboard on successful login
+      console.log(data);
+      router.push("/admin/dashboard");
     }
   };
 
@@ -105,7 +84,7 @@ const AdminLoginPage: React.FC = () => {
             height: "auto",
           }}
         >
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} noValidate>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Image
@@ -148,8 +127,9 @@ const AdminLoginPage: React.FC = () => {
                   label="Email"
                   variant="outlined"
                   type="email"
+                  name="email"
                   value={formData.email}
-                  onChange={(e) => handleChange(e, "email")}
+                  onChange={handleChange}
                   error={!!errors.email} // Set error state based on validation
                   helperText={errors.email} // Display error message
                   FormHelperTextProps={{
@@ -178,8 +158,9 @@ const AdminLoginPage: React.FC = () => {
                   label="Password"
                   variant="outlined"
                   type={showPassword ? "text" : "password"}
+                  name="password"
                   value={formData.password}
-                  onChange={(e) => handleChange(e, "password")}
+                  onChange={handleChange}
                   error={!!errors.password} // Set error state based on validation
                   helperText={errors.password}
                   FormHelperTextProps={{

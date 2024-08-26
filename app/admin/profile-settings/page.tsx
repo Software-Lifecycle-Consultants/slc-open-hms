@@ -52,13 +52,14 @@ const adminSettings = () =>{
                 }}/>
               </IconButton>
               <Button
-                variant="contained"
+                variant="outlined"
                 style={{
-                  backgroundColor: '#4A5472',
                   position: 'absolute',
                   bottom: 5.6, // Align to the same bottom line as IconButton
                   left: 'calc(49.5% + 40px)', // Adjust for correct positioning
                   transform: 'translateX(50%)',
+                  width:'3.188rem',
+                  height:'1.688rem',
                 }}>
                 {adminSettingData.adminSettingSaveButton}
               </Button>
@@ -66,7 +67,8 @@ const adminSettings = () =>{
             <Grid item xs={12}>
               <Typography
                 align="center"
-                variant="h1">
+                variant="h1"
+                color='#4A5472'>
                 {/* Render the title */}
                 {adminSettingData.adminSettingTitle01}
               </Typography>
@@ -74,7 +76,8 @@ const adminSettings = () =>{
             <Grid item xs={12} marginTop={-1.8}>
               <Typography
                 align="center"
-               variant="h2">
+               variant="h2"
+               color='#4A5472'>
               <Link href="http://www.gmail.com">
                 {/* Render the title */}
                 {adminSettingData.adminSettingEmail} 
@@ -82,7 +85,7 @@ const adminSettings = () =>{
               </Typography>
             </Grid>
             <Grid item xs={12} style={{ textAlign: "center" }}>
-              <Button startIcon={<ChatOutlinedIcon />}>
+              <Button sx={{ width: '11rem', }} startIcon={<ChatOutlinedIcon />}>
               {adminSettingData.adminSettingCustomerSupportButton}
               </Button>
             </Grid>
@@ -111,7 +114,10 @@ const adminSettings = () =>{
               />
             </Grid>
             <Grid item xs={12} md={2} marginTop={-1.3} style={{ textAlign: "center" }}>
-              <Button>
+              <Button sx={{
+                width: '5.563rem',
+                height: '2.75rem',
+              }}>
               {adminSettingData.adminSettingSaveButton}
               </Button>
             </Grid>
@@ -133,7 +139,10 @@ const adminSettings = () =>{
               />
             </Grid>
             <Grid item xs={12} md={2} marginTop={-1.3} style={{ textAlign: "center" }}>
-              <Button>
+              <Button sx={{
+                width: '5.563rem',
+                height: '2.75rem',
+              }}>
                 {adminSettingData.adminSettingSaveButton}
               </Button>
             </Grid>

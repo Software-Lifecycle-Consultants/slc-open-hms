@@ -55,10 +55,7 @@ const Footer: React.FC = () => {
               startIcon={<CloudUploadIcon />}
               variant="outlined"
               sx={{
-                borderColor: "#4A5472", // Set outline color
-                "&:hover": {
-                  backgroundColor: "#192959", // Set hover background color
-                },
+                width: '8.5rem',
               }}
             >
               {
@@ -181,7 +178,7 @@ const Footer: React.FC = () => {
                 variant="outlined"
                 required
               />
-              <Typography sx={{ marginTop: "10px" }}>Sub Section 3</Typography>
+              <Typography variant='h3' sx={{ marginTop: "10px" }}>Sub Section 3</Typography>
               <TextField
                 fullWidth
                 label="Enter Sub Section 3"

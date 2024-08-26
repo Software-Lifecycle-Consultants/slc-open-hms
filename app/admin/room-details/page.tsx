@@ -70,18 +70,9 @@ const roomDetails = () => {
                 }}
               >
                 <Button
-                  sx={{
-                    marginTop: "7px",
-                    backgroundColor: "#4A5472",
-                    borderRadius: "8px", // Set corner radius     
-                borderColor: "#5B5959", // Set outline color
-                "&:hover": {
-                  backgroundColor: "#192959", // Set hover background color
-                },
-                  }}
                   component="label"
                   role={undefined}
-                  variant="contained"
+                  variant="outlined"
                   tabIndex={-1}
                   startIcon={<AddAPhotoIcon />}
                 >
@@ -130,16 +121,15 @@ const roomDetails = () => {
               <Button
                 variant="contained"
                 sx={{
-                  borderColor: "#5B5959", // Set outline color
+                  backgroundColor: '#FFFFFF',
+                  color: '#5B5959',
+                  border: '0.063rem solid #5B5959', 
                   "&:hover": {
-                    backgroundColor: "#192959", // Set hover background color
+                    backgroundColor: '#EBEBEB', // Set hover background color
                   },
                 }}
               >
                 <Typography
-                  style={{
-                    color: "Black",
-                  }}
                 >
                   {" "}
                   Close
@@ -147,19 +137,8 @@ const roomDetails = () => {
               </Button>
               <Button
                 variant="outlined"
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "#192959", // Set hover background color
-                    borderColor: "#192959", // Match border color on hover
-                  },
-                  borderColor: "#192959", // Initial border color (if needed)
-                }}
               >
-                <Typography
-                  style={{
-                    color: "white",
-                  }}
-                >
+                <Typography>
                   Save
                 </Typography>
               </Button>

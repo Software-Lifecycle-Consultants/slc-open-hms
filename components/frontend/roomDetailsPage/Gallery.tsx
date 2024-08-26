@@ -49,7 +49,7 @@ export default function StandardImageList() {
           Drag & Drop Your images or Browse
         </Typography>
       
-          <Box display="flex-center" justifyContent="end" alignItems="center">
+          <Box display="flex-center" justifyContent="center" alignItems="center">
               <Grid
           container
           spacing={2}
@@ -59,20 +59,15 @@ export default function StandardImageList() {
           md={2}
           lg={2}
           xl={2}
+          m={1}
         >
             <Button
               component="label"
               role={undefined}
-              variant="contained"
+              variant="outlined"
               tabIndex={-1}
               startIcon={<CloudUploadIcon />}
-              sx={{
-                backgroundColor: "white",
-                color: "black",
-                height: "30px",
-                borderRadius: "8",
-                marginTop: "25px",
-              }}
+              
             >
               <VisuallyHiddenInput type="file" />
             </Button>
@@ -83,22 +78,9 @@ export default function StandardImageList() {
       {/* Gallery images submit button */}
       <Box mt={2} display="flex" justifyContent="center" alignItems="center">
         <Button
-          sx={{
-            textTransform: "none",
-            justifyContent: "center",
-            color: "white",
-            width: "100px",
-            height: "30px",
-            borderRadius: "8px",
-            textAlign: "center",
-            backgroundColor: "#4A5472",
-            "&:hover": {
-              backgroundColor: "#192959",
-            },
-          }}
           variant="outlined"
         >
-          <Typography style={{ color: "white" }}>Submit</Typography>
+          Submit
         </Button>
       </Box>
     </>
