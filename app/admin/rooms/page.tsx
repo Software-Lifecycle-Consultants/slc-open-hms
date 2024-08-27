@@ -123,6 +123,8 @@ const Rooms: React.FC = () => {
 
   return (
     <Box
+      component="form"
+      onSubmit={handleSubmit}
       padding={{ xs: "15px", md: "30px" }}
       bgcolor="#f0f4fc"
       minHeight="100vh"
@@ -263,7 +265,6 @@ const Rooms: React.FC = () => {
       <Container maxWidth="lg" sx={{ marginTop: "50px" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <form onSubmit={handleSubmit}>
             <Box
               p={3}
               bgcolor="white"
@@ -402,10 +403,8 @@ const Rooms: React.FC = () => {
                 Save
               </Button>
             </Box>
-            </form>
           </Grid>
           <Grid item xs={12} md={6}>
-            <form onSubmit={handleSubmit}>
             <Box
               p={3}
               bgcolor="white"
@@ -482,10 +481,8 @@ const Rooms: React.FC = () => {
                 Save
               </Button>
             </Box>
-            </form>
           </Grid>
           <Grid item xs={12}>
-            <form onSubmit={handleSubmit}>
             <Box
               p={3}
               bgcolor="white"
@@ -556,7 +553,6 @@ const Rooms: React.FC = () => {
                 Save
               </Button>
             </Box>
-            </form>
           </Grid>
         </Grid>
       </Container>
