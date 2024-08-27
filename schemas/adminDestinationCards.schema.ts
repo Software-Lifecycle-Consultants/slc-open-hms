@@ -11,7 +11,6 @@ export const schemaAdminDestinationCards = z.object({
 
     videoUrl1: z
         .string()
-        .nonempty("Invalid URL.")
         .url("Please enter a valid URL."),
 
     cityName: z
