@@ -9,6 +9,8 @@ import HotelIcon from "@mui/icons-material/Hotel";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
+import { schemaAdminRooms } from "@/schemas/adminRooms.schema";
+import { validateFormData } from "@/utils/validation";
 // Interface defining the structure of room data
 interface RoomData {
   id: string;
@@ -17,6 +19,19 @@ interface RoomData {
   guestCapacity: string;
   price: string;
 }
+
+type RoomFormData = {
+  roomType: string;
+  beds: string;
+  guests: string;
+  question1: string;
+  question2: string;
+  question3: string;
+  answer1: string;
+  answer2: string;
+  answer3: string;
+  service: string;
+};
 
 // Static data for room list display and button text
 const roomlistData = {
@@ -35,7 +50,7 @@ const rooms: RoomData[] = [
   { id: "4", roomType: "Suite", bedType: "King Size", guestCapacity: "4 Guest", price: "$800.00" },
 ];
 
-const Rooms = () => {
+const Rooms: React.FC = () => {
   // State hooks for managing chip inputs and lists
   const [roomTypeChips, setRoomTypeChips] = useState<string[]>([]);
   const [bedChips, setBedChips] = useState<string[]>([]);
@@ -45,6 +60,19 @@ const Rooms = () => {
   const [bedInput, setBedInput] = useState("");
   const [guestInput, setGuestInput] = useState("");
   const [serviceInput, setServiceInput] = useState("");
+  const [formData, setFormData] = useState<RoomFormData>({
+    roomType: "",
+    beds: "",
+    guests: "",
+    question1: "",
+    question2: "",
+    question3: "",
+    answer1: "",
+    answer2: "",
+    answer3: "",
+    service: "",
+  });
+  const [errors, setErrors] = useState<Partial<RoomFormData>>({});
 
   // Function to handle adding a new chip to the list
   const handleAddChip = (
@@ -67,6 +95,31 @@ const Rooms = () => {
       () => {
         setChips((chips) => chips.filter((chip) => chip !== chipToDelete));
       };
+
+    const handleChange = (
+        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+      ) => {
+        const { name, value } = event.target;
+        setFormData({
+          ...formData,
+          [name]: value,
+        });
+        setErrors({
+          ...errors,
+          [name]: "",
+        });
+      };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    const { errors: validationErrors, data } = validateFormData(schemaAdminRooms, formData);
+
+    if (validationErrors) {
+      setErrors(validationErrors);
+    } else {
+      console.log(data);
+    }
+  };
 
   return (
     <Box
@@ -210,6 +263,7 @@ const Rooms = () => {
       <Container maxWidth="lg" sx={{ marginTop: "50px" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
+            <form onSubmit={handleSubmit}>
             <Box
               p={3}
               bgcolor="white"
@@ -242,8 +296,14 @@ const Rooms = () => {
                   label="Room Type"
                   variant="outlined"
                   fullWidth
-                  value={roomTypeInput}
-                  onChange={(e) => setRoomTypeInput(e.target.value)}
+                  value={formData.roomType}
+                  name="roomType"
+                  error={!!errors.roomType}
+                  helperText={errors.roomType}
+                  onChange={(e) =>{
+                    handleChange(e);
+                    setRoomTypeInput(e.target.value);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       e.preventDefault();
@@ -272,8 +332,14 @@ const Rooms = () => {
                   label="Bed"
                   variant="outlined"
                   fullWidth
-                  value={bedInput}
-                  onChange={(e) => setBedInput(e.target.value)}
+                  value={formData.beds}
+                  name="beds"
+                  error={!!errors.beds}
+                  helperText={errors.beds}                  
+                  onChange={(e) =>{                     
+                    setBedInput(e.target.value);
+                    handleChange(e);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       e.preventDefault();
@@ -298,8 +364,14 @@ const Rooms = () => {
                   label="Guest"
                   variant="outlined"
                   fullWidth
-                  value={guestInput}
-                  onChange={(e) => setGuestInput(e.target.value)}
+                  value={formData.guests}
+                  name="guests"
+                  error={!!errors.guests}
+                  helperText={errors.guests}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setGuestInput(e.target.value);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       e.preventDefault();
@@ -324,13 +396,16 @@ const Rooms = () => {
                 Close
               </Button>
               <Button
+              type="submit"
                 variant="outlined"
               >
                 Save
               </Button>
             </Box>
+            </form>
           </Grid>
           <Grid item xs={12} md={6}>
+            <form onSubmit={handleSubmit}>
             <Box
               p={3}
               bgcolor="white"
@@ -348,12 +423,42 @@ const Rooms = () => {
                 FAQ
               </Typography>
               <Stack spacing={2} flexGrow={1}>
-                <TextField label="Question 01" variant="outlined" fullWidth />
-                <TextField label="Answer" variant="outlined" fullWidth />
-                <TextField label="Question 02" variant="outlined" fullWidth />
-                <TextField label="Answer" variant="outlined" fullWidth />
-                <TextField label="Question 03" variant="outlined" fullWidth />
-                <TextField label="Answer" variant="outlined" fullWidth />
+                <TextField label="Question 01" variant="outlined" fullWidth
+                 name="question1"
+                  value={formData.question1}
+                 error={!!errors.question1}
+                 helperText={errors.question1}
+                 onChange={handleChange} />
+                <TextField label="Answer" variant="outlined" fullWidth
+                name="answer1"
+                value={formData.answer1}
+               error={!!errors.answer1}
+               helperText={errors.answer1}
+               onChange={handleChange} />
+                <TextField label="Question 02" variant="outlined" fullWidth
+                name="question2"
+                value={formData.question2}
+               error={!!errors.question2}
+               helperText={errors.question2}
+               onChange={handleChange} />
+                <TextField label="Answer" variant="outlined" fullWidth
+                name="answer2"
+                value={formData.answer2}
+               error={!!errors.answer2}
+               helperText={errors.answer2}
+               onChange={handleChange} />
+                <TextField label="Question 03" variant="outlined" fullWidth
+                name="question3"
+                value={formData.question3}
+               error={!!errors.question3}
+               helperText={errors.question3}
+               onChange={handleChange} />
+                <TextField label="Answer" variant="outlined" fullWidth
+                name="answer3"
+                value={formData.answer3}
+               error={!!errors.answer3}
+               helperText={errors.answer3}
+               onChange={handleChange} />
               </Stack>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
@@ -371,13 +476,16 @@ const Rooms = () => {
                 Close
               </Button>
               <Button
+                type="submit"
                 variant="outlined"
               >
                 Save
               </Button>
             </Box>
+            </form>
           </Grid>
           <Grid item xs={12}>
+            <form onSubmit={handleSubmit}>
             <Box
               p={3}
               bgcolor="white"
@@ -406,8 +514,14 @@ const Rooms = () => {
                   label="Add Service"
                   variant="outlined"
                   fullWidth
-                  value={serviceInput}
-                  onChange={(e) => setServiceInput(e.target.value)}
+                  value={formData.service}
+                  name="service"
+                  error={!!errors.service}
+                  helperText={errors.service}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setServiceInput(e.target.value);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       e.preventDefault();
@@ -436,11 +550,13 @@ const Rooms = () => {
                 Close
               </Button>
               <Button
+                type="submit"
                 variant="outlined"
               >
                 Save
               </Button>
             </Box>
+            </form>
           </Grid>
         </Grid>
       </Container>
