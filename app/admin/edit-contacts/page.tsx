@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { adminEditContactUs } from "@/data/admineditcontactus";
 import FindInPageIcon from '@mui/icons-material/FindInPage';
-import { validateFormData } from "@/utils/validation"; // Assuming you have this utility
+import { validateFormData } from "@/utils/validation";
 import { adminContactUsSchema} from "@/schemas/adminContactUs.schema";
 
 // Define the form data type based on your schema
