@@ -1,5 +1,5 @@
-"user client";
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -10,8 +10,57 @@ import {
 } from "@mui/material";
 import { adminEditContactUs } from "@/data/admineditcontactus";
 import FindInPageIcon from '@mui/icons-material/FindInPage';
+import { validateFormData } from "@/utils/validation"; // Assuming you have this utility
+import { adminContactUsSchema} from "@/schemas/adminContactUs.schema";
+
+// Define the form data type based on your schema
+type AdminContactUsFormData = {
+  title: string;
+  description: string;
+  email: string;
+  phoneNumber: string;
+  addressLine1: string;
+  addressLine2: string;
+  city: string;
+  stateProvince: string;
+  zipCode: string;
+  country: string;
+};
 
 const editContact = () =>{
+  const [formData, setFormData] = useState<AdminContactUsFormData>({
+    title: "",
+    description: "",
+    email: "",
+    phoneNumber: "",
+    addressLine1: "",
+    addressLine2: "",
+    city: "",
+    stateProvince: "",
+    zipCode: "",
+    country: "",
+  });
+
+  const [errors, setErrors] = useState<Partial<AdminContactUsFormData>>({});
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const { errors: validationErrors, data } = validateFormData(adminContactUsSchema, formData);
+
+    if (validationErrors) {
+      setErrors(validationErrors);
+    } else {
+      setErrors({});
+      console.log("Form Submitted:", data);
+      // Perform save actions here, such as API call
+    }
+  };
   return (
     <Box
       padding="30px" /* Add padding */
@@ -21,6 +70,7 @@ const editContact = () =>{
       flexDirection="column"
     >
       <Container maxWidth="lg" style={{ flexGrow: 1 }}>
+      <form onSubmit={handleSubmit}>
         <Box>
           <Grid
             container
@@ -85,6 +135,11 @@ const editContact = () =>{
                 fullWidth
                 label="Add Title"
                 variant="outlined"
+                name="title"
+                value={formData.title}
+                onChange={handleInputChange}
+                error={!!errors.title}
+                helperText={errors.title}
                 InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
@@ -99,10 +154,15 @@ const editContact = () =>{
               {/* Description TextField */}
               <TextField
                 fullWidth
-                id="outlined-multiline-static"
                 label="Enter Description"
+                variant="outlined"
                 multiline
                 rows={8}
+                name="description"
+                value={formData.description}
+                onChange={handleInputChange}
+                error={!!errors.description}
+                helperText={errors.description}
                 InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
@@ -120,6 +180,11 @@ const editContact = () =>{
                 label="Enter Email Address"
                 variant="outlined"
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                error={!!errors.email}
+                helperText={errors.email}
                 InputProps={{ style: { backgroundColor: "white" } }}
                 style={{ marginTop: "8px" }}
               />
@@ -141,6 +206,11 @@ const editContact = () =>{
                 fullWidth
                 label="Enter Phone Number"
                 variant="outlined"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleInputChange}
+                error={!!errors.phoneNumber}
+                helperText={errors.phoneNumber}
                 InputProps={{ style: { backgroundColor: "white" } }}
                 style={{ marginTop: "8px" }}
               />
@@ -158,6 +228,11 @@ const editContact = () =>{
                 fullWidth
                 label="Enter your Address Line 1"
                 variant="outlined"
+                name="addressLine1"
+                value={formData.addressLine1}
+                onChange={handleInputChange}
+                error={!!errors.addressLine1}
+                helperText={errors.addressLine1}
                 InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
@@ -167,6 +242,10 @@ const editContact = () =>{
                 fullWidth
                 label="Enter your Address Line 2"
                 variant="outlined"
+                value={formData.addressLine2}
+                onChange={handleInputChange}
+                error={!!errors.addressLine2}
+                helperText={errors.addressLine2}
                 InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
@@ -185,6 +264,11 @@ const editContact = () =>{
                 fullWidth
                 label="City"
                 variant="outlined"
+                name="city"
+                value={formData.city}
+                onChange={handleInputChange}
+                error={!!errors.city}
+                helperText={errors.city}
                 InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
@@ -203,6 +287,11 @@ const editContact = () =>{
                 fullWidth
                 label="State/Province"
                 variant="outlined"
+                name="stateProvince"
+                value={formData.stateProvince}
+                onChange={handleInputChange}
+                error={!!errors.stateProvince}
+                helperText={errors.stateProvince}
                 InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
@@ -218,6 +307,11 @@ const editContact = () =>{
                 fullWidth
                 label="Zip Code"
                 variant="outlined"
+                name="zipCode"
+                value={formData.zipCode}
+                onChange={handleInputChange}
+                error={!!errors.zipCode}
+                helperText={errors.zipCode}
                 InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
@@ -233,6 +327,11 @@ const editContact = () =>{
                 fullWidth
                 label="Country"
                 variant="outlined"
+                name="country"
+                value={formData.country}
+                onChange={handleInputChange}
+                error={!!errors.country}
+                helperText={errors.country}
                 InputProps={{ style: { backgroundColor: "white" } }}
               />
             </Grid>
@@ -252,6 +351,7 @@ const editContact = () =>{
               >
                 {" "}
                 <Button
+                  type="submit"
                   variant="contained"
                   sx={{
                     color: "white", // Set text color
@@ -269,6 +369,7 @@ const editContact = () =>{
             </Grid>
           </Grid>
         </Box>
+        </form>
       </Container>
     </Box>
   );
