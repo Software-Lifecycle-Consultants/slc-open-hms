@@ -1,12 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextField, Grid, Typography, Card, Box, Button } from "@mui/material";
 import { adminContentSecondaryBanner } from "@/data/admincontent";
 import EditIcon from "@mui/icons-material/Edit";
+import { schemaAdminSecondaryBanner } from "@/schemas/adminSecondaryBanner.schema";
+import { validateFormData } from "@/utils/validation";
+
+// Define the form data structure
+type SecondaryBannerFormData = {
+  bannerTitle: string;
+  bannerDescription: string;
+  buttonName: string;
+  videoUrl: string;
+};
 
 const SecondaryBannerSection: React.FC = () => {
+  const [formData, setFormData] = useState<SecondaryBannerFormData>({ // Initialize the form data
+    bannerTitle: "",
+    bannerDescription: "",
+    buttonName: "",
+    videoUrl: "",
+  });
+  const [errors, setErrors] = useState<Partial<SecondaryBannerFormData>>({}); // Initialize the form errors
+ // Handle form field changes
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    setErrors({
+      ...errors,
+      [name]: "", // Reset error message for the field being changed
+    });
+  };
+// Handle form submission
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    const { errors: validationErrors, data } = validateFormData(schemaAdminSecondaryBanner, formData);
+
+    if (validationErrors) {
+      setErrors(validationErrors);
+    } else {
+      console.log(data);
+    }
+  };
+
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} component='form' onSubmit={handleSubmit}>
         <Card
           elevation={0}
           sx={{
@@ -47,6 +90,11 @@ const SecondaryBannerSection: React.FC = () => {
               label="Enter Secondary Banner Section Title"
               variant="outlined"
               required
+              name="bannerTitle"
+              value={formData.bannerTitle}
+              onChange={handleChange}
+              error={!!errors.bannerTitle}
+              helperText={errors.bannerTitle}
             />
             <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
@@ -60,6 +108,11 @@ const SecondaryBannerSection: React.FC = () => {
               variant="outlined"
               multiline
               rows={4}
+              name="bannerDescription"
+              value={formData.bannerDescription}
+              onChange={handleChange}
+              error={!!errors.bannerDescription}
+              helperText={errors.bannerDescription}
             />
             <Grid container>
               <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
@@ -73,6 +126,11 @@ const SecondaryBannerSection: React.FC = () => {
                   label="Enter Button Name"
                   variant="outlined"
                   required
+                  name="buttonName"
+                  value={formData.buttonName}
+                  onChange={handleChange}
+                  error={!!errors.buttonName}
+                  helperText={errors.buttonName}
                   sx={{ m: 1, width: "44ch" }}
                 />
               </Grid>
@@ -88,6 +146,11 @@ const SecondaryBannerSection: React.FC = () => {
               label="Enter Video URL Link"
               variant="outlined"
               multiline
+              name="videoUrl"
+              value={formData.videoUrl}
+              onChange={handleChange}
+              error={!!errors.videoUrl}
+              helperText={errors.videoUrl}
             />
           </Box>
         </Card>
@@ -114,6 +177,7 @@ const SecondaryBannerSection: React.FC = () => {
               </Typography>
             </Button>
             <Button
+              type="submit"
               variant="outlined"
               sx={{
                 borderColor: "#4A5472", // Set outline color

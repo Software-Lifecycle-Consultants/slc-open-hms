@@ -1,11 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TextField, Grid, Card, Typography, Box, Button } from "@mui/material";
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { adminContentDestinationCard } from '@/data/admincontent';
+import { validateFormData } from "@/utils/validation";
+import { schemaAdminDestinationCards } from '@/schemas/adminDestinationCards.schema';
+
+ // Define the type for the form data
+type DestinationFormData = {
+  videoTitle: string;
+  videoDescription: string;
+  videoUrl1: string;
+  cityName: string;
+  description: string;
+  price: string;
+  customTag: string;
+  buttonName: string;
+};
 
 const DestinationCards: React.FC = () => {
+// Define the initial state for the form data and errors
+  const [formData, setFormData] = useState<DestinationFormData>({
+    videoTitle: '',
+    videoDescription: '',
+    videoUrl1: '',
+    cityName: '',
+    description: '',
+    price: '',
+    customTag: '',
+    buttonName: '',
+  });
+  const [errors, setErrors] = useState<Partial<DestinationFormData>>({});
+// Define the handleChange function to update the form data
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    setErrors({
+      ...errors,
+      [name]: "", // Reset error message for the field being changed
+    });
+  };
+// Define the handleSubmit function to validate the form data
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    const { errors: validationErrors, data } = validateFormData(schemaAdminDestinationCards, formData);
+
+    if (validationErrors) {
+      setErrors(validationErrors);
+    } else {
+      console.log(data);
+    }
+  };
+
   return (
     <Grid container spacing={2}>
       {/* Display the Videos cards  */}
@@ -102,7 +154,7 @@ const DestinationCards: React.FC = () => {
         </Card>
       </Grid>
       {/* Display the New Videos cards  */}
-      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+      <Grid item xs={12} sm={12} md={6} lg={6} xl={6} component='form' onSubmit={handleSubmit}>
         <Card
           elevation={0}
           sx={{
@@ -131,6 +183,11 @@ const DestinationCards: React.FC = () => {
             label="Enter Video  Title"
             variant="outlined"
             required
+            name='videoTitle'
+            value={formData.videoTitle}
+            onChange={handleChange}
+            error={!!errors.videoTitle}
+            helperText={errors.videoTitle}
             sx={{ m: 1 }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
@@ -144,6 +201,11 @@ const DestinationCards: React.FC = () => {
             variant="outlined"
             multiline
             rows={4}
+            name='videoDescription'
+            value={formData.videoDescription}
+            onChange={handleChange}
+            error={!!errors.videoDescription}
+            helperText={errors.videoDescription}
             sx={{ m: 1 }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
@@ -156,6 +218,11 @@ const DestinationCards: React.FC = () => {
             label="Enter Video URL 1 Link"
             variant="outlined"
             required
+            name='videoUrl1'
+            value={formData.videoUrl1}
+            onChange={handleChange}
+            error={!!errors.videoUrl1}
+            helperText={errors.videoUrl1}
             sx={{ m: 1 }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
@@ -168,6 +235,11 @@ const DestinationCards: React.FC = () => {
             label="Enter City Name"
             variant="outlined"
             required
+            name='cityName'
+            value={formData.cityName}
+            onChange={handleChange}
+            error={!!errors.cityName}
+            helperText={errors.cityName}
             sx={{ m: 1 }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
@@ -181,6 +253,11 @@ const DestinationCards: React.FC = () => {
             variant="outlined"
             multiline
             rows={4}
+            name='description'
+            value={formData.description}
+            onChange={handleChange}
+            error={!!errors.description}
+            helperText={errors.description}
             sx={{ m: 1 }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
@@ -193,6 +270,11 @@ const DestinationCards: React.FC = () => {
             label="Price"
             variant="outlined"
             required
+            name='price'
+            value={formData.price}
+            onChange={handleChange}
+            error={!!errors.price}
+            helperText={errors.price}
             sx={{ m: 1 }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
@@ -205,6 +287,11 @@ const DestinationCards: React.FC = () => {
             label="Enter Custom Tag"
             variant="outlined"
             required
+            name='customTag'
+            value={formData.customTag}
+            onChange={handleChange}
+            error={!!errors.customTag}
+            helperText={errors.customTag}
             sx={{ m: 1 }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
@@ -217,12 +304,18 @@ const DestinationCards: React.FC = () => {
             label="Enter Button Name"
             variant="outlined"
             required
+            name='buttonName'
+            value={formData.buttonName}
+            onChange={handleChange}
+            error={!!errors.buttonName}
+            helperText={errors.buttonName}
             sx={{ m: 1 }}
           />
         </Card>
         <Grid my={4}>
           <Box display="flex" justifyContent="end" alignItems="center">
             <Button
+              type='submit'
               variant="outlined"
               sx={{
                 borderColor: "#4A5472", // Set outline color
