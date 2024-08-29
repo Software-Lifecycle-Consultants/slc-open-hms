@@ -27,7 +27,7 @@ type AdminContactUsFormData = {
   country: string;
 };
 
-const editContact: React.FC = () => {
+const AdminContactUsPage: React.FC = () => {
   const [formData, setFormData] = useState<AdminContactUsFormData>({
     title: "",
     description: "",
@@ -378,4 +378,4 @@ const editContact: React.FC = () => {
     </Box>
   );
 };
-export default editContact;
+export default AdminContactUsPage;
