@@ -21,7 +21,7 @@ export const adminContentDestinationOverview = {
     adminContentMainBarTitle01:"Main Banner Title",
     adminContentMainBarTitle02:"Main Banner Description",   
     adminContentMainBarTitle03:"Main Banner Image",
-    adminContentMainBarUploadButton:"Upload file",
+    adminContentMainBarUploadButton:"Upload",
     adminContentMainBarCard01:"Card 01",
      adminContentCardMainBarTitle01:"Card 01 Title",
      adminContentCardMainBarDesTitle01:"Card 01  Description",
