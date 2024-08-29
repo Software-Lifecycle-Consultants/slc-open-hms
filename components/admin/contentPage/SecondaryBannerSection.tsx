@@ -5,6 +5,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import { schemaAdminSecondaryBanner } from "@/schemas/adminSecondaryBanner.schema";
 import { validateFormData } from "@/utils/validation";
 
+// Define the form data structure
 type SecondaryBannerFormData = {
   bannerTitle: string;
   bannerDescription: string;
@@ -13,14 +14,14 @@ type SecondaryBannerFormData = {
 };
 
 const SecondaryBannerSection: React.FC = () => {
-  const [formData, setFormData] = useState<SecondaryBannerFormData>({
+  const [formData, setFormData] = useState<SecondaryBannerFormData>({ // Initialize the form data
     bannerTitle: "",
     bannerDescription: "",
     buttonName: "",
     videoUrl: "",
   });
-  const [errors, setErrors] = useState<Partial<SecondaryBannerFormData>>({});
-
+  const [errors, setErrors] = useState<Partial<SecondaryBannerFormData>>({}); // Initialize the form errors
+ // Handle form field changes
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -34,7 +35,7 @@ const SecondaryBannerSection: React.FC = () => {
       [name]: "", // Reset error message for the field being changed
     });
   };
-
+// Handle form submission
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     const { errors: validationErrors, data } = validateFormData(schemaAdminSecondaryBanner, formData);
