@@ -242,6 +242,7 @@ const editContact = () =>{
                 fullWidth
                 label="Enter your Address Line 2"
                 variant="outlined"
+                name="addressLine2"
                 value={formData.addressLine2}
                 onChange={handleInputChange}
                 error={!!errors.addressLine2}
