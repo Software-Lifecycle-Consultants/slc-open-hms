@@ -7,6 +7,7 @@ import { adminContentDestinationCard } from '@/data/admincontent';
 import { validateFormData } from "@/utils/validation";
 import { schemaAdminDestinationCards } from '@/schemas/adminDestinationCards.schema';
 
+ // Define the type for the form data
 type DestinationFormData = {
   videoTitle: string;
   videoDescription: string;
@@ -19,7 +20,7 @@ type DestinationFormData = {
 };
 
 const DestinationCards: React.FC = () => {
-
+// Define the initial state for the form data and errors
   const [formData, setFormData] = useState<DestinationFormData>({
     videoTitle: '',
     videoDescription: '',
@@ -31,7 +32,7 @@ const DestinationCards: React.FC = () => {
     buttonName: '',
   });
   const [errors, setErrors] = useState<Partial<DestinationFormData>>({});
-
+// Define the handleChange function to update the form data
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -45,7 +46,7 @@ const DestinationCards: React.FC = () => {
       [name]: "", // Reset error message for the field being changed
     });
   };
-
+// Define the handleSubmit function to validate the form data
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     const { errors: validationErrors, data } = validateFormData(schemaAdminDestinationCards, formData);
