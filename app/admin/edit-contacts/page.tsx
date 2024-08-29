@@ -27,7 +27,7 @@ type AdminContactUsFormData = {
   country: string;
 };
 
-const editContact: React.FC = () =>{
+const editContact: React.FC = () => {
   const [formData, setFormData] = useState<AdminContactUsFormData>({
     title: "",
     description: "",
