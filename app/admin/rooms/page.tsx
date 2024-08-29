@@ -19,17 +19,17 @@ interface RoomData {
   guestCapacity: string;
   price: string;
 }
-
+// Interface defining the structure of room form data
 type RoomFormData = {
   roomType: string;
   beds: string;
   guests: string;
-  question1: string;
-  question2: string;
-  question3: string;
-  answer1: string;
-  answer2: string;
-  answer3: string;
+  faqQuestion1: string;
+  faqQuestion2: string;
+  faqQuestion3: string;
+  faqAnswer1: string;
+  faqAnswer2: string;
+  faqAnswer3: string;
   service: string;
 };
 
@@ -60,19 +60,19 @@ const Rooms: React.FC = () => {
   const [bedInput, setBedInput] = useState("");
   const [guestInput, setGuestInput] = useState("");
   const [serviceInput, setServiceInput] = useState("");
-  const [formData, setFormData] = useState<RoomFormData>({
+  const [formData, setFormData] = useState<RoomFormData>({ // State hook for form data
     roomType: "",
     beds: "",
     guests: "",
-    question1: "",
-    question2: "",
-    question3: "",
-    answer1: "",
-    answer2: "",
-    answer3: "",
+    faqQuestion1: "",
+    faqQuestion2: "",
+    faqQuestion3: "",
+    faqAnswer1: "",
+    faqAnswer2: "",
+    faqAnswer3: "",
     service: "",
   });
-  const [errors, setErrors] = useState<Partial<RoomFormData>>({});
+  const [errors, setErrors] = useState<Partial<RoomFormData>>({}); // State hook for form errors
 
   // Function to handle adding a new chip to the list
   const handleAddChip = (
@@ -96,6 +96,7 @@ const Rooms: React.FC = () => {
         setChips((chips) => chips.filter((chip) => chip !== chipToDelete));
       };
 
+      // Function to handle form input changes
     const handleChange = (
         event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
       ) => {
@@ -110,6 +111,7 @@ const Rooms: React.FC = () => {
         });
       };
 
+      // Function to handle form submission
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     const { errors: validationErrors, data } = validateFormData(schemaAdminRooms, formData);
@@ -423,41 +425,41 @@ const Rooms: React.FC = () => {
               </Typography>
               <Stack spacing={2} flexGrow={1}>
                 <TextField label="Question 01" variant="outlined" fullWidth
-                 name="question1"
-                  value={formData.question1}
-                 error={!!errors.question1}
-                 helperText={errors.question1}
-                 onChange={handleChange} />
+                  name="question1"
+                  value={formData.faqQuestion1}
+                  error={!!errors.faqQuestion1}
+                  helperText={errors.faqQuestion1}
+                  onChange={handleChange} />
                 <TextField label="Answer" variant="outlined" fullWidth
-                name="answer1"
-                value={formData.answer1}
-               error={!!errors.answer1}
-               helperText={errors.answer1}
-               onChange={handleChange} />
+                  name="answer1"
+                  value={formData.faqAnswer1}
+                  error={!!errors.faqAnswer1}
+                  helperText={errors.faqAnswer1}
+                  onChange={handleChange} />
                 <TextField label="Question 02" variant="outlined" fullWidth
-                name="question2"
-                value={formData.question2}
-               error={!!errors.question2}
-               helperText={errors.question2}
-               onChange={handleChange} />
+                  name="question2"
+                  value={formData.faqQuestion2}
+                  error={!!errors.faqQuestion2}
+                  helperText={errors.faqQuestion2}
+                  onChange={handleChange} />
                 <TextField label="Answer" variant="outlined" fullWidth
-                name="answer2"
-                value={formData.answer2}
-               error={!!errors.answer2}
-               helperText={errors.answer2}
-               onChange={handleChange} />
+                  name="answer2"
+                  value={formData.faqAnswer2}
+                  error={!!errors.faqAnswer2}
+                  helperText={errors.faqAnswer2}
+                  onChange={handleChange} />
                 <TextField label="Question 03" variant="outlined" fullWidth
-                name="question3"
-                value={formData.question3}
-               error={!!errors.question3}
-               helperText={errors.question3}
-               onChange={handleChange} />
+                  name="question3"
+                  value={formData.faqQuestion3}
+                  error={!!errors.faqQuestion3}
+                  helperText={errors.faqQuestion3}
+                  onChange={handleChange} />
                 <TextField label="Answer" variant="outlined" fullWidth
-                name="answer3"
-                value={formData.answer3}
-               error={!!errors.answer3}
-               helperText={errors.answer3}
-               onChange={handleChange} />
+                  name="answer3"
+                  value={formData.faqAnswer3}
+                  error={!!errors.faqAnswer3}
+                  helperText={errors.faqAnswer3}
+                  onChange={handleChange} />
               </Stack>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>

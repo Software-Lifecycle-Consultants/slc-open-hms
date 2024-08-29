@@ -13,27 +13,27 @@ export const schemaAdminRooms = z.object({
         .string()
         .nonempty("Enter guests."),
     
-    question1: z
+    faqQuestion1: z
         .string()
         .nonempty("Enter the question."),
 
-    question2: z
+    faqQuestion2: z
         .string()
         .nonempty("Enter the question."),
 
-    question3: z
+    faqQuestion3: z
         .string()
         .nonempty("Enter the question."),
     
-    answer1: z
+    faqAnswer1: z
         .string()
         .nonempty("Enter the answer."),
 
-    answer2: z
+    faqAnswer2: z
         .string()
         .nonempty("Enter the answer."),
 
-    answer3: z
+    faqAnswer3: z
         .string()
         .nonempty("Enter the answer."),
 
