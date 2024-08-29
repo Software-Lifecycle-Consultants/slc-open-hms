@@ -2,12 +2,59 @@
 import * as React from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-import { Box, Card, Container, MenuItem, Select, Stack, Typography } from "@mui/material";
+import { Box, Button, Card, Container, MenuItem, Select, SelectChangeEvent, Stack, Typography } from "@mui/material";
 import { category } from "@/data/roomDetails";
 import { FormControl, InputLabel, OutlinedInput, InputAdornment } from "@mui/material";
 import Chip from "@mui/material/Chip";
+import { schemaAdminPanelRoomDetailsCategory } from "@/schemas/adminPanelRoomDetailsCategory.schema";
+import { useState } from "react";
+
 
 export default function Category() {
+  const [formData, setFormData] = useState({
+    categoryRoomType: "",
+    categoryBeds: "",
+    categoryGuest: "",
+    categoryPrice: "",
+  });
+  const [errors, setErrors] = useState<{ [key: string]: string | null }>({
+    categoryRoomType: null,
+    categoryBeds: null,
+    categoryGuest: null,
+    categoryPrice: null,
+  });
+  const handleInputChange = (field: string) => (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string>
+  ) => {
+    const value = event.target.value;
+    setFormData({
+      ...formData,
+      [field]: field === 'categoryPrice' ? value : value,
+    });
+  };
+  const handleSubmit = () => {
+    const priceValue = formData.categoryPrice === '' ? 0 : parseFloat(formData.categoryPrice);
+  
+    const dataToValidate = {
+      ...formData,
+      categoryPrice: isNaN(priceValue) ? 0 : priceValue
+    };
+  
+    const validationResult = schemaAdminPanelRoomDetailsCategory.safeParse(dataToValidate);
+  
+    if (!validationResult.success) {
+      const validationErrors: { [key: string]: string | null } = {};
+  
+      validationResult.error.errors.forEach((error) => {
+        validationErrors[error.path[0]] = error.message;
+      });
+  
+      setErrors(validationErrors);
+    } else {
+      console.log("Valid data:", validationResult.data);
+      // Process the valid form data
+    }
+  };
   const [isEditing, setIsEditing] = React.useState(false);
 
   const handleEditClick = () => {
@@ -80,6 +127,9 @@ export default function Category() {
             <Select
             labelId="roomtype-select-label"
             label="Select Room Type"
+            value={formData.categoryRoomType}
+            onChange={handleInputChange("categoryRoomType")}
+            error={!!errors.categoryRoomType}
             >
               <MenuItem value="a"> <Typography>Family Room</Typography></MenuItem>
               <MenuItem value="b"> <Typography>Executive Room</Typography></MenuItem>
@@ -100,6 +150,9 @@ export default function Category() {
             <Select
             labelId="bedtype-select-label"
             label="Select bed Type"
+            value={formData.categoryBeds}
+            onChange={handleInputChange("categoryBeds")}
+            error={!!errors.categoryBeds}
             >
               <MenuItem value="e"> <Typography>King Size</Typography></MenuItem>
               <MenuItem value="f"> <Typography>Double Size</Typography></MenuItem>
@@ -120,6 +173,9 @@ export default function Category() {
             <Select
             labelId="guest-select-label"
             label="Select Guests"
+            value={formData.categoryGuest}
+            onChange={handleInputChange("categoryGuest")}
+            error={!!errors.categoryGuest}
             >
               <MenuItem value="h"> <Typography>01</Typography></MenuItem>
               <MenuItem value="i"> <Typography>02</Typography></MenuItem>
@@ -137,8 +193,16 @@ export default function Category() {
           <OutlinedInput
             id="outlined-adornment-amount"
             startAdornment={<InputAdornment position="start">$</InputAdornment>}
-            label="Amount"
+            label="categoryPrice"
+            value={formData.categoryPrice}
+            onChange={handleInputChange("categoryPrice")}
+            error={!!errors.categoryPrice}
+            type="number" // This line to ensure numerical input
+            inputProps={{ step: "0.01" }} // This line to allow two decimal places
           />
+          {errors.categoryPrice && (
+            <Typography color="error">{errors.categoryPrice}</Typography>
+          )}
         </FormControl>
       </Stack>
     </Card>

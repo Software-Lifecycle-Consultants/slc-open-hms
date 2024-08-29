@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Typography,
   Card,
@@ -9,9 +9,46 @@ import {
 } from "@mui/material";
 import { additional } from "@/data/roomDetails";
 import { Bolt } from "@mui/icons-material";
+import { schemaAdminPanelRoomDetailsAdditional } from "@/schemas/adminPanelRoomDetailsAdditional.schema";
+import { validateFormData } from "@/utils/validation";
 
+type AdditionalFormData = {
+  additionalInfoTitle: string;
+  additionalInfoDescription: string;
+}
 /* Functional component for ExtraFacilitation */
 const Additional = () => {
+  const [formData, setFormData] = useState<AdditionalFormData>({
+    additionalInfoTitle: "",
+    additionalInfoDescription: "",
+  });
+  const [additionalerrors, setadditionalerrors] = useState<Partial<AdditionalFormData>>({});
+  
+   // Handle form input change
+   const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    setadditionalerrors({
+      ...additionalerrors,
+      [name]: "", // Reset error message for the field being changed
+    });
+  };
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    const { errors: validationErrors, data } = validateFormData(schemaAdminPanelRoomDetailsAdditional, formData);
+  
+    if (validationErrors) {
+      setadditionalerrors(validationErrors);
+    } else {
+      console.log(data);
+    }
+  };
+
   return (
     <>
       {/* Card for the billing details form */}
@@ -36,14 +73,18 @@ const Additional = () => {
           </Typography>
         </Box>
         <CardContent>
-          <form>
+          <form onSubmit={handleSubmit} noValidate>
             {/* Grid container for form layout */}
             <Grid container spacing={2}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <TextField
                   fullWidth
                   label={<b style={{ fontWeight: 'normal' }}>Enter Additional Information</b>}
-                  id="ATitle"
+                  name="additionalInfoTitle"
+                  value={formData. additionalInfoTitle}
+                  onChange={handleChange}
+                  error={!!additionalerrors. additionalInfoTitle}
+                  helperText={additionalerrors. additionalInfoTitle}
                 />
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -58,7 +99,11 @@ const Additional = () => {
                   multiline
                   rows={16}
                   label="Enter description"
-                  id="Enter description"
+                  name="additionalInfoDescription"
+                  value={formData.  additionalInfoDescription}
+                  onChange={handleChange}
+                  error={!!additionalerrors.  additionalInfoDescription}
+                  helperText={additionalerrors.  additionalInfoDescription}
                 />
               </Grid>
             </Grid>

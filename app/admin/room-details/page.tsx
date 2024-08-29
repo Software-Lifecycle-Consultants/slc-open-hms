@@ -6,10 +6,12 @@ import ServiceAd from "@/components/frontend/roomDetailsPage/ServiceAd";
 import Additional from "@/components/frontend/roomDetailsPage/Additional";
 import Gallery from "@/components/frontend/roomDetailsPage/Gallery";
 import { Grid, Box, Container, Card, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import { schemaAdminPanelRoomDetailsCoverImg } from "@/schemas/adminPanelRoomDetailsCoverImage.schema";
+import { validateFormData } from "@/utils/validation";
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -23,6 +25,35 @@ const VisuallyHiddenInput = styled("input")({
   width: 1,
 });
 const roomDetails = () => {
+  const [coverImages, setCoverImages] = useState<File[]>([]);
+  const [errors, setErrors] = useState<string | null>(null);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files ? Array.from(event.target.files) : [];
+    if (files.length !== 1) {
+      setErrors("Only one cover image can be uploaded.");
+      return;
+    } 
+    setCoverImages(files);
+  };
+  
+  const handleSubmit = () => {
+    if (coverImages.length === 0) {
+      setErrors("Please upload a cover image.");
+      return;
+    }
+  
+    const { errors: validationErrors } = validateFormData(schemaAdminPanelRoomDetailsCoverImg, { coverImages });
+  
+    if (validationErrors) {
+      setErrors(validationErrors.coverImages?.join(', ') || "Invalid cover image.");
+    } else {
+      setErrors(null);
+      // Process the valid file
+      console.log("Valid cover image:", coverImages[0]);
+    }
+  };
+
   return (
     <>
       <Box
@@ -50,7 +81,7 @@ const roomDetails = () => {
           <Grid container spacing={2}>
             {/* <RoomDetailsForm /> */}
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} marginTop={3}>
-              <Details />
+              <Details/>
             </Grid>
             {/* (2) The Gallery component is imported and rendered here. */}
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
@@ -67,8 +98,7 @@ const roomDetails = () => {
                   flexShrink: "0",
                   paddingTop: "20%",
                   paddingLeft: "40%", // Set padding left
-                }}
-              >
+                }}>
                 <Button
                   component="label"
                   role={undefined}
@@ -77,9 +107,10 @@ const roomDetails = () => {
                   startIcon={<AddAPhotoIcon />}
                 >
                   Submit
-                  <VisuallyHiddenInput type="file" />
+                  <VisuallyHiddenInput type="file" onChange={handleFileChange}/>
                 </Button>
               </Card>
+              {errors && <Typography color="error">{errors}</Typography>}
               {/* (3) The Gallery component is imported and rendered here. */}
               <Grid item xs={12} md={12} lg={12} marginTop={2}>
                 <Gallery />
@@ -129,15 +160,11 @@ const roomDetails = () => {
                   },
                 }}
               >
-                <Typography
-                >
-                  {" "}
+                <Typography>
                   Close
                 </Typography>
               </Button>
-              <Button
-                variant="outlined"
-              >
+              <Button variant="outlined"  onClick={handleSubmit}>
                 <Typography>
                   Save
                 </Typography>
@@ -149,4 +176,6 @@ const roomDetails = () => {
     </>
   );
 };
+
+
 export default roomDetails;

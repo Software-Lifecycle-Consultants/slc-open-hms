@@ -2,6 +2,9 @@ import * as React from "react";
 import { Box, Card, Typography, Button, Grid,  } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { useState } from "react";
+import { schemaAdminPanelRoomDetailsGallery } from "@/schemas/adminPanelRoomDetailsGallery.schema";
+import { validateFormData } from "@/utils/validation";
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -16,6 +19,32 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 export default function StandardImageList() {
+  const [gallery, setGallery] = useState<File[]>([]);
+  const [errors, setErrors] = useState<string | null>(null);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      const filesArray = Array.from(event.target.files);
+      setGallery(filesArray);
+      setErrors(null); // Reset errors when a new file is added
+    }
+  };
+
+  const handleSubmit = () => {
+    if (gallery.length === 0) {
+      setErrors("You must upload at least one image.");
+      return;
+    }
+    const { errors: validationErrors } = validateFormData(schemaAdminPanelRoomDetailsGallery, { gallery });
+
+    if (validationErrors) {
+      setErrors(validationErrors.gallery?.join(', ') || null);
+    } else {
+      // Process the valid files
+      console.log( gallery);
+    }
+  };
+
   return (
     <>
       <Typography mt={2} variant="h2">
@@ -49,36 +78,37 @@ export default function StandardImageList() {
           Drag & Drop Your images or Browse
         </Typography>
       
-          <Box display="flex-center" justifyContent="center" alignItems="center">
-              <Grid
-          container
-          spacing={2}
-          item
-          xs={7}
-          sm={6}
-          md={2}
-          lg={2}
-          xl={2}
-          m={1}
-        >
+        <Box display="flex-center" justifyContent="center" alignItems="center">
+          <Grid
+            container
+            spacing={2}
+            item
+            xs={7}
+            sm={6}
+            md={2}
+            lg={2}
+            xl={2}
+            m={1}
+          >
             <Button
               component="label"
               role={undefined}
               variant="outlined"
               tabIndex={-1}
               startIcon={<CloudUploadIcon />}
-              
             >
-              <VisuallyHiddenInput type="file" />
+              <VisuallyHiddenInput type="file" multiple onChange={handleFileChange} />
             </Button>
-            </Grid>
-          </Box>
-        
+          </Grid>
+        </Box>      
       </Card>
+      {errors && (<Typography color="error"> {errors} </Typography>)}
       {/* Gallery images submit button */}
       <Box mt={2} display="flex" justifyContent="center" alignItems="center">
         <Button
           variant="outlined"
+          type="submit"
+          onClick={handleSubmit}
         >
           Submit
         </Button>
