@@ -62,7 +62,11 @@ const editContact = () =>{
     }
   };
   return (
-    <Box
+    <Box 
+      component="form"
+      noValidate
+      autoComplete="off"
+      onSubmit={handleSubmit} // Handle form submission
       padding="30px" /* Add padding */
       bgcolor="rgba(238, 245, 255, 1)" /* Add background color */
       minHeight="100vh"
@@ -70,7 +74,7 @@ const editContact = () =>{
       flexDirection="column"
     >
       <Container maxWidth="lg" style={{ flexGrow: 1 }}>
-      <form onSubmit={handleSubmit}>
+    
         <Box>
           <Grid
             container
@@ -370,7 +374,6 @@ const editContact = () =>{
             </Grid>
           </Grid>
         </Box>
-        </form>
       </Container>
     </Box>
   );
