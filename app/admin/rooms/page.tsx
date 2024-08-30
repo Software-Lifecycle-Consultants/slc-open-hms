@@ -425,37 +425,37 @@ const Rooms: React.FC = () => {
               </Typography>
               <Stack spacing={2} flexGrow={1}>
                 <TextField label="Question 01" variant="outlined" fullWidth
-                  name="question1"
+                  name="faqQuestion1"
                   value={formData.faqQuestion1}
                   error={!!errors.faqQuestion1}
                   helperText={errors.faqQuestion1}
                   onChange={handleChange} />
                 <TextField label="Answer" variant="outlined" fullWidth
-                  name="answer1"
+                  name="faqAnswer1"
                   value={formData.faqAnswer1}
                   error={!!errors.faqAnswer1}
                   helperText={errors.faqAnswer1}
                   onChange={handleChange} />
                 <TextField label="Question 02" variant="outlined" fullWidth
-                  name="question2"
+                  name="faqQuestion2"
                   value={formData.faqQuestion2}
                   error={!!errors.faqQuestion2}
                   helperText={errors.faqQuestion2}
                   onChange={handleChange} />
                 <TextField label="Answer" variant="outlined" fullWidth
-                  name="answer2"
+                  name="faqAnswer2"
                   value={formData.faqAnswer2}
                   error={!!errors.faqAnswer2}
                   helperText={errors.faqAnswer2}
                   onChange={handleChange} />
                 <TextField label="Question 03" variant="outlined" fullWidth
-                  name="question3"
+                  name="faqQuestion3"
                   value={formData.faqQuestion3}
                   error={!!errors.faqQuestion3}
                   helperText={errors.faqQuestion3}
                   onChange={handleChange} />
                 <TextField label="Answer" variant="outlined" fullWidth
-                  name="answer3"
+                  name="faqAnswer3"
                   value={formData.faqAnswer3}
                   error={!!errors.faqAnswer3}
                   helperText={errors.faqAnswer3}
