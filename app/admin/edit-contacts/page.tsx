@@ -42,21 +42,21 @@ const AdminContactUsPage: React.FC = () => {
   });
 
   const [errors, setErrors] = useState<Partial<AdminContactUsFormData>>({});
-
+  // Handle input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
+  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const { errors: validationErrors, data } = validateFormData(adminContactUsSchema, formData);
 
     if (validationErrors) {
-      setErrors(validationErrors);
+      setErrors(validationErrors);// Set errors if validation fails
     } else {
-      setErrors({});
+      setErrors({});// Clear errors if validation passes
       console.log("Form Submitted:", data);
       // Perform save actions here, such as API call
     }
