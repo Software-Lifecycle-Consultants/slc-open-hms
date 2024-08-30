@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { TextField, Grid, Typography, Card, Box, Button } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
 import { adminContentDestinationOverview } from '@/data/admincontent';
 import EditIcon from "@mui/icons-material/Edit";
+import { validateFormData } from "@/utils/validation";
+import { destinationOverviewSchema } from "@/schemas/destinationOverview.schema";
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -16,14 +18,71 @@ const VisuallyHiddenInput = styled("input")({
   whiteSpace: "nowrap",
   width: 1,
 });
+
+// Define the form data type based on your schema
+type DestinationOverviewFormData = {
+  mainBannerTitle: string;
+  mainBannerDescription: string;
+  mainBannerImage: string;
+  card01Title: string;
+  card01Description: string;
+  card01Image: string;
+  card02Title: string;
+  card02Description: string;
+  card02Image: string;
+  card03Title: string;
+  card03Description: string;
+  card03Image: string;
+};
 const DestinationOverview: React.FC = () => {
+  const [formData, setFormData] = useState<DestinationOverviewFormData>({
+    mainBannerTitle: "",
+    mainBannerDescription: "",
+    mainBannerImage: "",
+
+    card01Title: "",
+    card01Description: "",
+    card01Image: "",
+
+    card02Title: "",
+    card02Description: "",
+    card02Image: "",
+
+    card03Title: "",
+    card03Description: "",
+    card03Image: "",
+  });
+
+  const [errors, setErrors] = useState<Partial<DestinationOverviewFormData>>({});
+
+  // Handle input change
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { errors: validationErrors, data } = validateFormData(destinationOverviewSchema, formData);
+
+    if (validationErrors) {
+      setErrors(validationErrors); // Set errors if validation fails
+    } else {
+      setErrors({}); // Clear errors if validation passes
+
+      // Perform save actions (e.g., API call)
+      console.log("Form submitted successfully", data);
+      // Display success message or perform additional actions here
+    }
+  };
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <Card
           elevation={0}
           sx={{
-            height: "650px",
+            height: "auto",
             width: "100%",
             border: "1px solid",
             borderRadius: "8px",
@@ -47,6 +106,7 @@ const DestinationOverview: React.FC = () => {
             }}
             noValidate
             autoComplete="off"
+            onSubmit={handleSubmit}
           >
             <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
@@ -58,6 +118,11 @@ const DestinationOverview: React.FC = () => {
               label="Enter Main Banner Card Title"
               variant="outlined"
               required
+              name="mainBannerTitle"
+              value={formData.mainBannerTitle}
+              onChange={handleChange}
+              error={!!errors.mainBannerTitle}
+              helperText={errors.mainBannerTitle}
             />
             <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
@@ -70,6 +135,12 @@ const DestinationOverview: React.FC = () => {
               variant="outlined"
               multiline
               rows={4}
+              required
+              name="mainBannerDescription"
+              value={formData.mainBannerDescription}
+              onChange={handleChange}
+              error={!!errors.mainBannerDescription}
+              helperText={errors.mainBannerDescription}
             />
             <Typography variant="h3" sx={{ marginTop: "10px" }}>
               {
@@ -81,6 +152,11 @@ const DestinationOverview: React.FC = () => {
               label="Drag & Drop Your images or Browse"
               variant="outlined"
               required
+              name="mainBannerImage"
+              value={formData.mainBannerImage}
+              onChange={handleChange}
+              error={!!errors.mainBannerImage}
+              helperText={errors.mainBannerImage}
             />
             <Button
               startIcon={<CloudUploadIcon />}
@@ -131,6 +207,11 @@ const DestinationOverview: React.FC = () => {
                 label="Enter Main Banner Card Title"
                 variant="outlined"
                 required
+                name="card01Title"
+                value={formData.card01Title}
+                onChange={handleChange}
+                error={!!errors.card01Title}
+                helperText={errors.card01Title}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
@@ -143,6 +224,12 @@ const DestinationOverview: React.FC = () => {
                 variant="outlined"
                 multiline
                 rows={4}
+                required
+                name="card01Description"
+                value={formData.card01Description}
+                onChange={handleChange}
+                error={!!errors.card01Description}
+                helperText={errors.card01Description}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
@@ -154,6 +241,11 @@ const DestinationOverview: React.FC = () => {
                 label="Drag & Drop Your images or Browse"
                 variant="outlined"
                 required
+                name="card01Image"
+                value={formData.card01Image}
+                onChange={handleChange}
+                error={!!errors.card01Image}
+                helperText={errors.card01Image}
               />
               <Button
                 startIcon={<CloudUploadIcon />}
@@ -203,6 +295,11 @@ const DestinationOverview: React.FC = () => {
                 label="Enter Main Banner Card Title"
                 variant="outlined"
                 required
+                name="card02Title"
+                value={formData.card02Title}
+                onChange={handleChange}
+                error={!!errors.card02Title}
+                helperText={errors.card02Title}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
@@ -215,6 +312,12 @@ const DestinationOverview: React.FC = () => {
                 variant="outlined"
                 multiline
                 rows={4}
+                required
+                name="card02Description"
+                value={formData.card02Description}
+                onChange={handleChange}
+                error={!!errors.card02Description}
+                helperText={errors.card02Description}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
@@ -226,6 +329,11 @@ const DestinationOverview: React.FC = () => {
                 label="Drag & Drop Your images or Browse"
                 variant="outlined"
                 required
+                name="card02Image"
+                value={formData.card02Image}
+                onChange={handleChange}
+                error={!!errors.card02Image}
+                helperText={errors.card02Image}
               />
               <Button
                 startIcon={<CloudUploadIcon />}
@@ -275,6 +383,11 @@ const DestinationOverview: React.FC = () => {
                 label="Enter Main Banner Card Title"
                 variant="outlined"
                 required
+                name="card03Title"
+                value={formData.card03Title}
+                onChange={handleChange}
+                error={!!errors.card03Title}
+                helperText={errors.card03Title}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
@@ -287,6 +400,12 @@ const DestinationOverview: React.FC = () => {
                 variant="outlined"
                 multiline
                 rows={4}
+                required
+                name="card03Description"
+                value={formData.card03Description}
+                onChange={handleChange}
+                error={!!errors.card03Description}
+                helperText={errors.card03Description}
               />
               <Typography variant="h3" sx={{ marginTop: "10px" }}>
                 {
@@ -298,6 +417,11 @@ const DestinationOverview: React.FC = () => {
                 label="Drag & Drop Your images or Browse"
                 variant="outlined"
                 required
+                name="card03Image"
+                value={formData.card03Image}
+                onChange={handleChange}
+                error={!!errors.card03Image}
+                helperText={errors.card03Image}
               />
               <Button
                 startIcon={<CloudUploadIcon />}
@@ -314,8 +438,9 @@ const DestinationOverview: React.FC = () => {
             </Card>
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12} my={1}>
-          <Box display="flex" justifyContent="end" alignItems="center">
+        {/* Save and Edit Buttons Outside of Form */}
+        <Grid container justifyContent="flex-end" alignItems="center" my={2}>
+          <Grid item>
             <Button
               endIcon={<EditIcon />}
               variant="outlined"
@@ -324,6 +449,7 @@ const DestinationOverview: React.FC = () => {
                 "&:hover": {
                   backgroundColor: "#192959", // Set hover background color
                 },
+                marginRight: 2,
               }}
             >
               <Typography
@@ -336,13 +462,17 @@ const DestinationOverview: React.FC = () => {
                 }
               </Typography>
             </Button>
+            </Grid>
+          <Grid item>
             <Button variant="outlined"
+            type="submit"
               sx={{
                 borderColor: "#4A5472", // Set outline color
                 "&:hover": {
                   backgroundColor: "#192959", // Set hover background color
                 },
-              }}>
+              }}
+              onClick={handleSubmit}>
               <Typography
                 style={{
                   color: "white",
@@ -353,7 +483,7 @@ const DestinationOverview: React.FC = () => {
                 }
               </Typography>
             </Button>
-          </Box>
+        </Grid>
         </Grid>
       </Grid>
     </Grid>
