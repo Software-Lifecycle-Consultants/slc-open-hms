@@ -17,7 +17,22 @@ import { mulish } from "@/app/fonts"; // Importing custom font class.
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto"; // Importing icon from MUI.
 import { styled } from "@mui/material/styles"; // Importing styled for custom styling.
 import CloudUploadIcon from "@mui/icons-material/CloudUpload"; // Importing icon from MUI.
+import { validateFormData } from "@/utils/validation";
+import { schemaAdminBlog } from "@/schemas/adminBlog.schema";
 
+type BlogFormData = { // Interface defining the structure of the blog form data.
+  title: string;
+  subTitle: string;
+  blogTag: string;
+  bodyContent: string;
+  coverImage: string;
+  authorImage: string;
+  authorName: string;
+  authorDescription: string;
+  linkTwitter: string;
+  linkFacebook: string;
+  linkLinkedIn: string;
+}; 
 
 // Dynamically importing the TextEditor component to enable client-side rendering only.
 const TextEditor = dynamic(() => import("./TextEditor"), {
@@ -64,27 +79,55 @@ const BlogForm: React.FC = () => {
     facebook: "",
     linkedin: "",
   });
+  // useState hook to manage form data.
+  const [formData, setFormData] = useState<BlogFormData>({
+    title: '',
+    subTitle: '',
+    blogTag: '',
+    bodyContent: '',
+    coverImage: '',
+    authorImage: '',
+    authorName: '',
+    authorDescription: '',
+    linkTwitter: '',
+    linkFacebook: '',
+    linkLinkedIn: '',
+  });
+  const [errors, setErrors] = useState<Partial<BlogFormData>>({}); // useState hook to manage form errors.
 
   // Handler to update form values based on input changes.
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
+    setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: "" }); // Reset error message for the field being changed
   };
 
   // Handler to update tags array in form values.
   const handleTagsChange = (event: React.ChangeEvent<{}>, value: string[]) => {
     setFormValues({ ...formValues, tags: value });
+    setFormData({ ...formData, blogTag: value.join(", ") });
+    setErrors({ ...errors, blogTag: "" }); // Reset error message for the field being changed
   };
 
   // Handler to update body content in form values.
   const handleBodyChange = (body: string) => {
     setFormValues({ ...formValues, bodyContent: body });
+    setFormData({ ...formData, bodyContent: body });
+    setErrors({ ...errors, bodyContent: "" }); // Reset error message for the field being changed
   };
 
   // Handler for form submission.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault(); // Prevent default form submission behavior.
     console.log("Form Values:", formValues); // Log the form values.
+    const { errors: validationErrors, data } = validateFormData(schemaAdminBlog, formData);
+
+    if (validationErrors) {
+      setErrors(validationErrors);
+    } else {
+      console.log(data);
+    }  
 
     // Reset the form values after submission.
     setFormValues({
@@ -124,7 +167,9 @@ const BlogForm: React.FC = () => {
                 type="text"
                 size="small"
                 name="title"
-                value={formValues.title}
+                value={formData.title}
+                error={!!errors.title}
+                helperText={errors.title}
                 onChange={handleInputChange}
               />
             </Grid>
@@ -138,7 +183,9 @@ const BlogForm: React.FC = () => {
                 type="text"
                 size="small"
                 name="subTitle"
-                value={formValues.subTitle}
+                value={formData.subTitle}
+                error={!!errors.subTitle}
+                helperText={errors.subTitle}
                 onChange={handleInputChange}
               />
             </Grid>
@@ -157,7 +204,12 @@ const BlogForm: React.FC = () => {
                   ))
                 }
                 renderInput={(params) => (
-                  <TextField label="Add Tags" {...params} size="small" />
+                  <TextField label="Add Tags" {...params} size="small"
+                    name="blogTag"
+                    value={formData.blogTag}
+                    error={!!errors.blogTag}
+                    helperText={errors.blogTag}
+                  />
                 )}
                 onChange={handleTagsChange}
                 value={formValues.tags}
@@ -170,6 +222,11 @@ const BlogForm: React.FC = () => {
                 onBodyChange={handleBodyChange}
                 bodyContent={formValues.bodyContent}
               />
+              {errors.bodyContent && (
+                <Typography color="error">
+                  {errors.bodyContent}
+                </Typography>
+              )}
             </Grid>
 
             <Typography
@@ -219,9 +276,14 @@ const BlogForm: React.FC = () => {
                   padding: "16px",
                 }}
               >
-                <Button startIcon={<AddAPhotoIcon />}>
+                <Button component="label" role={undefined} startIcon={<AddAPhotoIcon />}>
                   <VisuallyHiddenInput type="file" />
                 </Button>
+                {errors.coverImage && ( // Display error message if cover image is invalid
+                  <Typography color="error">
+                    {errors.coverImage}
+                  </Typography>
+                )}
               </Card>
             </Grid>
 
@@ -251,9 +313,14 @@ const BlogForm: React.FC = () => {
                   padding: "16px",
                 }}
               >
-                <Button startIcon={<CloudUploadIcon />}>
+                <Button component="label" role={undefined} startIcon={<CloudUploadIcon />}>
                   <VisuallyHiddenInput type="file" />
                 </Button>
+                {errors.authorImage && ( // Display error message if author image is invalid
+                  <Typography color="error">
+                    {errors.authorImage}
+                  </Typography>
+                )}
               </Card>
             </Grid>
 
@@ -265,8 +332,10 @@ const BlogForm: React.FC = () => {
                 variant="outlined"
                 type="text"
                 size="small"
-                name="author"
-                value={formValues.author}
+                name="authorName"
+                value={formData.authorName}
+                error={!!errors.authorName}
+                helperText={errors.authorName}
                 onChange={handleInputChange}
               />
             </Grid>
@@ -281,7 +350,9 @@ const BlogForm: React.FC = () => {
                 variant="outlined"
                 type="message"
                 name="authorDescription"
-                value={formValues.authorDescription}
+                value={formData.authorDescription}
+                error={!!errors.authorDescription}
+                helperText={errors.authorDescription}
                 onChange={handleInputChange}
               />
             </Grid>
@@ -305,8 +376,10 @@ const BlogForm: React.FC = () => {
                 variant="outlined"
                 type="text"
                 size="small"
-                name="twitter"
-                value={formValues.twitter}
+                name="linkTwitter"
+                value={formData.linkTwitter}
+                error={!!errors.linkTwitter}
+                helperText={errors.linkTwitter}
                 onChange={handleInputChange}
               />
             </Grid>
@@ -318,8 +391,10 @@ const BlogForm: React.FC = () => {
                 variant="outlined"
                 type="text"
                 size="small"
-                name="facebook"
-                value={formValues.facebook}
+                name="linkFacebook"
+                value={formData.linkFacebook}
+                error={!!errors.linkFacebook}
+                helperText={errors.linkFacebook}
                 onChange={handleInputChange}
               />
             </Grid>
@@ -331,8 +406,10 @@ const BlogForm: React.FC = () => {
                 variant="outlined"
                 type="text"
                 size="small"
-                name="linkedin"
-                value={formValues.linkedin}
+                name="linkLinkedIn"
+                value={formData.linkLinkedIn}
+                error={!!errors.linkLinkedIn}
+                helperText={errors.linkLinkedIn}
                 onChange={handleInputChange}
               />
             </Grid>
