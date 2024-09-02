@@ -10,15 +10,6 @@ import { schema } from "@/schemas/checkOut.schema";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-type SubmitButtonFormData = {
-  email: string;
-  firstName: string;
-  lastName: string;
-  phoneNumber: string;
-  passportId: string;
-  address: string;
-};
-
 // Defines the props that the SubmitButton component expects.
 interface SubmitButtonProps {
   formData: {
