@@ -1,4 +1,7 @@
-"use client"; // This directive indicates that the component is client-side rendered in Next.js.
+"use client";
+import { submitBlog } from "@/pages/api/blogs/blogApi"; // Import the submitBlog function
+
+// This directive indicates that the component is client-side rendered in Next.js.
 
 import {
   Card,
@@ -18,7 +21,6 @@ import AddAPhotoIcon from "@mui/icons-material/AddAPhoto"; // Importing icon fro
 import { styled } from "@mui/material/styles"; // Importing styled for custom styling.
 import CloudUploadIcon from "@mui/icons-material/CloudUpload"; // Importing icon from MUI.
 
-
 // Dynamically importing the TextEditor component to enable client-side rendering only.
 const TextEditor = dynamic(() => import("./TextEditor"), {
   ssr: false,
@@ -35,6 +37,8 @@ interface BlogFormValues {
   twitter: string;
   facebook: string;
   linkedin: string;
+  coverImage: File | null;
+  authorImage: File | null;
 }
 
 // Custom styled component to visually hide the input element.
@@ -63,6 +67,8 @@ const BlogForm: React.FC = () => {
     twitter: "",
     facebook: "",
     linkedin: "",
+    coverImage: null,
+    authorImage: null,
   });
 
   // Handler to update form values based on input changes.
@@ -81,30 +87,89 @@ const BlogForm: React.FC = () => {
     setFormValues({ ...formValues, bodyContent: body });
   };
 
-  // Handler for form submission.
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent default form submission behavior.
-    console.log("Form Values:", formValues); // Log the form values.
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, files } = e.target;
+    if (files && files.length > 0) {
+      setFormValues({ ...formValues, [name]: files[0] });
+    } else {
+      setFormValues({ ...formValues, [name]: null }); // Set to null if no file is selected
+    }
+  };
 
-    // Reset the form values after submission.
-    setFormValues({
-      title: "",
-      subTitle: "",
-      tags: [],
-      bodyContent: "",
-      author: "",
-      authorDescription: "",
-      twitter: "",
-      facebook: "",
-      linkedin: "",
-    });
+  // Handler for form submission.
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Extract the form values
+    const {
+      title,
+      subTitle,
+      tags,
+      bodyContent,
+      author,
+      authorDescription,
+      twitter,
+      facebook,
+      linkedin,
+      coverImage,
+      authorImage,
+    } = formValues;
+
+    // Create a FormData object to send to the server
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("subtitle", subTitle);
+    formData.append("tags", tags.join(",")); // Joining tags into a string
+    formData.append("blogContent", bodyContent);
+    formData.append("authorName", author);
+    formData.append("authorDescription", authorDescription);
+    formData.append("facebook", facebook);
+    formData.append("twitter", twitter);
+    formData.append("linkedIn", linkedin);
+
+    // Append images if they are selected
+    coverImage && formData.append("coverImage", coverImage);
+    authorImage && formData.append("authorImage", authorImage);
+
+    try {
+      const result = await submitBlog(formData); // Use the separated API function
+
+      // Reset form values after successful submission
+      setFormValues({
+        title: "",
+        subTitle: "",
+        tags: [],
+        bodyContent: "",
+        author: "",
+        authorDescription: "",
+        twitter: "",
+        facebook: "",
+        linkedin: "",
+        coverImage: null,
+        authorImage: null,
+      });
+
+      console.log("Cover Image Path:", result.coverImagePath);
+      console.log("Author Image Path:", result.authorImagePath);
+    } catch (error) {
+      console.error("Submission failed:", error);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <Card sx={{ marginLeft: "auto", marginRight: "auto" }}>
         <CardContent sx={{ justifyContent: "center", alignItems: "center" }}>
-          <Typography variant="h1" className={mulish.className}>
+          <Typography
+            variant="h2"
+            className={mulish.className}
+            sx={{
+              padding: "10px 20px 10px 20px",
+              fontSize: { xs: "26px", sm: "28px", md: "32px" },
+              fontWeight: 800,
+              color: "#4A5472",
+            }}
+          >
             Blog
           </Typography>
           <Grid
@@ -173,12 +238,54 @@ const BlogForm: React.FC = () => {
             </Grid>
 
             <Typography
-              marginTop={{ lg: 2, md: 2 }}
-              variant="h2"
+              variant="h3"
               className={mulish.className}
+              sx={{
+                padding: "10px 20px 10px 20px",
+                fontSize: "16px",
+                fontWeight: 500,
+                color: "#4A5472",
+              }}
             >
               Cover Image
             </Typography>
+          </Grid>
+
+          {/* Cover Image Upload */}
+          <Grid item>
+            <Card elevation={0}>
+              <input
+                type="file"
+                name="coverImage"
+                onChange={handleFileChange}
+                style={{ padding: "16px" }}
+              />
+            </Card>
+          </Grid>
+
+          <Typography
+            variant="h3"
+            className={mulish.className}
+            sx={{
+              padding: "10px 20px 10px 20px",
+              fontSize: "16px",
+              fontWeight: 500,
+              color: "#4A5472",
+            }}
+          >
+            Author Image
+          </Typography>
+
+          {/* Author Image Upload */}
+          <Grid item>
+            <Card elevation={0}>
+              <input
+                type="file"
+                name="authorImage"
+                onChange={handleFileChange}
+                style={{ padding: "16px" }}
+              />
+            </Card>
           </Grid>
           <Grid
             container
@@ -189,74 +296,6 @@ const BlogForm: React.FC = () => {
               marginBottom: "20px",
             }}
           >
-            {/* Cover Image Upload */}
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
-              lg={12}
-              sx={{ alignItems: "center", py: { lg: 2, md: 2 } }}
-            >
-              <Card
-                elevation={0}
-                sx={{
-                  height: {
-                    xs: "300px",
-                    sm: "450px",
-                    md: "450px",
-                    lg: "500px",
-                    xl: "550px",
-                  },
-                  width: "auto",
-
-                  border: "1px solid",
-                  borderRadius: "8px",
-                  borderColor: "#D0D5DD",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: "16px",
-                }}
-              >
-                <Button startIcon={<AddAPhotoIcon />}>
-                  <VisuallyHiddenInput type="file" />
-                </Button>
-              </Card>
-            </Grid>
-
-            <Typography variant="h2" className={mulish.className}>
-              Author Image
-            </Typography>
-
-            {/* Author Image Upload */}
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Card
-                elevation={0}
-                sx={{
-                  height: {
-                    xs: "300px",
-                    sm: "450px",
-                    md: "450px",
-                    lg: "500px",
-                    xl: "550px",
-                  },
-                  width: "auto",
-                  border: "1px solid",
-                  borderRadius: "8px",
-                  borderColor: "#D0D5DD",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: "16px",
-                }}
-              >
-                <Button startIcon={<CloudUploadIcon />}>
-                  <VisuallyHiddenInput type="file" />
-                </Button>
-              </Card>
-            </Grid>
-
             {/* Author field */}
             <Grid item>
               <TextField
@@ -295,7 +334,18 @@ const BlogForm: React.FC = () => {
               marginBottom: "20px",
             }}
           >
-            <Typography variant="h2">Social Media Links</Typography>
+            <Typography
+              variant="h3"
+              className={mulish.className}
+              sx={{
+                padding: "10px 20px 10px 20px",
+                fontSize: "16px",
+                fontWeight: 500,
+                color: "#4A5472",
+              }}
+            >
+              Social Media Links
+            </Typography>
 
             {/* Social Media Links fields */}
             <Grid item>
@@ -340,9 +390,6 @@ const BlogForm: React.FC = () => {
 
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "flex-end",
-              marginTop: "1rem",
               textAlign: "right",
               padding: "0 18px 20px 30px",
               //display: { xs: "flex" },
@@ -350,29 +397,43 @@ const BlogForm: React.FC = () => {
           >
             <Button
               type="button"
-              variant="contained"
-              onClick={() => console.log("Draft Saved")}
               sx={{
-                backgroundColor: '#FFFFFF',
-                color: '#5B5959',
-                border: '0.063rem solid #5B5959',
-                "&:hover": {
-                  backgroundColor: '#EBEBEB', // Set hover background color
-                },
+                textTransform: "none",
+                backgroundColor: "#EBEBEB",
+                border: "2px solid black",
+                borderRadius: "8px",
+                color: "black",
+                padding: { xs: "8px 14px" },
+                width: "100px",
+                height: "30px",
+                marginRight: "10px",
+                fontSize: "14px",
               }}
+              onClick={() => console.log("Draft Saved")}
             >
               Save Draft
             </Button>
 
             <Button
               type="submit"
-              variant="contained"
               sx={{
-                color: "white", // Set text color
-                backgroundColor: "#4A5472", // Set background color
-                borderColor: "#5B5959", // Set outline color
+                textTransform: "none",
+                backgroundColor: "#4A5472",
+                borderRadius: "10px",
+                color: "white",
+                border: "2px solid ",
+                width: "100px",
+                height: "35px",
+
+                padding: { xs: "8px 14px" },
                 "&:hover": {
-                  backgroundColor: "#192959", // Set hover background color
+                  backgroundColor: "#192959",
+                  borderColor: "#3B435F",
+                },
+                "&:active": {
+                  backgroundColor: "#2C3045",
+                  borderColor: "#2C3045",
+                  fontSize: "19px",
                 },
               }}
             >
@@ -384,7 +445,5 @@ const BlogForm: React.FC = () => {
     </form>
   );
 };
-
-
 
 export default BlogForm; // Exporting the BlogForm component as default.
