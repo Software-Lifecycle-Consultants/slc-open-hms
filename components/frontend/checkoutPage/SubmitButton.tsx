@@ -2,23 +2,22 @@
 
 import { Button, Checkbox, Typography, Box } from "@mui/material";
 import React, { useState } from "react";
-import { z } from 'zod';
 import { submitContent } from "@/data/checkoutPage";
 import { mulish } from "../../../app/fonts";
 import { orangebuttonCommonStyle } from "../homePage/styles";
 import { checkoutSeo } from "@/data/seo";
+import { schema } from "@/schemas/checkOut.schema";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-// Validation schema for form data
-const schema = z.object({
-  email: z.string().email({ message: 'Invalid email address' }),
-  firstName: z.string().min(1, { message: 'First name is required' }),
-  lastName: z.string().min(1, { message: 'Last name is required' }),
-  phoneNumber: z.string().min(10, { message: 'Phone number must be at least 10 digits' }),
-  passportId: z.string().min(1, { message: 'Passport ID is required' }),
-  address: z.string().min(1, { message: 'Address is required' }),
-});
+type SubmitButtonFormData = {
+  email: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  passportId: string;
+  address: string;
+};
 
 // Defines the props that the SubmitButton component expects.
 interface SubmitButtonProps {
@@ -135,7 +134,7 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ formData, setErrors }) => {
             marginBottom: "100px",
           }}
         >
-          {isSending ? 'Submitting...' : 'Submit'}
+          {isSending ? 'Submitting...' : submitContent.submitctaCaption}
         </Button>
       </Box>
       {error && (
