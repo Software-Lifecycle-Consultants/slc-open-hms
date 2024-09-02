@@ -2,6 +2,7 @@
 
 import { Button, Checkbox, Typography, Box } from "@mui/material";
 import React, { useState } from "react";
+import { z } from 'zod';
 import { submitContent } from "@/data/checkoutPage";
 import { mulish } from "../../../app/fonts";
 import { orangebuttonCommonStyle } from "../homePage/styles";
@@ -9,31 +10,71 @@ import { checkoutSeo } from "@/data/seo";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
+// Validation schema for form data
+const schema = z.object({
+  email: z.string().email({ message: 'Invalid email address' }),
+  firstName: z.string().min(1, { message: 'First name is required' }),
+  lastName: z.string().min(1, { message: 'Last name is required' }),
+  phoneNumber: z.string().min(10, { message: 'Phone number must be at least 10 digits' }),
+  passportId: z.string().min(1, { message: 'Passport ID is required' }),
+  address: z.string().min(1, { message: 'Address is required' }),
+});
+
+// Defines the props that the SubmitButton component expects.
 interface SubmitButtonProps {
-  email: string;
+  formData: {
+    email: string;
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+    passportId: string;
+    address: string;
+  };
+  // Function to update the errors state
+  setErrors: React.Dispatch<React.SetStateAction<{ [key: string]: string }>>;
 }
 
-const SubmitButton: React.FC<SubmitButtonProps> = ({ email }) => {
+const SubmitButton: React.FC<SubmitButtonProps> = ({ formData, setErrors }) => {
   const [isChecked, setIsChecked] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState('');
 
+  // Toggles the checked state of a checkbox.
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
 
+  // Handles form submission, performing validation and sending data if valid
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
     setError('');
 
+    // Reset validation errors before validation
+    setErrors({});
+
     try {
+      // Validate form data
+      const validationResult = schema.safeParse(formData);
+      if (!validationResult.success) {
+        const validationErrors: { [key: string]: string } = {};
+        validationResult.error.errors.forEach(err => {
+          if (err.path[0]) {
+            validationErrors[err.path[0]] = err.message;
+          }
+        });
+        setErrors(validationErrors);
+        setIsSending(false);
+        return;
+      }
+
+      // If validation passes, send email
       const response = await fetch('/api/send-pdf-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email: formData.email }),
       });
 
       if (response.ok) {
@@ -51,56 +92,58 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ email }) => {
     }
   };
 
+
+
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <Box sx={{ display: "flex" }}>
-          <Checkbox
-            checked={isChecked}
-            onChange={handleCheckboxChange}
-            {...label}
-            sx={{
-              "& .MuiSvgIcon-root": { fontSize: 34 },
+      <Box sx={{ display: "flex" }}>
+        <Checkbox
+          checked={isChecked}
+          onChange={handleCheckboxChange}
+          {...label}
+          sx={{
+            "& .MuiSvgIcon-root": { fontSize: 34 },
+            color: "#C7923E",
+            "&.Mui-checked": {
               color: "#C7923E",
-              "&.Mui-checked": {
-                color: "#C7923E",
-              },
-              marginTop: "8px",
-            }}
-          />
-          <Typography
-            variant='h4' color='#515151' marginTop='1.5rem' lineHeight='1.2rem' 
-          >
-            {submitContent.condition}
-          </Typography>
-        </Box>
-        {error && <div>{error}</div>}
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          p: '1rem',
-        }}>
+            },
+            marginTop: "8px",
+          }}
+        />
+        <Typography
+          variant='h4' color='#515151' marginTop='1.5rem' lineHeight='1.2rem'
+        >
+          {submitContent.condition}
+        </Typography>
+      </Box>
+      {error && <div>{error}</div>}
+      <Box sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        p: '1rem',
+      }}>
         <Button
           type="submit"
+          color="primary"
           aria-label={checkoutSeo.submitButtonAriaLabel}
           variant="contained"
-          disabled={!isChecked}
-          sx={{            
+          onClick={handleSubmit}
+          disabled={isSending || !isChecked}
+          sx={{
             marginBottom: "100px",
           }}
         >
-          {submitContent.submitctaCaption}
+          {isSending ? 'Submitting...' : 'Submit'}
         </Button>
-        </Box>
-        {error && (
-          <Typography color="error" variant="body2">
-            {error}
-          </Typography>
-        )}
-      </form>
-    </>
+      </Box>
+      {error && (
+        <Typography color="error" variant="body2">
+          {error}
+        </Typography>
+      )}    
+      </>
   );
 };
 
