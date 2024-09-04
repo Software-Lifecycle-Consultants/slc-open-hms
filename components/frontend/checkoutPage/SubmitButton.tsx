@@ -7,6 +7,7 @@ import { mulish } from "../../../app/fonts";
 import { orangebuttonCommonStyle } from "../homePage/styles";
 import { checkoutSeo } from "@/data/seo";
 import { schema } from "@/schemas/checkOut.schema";
+import { validateFormData } from "@/utils/validation";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -21,7 +22,7 @@ interface SubmitButtonProps {
     address: string;
   };
   // Function to update the errors state
-  setErrors: React.Dispatch<React.SetStateAction<{ [key: string]: string }>>;
+  setErrors: React.Dispatch<React.SetStateAction<{ [key: string]: string[] | undefined }>>;
 }
 
 const SubmitButton: React.FC<SubmitButtonProps> = ({ formData, setErrors }) => {
@@ -45,14 +46,8 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ formData, setErrors }) => {
 
     try {
       // Validate form data
-      const validationResult = schema.safeParse(formData);
-      if (!validationResult.success) {
-        const validationErrors: { [key: string]: string } = {};
-        validationResult.error.errors.forEach(err => {
-          if (err.path[0]) {
-            validationErrors[err.path[0]] = err.message;
-          }
-        });
+      const { errors: validationErrors } = validateFormData(schema, formData);
+      if (validationErrors) {
         setErrors(validationErrors);
         setIsSending(false);
         return;
