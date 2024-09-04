@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextField, Grid, Card, Typography, Box, Button } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -8,7 +8,14 @@ import { adminContentDestinationOverview } from "@/data/admincontent";
 import Rating from "@mui/material/Rating";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
+import { validateFormData } from "@/utils/validation";
+import { schemaAdminPanelTestimonials } from "@/schemas/adminPanelTestimonials.schema";
 
+type TestsomonialFormData = {
+  profileImage: File[] | null;
+  name: string,
+  description: string,
+};
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
   clipPath: "inset(50%)",
@@ -22,6 +29,46 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 const Testimonials: React.FC = () => {
+  const [formData, setFormData] = useState<TestsomonialFormData>({
+    profileImage: [],
+    name: "",
+    description: "",
+  });
+  const [Errors, setErrors] = useState<Record<string, string[]> | null>(null);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      const filesArray = Array.from(event.target.files); // Convert FileList to File[]
+      setFormData((prev) => ({
+        ...prev,
+        profileImage: filesArray,
+      }));
+    }
+  };
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault(); 
+  const { errors: validationErrors, data } = validateFormData(schemaAdminPanelTestimonials, {
+    description: formData.description,
+    profileImage: formData.profileImage || [],
+    name: formData.name,
+  });
+    if (validationErrors) {
+      setErrors(validationErrors as Record<string, string[]>);
+    } else {
+      // Handle successful form submission
+      console.log("Form data:", data);
+      setErrors(null);
+    }
+  };
+
   return (
     <Grid container spacing={2}>
       {/* Display the Videos cards  */}
@@ -37,8 +84,7 @@ const Testimonials: React.FC = () => {
             flexShrink: "0",
             marginTop: "20px",
             padding: "15px",
-          }}
-        >
+          }}>
           {/* Display the header title */}
           <Typography variant="h3" sx={{ fontWeight: "bold" }}>
             {
@@ -53,8 +99,7 @@ const Testimonials: React.FC = () => {
               borderColor: "#000",
               borderRadius: "8px",
               border: "1px solid #000",
-            }}
-          >
+            }}>
             <Typography variant="h3" sx={{ flexGrow: 0.9 }}>
               {
                 adminContentTestimonials.adminContentTestimonialsButtonCard1 // Display the button card 1
@@ -76,8 +121,7 @@ const Testimonials: React.FC = () => {
               borderRadius: "8px",
               border: "1px solid #000",
               mt: 2,
-            }}
-          >
+            }}>
             <Typography variant="h3" sx={{ flexGrow: 0.9 }}>
               <Typography variant="h3" sx={{ flexGrow: 0.9 }}>
                 {
@@ -101,8 +145,7 @@ const Testimonials: React.FC = () => {
               border: "1px solid #000",
               mt: 2,
               justifyContent: "end",
-            }}
-          >
+            }}>
             <Typography variant="h3" sx={{ flexGrow: 0.9 }}>
               {
                 adminContentTestimonials.adminContentTestimonialsButtonCard3 // Display the button card 3
@@ -130,8 +173,7 @@ const Testimonials: React.FC = () => {
             flexShrink: "0",
             marginTop: "20px",
             padding: "25px",
-          }}
-        >
+          }}>
           {/* Add New Testimonials */}
           <Typography variant="h2" sx={{ fontWeight: "bold" }}>
             {
@@ -141,27 +183,39 @@ const Testimonials: React.FC = () => {
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentTestimonials.adminContentTestimonialsTitle // Display the video description
-            }{" "}
-          </Typography>
-          <TextField
-            fullWidth
-            label="Drag & Drop Your images or Browse"
-            variant="outlined"
-            multiline
-            sx={{ m: 1 }}
-          />
-          <Button
-            startIcon={<CloudUploadIcon />}
-            variant="outlined"
-            sx={{
-              width: '8.5rem',
-            }}
-          >
-            {
-              adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
             }
-            <VisuallyHiddenInput type="file" />
-          </Button>
+          </Typography>
+          <Card
+            elevation={0}
+            sx={{
+              height: "55px",
+              width: "100%",
+              borderRadius: "8px",
+              m: 1,
+            }}>
+            <Grid
+              item
+              xs={12}
+              md={4}>
+                <Button
+                startIcon={<CloudUploadIcon />}
+                variant="outlined"
+                component="label" //Use the button as a label for file input
+                role={undefined} // Remove role attribute, as it's not needed
+                tabIndex={-1} // Remove button from tab navigation
+                sx={{
+                  width: "8.5rem",
+                }}>
+                {
+                  adminContentDestinationOverview.adminContentMainBarUploadButton // Display the upload button text
+                }
+                <VisuallyHiddenInput type="file" onChange={handleFileChange} />
+              </Button>
+            </Grid>
+          </Card>
+          {Errors?.profileImage && (
+              <Typography color="error">{Errors.profileImage}</Typography> // Display error message for the logo field if there is one
+            )}
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
             {
               adminContentTestimonials.adminContentTestimonialsTitle1 // Display the video URL 1
@@ -171,7 +225,13 @@ const Testimonials: React.FC = () => {
             fullWidth
             label="Enter Name"
             variant="outlined"
+            name="name"
             required
+            value={formData.name}
+            onChange={handleInputChange}
+            error={Boolean(Errors?.name)}
+            helperText={Errors?.name?.[0]}
+
             sx={{ m: 1 }}
           />
           <Typography variant="h3" sx={{ marginTop: "10px" }}>
@@ -183,7 +243,12 @@ const Testimonials: React.FC = () => {
             fullWidth
             label="Enter Description"
             variant="outlined"
+            name="description"
             multiline
+            value={formData.description}
+            onChange={handleInputChange}
+            error={Boolean(Errors?.description)}
+            helperText={Errors?.description?.[0]}
             rows={4}
             sx={{ m: 1 }}
           />
@@ -195,8 +260,9 @@ const Testimonials: React.FC = () => {
         </Card>
         <Grid my={4}>
           <Box display="flex" justifyContent="end" alignItems="center">
-            <Button 
+            <Button
               variant="outlined"
+              onClick={handleSubmit}
               sx={{
                 borderColor: "#4A5472", // Set outline color
                 "&:hover": {
@@ -206,8 +272,7 @@ const Testimonials: React.FC = () => {
               <Typography
                 style={{
                   color: "white",
-                }}
-              >
+                }}>
                 {
                   adminContentTestimonials.adminContentDestinationCardSubmitButton // Display the submit button text
                 }
