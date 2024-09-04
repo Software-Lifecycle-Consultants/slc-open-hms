@@ -20,8 +20,12 @@ export const validateFormData = <T extends z.ZodTypeAny>(
   const validation = schema.safeParse(formData);
   
   if (!validation.success) {
-    const errors = validation.error.flatten().fieldErrors;
-    return { errors, data: null }; // Return errors along with null data
+    const errors = validation.error.flatten().fieldErrors as { [key: string]: string[] };;
+    // Convert errors to a format with single strings
+    const formattedErrors = Object.fromEntries(
+      Object.entries(errors).map(([key, value]) => [key, value.join(', ')])
+    );
+    return { errors:formattedErrors, data: null }; // Return errors along with null data
   }
   
   return { errors: null, data: validation.data }; // Return data when validation is successful
