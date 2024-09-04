@@ -22,7 +22,7 @@ interface SubmitButtonProps {
     address: string;
   };
   // Function to update the errors state
-  setErrors: React.Dispatch<React.SetStateAction<{ [key: string]: string[] | undefined }>>;
+  setErrors: React.Dispatch<React.SetStateAction<{ [key: string]: string}>>;
 }
 
 const SubmitButton: React.FC<SubmitButtonProps> = ({ formData, setErrors }) => {
