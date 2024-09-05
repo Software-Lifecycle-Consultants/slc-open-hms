@@ -1,8 +1,11 @@
-import React from "react";
-import { TextField, Grid, Typography, Card, Box, Button } from "@mui/material";
+import React, { useState } from "react";
+import { Grid, Typography, Card, Box, Button, IconButton } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
 import { adminContentLogoCarousel } from "@/data/admincontent";
+import { validateFormData } from "@/utils/validation";
+import { schemaAdminPanelLogoCarousel } from "@/schemas/adminPanelLogoCarousel.schema";
+import RemoveIcon from '@mui/icons-material/Remove'; 
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -16,6 +19,40 @@ const VisuallyHiddenInput = styled("input")({
   width: 1,
 });
 const LogoCarousel: React.FC = () => {
+  const [files, setFiles] = useState<File[]>([]);
+  const [errors, setErrors] = useState<Record<string, string> | null>(null);
+  
+  // Handles the file input change event
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // If there are files in the input event, process them
+    if (event.target.files) {
+      const newFiles = Array.from(event.target.files);
+      setFiles(prevFiles => [...prevFiles, ...newFiles]);
+      setErrors(null);
+    }
+  };
+
+  // Handles the form submission
+  const handleSubmit = () => {
+    // Create a form data object with the logos
+    const formData = { logos: files };
+    // Validate the form data using a custom validation function
+    const { errors: validationErrors, data } = validateFormData(schemaAdminPanelLogoCarousel, formData);
+
+    // If there are validation errors, set them in the state
+    if (validationErrors) {
+      setErrors(validationErrors as Record<string, string>);
+    } else {
+      console.log(data);
+      // Handle successful submission here
+      setErrors(null);
+    }
+  };
+
+  // Removes a file from the files array
+  const removeFile = (index: number) => {
+    setFiles(prevFiles => prevFiles.filter((_, i) => i !== index));
+  };
   
   // Custom styles for the Card component
   const cardStyles: React.CSSProperties = {
@@ -32,6 +69,14 @@ const LogoCarousel: React.FC = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+      <Typography
+            variant="h2"
+            sx={{ marginTop: "05px", fontWeight: "bold" }}
+          >
+            {
+              adminContentLogoCarousel.adminContentLogoCarouselHeaderTitle // Display the header title
+            }
+          </Typography>
         <Card
           elevation={0}
           sx={{
@@ -43,16 +88,11 @@ const LogoCarousel: React.FC = () => {
             flexShrink: "0",
             marginTop: "20px",
             padding: "20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <Typography
-            variant="h2"
-            sx={{ marginTop: "05px", fontWeight: "bold" }}
-          >
-            {
-              adminContentLogoCarousel.adminContentLogoCarouselHeaderTitle // Display the header title
-            }
-          </Typography>
           <Box
             component="form"
             sx={{
@@ -61,30 +101,61 @@ const LogoCarousel: React.FC = () => {
             noValidate
             autoComplete="off"
           >
-            <TextField
-              fullWidth
-              label="Drag & Drop Your images or Browse"
-              variant="outlined"
-              required
-            />
             <Button
               startIcon={<CloudUploadIcon />}
               variant="outlined"
+              component="label" //Use the button as a label for file input
+              role={undefined} // Remove role attribute, as it's not needed
+              tabIndex={-1} // Remove button from tab navigation
               sx={{
-                width: '8.5rem',
+                width: '8.5rem', display: "flex", alignItems: "center"
               }}
             >
               {
                 adminContentLogoCarousel.adminContentLogoCarouselUploadButton // Display the upload button text
               }
-              <VisuallyHiddenInput type="file" />
+              <VisuallyHiddenInput type="file" onChange={handleFileChange} multiple />
             </Button>
+            {files.length > 0 && (
+              <Box sx={{ width: "100%", marginTop: 2 }}>
+                {files.map((file, index) => (
+                  <Box key={index} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 1, paddingRight: 1 }}>
+                    <Typography key={index} variant="body1" sx={{ flexGrow: 1, marginRight: 2 }}>{file.name}</Typography>
+                    <IconButton
+                      onClick={() => removeFile(index)}
+                      size="small"
+                      color="error"
+                      sx={{
+                        width: '16px',
+                        height: '16px',
+                        padding: 2,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <RemoveIcon sx={{ fontSize: '1.2rem' }} />
+                    </IconButton>
+                  </Box>
+                ))}
+              </Box>
+            )}
+            {errors && (
+              <Box sx={{ width: "100%", marginTop: 2 }}>
+                {Object.entries(errors).map(([field, fieldErrors]) => (
+                  <Box key={field}>
+                      <Typography color="error">{fieldErrors}</Typography>
+                  </Box>
+                ))}
+              </Box>
+            )}
           </Box>
         </Card>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
           <Box display="flex" justifyContent="end" alignItems="center">
             <Button
               variant="outlined"
+              onClick={handleSubmit}
               sx={{
                 borderColor: "#4A5472", // Set outline color
                 "&:hover": {
