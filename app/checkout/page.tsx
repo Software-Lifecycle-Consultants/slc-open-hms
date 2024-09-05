@@ -1,5 +1,5 @@
 "use client";
-import  { useState } from 'react';
+import { useState } from 'react';
 import Calender from "@/components/frontend/checkoutPage/Calender";
 import Heading from "@/components/frontend/checkoutPage/Heading";
 import SubmitButton from "@/components/frontend/checkoutPage/SubmitButton";
@@ -11,17 +11,30 @@ import ExtraFacilitation from "@/components/frontend/checkoutPage/ExtraFacilitat
 import TermAndCondition from "@/components/frontend/checkoutPage/TermAndCondition";
 import Head from 'next/head';
 import { checkoutSeo } from '@/data/seo';
+
 /**
  * CheckoutScreen component represents the checkout screen of the website.
- * It includes sections like Heading, Billing details form, Booking info, Extra facilitation, Calender and Submit button.
+ * It includes sections like Heading, Billing details form, Booking info, Extra facilitation, Calendar, and Submit button.
  */
 
 const CheckoutScreen = () => {
-  const [email, setEmail] = useState('');
+  // Initializes form state with default values for all form fields.
+  const [formData, setFormData] = useState({
+    email: '',
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    passportId: '',
+    address: ''
+  });
+
+  // Initializes state to store validation error messages for each form field.
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
   return (
     <>
-    <Head>
-    <title>{checkoutSeo.metatitle}</title>
+      <Head>
+        <title>{checkoutSeo.metatitle}</title>
         <meta name="description" content= {checkoutSeo.metadescription} />
         <meta name="keywords" content={checkoutSeo.metakeyword}/>
         <meta property="og:title" content={checkoutSeo.metaogtitle} />
@@ -30,7 +43,7 @@ const CheckoutScreen = () => {
         <meta property="og:url" content={checkoutSeo.metaogurl} />
         <meta property="og:image" content={checkoutSeo.metaogimage} />
         <link rel="canonical" href={checkoutSeo.canonicallink} />
-    </Head>
+      </Head>
       <Box sx={{ backgroundColor: "#FFF", padding: "40px 0", width: "100%" }}>
         <Container>
           <Heading />
@@ -38,15 +51,15 @@ const CheckoutScreen = () => {
       </Box>
       <Box
         sx={{
-          display: "grid",
           columnGap: 2,
           rowGap: 3,
         }}
       >
         <Container>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={8}>
-              <BillingDetails email={email} setEmail={setEmail} />
+          <Grid container spacing={2} >
+            <Grid item xs={12} md={8} >
+            {/*Passes form data, a function to update form data, and validation errors to the BillingDetails component. */}
+              <BillingDetails formData={formData} setFormData={setFormData} errors={errors} />
               {/* <BookingDetailsForm /> */}
             </Grid>
             <Grid item xs={12} md={4}>
@@ -63,15 +76,15 @@ const CheckoutScreen = () => {
             </Grid>
             <Grid item xs={12} md={4}>
               <Calender />
-              <TermAndCondition/>
+              <TermAndCondition />
             </Grid>
           </Grid>
         </Container>
-
         <Container>
           <Grid container spacing={2}>
             <Grid item xs={12} md={8}>
-              <SubmitButton email={email} />
+            {/* Passes form data and a function to update validation errors to the SubmitButton component. */}
+              <SubmitButton formData={formData} setErrors={setErrors} />
             </Grid>
           </Grid>
         </Container>

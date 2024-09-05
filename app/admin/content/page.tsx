@@ -4,7 +4,8 @@ import { Container, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent
 import DestinationOverview from '@/components/admin/contentPage/DestinationOverview';
 import HeroBanner from '@/components/admin/contentPage/HeroBanner';
 import DestinationCards from '@/components/admin/contentPage/DestinationCards';
-import LogoCarousel from '@/components/admin/contentPage/LogoCarousel';
+import dynamic from 'next/dynamic';
+const LogoCarousel = dynamic(() => import('@/components/admin/contentPage/LogoCarousel'), { ssr: false });
 import Testimonials from '@/components/admin/contentPage/Testimonials';
 import SecondaryBannerSection from '@/components/admin/contentPage/SecondaryBannerSection';
 import TermsConditions from '@/components/admin/contentPage/TermsConditions';
