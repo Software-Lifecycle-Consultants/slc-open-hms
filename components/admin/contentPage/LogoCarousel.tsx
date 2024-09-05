@@ -20,7 +20,7 @@ const VisuallyHiddenInput = styled("input")({
 });
 const LogoCarousel: React.FC = () => {
   const [files, setFiles] = useState<File[]>([]);
-  const [errors, setErrors] = useState<Record<string, string[]> | null>(null);
+  const [errors, setErrors] = useState<Record<string, string> | null>(null);
   
   // Handles the file input change event
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +41,7 @@ const LogoCarousel: React.FC = () => {
 
     // If there are validation errors, set them in the state
     if (validationErrors) {
-      setErrors(validationErrors as Record<string, string[]>);
+      setErrors(validationErrors as Record<string, string>);
     } else {
       console.log(data);
       // Handle successful submission here
@@ -144,9 +144,7 @@ const LogoCarousel: React.FC = () => {
               <Box sx={{ width: "100%", marginTop: 2 }}>
                 {Object.entries(errors).map(([field, fieldErrors]) => (
                   <Box key={field}>
-                    {fieldErrors.map((error, index) => (
-                      <Typography key={index} color="error">{error}</Typography>
-                    ))}
+                      <Typography color="error">{fieldErrors}</Typography>
                   </Box>
                 ))}
               </Box>
