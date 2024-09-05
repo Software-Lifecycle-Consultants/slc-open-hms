@@ -26,8 +26,10 @@ const LogoCarousel: React.FC = () => {
   
   // Ensure file-related code only runs in the browser
   useEffect(() => {
-    if (typeof window === "undefined" || typeof File === "undefined") {
-      console.error("File API is not available in this environment.");
+    if (typeof window === "undefined") {
+      console.error("Running in a non-browser environment.");
+    } else if (typeof File === "undefined") {
+      console.error("File API is not supported in this browser.");
     }
   }, []);
 
