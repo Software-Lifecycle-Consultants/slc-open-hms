@@ -1,5 +1,4 @@
 "use client"; // This directive indicates that the component is client-side rendered in Next.js.
-
 import React, { useEffect } from "react"; // Importing React and the useEffect hook.
 import ReactQuill from "react-quill"; // Importing the ReactQuill component.
 import "react-quill/dist/quill.snow.css"; // Importing the Quill editor's snow theme CSS.

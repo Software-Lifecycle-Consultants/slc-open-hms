@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use client"
+import React, { useState, useEffect  } from "react";
 import { Grid, Typography, Card, Box, Button, IconButton } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
@@ -18,10 +19,20 @@ const VisuallyHiddenInput = styled("input")({
   whiteSpace: "nowrap",
   width: 1,
 });
+
 const LogoCarousel: React.FC = () => {
   const [files, setFiles] = useState<File[]>([]);
   const [errors, setErrors] = useState<Record<string, string> | null>(null);
   
+  // Ensure file-related code only runs in the browser
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      console.error("Running in a non-browser environment.");
+    } else if (typeof File === "undefined") {
+      console.error("File API is not supported in this browser.");
+    }
+  }, []);
+
   // Handles the file input change event
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     // If there are files in the input event, process them
