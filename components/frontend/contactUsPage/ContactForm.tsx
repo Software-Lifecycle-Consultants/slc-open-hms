@@ -309,7 +309,8 @@ const handleSubmit = (event: React.FormEvent) => {
                 multiline
                 rows={6}
                 variant="outlined"
-                type="message"
+                type="text" // Change type from "message" to "text"
+                name="message" // Add the name attribute here
                 value={formData.message}
                 onChange={handleChange}
                 error={!!errors.message}
