@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { TextField, Grid, Typography, Card, Box, Button } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";

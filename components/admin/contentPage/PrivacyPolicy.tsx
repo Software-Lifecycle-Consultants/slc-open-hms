@@ -1,5 +1,4 @@
 "use client"; // This directive indicates that the component is client-side rendered in Next.js.
-
 import { Grid, Card, Typography, Button, Box } from "@mui/material"; // Importing MUI components.
 import { useState } from "react"; // Importing useState hook from React.
 import dynamic from "next/dynamic"; // Importing dynamic for lazy loading.
