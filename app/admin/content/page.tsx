@@ -6,7 +6,7 @@ import HeroBanner from '@/components/admin/contentPage/HeroBanner';
 import DestinationCards from '@/components/admin/contentPage/DestinationCards';
 import dynamic from 'next/dynamic';
 const LogoCarousel = dynamic(() => import('@/components/admin/contentPage/LogoCarousel'), { ssr: false });
-import Testimonials from '@/components/admin/contentPage/Testimonials';
+const Testimonials = dynamic(() => import('@/components/admin/contentPage/Testimonials'), { ssr: false });
 import SecondaryBannerSection from '@/components/admin/contentPage/SecondaryBannerSection';
 import TermsConditions from '@/components/admin/contentPage/TermsConditions';
 import PrivacyPolicy from '@/components/admin/contentPage/PrivacyPolicy';
