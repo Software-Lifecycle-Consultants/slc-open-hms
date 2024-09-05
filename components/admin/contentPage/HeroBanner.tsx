@@ -1,3 +1,4 @@
+"use client"
 import React,{ useState } from 'react';
 import { TextField, Grid, Typography, Card, Box, Button } from '@mui/material';
 import { adminContentHeroBanner } from "@/data/admincontent";
