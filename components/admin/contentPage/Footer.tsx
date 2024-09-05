@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useState, useEffect  }  from "react";
 import { TextField, Grid, Typography, Card, Box, Button } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
@@ -56,6 +56,15 @@ const Footer: React.FC = () => {
   });
   const [errors, setErrors] = useState<Partial<Record<keyof FooterFormData, string>>>({}); // Define the state type as a partial record and Start with an empty object to hold errors for each form field
 
+    // Ensure file-related code only runs in the browser
+    useEffect(() => {
+      if (typeof window === "undefined") {
+        console.error("Running in a non-browser environment.");
+      } else if (typeof File === "undefined") {
+        console.error("File API is not supported in this browser.");
+      }
+    }, []);
+    
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target; // Extract the name and value from the input event
     setFormData((prevData) => ({ ...prevData, [name]: value })); // Update the form data state with the new value
