@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TextField, Grid, Card, Typography, Box, Button } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -13,7 +13,7 @@ import { validateFormData } from "@/utils/validation";
 import { schemaAdminPanelTestimonials } from "@/schemas/adminPanelTestimonials.schema";
 
 type TestsomonialFormData = {
-  profileImage: File[] | null;
+  profileImage: File[];
   name: string,
   description: string,
 };
@@ -32,10 +32,19 @@ const VisuallyHiddenInput = styled("input")({
 const Testimonials: React.FC = () => {
   const [formData, setFormData] = useState<TestsomonialFormData>({
     profileImage: [],
-    name: "",
-    description: "",
+    name: '',
+    description: '',
   });
   const [Errors, setErrors] = useState<Record<string, string[]> | null>(null);
+
+  // Ensure file-related code only runs in the browser
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      console.error("Running in a non-browser environment.");
+    } else if (typeof File === "undefined") {
+      console.error("File API is not supported in this browser.");
+    }
+  }, []);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
@@ -56,13 +65,17 @@ const Testimonials: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault(); 
-  const { errors: validationErrors, data } = validateFormData(schemaAdminPanelTestimonials, {
-    description: formData.description,
-    profileImage: formData.profileImage || [],
-    name: formData.name,
-  });
+  const { errors: validationErrors, data } = validateFormData(schemaAdminPanelTestimonials, formData);
     if (validationErrors) {
-      setErrors(validationErrors as Record<string, string[]>);
+      // Ensure the error format matches the expected type
+      const formattedErrors: Record<string, string[]> = Object.keys(validationErrors).reduce(
+        (acc, key) => ({
+          ...acc,
+          [key]: [validationErrors[key]], // convert each string error into an array of strings
+        }),
+        {}
+      );
+      setErrors(formattedErrors);
     } else {
       // Handle successful form submission
       console.log("Form data:", data);
