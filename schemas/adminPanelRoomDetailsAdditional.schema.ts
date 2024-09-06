@@ -2,7 +2,7 @@ import { z } from "zod"
 
 export const schemaAdminPanelRoomDetailsAdditional = z.object({
     additionalInfoTitle: z.string()
-    .min(1, "Please enter your Additional Information Title.")
+    .min(1, "*Required")
     .nonempty("Enter the Additional Information Title"),
   
     additionalInfoDescription: z.string()
