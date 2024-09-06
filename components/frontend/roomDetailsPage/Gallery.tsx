@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react";
 import { Box, Card, Typography, Button, Grid,  } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -18,15 +19,19 @@ const VisuallyHiddenInput = styled("input")({
   width: 1,
 });
 
-export default function StandardImageList() {
-  const [gallery, setGallery] = useState<File[]>([]);
-  const [errors, setErrors] = useState<string | null>(null);
+interface GalleryProps {
+  gallery: File[];
+  setGallery: React.Dispatch<React.SetStateAction<File[]>>;
+  errors: string | null;
+  setErrors: (value: string) => void;
+}
 
+export default function Gallery({ gallery, setGallery, errors, setErrors }: GalleryProps) {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
       const filesArray = Array.from(event.target.files);
       setGallery(filesArray);
-      setErrors(null); // Reset errors when a new file is added
+      setErrors(""); // Reset errors when a new file is added
     }
   };
 
@@ -38,10 +43,9 @@ export default function StandardImageList() {
     const { errors: validationErrors } = validateFormData(schemaAdminPanelRoomDetailsGallery, { gallery });
 
     if (validationErrors) {
-      setErrors(validationErrors.gallery?.join(', ') || null);
+      setErrors(validationErrors.gallery || "Invalid image type.");
     } else {
-      // Process the valid files
-      console.log( gallery);
+      console.log(gallery);
     }
   };
 
@@ -97,7 +101,7 @@ export default function StandardImageList() {
               tabIndex={-1}
               startIcon={<CloudUploadIcon />}
             >
-              <VisuallyHiddenInput type="file" multiple onChange={handleFileChange} />
+              <VisuallyHiddenInput type="file" multiple onChange={handleFileChange} accept="image/*" />
             </Button>
           </Grid>
         </Box>      
