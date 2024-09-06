@@ -1,3 +1,4 @@
+"use client"
 /* eslint-disable react/jsx-key */
 import * as React from "react";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -6,55 +7,36 @@ import { Box, Button, Card, Container, MenuItem, Select, SelectChangeEvent, Stac
 import { category } from "@/data/roomDetails";
 import { FormControl, InputLabel, OutlinedInput, InputAdornment } from "@mui/material";
 import Chip from "@mui/material/Chip";
-import { schemaAdminPanelRoomDetailsCategory } from "@/schemas/adminPanelRoomDetailsCategory.schema";
-import { useState } from "react";
 
+interface CategoryProps {
+  formCategoryData:{
+    categoryRoomType: string;
+    categoryBeds: string;
+    categoryGuest: string;
+    categoryPrice: number;
+};
+setCategoryFormData: React.Dispatch<React.SetStateAction<{
+  categoryRoomType: string;
+  categoryBeds: string;
+  categoryGuest: string;
+  categoryPrice: number;
+}>>;
+ // Object containing validation error messages for form fields
+errors: { [key: string]: string };
+}
 
-export default function Category() {
-  const [formData, setFormData] = useState({
-    categoryRoomType: "",
-    categoryBeds: "",
-    categoryGuest: "",
-    categoryPrice: "",
-  });
-  const [errors, setErrors] = useState<{ [key: string]: string | null }>({
-    categoryRoomType: null,
-    categoryBeds: null,
-    categoryGuest: null,
-    categoryPrice: null,
-  });
+export default function Category({ formCategoryData, setCategoryFormData, errors}: CategoryProps) {
+  
   const handleInputChange = (field: string) => (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string>
-  ) => {
-    const value = event.target.value;
-    setFormData({
-      ...formData,
-      [field]: field === 'categoryPrice' ? value : value,
-    });
-  };
-  const handleSubmit = () => {
-    const priceValue = formData.categoryPrice === '' ? 0 : parseFloat(formData.categoryPrice);
-  
-    const dataToValidate = {
-      ...formData,
-      categoryPrice: isNaN(priceValue) ? 0 : priceValue
-    };
-  
-    const validationResult = schemaAdminPanelRoomDetailsCategory.safeParse(dataToValidate);
-  
-    if (!validationResult.success) {
-      const validationErrors: { [key: string]: string | null } = {};
-  
-      validationResult.error.errors.forEach((error) => {
-        validationErrors[error.path[0]] = error.message;
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string>) => {
+    const value =
+        field === "categoryPrice" ? parseFloat(event.target.value) : event.target.value;
+      setCategoryFormData({
+        ...formCategoryData,
+        [field]: value,
       });
-  
-      setErrors(validationErrors);
-    } else {
-      console.log("Valid data:", validationResult.data);
-      // Process the valid form data
-    }
-  };
+    };
+
   const [isEditing, setIsEditing] = React.useState(false);
 
   const handleEditClick = () => {
@@ -93,7 +75,7 @@ export default function Category() {
     <Card
       elevation={0}
       sx={{
-        height: "600px",
+        height: "630px",
         Width: "auto",
         border: "1px solid",
         borderRadius: "8",
@@ -127,7 +109,7 @@ export default function Category() {
             <Select
             labelId="roomtype-select-label"
             label="Select Room Type"
-            value={formData.categoryRoomType}
+            value={formCategoryData.categoryRoomType}
             onChange={handleInputChange("categoryRoomType")}
             error={!!errors.categoryRoomType}
             >
@@ -135,6 +117,9 @@ export default function Category() {
               <MenuItem value="b"> <Typography>Executive Room</Typography></MenuItem>
               <MenuItem value="c"> <Typography>Luxury Room</Typography></MenuItem>
             </Select>
+            {errors.categoryRoomType && (
+            <Typography color="error">{errors.categoryRoomType}</Typography>
+          )}
           </FormControl>
         <Typography
           mt={2}
@@ -150,7 +135,7 @@ export default function Category() {
             <Select
             labelId="bedtype-select-label"
             label="Select bed Type"
-            value={formData.categoryBeds}
+            value={formCategoryData.categoryBeds}
             onChange={handleInputChange("categoryBeds")}
             error={!!errors.categoryBeds}
             >
@@ -158,6 +143,9 @@ export default function Category() {
               <MenuItem value="f"> <Typography>Double Size</Typography></MenuItem>
               <MenuItem value="g"> <Typography>Single</Typography></MenuItem>
             </Select>
+            {errors.categoryBeds && (
+            <Typography color="error">{errors.categoryBeds}</Typography>
+          )}
           </FormControl>
         <Typography
           variant='h3'
@@ -173,7 +161,7 @@ export default function Category() {
             <Select
             labelId="guest-select-label"
             label="Select Guests"
-            value={formData.categoryGuest}
+            value={formCategoryData.categoryGuest}
             onChange={handleInputChange("categoryGuest")}
             error={!!errors.categoryGuest}
             >
@@ -181,6 +169,9 @@ export default function Category() {
               <MenuItem value="i"> <Typography>02</Typography></MenuItem>
               <MenuItem value="j"> <Typography>03</Typography></MenuItem>
             </Select>
+            {errors.categoryGuest && (
+            <Typography color="error">{errors.categoryGuest}</Typography>
+          )}
           </FormControl>
         <Typography
           variant='h3'
@@ -194,7 +185,7 @@ export default function Category() {
             id="outlined-adornment-amount"
             startAdornment={<InputAdornment position="start">$</InputAdornment>}
             label="categoryPrice"
-            value={formData.categoryPrice}
+            value={formCategoryData.categoryPrice}
             onChange={handleInputChange("categoryPrice")}
             error={!!errors.categoryPrice}
             type="number" // This line to ensure numerical input
