@@ -2,6 +2,7 @@
 import { Box, Card, Typography, Button, Grid } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import { useEffect } from "react";
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -32,6 +33,14 @@ export default function CoverImage({ setCoverImages, errors, setErrors}: CoverIm
     setCoverImages(files);
     setErrors(""); // Clear previous errors
   };
+    // Ensure file-related code only runs in the browser
+    useEffect(() => {
+      if (typeof window === "undefined") {
+        console.error("Running in a non-browser environment.");
+      } else if (typeof File === "undefined") {
+        console.error("File API is not supported in this browser.");
+      }
+    }, []);
 
   return (
     <Box>

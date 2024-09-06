@@ -3,7 +3,7 @@ import * as React from "react";
 import { Box, Card, Typography, Button, Grid,  } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { useState } from "react";
+import { useEffect } from "react";
 import { schemaAdminPanelRoomDetailsGallery } from "@/schemas/adminPanelRoomDetailsGallery.schema";
 import { validateFormData } from "@/utils/validation";
 
@@ -34,6 +34,14 @@ export default function Gallery({ gallery, setGallery, errors, setErrors }: Gall
       setErrors(""); // Reset errors when a new file is added
     }
   };
+    // Ensure file-related code only runs in the browser
+    useEffect(() => {
+      if (typeof window === "undefined") {
+        console.error("Running in a non-browser environment.");
+      } else if (typeof File === "undefined") {
+        console.error("File API is not supported in this browser.");
+      }
+    }, []);
 
   const handleSubmit = () => {
     if (gallery.length === 0) {
