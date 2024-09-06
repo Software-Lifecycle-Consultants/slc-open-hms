@@ -35,7 +35,7 @@ const Testimonials: React.FC = () => {
     name: '',
     description: '',
   });
-  const [Errors, setErrors] = useState<Record<string, string[]> | null>(null);
+  const [Errors, setErrors] = useState<Record<string, string> | null>(null);
 
   // Ensure file-related code only runs in the browser
   useEffect(() => {
@@ -64,18 +64,13 @@ const Testimonials: React.FC = () => {
   };
 
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault(); 
-  const { errors: validationErrors, data } = validateFormData(schemaAdminPanelTestimonials, formData);
+    event.preventDefault();
+  
+    const { errors: validationErrors, data } = validateFormData(schemaAdminPanelTestimonials, formData);
+  
     if (validationErrors) {
-      // Ensure the error format matches the expected type
-      const formattedErrors: Record<string, string[]> = Object.keys(validationErrors).reduce(
-        (acc, key) => ({
-          ...acc,
-          [key]: [validationErrors[key]], // convert each string error into an array of strings
-        }),
-        {}
-      );
-      setErrors(formattedErrors);
+      // Directly set errors as they are already in the desired format
+      setErrors(validationErrors);
     } else {
       // Handle successful form submission
       console.log("Form data:", data);
@@ -244,7 +239,7 @@ const Testimonials: React.FC = () => {
             value={formData.name}
             onChange={handleInputChange}
             error={Boolean(Errors?.name)}
-            helperText={Errors?.name?.[0]}
+            helperText={Errors?.name}
 
             sx={{ m: 1 }}
           />
@@ -262,7 +257,7 @@ const Testimonials: React.FC = () => {
             value={formData.description}
             onChange={handleInputChange}
             error={Boolean(Errors?.description)}
-            helperText={Errors?.description?.[0]}
+            helperText={Errors?.description}
             rows={4}
             sx={{ m: 1 }}
           />
