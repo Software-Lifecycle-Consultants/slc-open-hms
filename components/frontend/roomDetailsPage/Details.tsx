@@ -1,56 +1,40 @@
-import React, { useState } from "react";
+"use client"
+import React from "react";
 import { Grid, Typography, TextField, Card, CardContent, Box } from "@mui/material";
-import { schemaAdminPanelRoomDetails } from "@/schemas/adminPanelRoomDetailsDetails.schema";
-import { validateFormData } from "@/utils/validation";
 
-type DetailFormData = {
+interface DetailsProps {
+  formData: {
+    title: string;
+    subTitle: string;
+    descriptionTitle: string;
+    description: string; 
+};
+setFormData: React.Dispatch<React.SetStateAction<{
   title: string;
   subTitle: string;
   descriptionTitle: string;
-  description: string; 
+  description: string;
+}>>;
+ // Object containing validation error messages for form fields
+errors: { [key: string]: string };
 }
-const Details = () => {
-  const [formData, setFormData] = useState<DetailFormData>({
-    title: "",
-    subTitle: "",
-    descriptionTitle: "",
-    description: "",
-  });
-  const [detailerrors, setdetailerrors] = useState<Partial<DetailFormData>>({});
 
-  // Handle form input change
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-    setdetailerrors({
-      ...detailerrors,
-      [name]: "", // Reset error message for the field being changed
-    });
+const Details : React.FC<DetailsProps> = ({ formData, setFormData, errors }) => {
+  // Manages form input changes and updates the formData in the parent component.
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.value
+    }));
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    const { errors: validationErrors, data } = validateFormData(schemaAdminPanelRoomDetails, formData);
-
-    if (validationErrors) {
-      setdetailerrors(validationErrors);
-    } else {
-      console.log(data);
-    }
-  };
-  
   return (
     <>
       {/* Card for the billing details form */}
       <Card
         elevation={0}
         sx={{
-          height: "580px",
+          height: "650px",
           Width: "auto",
           border: "1px solid",
           borderRadius: "8",
@@ -59,9 +43,9 @@ const Details = () => {
           backgroundColor: "#EEF5FF",
         }}
       >
-        <Box sx={{backgroundColor: 'white', padding:"10px 15px 10px 15px", borderRadius:2}}>
+        <Box sx={{backgroundColor: 'white', height:'650px',padding:"10px 15px 10px 15px", borderRadius:2}}>
         <CardContent>
-          <form onSubmit={handleSubmit} noValidate>
+          <form>
             {/* Grid container for form layout */}
             <Grid container spacing={2}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -71,8 +55,8 @@ const Details = () => {
                   name="title" 
                   value={formData.title}
                   onChange={handleChange}
-                  error={!!detailerrors.title}
-                  helperText={detailerrors.title}
+                  error={!!errors.title}
+                  helperText={errors.title}
                 />
               </Grid>
 
@@ -83,8 +67,8 @@ const Details = () => {
                   name="subTitle" 
                   value={formData.subTitle}
                   onChange={handleChange}
-                  error={!!detailerrors.subTitle}
-                  helperText={detailerrors.subTitle}
+                  error={!!errors.subTitle}
+                  helperText={errors.subTitle}
                 />
               </Grid>
 
@@ -95,8 +79,8 @@ const Details = () => {
                   name="descriptionTitle" 
                   value={formData.descriptionTitle}
                   onChange={handleChange}
-                  error={!!detailerrors.descriptionTitle}
-                  helperText={detailerrors.descriptionTitle}
+                  error={!!errors.descriptionTitle}
+                  helperText={errors.descriptionTitle}
                 />
               </Grid>
 
@@ -107,13 +91,13 @@ const Details = () => {
                 <TextField
                   fullWidth
                   multiline
-                  rows={10}
+                  rows={9}
                   label="Enter description"
                   name="description"
                   value={formData.description}
                   onChange={handleChange}
-                  error={!!detailerrors.description}
-                  helperText={detailerrors.description}
+                  error={!!errors.description}
+                  helperText={errors.description}
                 />
               </Grid>
             </Grid>
