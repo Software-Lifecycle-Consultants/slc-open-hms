@@ -1,13 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { z } from "zod";
+import dynamic from 'next/dynamic';
 import HeadingBook from "@/components/frontend/roomDetailsPage/HeadingBook";
 import Details from "@/components/frontend/roomDetailsPage/Details";
 import Category from "@/components/frontend/roomDetailsPage/Category";
 import ServiceAd from "@/components/frontend/roomDetailsPage/ServiceAd";
 import Additional from "@/components/frontend/roomDetailsPage/Additional";
-import Gallery from "@/components/frontend/roomDetailsPage/Gallery";
-import CoverImage from "@/components/frontend/roomDetailsPage/CoverImage";
+const Gallery = dynamic(() =>import("@/components/frontend/roomDetailsPage/Gallery"), { ssr: false });
+const CoverImage = dynamic(() =>import("@/components/frontend/roomDetailsPage/CoverImage"), { ssr: false });
 import { Grid, Box, Container, Card, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
