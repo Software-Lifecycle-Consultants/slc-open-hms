@@ -10,9 +10,9 @@ export const schemaAdminPanelTestimonials = z.object({
   
     name: z
         .string()
-        .nonempty('Enter the name.'),
+        .nonempty("Enter the name."),
     
     description: z
         .string()
-        .nonempty('Enter the description.'),
+        .nonempty("Enter the description."),
 });
