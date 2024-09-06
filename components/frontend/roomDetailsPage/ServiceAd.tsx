@@ -1,23 +1,24 @@
-/* eslint-disable react/jsx-key */
-import React, { useState } from "react";
+"use client"
+import React from "react";
 import { Typography, Card, CardContent, Grid, Stack, TextField, Autocomplete, Box, Checkbox, FormGroup, FormControlLabel } from "@mui/material";
 import { serviceAdd } from "@/data/roomDetails";
 import { addons } from "@/data/adminRoomDetails";
 import Chip from "@mui/material/Chip";
-import { validateFormData } from "@/utils/validation";
-import { schemaAdminPanelRoomDetailsServiceAddons } from "@/schemas/adminPanelRoomDetailsServiceAddons.schema";
 
-type ServiceAddonFormData = {
+interface ServiceAddonProps {
+  formAddonData: {
+    serviceAddonTitle: string;
+    serviceAddonDescription: string;
+};
+setAddonFormData: React.Dispatch<React.SetStateAction<{
   serviceAddonTitle: string;
   serviceAddonDescription: string;
+}>>;
+ // Object containing validation error messages for form fields
+errors: { [key: string]: string };
 }
-export default function ServiceAd() {
+export default function ServiceAd({ formAddonData, setAddonFormData, errors}: ServiceAddonProps) {
   const [isEditing, setIsEditing] = React.useState(false);
-  const [formData, setFormData] = useState<ServiceAddonFormData>({
-    serviceAddonTitle: "",
-    serviceAddonDescription: "",
-  });
-  const [errors, setErrors] = useState<Partial<ServiceAddonFormData>>({});
   
   const handleEditClick = () => {
     setIsEditing(true);
@@ -49,29 +50,12 @@ export default function ServiceAd() {
     setThirdFieldValue(event.target.value);
   };
 
-  // Handle form input change
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-    setErrors({
-      ...errors,
-      [name]: "", // Reset error message for the field being changed
-    });
-  };
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    const { errors: validationErrors, data } = validateFormData(schemaAdminPanelRoomDetailsServiceAddons, formData);
-
-    if (validationErrors) {
-      setErrors(validationErrors);
-    } else {
-      console.log(data);
-    }
+  // Manages form input changes and updates the formData in the parent component.
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAddonFormData(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.value
+    }));
   };
 
   return (
@@ -100,7 +84,7 @@ export default function ServiceAd() {
           </Typography>
         </Box>
         <CardContent>
-          <form onSubmit={handleSubmit} noValidate>
+          <form>
             {/* Grid container for form layout */}
             <Grid container spacing={2}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -108,7 +92,7 @@ export default function ServiceAd() {
                   fullWidth
                   label="Enter Service Add On Title"
                   name="serviceAddonTitle"
-                  value={formData. serviceAddonTitle}
+                  value={formAddonData. serviceAddonTitle}
                   onChange={handleChange}
                   error={!!errors. serviceAddonTitle}
                   helperText={errors. serviceAddonTitle}
@@ -125,7 +109,7 @@ export default function ServiceAd() {
                   rows={4}
                   label="Enter description"
                   name="serviceAddonDescription"
-                  value={formData.serviceAddonDescription}
+                  value={formAddonData.serviceAddonDescription}
                   onChange={handleChange}
                   error={!!errors.serviceAddonDescription}
                   helperText={errors.serviceAddonDescription}
