@@ -6,24 +6,25 @@ import { styled } from "@mui/material/styles";
 import { adminContentDestinationOverview } from "@/data/admincontent";
 import EditIcon from "@mui/icons-material/Edit";
 import { schemaAdminPanelContentFooter } from "@/schemas/adminFooter.schema";
+import { validateFormData } from "@/utils/validation";
 
 // Type definition for the form data in the footer section
 type FooterFormData = {
   logo: File[] | null;
-  description: String,
-  ownerOfCopyright: String,
-  footerSection1: String,
-  footerSection1SubSection1: String,
-  footerSection1SubSection2: String,
-  footerSection1SubSection3: String,
-  footerSection2: String,
-  footerSection2SubSection1: String,
-  footerSection2SubSection2: String,
-  footerSection2SubSection3: String,
-  footerSection3: String,
-  footerSection3SubSection1: String,
-  footerSection3SubSection2: String,
-  footerSection3SubSection3: String,
+  description: string,
+  ownerOfCopyright: string,
+  footerSection1: string,
+  footerSection1SubSection1: string,
+  footerSection1SubSection2: string,
+  footerSection1SubSection3: string,
+  footerSection2: string,
+  footerSection2SubSection1: string,
+  footerSection2SubSection2: string,
+  footerSection2SubSection3: string,
+  footerSection3: string,
+  footerSection3SubSection1: string,
+  footerSection3SubSection2: string,
+  footerSection3SubSection3: string,
 };
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -80,27 +81,18 @@ const Footer: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    // Ensure formData is properly initialized
-    const adjustedData = {
+    const validationData = {
       ...formData,
       logo: formData.logo || [], // Convert null to empty array
     };
 
-    const validation = schemaAdminPanelContentFooter.safeParse(adjustedData);
-    // Check if the validation was successful
-    if (!validation.success) {
-      const errorObject: Partial<Record<keyof FooterFormData, string>> = {}; // Initialize an object to store validation error messages
-      // Iterate over the validation errors
-      validation.error.errors.forEach((err) => {
-        if (err.path && err.message) {
-          const key = err.path[0] as keyof FooterFormData; // Extract the field name and error message from the validation error
-          errorObject[key] = err.message; // Map the field name to its error message
-        }
-      });
-      setErrors(errorObject); // Update the state with the error messages
+    const { errors, data } = validateFormData(schemaAdminPanelContentFooter, validationData);
+
+    if (errors) {
+      setErrors(errors);
     } else {
-      setErrors({}); // Clear any existing errors if the form data is valid
-      console.log("Form data is valid:", validation.data); // Handle successful form submission logic
+      setErrors({});
+      console.log("Form data is valid:", data);
     }
   };
 
