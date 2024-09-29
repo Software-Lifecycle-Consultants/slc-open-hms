@@ -6,11 +6,11 @@ import HeroBanner from '@/components/admin/contentPage/HeroBanner';
 import DestinationCards from '@/components/admin/contentPage/DestinationCards';
 import dynamic from 'next/dynamic';
 const LogoCarousel = dynamic(() => import('@/components/admin/contentPage/LogoCarousel'), { ssr: false });
+const Footer = dynamic(() => import('@/components/admin/contentPage/Footer'), { ssr: false });
 import Testimonials from '@/components/admin/contentPage/Testimonials';
 import SecondaryBannerSection from '@/components/admin/contentPage/SecondaryBannerSection';
 import TermsConditions from '@/components/admin/contentPage/TermsConditions';
 import PrivacyPolicy from '@/components/admin/contentPage/PrivacyPolicy';
-import Footer from '@/components/admin/contentPage/Footer';
 import { adminContentPage } from "@/data/admincontent";
 
 const HomePage: React.FC = () => {
