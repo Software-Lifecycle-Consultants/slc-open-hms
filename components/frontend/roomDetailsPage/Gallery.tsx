@@ -1,7 +1,11 @@
+"use client"
 import * as React from "react";
 import { Box, Card, Typography, Button, Grid,  } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { useEffect } from "react";
+import { schemaAdminPanelRoomDetailsGallery } from "@/schemas/adminPanelRoomDetailsGallery.schema";
+import { validateFormData } from "@/utils/validation";
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -15,7 +19,44 @@ const VisuallyHiddenInput = styled("input")({
   width: 1,
 });
 
-export default function StandardImageList() {
+interface GalleryProps {
+  gallery: File[];
+  setGallery: React.Dispatch<React.SetStateAction<File[]>>;
+  errors: string | null;
+  setErrors: (value: string) => void;
+}
+
+export default function Gallery({ gallery, setGallery, errors, setErrors }: GalleryProps) {
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      const filesArray = Array.from(event.target.files);
+      setGallery(filesArray);
+      setErrors(""); // Reset errors when a new file is added
+    }
+  };
+    // Ensure file-related code only runs in the browser
+    useEffect(() => {
+      if (typeof window === "undefined") {
+        console.error("Running in a non-browser environment.");
+      } else if (typeof File === "undefined") {
+        console.error("File API is not supported in this browser.");
+      }
+    }, []);
+
+  const handleSubmit = () => {
+    if (gallery.length === 0) {
+      setErrors("You must upload at least one image.");
+      return;
+    }
+    const { errors: validationErrors } = validateFormData(schemaAdminPanelRoomDetailsGallery, { gallery });
+
+    if (validationErrors) {
+      setErrors(validationErrors.gallery || "Invalid image type.");
+    } else {
+      console.log(gallery);
+    }
+  };
+
   return (
     <>
       <Typography mt={2} variant="h2">
@@ -49,36 +90,37 @@ export default function StandardImageList() {
           Drag & Drop Your images or Browse
         </Typography>
       
-          <Box display="flex-center" justifyContent="center" alignItems="center">
-              <Grid
-          container
-          spacing={2}
-          item
-          xs={7}
-          sm={6}
-          md={2}
-          lg={2}
-          xl={2}
-          m={1}
-        >
+        <Box display="flex-center" justifyContent="center" alignItems="center">
+          <Grid
+            container
+            spacing={2}
+            item
+            xs={7}
+            sm={6}
+            md={2}
+            lg={2}
+            xl={2}
+            m={1}
+          >
             <Button
               component="label"
               role={undefined}
               variant="outlined"
               tabIndex={-1}
               startIcon={<CloudUploadIcon />}
-              
             >
-              <VisuallyHiddenInput type="file" />
+              <VisuallyHiddenInput type="file" multiple onChange={handleFileChange} accept="image/*" />
             </Button>
-            </Grid>
-          </Box>
-        
+          </Grid>
+        </Box>      
       </Card>
+      {errors && (<Typography color="error"> {errors} </Typography>)}
       {/* Gallery images submit button */}
       <Box mt={2} display="flex" justifyContent="center" alignItems="center">
         <Button
           variant="outlined"
+          type="submit"
+          onClick={handleSubmit}
         >
           Submit
         </Button>

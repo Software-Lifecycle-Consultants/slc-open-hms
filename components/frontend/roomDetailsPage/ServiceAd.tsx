@@ -1,13 +1,25 @@
-/* eslint-disable react/jsx-key */
+"use client"
 import React from "react";
 import { Typography, Card, CardContent, Grid, Stack, TextField, Autocomplete, Box, Checkbox, FormGroup, FormControlLabel } from "@mui/material";
 import { serviceAdd } from "@/data/roomDetails";
 import { addons } from "@/data/adminRoomDetails";
 import Chip from "@mui/material/Chip";
 
-export default function ServiceAd() {
+interface ServiceAddonProps {
+  formAddonData: {
+    serviceAddonTitle: string;
+    serviceAddonDescription: string;
+};
+setAddonFormData: React.Dispatch<React.SetStateAction<{
+  serviceAddonTitle: string;
+  serviceAddonDescription: string;
+}>>;
+ // Object containing validation error messages for form fields
+errors: { [key: string]: string };
+}
+export default function ServiceAd({ formAddonData, setAddonFormData, errors}: ServiceAddonProps) {
   const [isEditing, setIsEditing] = React.useState(false);
-
+  
   const handleEditClick = () => {
     setIsEditing(true);
   };
@@ -38,7 +50,14 @@ export default function ServiceAd() {
     setThirdFieldValue(event.target.value);
   };
 
-  const handleChange = () => {};
+  // Manages form input changes and updates the formData in the parent component.
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAddonFormData(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.value
+    }));
+  };
+
   return (
     <>
       {/* Card for the billing details form */}
@@ -72,7 +91,11 @@ export default function ServiceAd() {
                 <TextField
                   fullWidth
                   label="Enter Service Add On Title"
-                  id="dTitle"
+                  name="serviceAddonTitle"
+                  value={formAddonData. serviceAddonTitle}
+                  onChange={handleChange}
+                  error={!!errors. serviceAddonTitle}
+                  helperText={errors. serviceAddonTitle}
                 />
               </Grid>
 
@@ -85,7 +108,11 @@ export default function ServiceAd() {
                   multiline
                   rows={4}
                   label="Enter description"
-                  id="Enter description"
+                  name="serviceAddonDescription"
+                  value={formAddonData.serviceAddonDescription}
+                  onChange={handleChange}
+                  error={!!errors.serviceAddonDescription}
+                  helperText={errors.serviceAddonDescription}
                 />
               </Grid>
             </Grid>

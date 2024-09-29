@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Typography,
@@ -10,28 +11,48 @@ import {
 import { additional } from "@/data/roomDetails";
 import { Bolt } from "@mui/icons-material";
 
-/* Functional component for ExtraFacilitation */
-const Additional = () => {
+interface AdditionalProps {
+  formAdditionalData: {
+    additionalInfoTitle: string;
+    additionalInfoDescription: string;
+  };
+  setAdditionalFormData: React.Dispatch<
+    React.SetStateAction<{
+      additionalInfoTitle: string;
+      additionalInfoDescription: string;
+    }>
+  >;
+  // Object containing validation error messages for form fields
+  errors: { [key: string]: string };
+}
+const Additional: React.FC<AdditionalProps> = ({
+  formAdditionalData,
+  setAdditionalFormData,
+  errors,
+}) => {
+  // Manages form input changes and updates the formData in the parent component.
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAdditionalFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <>
       {/* Card for the billing details form */}
       <Card
         elevation={0}
         sx={{
-          height: "600px",
+          height: "630px",
           Width: "auto",
           border: "1px solid",
           borderRadius: "8",
           borderColor: "#D0D5DD",
           flexShrink: "0",
-        }}
-      >
+        }}>
         <Box>
-          <Typography
-            mt={2}
-            ml={2}
-          variant="h2"
-          >
+          <Typography mt={2} ml={2} variant="h2">
             {additional.additionalPageTitle}
           </Typography>
         </Box>
@@ -42,23 +63,32 @@ const Additional = () => {
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <TextField
                   fullWidth
-                  label={<b style={{ fontWeight: 'normal' }}>Enter Additional Information</b>}
-                  id="ATitle"
+                  label={
+                    <b style={{ fontWeight: "normal" }}>
+                      Enter Additional Information
+                    </b>
+                  }
+                  name="additionalInfoTitle"
+                  value={formAdditionalData.additionalInfoTitle}
+                  onChange={handleChange}
+                  error={!!errors.additionalInfoTitle}
+                  helperText={errors.additionalInfoTitle}
                 />
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <Typography
-                  mb={2}
-                variant="h3"
-                >
+                <Typography mb={2} variant="h3">
                   Description
                 </Typography>
                 <TextField
                   fullWidth
                   multiline
-                  rows={16}
+                  rows={14}
                   label="Enter description"
-                  id="Enter description"
+                  name="additionalInfoDescription"
+                  value={formAdditionalData.additionalInfoDescription}
+                  onChange={handleChange}
+                  error={!!errors.additionalInfoDescription}
+                  helperText={errors.additionalInfoDescription}
                 />
               </Grid>
             </Grid>
