@@ -1,42 +1,13 @@
-"use client"
 /* eslint-disable react/jsx-key */
 import * as React from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-import { Box, Button, Card, Container, MenuItem, Select, SelectChangeEvent, Stack, Typography } from "@mui/material";
+import { Box, Card, Container, MenuItem, Select, Stack, Typography } from "@mui/material";
 import { category } from "@/data/roomDetails";
 import { FormControl, InputLabel, OutlinedInput, InputAdornment } from "@mui/material";
 import Chip from "@mui/material/Chip";
 
-interface CategoryProps {
-  formCategoryData:{
-    categoryRoomType: string;
-    categoryBeds: string;
-    categoryGuest: string;
-    categoryPrice: number;
-};
-setCategoryFormData: React.Dispatch<React.SetStateAction<{
-  categoryRoomType: string;
-  categoryBeds: string;
-  categoryGuest: string;
-  categoryPrice: number;
-}>>;
- // Object containing validation error messages for form fields
-errors: { [key: string]: string };
-}
-
-export default function Category({ formCategoryData, setCategoryFormData, errors}: CategoryProps) {
-  
-  const handleInputChange = (field: string) => (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string>) => {
-    const value =
-        field === "categoryPrice" ? parseFloat(event.target.value) : event.target.value;
-      setCategoryFormData({
-        ...formCategoryData,
-        [field]: value,
-      });
-    };
-
+export default function Category() {
   const [isEditing, setIsEditing] = React.useState(false);
 
   const handleEditClick = () => {
@@ -75,7 +46,7 @@ export default function Category({ formCategoryData, setCategoryFormData, errors
     <Card
       elevation={0}
       sx={{
-        height: "630px",
+        height: "600px",
         Width: "auto",
         border: "1px solid",
         borderRadius: "8",
@@ -109,17 +80,11 @@ export default function Category({ formCategoryData, setCategoryFormData, errors
             <Select
             labelId="roomtype-select-label"
             label="Select Room Type"
-            value={formCategoryData.categoryRoomType}
-            onChange={handleInputChange("categoryRoomType")}
-            error={!!errors.categoryRoomType}
             >
               <MenuItem value="a"> <Typography>Family Room</Typography></MenuItem>
               <MenuItem value="b"> <Typography>Executive Room</Typography></MenuItem>
               <MenuItem value="c"> <Typography>Luxury Room</Typography></MenuItem>
             </Select>
-            {errors.categoryRoomType && (
-            <Typography color="error">{errors.categoryRoomType}</Typography>
-          )}
           </FormControl>
         <Typography
           mt={2}
@@ -135,17 +100,11 @@ export default function Category({ formCategoryData, setCategoryFormData, errors
             <Select
             labelId="bedtype-select-label"
             label="Select bed Type"
-            value={formCategoryData.categoryBeds}
-            onChange={handleInputChange("categoryBeds")}
-            error={!!errors.categoryBeds}
             >
               <MenuItem value="e"> <Typography>King Size</Typography></MenuItem>
               <MenuItem value="f"> <Typography>Double Size</Typography></MenuItem>
               <MenuItem value="g"> <Typography>Single</Typography></MenuItem>
             </Select>
-            {errors.categoryBeds && (
-            <Typography color="error">{errors.categoryBeds}</Typography>
-          )}
           </FormControl>
         <Typography
           variant='h3'
@@ -161,17 +120,11 @@ export default function Category({ formCategoryData, setCategoryFormData, errors
             <Select
             labelId="guest-select-label"
             label="Select Guests"
-            value={formCategoryData.categoryGuest}
-            onChange={handleInputChange("categoryGuest")}
-            error={!!errors.categoryGuest}
             >
               <MenuItem value="h"> <Typography>01</Typography></MenuItem>
               <MenuItem value="i"> <Typography>02</Typography></MenuItem>
               <MenuItem value="j"> <Typography>03</Typography></MenuItem>
             </Select>
-            {errors.categoryGuest && (
-            <Typography color="error">{errors.categoryGuest}</Typography>
-          )}
           </FormControl>
         <Typography
           variant='h3'
@@ -184,16 +137,8 @@ export default function Category({ formCategoryData, setCategoryFormData, errors
           <OutlinedInput
             id="outlined-adornment-amount"
             startAdornment={<InputAdornment position="start">$</InputAdornment>}
-            label="categoryPrice"
-            value={formCategoryData.categoryPrice}
-            onChange={handleInputChange("categoryPrice")}
-            error={!!errors.categoryPrice}
-            type="number" // This line to ensure numerical input
-            inputProps={{ step: "0.01" }} // This line to allow two decimal places
+            label="Amount"
           />
-          {errors.categoryPrice && (
-            <Typography color="error">{errors.categoryPrice}</Typography>
-          )}
         </FormControl>
       </Stack>
     </Card>
