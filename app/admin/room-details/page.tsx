@@ -3,20 +3,18 @@ import React, { useEffect, useState } from "react";
 import { z } from "zod";
 import dynamic from 'next/dynamic';
 import HeadingBook from "@/components/frontend/roomDetailsPage/HeadingBook";
+import { Grid, Box, Container, Button, Typography } from "@mui/material";
+import { schemaAdminPanelRoomDetails } from "@/schemas/adminPanelRoomDetailsDetails.schema";
+import { schemaAdminPanelRoomDetailsAdditional } from "@/schemas/adminPanelRoomDetailsAdditional.schema";
+import { schemaAdminPanelRoomDetailsServiceAddons } from "@/schemas/adminPanelRoomDetailsServiceAddons.schema";
+import { schemaAdminPanelRoomDetailsCategory } from "@/schemas/adminPanelRoomDetailsCategory.schema";
+
 const Details = dynamic(() => import("@/components/frontend/roomDetailsPage/Details"), { ssr: false });
 const Category = dynamic(() => import("@/components/frontend/roomDetailsPage/Category"), { ssr: false });
 const ServiceAd = dynamic(() => import("@/components/frontend/roomDetailsPage/ServiceAd"), { ssr: false });
 const Additional = dynamic(() => import("@/components/frontend/roomDetailsPage/Additional"), { ssr: false });
 const Gallery = dynamic(() => import("@/components/frontend/roomDetailsPage/Gallery"), { ssr: false });
 const CoverImage = dynamic(() => import("@/components/frontend/roomDetailsPage/CoverImage"), { ssr: false });
-import { Grid, Box, Container, Button, Typography } from "@mui/material";
-import { schemaAdminPanelRoomDetailsCoverImg } from "@/schemas/adminPanelRoomDetailsCoverImage.schema";
-import { validateFormData } from "@/utils/validation";
-import { schemaAdminPanelRoomDetails } from "@/schemas/adminPanelRoomDetailsDetails.schema";
-import { schemaAdminPanelRoomDetailsAdditional } from "@/schemas/adminPanelRoomDetailsAdditional.schema";
-import { schemaAdminPanelRoomDetailsServiceAddons } from "@/schemas/adminPanelRoomDetailsServiceAddons.schema";
-import { schemaAdminPanelRoomDetailsCategory } from "@/schemas/adminPanelRoomDetailsCategory.schema";
-import { schemaAdminPanelRoomDetailsGallery } from "@/schemas/adminPanelRoomDetailsGallery.schema";
 
 const RoomDetails: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -40,15 +38,14 @@ const RoomDetails: React.FC = () => {
     categoryPrice: 0,
   });
 
-  const [coverImages, setCoverImages] = useState<File[]>([]);
-  const [gallery, setGallery] = useState<File[]>([]);
+  const [coverImages, setCoverImages] = useState<any[]>([]);
+  const [gallery, setGallery] = useState<any[]>([]);
   
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Initialize file-related state here
-    setCoverImages([]);
-    setGallery([]);
+    setIsClient(true);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -60,17 +57,26 @@ const RoomDetails: React.FC = () => {
       ...schemaAdminPanelRoomDetailsAdditional.shape,
       ...schemaAdminPanelRoomDetailsServiceAddons.shape,
       ...schemaAdminPanelRoomDetailsCategory.shape,
-      ...schemaAdminPanelRoomDetailsCoverImg.shape,
-      ...schemaAdminPanelRoomDetailsGallery.shape,
     });
+
+    // Only include file-related schemas if we're on the client side
+    if (typeof window !== 'undefined') {
+      const { schemaAdminPanelRoomDetailsCoverImg } = await import('@/schemas/adminPanelRoomDetailsCoverImage.schema');
+      const { schemaAdminPanelRoomDetailsGallery } = await import('@/schemas/adminPanelRoomDetailsGallery.schema');
+      Object.assign(combinedSchema.shape, {
+        ...schemaAdminPanelRoomDetailsCoverImg.shape,
+        ...schemaAdminPanelRoomDetailsGallery.shape,
+      });
+    }
+
+    const { validateFormData } = await import('@/utils/validation');
 
     const { errors: validationErrors } = validateFormData(combinedSchema, {
       ...formData,
       ...formAdditionalData,
       ...formAddonData,
       ...formCategoryData,
-      coverImages,
-      gallery,
+      ...(typeof window !== 'undefined' ? { coverImages, gallery } : {}),
     });
 
     if (validationErrors) {
@@ -80,6 +86,10 @@ const RoomDetails: React.FC = () => {
 
     // Handle form submission logic here
   };
+
+  if (!isClient) {
+    return null; // or a loading indicator
+  }
 
   return (
     <>
