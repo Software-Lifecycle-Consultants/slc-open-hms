@@ -53,8 +53,10 @@ const RoomDetails: React.FC = () => {
     categoryGuest: "",
     categoryPrice: 0, // Initialize as a number
   });
-  const [coverImages, setCoverImages] = useState<File[]>([]);
-  const [gallery, setGallery] = useState<File[]>([]);
+
+  const [coverImages, setCoverImages] = useState<any[]>([]);
+  const [gallery, setGallery] = useState<any[]>([]);
+  
   // Initializes state to store validation error messages for each form field.
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   // Ensure file-related code only runs in the browser
