@@ -59,10 +59,10 @@ const RoomDetails: React.FC = () => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   // Ensure file-related code only runs in the browser
   useEffect(() => {
-    if (typeof window === "undefined") {
-      console.error("Running in a non-browser environment.");
-    } else if (typeof File === "undefined") {
-      console.error("File API is not supported in this browser.");
+    if (typeof window !== "undefined" && typeof File !== "undefined") {
+      // Initialize file-related state here
+      setCoverImages([]);
+      setGallery([]);
     }
   }, []);
 
