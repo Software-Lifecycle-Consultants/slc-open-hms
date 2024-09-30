@@ -9,10 +9,7 @@ const ServiceAd = dynamic(() => import("@/components/frontend/roomDetailsPage/Se
 const Additional = dynamic(() => import("@/components/frontend/roomDetailsPage/Additional"), { ssr: false });
 const Gallery = dynamic(() => import("@/components/frontend/roomDetailsPage/Gallery"), { ssr: false });
 const CoverImage = dynamic(() => import("@/components/frontend/roomDetailsPage/CoverImage"), { ssr: false });
-import { Grid, Box, Container, Card, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import Button from "@mui/material/Button";
-import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import { Grid, Box, Container, Button, Typography } from "@mui/material";
 import { schemaAdminPanelRoomDetailsCoverImg } from "@/schemas/adminPanelRoomDetailsCoverImage.schema";
 import { validateFormData } from "@/utils/validation";
 import { schemaAdminPanelRoomDetails } from "@/schemas/adminPanelRoomDetailsDetails.schema";
@@ -21,17 +18,6 @@ import { schemaAdminPanelRoomDetailsServiceAddons } from "@/schemas/adminPanelRo
 import { schemaAdminPanelRoomDetailsCategory } from "@/schemas/adminPanelRoomDetailsCategory.schema";
 import { schemaAdminPanelRoomDetailsGallery } from "@/schemas/adminPanelRoomDetailsGallery.schema";
 
-const VisuallyHiddenInput = styled("input")({
-  clip: "rect(0 0 0 0)",
-  clipPath: "inset(50%)",
-  height: 1,
-  overflow: "hidden",
-  position: "absolute",
-  bottom: 0,
-  left: 0,
-  whiteSpace: "nowrap",
-  width: 1,
-});
 const RoomDetails: React.FC = () => {
   const [formData, setFormData] = useState({
     title: "",
@@ -51,31 +37,24 @@ const RoomDetails: React.FC = () => {
     categoryRoomType: "",
     categoryBeds: "",
     categoryGuest: "",
-    categoryPrice: 0, // Initialize as a number
+    categoryPrice: 0,
   });
 
-  const [coverImages, setCoverImages] = useState<any[]>([]);
-  const [gallery, setGallery] = useState<any[]>([]);
+  const [coverImages, setCoverImages] = useState<File[]>([]);
+  const [gallery, setGallery] = useState<File[]>([]);
   
-  // Initializes state to store validation error messages for each form field.
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  // Ensure file-related code only runs in the browser
+
   useEffect(() => {
-  if (typeof window !== "undefined" && typeof File !== "undefined") {
     // Initialize file-related state here
     setCoverImages([]);
     setGallery([]);
-  }
   }, []);
 
-
-  // Handles form submission, performing validation and sending data if valid
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Reset validation errors before validation
     setErrors({});
 
-    // Combine schema for both forms and validate form data
     const combinedSchema = z.object({
       ...schemaAdminPanelRoomDetails.shape,
       ...schemaAdminPanelRoomDetailsAdditional.shape,
@@ -85,7 +64,6 @@ const RoomDetails: React.FC = () => {
       ...schemaAdminPanelRoomDetailsGallery.shape,
     });
 
-    // Validate form data
     const { errors: validationErrors } = validateFormData(combinedSchema, {
       ...formData,
       ...formAdditionalData,
@@ -99,32 +77,21 @@ const RoomDetails: React.FC = () => {
       setErrors(validationErrors);
       return;
     }
+
+    // Handle form submission logic here
   };
 
   return (
     <>
-      <Box
-        sx={{
-          backgroundColor: "#EEF5FF",
-          padding: "10px 0",
-          width: "100%",
-          mx: "2px",
-        }}>
+      {/* Existing JSX structure */}
+      <Box sx={{ backgroundColor: "#EEF5FF", padding: "10px 0", width: "100%", mx: "2px" }}>
         <Container>
           <HeadingBook />
         </Container>
       </Box>
-      <Box
-        sx={{
-          display: "grid",
-          backgroundColor: "#EEF5FF",
-          padding: "0 0 30px 0",
-        }}>
-        {/* (1) The Details component is imported and rendered here. */}
-
+      <Box sx={{ display: "grid", backgroundColor: "#EEF5FF", padding: "0 0 30px 0" }}>
         <Container>
           <Grid container spacing={2}>
-            {/* <RoomDetailsForm /> */}
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} marginTop={3}>
               <Details
                 formData={formData}
@@ -132,7 +99,6 @@ const RoomDetails: React.FC = () => {
                 errors={errors}
               />
             </Grid>
-            {/* (2) The Gallery component is imported and rendered here. */}
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
               <CoverImage 
                 coverImages={coverImages} 
@@ -140,21 +106,19 @@ const RoomDetails: React.FC = () => {
                 errors={errors.coverImages || ''} 
                 setErrors={(value) => setErrors(prev => ({ ...prev, coverImages: value }))} 
               />
-            {/* (3) The Gallery component is imported and rendered here. */}
-            <Grid item xs={12} md={12} lg={12} marginTop={2}>
-              <Gallery 
-                gallery={gallery}
-                setGallery={setGallery}
-                errors={errors.gallery || ''}
-                setErrors={(value) => setErrors(prev => ({...prev, gallery: value}))}
-              />
-            </Grid>
+              <Grid item xs={12} md={12} lg={12} marginTop={2}>
+                <Gallery 
+                  gallery={gallery}
+                  setGallery={setGallery}
+                  errors={errors.gallery || ''}
+                  setErrors={(value) => setErrors(prev => ({...prev, gallery: value}))}
+                />
+              </Grid>
             </Grid>
           </Grid>
         </Container>
         <Container>
           <Grid container spacing={2}>
-            {/* (4) The Category component is imported and rendered here. */}
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} marginTop={2}>
               <Category
                 formCategoryData={formCategoryData}
@@ -162,7 +126,6 @@ const RoomDetails: React.FC = () => {
                 errors={errors}
               />
             </Grid>
-            {/* (5) The Additional component is imported and rendered here. */}
             <Grid item xs={12} md={6} marginTop={2}>
               <Additional
                 formAdditionalData={formAdditionalData}
@@ -171,17 +134,8 @@ const RoomDetails: React.FC = () => {
               />
             </Grid>
           </Grid>
-          {/* (6) The ServiceAd component is imported and rendered here. */}
           <Grid container>
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
-              lg={12}
-              xl={12}
-              marginTop={2}
-              bgcolor={"#000"}>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2} bgcolor={"#000"}>
               <ServiceAd
                 formAddonData={formAddonData}
                 setAddonFormData={setAddonFormData}
@@ -191,7 +145,6 @@ const RoomDetails: React.FC = () => {
           </Grid>
         </Container>
         <Container>
-          {/* (7) The Save and Close buttons are rendered here. */}
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} marginTop={2}>
             <Box display="flex" justifyContent="flex-end" alignItems="center">
               <Button
@@ -201,7 +154,7 @@ const RoomDetails: React.FC = () => {
                   color: "#5B5959",
                   border: "0.063rem solid #5B5959",
                   "&:hover": {
-                    backgroundColor: "#EBEBEB", // Set hover background color
+                    backgroundColor: "#EBEBEB",
                   },
                 }}>
                 <Typography>Close</Typography>
