@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react";
 import { z } from "zod";
 import dynamic from 'next/dynamic';
 import HeadingBook from "@/components/frontend/roomDetailsPage/HeadingBook";
-const Details = dynamic(() =>import("@/components/frontend/roomDetailsPage/Details"), { ssr: false });
-const Category = dynamic(() =>import("@/components/frontend/roomDetailsPage/Category"), { ssr: false });
-const ServiceAd = dynamic(() =>import("@/components/frontend/roomDetailsPage/ServiceAd"), { ssr: false });
-const Additional = dynamic(() =>import("@/components/frontend/roomDetailsPage/Additional"), { ssr: false });
-const Gallery = dynamic(() =>import("@/components/frontend/roomDetailsPage/Gallery"), { ssr: false });
-const CoverImage = dynamic(() =>import("@/components/frontend/roomDetailsPage/CoverImage"), { ssr: false });
+const Details = dynamic(() => import("@/components/frontend/roomDetailsPage/Details"), { ssr: false });
+const Category = dynamic(() => import("@/components/frontend/roomDetailsPage/Category"), { ssr: false });
+const ServiceAd = dynamic(() => import("@/components/frontend/roomDetailsPage/ServiceAd"), { ssr: false });
+const Additional = dynamic(() => import("@/components/frontend/roomDetailsPage/Additional"), { ssr: false });
+const Gallery = dynamic(() => import("@/components/frontend/roomDetailsPage/Gallery"), { ssr: false });
+const CoverImage = dynamic(() => import("@/components/frontend/roomDetailsPage/CoverImage"), { ssr: false });
 import { Grid, Box, Container, Card, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
@@ -147,10 +147,10 @@ const RoomDetails: React.FC = () => {
                 setErrors={(value) => setErrors(prev => ({...prev, gallery: value}))}
               />
             </Grid>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-      <Container>
+        </Container>
+        <Container>
           <Grid container spacing={2}>
             {/* (4) The Category component is imported and rendered here. */}
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} marginTop={2}>
