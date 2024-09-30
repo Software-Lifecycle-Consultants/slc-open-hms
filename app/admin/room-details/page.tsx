@@ -8,6 +8,8 @@ import { schemaAdminPanelRoomDetails } from "@/schemas/adminPanelRoomDetailsDeta
 import { schemaAdminPanelRoomDetailsAdditional } from "@/schemas/adminPanelRoomDetailsAdditional.schema";
 import { schemaAdminPanelRoomDetailsServiceAddons } from "@/schemas/adminPanelRoomDetailsServiceAddons.schema";
 import { schemaAdminPanelRoomDetailsCategory } from "@/schemas/adminPanelRoomDetailsCategory.schema";
+import { schemaAdminPanelRoomDetailsCoverImg } from "@/schemas/adminPanelRoomDetailsCoverImage.schema";
+import { schemaAdminPanelRoomDetailsGallery } from "@/schemas/adminPanelRoomDetailsGallery.schema";
 
 const Details = dynamic(() => import("@/components/frontend/roomDetailsPage/Details"), { ssr: false });
 const Category = dynamic(() => import("@/components/frontend/roomDetailsPage/Category"), { ssr: false });
