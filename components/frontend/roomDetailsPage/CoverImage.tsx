@@ -17,14 +17,19 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 interface CoverImageProps {
-  coverImages: File[];
-  setCoverImages: React.Dispatch<React.SetStateAction<File[]>>;
+  coverImages: any[];
+  setCoverImages: React.Dispatch<React.SetStateAction<any[]>>;
   errors: string | null;
   setErrors: (value: string) => void;
 }
 
 export default function CoverImage({ setCoverImages, errors, setErrors}: CoverImageProps) {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (typeof File === "undefined") {
+      console.error("File API is not supported in this environment.");
+      return;
+    }
+    
     const files = event.target.files ? Array.from(event.target.files) : [];
     if (files.length !== 1) {
       setErrors("Only one cover image can be uploaded.");
@@ -35,12 +40,13 @@ export default function CoverImage({ setCoverImages, errors, setErrors}: CoverIm
   };
     // Ensure file-related code only runs in the browser
     useEffect(() => {
-      if (typeof window === "undefined") {
-        console.error("Running in a non-browser environment.");
-      } else if (typeof File === "undefined") {
-        console.error("File API is not supported in this browser.");
+      if (typeof window !== "undefined" && typeof File !== "undefined") {
+        // Initialize file-related state here
+        setCoverImages([]);
+      } else {
+        console.error("Running in a non-browser environment or File API is not supported.");
       }
-    }, []);
+    }, [setCoverImages]);
 
   return (
     <Box>
